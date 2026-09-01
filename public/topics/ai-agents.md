@@ -6,249 +6,249 @@ title: "🤖 AI Agents — Human-in-the-Loop Research"
 
 <!-- Hero Section -->
 <div class="topic-hero">
-  <div class="hero-icon">🤖</div>
-  <h1>AI Agents</h1>
-  <p class="hero-subtitle">Autonomous systems with tool use, planning, and multi-agent coordination</p>
-  <p class="hero-hitl"> This is a <strong>Human-in-the-Loop</strong> research topic — your feedback, annotations, and contributions directly improve the AI's understanding and recommendations.</p>
-  <div class="topic-stats">
-    <div class="stat"><span class="stat-num">67</span><span class="stat-label">Papers</span></div>
-    <div class="stat"><span class="stat-num">3</span><span class="stat-label">Sub-Topics</span></div>
-    <div class="stat"><span class="stat-num" id="hitlContribCount">0</span><span class="stat-label">Your Contributions</span></div>
-  </div>
+<div class="hero-icon">🤖</div>
+<h1>AI Agents</h1>
+<p class="hero-subtitle">Autonomous systems with tool use, planning, and multi-agent coordination</p>
+<p class="hero-hitl"> This is a <strong>Human-in-the-Loop</strong> research topic — your feedback, annotations, and contributions directly improve the AI's understanding and recommendations.</p>
+<div class="topic-stats">
+<div class="stat"><span class="stat-num">67</span><span class="stat-label">Papers</span></div>
+<div class="stat"><span class="stat-num">3</span><span class="stat-label">Sub-Topics</span></div>
+<div class="stat"><span class="stat-num" id="hitlContribCount">0</span><span class="stat-label">Your Contributions</span></div>
+</div>
 </div>
 
 <!-- HITL Workflow Section -->
 <div class="hitl-workflow">
-  <h2>🔄 How You Shape This Research Topic</h2>
-  <div class="workflow-steps">
-    <div class="workflow-step">
-      <div class="step-number">1</div>
-      <div class="step-icon">📖</div>
-      <h3>Read & Annotate</h3>
-      <p>Open papers in the reader, highlight key passages, add notes and questions. Your annotations build a personal knowledge layer.</p>
-    </div>
-    <div class="workflow-step">
-      <div class="step-number">2</div>
-      <div class="step-icon">🧠</div>
-      <h3>Validate Concepts</h3>
-      <p>Confirm or reject AI-extracted concepts from each paper. Your validations train the system to better understand AI agent research.</p>
-    </div>
-    <div class="workflow-step">
-      <div class="step-number">3</div>
-      <div class="step-icon">⭐</div>
-      <h3>Rate AI Outputs</h3>
-      <p>Rate AI-generated summaries and recommendations. Your ratings help the system produce better content over time.</p>
-    </div>
-    <div class="workflow-step">
-      <div class="step-number">4</div>
-      <div class="step-icon">✏️</div>
-      <h3>Contribute Knowledge</h3>
-      <p>Add explanations, examples, and insights to the wiki. Your contributions enrich the collaborative knowledge base for everyone.</p>
-    </div>
-  </div>
+<h2>🔄 How You Shape This Research Topic</h2>
+<div class="workflow-steps">
+<div class="workflow-step">
+<div class="step-number">1</div>
+<div class="step-icon">📖</div>
+<h3>Read & Annotate</h3>
+<p>Open papers in the reader, highlight key passages, add notes and questions. Your annotations build a personal knowledge layer.</p>
+</div>
+<div class="workflow-step">
+<div class="step-number">2</div>
+<div class="step-icon">🧠</div>
+<h3>Validate Concepts</h3>
+<p>Confirm or reject AI-extracted concepts from each paper. Your validations train the system to better understand AI agent research.</p>
+</div>
+<div class="workflow-step">
+<div class="step-number">3</div>
+<div class="step-icon">⭐</div>
+<h3>Rate AI Outputs</h3>
+<p>Rate AI-generated summaries and recommendations. Your ratings help the system produce better content over time.</p>
+</div>
+<div class="workflow-step">
+<div class="step-number">4</div>
+<div class="step-icon">✏️</div>
+<h3>Contribute Knowledge</h3>
+<p>Add explanations, examples, and insights to the wiki. Your contributions enrich the collaborative knowledge base for everyone.</p>
+</div>
+</div>
 </div>
 
 <!-- Sub-Topics -->
 <div class="subtopics-section">
-  <h2>📚 Sub-Topics</h2>
-  <div class="subtopics-grid">
-    <a href="ai-agents.gui.html" class="subtopic-card">
-      <div class="subtopic-icon">🖥️</div>
-      <div class="subtopic-name">GUI Agents</div>
-      <div class="subtopic-description">Agents that interact with graphical user interfaces</div>
-    </a>
-    <a href="ai-agents.multi-agent.html" class="subtopic-card">
-      <div class="subtopic-icon"></div>
-      <div class="subtopic-name">Multi-Agent Systems</div>
-      <div class="subtopic-description">Systems with multiple cooperating agents</div>
-    </a>
-  </div>
+<h2>📚 Sub-Topics</h2>
+<div class="subtopics-grid">
+<a href="ai-agents.gui.html" class="subtopic-card">
+<div class="subtopic-icon">🖥️</div>
+<div class="subtopic-name">GUI Agents</div>
+<div class="subtopic-description">Agents that interact with graphical user interfaces</div>
+</a>
+<a href="ai-agents.multi-agent.html" class="subtopic-card">
+<div class="subtopic-icon"></div>
+<div class="subtopic-name">Multi-Agent Systems</div>
+<div class="subtopic-description">Systems with multiple cooperating agents</div>
+</a>
+</div>
 </div>
 
 <!-- HITL Knowledge Section -->
 <div class="hitl-knowledge-section">
-  <h2>🧠 Collaborative Knowledge Base</h2>
-  <p class="section-desc">Explore AI agent concepts. Click any concept to view details, edit definitions, add examples, and contribute your own insights.</p>
-  <div class="concept-quick-grid" id="agentConcepts">
-    <!-- Populated by JS -->
-  </div>
-  <a href="../ai-wiki.html" class="btn-wiki"> Open Full Wiki →</a>
+<h2>🧠 Collaborative Knowledge Base</h2>
+<p class="section-desc">Explore AI agent concepts. Click any concept to view details, edit definitions, add examples, and contribute your own insights.</p>
+<div class="concept-quick-grid" id="agentConcepts">
+<!-- Populated by JS -->
+</div>
+<a href="../ai-wiki.html" class="btn-wiki"> Open Full Wiki →</a>
 </div>
 
 <!-- HITL Tools Section -->
 <div class="hitl-tools-section">
-  <h2>️ Your HITL Tools</h2>
-  <div class="tools-grid">
-    <a href="../paper-reader.html" class="tool-card">
-      <div class="tool-icon"></div>
-      <h3>Paper Reader</h3>
-      <p>Read papers with annotation tools — highlight, note, question, validate concepts, and rate AI summaries.</p>
-    </a>
-    <a href="../feedback-dashboard.html" class="tool-card">
-      <div class="tool-icon">📊</div>
-      <h3>Feedback Dashboard</h3>
-      <p>View all your HITL contributions — summary ratings, concept validations, and recommendation feedback.</p>
-    </a>
-    <a href="../workspace.html" class="tool-card">
-      <div class="tool-icon">🔬</div>
-      <h3>Research Workspace</h3>
-      <p>Unified workspace for reading, annotating, and tracking your research progress.</p>
-    </a>
-    <a href="../export-import.html" class="tool-card">
-      <div class="tool-icon">💾</div>
-      <h3>Export Your Data</h3>
-      <p>Export annotations, notes, and feedback in JSON, Markdown, or CSV formats.</p>
-    </a>
-  </div>
+<h2>️ Your HITL Tools</h2>
+<div class="tools-grid">
+<a href="../paper-reader.html" class="tool-card">
+<div class="tool-icon"></div>
+<h3>Paper Reader</h3>
+<p>Read papers with annotation tools — highlight, note, question, validate concepts, and rate AI summaries.</p>
+</a>
+<a href="../feedback-dashboard.html" class="tool-card">
+<div class="tool-icon">📊</div>
+<h3>Feedback Dashboard</h3>
+<p>View all your HITL contributions — summary ratings, concept validations, and recommendation feedback.</p>
+</a>
+<a href="../workspace.html" class="tool-card">
+<div class="tool-icon">🔬</div>
+<h3>Research Workspace</h3>
+<p>Unified workspace for reading, annotating, and tracking your research progress.</p>
+</a>
+<a href="../export-import.html" class="tool-card">
+<div class="tool-icon">💾</div>
+<h3>Export Your Data</h3>
+<p>Export annotations, notes, and feedback in JSON, Markdown, or CSV formats.</p>
+</a>
+</div>
 </div>
 
 <!-- Recent Papers -->
 <div class="papers-section">
-  <h2>📄 Recent Papers</h2>
-  <p class="section-desc">Open any paper in the reader to annotate, validate concepts, and provide feedback.</p>
-  <div class="papers-list">
+<h2>📄 Recent Papers</h2>
+<p class="section-desc">Open any paper in the reader to annotate, validate concepts, and provide feedback.</p>
+<div class="papers-list">
 
 <div class="paper-card">
-  <div class="paper-title">
-    <a href="https://arxiv.org/abs/2608.30672v1" target="_blank">HiRS-Agent: A Hierarchical Multi-Agent System for Reliable Long-Horizon Remote Sensing Task Solving</a>
-  </div>
-  <div class="paper-meta">
-    <span class="paper-authors">Boyang Mu, Zhiwei Wei, Mugen Peng, Wenjia Xu</span>
-    <span class="paper-date">2026-08-31</span>
-    <span class="paper-arxiv">arXiv:2608.30672v1</span>
-  </div>
-  <div class="paper-hitl-actions">
-    <a href="../paper-reader.html?paper=2608.30672v1" class="btn-read">📖 Read & Annotate</a>
-  </div>
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.30672v1" target="_blank">HiRS-Agent: A Hierarchical Multi-Agent System for Reliable Long-Horizon Remote Sensing Task Solving</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Boyang Mu, Zhiwei Wei, Mugen Peng, Wenjia Xu</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.30672v1</span>
+</div>
+<div class="paper-hitl-actions">
+<a href="../paper-reader.html?paper=2608.30672v1" class="btn-read">📖 Read & Annotate</a>
+</div>
 </div>
 
 <div class="paper-card">
-  <div class="paper-title">
-    <a href="https://arxiv.org/abs/2608.30498v1" target="_blank">CM2: Multimodal Cultural Reasoning via an Integrated Multi-Agent Framework</a>
-  </div>
-  <div class="paper-meta">
-    <span class="paper-authors">Qi Li, Zhaojie Kang, Yingjie He, Zheng Lin, Hao Zhang, Guangxin Wu, Yan Gong, Rong Fu, Jianyuan Ni</span>
-    <span class="paper-date">2026-08-31</span>
-    <span class="paper-arxiv">arXiv:2608.30498v1</span>
-  </div>
-  <div class="paper-hitl-actions">
-    <a href="../paper-reader.html?paper=2608.30498v1" class="btn-read">📖 Read & Annotate</a>
-  </div>
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.30498v1" target="_blank">CM2: Multimodal Cultural Reasoning via an Integrated Multi-Agent Framework</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Qi Li, Zhaojie Kang, Yingjie He, Zheng Lin, Hao Zhang, Guangxin Wu, Yan Gong, Rong Fu, Jianyuan Ni</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.30498v1</span>
+</div>
+<div class="paper-hitl-actions">
+<a href="../paper-reader.html?paper=2608.30498v1" class="btn-read">📖 Read & Annotate</a>
+</div>
 </div>
 
 <div class="paper-card">
-  <div class="paper-title">
-    <a href="https://arxiv.org/abs/2608.29953v1" target="_blank">SearchWiki: Learning to Build and Navigate Knowledge Wikis for Active Information Seeking</a>
-  </div>
-  <div class="paper-meta">
-    <span class="paper-authors">Guransh Singh, Vishwajeet Kumar, Arkadeep Acharya, Adnan Qidwai, Jaydeep Sen, Sachindra Joshi</span>
-    <span class="paper-date">2026-08-30</span>
-    <span class="paper-arxiv">arXiv:2608.29953v1</span>
-  </div>
-  <div class="paper-hitl-actions">
-    <a href="../paper-reader.html?paper=2608.29953v1" class="btn-read">📖 Read & Annotate</a>
-  </div>
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.29953v1" target="_blank">SearchWiki: Learning to Build and Navigate Knowledge Wikis for Active Information Seeking</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Guransh Singh, Vishwajeet Kumar, Arkadeep Acharya, Adnan Qidwai, Jaydeep Sen, Sachindra Joshi</span>
+<span class="paper-date">2026-08-30</span>
+<span class="paper-arxiv">arXiv:2608.29953v1</span>
+</div>
+<div class="paper-hitl-actions">
+<a href="../paper-reader.html?paper=2608.29953v1" class="btn-read">📖 Read & Annotate</a>
+</div>
 </div>
 
 <div class="paper-card">
-  <div class="paper-title">
-    <a href="https://arxiv.org/abs/2608.29263v1" target="_blank">RACER: Reinforced Agent Collaboration for Explainable Reasoning on Knowledge Graphs</a>
-  </div>
-  <div class="paper-meta">
-    <span class="paper-authors">Yuwei Lou, Hao Hu, Yuzhou Jiang, Zongfei Zhang, Liang Wang, Jincai Liu, Jidong Ge, Xianping Tao</span>
-    <span class="paper-date">2026-08-29</span>
-    <span class="paper-arxiv">arXiv:2608.29263v1</span>
-  </div>
-  <div class="paper-hitl-actions">
-    <a href="../paper-reader.html?paper=2608.29263v1" class="btn-read">📖 Read & Annotate</a>
-  </div>
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.29263v1" target="_blank">RACER: Reinforced Agent Collaboration for Explainable Reasoning on Knowledge Graphs</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Yuwei Lou, Hao Hu, Yuzhou Jiang, Zongfei Zhang, Liang Wang, Jincai Liu, Jidong Ge, Xianping Tao</span>
+<span class="paper-date">2026-08-29</span>
+<span class="paper-arxiv">arXiv:2608.29263v1</span>
+</div>
+<div class="paper-hitl-actions">
+<a href="../paper-reader.html?paper=2608.29263v1" class="btn-read">📖 Read & Annotate</a>
+</div>
 </div>
 
 <div class="paper-card">
-  <div class="paper-title">
-    <a href="https://arxiv.org/abs/2608.28264v1" target="_blank">Finding Where the Buck Stops: An Automated Failure Attribution-Based Reflection Framework for Multi-Agent Collaboration</a>
-  </div>
-  <div class="paper-meta">
-    <span class="paper-authors">Xiaoqing Wang, Keman Huang, Bin Liang, Hongyu Li, Xiaoyong Du, Wuqiong Pan</span>
-    <span class="paper-date">2026-08-28</span>
-    <span class="paper-arxiv">arXiv:2608.28264v1</span>
-  </div>
-  <div class="paper-hitl-actions">
-    <a href="../paper-reader.html?paper=2608.28264v1" class="btn-read">📖 Read & Annotate</a>
-  </div>
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.28264v1" target="_blank">Finding Where the Buck Stops: An Automated Failure Attribution-Based Reflection Framework for Multi-Agent Collaboration</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Xiaoqing Wang, Keman Huang, Bin Liang, Hongyu Li, Xiaoyong Du, Wuqiong Pan</span>
+<span class="paper-date">2026-08-28</span>
+<span class="paper-arxiv">arXiv:2608.28264v1</span>
+</div>
+<div class="paper-hitl-actions">
+<a href="../paper-reader.html?paper=2608.28264v1" class="btn-read">📖 Read & Annotate</a>
+</div>
 </div>
 
 <div class="paper-card">
-  <div class="paper-title">
-    <a href="https://arxiv.org/abs/2608.27818v1" target="_blank">AcCoRD: Evaluating User-Agent Collaboration Under Realistic User Preference Dynamics</a>
-  </div>
-  <div class="paper-meta">
-    <span class="paper-authors">Tejas Srinivasan, Shikib Mehri, Nandita Shankar Naik, Anirban Das, William M. Campbell, Jesse Thomas...</span>
-    <span class="paper-date">2026-08-28</span>
-    <span class="paper-arxiv">arXiv:2608.27818v1</span>
-  </div>
-  <div class="paper-hitl-actions">
-    <a href="../paper-reader.html?paper=2608.27818v1" class="btn-read"> Read & Annotate</a>
-  </div>
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.27818v1" target="_blank">AcCoRD: Evaluating User-Agent Collaboration Under Realistic User Preference Dynamics</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Tejas Srinivasan, Shikib Mehri, Nandita Shankar Naik, Anirban Das, William M. Campbell, Jesse Thomas...</span>
+<span class="paper-date">2026-08-28</span>
+<span class="paper-arxiv">arXiv:2608.27818v1</span>
+</div>
+<div class="paper-hitl-actions">
+<a href="../paper-reader.html?paper=2608.27818v1" class="btn-read"> Read & Annotate</a>
+</div>
 </div>
 
 <div class="paper-card">
-  <div class="paper-title">
-    <a href="https://arxiv.org/abs/2608.27508v1" target="_blank">WM-R1: Training GUI Agents to Reason and leverage World Models with Reinforcement Learning</a>
-  </div>
-  <div class="paper-meta">
-    <span class="paper-authors">Yu Han, Tianwen Qian</span>
-    <span class="paper-date">2026-08-27</span>
-    <span class="paper-arxiv">arXiv:2608.27508v1</span>
-  </div>
-  <div class="paper-hitl-actions">
-    <a href="../paper-reader.html?paper=2608.27508v1" class="btn-read">📖 Read & Annotate</a>
-  </div>
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.27508v1" target="_blank">WM-R1: Training GUI Agents to Reason and leverage World Models with Reinforcement Learning</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Yu Han, Tianwen Qian</span>
+<span class="paper-date">2026-08-27</span>
+<span class="paper-arxiv">arXiv:2608.27508v1</span>
+</div>
+<div class="paper-hitl-actions">
+<a href="../paper-reader.html?paper=2608.27508v1" class="btn-read">📖 Read & Annotate</a>
+</div>
 </div>
 
 <div class="paper-card">
-  <div class="paper-title">
-    <a href="https://arxiv.org/abs/2608.26623v1" target="_blank">AgentJudgeBench: A Multi-Difficulty Benchmark for Evaluating LLM Judges on Agentic Tool-Calling</a>
-  </div>
-  <div class="paper-meta">
-    <span class="paper-authors">Abhigya Verma, Amit Kumar Saha, Seganrasan Subramanian, Sai Harshitha Aluru</span>
-    <span class="paper-date">2026-08-27</span>
-    <span class="paper-arxiv">arXiv:2608.26623v1</span>
-  </div>
-  <div class="paper-hitl-actions">
-    <a href="../paper-reader.html?paper=2608.26623v1" class="btn-read">📖 Read & Annotate</a>
-  </div>
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.26623v1" target="_blank">AgentJudgeBench: A Multi-Difficulty Benchmark for Evaluating LLM Judges on Agentic Tool-Calling</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Abhigya Verma, Amit Kumar Saha, Seganrasan Subramanian, Sai Harshitha Aluru</span>
+<span class="paper-date">2026-08-27</span>
+<span class="paper-arxiv">arXiv:2608.26623v1</span>
+</div>
+<div class="paper-hitl-actions">
+<a href="../paper-reader.html?paper=2608.26623v1" class="btn-read">📖 Read & Annotate</a>
+</div>
 </div>
 
-  </div>
+</div>
 </div>
 
 <!-- HITL Impact Section -->
 <div class="hitl-impact-section">
-  <h2> Your Impact</h2>
-  <p class="section-desc">Every interaction improves the system. Here's how your contributions make a difference:</p>
-  <div class="impact-grid">
-    <div class="impact-card">
-      <div class="impact-icon">🎯</div>
-      <h3>Better Recommendations</h3>
-      <p>Your paper ratings train the recommendation engine to surface more relevant research for your interests.</p>
-    </div>
-    <div class="impact-card">
-      <div class="impact-icon">🧠</div>
-      <h3>Smarter Concept Extraction</h3>
-      <p>Concept validations help the AI learn which topics are truly relevant to AI agent research.</p>
-    </div>
-    <div class="impact-card">
-      <div class="impact-icon">📝</div>
-      <h3>Richer Knowledge Base</h3>
-      <p>Your wiki contributions add real-world examples and insights that pure AI extraction can't capture.</p>
-    </div>
-    <div class="impact-card">
-      <div class="impact-icon">🔗</div>
-      <h3>Stronger Connections</h3>
-      <p>Your annotations reveal hidden connections between papers that improve the knowledge graph.</p>
-    </div>
-  </div>
+<h2> Your Impact</h2>
+<p class="section-desc">Every interaction improves the system. Here's how your contributions make a difference:</p>
+<div class="impact-grid">
+<div class="impact-card">
+<div class="impact-icon">🎯</div>
+<h3>Better Recommendations</h3>
+<p>Your paper ratings train the recommendation engine to surface more relevant research for your interests.</p>
+</div>
+<div class="impact-card">
+<div class="impact-icon">🧠</div>
+<h3>Smarter Concept Extraction</h3>
+<p>Concept validations help the AI learn which topics are truly relevant to AI agent research.</p>
+</div>
+<div class="impact-card">
+<div class="impact-icon">📝</div>
+<h3>Richer Knowledge Base</h3>
+<p>Your wiki contributions add real-world examples and insights that pure AI extraction can't capture.</p>
+</div>
+<div class="impact-card">
+<div class="impact-icon">🔗</div>
+<h3>Stronger Connections</h3>
+<p>Your annotations reveal hidden connections between papers that improve the knowledge graph.</p>
+</div>
+</div>
 </div>
 
 </div>
@@ -696,10 +696,10 @@ const agentConcepts = [
 const grid = document.getElementById('agentConcepts');
 if (grid) {
   grid.innerHTML = agentConcepts.map(c => `
-    <a href="../ai-wiki.html" class="concept-quick-card">
-      <div class="cq-name">${c.name}</div>
-      <div class="cq-papers">📄 ${c.papers} papers · ${c.desc}</div>
-    </a>
+<a href="../ai-wiki.html" class="concept-quick-card">
+<div class="cq-name">${c.name}</div>
+<div class="cq-papers">📄 ${c.papers} papers · ${c.desc}</div>
+</a>
   `).join('');
 }
 
