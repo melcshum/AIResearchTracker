@@ -100,6 +100,14 @@ Effective tool use requires <span class="wiki-term" data-term="grounding">ground
 <p>
 Coordination strategies include <span class="wiki-term" data-term="debate">debate</span> (agents argue different perspectives), <span class="wiki-term" data-term="consensus">consensus</span> (agents converge on shared understanding), and <span class="wiki-term" data-term="hierarchy">hierarchical</span> structures (manager agents delegate to workers).
 </p>
+
+<h3>Safety & Alignment</h3>
+<p>
+<span class="wiki-term" data-term="safety">Safety</span> in AI systems involves ensuring agents behave reliably and avoid harmful outcomes. <span class="wiki-term" data-term="alignment">Alignment</span> ensures AI systems pursue intended goals and respect human values.
+</p>
+<p>
+Key techniques include <span class="wiki-term" data-term="rlhf">RLHF</span> (Reinforcement Learning from Human Feedback), <span class="wiki-term" data-term="constitutional-ai">Constitutional AI</span> (self-improvement guided by principles), and <span class="wiki-term" data-term="guardrails">guardrails</span> (constraints on agent behavior).
+</p>
 </div>
 
 <div class="wiki-sidebar">
@@ -905,6 +913,36 @@ const wikiTerms = {
     definition: 'Manager agents delegate tasks to worker agents',
     relatedTerms: ['multi-agent', 'planning'],
     keywords: ['hierarchy', 'delegation', 'manager', 'worker']
+  },
+  'safety': {
+    name: 'AI Safety',
+    definition: 'Ensuring AI systems behave reliably and avoid harmful outcomes',
+    relatedTerms: ['alignment', 'guardrails'],
+    keywords: ['safety', 'reliability', 'harm', 'robustness']
+  },
+  'alignment': {
+    name: 'AI Alignment',
+    definition: 'Ensuring AI systems pursue intended goals and respect human values',
+    relatedTerms: ['safety', 'rlhf'],
+    keywords: ['alignment', 'values', 'goals', 'human']
+  },
+  'rlhf': {
+    name: 'RLHF',
+    definition: 'Reinforcement Learning from Human Feedback - training models using human preferences',
+    relatedTerms: ['alignment', 'constitutional-ai'],
+    keywords: ['rlhf', 'feedback', 'reinforcement', 'preference']
+  },
+  'constitutional-ai': {
+    name: 'Constitutional AI',
+    definition: 'Self-improvement guided by a set of principles or constitution',
+    relatedTerms: ['alignment', 'safety'],
+    keywords: ['constitutional', 'principles', 'self-improvement', 'constitution']
+  },
+  'guardrails': {
+    name: 'Guardrails',
+    definition: 'Constraints on agent behavior to prevent harmful actions',
+    relatedTerms: ['safety', 'alignment'],
+    keywords: ['guardrails', 'constraints', 'limits', 'boundaries']
   }
 };
 
