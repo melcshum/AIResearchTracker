@@ -15,6 +15,10 @@ website:
         href: public/dashboard.html
       - text: "🎯 My Learning Path"
         href: public/my-learning-path.html
+      - text: "📰 Weekly Digest"
+        href: public/digests/index.html
+      - text: "🤖 AI Wiki Assistant"
+        href: public/ai-wiki.html
       - text: "🔧 Admin Dashboard"
         href: private/index.html
 

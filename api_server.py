@@ -401,6 +401,39 @@ def delete_paper_summary(paper_id):
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+# Wiki data endpoints
+@app.route('/api/user/wiki-data', methods=['GET'])
+def get_wiki_data():
+    """Get user's wiki data (concepts, explanations, links)."""
+    try:
+        username = get_current_user()
+        data = load_user_data(username)
+        return jsonify({
+            'wikiConcepts': data.get('wikiConcepts', {}),
+            'wikiExplanations': data.get('wikiExplanations', {}),
+            'wikiLinks': data.get('wikiLinks', {})
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/user/wiki-data', methods=['POST'])
+def save_wiki_data():
+    """Save user's wiki data."""
+    try:
+        username = get_current_user()
+        data = load_user_data(username)
+        
+        wiki_data = request.json
+        data['wikiConcepts'] = wiki_data.get('wikiConcepts', {})
+        data['wikiExplanations'] = wiki_data.get('wikiExplanations', {})
+        data['wikiLinks'] = wiki_data.get('wikiLinks', {})
+        
+        save_user_data(username, data)
+        
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 if __name__ == '__main__':
     print("Starting Topic Management API Server...")
     print("Current user:", get_current_user())
