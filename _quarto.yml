@@ -11,6 +11,8 @@ website:
     left:
       - text: "🔬 Workspace"
         href: public/workspace.html
+      - text: "📖 Paper Reader"
+        href: public/paper-reader.html
       - text: "📚 Papers"
         href: public/search-papers.html
       - text: "📖 Reading List"
