@@ -300,35 +300,35 @@ function renderSummaries() {
     const hasSummary = !!summary;
     
     return `
-      <div class="summary-card">
-        <div class="summary-header">
-          <div class="summary-title">
-            <a href="${paper.url}" target="_blank">${paper.title}</a>
+<div class="summary-card">
+<div class="summary-header">
+<div class="summary-title">
+<a href="${paper.url}" target="_blank">${paper.title}</a>
             ${hasSummary ? '<span class="summary-status status-generated">✓ Generated</span>' : '<span class="summary-status status-pending">Pending</span>'}
-          </div>
-          <div class="summary-actions">
+</div>
+<div class="summary-actions">
             ${!hasSummary ? `<button class="summary-btn" onclick="generateSingleSummary('${paper.arxiv_id}')">🔄 Generate</button>` : ''}
-          </div>
-        </div>
-        <div class="summary-content">
+</div>
+</div>
+<div class="summary-content">
           ${hasSummary ? `
-            <p><strong>Quick Summary:</strong> ${summary.oneLiner}</p>
+<p><strong>Quick Summary:</strong> ${summary.oneLiner}</p>
             ${summary.keyPoints && summary.keyPoints.length > 0 ? `
-              <p><strong>Key Points:</strong></p>
-              <ul>
+<p><strong>Key Points:</strong></p>
+<ul>
                 ${summary.keyPoints.map(point => `<li>${point}</li>`).join('')}
-              </ul>
+</ul>
             ` : ''}
           ` : `
-            <p class="loading">Click "Generate" to create an AI summary for this paper.</p>
+<p class="loading">Click "Generate" to create an AI summary for this paper.</p>
           `}
-        </div>
-        <div class="summary-meta">
-          <div class="summary-meta-item">📅 ${paper.date}</div>
-          <div class="summary-meta-item">👥 ${paper.authors}</div>
-          <div class="summary-meta-item">🏷️ ${paper.topics ? paper.topics.join(', ') : 'N/A'}</div>
-        </div>
-      </div>
+</div>
+<div class="summary-meta">
+<div class="summary-meta-item">📅 ${paper.date}</div>
+<div class="summary-meta-item">👥 ${paper.authors}</div>
+<div class="summary-meta-item">🏷️ ${paper.topics ? paper.topics.join(', ') : 'N/A'}</div>
+</div>
+</div>
     `;
   }).join('');
 }

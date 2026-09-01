@@ -494,32 +494,32 @@ function renderPapers(filteredPapers) {
     const readingStatus = userReadingProgress.get(paper.arxiv_id)?.status || '';
     
     return `
-      <div class="paper-card" data-arxiv-id="${paper.arxiv_id}">
-        <div class="paper-header">
-          <h3 class="paper-title">
-            <a href="${paper.url}" target="_blank">${paper.title}</a>
-          </h3>
-          <button class="bookmark-btn ${isBookmarked ? 'bookmarked' : ''}" 
+<div class="paper-card" data-arxiv-id="${paper.arxiv_id}">
+<div class="paper-header">
+<h3 class="paper-title">
+<a href="${paper.url}" target="_blank">${paper.title}</a>
+</h3>
+<button class="bookmark-btn ${isBookmarked ? 'bookmarked' : ''}" 
                   onclick="toggleBookmark('${paper.arxiv_id}')" 
                   title="${isBookmarked ? 'Remove bookmark' : 'Add bookmark'}">
             ${isBookmarked ? '★' : '☆'}
-          </button>
-        </div>
-        <div class="paper-meta">
-          <span class="paper-authors">${paper.authors}</span>
-          <span class="paper-date">${paper.date}</span>
-          <span class="paper-arxiv">arXiv:${paper.arxiv_id}</span>
-        </div>
-        <div class="paper-abstract">${paper.abstract}</div>
-        <div class="paper-topics">
+</button>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">${paper.authors}</span>
+<span class="paper-date">${paper.date}</span>
+<span class="paper-arxiv">arXiv:${paper.arxiv_id}</span>
+</div>
+<div class="paper-abstract">${paper.abstract}</div>
+<div class="paper-topics">
           ${paper.topics.map(topic => `<span class="topic-tag">${topic}</span>`).join('')}
-        </div>
+</div>
         ${readingStatus ? `<div class="reading-status">Status: <strong>${readingStatus}</strong></div>` : ''}
         ${note ? `<div class="paper-note"><strong>Your note:</strong> ${note}</div>` : ''}
-        <button class="add-note-btn" onclick="showNoteDialog('${paper.arxiv_id}')">
+<button class="add-note-btn" onclick="showNoteDialog('${paper.arxiv_id}')">
           ${note ? 'Edit Note' : 'Add Note'}
-        </button>
-      </div>
+</button>
+</div>
     `;
   }).join('');
 }

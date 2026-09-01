@@ -1633,8 +1633,8 @@ function getAIFeedback() {
   
   const feedbackEl = document.getElementById('aiFeedback');
   feedbackEl.innerHTML = `
-    <h4>🤖 AI Feedback</h4>
-    <p>${feedback}</p>
+<h4>🤖 AI Feedback</h4>
+<p>${feedback}</p>
   `;
   feedbackEl.style.display = 'block';
   feedbackEl.scrollIntoView({ behavior: 'smooth' });
@@ -1693,16 +1693,16 @@ function viewExpertExplanation() {
   const expertEl = document.getElementById('expertExplanation');
   
   expertEl.innerHTML = `
-    <h4>📚 Expert Explanation</h4>
-    <p><strong>Definition:</strong> ${concept.definition}</p>
-    <p style="margin-top: 15px;"><strong>Key Points:</strong></p>
-    <ul style="margin-left: 20px; line-height: 1.8;">
-      <li>Category: ${concept.category}</li>
-      <li>Difficulty: ${concept.difficulty}</li>
-      <li>Related to ${concept.related.length} other concepts</li>
-      <li>Appears in ${concept.papers.length} research papers</li>
-    </ul>
-    <p style="margin-top: 15px;"><strong>Tags:</strong> ${concept.tags.join(', ')}</p>
+<h4>📚 Expert Explanation</h4>
+<p><strong>Definition:</strong> ${concept.definition}</p>
+<p style="margin-top: 15px;"><strong>Key Points:</strong></p>
+<ul style="margin-left: 20px; line-height: 1.8;">
+<li>Category: ${concept.category}</li>
+<li>Difficulty: ${concept.difficulty}</li>
+<li>Related to ${concept.related.length} other concepts</li>
+<li>Appears in ${concept.papers.length} research papers</li>
+</ul>
+<p style="margin-top: 15px;"><strong>Tags:</strong> ${concept.tags.join(', ')}</p>
   `;
   
   expertEl.style.display = 'block';

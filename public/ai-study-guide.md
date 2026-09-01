@@ -333,13 +333,13 @@ function generateStudyGuide() {
   guide += '<h3>🎯 Key Concepts</h3>';
   Object.entries(concepts).forEach(([concept, papers]) => {
     guide += `
-      <div class="concept-card">
-        <div class="concept-title">${concept}</div>
-        <div class="concept-definition">Found in ${papers.length} paper${papers.length > 1 ? 's' : ''} in your collection</div>
-        <div class="concept-papers">
+<div class="concept-card">
+<div class="concept-title">${concept}</div>
+<div class="concept-definition">Found in ${papers.length} paper${papers.length > 1 ? 's' : ''} in your collection</div>
+<div class="concept-papers">
           ${papers.slice(0, 3).map(p => `<a href="${p.url}" target="_blank">${p.title.substring(0, 60)}...</a>`).join(', ')}
-        </div>
-      </div>
+</div>
+</div>
     `;
   });
   
@@ -350,10 +350,10 @@ function generateStudyGuide() {
     papersWithNotes.slice(0, 5).forEach(paper => {
       const note = userNotes[paper.arxiv_id];
       guide += `
-        <div class="key-insight">
-          <div class="key-insight-label">From: ${paper.title}</div>
-          <div>${note.substring(0, 300)}${note.length > 300 ? '...' : ''}</div>
-        </div>
+<div class="key-insight">
+<div class="key-insight-label">From: ${paper.title}</div>
+<div>${note.substring(0, 300)}${note.length > 300 ? '...' : ''}</div>
+</div>
       `;
     });
   }
@@ -364,10 +364,10 @@ function generateStudyGuide() {
     guide += '<p>Test your understanding with these auto-generated questions:</p>';
     flashcards.forEach(card => {
       guide += `
-        <div class="flashcard">
-          <div class="flashcard-question">Q: ${card.question}</div>
-          <div class="flashcard-answer">A: ${card.answer}</div>
-        </div>
+<div class="flashcard">
+<div class="flashcard-question">Q: ${card.question}</div>
+<div class="flashcard-answer">A: ${card.answer}</div>
+</div>
       `;
     });
   }
@@ -379,10 +379,10 @@ function generateStudyGuide() {
     guide += '<div class="connection-map">';
     connections.forEach(conn => {
       guide += `
-        <div class="connection-item">
-          <div class="connection-concepts">${conn.concept1} ↔ ${conn.concept2}</div>
-          <div class="connection-description">${conn.description}</div>
-        </div>
+<div class="connection-item">
+<div class="connection-concepts">${conn.concept1} ↔ ${conn.concept2}</div>
+<div class="connection-description">${conn.description}</div>
+</div>
       `;
     });
     guide += '</div>';

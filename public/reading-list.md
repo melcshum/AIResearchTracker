@@ -624,33 +624,33 @@ function renderReadingList() {
     const currentNotes = userNotes[arxivId] || '';
     
     return `
-      <div class="paper-item">
-        <div class="paper-item-header">
-          <div class="paper-title">
-            <a href="${paper.url}" target="_blank">${paper.title}</a>
-          </div>
-          <div class="paper-actions">
-            <select class="status-select" onchange="updateStatus('${arxivId}', this.value)">
-              <option value="inbox" ${currentStatus === 'inbox' ? 'selected' : ''}>📥 Inbox</option>
-              <option value="reading" ${currentStatus === 'reading' ? 'selected' : ''}>📖 Reading</option>
-              <option value="read" ${currentStatus === 'read' ? 'selected' : ''}>✅ Read</option>
-              <option value="cited" ${currentStatus === 'cited' ? 'selected' : ''}>📝 Cited</option>
-              <option value="archived" ${currentStatus === 'archived' ? 'selected' : ''}>🗄️ Archived</option>
-            </select>
-            <button class="remove-btn" onclick="removePaper('${arxivId}')" title="Remove from list">×</button>
-          </div>
-        </div>
-        <div class="paper-meta">
-          <strong>Authors:</strong> ${paper.authors}<br>
-          <strong>Date:</strong> ${paper.date}<br>
-          <strong>Topics:</strong> ${paper.topics.map(t => `<span class="topic-tag">${t}</span>`).join(' ')}
-        </div>
-        <div class="paper-abstract">${paper.abstract}...</div>
-        <div class="paper-notes">
-          <textarea id="notes-${arxivId}" placeholder="Add your notes about this paper...">${currentNotes}</textarea>
-          <button onclick="saveNotes('${arxivId}')">💾 Save Notes</button>
-        </div>
-      </div>
+<div class="paper-item">
+<div class="paper-item-header">
+<div class="paper-title">
+<a href="${paper.url}" target="_blank">${paper.title}</a>
+</div>
+<div class="paper-actions">
+<select class="status-select" onchange="updateStatus('${arxivId}', this.value)">
+<option value="inbox" ${currentStatus === 'inbox' ? 'selected' : ''}>📥 Inbox</option>
+<option value="reading" ${currentStatus === 'reading' ? 'selected' : ''}>📖 Reading</option>
+<option value="read" ${currentStatus === 'read' ? 'selected' : ''}>✅ Read</option>
+<option value="cited" ${currentStatus === 'cited' ? 'selected' : ''}>📝 Cited</option>
+<option value="archived" ${currentStatus === 'archived' ? 'selected' : ''}>🗄️ Archived</option>
+</select>
+<button class="remove-btn" onclick="removePaper('${arxivId}')" title="Remove from list">×</button>
+</div>
+</div>
+<div class="paper-meta">
+<strong>Authors:</strong> ${paper.authors}<br>
+<strong>Date:</strong> ${paper.date}<br>
+<strong>Topics:</strong> ${paper.topics.map(t => `<span class="topic-tag">${t}</span>`).join(' ')}
+</div>
+<div class="paper-abstract">${paper.abstract}...</div>
+<div class="paper-notes">
+<textarea id="notes-${arxivId}" placeholder="Add your notes about this paper...">${currentNotes}</textarea>
+<button onclick="saveNotes('${arxivId}')">💾 Save Notes</button>
+</div>
+</div>
     `;
   }).join('');
   

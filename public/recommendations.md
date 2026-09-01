@@ -341,21 +341,21 @@ function renderRecommendations() {
   
   if (userBookmarks.length === 0) {
     container.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-state-icon">📚</div>
-        <p>Bookmark some papers to get personalized recommendations!</p>
-        <p>Visit the <a href="search-papers.html">Search Papers</a> page to start building your library.</p>
-      </div>
+<div class="empty-state">
+<div class="empty-state-icon">📚</div>
+<p>Bookmark some papers to get personalized recommendations!</p>
+<p>Visit the <a href="search-papers.html">Search Papers</a> page to start building your library.</p>
+</div>
     `;
     return;
   }
   
   if (recommendations.length === 0) {
     container.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-state-icon">🎯</div>
-        <p>No recommendations yet. Try bookmarking more papers in your areas of interest!</p>
-      </div>
+<div class="empty-state">
+<div class="empty-state-icon">🎯</div>
+<p>No recommendations yet. Try bookmarking more papers in your areas of interest!</p>
+</div>
     `;
     return;
   }
@@ -375,21 +375,21 @@ function renderRecommendations() {
       : '';
     
     return `
-      <div class="rec-card">
-        <div class="rec-card-header">
-          <div class="rec-title">
-            <a href="${paper.url}" target="_blank">${paper.title}</a>
-          </div>
-          <div class="rec-score">Score: ${rec.score}</div>
-        </div>
-        <div class="rec-meta">
-          <div class="rec-meta-item">📅 ${paper.date}</div>
-          <div class="rec-meta-item">👥 ${paper.authors}</div>
-        </div>
-        <div class="rec-abstract">${shortAbstract}</div>
-        <div class="rec-topics">${topics}</div>
+<div class="rec-card">
+<div class="rec-card-header">
+<div class="rec-title">
+<a href="${paper.url}" target="_blank">${paper.title}</a>
+</div>
+<div class="rec-score">Score: ${rec.score}</div>
+</div>
+<div class="rec-meta">
+<div class="rec-meta-item">📅 ${paper.date}</div>
+<div class="rec-meta-item">👥 ${paper.authors}</div>
+</div>
+<div class="rec-abstract">${shortAbstract}</div>
+<div class="rec-topics">${topics}</div>
         ${reasons}
-      </div>
+</div>
     `;
   }).join('');
 }
