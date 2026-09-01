@@ -67,6 +67,7 @@ website:
 format:
   html:
     theme: cosmo
+    css: styles.css
     toc: false
     include-in-header:
       - file: _includes/custom-head.html
