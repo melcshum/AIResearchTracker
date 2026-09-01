@@ -170,8 +170,10 @@ title: "Research Workspace"
   flex-direction: column;
   height: calc(100vh - 100px);
   background: #f5f7fa;
-  padding: 1rem;
-  gap: 1rem;
+  padding: 0.5rem;
+  gap: 0.75rem;
+  margin: 0;
+  max-width: 100%;
 }
 
 /* Top Bar */
