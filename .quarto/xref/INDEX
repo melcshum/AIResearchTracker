@@ -1060,5 +1060,8 @@
   },
   "public/topics/rag-retrieval.md": {
     "rag-retrieval.html": "803f95eb"
+  },
+  "public/dashboard.md": {
+    "dashboard.html": "049a30ee"
   }
 }

@@ -11,6 +11,8 @@ website:
     left:
       - text: "🌐 Research Portal"
         href: public/index.html
+      - text: "📊 Dashboard"
+        href: public/dashboard.html
       - text: "🔧 Admin Dashboard"
         href: private/index.html
 
