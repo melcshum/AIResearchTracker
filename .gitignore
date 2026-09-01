@@ -25,3 +25,6 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.bak
+
+/.quarto/
+**/*.quarto_ipynb

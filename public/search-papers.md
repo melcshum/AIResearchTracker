@@ -9,10 +9,7 @@ title: "Search Papers"
 <label>Filter by topic:</label>
 <select id="topicFilter" class="filter-select">
 <option value="">All Topics</option>
-<option value="ai-agents">AI Agents</option>
-<option value="llm-reasoning">LLM Reasoning</option>
-<option value="rag-retrieval">RAG & Retrieval</option>
-<option value="multi-modal">Multi-Modal</option>
+<!-- Topics will be loaded dynamically from user config -->
 </select>
     
 <label>Sort by:</label>
@@ -147,6 +144,79 @@ title: "Search Papers"
 </style>
 
 <script>
+// Load user topics dynamically from API
+let userEnabledTopics = new Set(); // Store enabled topic IDs
+
+async function loadUserTopics() {
+  try {
+    const response = await fetch('http://localhost:5001/api/user/config');
+    const config = await response.json();
+    const topicFilter = document.getElementById('topicFilter');
+    
+    // Clear existing options except "All Topics"
+    topicFilter.innerHTML = '<option value="">All Topics</option>';
+    
+    // Build set of enabled topics (including children)
+    userEnabledTopics.clear();
+    
+    // Add topics from user config
+    config.topics.forEach(topic => {
+      if (topic.enabled) {
+        userEnabledTopics.add(topic.id);
+        
+        const option = document.createElement('option');
+        option.value = topic.id;
+        option.textContent = `${topic.icon || '📄'} ${topic.name}`;
+        topicFilter.appendChild(option);
+        
+        // Add child topics if any
+        if (topic.children && topic.children.length > 0) {
+          topic.children.forEach(child => {
+            if (child.enabled !== false) { // enabled by default
+              userEnabledTopics.add(child.id);
+              
+              const childOption = document.createElement('option');
+              childOption.value = child.id;
+              childOption.textContent = `  └ ${child.icon || '📄'} ${child.name}`;
+              topicFilter.appendChild(childOption);
+            }
+          });
+        }
+      }
+    });
+    
+    console.log('✅ Loaded user topics:', userEnabledTopics.size, 'enabled topics');
+    console.log('Enabled topics:', Array.from(userEnabledTopics));
+    
+    // Re-render papers with user filter
+    filterAndSearch();
+    
+  } catch (error) {
+    console.warn('⚠️ Could not load user topics from API, showing all papers');
+    // Fallback: show all papers with default topic list
+    const defaultTopics = [
+      { id: 'ai-agents', name: 'AI Agents', icon: '🤖' },
+      { id: 'llm-reasoning', name: 'LLM Reasoning', icon: '🧠' },
+      { id: 'rag-retrieval', name: 'RAG & Retrieval', icon: '🔍' },
+      { id: 'multi-modal', name: 'Multi-Modal', icon: '🎨' }
+    ];
+    
+    const topicFilter = document.getElementById('topicFilter');
+    defaultTopics.forEach(topic => {
+      userEnabledTopics.add(topic.id);
+      const option = document.createElement('option');
+      option.value = topic.id;
+      option.textContent = `${topic.icon} ${topic.name}`;
+      topicFilter.appendChild(option);
+    });
+    
+    filterAndSearch();
+  }
+}
+
+// Load topics on page load
+loadUserTopics();
+
 // Paper data will be injected here
 const papers = [
   {
@@ -369,9 +439,14 @@ function filterAndSearch() {
       paper.authors.toLowerCase().includes(searchTerm) ||
       paper.abstract.toLowerCase().includes(searchTerm);
     
-    const matchesTopic = !topicFilter || paper.topics.includes(topicFilter);
+    // Filter by selected topic in dropdown
+    const matchesTopicDropdown = !topicFilter || paper.topics.includes(topicFilter);
     
-    return matchesSearch && matchesTopic;
+    // Filter by user's enabled topics (only show papers matching at least one enabled topic)
+    const matchesUserTopics = userEnabledTopics.size === 0 || 
+      paper.topics.some(topic => userEnabledTopics.has(topic));
+    
+    return matchesSearch && matchesTopicDropdown && matchesUserTopics;
   });
   
   // Sort

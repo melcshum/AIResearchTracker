@@ -796,5 +796,269 @@
   },
   "public/global-search.qmd": {
     "global-search.html": "35274139"
+  },
+  "papers/2026-01-21/2601.14790v1-CI4A-Semantic-Component-Interfaces-for-Agents-Empowering-Web-Automation.md": {
+    "2601.14790v1-CI4A-Semantic-Component-Interfaces-for-Agents-Empowering-Web-Automation.html": "a78a0108"
+  },
+  "papers/2026-06-06/2606.08049v1-SKILLnb-Selective-Formalization-and-Gated-Execution-for-Durable-Agent-Workflows.md": {
+    "2606.08049v1-SKILLnb-Selective-Formalization-and-Gated-Execution-for-Durable-Agent-Workflows.html": "26c2e550"
+  },
+  "papers/2024-05-20/2405.12035v1-KG-RAG-Bridging-the-Gap-Between-Knowledge-and-Creativity.md": {
+    "2405.12035v1-KG-RAG-Bridging-the-Gap-Between-Knowledge-and-Creativity.html": "e78c476f"
+  },
+  "papers/2025-10-02/2510.02297v1-Interactive-Training-Feedback-Driven-Neural-Network-Optimization.md": {
+    "2510.02297v1-Interactive-Training-Feedback-Driven-Neural-Network-Optimization.html": "446cab40"
+  },
+  "papers/2024-10-21/2410.16397v1-Towards-a-Reliable-Offline-Personal-AI-Assistant-for-Long-Duration-Spaceflight.md": {
+    "2410.16397v1-Towards-a-Reliable-Offline-Personal-AI-Assistant-for-Long-Duration-Spaceflight.html": "2a2715ae"
+  },
+  "papers/2025-12-22/2601.08847v2-Scalable-and-Reliable-Evaluation-of-AI-Knowledge-Retrieval-Systems-RIKER-and-the.md": {
+    "2601.08847v2-Scalable-and-Reliable-Evaluation-of-AI-Knowledge-Retrieval-Systems-RIKER-and-the.html": "b92909e6"
+  },
+  "papers/2026-08-22/2608.21830v1-Beyond-Success-and-Failure-Length-Aware-Contrastive-Learning-for-GUI-Agents.md": {
+    "2608.21830v1-Beyond-Success-and-Failure-Length-Aware-Contrastive-Learning-for-GUI-Agents.html": "c65b892f"
+  },
+  "papers/2026-08-22/2608.21860v1-ChainPrune-Evaluating-and-Reducing-Redundancy-in-Long-Chain-of-Thought-Reasoning.md": {
+    "2608.21860v1-ChainPrune-Evaluating-and-Reducing-Redundancy-in-Long-Chain-of-Thought-Reasoning.html": "9cf376ed"
+  },
+  "papers/2026-08-25/2608.24555v1-StrokeGuard-A-Multi-Agent-Guided-System-for-Prehospital-Stroke-Assessment.md": {
+    "2608.24555v1-StrokeGuard-A-Multi-Agent-Guided-System-for-Prehospital-Stroke-Assessment.html": "1b882d87"
+  },
+  "papers/2026-08-25/2608.23961v1-Evaluating-Language-Models-on-Cross-Language-Code-Functional-Equivalence.md": {
+    "2608.23961v1-Evaluating-Language-Models-on-Cross-Language-Code-Functional-Equivalence.html": "434b3a7a"
+  },
+  "papers/2026-08-25/2608.24039v1-Design-to-Plan-A-Large-Language-Model-Based-Multi-Agent-Framework-for-Manufactur.md": {
+    "2608.24039v1-Design-to-Plan-A-Large-Language-Model-Based-Multi-Agent-Framework-for-Manufactur.html": "a4a6b8f4"
+  },
+  "papers/2026-08-25/2608.24069v1-Poisoning-Agentic-Alpha-Adversarial-Vulnerabilities-Across-Roles-and-Architectur.md": {
+    "2608.24069v1-Poisoning-Agentic-Alpha-Adversarial-Vulnerabilities-Across-Roles-and-Architectur.html": "1bc5338f"
+  },
+  "papers/2026-08-25/2608.24015v1-Reflection-with-Action-Induced-Visual-Differences-for-Desktop-GUI-Agents.md": {
+    "2608.24015v1-Reflection-with-Action-Induced-Visual-Differences-for-Desktop-GUI-Agents.html": "1b80dcc4"
+  },
+  "papers/2026-08-25/2608.24174v1-Task-Adaptive-Rubrics-for-GUI-Reward-Modeling.md": {
+    "2608.24174v1-Task-Adaptive-Rubrics-for-GUI-Reward-Modeling.html": "28b40c2e"
+  },
+  "papers/2026-08-25/2608.24099v1-Are-Android-GUI-Agents-Robust-Against-Runtime-Anomalies-AnTrap-Evaluating-Agents.md": {
+    "2608.24099v1-Are-Android-GUI-Agents-Robust-Against-Runtime-Anomalies-AnTrap-Evaluating-Agents.html": "b9c989e4"
+  },
+  "papers/2026-08-24/2608.23172v2-CaRGo-T-Causal-Reasoning-Graph-of-Thought-improves-Multimodal-Humor-Comprehensio.md": {
+    "2608.23172v2-CaRGo-T-Causal-Reasoning-Graph-of-Thought-improves-Multimodal-Humor-Comprehensio.html": "03fea5a0"
+  },
+  "papers/2026-08-24/2608.23035v2-MobilePA-Bench-Benchmarking-Mobile-Planner-Agents-on-Complex-Real-World-Tasks.md": {
+    "2608.23035v2-MobilePA-Bench-Benchmarking-Mobile-Planner-Agents-on-Complex-Real-World-Tasks.html": "326bda64"
+  },
+  "papers/2026-08-24/2608.22847v1-GSAR-Goal-State-Anchor-Rewards-for-Mobile-GUI-Agents-with-Self-Evolving-Data-Syn.md": {
+    "2608.22847v1-GSAR-Goal-State-Anchor-Rewards-for-Mobile-GUI-Agents-with-Self-Evolving-Data-Syn.html": "55dba9a0"
+  },
+  "papers/2026-08-23/2608.22577v2-CausalCache-Conditional-High-Fidelity-Restoration-for-Long-Horizon-GUI-Agents.md": {
+    "2608.22577v2-CausalCache-Conditional-High-Fidelity-Restoration-for-Long-Horizon-GUI-Agents.html": "29882061"
+  },
+  "papers/2026-08-23/2608.22332v1-Mechanistic-Interpretability-of-Chain-of-Thought-Reasoning-via-Sequential-Activa.md": {
+    "2608.22332v1-Mechanistic-Interpretability-of-Chain-of-Thought-Reasoning-via-Sequential-Activa.html": "4d10b1e7"
+  },
+  "papers/2026-08-30/2608.29753v1-PAGE-RAG-Provenance-Aware-Graph-Evidence-Promotion-for-Fixed-Budget-Multi-hop-Re.md": {
+    "2608.29753v1-PAGE-RAG-Provenance-Aware-Graph-Evidence-Promotion-for-Fixed-Budget-Multi-hop-Re.html": "1b0b160e"
+  },
+  "papers/2026-08-30/2608.29953v1-SearchWiki-Learning-to-Build-and-Navigate-Knowledge-Wikis-for-Active-Information.md": {
+    "2608.29953v1-SearchWiki-Learning-to-Build-and-Navigate-Knowledge-Wikis-for-Active-Information.html": "e587810e"
+  },
+  "papers/2026-08-01/2608.00558v1-AiFlow-Token-Native-Reactive-Orchestration-with-Bounded-Backpressure-for-Streami.md": {
+    "2608.00558v1-AiFlow-Token-Native-Reactive-Orchestration-with-Bounded-Backpressure-for-Streami.html": "c595bf63"
+  },
+  "papers/2026-08-06/2608.05792v1-When-Agentic-AI-Meets-Integrated-Sensing-and-Communication.md": {
+    "2608.05792v1-When-Agentic-AI-Meets-Integrated-Sensing-and-Communication.html": "9a3e29d4"
+  },
+  "papers/2025-02-06/2502.04512v4-Safety-Must-Precede-the-Deployment-of-Open-Ended-AI.md": {
+    "2502.04512v4-Safety-Must-Precede-the-Deployment-of-Open-Ended-AI.html": "76aaa49b"
+  },
+  "papers/2026-07-22/2607.19985v1-Coordinating-from-Memory-Graph-Structured-Experience-Reuse-for-Multi-Agent-Adapt.md": {
+    "2607.19985v1-Coordinating-from-Memory-Graph-Structured-Experience-Reuse-for-Multi-Agent-Adapt.html": "0015371c"
+  },
+  "papers/2026-08-31/2608.30646v1-BiG-SURE---Bipartite-Graph-for-Semantic-Uncertainty-and-Reliability-Estimation-o.md": {
+    "2608.30646v1-BiG-SURE---Bipartite-Graph-for-Semantic-Uncertainty-and-Reliability-Estimation-o.html": "e1deed63"
+  },
+  "papers/2026-08-31/2608.30672v1-HiRS-Agent-A-Hierarchical-Multi-Agent-System-for-Reliable-Long-Horizon-Remote-Se.md": {
+    "2608.30672v1-HiRS-Agent-A-Hierarchical-Multi-Agent-System-for-Reliable-Long-Horizon-Remote-Se.html": "b20e8f3f"
+  },
+  "papers/2026-08-31/2608.30498v1-CM2-Multimodal-Cultural-Reasoning-via-an-Integrated-Multi-Agent-Framework.md": {
+    "2608.30498v1-CM2-Multimodal-Cultural-Reasoning-via-an-Integrated-Multi-Agent-Framework.html": "0a3e98c8"
+  },
+  "papers/2026-08-31/2608.30935v1-LightNav-0-Eliciting-VLM-Spatial-Intelligence-for-Generalist-Embodied-Navigation.md": {
+    "2608.30935v1-LightNav-0-Eliciting-VLM-Spatial-Intelligence-for-Generalist-Embodied-Navigation.html": "7346ecd3"
+  },
+  "papers/2026-08-31/2608.30996v1-Faithfulness-Is-Not-Free-Auditing-Offline-KV-Cache-Quantization-in-Retrieval-Aug.md": {
+    "2608.30996v1-Faithfulness-Is-Not-Free-Auditing-Offline-KV-Cache-Quantization-in-Retrieval-Aug.html": "b3b170fa"
+  },
+  "papers/2026-08-31/2608.30480v1-VisER-Visual-Evidence-and-Reliance-for-Object-Hallucination-Detection-in-LVLMs.md": {
+    "2608.30480v1-VisER-Visual-Evidence-and-Reliance-for-Object-Hallucination-Detection-in-LVLMs.html": "611e93c3"
+  },
+  "papers/2026-08-31/2608.30959v1-LOCI-A-Locator-Critic-with-Refinement-Loop.md": {
+    "2608.30959v1-LOCI-A-Locator-Critic-with-Refinement-Loop.html": "22ac8213"
+  },
+  "papers/2026-08-31/2608.31115v1-InsightToast-Proactive-Information-Retrieval-Glanceable-Visualization-in-the-Sid.md": {
+    "2608.31115v1-InsightToast-Proactive-Information-Retrieval-Glanceable-Visualization-in-the-Sid.html": "bd023650"
+  },
+  "papers/2026-08-31/2608.31137v1-OntoAligner-Ensemble-Voting-Based-Fusion-across-Heterogeneous-Ontology-Alignment.md": {
+    "2608.31137v1-OntoAligner-Ensemble-Voting-Based-Fusion-across-Heterogeneous-Ontology-Alignment.html": "3c72d821"
+  },
+  "papers/2026-08-31/2608.31118v1-When-Does-Bigger-Help-A-Controlled-Study-of-LLM-Scale-for-Ontology-Learning.md": {
+    "2608.31118v1-When-Does-Bigger-Help-A-Controlled-Study-of-LLM-Scale-for-Ontology-Learning.html": "7dad27bb"
+  },
+  "papers/2026-08-31/2608.30705v1-VisLens-Single-Pass-Interpretable-Visual-Search-for-Multimodal-LLMs.md": {
+    "2608.30705v1-VisLens-Single-Pass-Interpretable-Visual-Search-for-Multimodal-LLMs.html": "753e5aac"
+  },
+  "papers/2026-08-31/2608.30510v1-Lot-Machine-Multimodal-Lot-Extraction-from-Auction-Catalogs.md": {
+    "2608.30510v1-Lot-Machine-Multimodal-Lot-Extraction-from-Auction-Catalogs.html": "4cee0be9"
+  },
+  "papers/2026-08-31/2608.30550v1-GarmentWeaver-Schema-Aware-Structured-Synthesis-for-Multimodal-Sewing-Patterns.md": {
+    "2608.30550v1-GarmentWeaver-Schema-Aware-Structured-Synthesis-for-Multimodal-Sewing-Patterns.html": "b5e7a180"
+  },
+  "papers/2026-08-31/2608.30420v1-Whole-Slide-Image-Analysis-under-Realistic-Few-Shot-Annotation-Protocols.md": {
+    "2608.30420v1-Whole-Slide-Image-Analysis-under-Realistic-Few-Shot-Annotation-Protocols.html": "d95ecbdb"
+  },
+  "papers/2026-08-31/2608.30396v1-Scaffolding-Foundation-Models-into-Physical-World-Agents-Pushes-the-Frontier-of-.md": {
+    "2608.30396v1-Scaffolding-Foundation-Models-into-Physical-World-Agents-Pushes-the-Frontier-of-.html": "dbdfe771"
+  },
+  "papers/2026-08-31/2608.30997v1-Multi-View-Reflective-Surface-Inspection-via-Semantic-Saliency-Cross-Verificatio.md": {
+    "2608.30997v1-Multi-View-Reflective-Surface-Inspection-via-Semantic-Saliency-Cross-Verificatio.html": "3453de25"
+  },
+  "papers/2026-08-31/2608.30163v1-Doc-REFRAG-Rethinking-Multimodal-Document-Retrieval-Augmented-Generation.md": {
+    "2608.30163v1-Doc-REFRAG-Rethinking-Multimodal-Document-Retrieval-Augmented-Generation.html": "2a8607df"
+  },
+  "papers/2026-08-31/2608.30213v1-Towards-a-Joint-Khmer-Text-Recognition-and-Word-Segmentation.md": {
+    "2608.30213v1-Towards-a-Joint-Khmer-Text-Recognition-and-Word-Segmentation.html": "1720c46f"
+  },
+  "papers/2026-08-31/2608.30475v1-ImageEval-2026-Culturally-Grounded-Arabic-Multimodal-Evaluation.md": {
+    "2608.30475v1-ImageEval-2026-Culturally-Grounded-Arabic-Multimodal-Evaluation.html": "591f6ad8"
+  },
+  "papers/2026-08-31/2608.31139v1-Configurable-Semantic-Chunking-for-Biomedical-Information-Extraction-in-Retrieva.md": {
+    "2608.31139v1-Configurable-Semantic-Chunking-for-Biomedical-Information-Extraction-in-Retrieva.html": "c0256805"
+  },
+  "papers/2026-06-15/2606.17114v1-An-Evaluation-of-Data-Leakage-Risks-in-Tool-Using-LLM-Agents-in-Realistic-Scenar.md": {
+    "2606.17114v1-An-Evaluation-of-Data-Leakage-Risks-in-Tool-Using-LLM-Agents-in-Realistic-Scenar.html": "59c3a44d"
+  },
+  "papers/2026-06-03/2606.04391v1-Online-Skill-Learning-for-Web-Agents-via-State-Grounded-Dynamic-Retrieval.md": {
+    "2606.04391v1-Online-Skill-Learning-for-Web-Agents-via-State-Grounded-Dynamic-Retrieval.html": "cf7089bd"
+  },
+  "papers/2026-01-12/2601.07262v3-ColorBrowserAgent-Complex-Long-Horizon-Browser-Agent-with-Adaptive-Knowledge-Evo.md": {
+    "2601.07262v3-ColorBrowserAgent-Complex-Long-Horizon-Browser-Agent-with-Adaptive-Knowledge-Evo.html": "a6b1ef15"
+  },
+  "papers/2026-01-12/2601.07263v1-When-Bots-Take-the-Bait-Exposing-and-Mitigating-the-Emerging-Social-Engineering-.md": {
+    "2601.07263v1-When-Bots-Take-the-Bait-Exposing-and-Mitigating-the-Emerging-Social-Engineering-.html": "1d34c2c8"
+  },
+  "papers/2026-08-28/2608.28878v1-Hybrid-Offline-Online-Multi-Agent-Decision-Transformers-for-Wireless-Resource-Ma.md": {
+    "2608.28878v1-Hybrid-Offline-Online-Multi-Agent-Decision-Transformers-for-Wireless-Resource-Ma.html": "46fc6484"
+  },
+  "papers/2026-08-28/2608.27818v1-AcCoRD-Evaluating-User-Agent-Collaboration-Under-Realistic-User-Preference-Dynam.md": {
+    "2608.27818v1-AcCoRD-Evaluating-User-Agent-Collaboration-Under-Realistic-User-Preference-Dynam.html": "47121d69"
+  },
+  "papers/2026-08-28/2608.28264v1-Finding-Where-the-Buck-Stops-An-Automated-Failure-Attribution-Based-Reflection-F.md": {
+    "2608.28264v1-Finding-Where-the-Buck-Stops-An-Automated-Failure-Attribution-Based-Reflection-F.html": "1379b4df"
+  },
+  "papers/2026-08-28/2608.28726v1-Pro-Router-Token-Aware-Progressive-Model-Routing-with-Adaptive-Edge-Cloud-Collab.md": {
+    "2608.28726v1-Pro-Router-Token-Aware-Progressive-Model-Routing-with-Adaptive-Edge-Cloud-Collab.html": "49e21a96"
+  },
+  "papers/2026-08-28/2608.27869v1-See-Hypothesize-Validate-Multimodal-Agentic-Framework-for-Discovering-Governing-.md": {
+    "2608.27869v1-See-Hypothesize-Validate-Multimodal-Agentic-Framework-for-Discovering-Governing-.html": "f6e44c6a"
+  },
+  "papers/2026-08-28/2608.27969v1-openJiuwen-Beyond-Static-Harnesses-for-Long-Horizon-Coding-Agents.md": {
+    "2608.27969v1-openJiuwen-Beyond-Static-Harnesses-for-Long-Horizon-Coding-Agents.html": "8ad41953"
+  },
+  "papers/2026-08-19/2608.18878v1-DentAgent-Evidence-Centric-Multi-Agent-Coordination-for-Multimodal-Dental-Reason.md": {
+    "2608.18878v1-DentAgent-Evidence-Centric-Multi-Agent-Coordination-for-Multimodal-Dental-Reason.html": "653dcbe4"
+  },
+  "papers/2026-08-26/2608.25777v1-LocalLSTC-A-Long-Short-Term-Control-Architecture-for-Locally-Deployed-GUI-Agents.md": {
+    "2608.25777v1-LocalLSTC-A-Long-Short-Term-Control-Architecture-for-Locally-Deployed-GUI-Agents.html": "10e27b92"
+  },
+  "papers/2026-08-26/2608.25529v1-Video-IFBench-Evaluating-Instruction-Following-of-Multimodal-LLMs-in-Video-Under.md": {
+    "2608.25529v1-Video-IFBench-Evaluating-Instruction-Following-of-Multimodal-LLMs-in-Video-Under.html": "e02a2049"
+  },
+  "papers/2026-08-26/2608.25457v2-MACGen-Toward-Functionally-Correct-and-Secure-Code-Generation-via-Multi-Agent-Co.md": {
+    "2608.25457v2-MACGen-Toward-Functionally-Correct-and-Secure-Code-Generation-via-Multi-Agent-Co.html": "00f26650"
+  },
+  "papers/2026-08-21/2608.21265v2-Memory-Augmentation-Unlocks-Efficient-Chain-of-Thought-Reasoning.md": {
+    "2608.21265v2-Memory-Augmentation-Unlocks-Efficient-Chain-of-Thought-Reasoning.html": "57ddba65"
+  },
+  "papers/2026-08-21/2608.20906v1-A-Safety-Driven-Architectural-Framework-for-Fail-Operational-Drone-Swarms-in-Cri.md": {
+    "2608.20906v1-A-Safety-Driven-Architectural-Framework-for-Fail-Operational-Drone-Swarms-in-Cri.html": "6d226999"
+  },
+  "papers/2026-08-21/2608.21614v1-SAEM-Stage-Aware-Expert-Management-for-Memory-Efficient-MoE-Inference-in-Chain-o.md": {
+    "2608.21614v1-SAEM-Stage-Aware-Expert-Management-for-Memory-Efficient-MoE-Inference-in-Chain-o.html": "7e1ec647"
+  },
+  "papers/2026-08-18/2608.17659v1-MobileWorldSafety-Benchmarking-GUI-Agent-Safety-Against-Environmental-Injection-.md": {
+    "2608.17659v1-MobileWorldSafety-Benchmarking-GUI-Agent-Safety-Against-Environmental-Injection-.html": "b57ed836"
+  },
+  "papers/2026-08-27/2608.26684v1-Reason-in-the-Words-You-Speak-Idiolectal-Paraphrasing-Off-Policy-Traces-for-Reas.md": {
+    "2608.26684v1-Reason-in-the-Words-You-Speak-Idiolectal-Paraphrasing-Off-Policy-Traces-for-Reas.html": "540047f8"
+  },
+  "papers/2026-08-27/2608.27508v1-WM-R1-Training-GUI-Agents-to-Reason-and-leverage-World-Models-with-Reinforcement.md": {
+    "2608.27508v1-WM-R1-Training-GUI-Agents-to-Reason-and-leverage-World-Models-with-Reinforcement.html": "99bb5659"
+  },
+  "papers/2026-08-29/2608.29305v1-Learning-Simple-Test-Time-Environments-for-LLM-Web-Agents.md": {
+    "2608.29305v1-Learning-Simple-Test-Time-Environments-for-LLM-Web-Agents.html": "687e5086"
+  },
+  "papers/2026-08-29/2608.29204v1-AgentLogs-A-Dataset-for-Opening-the-Black-Box-of-GitHubs-Cloud-Agent.md": {
+    "2608.29204v1-AgentLogs-A-Dataset-for-Opening-the-Black-Box-of-GitHubs-Cloud-Agent.html": "1fddf968"
+  },
+  "papers/2026-08-29/2608.29209v1-Toward-Cultural-Alignment-Human-Centered-Evaluation-of-Multimodal-AI-Stories-Acr.md": {
+    "2608.29209v1-Toward-Cultural-Alignment-Human-Centered-Evaluation-of-Multimodal-AI-Stories-Acr.html": "55b49f7b"
+  },
+  "papers/2026-08-29/2608.29263v1-RACER-Reinforced-Agent-Collaboration-for-Explainable-Reasoning-on-Knowledge-Grap.md": {
+    "2608.29263v1-RACER-Reinforced-Agent-Collaboration-for-Explainable-Reasoning-on-Knowledge-Grap.html": "9a087687"
+  },
+  "papers/2026-08-29/2608.29028v1-Facts-Without-Rules-Boundary-Metadata-Collapse-in-Multi-Agent-LLM-Handoffs.md": {
+    "2608.29028v1-Facts-Without-Rules-Boundary-Metadata-Collapse-in-Multi-Agent-LLM-Handoffs.html": "4526763a"
+  },
+  "papers/2026-08-16/2608.15930v1-UI-Mate-Advancing-Open-Weight-Foundation-GUI-Agents-with-In-Context-Demonstratio.md": {
+    "2608.15930v1-UI-Mate-Advancing-Open-Weight-Foundation-GUI-Agents-with-In-Context-Demonstratio.html": "8ef5afc1"
+  },
+  "papers/2025-02-27/2502.20364v2-Bridging-Legal-Knowledge-and-AI-Retrieval-Augmented-Generation-with-Vector-Store.md": {
+    "2502.20364v2-Bridging-Legal-Knowledge-and-AI-Retrieval-Augmented-Generation-with-Vector-Store.html": "d4376292"
+  },
+  "papers/2026-03-16/2603.15809v1-Dont-Trust-Stubborn-Neighbors-A-Security-Framework-for-Agentic-Networks.md": {
+    "2603.15809v1-Dont-Trust-Stubborn-Neighbors-A-Security-Framework-for-Agentic-Networks.html": "05ea16d1"
+  },
+  "papers/2026-04-08/2604.09718v2-Agentic-Compilation-Mitigating-the-LLM-Rerun-Crisis-for-Minimized-Inference-Cost.md": {
+    "2604.09718v2-Agentic-Compilation-Mitigating-the-LLM-Rerun-Crisis-for-Minimized-Inference-Cost.html": "671e9bc9"
+  },
+  "papers/2025-01-12/2501.06706v1-AIOpsLab-A-Holistic-Framework-to-Evaluate-AI-Agents-for-Enabling-Autonomous-Clou.md": {
+    "2501.06706v1-AIOpsLab-A-Holistic-Framework-to-Evaluate-AI-Agents-for-Enabling-Autonomous-Clou.html": "5c4f8fd2"
+  },
+  "papers/2026-08-03/2608.01652v1-SyncPlan-Long-Horizon-LLM-Coordination-with-Explicit-Synchronization-and-Adaptiv.md": {
+    "2608.01652v1-SyncPlan-Long-Horizon-LLM-Coordination-with-Explicit-Synchronization-and-Adaptiv.html": "0386fbdd"
+  },
+  "papers/2024-12-29/2412.20468v2-A-Comprehensive-Framework-for-Reliable-Legal-AI-Combining-Specialized-Expert-Sys.md": {
+    "2412.20468v2-A-Comprehensive-Framework-for-Reliable-Legal-AI-Combining-Specialized-Expert-Sys.html": "cff2423a"
+  },
+  "papers/2026-06-18/2606.20978v1-How-Should-Agents-Read-Demonstrations-Hierarchical-Structure-Beats-Flat-Action-L.md": {
+    "2606.20978v1-How-Should-Agents-Read-Demonstrations-Hierarchical-Structure-Beats-Flat-Action-L.html": "5c93ab5c"
+  },
+  "MULTI_USER_SYSTEM.md": {
+    "MULTI_USER_SYSTEM.html": "bfe221fc"
+  },
+  "public/topics-management.md": {
+    "topics-management.html": "7d2caa9a"
+  },
+  "public/topics/topics-index.md": {
+    "topics-index.html": "38bafbbe"
+  },
+  "public/topics/llm-reasoning.md": {
+    "llm-reasoning.html": "47fb9dce"
+  },
+  "public/topics/ai-agents.gui.md": {
+    "ai-agents.gui.html": "50f722e0"
+  },
+  "public/topics/ai-agents.multi-agent.md": {
+    "ai-agents.multi-agent.html": "cf18ed1d"
+  },
+  "public/topics/ai-agents.md": {
+    "ai-agents.html": "10bef44e"
+  },
+  "public/topics/multi-modal.md": {
+    "multi-modal.html": "6a0fd903"
+  },
+  "public/topics/rag-retrieval.md": {
+    "rag-retrieval.html": "803f95eb"
   }
 }
