@@ -162,6 +162,7 @@ The site is organized into two main parts:
 
 ## Features
 
+### Core Features
 - 📄 **Paper Management**: Fetch, enhance, and organize papers from arXiv
 - 🔍 **Search & Filter**: Full-text search with topic filtering and global search (Cmd/Ctrl+K)
 - 📊 **Analytics Dashboard**: Statistics, author profiles, and trends
@@ -172,6 +173,14 @@ The site is organized into two main parts:
 - 🔄 **Automation**: Daily paper updates and site rebuilds
 - 🕸️ **Knowledge Graph**: D3.js force-directed visualization of concept relationships
 - 🔗 **Bidirectional Linking**: Wiki with backlinks and connection tracking
+
+### AI-Powered Features
+- 🤖 **AI Summaries**: Auto-generated one-liner summaries and key points from abstracts
+- 📖 **AI Study Guide**: Auto-generated study materials with key concepts, flashcards, and connections
+- 📚 **AI Wiki Assistant**: Intelligent knowledge extraction with concept definitions and paper linking
+- 🎯 **AI Recommendations**: Personalized paper suggestions based on reading history and interests
+- 📊 **Paper Comparison**: Side-by-side analysis of multiple papers with topic coverage matrix
+- 📰 **Weekly Digest**: Automated weekly summaries with theme analysis and highlight papers
 
 ## Quick Start
 
