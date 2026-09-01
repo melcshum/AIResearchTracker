@@ -9,15 +9,17 @@ website:
   navbar:
     background: primary
     left:
-      - text: "🔬 Workspace"
-        href: public/workspace.html
-      - text: "📖 Paper Reader"
-        href: public/paper-reader.html
-      - text: "📚 Papers"
-        href: public/search-papers.html
-      - text: "📖 Reading List"
-        href: public/reading-list.html
-      - text: "📝 Notes & Insights"
+      - text: "🎓 Learning Journey"
+        href: public/learning-journey.html
+      - text: "✍️ Write"
+        menu:
+          - text: "📖 AI Wiki"
+            href: public/wiki.html
+          - text: "📄 Paper Reader"
+            href: public/paper-reader.html
+          - text: "🔬 Research Workspace"
+            href: public/workspace.html
+      - text: "🔍 Review"
         menu:
           - text: "✨ Highlights"
             href: public/highlights.html
@@ -25,38 +27,40 @@ website:
             href: public/takeaways.html
           - text: "❓ Questions"
             href: public/questions.html
-      - text: "🧠 Learning"
+      - text: "🤖 Enhance"
         menu:
-          - text: "📊 Dashboard"
-            href: public/dashboard.html
-          - text: "🎯 My Learning Path"
-            href: public/my-learning-path.html
+          - text: "💬 AI Wiki Assistant"
+            href: public/ai-wiki.html
+          - text: "🎓 AI Study Guide"
+            href: public/ai-study-guide.html
+          - text: "📊 Feedback Dashboard"
+            href: public/feedback-dashboard.html
+      - text: "🧠 Attain"
+        menu:
           - text: "🔄 Spaced Repetition"
             href: public/spaced-repetition.html
+          - text: "🎯 Learning Path"
+            href: public/my-learning-path.html
+          - text: "💡 Recommendations"
+            href: public/recommendations.html
+      - text: "📈 Update"
+        menu:
+          - text: "📰 Weekly Digest"
+            href: public/digests/index.html
+          - text: "📚 Paper Library"
+            href: public/search-papers.html
           - text: "📅 Timeline"
             href: public/timeline.html
-      - text: "🔍 Explore"
-        menu:
-          - text: "🎯 Recommendations"
-            href: public/recommendations.html
-          - text: "📊 Compare Papers"
-            href: public/compare-papers.html
-          - text: "🕸️ Citation Graph"
-            href: public/citation-graph.html
-          - text: "🤖 AI Wiki Assistant"
-            href: public/ai-wiki.html
-          - text: "📁 Collections"
-            href: public/collections.html
       - text: "⚙️ Tools"
         menu:
           - text: "🎯 Research Goals"
             href: public/research-goals.html
-          - text: "📰 Weekly Digest"
-            href: public/digests/index.html
           - text: "💾 Export/Import"
             href: public/export-import.html
-          - text: "📊 Feedback Dashboard"
-            href: public/feedback-dashboard.html
+          - text: "🕸️ Citation Graph"
+            href: public/citation-graph.html
+          - text: "📁 Collections"
+            href: public/collections.html
           - text: "🔧 Admin Dashboard"
             href: private/index.html
 

@@ -1126,5 +1126,11 @@
   },
   "public/feedback-dashboard.md": {
     "feedback-dashboard.html": "ea36b5a0"
+  },
+  "UI_UX_LEARNING_WORKFLOW_PLAN.md": {
+    "UI_UX_LEARNING_WORKFLOW_PLAN.html": "8b14fbd7"
+  },
+  "public/learning-journey.md": {
+    "learning-journey.html": "84e7d151"
   }
 }
