@@ -1120,5 +1120,8 @@
   },
   "public/paper-reader.md": {
     "paper-reader.html": "1627b63d"
+  },
+  "HITL_ARCHITECTURE.md": {
+    "HITL_ARCHITECTURE.html": "f9ef1bdd"
   }
 }

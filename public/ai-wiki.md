@@ -514,6 +514,163 @@ title: "AI Wiki - Knowledge Base"
   background: #bbdefb;
 }
 
+/* Concept Editing Styles */
+.concept-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-edit, .btn-ai {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 600;
+}
+
+.btn-edit {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.btn-edit:hover {
+  background: #bbdefb;
+}
+
+.btn-ai {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.btn-ai:hover {
+  background: #ffe0b2;
+}
+
+.user-edited-badge {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.concept-editor {
+  margin-top: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  background: #f8f9fa;
+}
+
+.concept-textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.6;
+  resize: vertical;
+  margin-bottom: 15px;
+}
+
+.concept-textarea:focus {
+  outline: none;
+  border-color: #2c5aa0;
+}
+
+.editor-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ai-enhance-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-ai-small {
+  padding: 6px 12px;
+  background: #fff3e0;
+  color: #f57c00;
+  border: 1px solid #ff9800;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 600;
+}
+
+.btn-ai-small:hover {
+  background: #ffe0b2;
+  transform: translateY(-1px);
+}
+
+.btn-ai-small:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.editor-save-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-save {
+  padding: 8px 16px;
+  background: #2c5aa0;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-save:hover {
+  background: #1e4a8f;
+}
+
+.btn-cancel {
+  padding: 8px 16px;
+  background: #e0e0e0;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-cancel:hover {
+  background: #d0d0d0;
+}
+
+.ai-loading {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #f57c00;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.8s linear infinite;
+  margin-right: 6px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 .papers-list {
   display: grid;
   gap: 10px;
@@ -867,6 +1024,10 @@ function showConceptDetail(conceptName) {
   const modal = document.getElementById('conceptModal');
   const detail = document.getElementById('conceptDetail');
   
+  // Check if user has custom content
+  const userContent = getUserConceptContent(conceptName);
+  const displayDefinition = userContent || concept.definition;
+  
   detail.innerHTML = `
     <div class="concept-detail-header">
       <h2 class="concept-detail-title">${concept.name}</h2>
@@ -874,12 +1035,52 @@ function showConceptDetail(conceptName) {
         <span class="concept-category">${concept.category}</span>
         <span class="concept-difficulty difficulty-${concept.difficulty}">${concept.difficulty}</span>
         <span>📄 ${concept.papers.length} papers</span>
+        ${userContent ? '<span class="user-edited-badge">✏️ User Enhanced</span>' : ''}
       </div>
     </div>
     
     <div class="concept-detail-section">
-      <h3>Definition</h3>
-      <p class="concept-detail-definition">${concept.definition}</p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <h3 style="margin: 0;">Definition</h3>
+        <div class="concept-actions">
+          <button onclick="editConcept('${conceptName}')" class="btn-edit" title="Edit this concept">
+            ✏️ Edit
+          </button>
+          <button onclick="askAIEnhance('${conceptName}')" class="btn-ai" title="Ask AI to enhance">
+            🤖 Ask AI
+          </button>
+        </div>
+      </div>
+      <div id="conceptDefinition" class="concept-detail-definition">
+        ${displayDefinition}
+      </div>
+      <div id="conceptEditor" class="concept-editor" style="display: none;">
+        <textarea id="conceptEditorText" class="concept-textarea">${displayDefinition}</textarea>
+        <div class="editor-actions">
+          <div class="ai-enhance-buttons">
+            <button onclick="aiEnhance('expand')" class="btn-ai-small" title="Add more details">
+              📖 Expand
+            </button>
+            <button onclick="aiEnhance('simplify')" class="btn-ai-small" title="Make it simpler">
+              💡 Simplify
+            </button>
+            <button onclick="aiEnhance('examples')" class="btn-ai-small" title="Add examples">
+              🔍 Add Examples
+            </button>
+            <button onclick="aiEnhance('technical')" class="btn-ai-small" title="Add technical depth">
+              ⚙️ Technical
+            </button>
+          </div>
+          <div class="editor-save-actions">
+            <button onclick="saveConceptEdit('${conceptName}')" class="btn-save">
+              💾 Save
+            </button>
+            <button onclick="cancelEdit('${conceptName}')" class="btn-cancel">
+              ❌ Cancel
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
     
     <div class="concept-detail-section">
@@ -923,6 +1124,263 @@ function closeModal(event) {
   if (event.target.classList.contains('modal')) {
     closeConceptModal();
   }
+}
+
+// Get user's custom concept content from localStorage
+function getUserConceptContent(conceptName) {
+  const userConcepts = JSON.parse(localStorage.getItem('userConcepts') || '{}');
+  return userConcepts[conceptName] || null;
+}
+
+// Save user's custom concept content to localStorage
+function saveUserConceptContent(conceptName, content) {
+  const userConcepts = JSON.parse(localStorage.getItem('userConcepts') || '{}');
+  userConcepts[conceptName] = content;
+  localStorage.setItem('userConcepts', JSON.stringify(userConcepts));
+}
+
+// Open concept editor
+function editConcept(conceptName) {
+  document.getElementById('conceptDefinition').style.display = 'none';
+  document.getElementById('conceptEditor').style.display = 'block';
+  
+  // Focus the textarea
+  setTimeout(() => {
+    document.getElementById('conceptEditorText').focus();
+  }, 100);
+}
+
+// Cancel editing
+function cancelEdit(conceptName) {
+  document.getElementById('conceptDefinition').style.display = 'block';
+  document.getElementById('conceptEditor').style.display = 'none';
+  
+  // Reset textarea to saved content
+  const userContent = getUserConceptContent(conceptName);
+  const concept = concepts[conceptName];
+  const displayContent = userContent || concept.definition;
+  document.getElementById('conceptEditorText').value = displayContent;
+}
+
+// Save concept edit
+function saveConceptEdit(conceptName) {
+  const newContent = document.getElementById('conceptEditorText').value.trim();
+  
+  if (!newContent) {
+    alert('Content cannot be empty');
+    return;
+  }
+  
+  // Save to localStorage
+  saveUserConceptContent(conceptName, newContent);
+  
+  // Update display
+  document.getElementById('conceptDefinition').innerHTML = newContent;
+  document.getElementById('conceptDefinition').style.display = 'block';
+  document.getElementById('conceptEditor').style.display = 'none';
+  
+  // Show success message
+  showNotification('✓ Concept saved successfully', 'success');
+  
+  // Refresh the concept detail to show the badge
+  showConceptDetail(conceptName);
+}
+
+// Ask AI to enhance the concept
+function askAIEnhance(conceptName) {
+  const concept = concepts[conceptName];
+  const currentContent = getUserConceptContent(conceptName) || concept.definition;
+  
+  // Open editor with current content
+  editConcept(conceptName);
+  
+  // Show AI enhancement options
+  const editorText = document.getElementById('conceptEditorText');
+  editorText.value = currentContent;
+  
+  // Auto-focus on AI buttons
+  setTimeout(() => {
+    document.querySelector('.btn-ai-small').focus();
+  }, 100);
+  
+  showNotification('🤖 Choose an AI enhancement option below', 'info');
+}
+
+// AI enhancement function with different modes
+async function aiEnhance(mode) {
+  const editorText = document.getElementById('conceptEditorText');
+  const currentContent = editorText.value;
+  const buttons = document.querySelectorAll('.btn-ai-small');
+  
+  // Disable all AI buttons during processing
+  buttons.forEach(btn => btn.disabled = true);
+  
+  // Show loading state
+  const originalText = event.target.textContent;
+  event.target.innerHTML = '<span class="ai-loading"></span>Processing...';
+  
+  try {
+    let enhancedContent = '';
+    
+    // Simulate AI enhancement (in production, this would call an AI API)
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    switch(mode) {
+      case 'expand':
+        enhancedContent = await expandContent(currentContent);
+        break;
+      case 'simplify':
+        enhancedContent = await simplifyContent(currentContent);
+        break;
+      case 'examples':
+        enhancedContent = await addExamples(currentContent);
+        break;
+      case 'technical':
+        enhancedContent = await addTechnicalDepth(currentContent);
+        break;
+    }
+    
+    editorText.value = enhancedContent;
+    showNotification('✓ Content enhanced successfully', 'success');
+    
+  } catch (error) {
+    console.error('AI enhancement failed:', error);
+    showNotification('❌ AI enhancement failed. Please try again.', 'error');
+  } finally {
+    // Re-enable buttons and restore text
+    buttons.forEach(btn => {
+      btn.disabled = false;
+      btn.textContent = btn.getAttribute('title');
+    });
+  }
+}
+
+// AI enhancement: Expand content with more details
+async function expandContent(content) {
+  // In production, this would call an AI API
+  // For now, simulate expansion
+  const expansions = {
+    'AI Agent': `\n\n**Key Characteristics:**\n- **Autonomy**: Operates independently without constant human intervention\n- **Goal-directed**: Pursues specific objectives through planned actions\n- **Adaptive**: Learns from experience and adjusts behavior\n- **Interactive**: Communicates with other agents and humans\n\n**Applications:**\n- Autonomous vehicles\n- Personal assistants\n- Robotic process automation\n- Multi-agent systems`,
+    
+    'Retrieval-Augmented Generation': `\n\n**How RAG Works:**\n1. **Query Processing**: User question is converted to embeddings\n2. **Retrieval**: Similar documents are fetched from knowledge base\n3. **Augmentation**: Retrieved context is added to prompt\n4. **Generation**: LLM generates answer using both knowledge and context\n\n**Benefits:**\n- Reduces hallucination by grounding responses in facts\n- Provides citations and sources\n- Keeps knowledge up-to-date without retraining\n- Improves accuracy on domain-specific questions`,
+    
+    'Chain-of-Thought': `\n\n**Implementation Approaches:**\n- **Zero-shot CoT**: Simply add "Let's think step by step"\n- **Few-shot CoT**: Provide examples of step-by-step reasoning\n- **Self-Consistency**: Generate multiple reasoning paths and vote\n- **Tree of Thoughts**: Explore multiple reasoning branches\n\n**When to Use:**\n- Mathematical problem solving\n- Logical reasoning tasks\n- Multi-step planning\n- Complex decision making`
+  };
+  
+  // Find matching concept or add generic expansion
+  for (const [concept, expansion] of Object.entries(expansions)) {
+    if (content.toLowerCase().includes(concept.toLowerCase())) {
+      return content + expansion;
+    }
+  }
+  
+  // Generic expansion
+  return content + `\n\n**Additional Context:**\nThis concept plays an important role in modern AI systems. Understanding its principles helps researchers and practitioners design more effective solutions. The key insights involve balancing complexity with practicality, ensuring that theoretical advances translate into real-world applications.`;
+}
+
+// AI enhancement: Simplify content
+async function simplifyContent(content) {
+  // In production, this would call an AI API
+  // For now, simulate simplification by extracting key points
+  const sentences = content.split(/[.!?]+/).filter(s => s.trim().length > 0);
+  
+  if (sentences.length <= 2) {
+    return content;
+  }
+  
+  // Keep first sentence and summarize the rest
+  const simplified = sentences[0] + '. In simple terms, this concept helps AI systems work more effectively by providing structured approaches to complex problems.';
+  
+  return simplified;
+}
+
+// AI enhancement: Add examples
+async function addExamples(content) {
+  // In production, this would call an AI API
+  const examples = {
+    'AI Agent': `\n\n**Real-World Examples:**\n- 🤖 **ChatGPT**: Conversational AI agent that helps users with tasks\n- 🚗 **Tesla Autopilot**: Autonomous driving agent\n- 🏠 **Roomba**: Robot vacuum that navigates and cleans autonomously\n- 💼 **GitHub Copilot**: AI coding assistant that suggests code`,
+    
+    'Retrieval-Augmented Generation': `\n\n**Examples in Practice:**\n- 📚 **Enterprise Search**: Company knowledge base with AI-powered Q&A\n- 🏥 **Medical Diagnosis**: AI assistant that retrieves medical literature\n- ⚖️ **Legal Research**: AI that finds relevant case law and statutes\n- 🎓 **Educational Tutor**: AI tutor with access to textbooks and papers`,
+    
+    'Chain-of-Thought': `\n\n**Example Problem:**\n**Question**: If a train travels 60 mph for 2 hours, then 80 mph for 3 hours, what's the average speed?\n\n**Chain-of-Thought Reasoning:**\n1. Calculate distance for first segment: 60 mph × 2 hours = 120 miles\n2. Calculate distance for second segment: 80 mph × 3 hours = 240 miles\n3. Total distance: 120 + 240 = 360 miles\n4. Total time: 2 + 3 = 5 hours\n5. Average speed: 360 miles ÷ 5 hours = 72 mph\n\n**Answer**: 72 mph`
+  };
+  
+  // Find matching concept or add generic examples
+  for (const [concept, example] of Object.entries(examples)) {
+    if (content.toLowerCase().includes(concept.toLowerCase())) {
+      return content + example;
+    }
+  }
+  
+  // Generic examples
+  return content + `\n\n**Examples:**\n- Example 1: Basic application of this concept in a simple scenario\n- Example 2: More complex use case showing advanced features\n- Example 3: Real-world implementation in production systems`;
+}
+
+// AI enhancement: Add technical depth
+async function addTechnicalDepth(content) {
+  // In production, this would call an AI API
+  const technical = {
+    'AI Agent': `\n\n**Technical Architecture:**\n\`\`\`\nAgent = (Perception, Reasoning, Action, Learning)\n\`\`\`\n\n**Formal Definition:**\nAn agent is a function mapping percept sequences to actions:\n\\( f: P^* \\rightarrow A \\)\n\n**Key Algorithms:**\n- Reinforcement Learning (Q-learning, Policy Gradient)\n- Planning (A*, MCTS, STRIPS)\n- Multi-agent coordination (Game Theory, Mechanism Design)`,
+    
+    'Retrieval-Augmented Generation': `\n\n**Mathematical Formulation:**\nGiven query \\( q \\), retrieve top-k documents:\n\\( D_k = \\text{argmax}_{d \\in D} \\text{sim}(\\text{enc}(q), \\text{enc}(d)) \\)\n\n**Retrieval Methods:**\n- Dense retrieval: Bi-encoders with dot-product similarity\n- Sparse retrieval: BM25, TF-IDF\n- Hybrid: Combine dense and sparse methods\n\n**Generation with Context:**\n\\( P(y|x, D_k) = \\text{LM}(y | x \\oplus \\text{concat}(D_k)) \\)`,
+    
+    'Chain-of-Thought': `\n\n**Prompt Template:**\n\`\`\`\nQ: [question]\nA: Let's think step by step.\n[step 1]\n[step 2]\n...\nTherefore, the answer is [answer].\n\`\`\`\n\n**Self-Consistency Algorithm:**\n1. Sample \\( N \\) reasoning paths: \\( \\{r_1, r_2, ..., r_N\\} \\)\n2. Extract answers: \\( \\{a_1, a_2, ..., a_N\\} \\)\n3. Majority vote: \\( a^* = \\text{mode}(\\{a_i\\}) \\)\n\n**Complexity:**\n- Time: \\( O(N \\cdot L) \\) where \\( L \\) is reasoning length\n- Space: \\( O(N \\cdot L) \\) for storing paths`
+  };
+  
+  // Find matching concept or add generic technical content
+  for (const [concept, tech] of Object.entries(technical)) {
+    if (content.toLowerCase().includes(concept.toLowerCase())) {
+      return content + tech;
+    }
+  }
+  
+  // Generic technical depth
+  return content + `\n\n**Technical Details:**\n- **Algorithm**: The underlying algorithm operates in \\( O(n \\log n) \\) time complexity\n- **Optimization**: Gradient-based methods are used for parameter tuning\n- **Implementation**: Typically implemented using PyTorch or TensorFlow frameworks`;
+}
+
+// Show notification
+function showNotification(message, type = 'info') {
+  const notification = document.createElement('div');
+  notification.className = `notification notification-${type}`;
+  notification.textContent = message;
+  notification.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    background: ${type === 'success' ? '#4caf50' : type === 'error' ? '#f44336' : '#2196f3'};
+    color: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 10000;
+    font-size: 14px;
+    font-weight: 600;
+    animation: slideIn 0.3s ease-out;
+  `;
+  
+  document.body.appendChild(notification);
+  
+  setTimeout(() => {
+    notification.style.animation = 'slideOut 0.3s ease-out';
+    setTimeout(() => notification.remove(), 300);
+  }, 3000);
+}
+
+// Add animation styles
+if (!document.getElementById('notification-styles')) {
+  const style = document.createElement('style');
+  style.id = 'notification-styles';
+  style.textContent = `
+    @keyframes slideIn {
+      from { transform: translateX(400px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideOut {
+      from { transform: translateX(0); opacity: 1; }
+      to { transform: translateX(400px); opacity: 0; }
+    }
+  `;
+  document.head.appendChild(style);
 }
 
 function switchTab(tabName) {
