@@ -141,6 +141,65 @@ title: "Search Papers"
   margin-right: 6px;
   margin-bottom: 6px;
 }
+
+.paper-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.bookmark-btn {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.2s;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.bookmark-btn:hover {
+  color: #ffc107;
+}
+
+.bookmark-btn.bookmarked {
+  color: #ffc107;
+}
+
+.reading-status {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background: #fff3e0;
+  border-left: 3px solid #ff9800;
+  font-size: 0.9em;
+}
+
+.paper-note {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: #f1f8e9;
+  border-left: 3px solid #8bc34a;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.add-note-btn {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background: #e8eaf6;
+  border: 1px solid #c5cae9;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background 0.2s;
+}
+
+.add-note-btn:hover {
+  background: #c5cae9;
+}
 </style>
 
 <script>
@@ -418,14 +477,47 @@ function renderPapers(filteredPapers) {
   const resultsDiv = document.getElementById('searchResults');
   const countDiv = document.getElementById('resultsCount');
   
-  countDiv.textContent =  PH0 ;
+  countDiv.textContent = `Found ${filteredPapers.length} paper${filteredPapers.length !== 1 ? 's' : ''}`;
   
   if (filteredPapers.length === 0) {
     resultsDiv.innerHTML = '<p style="text-align: center; color: #666; padding: 40px;">No papers found matching your criteria.</p>';
     return;
   }
   
-  resultsDiv.innerHTML = filteredPapers.map(paper =>  PH1 <span class="topic-tag">${topic}</span> PH2 ).join('');
+  resultsDiv.innerHTML = filteredPapers.map(paper => {
+    const isBookmarked = userBookmarks.has(paper.arxiv_id);
+    const note = userNotes.get(paper.arxiv_id) || '';
+    const readingStatus = userReadingProgress.get(paper.arxiv_id)?.status || '';
+    
+    return `
+      <div class="paper-card" data-arxiv-id="${paper.arxiv_id}">
+        <div class="paper-header">
+          <h3 class="paper-title">
+            <a href="${paper.url}" target="_blank">${paper.title}</a>
+          </h3>
+          <button class="bookmark-btn ${isBookmarked ? 'bookmarked' : ''}" 
+                  onclick="toggleBookmark('${paper.arxiv_id}')" 
+                  title="${isBookmarked ? 'Remove bookmark' : 'Add bookmark'}">
+            ${isBookmarked ? '★' : '☆'}
+          </button>
+        </div>
+        <div class="paper-meta">
+          <span class="paper-authors">${paper.authors}</span>
+          <span class="paper-date">${paper.date}</span>
+          <span class="paper-arxiv">arXiv:${paper.arxiv_id}</span>
+        </div>
+        <div class="paper-abstract">${paper.abstract}</div>
+        <div class="paper-topics">
+          ${paper.topics.map(topic => `<span class="topic-tag">${topic}</span>`).join('')}
+        </div>
+        ${readingStatus ? `<div class="reading-status">Status: <strong>${readingStatus}</strong></div>` : ''}
+        ${note ? `<div class="paper-note"><strong>Your note:</strong> ${note}</div>` : ''}
+        <button class="add-note-btn" onclick="showNoteDialog('${paper.arxiv_id}')">
+          ${note ? 'Edit Note' : 'Add Note'}
+        </button>
+      </div>
+    `;
+  }).join('');
 }
 
 function filterAndSearch() {
@@ -464,11 +556,88 @@ function filterAndSearch() {
   renderPapers(filtered);
 }
 
+// User data storage
+let userBookmarks = new Set();
+let userNotes = new Map();
+let userReadingProgress = new Map();
+
+// Load user data from API
+async function loadUserData() {
+  try {
+    const response = await fetch('http://localhost:5001/api/user/data');
+    const data = await response.json();
+    
+    userBookmarks = new Set(data.bookmarks || []);
+    userNotes = new Map(Object.entries(data.notes || {}));
+    userReadingProgress = new Map(Object.entries(data.readingProgress || {}));
+    
+    console.log('✅ Loaded user data:', {
+      bookmarks: userBookmarks.size,
+      notes: userNotes.size,
+      readingProgress: userReadingProgress.size
+    });
+  } catch (error) {
+    console.warn('⚠️ Could not load user data:', error);
+  }
+}
+
+// Toggle bookmark
+async function toggleBookmark(arxivId) {
+  const isBookmarked = userBookmarks.has(arxivId);
+  
+  try {
+    const response = await fetch(`http://localhost:5001/api/user/bookmarks/${arxivId}`, {
+      method: isBookmarked ? 'DELETE' : 'POST'
+    });
+    
+    if (response.ok) {
+      const data = await response.json();
+      userBookmarks = new Set(data.bookmarks);
+      filterAndSearch(); // Re-render to show updated bookmark state
+    }
+  } catch (error) {
+    console.error('Failed to toggle bookmark:', error);
+  }
+}
+
+// Show note dialog
+function showNoteDialog(arxivId) {
+  const currentNote = userNotes.get(arxivId) || '';
+  const newNote = prompt('Enter your note for this paper:', currentNote);
+  
+  if (newNote !== null) {
+    saveNote(arxivId, newNote);
+  }
+}
+
+// Save note
+async function saveNote(arxivId, note) {
+  try {
+    const response = await fetch(`http://localhost:5001/api/user/notes/${arxivId}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ note })
+    });
+    
+    if (response.ok) {
+      if (note) {
+        userNotes.set(arxivId, note);
+      } else {
+        userNotes.delete(arxivId);
+      }
+      filterAndSearch(); // Re-render to show updated note
+    }
+  } catch (error) {
+    console.error('Failed to save note:', error);
+  }
+}
+
 // Event listeners
 document.getElementById('searchInput').addEventListener('input', filterAndSearch);
 document.getElementById('topicFilter').addEventListener('change', filterAndSearch);
 document.getElementById('sortBy').addEventListener('change', filterAndSearch);
 
-// Initial render
-filterAndSearch();
+// Initial load
+loadUserTopics();
+loadUserData();
 </script>
