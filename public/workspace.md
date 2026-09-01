@@ -165,6 +165,13 @@ title: "Research Workspace"
 </div>
 
 <style>
+/* Override Quarto's default content margins */
+main.content, #quarto-document-content {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .workspace-container {
   display: flex;
   flex-direction: column;
