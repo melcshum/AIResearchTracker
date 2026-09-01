@@ -1063,5 +1063,8 @@
   },
   "public/dashboard.md": {
     "dashboard.html": "049a30ee"
+  },
+  "public/my-learning-path.md": {
+    "my-learning-path.html": "14fb3834"
   }
 }

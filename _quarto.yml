@@ -13,6 +13,8 @@ website:
         href: public/index.html
       - text: "📊 Dashboard"
         href: public/dashboard.html
+      - text: "🎯 My Learning Path"
+        href: public/my-learning-path.html
       - text: "🔧 Admin Dashboard"
         href: private/index.html
 
