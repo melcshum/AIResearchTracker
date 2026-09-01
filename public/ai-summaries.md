@@ -223,6 +223,10 @@ title: "AI Paper Summaries"
 </style>
 
 <script>
+// Dynamic API base URL
+const API_BASE = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5001' 
+  : window.location.origin.replace(/:\\d+$/, ':5001');
 let allPapers = [];
 let userBookmarks = [];
 let paperSummaries = {};
@@ -232,12 +236,12 @@ async function loadSummariesData() {
     const papersResponse = await fetch('papers.json');
     allPapers = await papersResponse.json();
     
-    const userResponse = await fetch('http://localhost:5001/api/user/data');
+    const userResponse = await fetch(API_BASE + '/api/user/data');
     const userData = await userResponse.json();
     userBookmarks = userData.bookmarks || [];
     
     // Load summaries from user data (if stored)
-    const summariesResponse = await fetch('http://localhost:5001/api/user/summaries');
+    const summariesResponse = await fetch(API_BASE + '/api/user/summaries');
     const summariesData = await summariesResponse.json();
     paperSummaries = summariesData.summaries || {};
     
@@ -268,7 +272,7 @@ function generateAISummary(paper) {
 
 async function saveSummary(arxivId, summary) {
   try {
-    await fetch(`http://localhost:5001/api/user/summaries/${arxivId}`, {
+    await fetch(`${API_BASE}/api/user/summaries/${arxivId}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ summary })
@@ -370,7 +374,7 @@ async function clearAllSummaries() {
   
   try {
     for (const arxivId of Object.keys(paperSummaries)) {
-      await fetch(`http://localhost:5001/api/user/summaries/${arxivId}`, {
+      await fetch(`${API_BASE}/api/user/summaries/${arxivId}`, {
         method: 'DELETE'
       });
     }

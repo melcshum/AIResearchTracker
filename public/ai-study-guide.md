@@ -198,6 +198,10 @@ title: "AI Study Guide"
 </style>
 
 <script>
+// Dynamic API base URL
+const API_BASE = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5001' 
+  : window.location.origin.replace(/:\\d+$/, ':5001');
 let allPapers = [];
 let userBookmarks = [];
 let userNotes = {};
@@ -208,12 +212,12 @@ async function loadStudyData() {
     const papersResponse = await fetch('papers.json');
     allPapers = await papersResponse.json();
     
-    const userResponse = await fetch('http://localhost:5001/api/user/data');
+    const userResponse = await fetch(API_BASE + '/api/user/data');
     const userData = await userResponse.json();
     userBookmarks = userData.bookmarks || [];
     userNotes = userData.notes || {};
     
-    const summariesResponse = await fetch('http://localhost:5001/api/user/summaries');
+    const summariesResponse = await fetch(API_BASE + '/api/user/summaries');
     const summariesData = await summariesResponse.json();
     userSummaries = summariesData.summaries || {};
     

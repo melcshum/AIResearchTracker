@@ -275,18 +275,89 @@ Backup your research data, share curated lists, or import from other systems.
 <script>
 let userData = null;
 let allPapers = [];
+let isLoading = false;
+
+// Get API base URL dynamically
+const API_BASE = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5001' 
+  : window.location.origin.replace(/:\d+$/, ':5001');
 
 async function loadUserData() {
+  if (isLoading) return;
+  isLoading = true;
+  
   try {
-    const response = await fetch('http://localhost:5001/api/user/data');
+    const response = await fetch(`${API_BASE}/api/user/data`);
+    if (!response.ok) throw new Error('Failed to load user data');
     userData = await response.json();
     
     const papersResponse = await fetch('papers.json');
+    if (!papersResponse.ok) throw new Error('Failed to load papers');
     allPapers = await papersResponse.json();
   } catch (error) {
     console.error('Error loading data:', error);
-    showNotification('Error loading data', 'error');
+    showNotification('Error loading data. Please ensure the API server is running.', 'error');
+  } finally {
+    isLoading = false;
   }
+}
+
+// Better CSV parsing function
+function parseCSV(text) {
+  const rows = [];
+  let currentRow = [];
+  let currentField = '';
+  let inQuotes = false;
+  
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i];
+    const nextChar = text[i + 1];
+    
+    if (inQuotes) {
+      if (char === '"' && nextChar === '"') {
+        currentField += '"';
+        i++; // Skip next quote
+      } else if (char === '"') {
+        inQuotes = false;
+      } else {
+        currentField += char;
+      }
+    } else {
+      if (char === '"') {
+        inQuotes = true;
+      } else if (char === ',') {
+        currentRow.push(currentField);
+        currentField = '';
+      } else if (char === '\n' || (char === '\r' && nextChar === '\n')) {
+        currentRow.push(currentField);
+        rows.push(currentRow);
+        currentRow = [];
+        currentField = '';
+        if (char === '\r') i++; // Skip \n after \r
+      } else {
+        currentField += char;
+      }
+    }
+  }
+  
+  // Handle last field/row
+  if (currentField || currentRow.length > 0) {
+    currentRow.push(currentField);
+    rows.push(currentRow);
+  }
+  
+  return rows;
+}
+
+// Better CSV escaping function
+function escapeCSV(field) {
+  if (field === null || field === undefined) return '';
+  const str = String(field);
+  // If field contains comma, quote, or newline, wrap in quotes and escape quotes
+  if (str.includes(',') || str.includes('"') || str.includes('\n') || str.includes('\r')) {
+    return '"' + str.replace(/"/g, '""') + '"';
+  }
+  return str;
 }
 
 function showNotification(message, type = 'success') {
@@ -327,12 +398,12 @@ function exportBookmarks(format) {
   } else if (format === 'csv') {
     const headers = ['arxiv_id', 'title', 'authors', 'date', 'topics', 'abstract'];
     const rows = bookmarkedPapers.map(p => [
-      p.arxiv_id,
-      `"${p.title.replace(/"/g, '""')}"`,
-      `"${p.authors.replace(/"/g, '""')}"`,
-      p.date,
-      `"${(p.topics || []).join(', ')}"`,
-      `"${(p.abstract || '').replace(/"/g, '""').substring(0, 200)}..."`
+      escapeCSV(p.arxiv_id),
+      escapeCSV(p.title),
+      escapeCSV(p.authors),
+      escapeCSV(p.date),
+      escapeCSV((p.topics || []).join(', ')),
+      escapeCSV((p.abstract || '').substring(0, 200))
     ]);
     const csv = [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
     downloadFile(csv, 'bookmarks.csv', 'text/csv');
@@ -418,11 +489,11 @@ function exportProgress(format) {
     const rows = Object.entries(userData.readingProgress).map(([arxivId, progress]) => {
       const paper = allPapers.find(p => p.arxiv_id === arxivId);
       return [
-        arxivId,
-        `"${(paper?.title || 'Unknown').replace(/"/g, '""')}"`,
-        progress.status || 'unread',
-        progress.progress || 0,
-        progress.lastUpdated || ''
+        escapeCSV(arxivId),
+        escapeCSV(paper?.title || 'Unknown'),
+        escapeCSV(progress.status || 'unread'),
+        escapeCSV(progress.progress || 0),
+        escapeCSV(progress.lastUpdated || '')
       ];
     });
     const csv = [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
@@ -478,14 +549,16 @@ async function importCompleteBackup(event) {
     };
     
     // Save to API
-    await fetch('http://localhost:5001/api/user/data', {
+    const response = await fetch(`${API_BASE}/api/user/data`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(mergedData)
     });
     
+    if (!response.ok) throw new Error('Failed to save data');
+    
     userData = mergedData;
-    showNotification(`Imported backup: ${backup.bookmarks.length} bookmarks, ${Object.keys(backup.notes).length} notes`);
+    showNotification(`Imported backup: ${backup.bookmarks.length} bookmarks, ${Object.keys(backup.notes || {}).length} notes`);
   } catch (error) {
     console.error('Import error:', error);
     showNotification('Error importing backup: ' + error.message, 'error');
@@ -504,14 +577,15 @@ async function importBookmarks(event) {
       const data = JSON.parse(text);
       bookmarks = Array.isArray(data) ? data.map(p => p.arxiv_id) : [];
     } else if (file.name.endsWith('.csv')) {
-      const lines = text.split('\n').slice(1); // Skip header
-      bookmarks = lines.map(line => line.split(',')[0]).filter(Boolean);
+      const rows = parseCSV(text);
+      // Skip header row, extract first column (arxiv_id)
+      bookmarks = rows.slice(1).map(row => row[0]).filter(Boolean);
     }
     
     // Merge with existing bookmarks
     const mergedBookmarks = [...new Set([...(userData.bookmarks || []), ...bookmarks])];
     
-    await fetch('http://localhost:5001/api/user/data', {
+    await fetch(`${API_BASE}/api/user/data`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...userData, bookmarks: mergedBookmarks })
@@ -552,7 +626,7 @@ async function importNotes(event) {
     // Merge with existing notes
     const mergedNotes = { ...(userData.notes || {}), ...notes };
     
-    await fetch('http://localhost:5001/api/user/data', {
+    await fetch(`${API_BASE}/api/user/data`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...userData, notes: mergedNotes })
@@ -627,15 +701,15 @@ function exportToSpreadsheet() {
     const status = userData.readingProgress?.[p.arxiv_id]?.status || 'unread';
     
     return [
-      p.arxiv_id,
-      `"${p.title.replace(/"/g, '""')}"`,
-      `"${p.authors.replace(/"/g, '""')}"`,
-      p.date,
-      `"${(p.topics || []).join(', ')}"`,
-      isBookmarked,
-      hasNotes,
-      hasSummary,
-      status
+      escapeCSV(p.arxiv_id),
+      escapeCSV(p.title),
+      escapeCSV(p.authors),
+      escapeCSV(p.date),
+      escapeCSV((p.topics || []).join(', ')),
+      escapeCSV(isBookmarked),
+      escapeCSV(hasNotes),
+      escapeCSV(hasSummary),
+      escapeCSV(status)
     ];
   });
   

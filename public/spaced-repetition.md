@@ -377,6 +377,10 @@ Review your saved papers at optimal intervals to maximize retention and understa
 </style>
 
 <script>
+// Dynamic API base URL
+const API_BASE = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5001' 
+  : window.location.origin.replace(/:\\d+$/, ':5001');
 let allPapers = [];
 let userData = null;
 let reviewQueue = [];
@@ -388,7 +392,7 @@ async function loadData() {
     const papersResponse = await fetch('papers.json');
     allPapers = await papersResponse.json();
     
-    const userResponse = await fetch('http://localhost:5001/api/user/data');
+    const userResponse = await fetch(API_BASE + '/api/user/data');
     userData = await userResponse.json();
     
     // Initialize spaced repetition data if not exists
@@ -571,7 +575,7 @@ async function ratePaper(difficulty) {
 
 async function saveUserData() {
   try {
-    await fetch('http://localhost:5001/api/user/data', {
+    await fetch(API_BASE + '/api/user/data', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(userData)

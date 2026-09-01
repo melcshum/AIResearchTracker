@@ -531,6 +531,10 @@ Set learning goals and track your progress over time.
 </style>
 
 <script>
+// Dynamic API base URL
+const API_BASE = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5001' 
+  : window.location.origin.replace(/:\\d+$/, ':5001');
 let goals = [];
 let allPapers = [];
 let userData = null;
@@ -541,7 +545,7 @@ async function loadData() {
     const papersResponse = await fetch('papers.json');
     allPapers = await papersResponse.json();
     
-    const userResponse = await fetch('http://localhost:5001/api/user/data');
+    const userResponse = await fetch(API_BASE + '/api/user/data');
     userData = await userResponse.json();
     goals = userData.goals || [];
     
@@ -731,7 +735,7 @@ async function createGoal() {
 async function saveGoals() {
   try {
     userData.goals = goals;
-    await fetch('http://localhost:5001/api/user/data', {
+    await fetch(API_BASE + '/api/user/data', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(userData)

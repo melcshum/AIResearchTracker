@@ -248,6 +248,10 @@ title: "AI Wiki Assistant"
 </style>
 
 <script>
+// Dynamic API base URL
+const API_BASE = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5001' 
+  : window.location.origin.replace(/:\\d+$/, ':5001');
 let allPapers = [];
 let extractedConcepts = {};
 let aiExplanations = {};
@@ -259,7 +263,7 @@ async function loadWikiData() {
     allPapers = await papersResponse.json();
     
     // Load existing wiki data from user data
-    const userResponse = await fetch('http://localhost:5001/api/user/data');
+    const userResponse = await fetch(API_BASE + '/api/user/data');
     const userData = await userResponse.json();
     
     extractedConcepts = userData.wikiConcepts || {};
@@ -343,7 +347,7 @@ function linkConceptsToPapers(concepts) {
 
 async function saveWikiData() {
   try {
-    await fetch('http://localhost:5001/api/user/wiki-data', {
+    await fetch(API_BASE + '/api/user/wiki-data', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

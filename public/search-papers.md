@@ -203,12 +203,16 @@ title: "Search Papers"
 </style>
 
 <script>
+// Dynamic API base URL
+const API_BASE = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5001' 
+  : window.location.origin.replace(/:\\d+$/, ':5001');
 // Load user topics dynamically from API
 let userEnabledTopics = new Set(); // Store enabled topic IDs
 
 async function loadUserTopics() {
   try {
-    const response = await fetch('http://localhost:5001/api/user/config');
+    const response = await fetch(API_BASE + '/api/user/config');
     const config = await response.json();
     const topicFilter = document.getElementById('topicFilter');
     
@@ -564,7 +568,7 @@ let userReadingProgress = new Map();
 // Load user data from API
 async function loadUserData() {
   try {
-    const response = await fetch('http://localhost:5001/api/user/data');
+    const response = await fetch(API_BASE + '/api/user/data');
     const data = await response.json();
     
     userBookmarks = new Set(data.bookmarks || []);
@@ -586,7 +590,7 @@ async function toggleBookmark(arxivId) {
   const isBookmarked = userBookmarks.has(arxivId);
   
   try {
-    const response = await fetch(`http://localhost:5001/api/user/bookmarks/${arxivId}`, {
+    const response = await fetch(`${API_BASE}/api/user/bookmarks/${arxivId}`, {
       method: isBookmarked ? 'DELETE' : 'POST'
     });
     
@@ -613,7 +617,7 @@ function showNoteDialog(arxivId) {
 // Save note
 async function saveNote(arxivId, note) {
   try {
-    const response = await fetch(`http://localhost:5001/api/user/notes/${arxivId}`, {
+    const response = await fetch(`${API_BASE}/api/user/notes/${arxivId}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ note })

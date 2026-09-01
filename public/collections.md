@@ -471,6 +471,10 @@ Create custom curated lists of papers around specific topics, projects, or resea
 </style>
 
 <script>
+// Dynamic API base URL
+const API_BASE = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5001' 
+  : window.location.origin.replace(/:\\d+$/, ':5001');
 let collections = [];
 let allPapers = [];
 let currentCollectionId = null;
@@ -482,7 +486,7 @@ async function loadData() {
     allPapers = await papersResponse.json();
     
     // Load collections from user data
-    const userResponse = await fetch('http://localhost:5001/api/user/data');
+    const userResponse = await fetch(API_BASE + '/api/user/data');
     const userData = await userResponse.json();
     collections = userData.collections || [];
     
@@ -580,11 +584,11 @@ async function createCollection() {
 
 async function saveCollections() {
   try {
-    const userResponse = await fetch('http://localhost:5001/api/user/data');
+    const userResponse = await fetch(API_BASE + '/api/user/data');
     const userData = await userResponse.json();
     userData.collections = collections;
     
-    await fetch('http://localhost:5001/api/user/data', {
+    await fetch(API_BASE + '/api/user/data', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(userData)

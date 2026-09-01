@@ -217,6 +217,10 @@ title: "Recommended Papers"
 </style>
 
 <script>
+// Dynamic API base URL
+const API_BASE = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5001' 
+  : window.location.origin.replace(/:\\d+$/, ':5001');
 let allPapers = [];
 let userBookmarks = [];
 let userTopics = [];
@@ -227,11 +231,11 @@ async function loadRecData() {
     const papersResponse = await fetch('papers.json');
     allPapers = await papersResponse.json();
     
-    const userResponse = await fetch('http://localhost:5001/api/user/data');
+    const userResponse = await fetch(API_BASE + '/api/user/data');
     const userData = await userResponse.json();
     userBookmarks = userData.bookmarks || [];
     
-    const topicsResponse = await fetch('http://localhost:5001/api/user/config');
+    const topicsResponse = await fetch(API_BASE + '/api/user/config');
     const topicsData = await topicsResponse.json();
     userTopics = (topicsData.topics || []).filter(t => t.enabled);
     

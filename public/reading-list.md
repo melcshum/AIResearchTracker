@@ -306,6 +306,10 @@ title: "My Reading List"
 </style>
 
 <script>
+// Dynamic API base URL
+const API_BASE = window.location.hostname === 'localhost' 
+  ? 'http://localhost:5001' 
+  : window.location.origin.replace(/:\\d+$/, ':5001');
 const papers = [
   {
     "title": "Thinking Costs Tokens: When More Structure is Worth the Price",
@@ -509,7 +513,7 @@ let userNotes = {};
 
 async function loadUserData() {
   try {
-    const response = await fetch('http://localhost:5001/api/user/data');
+    const response = await fetch(API_BASE + '/api/user/data');
     const data = await response.json();
     userBookmarks = data.bookmarks || [];
     userReadingProgress = data.readingProgress || {};
@@ -521,7 +525,7 @@ async function loadUserData() {
 
 async function saveBookmark(arxivId) {
   try {
-    await fetch('http://localhost:5001/api/user/bookmarks', {
+    await fetch(API_BASE + '/api/user/bookmarks', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ paperId: arxivId })
@@ -536,7 +540,7 @@ async function saveBookmark(arxivId) {
 
 async function removeBookmark(arxivId) {
   try {
-    await fetch(`http://localhost:5001/api/user/bookmarks/${arxivId}`, {
+    await fetch(`${API_BASE}/api/user/bookmarks/${arxivId}`, {
       method: 'DELETE'
     });
     userBookmarks = userBookmarks.filter(id => id !== arxivId);
@@ -547,7 +551,7 @@ async function removeBookmark(arxivId) {
 
 async function updateReadingProgress(arxivId, status) {
   try {
-    await fetch(`http://localhost:5001/api/user/reading-progress/${arxivId}`, {
+    await fetch(`${API_BASE}/api/user/reading-progress/${arxivId}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ status })
@@ -560,7 +564,7 @@ async function updateReadingProgress(arxivId, status) {
 
 async function saveNote(arxivId, note) {
   try {
-    await fetch(`http://localhost:5001/api/user/notes/${arxivId}`, {
+    await fetch(`${API_BASE}/api/user/notes/${arxivId}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ note })
