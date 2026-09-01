@@ -22,6 +22,24 @@ body {
   color: #1f2937;
 }
 
+/* Override Quarto's default content width - make it wider */
+main.content, #quarto-document-content, .page-columns {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 2rem !important;
+}
+
+/* Override Bootstrap container width */
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  max-width: 100% !important;
+  padding: 0 2rem !important;
+}
+
+/* Override grid column widths */
+.page-columns .page-columns-full {
+  grid-column: 1 / -1 !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font-family;
   color: $primary;
