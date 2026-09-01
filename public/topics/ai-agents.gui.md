@@ -7,15 +7,238 @@ title: "🖥️ GUI Agents"
 <h1>🖥️ GUI Agents</h1>
 <p class="topic-description">Agents that interact with graphical user interfaces</p>
 <div class="topic-meta">
-<span>📄 0 papers</span>
+<span>📄 46 papers</span>
 <span>🔍 3 search queries</span>
 <span>🏷️ 4 keywords</span>
 </div>
 </div>
 
 
-<div class="no-papers">
-<p>No papers found for this topic yet. Run the paper fetcher to populate this topic.</p>
+<div class="papers-section">
+<h2>📄 Recent Papers</h2>
+<div class="papers-list">
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.30672v1" target="_blank">HiRS-Agent: A Hierarchical Multi-Agent System for Reliable Long-Horizon Remote Sensing Task Solving</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Boyang Mu, Zhiwei Wei, Mugen Peng, Wenjia Xu</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.30672v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.30480v1" target="_blank">VisER: Visual Evidence and Reliance for Object Hallucination Detection in LVLMs</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Afsaneh Hasanebrahimi, Hanxun Huang, Christopher Leckie, Sarah Erfani</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.30480v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.31137v1" target="_blank">OntoAligner-Ensemble: Voting-Based Fusion across Heterogeneous Ontology Alignment Techniques</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Hamed Babaei Giglou, Sören Auer, Peio Popov, Mahsa Sanaei, Jennifer D'Souza</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.31137v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.31118v1" target="_blank">When Does Bigger Help? A Controlled Study of LLM Scale for Ontology Learning</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Hamed Babaei Giglou, Sören Auer, Jennifer D'Souza</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.31118v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.30163v1" target="_blank">Doc-REFRAG: Rethinking Multimodal Document Retrieval-Augmented Generation</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Ruofan Hu, Shengyang Xu, Minjie Hong, Xiaoda Yang, Sashuai Zhou, Ke Lei, Tao Jin, Zhou Zhao</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.30163v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.29305v1" target="_blank">Learning Simple Test-Time Environments for LLM Web Agents</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Junxuan Li, Zijun Liu, Ziyi Huang, Peng Li, Yuzhou Liu, Ming Yan, Yang Liu</span>
+<span class="paper-date">2026-08-29</span>
+<span class="paper-arxiv">arXiv:2608.29305v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.29209v1" target="_blank">Toward Cultural Alignment: Human-Centered Evaluation of Multimodal AI Stories Across Five African Communities</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Millicent Ochieng, Felermino D. M. A. Ali, Elizabeth A. Ankrah, Najeeb Gambo Abdulhamid, Migisha Boy...</span>
+<span class="paper-date">2026-08-29</span>
+<span class="paper-arxiv">arXiv:2608.29209v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.29263v1" target="_blank">RACER: Reinforced Agent Collaboration for Explainable Reasoning on Knowledge Graphs</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Yuwei Lou, Hao Hu, Yuzhou Jiang, Zongfei Zhang, Liang Wang, Jincai Liu, Jidong Ge, Xianping Tao</span>
+<span class="paper-date">2026-08-29</span>
+<span class="paper-arxiv">arXiv:2608.29263v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.28878v1" target="_blank">Hybrid Offline-Online Multi-Agent Decision Transformers for Wireless Resource Management</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Yiming Zhang, Kun Yang, Cong Shen, Dongning Guo</span>
+<span class="paper-date">2026-08-28</span>
+<span class="paper-arxiv">arXiv:2608.28878v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.27818v1" target="_blank">AcCoRD: Evaluating User-Agent Collaboration Under Realistic User Preference Dynamics</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Tejas Srinivasan, Shikib Mehri, Nandita Shankar Naik, Anirban Das, William M. Campbell, Jesse Thomas...</span>
+<span class="paper-date">2026-08-28</span>
+<span class="paper-arxiv">arXiv:2608.27818v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.28144v1" target="_blank">The Shape of Power: A Multilingual Framework for Social Power Reasoning in Dialogues</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Farah Atif, Sougata Saha, Monojit Choudhury</span>
+<span class="paper-date">2026-08-28</span>
+<span class="paper-arxiv">arXiv:2608.28144v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.28726v1" target="_blank">Pro-Router: Token-Aware Progressive Model Routing with Adaptive Edge-Cloud Collaboration for Efficient Multimodal LLM Inference</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Xinyuan Gui, Shaowen Wang, Sheng Sun, Zijian Wang, Zishu Yu, Zheming Yang</span>
+<span class="paper-date">2026-08-28</span>
+<span class="paper-arxiv">arXiv:2608.28726v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.28383v1" target="_blank">Semantic Head Specialization Guides Hybrid ViT Attention for Multimodal LLMs</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Chenhong He, Lei Li, Shicheng Li, Hanglong Lv, Lingpeng Kong, Qi Liu, Tong Yang, Shuhuai Ren</span>
+<span class="paper-date">2026-08-28</span>
+<span class="paper-arxiv">arXiv:2608.28383v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.27046v1" target="_blank">Performance Foundations of Parallel & Distributed Reasoning Language Models</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Maciej Besta, Leonard Schmidt, Lara Nonino, Robert Gerstenberger, Pierre Pang, Patrik Okanovic, Ales...</span>
+<span class="paper-date">2026-08-27</span>
+<span class="paper-arxiv">arXiv:2608.27046v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.26684v1" target="_blank">Reason in the Words You Speak: Idiolectal Paraphrasing Off-Policy Traces for Reasoning Distillation in VideoLLMs</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Ji Soo Lee, Jinyoung Park, Seohyun Lee, Jongha Kim, Joonmyung Choi, Jinsung Yoon, Hyunwoo J. Kim</span>
+<span class="paper-date">2026-08-27</span>
+<span class="paper-arxiv">arXiv:2608.26684v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.26856v1" target="_blank">From Reasoning to Pixels: Grounded Medical Multimodal LLMs for VQA and Segmentation</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Haowen Gu, Gensheng Pei, Junzhu Mao, Qiong Wang, Mingwu Ren, Yazhou Yao</span>
+<span class="paper-date">2026-08-27</span>
+<span class="paper-arxiv">arXiv:2608.26856v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.27508v1" target="_blank">WM-R1: Training GUI Agents to Reason and leverage World Models with Reinforcement Learning</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Yu Han, Tianwen Qian</span>
+<span class="paper-date">2026-08-27</span>
+<span class="paper-arxiv">arXiv:2608.27508v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.26623v1" target="_blank">AgentJudgeBench: A Multi-Difficulty Benchmark for Evaluating LLM Judges on Agentic Tool-Calling</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Abhigya Verma, Amit Kumar Saha, Seganrasan Subramanian, Sai Harshitha Aluru</span>
+<span class="paper-date">2026-08-27</span>
+<span class="paper-arxiv">arXiv:2608.26623v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.25777v1" target="_blank">LocalLSTC: A Long Short-Term Control Architecture for Locally Deployed GUI Agents</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Weiming Li, Helen Paik, Yulei Sui</span>
+<span class="paper-date">2026-08-26</span>
+<span class="paper-arxiv">arXiv:2608.25777v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.25457v2" target="_blank">MACGen: Toward Functionally Correct and Secure Code Generation via Multi-Agent Collaboration</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Miseon Yu, Jaehoon Choi, Younghan Lee, Yunheung Paek</span>
+<span class="paper-date">2026-08-26</span>
+<span class="paper-arxiv">arXiv:2608.25457v2</span>
+</div>
+</div>
+
+</div>
 </div>
 
 </div>

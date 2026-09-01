@@ -7,15 +7,238 @@ title: "🧠 LLM Reasoning"
 <h1>🧠 LLM Reasoning</h1>
 <p class="topic-description">Chain-of-thought, self-consistency, tree-of-thought, and verification techniques</p>
 <div class="topic-meta">
-<span>📄 0 papers</span>
+<span>📄 76 papers</span>
 <span>🔍 3 search queries</span>
 <span>🏷️ 5 keywords</span>
 </div>
 </div>
 
 
-<div class="no-papers">
-<p>No papers found for this topic yet. Run the paper fetcher to populate this topic.</p>
+<div class="papers-section">
+<h2>📄 Recent Papers</h2>
+<div class="papers-list">
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.30646v1" target="_blank">BiG-SURE - Bipartite Graph for Semantic Uncertainty and Reliability Estimation of LLMs</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Debarpan Bhattacharya, Malay Phadke, Sriram Ganapathy</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.30646v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.30672v1" target="_blank">HiRS-Agent: A Hierarchical Multi-Agent System for Reliable Long-Horizon Remote Sensing Task Solving</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Boyang Mu, Zhiwei Wei, Mugen Peng, Wenjia Xu</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.30672v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.30498v1" target="_blank">CM2: Multimodal Cultural Reasoning via an Integrated Multi-Agent Framework</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Qi Li, Zhaojie Kang, Yingjie He, Zheng Lin, Hao Zhang, Guangxin Wu, Yan Gong, Rong Fu, Jianyuan Ni</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.30498v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.30935v1" target="_blank">LightNav-0: Eliciting VLM Spatial Intelligence for Generalist Embodied Navigation</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Shaoan Wang, Aocheng Luo, Fei Huang, Jingyi Xu, Xiaoyang Wang, Yueyu Wang, Qianli Ma, Fan Yang, Ran ...</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.30935v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.30996v1" target="_blank">Faithfulness Is Not Free: Auditing Offline KV-Cache Quantization in Retrieval-Augmented Generation</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Atta Ul Asad, Ahsan Bilal, Muhammad Ali, Muhammad Haseeb, Dean F. Hougen</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.30996v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.30480v1" target="_blank">VisER: Visual Evidence and Reliance for Object Hallucination Detection in LVLMs</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Afsaneh Hasanebrahimi, Hanxun Huang, Christopher Leckie, Sarah Erfani</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.30480v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.30959v1" target="_blank">LOCI: A Locator-Critic with Refinement Loop</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Walid Bousselham, Mathilde Caron, Arsha Nagrani, Cordelia Schmid</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.30959v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.31115v1" target="_blank">InsightToast: Proactive Information Retrieval & Glanceable Visualization in the Side Channel of Data-Rich Meetings</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Mohammad Abolnejadian, Matthew Brehmer</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.31115v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.31137v1" target="_blank">OntoAligner-Ensemble: Voting-Based Fusion across Heterogeneous Ontology Alignment Techniques</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Hamed Babaei Giglou, Sören Auer, Peio Popov, Mahsa Sanaei, Jennifer D'Souza</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.31137v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.31118v1" target="_blank">When Does Bigger Help? A Controlled Study of LLM Scale for Ontology Learning</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Hamed Babaei Giglou, Sören Auer, Jennifer D'Souza</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.31118v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.30705v1" target="_blank">VisLens: Single-Pass Interpretable Visual Search for Multimodal LLMs</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Jingyi He, Sanghwan Kim, Zeynep Akata</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.30705v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.30396v1" target="_blank">Scaffolding Foundation Models into Physical-World Agents Pushes the Frontier of Long-Horizon Navigation</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Zixing Lei, Gengze Zhou, Xiong-Hui Chen, Jiazhao Zhang, Yiyang Huang, Hang Yin, Haoqi Yuan, Qi Wu, W...</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.30396v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.30997v1" target="_blank">Multi-View Reflective Surface Inspection via Semantic-Saliency Cross-Verification</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Van-Giang Nguyen, Thanh-Tuan Tran, Xuan-Hieu Phan, Xiem HoangVan</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.30997v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.30475v1" target="_blank">ImageEval 2026: Culturally Grounded Arabic Multimodal Evaluation</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Samir Abdaljalil, Hunzalah Hassan Bhatti, Ahlam Bashiti, Farina Amir, Md Arid Hasan, Basel Mousi, Na...</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2608.30475v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.29753v1" target="_blank">PAGE-RAG: Provenance-Aware Graph Evidence Promotion for Fixed-Budget Multi-hop Retrieval-Augmented Generation</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Haokun Deng, Xunkai Li, Hongchao Qin, Rong-Hua Li</span>
+<span class="paper-date">2026-08-30</span>
+<span class="paper-arxiv">arXiv:2608.29753v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.29305v1" target="_blank">Learning Simple Test-Time Environments for LLM Web Agents</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Junxuan Li, Zijun Liu, Ziyi Huang, Peng Li, Yuzhou Liu, Ming Yan, Yang Liu</span>
+<span class="paper-date">2026-08-29</span>
+<span class="paper-arxiv">arXiv:2608.29305v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.29204v1" target="_blank">AgentLogs: A Dataset for Opening the Black Box of GitHub's Cloud Agent</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Jonan Richards, Kosei Horikawa, Youmei Fan, Yutaro Kashiwa, Mairieli Wessel</span>
+<span class="paper-date">2026-08-29</span>
+<span class="paper-arxiv">arXiv:2608.29204v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.29209v1" target="_blank">Toward Cultural Alignment: Human-Centered Evaluation of Multimodal AI Stories Across Five African Communities</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Millicent Ochieng, Felermino D. M. A. Ali, Elizabeth A. Ankrah, Najeeb Gambo Abdulhamid, Migisha Boy...</span>
+<span class="paper-date">2026-08-29</span>
+<span class="paper-arxiv">arXiv:2608.29209v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.29263v1" target="_blank">RACER: Reinforced Agent Collaboration for Explainable Reasoning on Knowledge Graphs</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Yuwei Lou, Hao Hu, Yuzhou Jiang, Zongfei Zhang, Liang Wang, Jincai Liu, Jidong Ge, Xianping Tao</span>
+<span class="paper-date">2026-08-29</span>
+<span class="paper-arxiv">arXiv:2608.29263v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2608.29028v1" target="_blank">Facts Without Rules: Boundary Metadata Collapse in Multi-Agent LLM Handoffs</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Yian Wang, Agam Goyal, Eshwar Chandrasekharan, Hari Sundaram</span>
+<span class="paper-date">2026-08-29</span>
+<span class="paper-arxiv">arXiv:2608.29028v1</span>
+</div>
+</div>
+
+</div>
 </div>
 
 </div>
