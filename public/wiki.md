@@ -174,6 +174,56 @@ Key techniques include <span class="wiki-term" data-term="rlhf">RLHF</span> (Rei
 <p class="hint">Loading history...</p>
 </div>
 </div>
+
+<div id="aiCompanionPanel" class="wiki-panel ai-companion">
+<h4>🤖 AI Learning Companion</h4>
+<div class="ai-companion-modes">
+<button class="ai-mode-btn active" onclick="switchAIMode('write')" title="Help me write">✍️ Write</button>
+<button class="ai-mode-btn" onclick="switchAIMode('review')" title="Review my explanation">🔍 Review</button>
+<button class="ai-mode-btn" onclick="switchAIMode('coach')" title="Guide my learning">🎯 Coach</button>
+<button class="ai-mode-btn" onclick="switchAIMode('update')" title="Suggest updates">🔄 Update</button>
+</div>
+
+<div id="aiWriteMode" class="ai-mode-content active">
+<div class="ai-prompt">
+<p class="ai-hint">💡 I'll help you explain this concept. Start typing, and I'll provide suggestions.</p>
+<button class="ai-action-btn" onclick="aiStartDraft()">📝 Start Draft</button>
+<button class="ai-action-btn" onclick="aiSuggestStructure()">🏗️ Suggest Structure</button>
+<button class="ai-action-btn" onclick="aiProvideHints()">💡 Give Hints</button>
+</div>
+<div id="aiWritingAssist" class="ai-assist-area"></div>
+</div>
+
+<div id="aiReviewMode" class="ai-mode-content">
+<div class="ai-prompt">
+<p class="ai-hint">🔍 I'll review your explanation and identify gaps or unclear parts.</p>
+<button class="ai-action-btn" onclick="aiReviewExplanation()">📊 Review Now</button>
+<button class="ai-action-btn" onclick="aiCheckAccuracy()">✓ Check Accuracy</button>
+<button class="ai-action-btn" onclick="aiFindGaps()">🕳️ Find Gaps</button>
+</div>
+<div id="aiReviewResult" class="ai-assist-area"></div>
+</div>
+
+<div id="aiCoachMode" class="ai-mode-content">
+<div class="ai-prompt">
+<p class="ai-hint">🎯 I'll track your progress and suggest what to learn next.</p>
+<button class="ai-action-btn" onclick="aiAssessMastery()">📈 Assess Mastery</button>
+<button class="ai-action-btn" onclick="aiSuggestNext()">➡️ What's Next?</button>
+<button class="ai-action-btn" onclick="aiCreateQuiz()">📝 Quick Quiz</button>
+</div>
+<div id="aiCoachingResult" class="ai-assist-area"></div>
+</div>
+
+<div id="aiUpdateMode" class="ai-mode-content">
+<div class="ai-prompt">
+<p class="ai-hint">🔄 I'll monitor new research and suggest updates to your understanding.</p>
+<button class="ai-action-btn" onclick="aiCheckNewPapers()">📄 Check New Papers</button>
+<button class="ai-action-btn" onclick="aiSuggestUpdates()">💡 Suggest Updates</button>
+<button class="ai-action-btn" onclick="aiCompareVersions()">⚖️ Compare Versions</button>
+</div>
+<div id="aiUpdateResult" class="ai-assist-area"></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -750,6 +800,152 @@ Key techniques include <span class="wiki-term" data-term="rlhf">RLHF</span> (Rei
   font-weight: 500;
 }
 
+/* AI Companion Styles */
+.ai-companion {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border: 2px solid #667eea;
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.ai-companion h4 {
+  margin: 0 0 12px 0;
+  color: #2c3e50;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-companion-modes {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.ai-mode-btn {
+  flex: 1;
+  padding: 8px 12px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+  color: #666;
+}
+
+.ai-mode-btn:hover {
+  background: #f0f4f8;
+  border-color: #667eea;
+  transform: translateY(-2px);
+}
+
+.ai-mode-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.ai-mode-content {
+  display: none;
+}
+
+.ai-mode-content.active {
+  display: block;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ai-prompt {
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.ai-hint {
+  color: #666;
+  font-size: 13px;
+  margin: 0 0 10px 0;
+  line-height: 1.5;
+}
+
+.ai-action-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 4px 4px 4px 0;
+  background: white;
+  border: 1px solid #667eea;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #667eea;
+  transition: all 0.2s;
+}
+
+.ai-action-btn:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3);
+}
+
+.ai-assist-area {
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  min-height: 80px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.ai-assist-area:empty {
+  display: none;
+}
+
+.ai-assist-area .ai-message {
+  padding: 10px;
+  background: #f8f9fa;
+  border-left: 3px solid #667eea;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.ai-assist-area .ai-suggestion {
+  padding: 8px;
+  background: #fff3cd;
+  border-left: 3px solid #ffc107;
+  border-radius: 4px;
+  margin: 6px 0;
+}
+
+.ai-assist-area .ai-warning {
+  padding: 8px;
+  background: #f8d7da;
+  border-left: 3px solid #dc3545;
+  border-radius: 4px;
+  margin: 6px 0;
+}
+
+.ai-assist-area .ai-success {
+  padding: 8px;
+  background: #d4edda;
+  border-left: 3px solid #28a745;
+  border-radius: 4px;
+  margin: 6px 0;
+}
+
 .backlink-stats {
   display: flex;
   gap: 10px;
@@ -1289,6 +1485,401 @@ function renderContributions() {
 <div class="contribution-preview">${c.content.substring(0, 150)}${c.content.length > 150 ? '...' : ''}</div>
 </div>
   `).join('');
+}
+
+// AI Companion Functions
+function switchAIMode(mode) {
+  // Update button states
+  document.querySelectorAll('.ai-mode-btn').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  // Update content visibility
+  document.querySelectorAll('.ai-mode-content').forEach(content => content.classList.remove('active'));
+  document.getElementById('ai' + mode.charAt(0).toUpperCase() + mode.slice(1) + 'Mode').classList.add('active');
+}
+
+function aiStartDraft() {
+  if (!currentTerm) {
+    alert('Please select a term first');
+    return;
+  }
+  
+  const area = document.getElementById('aiWritingAssist');
+  area.innerHTML = `
+<div class="ai-message">
+<strong>📝 Starting draft for "${currentTerm.name}"</strong>
+<p>Here's a structure to help you explain this concept:</p>
+<div class="ai-suggestion">
+<strong>1. Definition:</strong> Start with a clear, concise definition<br>
+<strong>2. Key Components:</strong> What are the main parts?<br>
+<strong>3. How it Works:</strong> Explain the mechanism<br>
+<strong>4. Example:</strong> Provide a concrete example<br>
+<strong>5. Related Concepts:</strong> Connect to ${currentTerm.relatedTerms.slice(0, 3).join(', ')}
+</div>
+<p>Try writing your explanation, then use "Review" mode to get feedback!</p>
+</div>
+  `;
+}
+
+function aiSuggestStructure() {
+  if (!currentTerm) {
+    alert('Please select a term first');
+    return;
+  }
+  
+  const area = document.getElementById('aiWritingAssist');
+  const relatedPapers = paperDatabase.filter(p => 
+    p.keywords.some(k => currentTerm.keywords.includes(k))
+  ).slice(0, 3);
+  
+  area.innerHTML = `
+<div class="ai-message">
+<strong>🏗️ Suggested Structure for ${currentTerm.name}</strong>
+<p>Based on ${currentTerm.papers?.length || relatedPapers.length} related papers, here's an effective structure:</p>
+<div class="ai-suggestion">
+<strong>Opening Hook:</strong> Why does this concept matter?<br>
+<strong>Core Definition:</strong> ${currentTerm.definition}<br>
+<strong>Technical Details:</strong> How is it implemented?<br>
+<strong>Real-World Applications:</strong> Where is it used?<br>
+<strong>Challenges:</strong> What are the limitations?<br>
+<strong>Future Directions:</strong> Where is this heading?
+</div>
+${relatedPapers.length > 0 ? `
+<p><strong>Key papers to reference:</strong></p>
+<ul>
+${relatedPapers.map(p => `<li>${p.title} (${p.date})</li>`).join('')}
+</ul>
+` : ''}
+</div>
+  `;
+}
+
+function aiProvideHints() {
+  if (!currentTerm) {
+    alert('Please select a term first');
+    return;
+  }
+  
+  const area = document.getElementById('aiWritingAssist');
+  const relatedConcepts = currentTerm.relatedTerms.map(id => wikiTerms[id]?.name).filter(Boolean);
+  
+  area.innerHTML = `
+<div class="ai-message">
+<strong>💡 Hints for explaining ${currentTerm.name}</strong>
+<p>Consider these angles:</p>
+<div class="ai-suggestion">
+<strong>Analogy:</strong> Think of it like... (create a relatable comparison)<br>
+<strong>Contrast:</strong> How is it different from similar concepts?<br>
+<strong>History:</strong> When and why was this developed?<br>
+<strong>Impact:</strong> What problem does it solve?
+</div>
+<p><strong>Related concepts to mention:</strong> ${relatedConcepts.join(', ')}</p>
+<p><strong>Key terms to include:</strong> ${currentTerm.keywords.slice(0, 5).join(', ')}</p>
+</div>
+  `;
+}
+
+function aiReviewExplanation() {
+  const textarea = document.getElementById('explanationInput');
+  if (!textarea || !textarea.value.trim()) {
+    alert('Please write an explanation first in the "Add Explanation" panel');
+    return;
+  }
+  
+  const explanation = textarea.value;
+  const area = document.getElementById('aiReviewResult');
+  const wordCount = explanation.split(/\s+/).length;
+  const sentenceCount = explanation.split(/[.!?]+/).length;
+  
+  // Check for key terms
+  const missingTerms = currentTerm.keywords.filter(k => 
+    !explanation.toLowerCase().includes(k.toLowerCase())
+  );
+  
+  // Check for related concepts
+  const mentionedRelated = currentTerm.relatedTerms.filter(id => {
+    const term = wikiTerms[id];
+    return term && explanation.toLowerCase().includes(term.name.toLowerCase());
+  });
+  
+  let feedback = '<div class="ai-message"><strong>📊 Explanation Review</strong>';
+  
+  // Length feedback
+  if (wordCount < 50) {
+    feedback += '<div class="ai-warning">⚠️ Your explanation is quite brief (' + wordCount + ' words). Consider adding more detail.</div>';
+  } else if (wordCount > 300) {
+    feedback += '<div class="ai-suggestion">💡 Your explanation is comprehensive (' + wordCount + ' words). Consider breaking it into paragraphs for readability.</div>';
+  } else {
+    feedback += '<div class="ai-success">✓ Good length: ' + wordCount + ' words</div>';
+  }
+  
+  // Missing terms
+  if (missingTerms.length > 0) {
+    feedback += '<div class="ai-warning">⚠️ Consider including these key terms: ' + missingTerms.slice(0, 5).join(', ') + '</div>';
+  } else {
+    feedback += '<div class="ai-success">✓ You\'ve covered the key terminology</div>';
+  }
+  
+  // Related concepts
+  if (mentionedRelated.length === 0) {
+    feedback += '<div class="ai-suggestion">💡 Try connecting this to related concepts like: ' + 
+      currentTerm.relatedTerms.slice(0, 3).map(id => wikiTerms[id]?.name).filter(Boolean).join(', ') + '</div>';
+  } else {
+    feedback += '<div class="ai-success">✓ Good connections to: ' + 
+      mentionedRelated.map(id => wikiTerms[id]?.name).join(', ') + '</div>';
+  }
+  
+  feedback += '</div>';
+  area.innerHTML = feedback;
+}
+
+function aiCheckAccuracy() {
+  if (!currentTerm) {
+    alert('Please select a term first');
+    return;
+  }
+  
+  const area = document.getElementById('aiReviewResult');
+  area.innerHTML = `
+<div class="ai-message">
+<strong>✓ Accuracy Check for ${currentTerm.name}</strong>
+<p><strong>Official Definition:</strong> ${currentTerm.definition}</p>
+<div class="ai-suggestion">
+<strong>Key points to verify:</strong><br>
+• Does your explanation match this definition?<br>
+• Are the technical details correct?<br>
+• Have you cited reliable sources?<br>
+• Are there any common misconceptions to address?
+</div>
+<p>Compare your explanation with the definition above to ensure accuracy.</p>
+</div>
+  `;
+}
+
+function aiFindGaps() {
+  if (!currentTerm) {
+    alert('Please select a term first');
+    return;
+  }
+  
+  const area = document.getElementById('aiReviewResult');
+  const questions = [
+    'What problem does this solve?',
+    'How does it work technically?',
+    'What are the limitations?',
+    'How does it compare to alternatives?',
+    'What are real-world applications?',
+    'What are common misconceptions?'
+  ];
+  
+  area.innerHTML = `
+<div class="ai-message">
+<strong>🕳️ Potential Gaps to Address</strong>
+<p>Consider if your explanation answers these questions:</p>
+<div class="ai-suggestion">
+${questions.map(q => `□ ${q}`).join('<br>')}
+</div>
+<p>Check off what you've covered and add details for missing areas.</p>
+</div>
+  `;
+}
+
+function aiAssessMastery() {
+  if (!currentTerm) {
+    alert('Please select a term first');
+    return;
+  }
+  
+  const area = document.getElementById('aiCoachingResult');
+  const contributions = wikiContributions.filter(c => c.termId === currentTerm.id);
+  const hasExplanation = contributions.some(c => c.type === 'explanation');
+  const hasQuestions = contributions.some(c => c.type === 'question');
+  
+  let masteryLevel = '🌱 Learning';
+  let masteryColor = '#ffc107';
+  let suggestions = [];
+  
+  if (hasExplanation && hasQuestions) {
+    masteryLevel = '🌳 Mastered';
+    masteryColor = '#28a745';
+    suggestions.push('✓ You\'ve written explanations and asked questions');
+    suggestions.push('💡 Try teaching this concept to someone else');
+    suggestions.push('💡 Explore advanced related topics');
+  } else if (hasExplanation) {
+    masteryLevel = '🌿 Developing';
+    masteryColor = '#17a2b8';
+    suggestions.push('✓ You\'ve written an explanation');
+    suggestions.push('💡 Ask questions about unclear aspects');
+    suggestions.push('💡 Review related papers for deeper understanding');
+  } else {
+    suggestions.push('💡 Start by writing your own explanation');
+    suggestions.push('💡 Ask questions about what confuses you');
+    suggestions.push('💡 Review the definition and related papers');
+  }
+  
+  area.innerHTML = `
+<div class="ai-message">
+<strong>📈 Mastery Assessment for ${currentTerm.name}</strong>
+<div class="ai-success" style="background: ${masteryColor}; color: white; font-size: 16px; font-weight: bold; text-align: center;">
+${masteryLevel}
+</div>
+<p><strong>Progress:</strong></p>
+<ul>
+${suggestions.map(s => `<li>${s}</li>`).join('')}
+</ul>
+</div>
+  `;
+}
+
+function aiSuggestNext() {
+  if (!currentTerm) {
+    alert('Please select a term first');
+    return;
+  }
+  
+  const area = document.getElementById('aiCoachingResult');
+  const relatedTerms = currentTerm.relatedTerms.map(id => wikiTerms[id]).filter(Boolean);
+  const unexplored = relatedTerms.filter(t => 
+    !wikiContributions.some(c => c.termId === Object.keys(wikiTerms).find(k => wikiTerms[k] === t))
+  );
+  
+  area.innerHTML = `
+<div class="ai-message">
+<strong>➡️ Suggested Next Steps</strong>
+<p>Based on your study of <strong>${currentTerm.name}</strong>, consider exploring:</p>
+<div class="ai-suggestion">
+${unexplored.length > 0 ? 
+  unexplored.slice(0, 3).map(t => `<strong>${t.name}:</strong> ${t.definition.substring(0, 80)}...`).join('<br><br>') :
+  'You\'ve explored the related concepts! Try reviewing papers or writing a comprehensive explanation.'
+}
+</div>
+<p><strong>Learning Path:</strong> ${currentTerm.name} → ${relatedTerms.slice(0, 2).map(t => t.name).join(' → ')}</p>
+</div>
+  `;
+}
+
+function aiCreateQuiz() {
+  if (!currentTerm) {
+    alert('Please select a term first');
+    return;
+  }
+  
+  const area = document.getElementById('aiCoachingResult');
+  const questions = [
+    { q: `What is the main purpose of ${currentTerm.name}?`, a: currentTerm.definition },
+    { q: `Name two related concepts to ${currentTerm.name}.`, a: currentTerm.relatedTerms.slice(0, 2).map(id => wikiTerms[id]?.name).join(', ') },
+    { q: `What problem does ${currentTerm.name} solve?`, a: 'Think about the motivation and use cases' }
+  ];
+  
+  area.innerHTML = `
+<div class="ai-message">
+<strong>📝 Quick Quiz: ${currentTerm.name}</strong>
+<p>Test your understanding:</p>
+${questions.map((q, i) => `
+<div class="ai-suggestion">
+<strong>Q${i+1}:</strong> ${q.q}<br>
+<details>
+<summary>Show Answer</summary>
+${q.a}
+</details>
+</div>
+`).join('')}
+</div>
+  `;
+}
+
+function aiCheckNewPapers() {
+  if (!currentTerm) {
+    alert('Please select a term first');
+    return;
+  }
+  
+  const area = document.getElementById('aiUpdateResult');
+  const recentPapers = paperDatabase.filter(p => 
+    p.keywords.some(k => currentTerm.keywords.includes(k))
+  ).sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 5);
+  
+  area.innerHTML = `
+<div class="ai-message">
+<strong>📄 Recent Papers on ${currentTerm.name}</strong>
+${recentPapers.length > 0 ? `
+<p>Found ${recentPapers.length} recent papers:</p>
+<ul>
+${recentPapers.map(p => `<li><strong>${p.title}</strong> (${p.date})<br><em>${p.abstract.substring(0, 100)}...</em></li>`).join('')}
+</ul>
+<div class="ai-suggestion">
+💡 Do any of these papers challenge or extend your current understanding?
+</div>
+` : '<p>No recent papers found for this topic.</p>'}
+</div>
+  `;
+}
+
+function aiSuggestUpdates() {
+  if (!currentTerm) {
+    alert('Please select a term first');
+    return;
+  }
+  
+  const area = document.getElementById('aiUpdateResult');
+  const contributions = wikiContributions.filter(c => c.termId === currentTerm.id);
+  const lastUpdate = contributions.length > 0 ? 
+    new Date(Math.max(...contributions.map(c => c.timestamp))).toLocaleDateString() : 
+    'Never';
+  
+  area.innerHTML = `
+<div class="ai-message">
+<strong>💡 Update Suggestions for ${currentTerm.name}</strong>
+<p><strong>Last updated:</strong> ${lastUpdate}</p>
+<div class="ai-suggestion">
+<strong>Consider updating:</strong><br>
+• Add new examples or applications<br>
+• Incorporate insights from recent papers<br>
+• Clarify any confusing explanations<br>
+• Add connections to newly learned concepts<br>
+• Update based on feedback from review mode
+</div>
+<p>Regular updates help solidify your understanding and keep knowledge current.</p>
+</div>
+  `;
+}
+
+function aiCompareVersions() {
+  if (!currentTerm || !termVersions[currentTerm.id]) {
+    alert('No version history available for this term');
+    return;
+  }
+  
+  const area = document.getElementById('aiUpdateResult');
+  const versions = termVersions[currentTerm.id];
+  
+  if (versions.length < 2) {
+    area.innerHTML = `
+<div class="ai-message">
+<strong>⚖️ Version Comparison</strong>
+<p>Only one version exists. Keep updating your explanation to see how your understanding evolves!</p>
+</div>
+    `;
+    return;
+  }
+  
+  const latest = versions[versions.length - 1];
+  const previous = versions[versions.length - 2];
+  
+  area.innerHTML = `
+<div class="ai-message">
+<strong>⚖️ Version Comparison</strong>
+<p><strong>Previous version:</strong> ${new Date(previous.timestamp).toLocaleDateString()}</p>
+<p><strong>Current version:</strong> ${new Date(latest.timestamp).toLocaleDateString()}</p>
+<div class="ai-suggestion">
+<strong>Changes detected:</strong><br>
+• Word count: ${previous.content.split(/\s+/).length} → ${latest.content.split(/\s+/).length}<br>
+• ${latest.content.length > previous.content.length ? '✓ More detailed explanation' : '✓ More concise explanation'}<br>
+• Your understanding is ${versions.length > 3 ? 'well-developed' : 'developing'}
+</div>
+<p>Keep refining to deepen your mastery!</p>
+</div>
+  `;
 }
 
 function searchWiki() {
