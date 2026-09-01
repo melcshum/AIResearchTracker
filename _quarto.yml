@@ -27,6 +27,8 @@ website:
         href: public/citation-graph.html
       - text: "📁 Collections"
         href: public/collections.html
+      - text: "🎯 Research Goals"
+        href: public/research-goals.html
       - text: "💾 Export/Import"
         href: public/export-import.html
       - text: "🔧 Admin Dashboard"
