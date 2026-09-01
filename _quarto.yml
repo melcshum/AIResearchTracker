@@ -9,40 +9,52 @@ website:
   navbar:
     background: primary
     left:
-      - text: "🌐 Research Portal"
-        href: public/index.html
-      - text: "📊 Dashboard"
-        href: public/dashboard.html
-      - text: "🎯 My Learning Path"
-        href: public/my-learning-path.html
-      - text: "📰 Weekly Digest"
-        href: public/digests/index.html
-      - text: "🤖 AI Wiki Assistant"
-        href: public/ai-wiki.html
-      - text: "🎯 Recommendations"
-        href: public/recommendations.html
-      - text: "📊 Compare Papers"
-        href: public/compare-papers.html
-      - text: "🕸️ Citation Graph"
-        href: public/citation-graph.html
-      - text: "📁 Collections"
-        href: public/collections.html
-      - text: "🎯 Research Goals"
-        href: public/research-goals.html
-      - text: "🔄 Spaced Repetition"
-        href: public/spaced-repetition.html
-      - text: "✨ Highlights"
-        href: public/highlights.html
-      - text: "📅 Timeline"
-        href: public/timeline.html
-      - text: "❓ Questions"
-        href: public/questions.html
-      - text: "💡 Takeaways"
-        href: public/takeaways.html
-      - text: "💾 Export/Import"
-        href: public/export-import.html
-      - text: "🔧 Admin Dashboard"
-        href: private/index.html
+      - text: "🔬 Workspace"
+        href: public/workspace.html
+      - text: "📚 Papers"
+        href: public/search-papers.html
+      - text: "📖 Reading List"
+        href: public/reading-list.html
+      - text: "📝 Notes & Insights"
+        menu:
+          - text: "✨ Highlights"
+            href: public/highlights.html
+          - text: "💡 Takeaways"
+            href: public/takeaways.html
+          - text: "❓ Questions"
+            href: public/questions.html
+      - text: "🧠 Learning"
+        menu:
+          - text: "📊 Dashboard"
+            href: public/dashboard.html
+          - text: "🎯 My Learning Path"
+            href: public/my-learning-path.html
+          - text: "🔄 Spaced Repetition"
+            href: public/spaced-repetition.html
+          - text: "📅 Timeline"
+            href: public/timeline.html
+      - text: "🔍 Explore"
+        menu:
+          - text: "🎯 Recommendations"
+            href: public/recommendations.html
+          - text: "📊 Compare Papers"
+            href: public/compare-papers.html
+          - text: "🕸️ Citation Graph"
+            href: public/citation-graph.html
+          - text: "🤖 AI Wiki Assistant"
+            href: public/ai-wiki.html
+          - text: "📁 Collections"
+            href: public/collections.html
+      - text: "⚙️ Tools"
+        menu:
+          - text: "🎯 Research Goals"
+            href: public/research-goals.html
+          - text: "📰 Weekly Digest"
+            href: public/digests/index.html
+          - text: "💾 Export/Import"
+            href: public/export-import.html
+          - text: "🔧 Admin Dashboard"
+            href: private/index.html
 
 format:
   html:

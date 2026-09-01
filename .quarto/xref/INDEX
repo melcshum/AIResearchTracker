@@ -1114,5 +1114,8 @@
   },
   "public/takeaways.md": {
     "takeaways.html": "23c9511d"
+  },
+  "public/workspace.md": {
+    "workspace.html": "253ff35c"
   }
 }
