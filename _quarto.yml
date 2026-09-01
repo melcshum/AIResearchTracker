@@ -55,6 +55,8 @@ website:
             href: public/digests/index.html
           - text: "💾 Export/Import"
             href: public/export-import.html
+          - text: "📊 Feedback Dashboard"
+            href: public/feedback-dashboard.html
           - text: "🔧 Admin Dashboard"
             href: private/index.html
 

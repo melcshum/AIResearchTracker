@@ -13,6 +13,7 @@ title: "Paper Reader"
         <button id="highlightBtn" class="btn-icon" title="Highlight">🖍️</button>
         <button id="noteBtn" class="btn-icon" title="Add Note">📝</button>
         <button id="questionBtn" class="btn-icon" title="Add Question">❓</button>
+        <button id="conceptValidationBtn" class="btn-icon" title="Validate AI Concepts">🧠</button>
         <button id="feedbackBtn" class="btn-icon" title="Rate AI Summary">⭐</button>
         <button id="exportAnnotationsBtn" class="btn-icon" title="Export Annotations">💾</button>
         <button id="fullScreenBtn" class="btn-icon" title="Full Screen">⛶</button>
@@ -412,6 +413,151 @@ title: "Paper Reader"
     transform: translateX(400px);
     opacity: 0;
   }
+}
+
+/* Concept Validation Modal */
+.concept-validation-modal {
+  max-width: 700px;
+  padding: 2rem;
+}
+
+.concept-validation-list {
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 1.5rem 0;
+}
+
+.concept-validation-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  background: #f8f9fa;
+}
+
+.concept-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.concept-confidence {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.concept-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-validate {
+  padding: 0.5rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.btn-validate:hover {
+  border-color: #999;
+}
+
+.btn-confirm.active {
+  background: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+
+.btn-reject.active {
+  background: #f44336;
+  color: white;
+  border-color: #f44336;
+}
+
+.validation-summary {
+  padding: 1rem;
+  background: #e3f2fd;
+  border-radius: 6px;
+  margin: 1rem 0;
+}
+
+/* Recommendation Rating */
+.recommendation-rating {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.recommendation-rating p {
+  margin: 0 0 0.75rem 0;
+  font-weight: 500;
+}
+
+.rating-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-rate {
+  flex: 1;
+  padding: 0.5rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1rem;
+}
+
+.btn-rate:hover {
+  border-color: #2c5aa0;
+  background: #e3f2fd;
+}
+
+.btn-thumbs-up:hover {
+  border-color: #4caf50;
+  background: #e8f5e9;
+}
+
+.btn-thumbs-down:hover {
+  border-color: #f44336;
+  background: #ffebee;
+}
+
+.rating-feedback {
+  margin-top: 0.75rem;
+}
+
+.rating-feedback textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 0.5rem;
+}
+
+.btn-small {
+  padding: 0.4rem 0.8rem;
+  background: #2c5aa0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-small:hover {
+  background: #1e4a8f;
 }
 
 /* Table of Contents */
@@ -1145,6 +1291,216 @@ function showNotification(message, type = 'info') {
 }
   document.getElementById('progressFill').style.width = `${progress}%`;
   document.getElementById('progressText').textContent = `${Math.round(progress)}%`;
+}
+
+// HITL Phase 2: Concept Validation
+document.getElementById('conceptValidationBtn')?.addEventListener('click', showConceptValidation);
+
+function showConceptValidation() {
+  if (!currentPaper) {
+    alert('Please load a paper first');
+    return;
+  }
+
+  // Extract concepts from paper (simplified version)
+  const concepts = extractConceptsFromPaper(currentPaper);
+  
+  if (concepts.length === 0) {
+    showNotification('No concepts detected in this paper', 'info');
+    return;
+  }
+
+  const modal = document.createElement('div');
+  modal.className = 'modal show';
+  modal.innerHTML = `
+    <div class="modal-content concept-validation-modal">
+      <span class="modal-close" onclick="closeConceptValidation()">&times;</span>
+      <h2>🧠 Validate AI-Extracted Concepts</h2>
+      <p>Help improve concept extraction by confirming or rejecting detected concepts</p>
+      
+      <div class="concept-validation-list">
+        ${concepts.map((concept, idx) => `
+          <div class="concept-validation-item" data-concept="${concept.name}" data-index="${idx}">
+            <div class="concept-info">
+              <strong>${concept.name}</strong>
+              <span class="concept-confidence">${concept.confidence}% confidence</span>
+            </div>
+            <div class="concept-actions">
+              <button class="btn-validate btn-confirm" onclick="validateConcept(${idx}, true)">✓ Confirm</button>
+              <button class="btn-validate btn-reject" onclick="validateConcept(${idx}, false)">✗ Reject</button>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+
+      <div class="validation-summary">
+        <p><strong>Progress:</strong> <span id="validationProgress">0</span> / ${concepts.length} validated</p>
+      </div>
+
+      <div class="feedback-actions">
+        <button class="btn-secondary" onclick="closeConceptValidation()">Close</button>
+        <button class="btn-primary" onclick="saveConceptValidation()">Save All</button>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(modal);
+}
+
+function extractConceptsFromPaper(paper) {
+  // Simplified concept extraction - in production, this would use NLP
+  const text = `${paper.title} ${paper.abstract || ''}`.toLowerCase();
+  const concepts = [];
+  
+  // Common AI/ML concepts to detect
+  const conceptPatterns = [
+    { name: 'Machine Learning', pattern: /machine learning|ml\b/i, confidence: 85 },
+    { name: 'Deep Learning', pattern: /deep learning|neural network/i, confidence: 90 },
+    { name: 'Natural Language Processing', pattern: /nlp|natural language|text processing/i, confidence: 88 },
+    { name: 'Computer Vision', pattern: /computer vision|image|visual/i, confidence: 85 },
+    { name: 'Reinforcement Learning', pattern: /reinforcement learning|reward|policy/i, confidence: 90 },
+    { name: 'Transformer', pattern: /transformer|attention mechanism/i, confidence: 92 },
+    { name: 'GAN', pattern: /\bgan\b|generative adversarial/i, confidence: 95 },
+    { name: 'Transfer Learning', pattern: /transfer learning|pretrain/i, confidence: 87 },
+    { name: 'Few-shot Learning', pattern: /few.?shot|zero.?shot/i, confidence: 89 },
+    { name: 'Meta-Learning', pattern: /meta.?learning|learning to learn/i, confidence: 88 }
+  ];
+  
+  conceptPatterns.forEach(cp => {
+    if (cp.pattern.test(text)) {
+      concepts.push({
+        name: cp.name,
+        confidence: cp.confidence,
+        validated: null
+      });
+    }
+  });
+  
+  return concepts;
+}
+
+function validateConcept(index, isValid) {
+  const item = document.querySelector(`[data-index="${index}"]`);
+  const buttons = item.querySelectorAll('.btn-validate');
+  
+  buttons.forEach(btn => btn.classList.remove('active'));
+  
+  if (isValid) {
+    buttons[0].classList.add('active');
+  } else {
+    buttons[1].classList.add('active');
+  }
+  
+  // Update progress
+  const validated = document.querySelectorAll('.concept-validation-item .btn-validate.active').length;
+  document.getElementById('validationProgress').textContent = validated;
+}
+
+function saveConceptValidation() {
+  const items = document.querySelectorAll('.concept-validation-item');
+  const validations = [];
+  
+  items.forEach((item, idx) => {
+    const concept = item.dataset.concept;
+    const confirmBtn = item.querySelector('.btn-confirm.active');
+    const rejectBtn = item.querySelector('.btn-reject.active');
+    
+    if (confirmBtn || rejectBtn) {
+      validations.push({
+        concept,
+        validated: confirmBtn ? true : false,
+        timestamp: new Date().toISOString()
+      });
+    }
+  });
+  
+  if (validations.length === 0) {
+    showNotification('Please validate at least one concept', 'warning');
+    return;
+  }
+  
+  // Save to localStorage
+  const key = `concept_validation_${currentPaper.id}`;
+  localStorage.setItem(key, JSON.stringify(validations));
+  
+  // Save to global log
+  const globalKey = 'concept_validation_log';
+  const globalLog = JSON.parse(localStorage.getItem(globalKey) || '[]');
+  globalLog.push({
+    paperId: currentPaper.id,
+    validations,
+    timestamp: new Date().toISOString()
+  });
+  localStorage.setItem(globalKey, JSON.stringify(globalLog));
+  
+  showNotification(`✓ Saved ${validations.length} concept validations`, 'success');
+  closeConceptValidation();
+}
+
+function closeConceptValidation() {
+  const modal = document.querySelector('.concept-validation-modal');
+  if (modal) {
+    modal.parentElement.remove();
+  }
+}
+
+// HITL Phase 2: Recommendation Rating
+function addRecommendationRating(paperId) {
+  const ratingContainer = document.createElement('div');
+  ratingContainer.className = 'recommendation-rating';
+  ratingContainer.innerHTML = `
+    <p>Was this recommendation helpful?</p>
+    <div class="rating-buttons">
+      <button class="btn-rate btn-thumbs-up" onclick="rateRecommendation('${paperId}', true)">👍 Yes</button>
+      <button class="btn-rate btn-thumbs-down" onclick="rateRecommendation('${paperId}', false)">👎 No</button>
+    </div>
+    <div class="rating-feedback" style="display: none;">
+      <textarea placeholder="Why? (optional)" rows="2"></textarea>
+      <button class="btn-small" onclick="submitRatingFeedback('${paperId}')">Submit</button>
+    </div>
+  `;
+  return ratingContainer;
+}
+
+function rateRecommendation(paperId, isHelpful) {
+  const rating = {
+    paperId,
+    isHelpful,
+    timestamp: new Date().toISOString()
+  };
+  
+  // Save to localStorage
+  const key = `recommendation_rating_${paperId}`;
+  localStorage.setItem(key, JSON.stringify(rating));
+  
+  // Save to global log
+  const globalKey = 'recommendation_rating_log';
+  const globalLog = JSON.parse(localStorage.getItem(globalKey) || '[]');
+  globalLog.push(rating);
+  localStorage.setItem(globalKey, JSON.stringify(globalLog));
+  
+  // Show feedback form
+  const container = document.querySelector(`[data-paper-id="${paperId}"] .recommendation-rating`);
+  if (container) {
+    container.querySelector('.rating-buttons').style.display = 'none';
+    container.querySelector('.rating-feedback').style.display = 'block';
+  }
+  
+  showNotification('✓ Thanks for your feedback!', 'success');
+}
+
+function submitRatingFeedback(paperId) {
+  const container = document.querySelector(`[data-paper-id="${paperId}"] .recommendation-rating`);
+  const feedback = container.querySelector('textarea').value;
+  
+  if (feedback) {
+    const key = `recommendation_rating_${paperId}`;
+    const rating = JSON.parse(localStorage.getItem(key) || '{}');
+    rating.feedback = feedback;
+    localStorage.setItem(key, JSON.stringify(rating));
+  }
+  
+  container.innerHTML = '<p>✓ Thank you for your feedback!</p>';
 }
 
 // Full screen mode
