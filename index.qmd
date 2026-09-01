@@ -1,154 +1,155 @@
 ---
 title: "AI Research Tracker"
 description: "Human-in-the-loop research platform for AI agents, reasoning, RAG, and multi-modal systems"
+format: html
 ---
 
 <div class="landing-page">
 
 <!-- How It Works Section -->
 <div class="how-it-works">
-  <h2>How It Works</h2>
-  <p class="section-subtitle">Your contributions shape the research knowledge base</p>
+<h2>How It Works</h2>
+<p class="section-subtitle">Your contributions shape the research knowledge base</p>
 
-  <div class="workflow-steps">
-    <div class="step-card">
-      <div class="step-number">1</div>
-      <div class="step-icon">📖</div>
-      <h3>Read & Annotate</h3>
-      <p>Explore papers, highlight key passages, and add your insights</p>
-    </div>
+<div class="workflow-steps">
+<div class="step-card">
+<div class="step-number">1</div>
+<div class="step-icon">📖</div>
+<h3>Read & Annotate</h3>
+<p>Explore papers, highlight key passages, and add your insights</p>
+</div>
 
-    <div class="step-card">
-      <div class="step-number">2</div>
-      <div class="step-icon">✅</div>
-      <h3>Validate Concepts</h3>
-      <p>Confirm or correct AI-extracted concepts and relationships</p>
-    </div>
+<div class="step-card">
+<div class="step-number">2</div>
+<div class="step-icon">✅</div>
+<h3>Validate Concepts</h3>
+<p>Confirm or correct AI-extracted concepts and relationships</p>
+</div>
 
-    <div class="step-card">
-      <div class="step-number">3</div>
-      <div class="step-icon">⭐</div>
-      <h3>Rate AI Outputs</h3>
-      <p>Provide feedback on summaries and recommendations</p>
-    </div>
+<div class="step-card">
+<div class="step-number">3</div>
+<div class="step-icon">⭐</div>
+<h3>Rate AI Outputs</h3>
+<p>Provide feedback on summaries and recommendations</p>
+</div>
 
-    <div class="step-card">
-      <div class="step-number">4</div>
-      <div class="step-icon">🧠</div>
-      <h3>Contribute Knowledge</h3>
-      <p>Share explanations and enrich the collaborative wiki</p>
-    </div>
-  </div>
+<div class="step-card">
+<div class="step-number">4</div>
+<div class="step-icon">🧠</div>
+<h3>Contribute Knowledge</h3>
+<p>Share explanations and enrich the collaborative wiki</p>
+</div>
+</div>
 </div>
 
 <!-- Features Section -->
 <div class="features-section">
-  <h2>Research Tools</h2>
-  <p class="section-subtitle">Everything you need for systematic research</p>
+<h2>Research Tools</h2>
+<p class="section-subtitle">Everything you need for systematic research</p>
 
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon">🔬</div>
-      <h3>Research Workspace</h3>
-      <p>Unified interface for papers, notes, questions, and insights</p>
-      <a href="public/workspace.html" class="feature-link">
-        Launch Workspace →
-      </a>
-    </div>
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">🔬</div>
+<h3>Research Workspace</h3>
+<p>Unified interface for papers, notes, questions, and insights</p>
+<a href="public/workspace.html" class="feature-link">
+Launch Workspace →
+</a>
+</div>
 
-    <div class="feature-card">
-      <div class="feature-icon">📄</div>
-      <h3>Paper Reader</h3>
-      <p>Deep reading with annotations, highlights, and AI summaries</p>
-      <a href="public/paper-reader.html" class="feature-link">
-        Open Reader →
-      </a>
-    </div>
+<div class="feature-card">
+<div class="feature-icon">📄</div>
+<h3>Paper Reader</h3>
+<p>Deep reading with annotations, highlights, and AI summaries</p>
+<a href="public/paper-reader.html" class="feature-link">
+Open Reader →
+</a>
+</div>
 
-    <div class="feature-card">
-      <div class="feature-icon">📚</div>
-      <h3>AI Wiki</h3>
-      <p>Collaborative knowledge base with community contributions</p>
-      <a href="public/ai-wiki.html" class="feature-link">
-        Browse Wiki →
-      </a>
-    </div>
+<div class="feature-card">
+<div class="feature-icon">📚</div>
+<h3>AI Wiki</h3>
+<p>Collaborative knowledge base with community contributions</p>
+<a href="public/ai-wiki.html" class="feature-link">
+Browse Wiki →
+</a>
+</div>
 
-    <div class="feature-card">
-      <div class="feature-icon">❓</div>
-      <h3>Research Questions</h3>
-      <p>Track your questions and find answers across papers</p>
-      <a href="public/questions.html" class="feature-link">
-        View Questions →
-      </a>
-    </div>
+<div class="feature-card">
+<div class="feature-icon">❓</div>
+<h3>Research Questions</h3>
+<p>Track your questions and find answers across papers</p>
+<a href="public/questions.html" class="feature-link">
+View Questions →
+</a>
+</div>
 
-    <div class="feature-card">
-      <div class="feature-icon">💡</div>
-      <h3>Key Takeaways</h3>
-      <p>Collect and organize insights from your research</p>
-      <a href="public/takeaways.html" class="feature-link">
-        See Takeaways →
-      </a>
-    </div>
+<div class="feature-card">
+<div class="feature-icon">💡</div>
+<h3>Key Takeaways</h3>
+<p>Collect and organize insights from your research</p>
+<a href="public/takeaways.html" class="feature-link">
+See Takeaways →
+</a>
+</div>
 
-    <div class="feature-card">
-      <div class="feature-icon">📊</div>
-      <h3>Feedback Dashboard</h3>
-      <p>View and manage all your contributions and ratings</p>
-      <a href="public/feedback-dashboard.html" class="feature-link">
-        Open Dashboard →
-      </a>
-    </div>
-  </div>
+<div class="feature-card">
+<div class="feature-icon">📊</div>
+<h3>Feedback Dashboard</h3>
+<p>View and manage all your contributions and ratings</p>
+<a href="public/feedback-dashboard.html" class="feature-link">
+Open Dashboard →
+</a>
+</div>
+</div>
 </div>
 
 <!-- Topics Section -->
 <div class="topics-section">
-  <h2>Research Topics</h2>
-  <p class="section-subtitle">Explore cutting-edge research areas</p>
+<h2>Research Topics</h2>
+<p class="section-subtitle">Explore cutting-edge research areas</p>
 
-  <div class="topics-grid">
-    <a href="public/topics/ai-agents.html" class="topic-card">
-      <div class="topic-icon">🤖</div>
-      <h3>AI Agents</h3>
-      <p>Autonomous systems, tool use, planning, and multi-agent coordination</p>
-      <span class="topic-count">67 papers</span>
-    </a>
+<div class="topics-grid">
+<a href="public/topics/ai-agents.html" class="topic-card">
+<div class="topic-icon">🤖</div>
+<h3>AI Agents</h3>
+<p>Autonomous systems, tool use, planning, and multi-agent coordination</p>
+<span class="topic-count">67 papers</span>
+</a>
 
-    <a href="public/topics/llm-reasoning.html" class="topic-card">
-      <div class="topic-icon">🧠</div>
-      <h3>LLM Reasoning</h3>
-      <p>Chain-of-thought, self-consistency, tree-of-thought, verification</p>
-      <span class="topic-count">28 papers</span>
-    </a>
+<a href="public/topics/llm-reasoning.html" class="topic-card">
+<div class="topic-icon">🧠</div>
+<h3>LLM Reasoning</h3>
+<p>Chain-of-thought, self-consistency, tree-of-thought, verification</p>
+<span class="topic-count">28 papers</span>
+</a>
 
-    <a href="public/topics/rag-retrieval.html" class="topic-card">
-      <div class="topic-icon">🔍</div>
-      <h3>RAG & Retrieval</h3>
-      <p>Dense retrieval, hybrid search, knowledge grounding, citation</p>
-      <span class="topic-count">5 papers</span>
-    </a>
+<a href="public/topics/rag-retrieval.html" class="topic-card">
+<div class="topic-icon">🔍</div>
+<h3>RAG & Retrieval</h3>
+<p>Dense retrieval, hybrid search, knowledge grounding, citation</p>
+<span class="topic-count">5 papers</span>
+</a>
 
-    <a href="public/topics/multi-modal.html" class="topic-card">
-      <div class="topic-icon">🎨</div>
-      <h3>Multi-modal</h3>
-      <p>Vision-language models, audio processing, cross-modal reasoning</p>
-      <span class="topic-count">2 papers</span>
-    </a>
-  </div>
+<a href="public/topics/multi-modal.html" class="topic-card">
+<div class="topic-icon">🎨</div>
+<h3>Multi-modal</h3>
+<p>Vision-language models, audio processing, cross-modal reasoning</p>
+<span class="topic-count">2 papers</span>
+</a>
+</div>
 </div>
 
 <!-- CTA Section -->
 <div class="cta-section">
-  <div class="cta-content">
-    <h2>Ready to Start Your Research Journey?</h2>
-    <p>Join the collaborative research platform and shape the future of AI knowledge</p>
-    <a href="public/workspace.html" class="btn btn-primary btn-xl">
-      <span class="btn-icon">🚀</span>
-      Enter Research Workspace
-    </a>
-  </div>
+<div class="cta-content">
+<h2>Ready to Start Your Research Journey?</h2>
+<p>Join the collaborative research platform and shape the future of AI knowledge</p>
+<a href="public/workspace.html" class="btn btn-primary btn-xl">
+<span class="btn-icon">🚀</span>
+Enter Research Workspace
+</a>
+</div>
 </div>
 
 </div>
@@ -531,7 +532,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe all cards
-document.querySelectorAll('.step-card, .feature-card, .topic-card, .visual-card').forEach(card => {
+document.querySelectorAll('.step-card, .feature-card, .topic-card').forEach(card => {
   card.style.opacity = '0';
   card.style.transform = 'translateY(20px)';
   card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
