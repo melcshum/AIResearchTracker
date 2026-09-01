@@ -6,8 +6,7 @@ title: "AI Research Portal"
 
 <div class="landing-hero">
 <div class="hero-badge">🎓 Research Portal</div>
-<h1>AI Research Discovery</h1>
-<p class="hero-subtitle">Explore cutting-edge research in AI agents, reasoning, RAG, and multi-modal systems</p>
+<h1>AI Research Tracker</h1>
 <div class="hero-stats">
 <div class="stat">
 <div class="stat-value">77+</div>
