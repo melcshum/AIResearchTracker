@@ -31,6 +31,10 @@ website:
         href: public/research-goals.html
       - text: "🔄 Spaced Repetition"
         href: public/spaced-repetition.html
+      - text: "✨ Highlights"
+        href: public/highlights.html
+      - text: "📅 Timeline"
+        href: public/timeline.html
       - text: "💾 Export/Import"
         href: public/export-import.html
       - text: "🔧 Admin Dashboard"
