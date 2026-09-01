@@ -13,6 +13,8 @@ title: "Paper Reader"
         <button id="highlightBtn" class="btn-icon" title="Highlight">🖍️</button>
         <button id="noteBtn" class="btn-icon" title="Add Note">📝</button>
         <button id="questionBtn" class="btn-icon" title="Add Question">❓</button>
+        <button id="feedbackBtn" class="btn-icon" title="Rate AI Summary">⭐</button>
+        <button id="exportAnnotationsBtn" class="btn-icon" title="Export Annotations">💾</button>
         <button id="fullScreenBtn" class="btn-icon" title="Full Screen">⛶</button>
       </div>
     </div>
@@ -274,6 +276,142 @@ title: "Paper Reader"
 .empty-annotations .hint {
   font-size: 0.85rem;
   color: #bbb;
+}
+
+/* Feedback Modal Styles */
+.feedback-modal {
+  max-width: 600px;
+  padding: 2rem;
+}
+
+.feedback-modal h2 {
+  margin-top: 0;
+  color: #2c5aa0;
+}
+
+.feedback-section {
+  margin: 1.5rem 0;
+}
+
+.feedback-section h3 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.75rem;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 2rem;
+}
+
+.rating-stars .star {
+  cursor: pointer;
+  color: #ddd;
+  transition: color 0.2s;
+}
+
+.rating-stars .star.active,
+.rating-stars .star:hover,
+.rating-stars .star:hover ~ .star {
+  color: #ffd700;
+}
+
+.accuracy-options,
+.improvement-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.radio-option,
+.tag-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.radio-option:hover,
+.tag-option:hover {
+  background: #f5f5f5;
+}
+
+.radio-option input,
+.tag-option input {
+  cursor: pointer;
+}
+
+.feedback-modal textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+}
+
+.feedback-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: #2c5aa0;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1e4a8f;
+}
+
+.btn-secondary {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background: #d0d0d0;
+}
+
+/* Notification Styles */
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(400px);
+    opacity: 0;
+  }
 }
 
 /* Table of Contents */
@@ -697,6 +835,314 @@ function updateReadingProgress() {
   const scrollHeight = readingArea.scrollHeight - readingArea.clientHeight;
   const progress = (scrollTop / scrollHeight) * 100;
   
+  document.getElementById('progressFill').style.width = `${progress}%`;
+  document.getElementById('progressText').textContent = `${Math.round(progress)}%`;
+}
+
+// HITL Phase 1: AI Feedback System
+document.getElementById('feedbackBtn').addEventListener('click', showFeedbackModal);
+
+function showFeedbackModal() {
+  if (!currentPaper) {
+    alert('Please load a paper first');
+    return;
+  }
+
+  const modal = document.createElement('div');
+  modal.className = 'modal show';
+  modal.innerHTML = `
+    <div class="modal-content feedback-modal">
+      <span class="modal-close" onclick="closeFeedbackModal()">&times;</span>
+      <h2>⭐ Rate AI Summary</h2>
+      <p>Help us improve AI-generated summaries by providing feedback</p>
+      
+      <div class="feedback-section">
+        <h3>Summary Quality</h3>
+        <div class="rating-stars" data-rating="summary">
+          <span class="star" data-value="1">★</span>
+          <span class="star" data-value="2">★</span>
+          <span class="star" data-value="3">★</span>
+          <span class="star" data-value="4">★</span>
+          <span class="star" data-value="5">★</span>
+        </div>
+      </div>
+
+      <div class="feedback-section">
+        <h3>Accuracy</h3>
+        <div class="accuracy-options">
+          <label class="radio-option">
+            <input type="radio" name="accuracy" value="accurate">
+            <span>✓ Accurate - captures key points well</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="accuracy" value="partially">
+            <span>◐ Partially accurate - misses some details</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="accuracy" value="inaccurate">
+            <span>✗ Inaccurate - misrepresents content</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="feedback-section">
+        <h3>What could be improved?</h3>
+        <div class="improvement-tags">
+          <label class="tag-option">
+            <input type="checkbox" value="too-brief">
+            <span>Too brief</span>
+          </label>
+          <label class="tag-option">
+            <input type="checkbox" value="too-verbose">
+            <span>Too verbose</span>
+          </label>
+          <label class="tag-option">
+            <input type="checkbox" value="missing-methods">
+            <span>Missing methods</span>
+          </label>
+          <label class="tag-option">
+            <input type="checkbox" value="missing-results">
+            <span>Missing results</span>
+          </label>
+          <label class="tag-option">
+            <input type="checkbox" value="unclear">
+            <span>Unclear language</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="feedback-section">
+        <h3>Additional Comments (Optional)</h3>
+        <textarea id="feedbackComments" placeholder="Share specific feedback about the summary..."></textarea>
+      </div>
+
+      <div class="feedback-actions">
+        <button class="btn-secondary" onclick="closeFeedbackModal()">Cancel</button>
+        <button class="btn-primary" onclick="submitFeedback()">Submit Feedback</button>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(modal);
+  setupStarRating();
+}
+
+function setupStarRating() {
+  const stars = document.querySelectorAll('.rating-stars .star');
+  stars.forEach(star => {
+    star.addEventListener('click', function() {
+      const rating = parseInt(this.dataset.value);
+      const container = this.parentElement;
+      container.dataset.rating = rating;
+      
+      // Update star appearance
+      container.querySelectorAll('.star').forEach((s, idx) => {
+        s.classList.toggle('active', idx < rating);
+      });
+    });
+  });
+}
+
+function closeFeedbackModal() {
+  const modal = document.querySelector('.feedback-modal');
+  if (modal) {
+    modal.parentElement.remove();
+  }
+}
+
+function submitFeedback() {
+  const modal = document.querySelector('.feedback-modal');
+  const summaryRating = parseInt(modal.querySelector('.rating-stars').dataset.rating) || 0;
+  const accuracy = modal.querySelector('input[name="accuracy"]:checked')?.value || '';
+  const improvements = Array.from(modal.querySelectorAll('.improvement-tags input:checked'))
+    .map(cb => cb.value);
+  const comments = document.getElementById('feedbackComments').value;
+
+  if (!summaryRating && !accuracy) {
+    alert('Please provide at least a rating or accuracy assessment');
+    return;
+  }
+
+  const feedback = {
+    paperId: currentPaper.id,
+    timestamp: new Date().toISOString(),
+    summaryRating,
+    accuracy,
+    improvements,
+    comments
+  };
+
+  // Save feedback
+  saveFeedback(feedback);
+  
+  // Show success message
+  showNotification('✓ Feedback submitted! Thank you for helping improve AI summaries.', 'success');
+  closeFeedbackModal();
+}
+
+function saveFeedback(feedback) {
+  const key = `feedback_${feedback.paperId}`;
+  const existing = JSON.parse(localStorage.getItem(key) || '[]');
+  existing.push(feedback);
+  localStorage.setItem(key, JSON.stringify(existing));
+
+  // Also save to global feedback log
+  const globalKey = 'ai_feedback_log';
+  const globalLog = JSON.parse(localStorage.getItem(globalKey) || '[]');
+  globalLog.push(feedback);
+  localStorage.setItem(globalKey, JSON.stringify(globalLog));
+}
+
+// HITL Phase 1: Annotation Export
+document.getElementById('exportAnnotationsBtn').addEventListener('click', exportAnnotations);
+
+function exportAnnotations() {
+  if (!currentPaper) {
+    alert('Please load a paper first');
+    return;
+  }
+
+  if (annotations.length === 0) {
+    alert('No annotations to export');
+    return;
+  }
+
+  const format = prompt('Export format:\n1. JSON\n2. Markdown\n3. Plain Text\n\nEnter number (1-3):', '1');
+  
+  if (!format) return;
+
+  let content, filename, mimeType;
+
+  switch(format) {
+    case '1':
+      content = JSON.stringify({
+        paper: {
+          id: currentPaper.id,
+          title: currentPaper.title,
+          authors: currentPaper.authors
+        },
+        annotations: annotations,
+        exportedAt: new Date().toISOString()
+      }, null, 2);
+      filename = `${currentPaper.id}_annotations.json`;
+      mimeType = 'application/json';
+      break;
+
+    case '2':
+      content = generateMarkdownExport();
+      filename = `${currentPaper.id}_annotations.md`;
+      mimeType = 'text/markdown';
+      break;
+
+    case '3':
+      content = generateTextExport();
+      filename = `${currentPaper.id}_annotations.txt`;
+      mimeType = 'text/plain';
+      break;
+
+    default:
+      alert('Invalid format selection');
+      return;
+  }
+
+  downloadFile(content, filename, mimeType);
+  showNotification(`✓ Exported ${annotations.length} annotations as ${format === '1' ? 'JSON' : format === '2' ? 'Markdown' : 'Text'}`, 'success');
+}
+
+function generateMarkdownExport() {
+  let md = `# Annotations for: ${currentPaper.title}\n\n`;
+  md += `**Authors:** ${currentPaper.authors?.join(', ') || 'Unknown'}\n\n`;
+  md += `**Exported:** ${new Date().toLocaleString()}\n\n`;
+  md += `---\n\n`;
+
+  const highlights = annotations.filter(a => a.type === 'highlight');
+  const notes = annotations.filter(a => a.type === 'note');
+  const questions = annotations.filter(a => a.type === 'question');
+
+  if (highlights.length > 0) {
+    md += `## 🖍️ Highlights (${highlights.length})\n\n`;
+    highlights.forEach((h, i) => {
+      md += `${i + 1}. > ${h.text}\n\n`;
+    });
+  }
+
+  if (notes.length > 0) {
+    md += `## 📝 Notes (${notes.length})\n\n`;
+    notes.forEach((n, i) => {
+      md += `### Note ${i + 1}\n`;
+      md += `**Text:** ${n.text}\n\n`;
+      md += `**Note:** ${n.note}\n\n`;
+    });
+  }
+
+  if (questions.length > 0) {
+    md += `## ❓ Questions (${questions.length})\n\n`;
+    questions.forEach((q, i) => {
+      md += `### Question ${i + 1}\n`;
+      md += `**Context:** ${q.text}\n\n`;
+      md += `**Question:** ${q.note}\n\n`;
+    });
+  }
+
+  return md;
+}
+
+function generateTextExport() {
+  let text = `ANNOTATIONS FOR: ${currentPaper.title}\n`;
+  text += `Authors: ${currentPaper.authors?.join(', ') || 'Unknown'}\n`;
+  text += `Exported: ${new Date().toLocaleString()}\n`;
+  text += `${'='.repeat(80)}\n\n`;
+
+  annotations.forEach((ann, i) => {
+    text += `[${i + 1}] ${ann.type.toUpperCase()}\n`;
+    text += `Text: "${ann.text}"\n`;
+    if (ann.note) {
+      text += `${ann.type === 'question' ? 'Question' : 'Note'}: ${ann.note}\n`;
+    }
+    text += `Time: ${new Date(ann.timestamp).toLocaleString()}\n`;
+    text += `${'-'.repeat(80)}\n\n`;
+  });
+
+  return text;
+}
+
+function downloadFile(content, filename, mimeType) {
+  const blob = new Blob([content], { type: mimeType });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function showNotification(message, type = 'info') {
+  const notification = document.createElement('div');
+  notification.className = `notification notification-${type}`;
+  notification.textContent = message;
+  notification.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    background: ${type === 'success' ? '#4caf50' : type === 'error' ? '#f44336' : '#2196f3'};
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 10000;
+    font-weight: 500;
+    animation: slideIn 0.3s ease-out;
+  `;
+  
+  document.body.appendChild(notification);
+  
+  setTimeout(() => {
+    notification.style.animation = 'slideOut 0.3s ease-out';
+    setTimeout(() => notification.remove(), 300);
+  }, 3000);
+}
   document.getElementById('progressFill').style.width = `${progress}%`;
   document.getElementById('progressText').textContent = `${Math.round(progress)}%`;
 }
