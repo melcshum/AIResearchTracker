@@ -346,6 +346,61 @@ def update_reading_progress(paper_id):
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+# AI Summaries endpoints
+@app.route('/api/user/summaries', methods=['GET'])
+def get_summaries():
+    """Get user's AI-generated summaries."""
+    try:
+        username = get_current_user()
+        data = load_user_data(username)
+        return jsonify({'summaries': data.get('summaries', {})})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/user/summaries/<paper_id>', methods=['GET'])
+def get_paper_summary(paper_id):
+    """Get AI summary for a specific paper."""
+    try:
+        username = get_current_user()
+        data = load_user_data(username)
+        summary = data.get('summaries', {}).get(paper_id)
+        return jsonify({'summary': summary})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/user/summaries/<paper_id>', methods=['POST'])
+def save_paper_summary(paper_id):
+    """Save AI summary for a specific paper."""
+    try:
+        username = get_current_user()
+        data = load_user_data(username)
+        summary = request.json.get('summary', {})
+        
+        if 'summaries' not in data:
+            data['summaries'] = {}
+        
+        data['summaries'][paper_id] = summary
+        save_user_data(username, data)
+        
+        return jsonify({'success': True, 'summary': summary})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/user/summaries/<paper_id>', methods=['DELETE'])
+def delete_paper_summary(paper_id):
+    """Delete AI summary for a specific paper."""
+    try:
+        username = get_current_user()
+        data = load_user_data(username)
+        
+        if 'summaries' in data and paper_id in data['summaries']:
+            del data['summaries'][paper_id]
+            save_user_data(username, data)
+        
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 if __name__ == '__main__':
     print("Starting Topic Management API Server...")
     print("Current user:", get_current_user())

@@ -1066,5 +1066,8 @@
   },
   "public/my-learning-path.md": {
     "my-learning-path.html": "14fb3834"
+  },
+  "public/ai-summaries.md": {
+    "ai-summaries.html": "eca71272"
   }
 }
