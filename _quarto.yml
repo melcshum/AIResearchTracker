@@ -35,6 +35,10 @@ website:
         href: public/highlights.html
       - text: "📅 Timeline"
         href: public/timeline.html
+      - text: "❓ Questions"
+        href: public/questions.html
+      - text: "💡 Takeaways"
+        href: public/takeaways.html
       - text: "💾 Export/Import"
         href: public/export-import.html
       - text: "🔧 Admin Dashboard"

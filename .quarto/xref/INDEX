@@ -1108,5 +1108,11 @@
   },
   "public/timeline.md": {
     "timeline.html": "6509d281"
+  },
+  "public/questions.md": {
+    "questions.html": "7e7c15f5"
+  },
+  "public/takeaways.md": {
+    "takeaways.html": "23c9511d"
   }
 }
