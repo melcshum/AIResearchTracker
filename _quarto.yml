@@ -25,6 +25,10 @@ website:
         href: public/compare-papers.html
       - text: "🕸️ Citation Graph"
         href: public/citation-graph.html
+      - text: "📁 Collections"
+        href: public/collections.html
+      - text: "💾 Export/Import"
+        href: public/export-import.html
       - text: "🔧 Admin Dashboard"
         href: private/index.html
 

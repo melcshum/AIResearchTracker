@@ -1084,5 +1084,14 @@
   },
   "public/getting-started.md": {
     "getting-started.html": "ba43d5e9"
+  },
+  "public/citation-graph.md": {
+    "citation-graph.html": "ee66bcd5"
+  },
+  "public/export-import.md": {
+    "export-import.html": "7a9f1b1a"
+  },
+  "public/collections.md": {
+    "collections.html": "fa732d4c"
   }
 }
