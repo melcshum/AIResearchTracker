@@ -1069,5 +1069,8 @@
   },
   "public/ai-summaries.md": {
     "ai-summaries.html": "eca71272"
+  },
+  "public/ai-study-guide.md": {
+    "ai-study-guide.html": "4689ac20"
   }
 }
