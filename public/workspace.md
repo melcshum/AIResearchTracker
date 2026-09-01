@@ -56,6 +56,10 @@ title: "Research Workspace"
 <div class="empty-state">
 <div class="empty-icon">📄</div>
 <p>Select a paper to start reading</p>
+<div class="empty-hint">Pick a paper from the Reading Queue on the left</div>
+<div class="empty-action">
+<button onclick="document.querySelector('[data-tab=queue]').click()">Browse Papers</button>
+</div>
 </div>
 </div>
 </div>
@@ -280,18 +284,27 @@ main.content, #quarto-document-content {
 }
 
 .btn-sm {
-  padding: 0.4rem 0.8rem;
+  padding: 0.5rem 1rem;
   border: 1px solid #ddd;
   background: white;
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.85rem;
   transition: all 0.2s;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .btn-sm:hover {
   background: #f0f4f8;
   border-color: #2c5aa0;
+  transform: translateY(-1px);
+}
+
+.btn-sm:active {
+  transform: translateY(0);
 }
 
 .panel-content {
@@ -693,21 +706,133 @@ main.content, #quarto-document-content {
 .empty-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.empty-state .empty-hint {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-top: 1rem;
+}
+
+.empty-state .empty-action {
+  margin-top: 1.5rem;
+}
+
+.empty-state .empty-action button {
+  padding: 0.6rem 1.2rem;
+  background: #2c5aa0;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.empty-state .empty-action button:hover {
+  background: #1e4a8a;
+  transform: translateY(-1px);
 }
 
 /* Responsive */
+@media (max-width: 1400px) {
+  .workspace-grid {
+    grid-template-columns: 280px 1fr 320px;
+  }
+}
+
 @media (max-width: 1200px) {
   .workspace-grid {
     grid-template-columns: 250px 1fr 300px;
+  }
+  
+  .workspace-stats {
+    gap: 0.5rem;
+  }
+  
+  .stat-pill {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
   }
 }
 
 @media (max-width: 900px) {
   .workspace-grid {
     grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
   }
   
   .workspace-bottom {
+    grid-template-columns: 1fr;
+  }
+  
+  .panel-discovery {
+    max-height: 300px;
+  }
+  
+  .panel-insights {
+    max-height: 400px;
+  }
+  
+  .workspace-topbar {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .topbar-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .topbar-right {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 600px) {
+  .workspace-container {
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+  
+  .workspace-topbar {
+    padding: 0.75rem;
+  }
+  
+  .topbar-left h1 {
+    font-size: 1.2rem;
+  }
+  
+  .workspace-stats {
+    flex-wrap: wrap;
+  }
+  
+  .stat-pill {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .panel-header {
+    padding: 0.75rem 1rem;
+  }
+  
+  .panel-header h2 {
+    font-size: 1rem;
+  }
+  
+  .btn-sm {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .quick-actions {
     grid-template-columns: 1fr;
   }
 }
