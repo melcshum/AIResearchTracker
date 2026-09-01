@@ -15,6 +15,7 @@ title: "Research Workspace"
       </div>
     </div>
     <div class="topbar-right">
+      <button id="focusModeBtn" class="btn-icon" title="Focus Mode (Ctrl+F)">🎯</button>
       <button id="quickAddBtn" class="btn-icon" title="Quick Add (Ctrl+N)">➕</button>
       <button id="searchBtn" class="btn-icon" title="Search (Ctrl+K)">🔍</button>
       <button id="settingsBtn" class="btn-icon" title="Settings">⚙️</button>
@@ -334,11 +335,19 @@ title: "Research Workspace"
   cursor: pointer;
   transition: all 0.2s;
   border-left: 3px solid #2c5aa0;
+  position: relative;
 }
 
 .reading-item:hover {
   background: #f0f4f8;
   transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.reading-item.selected {
+  background: #e3f2fd;
+  border-left-color: #1976d2;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.2);
 }
 
 .reading-item.reading {
@@ -350,12 +359,23 @@ title: "Research Workspace"
   opacity: 0.7;
 }
 
+.reading-item-status {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.9);
+}
+
 .reading-item-title {
   font-weight: 600;
   color: #2c3e50;
   margin-bottom: 0.3rem;
   font-size: 0.95rem;
   line-height: 1.4;
+  padding-right: 4rem;
 }
 
 .reading-item-meta {
@@ -682,6 +702,31 @@ title: "Research Workspace"
     grid-template-columns: 1fr;
   }
 }
+
+/* Focus Mode */
+body.focus-mode .panel-discovery,
+body.focus-mode .panel-insights,
+body.focus-mode .workspace-bottom {
+  display: none;
+}
+
+body.focus-mode .workspace-grid {
+  grid-template-columns: 1fr;
+}
+
+body.focus-mode .panel-active {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+body.focus-mode .workspace-topbar {
+  justify-content: center;
+}
+
+body.focus-mode .topbar-left {
+  display: none;
+}
 </style>
 
 <script>
@@ -689,6 +734,8 @@ let allPapers = [];
 let userData = null;
 let currentTab = 'queue';
 let currentInsightTab = 'highlights';
+let selectedPaperId = null;
+let searchTimeout = null;
 
 async function loadWorkspaceData() {
   try {
@@ -702,26 +749,18 @@ async function loadWorkspaceData() {
     renderReadingList();
     renderInsights();
     updateProgress();
+    
+    // Auto-select first paper if available
+    const firstPaper = getFilteredPapers()[0];
+    if (firstPaper) {
+      selectPaper(firstPaper.arxiv_id);
+    }
   } catch (error) {
     console.error('Error loading workspace data:', error);
   }
 }
 
-function updateStats() {
-  const bookmarks = userData.bookmarks || [];
-  const readingProgress = userData.readingProgress || {};
-  const highlights = userData.highlights || [];
-  const questions = userData.questions || [];
-  const takeaways = userData.takeaways || [];
-  
-  document.getElementById('totalPapers').textContent = allPapers.length;
-  document.getElementById('readingNow').textContent = Object.values(readingProgress).filter(p => p.status === 'reading').length;
-  document.getElementById('completed').textContent = Object.values(readingProgress).filter(p => p.status === 'read').length;
-  document.getElementById('insightsCount').textContent = highlights.length + questions.length + takeaways.length;
-}
-
-function renderReadingList() {
-  const container = document.getElementById('readingList');
+function getFilteredPapers() {
   const bookmarks = userData.bookmarks || [];
   const readingProgress = userData.readingProgress || {};
   
@@ -740,22 +779,65 @@ function renderReadingList() {
     papers = papers.filter(p => p.status === 'read');
   }
   
+  return papers;
+}
+
+function updateStats() {
+  const bookmarks = userData.bookmarks || [];
+  const readingProgress = userData.readingProgress || {};
+  const highlights = userData.highlights || [];
+  const questions = userData.questions || [];
+  const takeaways = userData.takeaways || [];
+  
+  document.getElementById('totalPapers').textContent = allPapers.length;
+  document.getElementById('readingNow').textContent = Object.values(readingProgress).filter(p => p.status === 'reading').length;
+  document.getElementById('completed').textContent = Object.values(readingProgress).filter(p => p.status === 'read').length;
+  document.getElementById('insightsCount').textContent = highlights.length + questions.length + takeaways.length;
+}
+
+function renderReadingList() {
+  const container = document.getElementById('readingList');
+  const papers = getFilteredPapers();
+  
   if (papers.length === 0) {
     container.innerHTML = '<div class="empty-state"><p>No papers in this category</p></div>';
     return;
   }
   
-  container.innerHTML = papers.slice(0, 10).map(paper => `
-    <div class="reading-item ${paper.status}" onclick="selectPaper('${paper.arxiv_id}')">
-      <div class="reading-item-title">${paper.title}</div>
-      <div class="reading-item-meta">${paper.date} • ${paper.authors.split(',')[0]}</div>
-    </div>
-  `).join('');
+  container.innerHTML = papers.slice(0, 15).map(paper => {
+    const isSelected = paper.arxiv_id === selectedPaperId;
+    const statusLabel = paper.status === 'reading' ? '📖 Reading' : 
+                       paper.status === 'read' ? '✅ Done' : '📋 Queue';
+    
+    return `
+      <div class="reading-item ${paper.status} ${isSelected ? 'selected' : ''}" 
+           onclick="selectPaper('${paper.arxiv_id}')"
+           data-paper-id="${paper.arxiv_id}">
+        <div class="reading-item-status">${statusLabel}</div>
+        <div class="reading-item-title">${paper.title}</div>
+        <div class="reading-item-meta">${paper.date} • ${paper.authors.split(',')[0]}</div>
+      </div>
+    `;
+  }).join('');
 }
 
 function selectPaper(arxivId) {
+  selectedPaperId = arxivId;
   const paper = allPapers.find(p => p.arxiv_id === arxivId);
   if (!paper) return;
+  
+  // Update selection in list
+  document.querySelectorAll('.reading-item').forEach(item => {
+    item.classList.remove('selected');
+  });
+  const selectedItem = document.querySelector(`[data-paper-id="${arxivId}"]`);
+  if (selectedItem) {
+    selectedItem.classList.add('selected');
+  }
+  
+  const readingProgress = userData.readingProgress || {};
+  const progress = readingProgress[arxivId];
+  const status = progress?.status || 'queue';
   
   const container = document.getElementById('activePaper');
   container.innerHTML = `
@@ -775,15 +857,19 @@ function selectPaper(arxivId) {
       <button class="action-btn-sm" onclick="addQuestionForPaper('${paper.arxiv_id}')">❓ Question</button>
       <button class="action-btn-sm" onclick="addTakeawayForPaper('${paper.arxiv_id}')">💡 Takeaway</button>
       <button class="action-btn-sm" onclick="openPaperNotes('${paper.arxiv_id}')">📝 Notes</button>
+      <button class="action-btn-sm" onclick="changeReadingStatus('${paper.arxiv_id}', '${status}')">🔄 Status</button>
     </div>
   `;
+  
+  // Render insights for this paper
+  renderInsightsForPaper(arxivId);
 }
 
-function renderInsights() {
+function renderInsightsForPaper(arxivId) {
   const container = document.getElementById('insightsList');
-  const highlights = userData.highlights || [];
-  const questions = userData.questions || [];
-  const takeaways = userData.takeaways || [];
+  const highlights = (userData.highlights || []).filter(h => h.paperId === arxivId);
+  const questions = (userData.questions || []).filter(q => q.paperId === arxivId);
+  const takeaways = (userData.takeaways || []).filter(t => t.paperId === arxivId);
   
   let items = [];
   
@@ -799,22 +885,63 @@ function renderInsights() {
   items.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
   
   if (items.length === 0) {
-    container.innerHTML = '<div class="empty-state"><p>No insights yet</p></div>';
+    container.innerHTML = '<div class="empty-state"><p>No insights for this paper yet</p></div>';
     return;
   }
   
-  container.innerHTML = items.slice(0, 10).map(item => {
-    const paper = allPapers.find(p => p.arxiv_id === item.paperId);
+  container.innerHTML = items.map(item => {
     const text = item.text || item.question || '';
     
     return `
       <div class="insight-item ${item.type}">
         <div class="insight-type">${item.type}</div>
-        <div class="insight-text">${text.substring(0, 150)}${text.length > 150 ? '...' : ''}</div>
-        ${paper ? `<div class="insight-paper">${paper.title.substring(0, 60)}...</div>` : ''}
+        <div class="insight-text">${text.substring(0, 200)}${text.length > 200 ? '...' : ''}</div>
       </div>
     `;
   }).join('');
+}
+
+function renderInsights() {
+  if (selectedPaperId) {
+    renderInsightsForPaper(selectedPaperId);
+  } else {
+    // Show all insights
+    const container = document.getElementById('insightsList');
+    const highlights = userData.highlights || [];
+    const questions = userData.questions || [];
+    const takeaways = userData.takeaways || [];
+    
+    let items = [];
+    
+    if (currentInsightTab === 'highlights') {
+      items = highlights.map(h => ({ ...h, type: 'highlight' }));
+    } else if (currentInsightTab === 'questions') {
+      items = questions.map(q => ({ ...q, type: 'question' }));
+    } else if (currentInsightTab === 'takeaways') {
+      items = takeaways.map(t => ({ ...t, type: 'takeaway' }));
+    }
+    
+    // Sort by date
+    items.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    
+    if (items.length === 0) {
+      container.innerHTML = '<div class="empty-state"><p>No insights yet</p></div>';
+      return;
+    }
+    
+    container.innerHTML = items.slice(0, 15).map(item => {
+      const paper = allPapers.find(p => p.arxiv_id === item.paperId);
+      const text = item.text || item.question || '';
+      
+      return `
+        <div class="insight-item ${item.type}">
+          <div class="insight-type">${item.type}</div>
+          <div class="insight-text">${text.substring(0, 150)}${text.length > 150 ? '...' : ''}</div>
+          ${paper ? `<div class="insight-paper">${paper.title.substring(0, 60)}...</div>` : ''}
+        </div>
+      `;
+    }).join('');
+  }
 }
 
 function updateProgress() {
@@ -842,6 +969,75 @@ function updateProgress() {
   document.getElementById('notesProgress').style.width = notesPercent + '%';
   document.getElementById('readingGoalText').textContent = `${todayRead}/${readingGoal} papers`;
   document.getElementById('notesGoalText').textContent = `${todayNotes} notes`;
+}
+
+// Quick actions for active paper
+function addHighlightForPaper(arxivId) {
+  window.location.href = `highlights.html?paper=${arxivId}`;
+}
+
+function addQuestionForPaper(arxivId) {
+  window.location.href = `questions.html?paper=${arxivId}`;
+}
+
+function addTakeawayForPaper(arxivId) {
+  window.location.href = `takeaways.html?paper=${arxivId}`;
+}
+
+function openPaperNotes(arxivId) {
+  window.location.href = `notes.html?paper=${arxivId}`;
+}
+
+function changeReadingStatus(arxivId, currentStatus) {
+  const nextStatus = currentStatus === 'queue' ? 'reading' : 
+                     currentStatus === 'reading' ? 'read' : 'queue';
+  
+  if (!userData.readingProgress) {
+    userData.readingProgress = {};
+  }
+  
+  userData.readingProgress[arxivId] = {
+    status: nextStatus,
+    lastUpdated: new Date().toISOString().split('T')[0]
+  };
+  
+  // Save to API
+  fetch(`${API_BASE}/api/user/data`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(userData)
+  }).then(() => {
+    updateStats();
+    renderReadingList();
+    selectPaper(arxivId);
+  });
+}
+
+// Global search
+function performSearch(query) {
+  if (!query || query.length < 2) {
+    document.getElementById('searchResults').innerHTML = '';
+    return;
+  }
+  
+  const lowerQuery = query.toLowerCase();
+  const results = allPapers.filter(p => 
+    p.title.toLowerCase().includes(lowerQuery) ||
+    p.authors.toLowerCase().includes(lowerQuery) ||
+    (p.abstract && p.abstract.toLowerCase().includes(lowerQuery))
+  ).slice(0, 10);
+  
+  if (results.length === 0) {
+    document.getElementById('searchResults').innerHTML = '<div class="empty-state"><p>No results found</p></div>';
+    return;
+  }
+  
+  document.getElementById('searchResults').innerHTML = results.map(paper => `
+    <div class="reading-item" onclick="selectPaper('${paper.arxiv_id}'); closeSearch();">
+      <div class="reading-item-title">${paper.title}</div>
+      <div class="reading-item-meta">${paper.date} • ${paper.authors.split(',')[0]}</div>
+    </div>
+  `).join('');
 }
 
 // Tab switching
@@ -879,7 +1075,28 @@ function openSearch() {
 
 function closeSearch() {
   document.getElementById('searchModal').style.display = 'none';
+  document.getElementById('globalSearch').value = '';
+  document.getElementById('searchResults').innerHTML = '';
 }
+
+// Focus mode
+let isFocusMode = false;
+
+function toggleFocusMode() {
+  isFocusMode = !isFocusMode;
+  
+  if (isFocusMode) {
+    document.body.classList.add('focus-mode');
+    document.getElementById('focusModeBtn').textContent = '🔓';
+    document.getElementById('focusModeBtn').title = 'Exit Focus Mode (Ctrl+F)';
+  } else {
+    document.body.classList.remove('focus-mode');
+    document.getElementById('focusModeBtn').textContent = '🎯';
+    document.getElementById('focusModeBtn').title = 'Focus Mode (Ctrl+F)';
+  }
+}
+
+document.getElementById('focusModeBtn').addEventListener('click', toggleFocusMode);
 
 // Keyboard shortcuts
 document.addEventListener('keydown', (e) => {
@@ -890,12 +1107,67 @@ document.addEventListener('keydown', (e) => {
     } else if (e.key === 'k') {
       e.preventDefault();
       openSearch();
+    } else if (e.key === 'f') {
+      e.preventDefault();
+      toggleFocusMode();
+    }
+  } else if (e.key === 'Escape') {
+    closeQuickAdd();
+    closeSearch();
+    if (isFocusMode) {
+      toggleFocusMode();
     }
   }
 });
 
 document.getElementById('quickAddBtn').addEventListener('click', openQuickAdd);
 document.getElementById('searchBtn').addEventListener('click', openSearch);
+
+// Search input handler
+document.getElementById('globalSearch').addEventListener('input', (e) => {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() => {
+    performSearch(e.target.value);
+  }, 300);
+});
+
+// Quick add actions
+function addHighlight() {
+  closeQuickAdd();
+  window.location.href = 'highlights.html';
+}
+
+function addQuestion() {
+  closeQuickAdd();
+  window.location.href = 'questions.html';
+}
+
+function addTakeaway() {
+  closeQuickAdd();
+  window.location.href = 'takeaways.html';
+}
+
+function addMilestone() {
+  closeQuickAdd();
+  window.location.href = 'timeline.html';
+}
+
+// Bottom panel actions
+function fetchNewPapers() {
+  alert('Fetching new papers... This will run the fetch_arxiv.py script.');
+}
+
+function generateDigest() {
+  window.location.href = 'digests/index.html';
+}
+
+function exportData() {
+  window.location.href = 'export-import.html';
+}
+
+function viewTimeline() {
+  window.location.href = 'timeline.html';
+}
 
 // Initialize
 loadWorkspaceData();
