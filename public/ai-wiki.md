@@ -18,9 +18,89 @@ title: "AI Wiki - Knowledge Base"
 <!-- Navigation Tabs -->
 <div class="wiki-tabs">
 <button class="tab-btn active" onclick="switchTab('browse')">📖 Browse</button>
+<button class="tab-btn" onclick="switchTab('learn')">🎯 Learn by Building</button>
 <button class="tab-btn" onclick="switchTab('graph')">🕸️ Concept Graph</button>
 <button class="tab-btn" onclick="switchTab('timeline')">📅 Timeline</button>
 <button class="tab-btn" onclick="switchTab('stats')">📊 Statistics</button>
+</div>
+
+<!-- Learn by Building Tab -->
+<div id="learnTab" class="tab-content">
+<div class="learn-header">
+<h3>🎯 Learn by Building</h3>
+<p>Construct your understanding by building explanations from scratch</p>
+</div>
+
+<div class="learn-mode-selector">
+<div class="mode-card" onclick="startLearningMode('build')">
+<div class="mode-icon">🏗️</div>
+<h4>Build Understanding</h4>
+<p>Create your own explanation guided by structured prompts</p>
+</div>
+<div class="mode-card" onclick="startLearningMode('teach')">
+<div class="mode-icon">👨‍🏫</div>
+<h4>Teaching Mode</h4>
+<p>Explain concepts as if teaching someone else</p>
+</div>
+<div class="mode-card" onclick="startLearningMode('compare')">
+<div class="mode-icon">⚖️</div>
+<h4>Compare & Reflect</h4>
+<p>Compare your understanding to expert explanations</p>
+</div>
+</div>
+
+<div id="learningWorkspace" class="learning-workspace" style="display: none;">
+<div class="learning-header">
+<h3 id="learningTitle">Building Understanding</h3>
+<div class="mastery-indicator">
+<span class="mastery-level">🌱 Learning</span>
+<button onclick="updateMastery()" class="btn-mastery">Update Progress</button>
+</div>
+</div>
+
+<div class="concept-selector">
+<label>Select a concept to work on:</label>
+<select id="learningConceptSelect" onchange="loadConceptForLearning()">
+<option value="">-- Choose a concept --</option>
+</select>
+</div>
+
+<div id="learningTemplate" class="learning-template" style="display: none;">
+<div class="template-section">
+<h4>📝 Your Explanation</h4>
+<textarea id="userExplanation" class="learning-textarea" placeholder="Explain this concept in your own words..."></textarea>
+</div>
+
+<div class="template-section">
+<h4>🔑 Key Ideas</h4>
+<textarea id="keyIdeas" class="learning-textarea-small" placeholder="What are the 3-5 most important points?"></textarea>
+</div>
+
+<div class="template-section">
+<h4>💡 Examples & Applications</h4>
+<textarea id="examples" class="learning-textarea-small" placeholder="Give concrete examples or real-world applications..."></textarea>
+</div>
+
+<div class="template-section">
+<h4>🔗 Connections</h4>
+<textarea id="connections" class="learning-textarea-small" placeholder="How does this relate to other concepts you've learned?"></textarea>
+</div>
+
+<div class="template-section">
+<h4>❓ Questions & Uncertainties</h4>
+<textarea id="questions" class="learning-textarea-small" placeholder="What still confuses you? What would you like to explore further?"></textarea>
+</div>
+
+<div class="learning-actions">
+<button onclick="saveLearningProgress()" class="btn-save">💾 Save Progress</button>
+<button onclick="getAIFeedback()" class="btn-ai">🤖 Get AI Feedback</button>
+<button onclick="viewExpertExplanation()" class="btn-compare">📚 View Expert Explanation</button>
+</div>
+
+<div id="aiFeedback" class="ai-feedback" style="display: none;"></div>
+<div id="expertExplanation" class="expert-explanation" style="display: none;"></div>
+</div>
+</div>
 </div>
 
 <!-- Browse Tab -->
@@ -115,6 +195,254 @@ title: "AI Wiki - Knowledge Base"
 </div>
 
 <style>
+/* Learn by Building Styles */
+.learn-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.learn-header h3 {
+  color: #2c3e50;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.learn-header p {
+  color: #7f8c8d;
+  font-size: 16px;
+}
+
+.learn-mode-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.mode-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.mode-card:hover {
+  border-color: #3498db;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.15);
+}
+
+.mode-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.mode-card h4 {
+  color: #2c3e50;
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+.mode-card p {
+  color: #7f8c8d;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.learning-workspace {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.learning-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.learning-header h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.mastery-indicator {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.mastery-level {
+  font-size: 16px;
+  font-weight: 600;
+  color: #27ae60;
+}
+
+.btn-mastery {
+  padding: 8px 16px;
+  background: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.btn-mastery:hover {
+  background: #e67e22;
+}
+
+.concept-selector {
+  margin-bottom: 25px;
+}
+
+.concept-selector label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.concept-selector select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.learning-template {
+  margin-top: 20px;
+}
+
+.template-section {
+  margin-bottom: 25px;
+}
+
+.template-section h4 {
+  color: #2c3e50;
+  margin: 0 0 12px 0;
+  font-size: 16px;
+}
+
+.learning-textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.learning-textarea-small {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.learning-textarea:focus,
+.learning-textarea-small:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.learning-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.btn-save,
+.btn-ai,
+.btn-compare {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-save {
+  background: #27ae60;
+  color: white;
+}
+
+.btn-save:hover {
+  background: #229954;
+}
+
+.btn-ai {
+  background: #9b59b6;
+  color: white;
+}
+
+.btn-ai:hover {
+  background: #8e44ad;
+}
+
+.btn-compare {
+  background: #3498db;
+  color: white;
+}
+
+.btn-compare:hover {
+  background: #2980b9;
+}
+
+.ai-feedback,
+.expert-explanation {
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 8px;
+  line-height: 1.6;
+}
+
+.ai-feedback {
+  background: #f3e5f5;
+  border-left: 4px solid #9b59b6;
+}
+
+.expert-explanation {
+  background: #e3f2fd;
+  border-left: 4px solid #3498db;
+}
+
+.ai-feedback h4,
+.expert-explanation h4 {
+  margin: 0 0 15px 0;
+  color: #2c3e50;
+}
+
+.ai-feedback p,
+.expert-explanation p {
+  margin: 0;
+  color: #34495e;
+}
+
+/* Existing styles continue... */
 .wiki-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -1126,6 +1454,262 @@ function extractConceptsFromPapers() {
   });
 }
 
+// Learn by Building Functions
+let currentLearningMode = null;
+let currentLearningConcept = null;
+
+function switchTab(tabName) {
+  // Hide all tabs
+  document.querySelectorAll('.tab-content').forEach(tab => {
+    tab.classList.remove('active');
+  });
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  
+  // Show selected tab
+  document.getElementById(tabName + 'Tab').classList.add('active');
+  event.target.classList.add('active');
+  
+  // Initialize learn tab if needed
+  if (tabName === 'learn') {
+    initializeLearnTab();
+  }
+}
+
+function initializeLearnTab() {
+  const select = document.getElementById('learningConceptSelect');
+  if (select.options.length <= 1) {
+    // Populate concept selector
+    Object.keys(concepts).sort().forEach(conceptName => {
+      const option = document.createElement('option');
+      option.value = conceptName;
+      option.textContent = conceptName;
+      select.appendChild(option);
+    });
+  }
+}
+
+function startLearningMode(mode) {
+  currentLearningMode = mode;
+  document.getElementById('learningWorkspace').style.display = 'block';
+  
+  const titles = {
+    'build': 'Building Understanding',
+    'teach': 'Teaching Mode - Explain to Others',
+    'compare': 'Compare & Reflect'
+  };
+  
+  document.getElementById('learningTitle').textContent = titles[mode];
+  
+  // Scroll to workspace
+  document.getElementById('learningWorkspace').scrollIntoView({ behavior: 'smooth' });
+}
+
+function loadConceptForLearning() {
+  const select = document.getElementById('learningConceptSelect');
+  const conceptName = select.value;
+  
+  if (!conceptName) {
+    document.getElementById('learningTemplate').style.display = 'none';
+    return;
+  }
+  
+  currentLearningConcept = conceptName;
+  document.getElementById('learningTemplate').style.display = 'block';
+  
+  // Load saved progress if exists
+  const savedProgress = getLearningProgress(conceptName);
+  if (savedProgress) {
+    document.getElementById('userExplanation').value = savedProgress.explanation || '';
+    document.getElementById('keyIdeas').value = savedProgress.keyIdeas || '';
+    document.getElementById('examples').value = savedProgress.examples || '';
+    document.getElementById('connections').value = savedProgress.connections || '';
+    document.getElementById('questions').value = savedProgress.questions || '';
+    
+    // Update mastery indicator
+    updateMasteryDisplay(savedProgress.mastery || 'learning');
+  } else {
+    // Clear fields
+    document.getElementById('userExplanation').value = '';
+    document.getElementById('keyIdeas').value = '';
+    document.getElementById('examples').value = '';
+    document.getElementById('connections').value = '';
+    document.getElementById('questions').value = '';
+    updateMasteryDisplay('learning');
+  }
+  
+  // Hide feedback panels
+  document.getElementById('aiFeedback').style.display = 'none';
+  document.getElementById('expertExplanation').style.display = 'none';
+}
+
+function getLearningProgress(conceptName) {
+  const progress = JSON.parse(localStorage.getItem('learningProgress') || '{}');
+  return progress[conceptName] || null;
+}
+
+function saveLearningProgress() {
+  if (!currentLearningConcept) {
+    alert('Please select a concept first');
+    return;
+  }
+  
+  const progress = {
+    concept: currentLearningConcept,
+    explanation: document.getElementById('userExplanation').value,
+    keyIdeas: document.getElementById('keyIdeas').value,
+    examples: document.getElementById('examples').value,
+    connections: document.getElementById('connections').value,
+    questions: document.getElementById('questions').value,
+    mastery: getCurrentMasteryLevel(),
+    lastUpdated: new Date().toISOString()
+  };
+  
+  const allProgress = JSON.parse(localStorage.getItem('learningProgress') || '{}');
+  allProgress[currentLearningConcept] = progress;
+  localStorage.setItem('learningProgress', JSON.stringify(allProgress));
+  
+  alert('Progress saved successfully!');
+  updateMasteryDisplay(progress.mastery);
+}
+
+function getCurrentMasteryLevel() {
+  const masteryEl = document.querySelector('.mastery-level');
+  if (masteryEl.textContent.includes('🌱')) return 'learning';
+  if (masteryEl.textContent.includes('🌿')) return 'developing';
+  if (masteryEl.textContent.includes('🌳')) return 'mastered';
+  return 'learning';
+}
+
+function updateMasteryDisplay(level) {
+  const masteryEl = document.querySelector('.mastery-level');
+  const levels = {
+    'learning': '🌱 Learning',
+    'developing': '🌿 Developing',
+    'mastered': '🌳 Mastered'
+  };
+  masteryEl.textContent = levels[level] || levels['learning'];
+}
+
+function updateMastery() {
+  if (!currentLearningConcept) {
+    alert('Please select a concept first');
+    return;
+  }
+  
+  const currentLevel = getCurrentMasteryLevel();
+  const levels = ['learning', 'developing', 'mastered'];
+  const currentIndex = levels.indexOf(currentLevel);
+  const nextIndex = (currentIndex + 1) % levels.length;
+  const nextLevel = levels[nextIndex];
+  
+  updateMasteryDisplay(nextLevel);
+  
+  // Save to progress
+  const progress = getLearningProgress(currentLearningConcept) || {};
+  progress.mastery = nextLevel;
+  progress.lastUpdated = new Date().toISOString();
+  
+  const allProgress = JSON.parse(localStorage.getItem('learningProgress') || '{}');
+  allProgress[currentLearningConcept] = progress;
+  localStorage.setItem('learningProgress', JSON.stringify(allProgress));
+}
+
+function getAIFeedback() {
+  if (!currentLearningConcept) {
+    alert('Please select a concept first');
+    return;
+  }
+  
+  const explanation = document.getElementById('userExplanation').value;
+  if (!explanation.trim()) {
+    alert('Please write your explanation first');
+    return;
+  }
+  
+  // Simulate AI feedback (in production, this would call an AI API)
+  const feedback = generateAIFeedback(explanation, currentLearningConcept);
+  
+  const feedbackEl = document.getElementById('aiFeedback');
+  feedbackEl.innerHTML = `
+    <h4>🤖 AI Feedback</h4>
+    <p>${feedback}</p>
+  `;
+  feedbackEl.style.display = 'block';
+  feedbackEl.scrollIntoView({ behavior: 'smooth' });
+}
+
+function generateAIFeedback(explanation, conceptName) {
+  const wordCount = explanation.split(/\s+/).length;
+  const concept = concepts[conceptName];
+  
+  let feedback = '<strong>Analysis of your explanation:</strong><br><br>';
+  
+  // Word count feedback
+  if (wordCount < 50) {
+    feedback += '⚠️ Your explanation is quite brief. Try expanding on the key concepts and providing more detail.<br><br>';
+  } else if (wordCount > 300) {
+    feedback += '✅ Good depth! Your explanation is comprehensive.<br><br>';
+  } else {
+    feedback += '✅ Good length for an explanation.<br><br>';
+  }
+  
+  // Check for key terms from the concept
+  const definition = concept.definition.toLowerCase();
+  const keyTerms = definition.split(/\s+/).filter(word => word.length > 5);
+  const explanationLower = explanation.toLowerCase();
+  const matchedTerms = keyTerms.filter(term => explanationLower.includes(term));
+  
+  if (matchedTerms.length > 0) {
+    feedback += `✅ You've included important terms: ${matchedTerms.slice(0, 5).join(', ')}<br><br>`;
+  } else {
+    feedback += '💡 Consider incorporating key terminology from the concept definition.<br><br>';
+  }
+  
+  // Check for examples
+  if (explanationLower.includes('example') || explanationLower.includes('for instance') || explanationLower.includes('such as')) {
+    feedback += '✅ Great! You\'ve included examples to illustrate the concept.<br><br>';
+  } else {
+    feedback += '💡 Adding concrete examples would strengthen your explanation.<br><br>';
+  }
+  
+  // Suggestions
+  feedback += '<strong>Suggestions for improvement:</strong><br>';
+  feedback += '• Consider explaining why this concept matters<br>';
+  feedback += '• Connect it to related concepts you\'ve learned<br>';
+  feedback += '• Think about real-world applications';
+  
+  return feedback;
+}
+
+function viewExpertExplanation() {
+  if (!currentLearningConcept) {
+    alert('Please select a concept first');
+    return;
+  }
+  
+  const concept = concepts[currentLearningConcept];
+  const expertEl = document.getElementById('expertExplanation');
+  
+  expertEl.innerHTML = `
+    <h4>📚 Expert Explanation</h4>
+    <p><strong>Definition:</strong> ${concept.definition}</p>
+    <p style="margin-top: 15px;"><strong>Key Points:</strong></p>
+    <ul style="margin-left: 20px; line-height: 1.8;">
+      <li>Category: ${concept.category}</li>
+      <li>Difficulty: ${concept.difficulty}</li>
+      <li>Related to ${concept.related.length} other concepts</li>
+      <li>Appears in ${concept.papers.length} research papers</li>
+    </ul>
+    <p style="margin-top: 15px;"><strong>Tags:</strong> ${concept.tags.join(', ')}</p>
+  `;
+  
+  expertEl.style.display = 'block';
+  expertEl.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Wiki Functions
 function renderConceptGrid() {
   const grid = document.getElementById('conceptGrid');
   const filteredConcepts = getFilteredConcepts();

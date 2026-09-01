@@ -1,6 +1,8 @@
 /* Public Theme - Academic Style */
 /* Deep blue + teal + amber palette */
 
+/*-- scss:defaults --*/
+
 /* Typography */
 $body-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 $heading-font-family: 'Georgia', 'Times New Roman', serif;
@@ -10,6 +12,8 @@ $primary: #1e3a8a;
 $secondary: #0d9488;
 $accent: #f59e0b;
 $light-bg: #f8fafc;
+
+/*-- scss:rules --*/
 
 /* Base styles */
 body {
