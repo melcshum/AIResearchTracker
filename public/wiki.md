@@ -68,12 +68,37 @@ Key components include <span class="wiki-term" data-term="memory">memory systems
 <span class="wiki-term" data-term="retrieval">retrieval mechanisms</span> for accessing knowledge, and 
 <span class="wiki-term" data-term="multi-agent">multi-agent coordination</span> for complex tasks.
 </p>
+
 <h3>Retrieval-Augmented Generation</h3>
 <p>
 <span class="wiki-term" data-term="rag">RAG</span> combines <span class="wiki-term" data-term="retrieval">retrieval</span> with generation by first searching a knowledge base for relevant documents, then using those documents as context for the language model. This approach reduces hallucination and provides verifiable citations.
 </p>
 <p>
 Advanced RAG systems use <span class="wiki-term" data-term="dense-retrieval">dense retrieval</span> with <span class="wiki-term" data-term="embeddings">vector embeddings</span>, <span class="wiki-term" data-term="hybrid-search">hybrid search</span> combining lexical and semantic methods, and <span class="wiki-term" data-term="reranking">reranking</span> to improve result quality.
+</p>
+
+<h3>Reasoning & Planning</h3>
+<p>
+<span class="wiki-term" data-term="reasoning">Reasoning</span> in AI agents involves <span class="wiki-term" data-term="chain-of-thought">chain-of-thought</span> processing, where the model breaks down complex problems into intermediate steps. <span class="wiki-term" data-term="planning">Planning</span> extends this by generating sequences of actions to achieve long-term goals.
+</p>
+<p>
+Modern approaches use <span class="wiki-term" data-term="tree-of-thought">tree-of-thought</span> exploration, where multiple reasoning paths are evaluated in parallel. <span class="wiki-term" data-term="self-consistency">Self-consistency</span> techniques sample multiple solutions and select the most coherent one through voting or verification.
+</p>
+
+<h3>Tool Use & Function Calling</h3>
+<p>
+<span class="wiki-term" data-term="tool-use">Tool use</span> enables agents to interact with external systems through <span class="wiki-term" data-term="function-calling">function calling</span> interfaces. Agents learn to invoke APIs, execute code, query databases, and manipulate files to accomplish tasks beyond text generation.
+</p>
+<p>
+Effective tool use requires <span class="wiki-term" data-term="grounding">grounding</span> — understanding when and how to apply tools appropriately. Agents must reason about tool capabilities, handle errors gracefully, and compose multiple tools into workflows.
+</p>
+
+<h3>Multi-Agent Systems</h3>
+<p>
+<span class="wiki-term" data-term="multi-agent">Multi-agent</span> systems coordinate multiple AI agents to solve complex problems. Agents can specialize in different roles (researcher, critic, executor) and communicate through structured protocols.
+</p>
+<p>
+Coordination strategies include <span class="wiki-term" data-term="debate">debate</span> (agents argue different perspectives), <span class="wiki-term" data-term="consensus">consensus</span> (agents converge on shared understanding), and <span class="wiki-term" data-term="hierarchy">hierarchical</span> structures (manager agents delegate to workers).
 </p>
 </div>
 
@@ -832,6 +857,54 @@ const wikiTerms = {
     definition: 'Reordering retrieved results using a more sophisticated model',
     relatedTerms: ['retrieval', 'rag'],
     keywords: ['reranking', 'reorder', 'rank', 'score']
+  },
+  'chain-of-thought': {
+    name: 'Chain-of-Thought',
+    definition: 'Breaking down complex reasoning into intermediate steps',
+    relatedTerms: ['reasoning', 'planning'],
+    keywords: ['chain', 'thought', 'reasoning', 'steps']
+  },
+  'tree-of-thought': {
+    name: 'Tree-of-Thought',
+    definition: 'Exploring multiple reasoning paths in parallel',
+    relatedTerms: ['reasoning', 'chain-of-thought'],
+    keywords: ['tree', 'thought', 'parallel', 'exploration']
+  },
+  'self-consistency': {
+    name: 'Self-Consistency',
+    definition: 'Sampling multiple solutions and selecting the most coherent through voting',
+    relatedTerms: ['reasoning', 'chain-of-thought'],
+    keywords: ['consistency', 'voting', 'sampling', 'verification']
+  },
+  'function-calling': {
+    name: 'Function Calling',
+    definition: 'Structured interfaces for invoking external APIs and tools',
+    relatedTerms: ['tool-use', 'act'],
+    keywords: ['function', 'api', 'invoke', 'interface']
+  },
+  'grounding': {
+    name: 'Grounding',
+    definition: 'Understanding when and how to apply tools appropriately',
+    relatedTerms: ['tool-use', 'reasoning'],
+    keywords: ['grounding', 'context', 'appropriateness', 'application']
+  },
+  'debate': {
+    name: 'Multi-Agent Debate',
+    definition: 'Agents argue different perspectives to reach better conclusions',
+    relatedTerms: ['multi-agent', 'reasoning'],
+    keywords: ['debate', 'argument', 'perspective', 'discussion']
+  },
+  'consensus': {
+    name: 'Consensus',
+    definition: 'Agents converge on shared understanding through collaboration',
+    relatedTerms: ['multi-agent', 'debate'],
+    keywords: ['consensus', 'agreement', 'convergence', 'collaboration']
+  },
+  'hierarchy': {
+    name: 'Hierarchical Coordination',
+    definition: 'Manager agents delegate tasks to worker agents',
+    relatedTerms: ['multi-agent', 'planning'],
+    keywords: ['hierarchy', 'delegation', 'manager', 'worker']
   }
 };
 
