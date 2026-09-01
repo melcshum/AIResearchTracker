@@ -502,41 +502,81 @@ const papers = [
   }
 ];
 
-function loadReadingList() {
-  const saved = localStorage.getItem('readingList') || '[]';
-  return JSON.parse(saved);
+// User data management via API
+let userBookmarks = [];
+let userReadingProgress = {};
+let userNotes = {};
+
+async function loadUserData() {
+  try {
+    const response = await fetch('http://localhost:5001/api/user/data');
+    const data = await response.json();
+    userBookmarks = data.bookmarks || [];
+    userReadingProgress = data.readingProgress || {};
+    userNotes = data.notes || {};
+  } catch (error) {
+    console.error('Failed to load user data:', error);
+  }
 }
 
-function saveReadingList(list) {
-  localStorage.setItem('readingList', JSON.stringify(list));
+async function saveBookmark(arxivId) {
+  try {
+    await fetch('http://localhost:5001/api/user/bookmarks', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ paperId: arxivId })
+    });
+    if (!userBookmarks.includes(arxivId)) {
+      userBookmarks.push(arxivId);
+    }
+  } catch (error) {
+    console.error('Failed to save bookmark:', error);
+  }
 }
 
-function loadPaperStatus() {
-  const saved = localStorage.getItem('paperStatus') || '{}';
-  return JSON.parse(saved);
+async function removeBookmark(arxivId) {
+  try {
+    await fetch(`http://localhost:5001/api/user/bookmarks/${arxivId}`, {
+      method: 'DELETE'
+    });
+    userBookmarks = userBookmarks.filter(id => id !== arxivId);
+  } catch (error) {
+    console.error('Failed to remove bookmark:', error);
+  }
 }
 
-function savePaperStatus(status) {
-  localStorage.setItem('paperStatus', JSON.stringify(status));
+async function updateReadingProgress(arxivId, status) {
+  try {
+    await fetch(`http://localhost:5001/api/user/reading-progress/${arxivId}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ status })
+    });
+    userReadingProgress[arxivId] = { status, updatedAt: new Date().toISOString() };
+  } catch (error) {
+    console.error('Failed to update reading progress:', error);
+  }
 }
 
-function loadPaperNotes() {
-  const saved = localStorage.getItem('paperNotes') || '{}';
-  return JSON.parse(saved);
-}
-
-function savePaperNotes(notes) {
-  localStorage.setItem('paperNotes', JSON.stringify(notes));
+async function saveNote(arxivId, note) {
+  try {
+    await fetch(`http://localhost:5001/api/user/notes/${arxivId}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ note })
+    });
+    userNotes[arxivId] = note;
+  } catch (error) {
+    console.error('Failed to save note:', error);
+  }
 }
 
 function updateStats() {
-  const list = loadReadingList();
-  const status = loadPaperStatus();
-  
   const counts = { inbox: 0, reading: 0, read: 0, cited: 0, archived: 0 };
-  list.forEach(arxivId => {
-    const s = status[arxivId] || 'inbox';
-    counts[s]++;
+  userBookmarks.forEach(arxivId => {
+    const progress = userReadingProgress[arxivId];
+    const s = progress ? progress.status : 'inbox';
+    counts[s] = (counts[s] || 0) + 1;
   });
   
   document.getElementById('inboxCount').textContent = counts.inbox;
@@ -546,28 +586,27 @@ function updateStats() {
 }
 
 function renderReadingList() {
-  const list = loadReadingList();
-  const status = loadPaperStatus();
-  const notes = loadPaperNotes();
   const filter = document.getElementById('statusFilter').value;
   const container = document.getElementById('readingList');
   const countEl = document.getElementById('paperCount');
   
-  if (list.length === 0) {
+  if (userBookmarks.length === 0) {
     container.innerHTML = '<p class="empty-state">Your reading list is empty. Click the bookmark icon on any paper to add it here.</p>';
     countEl.textContent = '0 papers saved';
     updateStats();
     return;
   }
   
-  const filteredList = list.filter(arxivId => {
+  const filteredList = userBookmarks.filter(arxivId => {
     if (filter === 'all') return true;
-    return (status[arxivId] || 'inbox') === filter;
+    const progress = userReadingProgress[arxivId];
+    const status = progress ? progress.status : 'inbox';
+    return status === filter;
   });
   
   if (filteredList.length === 0) {
     container.innerHTML = '<p class="empty-state">No papers with this status.</p>';
-    countEl.textContent =  PH0 ;
+    countEl.textContent = `${userBookmarks.length} total, 0 matching filter`;
     updateStats();
     return;
   }
@@ -576,55 +615,70 @@ function renderReadingList() {
     const paper = papers.find(p => p.arxiv_id === arxivId);
     if (!paper) return '';
     
-    const currentStatus = status[arxivId] || 'inbox';
-    const currentNotes = notes[arxivId] || '';
+    const progress = userReadingProgress[arxivId];
+    const currentStatus = progress ? progress.status : 'inbox';
+    const currentNotes = userNotes[arxivId] || '';
     
-    return  PH1 <span class="topic-tag">${t}</span> PH2 ;
+    return `
+      <div class="paper-item">
+        <div class="paper-item-header">
+          <div class="paper-title">
+            <a href="${paper.url}" target="_blank">${paper.title}</a>
+          </div>
+          <div class="paper-actions">
+            <select class="status-select" onchange="updateStatus('${arxivId}', this.value)">
+              <option value="inbox" ${currentStatus === 'inbox' ? 'selected' : ''}>📥 Inbox</option>
+              <option value="reading" ${currentStatus === 'reading' ? 'selected' : ''}>📖 Reading</option>
+              <option value="read" ${currentStatus === 'read' ? 'selected' : ''}>✅ Read</option>
+              <option value="cited" ${currentStatus === 'cited' ? 'selected' : ''}>📝 Cited</option>
+              <option value="archived" ${currentStatus === 'archived' ? 'selected' : ''}>🗄️ Archived</option>
+            </select>
+            <button class="remove-btn" onclick="removePaper('${arxivId}')" title="Remove from list">×</button>
+          </div>
+        </div>
+        <div class="paper-meta">
+          <strong>Authors:</strong> ${paper.authors}<br>
+          <strong>Date:</strong> ${paper.date}<br>
+          <strong>Topics:</strong> ${paper.topics.map(t => `<span class="topic-tag">${t}</span>`).join(' ')}
+        </div>
+        <div class="paper-abstract">${paper.abstract}...</div>
+        <div class="paper-notes">
+          <textarea id="notes-${arxivId}" placeholder="Add your notes about this paper...">${currentNotes}</textarea>
+          <button onclick="saveNotes('${arxivId}')">💾 Save Notes</button>
+        </div>
+      </div>
+    `;
   }).join('');
   
-  countEl.textContent =  PH3 ;
+  countEl.textContent = `${filteredList.length} of ${userBookmarks.length} papers shown`;
   updateStats();
 }
 
-function updateStatus(arxivId, newStatus) {
-  const status = loadPaperStatus();
-  status[arxivId] = newStatus;
-  savePaperStatus(status);
+async function updateStatus(arxivId, newStatus) {
+  await updateReadingProgress(arxivId, newStatus);
   updateStats();
 }
 
-function saveNotes(arxivId) {
-  const notes = loadPaperNotes();
-  const textarea = document.getElementById( PH4 );
-  notes[arxivId] = textarea.value;
-  savePaperNotes(notes);
+async function saveNotes(arxivId) {
+  const textarea = document.getElementById(`notes-${arxivId}`);
+  await saveNote(arxivId, textarea.value);
   alert('Notes saved!');
 }
 
-function removePaper(arxivId) {
-  const list = loadReadingList();
-  const newList = list.filter(id => id !== arxivId);
-  saveReadingList(newList);
-  
-  const status = loadPaperStatus();
-  delete status[arxivId];
-  savePaperStatus(status);
-  
-  const notes = loadPaperNotes();
-  delete notes[arxivId];
-  savePaperNotes(notes);
-  
+async function removePaper(arxivId) {
+  await removeBookmark(arxivId);
+  delete userReadingProgress[arxivId];
+  delete userNotes[arxivId];
   renderReadingList();
 }
 
 function exportBibTeX() {
-  const list = loadReadingList();
-  if (list.length === 0) {
+  if (userBookmarks.length === 0) {
     alert('Your reading list is empty');
     return;
   }
   
-  const selectedPapers = list.map(id => papers.find(p => p.arxiv_id === id)).filter(p => p);
+  const selectedPapers = userBookmarks.map(id => papers.find(p => p.arxiv_id === id)).filter(p => p);
   
   let bib = '';
   selectedPapers.forEach(paper => {
@@ -650,24 +704,21 @@ function exportBibTeX() {
 }
 
 function exportMarkdown() {
-  const list = loadReadingList();
-  const status = loadPaperStatus();
-  const notes = loadPaperNotes();
-  
-  if (list.length === 0) {
+  if (userBookmarks.length === 0) {
     alert('Your reading list is empty');
     return;
   }
   
-  const selectedPapers = list.map(id => papers.find(p => p.arxiv_id === id)).filter(p => p);
+  const selectedPapers = userBookmarks.map(id => papers.find(p => p.arxiv_id === id)).filter(p => p);
   
   let md = '# My Reading List\n\n';
   md +=  PH14 ;
   md +=  PH15 ;
   
   selectedPapers.forEach((paper, i) => {
-    const s = status[paper.arxiv_id] || 'inbox';
-    const n = notes[paper.arxiv_id] || '';
+    const progress = userReadingProgress[paper.arxiv_id];
+    const s = progress ? progress.status : 'inbox';
+    const n = userNotes[paper.arxiv_id] || '';
     
     md +=  PH16 ;
     md +=  PH17 ;
@@ -696,9 +747,9 @@ function exportMarkdown() {
 
 function clearList() {
   if (confirm('Are you sure you want to clear your entire reading list?')) {
-    saveReadingList([]);
-    savePaperStatus({});
-    savePaperNotes({});
+    userBookmarks = [];
+    userReadingProgress = {};
+    userNotes = {};
     renderReadingList();
   }
 }
@@ -708,5 +759,10 @@ document.getElementById('exportMdBtn').addEventListener('click', exportMarkdown)
 document.getElementById('clearBtn').addEventListener('click', clearList);
 document.getElementById('statusFilter').addEventListener('change', renderReadingList);
 
-renderReadingList();
+// Initialize the page
+document.addEventListener('DOMContentLoaded', () => {
+  loadUserData().then(() => {
+    renderReadingList();
+  });
+});
 </script>
