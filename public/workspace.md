@@ -176,6 +176,47 @@ main.content, #quarto-document-content {
   padding: 0 !important;
 }
 
+/* Override Bootstrap container constraints */
+.container,
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl {
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Override Quarto page layout constraints */
+.quarto-container,
+.page-columns,
+.page-layout-article,
+.page-layout-full,
+.page-rows-contents {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Ensure body takes full width */
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+}
+
+/* Override any remaining width constraints */
+#quarto-content,
+.quarto-content {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .workspace-container {
   display: flex;
   flex-direction: column;
@@ -185,6 +226,33 @@ main.content, #quarto-document-content {
   gap: 0.75rem;
   margin: 0;
   max-width: 100%;
+  width: 100%;
+}
+
+/* Ensure workspace-grid uses full width */
+.workspace-grid {
+  display: grid !important;
+  grid-template-columns: 300px 1fr 350px !important;
+  gap: 1rem !important;
+  flex: 1 !important;
+  min-height: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Override any remaining constraints on panels */
+.workspace-panel {
+  background: white !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
 }
 
 /* Top Bar */
