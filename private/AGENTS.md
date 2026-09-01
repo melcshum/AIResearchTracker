@@ -14,12 +14,65 @@ A personalised learning platform powered by AI assistance, helping users create 
 6. **Enhanced Wiki with AI Features** — AI-powered wiki support for knowledge building, concept linking, and interactive exploration
 7. **Behind-the-Scenes Automation** — AI-driven automation handles paper fetching, metadata enhancement, and content curation so users can focus on learning
 
-## Focus Areas
+## Multi-User Topic Management
 
-- **AI Agents**: Autonomous systems, tool use, planning, multi-agent coordination
-- **LLM Reasoning**: Chain-of-thought, self-consistency, tree-of-thought, verification
-- **RAG & Retrieval**: Dense retrieval, hybrid search, knowledge grounding, citation
-- **Multi-modal**: Vision-language models, audio processing, cross-modal reasoning
+The system now supports multiple users, each with their own research topics:
+
+### User Management
+```bash
+# List all users
+python3 user_manager.py list
+
+# Create new user
+python3 user_manager.py create <username> [display_name]
+
+# Switch active user
+python3 user_manager.py switch <username>
+
+# View available templates
+python3 user_manager.py templates
+```
+
+### Topic Configuration
+Each user has their own topic configuration stored in `_data/users/{username}/config.json`:
+- **Hierarchical topics**: Parent topics with sub-topics (e.g., AI Agents → GUI Agents)
+- **Custom queries**: arXiv search queries per topic
+- **Keywords**: For paper classification
+- **arXiv categories**: Filter by CS subcategories
+- **Templates**: Pre-built topic packages to import
+
+### Web UI
+Access the topic management interface at:
+```
+http://localhost:8000/topics-management.html
+```
+
+Features:
+- Switch between users
+- Add/edit/delete topics
+- Import topic templates
+- Toggle topics on/off
+- Configure search queries and keywords
+
+### API Server
+Start the topic management API:
+```bash
+python3 api_server.py
+```
+
+Provides REST endpoints for user/topic CRUD operations.
+
+### Dynamic Topic Pages
+Generate personalized topic pages:
+```bash
+python3 generate_topic_pages.py
+```
+
+Creates:
+- Topics index page
+- One page per enabled topic
+- Filters papers by user's topics
+- Supports hierarchical display
 
 ## Directory Structure
 

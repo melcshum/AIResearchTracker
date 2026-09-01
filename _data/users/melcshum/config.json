@@ -1,0 +1,176 @@
+{
+  "profile": {
+    "username": "melcshum",
+    "displayName": "Mel",
+    "created": "2026-09-01",
+    "lastActive": "2026-09-01",
+    "avatar": "👤",
+    "bio": ""
+  },
+  "topics": [
+    {
+      "id": "ai-agents",
+      "name": "AI Agents",
+      "icon": "🤖",
+      "enabled": true,
+      "queries": [
+        "AI agent autonomous",
+        "LLM agent tool use",
+        "multi-agent systems"
+      ],
+      "keywords": [
+        "agent",
+        "autonomous",
+        "tool use",
+        "planning",
+        "multi-agent"
+      ],
+      "categories": [
+        "cs.AI",
+        "cs.MA",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "description": "Autonomous systems with tool use, planning, and multi-agent coordination",
+      "color": "#667eea",
+      "children": [
+        {
+          "id": "ai-agents.gui",
+          "name": "GUI Agents",
+          "icon": "🖥️",
+          "enabled": true,
+          "queries": [
+            "GUI agent",
+            "web automation",
+            "UI navigation agent"
+          ],
+          "keywords": [
+            "GUI",
+            "web agent",
+            "browser",
+            "UI automation"
+          ],
+          "categories": [
+            "cs.AI",
+            "cs.HC"
+          ],
+          "description": "Agents that interact with graphical user interfaces"
+        },
+        {
+          "id": "ai-agents.multi-agent",
+          "name": "Multi-Agent Systems",
+          "icon": "👥",
+          "enabled": true,
+          "queries": [
+            "multi-agent coordination",
+            "agent collaboration"
+          ],
+          "keywords": [
+            "multi-agent",
+            "coordination",
+            "collaboration"
+          ],
+          "categories": [
+            "cs.MA",
+            "cs.AI"
+          ],
+          "description": "Systems with multiple cooperating agents"
+        }
+      ]
+    },
+    {
+      "id": "llm-reasoning",
+      "name": "LLM Reasoning",
+      "icon": "🧠",
+      "enabled": true,
+      "queries": [
+        "chain of thought reasoning",
+        "LLM reasoning verification",
+        "large language model reasoning"
+      ],
+      "keywords": [
+        "reasoning",
+        "chain of thought",
+        "self-consistency",
+        "verification",
+        "LLM"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "description": "Chain-of-thought, self-consistency, tree-of-thought, and verification techniques",
+      "color": "#f093fb",
+      "children": []
+    },
+    {
+      "id": "rag-retrieval",
+      "name": "RAG & Retrieval",
+      "icon": "🔍",
+      "enabled": true,
+      "queries": [
+        "retrieval augmented generation",
+        "RAG knowledge graphs",
+        "dense retrieval embeddings"
+      ],
+      "keywords": [
+        "retrieval",
+        "RAG",
+        "knowledge graph",
+        "embedding",
+        "dense retrieval"
+      ],
+      "categories": [
+        "cs.IR",
+        "cs.CL",
+        "cs.AI"
+      ],
+      "description": "Dense retrieval, hybrid search, knowledge grounding, and citation systems",
+      "color": "#4facfe",
+      "children": []
+    },
+    {
+      "id": "multi-modal",
+      "name": "Multi-Modal Models",
+      "icon": "🎨",
+      "enabled": true,
+      "queries": [
+        "vision language model",
+        "multimodal LLM",
+        "image text understanding"
+      ],
+      "keywords": [
+        "vision",
+        "multimodal",
+        "multi-modal",
+        "image",
+        "document",
+        "OCR"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL",
+        "cs.MM"
+      ],
+      "description": "Vision-language models, audio processing, and cross-modal reasoning",
+      "color": "#43e97b",
+      "children": []
+    }
+  ],
+  "preferences": {
+    "defaultCategories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.IR",
+      "cs.LG",
+      "cs.CV",
+      "cs.MM"
+    ],
+    "maxPapersPerTopic": 10,
+    "daysBack": 7,
+    "autoEnhance": true,
+    "includeCrossListed": true
+  }
+}

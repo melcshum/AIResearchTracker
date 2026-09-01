@@ -1,0 +1,117 @@
+{
+  "version": "1.0",
+  "user": {
+    "name": "Researcher",
+    "created": "2026-09-01",
+    "lastUpdated": "2026-09-01"
+  },
+  "topics": [
+    {
+      "id": "ai-agents",
+      "name": "AI Agents",
+      "enabled": true,
+      "queries": [
+        "AI agent autonomous",
+        "LLM agent tool use",
+        "multi-agent systems",
+        "agentic AI planning",
+        "GUI agent reinforcement learning"
+      ],
+      "keywords": [
+        "agent",
+        "autonomous",
+        "tool use",
+        "planning",
+        "multi-agent",
+        "agentic",
+        "reinforcement learning"
+      ],
+      "categories": ["cs.AI", "cs.MA", "cs.CL", "cs.LG"],
+      "description": "Autonomous systems with tool use, planning, and multi-agent coordination",
+      "color": "#667eea",
+      "icon": "🤖"
+    },
+    {
+      "id": "llm-reasoning",
+      "name": "LLM Reasoning",
+      "enabled": true,
+      "queries": [
+        "chain of thought reasoning",
+        "LLM reasoning verification",
+        "large language model reasoning",
+        "reasoning efficiency tokens",
+        "self-consistency reasoning"
+      ],
+      "keywords": [
+        "reasoning",
+        "chain of thought",
+        "self-consistency",
+        "verification",
+        "language model",
+        "LLM",
+        "thinking"
+      ],
+      "categories": ["cs.CL", "cs.AI", "cs.LG"],
+      "description": "Chain-of-thought, self-consistency, tree-of-thought, and verification techniques",
+      "color": "#f093fb",
+      "icon": "🧠"
+    },
+    {
+      "id": "rag-retrieval",
+      "name": "RAG & Retrieval",
+      "enabled": true,
+      "queries": [
+        "retrieval augmented generation",
+        "RAG knowledge graphs",
+        "dense retrieval embeddings",
+        "hybrid search retrieval",
+        "retrieval augmented LLM"
+      ],
+      "keywords": [
+        "retrieval",
+        "RAG",
+        "knowledge graph",
+        "embedding",
+        "dense retrieval",
+        "hybrid search",
+        "information retrieval"
+      ],
+      "categories": ["cs.IR", "cs.CL", "cs.AI"],
+      "description": "Dense retrieval, hybrid search, knowledge grounding, and citation systems",
+      "color": "#4facfe",
+      "icon": "🔍"
+    },
+    {
+      "id": "multi-modal",
+      "name": "Multi-Modal Models",
+      "enabled": true,
+      "queries": [
+        "vision language model",
+        "multimodal LLM",
+        "image text understanding",
+        "multimodal reasoning",
+        "document understanding OCR"
+      ],
+      "keywords": [
+        "vision",
+        "multimodal",
+        "multi-modal",
+        "image",
+        "document",
+        "OCR",
+        "visual"
+      ],
+      "categories": ["cs.CV", "cs.AI", "cs.CL", "cs.MM"],
+      "description": "Vision-language models, audio processing, and cross-modal reasoning",
+      "color": "#43e97b",
+      "icon": "🎨"
+    }
+  ],
+  "preferences": {
+    "defaultCategories": ["cs.AI", "cs.CL", "cs.IR", "cs.LG", "cs.CV", "cs.MM"],
+    "maxPapersPerTopic": 10,
+    "daysBack": 7,
+    "autoEnhance": true,
+    "includeCrossListed": true
+  }
+}

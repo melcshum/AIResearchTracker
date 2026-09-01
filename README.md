@@ -2,7 +2,153 @@
 
 A personalised learning platform powered by AI assistance. Users enter topics to research and save them to create customised learning journeys, while AI tools help organise notes and build learning materials. Built with Quarto and Python.
 
-## Navigation Structure
+## 🚀 Quick Start
+
+```bash
+# 1. Start the API server (for topic management)
+python3 api_server.py &
+
+# 2. Start the web server
+./start_server.sh
+
+# 3. Open topic management UI
+open http://localhost:8000/topics-management.html
+
+# 4. Fetch papers for your topics
+python3 fetch_arxiv.py
+
+# 5. Generate dynamic topic pages
+python3 generate_topic_pages.py
+
+# 6. Rebuild the site
+quarto render
+```
+
+## 👥 Multi-User System
+
+The platform supports multiple users, each with their own research topics:
+
+```bash
+# List all users
+python3 user_manager.py list
+
+# Create a new user
+python3 user_manager.py create alice "Alice Smith"
+
+# Switch active user
+python3 user_manager.py switch alice
+
+# Import topic templates
+python3 user_manager.py templates
+```
+
+Each user has:
+- Custom research topics (hierarchical)
+- Personalised search queries and keywords
+- arXiv category preferences
+- Shared access to the paper pool
+
+## 📚 Topic Management
+
+### Web Interface
+Visit `/topics-management.html` to:
+- Switch between users
+- Add/edit/delete topics
+- Import pre-built templates
+- Toggle topics on/off
+- Configure search queries
+
+### Hierarchical Topics
+Topics support parent-child relationships:
+```
+AI Agents
+├── GUI Agents
+└── Multi-Agent Systems
+
+LLM Reasoning
+├── Chain-of-Thought
+└── Reasoning Verification
+```
+
+### Templates
+Pre-built topic packages available:
+- AI Agents (Complete)
+- LLM Reasoning (Complete)
+- RAG & Retrieval (Complete)
+- Multi-Modal Models (Complete)
+
+## 🔄 Automation Pipeline
+
+```bash
+# Run full pipeline
+./daily_automation.sh
+
+# Or step-by-step:
+python3 fetch_arxiv.py              # Fetch papers
+python3 enhance_papers.py           # Enhance metadata
+python3 generate_topic_pages.py     # Generate topic pages
+python3 generate_search_data.py     # Update search index
+quarto render                       # Build site
+```
+
+## 📁 Project Structure
+
+```
+research-notes/
+├── papers/                    # Shared paper pool (all users)
+├── _data/
+│   ├── users/                 # Per-user configurations
+│   │   ├── default/
+│   │   │   └── config.json
+│   │   └── {username}/
+│   │       └── config.json
+│   ├── current-user.txt       # Active user
+│   └── shared/
+│       └── topic-templates.json
+├── public/
+│   └── topics/                # Generated topic pages
+├── user_manager.py            # Multi-user management
+├── api_server.py              # Topic management API
+├── generate_topic_pages.py    # Dynamic page generator
+├── fetch_arxiv.py             # User-aware paper fetcher
+└── topics-management.md       # Web UI
+```
+
+## 🛠️ Key Components
+
+### Backend
+- **user_manager.py**: Multi-user system with per-user configs
+- **api_server.py**: Flask REST API for topic management
+- **fetch_arxiv.py**: Fetches papers based on active user's topics
+- **generate_topic_pages.py**: Creates personalized topic pages
+
+### Frontend
+- **topics-management.html**: User/topic management UI
+- **topics-index.html**: Browse all your topics
+- **{topic}.html**: Individual topic pages with filtered papers
+
+### Data Storage
+- Papers: Shared `papers/` directory
+- User configs: `_data/users/{username}/config.json`
+- Templates: `_data/shared/topic-templates.json`
+
+## 📖 Documentation
+
+- [MULTI_USER_SYSTEM.md](MULTI_USER_SYSTEM.md) - Complete system architecture
+- [private/AGENTS.md](private/AGENTS.md) - Agent guide and conventions
+- [private/admin.md](private/admin.md) - Project overview and aims
+- [private/requirements.md](private/requirements.md) - User requirements
+
+## 🎯 Project Aim
+
+Personalise the learning platform with AI assistance:
+- Enter topics to research and save them to create a personalised learning journey
+- Offer a structured learning pathway
+- Utilise AI tools to aid learning and help users organise their notes
+- Systematically retrieve and include research papers or other sources periodically
+- Analyse and build learning materials
+- Enhance wiki support with AI-powered features
+- AI support for learning automation behind the scenes
 
 The site is organized into two main parts:
 

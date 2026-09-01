@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Fetch latest papers from arXiv in focus areas.
-Searches for papers on AI agents, LLM reasoning, RAG, and multi-modal systems.
+Fetch latest papers from arXiv based on user-defined research topics.
+Reads topics from _data/users/{username}/config.json via user_manager module.
+Papers are shared across all users in root papers/ directory.
 """
 
 import urllib.request
@@ -11,48 +12,20 @@ from datetime import datetime, timedelta
 import re
 from pathlib import Path
 import time
+from user_manager import get_current_user, load_user_config, get_enabled_topics, get_topic_keywords, get_user_papers_dir
 
-# Focus areas and search queries
-FOCUS_AREAS = {
-    'ai-agents': [
-        'AI agent autonomous',
-        'LLM agent tool use',
-        'multi-agent systems',
-        'agentic AI planning',
-        'GUI agent reinforcement learning'
-    ],
-    'llm-reasoning': [
-        'chain of thought reasoning',
-        'LLM reasoning verification',
-        'large language model reasoning',
-        'reasoning efficiency tokens',
-        'self-consistency reasoning'
-    ],
-    'rag-retrieval': [
-        'retrieval augmented generation',
-        'RAG knowledge graphs',
-        'dense retrieval embeddings',
-        'hybrid search retrieval',
-        'retrieval augmented LLM'
-    ],
-    'multi-modal': [
-        'vision language model',
-        'multimodal LLM',
-        'image text understanding',
-        'multimodal reasoning',
-        'document understanding OCR'
-    ]
-}
-
-def search_arxiv(query, max_results=10, days_back=7):
-    """Search arXiv for papers matching query, restricted to CS categories."""
+def search_arxiv(query, categories, max_results=10, days_back=7):
+    """Search arXiv for papers matching query, restricted to specified categories."""
     base_url = 'http://export.arxiv.org/api/query'
     
-    # Restrict to CS categories relevant to our focus areas
-    category_filter = '(cat:cs.AI OR cat:cs.CL OR cat:cs.CV OR cat:cs.LG OR cat:cs.MA OR cat:cs.IR OR cat:cs.SE)'
+    # Build category filter from topic config
+    if categories:
+        cat_filter = '(' + ' OR '.join(f'cat:{cat}' for cat in categories) + ')'
+    else:
+        cat_filter = '(cat:cs.AI OR cat:cs.CL OR cat:cs.CV OR cat:cs.LG OR cat:cs.MA OR cat:cs.IR OR cat:cs.SE)'
     
     # Use exact phrase matching with quotes for multi-word queries
-    search_query = f'all:"{query}" AND {category_filter}'
+    search_query = f'all:"{query}" AND {cat_filter}'
     
     params = {
         'search_query': search_query,
@@ -130,14 +103,14 @@ def parse_arxiv_response(xml_data):
     
     return papers
 
-def classify_paper(paper):
-    """Classify paper into focus areas based on title and abstract."""
+def classify_paper(paper, topic_keywords):
+    """Classify paper into topics based on title and abstract keywords."""
     text = (paper['title'] + ' ' + paper['abstract']).lower()
     
     scores = {}
     
-    # Score each focus area
-    for area, keywords in FOCUS_AREAS.items():
+    # Score each topic
+    for topic_id, keywords in topic_keywords.items():
         score = 0
         for keyword in keywords:
             keyword_lower = keyword.lower()
@@ -146,12 +119,14 @@ def classify_paper(paper):
             # Boost for title matches
             if keyword_lower in paper['title'].lower():
                 score += 3
-        scores[area] = score
+        scores[topic_id] = score
     
-    # Return areas with score > 0, sorted by score
-    classified = [area for area, score in sorted(scores.items(), key=lambda x: x[1], reverse=True) if score > 0]
+    # Return topics with score > 0, sorted by score
+    classified = [tid for tid, score in sorted(scores.items(), key=lambda x: x[1], reverse=True) if score > 0]
     
-    return classified if classified else ['ai-agents']  # Default to ai-agents
+    # Default to first topic if no match
+    default_topic = list(topic_keywords.keys())[0] if topic_keywords else 'ai-agents'
+    return classified if classified else [default_topic]
 
 def paper_exists(arxiv_id, papers_dir):
     """Check if paper already exists in our collection."""
@@ -197,26 +172,42 @@ def create_paper_markdown(paper, topics):
     return filename, content
 
 def fetch_papers(days_back=7, max_per_query=5):
-    """Fetch papers from all focus areas."""
-    papers_dir = Path('papers')
+    """Fetch papers from all enabled user topics."""
+    # Get current user and their config
+    username = get_current_user()
+    config = load_user_config(username)
+    enabled_topics = get_enabled_topics(username)
+    topic_keywords = get_topic_keywords(username)
+    
+    # Shared papers directory
+    papers_dir = get_user_papers_dir()
     papers_dir.mkdir(exist_ok=True)
+    
+    # Use preferences from user config
+    prefs = config.get('preferences', {})
+    days_back = prefs.get('daysBack', days_back)
+    max_per_query = prefs.get('maxPapersPerTopic', max_per_query)
     
     all_papers = {}  # Use dict to deduplicate by arXiv ID
     new_papers = []
     
+    print(f"Fetching papers for user: {username}")
     print(f"Fetching papers from last {days_back} days...")
+    print(f"Enabled topics: {len(enabled_topics)}")
     print("=" * 60)
     
-    for area, queries in FOCUS_AREAS.items():
-        print(f"\nSearching: {area}")
+    for topic_id, topic_config in enabled_topics.items():
+        print(f"\n📚 Topic: {topic_config['name']} {topic_config.get('icon', '')}")
+        categories = topic_config.get('categories', prefs.get('defaultCategories', []))
+        queries = topic_config['queries']
         
-        for query in queries[:2]:  # Limit to first 2 queries per area to avoid rate limits
-            print(f"  Query: {query}")
+        for query in queries[:2]:  # Limit to first 2 queries per topic to avoid rate limits
+            print(f"  🔍 Query: {query}")
             
-            xml_data = search_arxiv(query, max_results=max_per_query, days_back=days_back)
+            xml_data = search_arxiv(query, categories, max_results=max_per_query, days_back=days_back)
             papers = parse_arxiv_response(xml_data)
             
-            print(f"  Found {len(papers)} papers")
+            print(f"     Found {len(papers)} papers")
             
             for paper in papers:
                 arxiv_id = paper['arxiv_id']
@@ -229,14 +220,14 @@ def fetch_papers(days_back=7, max_per_query=5):
                 if arxiv_id in all_papers:
                     continue
                 
-                # Classify paper
-                topics = classify_paper(paper)
+                # Classify paper against all topics
+                topics = classify_paper(paper, topic_keywords)
                 paper['topics'] = topics
                 
                 all_papers[arxiv_id] = paper
                 new_papers.append(paper)
                 
-                print(f"    ✓ {paper['title'][:60]}...")
+                print(f"     ✓ {paper['title'][:60]}...")
             
             # Rate limiting
             time.sleep(3)

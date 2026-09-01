@@ -1,0 +1,281 @@
+{
+  "version": "1.0",
+  "templates": [
+    {
+      "id": "ai-agents-complete",
+      "name": "AI Agents (Complete)",
+      "description": "Comprehensive AI agents topic with GUI, multi-agent, and planning sub-topics",
+      "icon": "🤖",
+      "topic": {
+        "id": "ai-agents",
+        "name": "AI Agents",
+        "icon": "🤖",
+        "queries": [
+          "AI agent autonomous",
+          "LLM agent tool use",
+          "multi-agent systems",
+          "agentic AI planning",
+          "GUI agent reinforcement learning"
+        ],
+        "keywords": [
+          "agent",
+          "autonomous",
+          "tool use",
+          "planning",
+          "multi-agent",
+          "agentic"
+        ],
+        "categories": [
+          "cs.AI",
+          "cs.MA",
+          "cs.CL",
+          "cs.LG"
+        ],
+        "description": "Autonomous systems with tool use, planning, and multi-agent coordination",
+        "children": [
+          {
+            "id": "ai-agents.gui",
+            "name": "GUI Agents",
+            "icon": "🖥️",
+            "queries": [
+              "GUI agent",
+              "web automation",
+              "UI navigation"
+            ],
+            "keywords": [
+              "GUI",
+              "web agent",
+              "browser",
+              "UI automation"
+            ],
+            "categories": [
+              "cs.AI",
+              "cs.HC"
+            ],
+            "description": "Agents that interact with graphical user interfaces"
+          },
+          {
+            "id": "ai-agents.multi-agent",
+            "name": "Multi-Agent Systems",
+            "icon": "👥",
+            "queries": [
+              "multi-agent coordination",
+              "agent collaboration",
+              "swarm intelligence"
+            ],
+            "keywords": [
+              "multi-agent",
+              "coordination",
+              "collaboration",
+              "swarm"
+            ],
+            "categories": [
+              "cs.MA",
+              "cs.AI"
+            ],
+            "description": "Systems with multiple cooperating agents"
+          }
+        ]
+      }
+    },
+    {
+      "id": "llm-reasoning-complete",
+      "name": "LLM Reasoning (Complete)",
+      "description": "Comprehensive LLM reasoning with chain-of-thought, verification, and efficiency",
+      "icon": "🧠",
+      "topic": {
+        "id": "llm-reasoning",
+        "name": "LLM Reasoning",
+        "icon": "🧠",
+        "queries": [
+          "chain of thought reasoning",
+          "LLM reasoning verification",
+          "large language model reasoning",
+          "reasoning efficiency tokens"
+        ],
+        "keywords": [
+          "reasoning",
+          "chain of thought",
+          "self-consistency",
+          "verification",
+          "LLM",
+          "thinking"
+        ],
+        "categories": [
+          "cs.CL",
+          "cs.AI",
+          "cs.LG"
+        ],
+        "description": "Chain-of-thought, self-consistency, tree-of-thought, and verification techniques",
+        "children": [
+          {
+            "id": "llm-reasoning.cot",
+            "name": "Chain-of-Thought",
+            "icon": "⛓️",
+            "queries": [
+              "chain of thought",
+              "step-by-step reasoning"
+            ],
+            "keywords": [
+              "chain of thought",
+              "CoT",
+              "step-by-step"
+            ],
+            "categories": [
+              "cs.CL",
+              "cs.AI"
+            ],
+            "description": "Step-by-step reasoning approaches"
+          },
+          {
+            "id": "llm-reasoning.verification",
+            "name": "Reasoning Verification",
+            "icon": "✅",
+            "queries": [
+              "reasoning verification",
+              "self-consistency"
+            ],
+            "keywords": [
+              "verification",
+              "self-consistency",
+              "validation"
+            ],
+            "categories": [
+              "cs.CL",
+              "cs.AI"
+            ],
+            "description": "Methods for verifying LLM reasoning"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rag-complete",
+      "name": "RAG & Retrieval (Complete)",
+      "description": "Comprehensive RAG with dense retrieval, knowledge graphs, and hybrid search",
+      "icon": "🔍",
+      "topic": {
+        "id": "rag-retrieval",
+        "name": "RAG & Retrieval",
+        "icon": "🔍",
+        "queries": [
+          "retrieval augmented generation",
+          "RAG knowledge graphs",
+          "dense retrieval embeddings",
+          "hybrid search retrieval"
+        ],
+        "keywords": [
+          "retrieval",
+          "RAG",
+          "knowledge graph",
+          "embedding",
+          "dense retrieval",
+          "hybrid search"
+        ],
+        "categories": [
+          "cs.IR",
+          "cs.CL",
+          "cs.AI"
+        ],
+        "description": "Dense retrieval, hybrid search, knowledge grounding, and citation systems",
+        "children": [
+          {
+            "id": "rag-retrieval.kg",
+            "name": "Knowledge Graphs",
+            "icon": "🕸️",
+            "queries": [
+              "knowledge graph",
+              "graph neural network"
+            ],
+            "keywords": [
+              "knowledge graph",
+              "GNN",
+              "graph"
+            ],
+            "categories": [
+              "cs.AI",
+              "cs.IR"
+            ],
+            "description": "Knowledge graph-based retrieval"
+          }
+        ]
+      }
+    },
+    {
+      "id": "multi-modal-complete",
+      "name": "Multi-Modal Models (Complete)",
+      "description": "Comprehensive multi-modal with vision-language, document understanding, and OCR",
+      "icon": "🎨",
+      "topic": {
+        "id": "multi-modal",
+        "name": "Multi-Modal Models",
+        "icon": "🎨",
+        "queries": [
+          "vision language model",
+          "multimodal LLM",
+          "image text understanding",
+          "document understanding OCR"
+        ],
+        "keywords": [
+          "vision",
+          "multimodal",
+          "multi-modal",
+          "image",
+          "document",
+          "OCR",
+          "visual"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI",
+          "cs.CL",
+          "cs.MM"
+        ],
+        "description": "Vision-language models, audio processing, and cross-modal reasoning",
+        "children": [
+          {
+            "id": "multi-modal.vision-language",
+            "name": "Vision-Language Models",
+            "icon": "👁️",
+            "queries": [
+              "vision language model",
+              "VLM",
+              "image text"
+            ],
+            "keywords": [
+              "vision language",
+              "VLM",
+              "image text"
+            ],
+            "categories": [
+              "cs.CV",
+              "cs.CL"
+            ],
+            "description": "Models combining vision and language"
+          },
+          {
+            "id": "multi-modal.document",
+            "name": "Document Understanding",
+            "icon": "📄",
+            "queries": [
+              "document understanding",
+              "OCR",
+              "document AI"
+            ],
+            "keywords": [
+              "document",
+              "OCR",
+              "layout",
+              "table"
+            ],
+            "categories": [
+              "cs.CV",
+              "cs.CL"
+            ],
+            "description": "Document analysis and understanding"
+          }
+        ]
+      }
+    }
+  ]
+}
