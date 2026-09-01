@@ -3,115 +3,115 @@ title: "AI Wiki - Knowledge Base"
 ---
 
 <div class="wiki-container">
-  <!-- Header with Search -->
-  <div class="wiki-header">
-    <div class="wiki-title">
-      <h2>📚 AI Knowledge Wiki</h2>
-      <p class="subtitle">Comprehensive knowledge base of AI concepts, methods, and research</p>
-    </div>
-    <div class="wiki-search">
-      <input type="text" id="wikiSearch" placeholder="Search concepts, definitions, papers..." />
-      <button onclick="searchWiki()" class="btn-search">🔍</button>
-    </div>
-  </div>
+<!-- Header with Search -->
+<div class="wiki-header">
+<div class="wiki-title">
+<h2>📚 AI Knowledge Wiki</h2>
+<p class="subtitle">Comprehensive knowledge base of AI concepts, methods, and research</p>
+</div>
+<div class="wiki-search">
+<input type="text" id="wikiSearch" placeholder="Search concepts, definitions, papers..." />
+<button onclick="searchWiki()" class="btn-search">🔍</button>
+</div>
+</div>
 
-  <!-- Navigation Tabs -->
-  <div class="wiki-tabs">
-    <button class="tab-btn active" onclick="switchTab('browse')">📖 Browse</button>
-    <button class="tab-btn" onclick="switchTab('graph')">🕸️ Concept Graph</button>
-    <button class="tab-btn" onclick="switchTab('timeline')">📅 Timeline</button>
-    <button class="tab-btn" onclick="switchTab('stats')">📊 Statistics</button>
-  </div>
+<!-- Navigation Tabs -->
+<div class="wiki-tabs">
+<button class="tab-btn active" onclick="switchTab('browse')">📖 Browse</button>
+<button class="tab-btn" onclick="switchTab('graph')">🕸️ Concept Graph</button>
+<button class="tab-btn" onclick="switchTab('timeline')">📅 Timeline</button>
+<button class="tab-btn" onclick="switchTab('stats')">📊 Statistics</button>
+</div>
 
-  <!-- Browse Tab -->
-  <div id="browseTab" class="tab-content active">
-    <div class="wiki-filters">
-      <select id="categoryFilter" onchange="filterConcepts()">
-        <option value="all">All Categories</option>
-        <option value="agents">AI Agents</option>
-        <option value="reasoning">Reasoning</option>
-        <option value="retrieval">Retrieval & RAG</option>
-        <option value="multimodal">Multi-Modal</option>
-        <option value="safety">Safety & Alignment</option>
-        <option value="evaluation">Evaluation</option>
-      </select>
-      <select id="difficultyFilter" onchange="filterConcepts()">
-        <option value="all">All Levels</option>
-        <option value="beginner">Beginner</option>
-        <option value="intermediate">Intermediate</option>
-        <option value="advanced">Advanced</option>
-      </select>
-      <select id="sortBy" onchange="filterConcepts()">
-        <option value="name">Sort by Name</option>
-        <option value="papers">Sort by Paper Count</option>
-        <option value="recent">Sort by Recent</option>
-      </select>
-    </div>
+<!-- Browse Tab -->
+<div id="browseTab" class="tab-content active">
+<div class="wiki-filters">
+<select id="categoryFilter" onchange="filterConcepts()">
+<option value="all">All Categories</option>
+<option value="agents">AI Agents</option>
+<option value="reasoning">Reasoning</option>
+<option value="retrieval">Retrieval & RAG</option>
+<option value="multimodal">Multi-Modal</option>
+<option value="safety">Safety & Alignment</option>
+<option value="evaluation">Evaluation</option>
+</select>
+<select id="difficultyFilter" onchange="filterConcepts()">
+<option value="all">All Levels</option>
+<option value="beginner">Beginner</option>
+<option value="intermediate">Intermediate</option>
+<option value="advanced">Advanced</option>
+</select>
+<select id="sortBy" onchange="filterConcepts()">
+<option value="name">Sort by Name</option>
+<option value="papers">Sort by Paper Count</option>
+<option value="recent">Sort by Recent</option>
+</select>
+</div>
 
-    <div id="conceptGrid" class="concept-grid"></div>
-  </div>
+<div id="conceptGrid" class="concept-grid"></div>
+</div>
 
-  <!-- Graph Tab -->
-  <div id="graphTab" class="tab-content">
-    <div class="graph-controls">
-      <button onclick="resetGraph()" class="btn-secondary">Reset View</button>
-      <button onclick="toggleLabels()" class="btn-secondary">Toggle Labels</button>
-      <select id="graphLayout" onchange="updateGraphLayout()">
-        <option value="force">Force-Directed</option>
-        <option value="hierarchical">Hierarchical</option>
-        <option value="circular">Circular</option>
-      </select>
-    </div>
-    <div id="conceptGraph" class="graph-container"></div>
-  </div>
+<!-- Graph Tab -->
+<div id="graphTab" class="tab-content">
+<div class="graph-controls">
+<button onclick="resetGraph()" class="btn-secondary">Reset View</button>
+<button onclick="toggleLabels()" class="btn-secondary">Toggle Labels</button>
+<select id="graphLayout" onchange="updateGraphLayout()">
+<option value="force">Force-Directed</option>
+<option value="hierarchical">Hierarchical</option>
+<option value="circular">Circular</option>
+</select>
+</div>
+<div id="conceptGraph" class="graph-container"></div>
+</div>
 
-  <!-- Timeline Tab -->
-  <div id="timelineTab" class="tab-content">
-    <div id="conceptTimeline" class="timeline-container"></div>
-  </div>
+<!-- Timeline Tab -->
+<div id="timelineTab" class="tab-content">
+<div id="conceptTimeline" class="timeline-container"></div>
+</div>
 
-  <!-- Stats Tab -->
-  <div id="statsTab" class="tab-content">
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-icon">📚</div>
-        <div class="stat-info">
-          <div class="stat-number" id="totalConcepts">0</div>
-          <div class="stat-label">Total Concepts</div>
-        </div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon">🔗</div>
-        <div class="stat-info">
-          <div class="stat-number" id="totalRelations">0</div>
-          <div class="stat-label">Relationships</div>
-        </div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon">📄</div>
-        <div class="stat-info">
-          <div class="stat-number" id="coveredPapers">0</div>
-          <div class="stat-label">Papers Covered</div>
-        </div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon">🏷️</div>
-        <div class="stat-info">
-          <div class="stat-number" id="totalTags">0</div>
-          <div class="stat-label">Tags</div>
-        </div>
-      </div>
-    </div>
-    <div id="categoryBreakdown" class="category-breakdown"></div>
-  </div>
+<!-- Stats Tab -->
+<div id="statsTab" class="tab-content">
+<div class="stats-grid">
+<div class="stat-card">
+<div class="stat-icon">📚</div>
+<div class="stat-info">
+<div class="stat-number" id="totalConcepts">0</div>
+<div class="stat-label">Total Concepts</div>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">🔗</div>
+<div class="stat-info">
+<div class="stat-number" id="totalRelations">0</div>
+<div class="stat-label">Relationships</div>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">📄</div>
+<div class="stat-info">
+<div class="stat-number" id="coveredPapers">0</div>
+<div class="stat-label">Papers Covered</div>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">🏷️</div>
+<div class="stat-info">
+<div class="stat-number" id="totalTags">0</div>
+<div class="stat-label">Tags</div>
+</div>
+</div>
+</div>
+<div id="categoryBreakdown" class="category-breakdown"></div>
+</div>
 
-  <!-- Concept Detail Modal -->
-  <div id="conceptModal" class="modal" onclick="closeModal(event)">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <span class="close" onclick="closeConceptModal()">&times;</span>
-      <div id="conceptDetail"></div>
-    </div>
-  </div>
+<!-- Concept Detail Modal -->
+<div id="conceptModal" class="modal" onclick="closeModal(event)">
+<div class="modal-content" onclick="event.stopPropagation()">
+<span class="close" onclick="closeConceptModal()">&times;</span>
+<div id="conceptDetail"></div>
+</div>
+</div>
 </div>
 
 <style>
@@ -1132,31 +1132,31 @@ function renderConceptGrid() {
   
   if (filteredConcepts.length === 0) {
     grid.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-state-icon">📚</div>
-        <h3>No concepts found</h3>
-        <p>Try adjusting your filters or search terms</p>
-      </div>
+<div class="empty-state">
+<div class="empty-state-icon">📚</div>
+<h3>No concepts found</h3>
+<p>Try adjusting your filters or search terms</p>
+</div>
     `;
     return;
   }
   
   grid.innerHTML = filteredConcepts.map(concept => `
-    <div class="concept-card" onclick="showConceptDetail('${concept.name}')">
-      <div class="concept-header">
-        <h3 class="concept-name">${concept.name}</h3>
-        <span class="concept-category">${concept.category}</span>
-      </div>
-      <p class="concept-definition">${concept.definition.substring(0, 150)}...</p>
-      <div class="concept-meta">
-        <div class="concept-papers">
+<div class="concept-card" onclick="showConceptDetail('${concept.name}')">
+<div class="concept-header">
+<h3 class="concept-name">${concept.name}</h3>
+<span class="concept-category">${concept.category}</span>
+</div>
+<p class="concept-definition">${concept.definition.substring(0, 150)}...</p>
+<div class="concept-meta">
+<div class="concept-papers">
           📄 ${concept.papers.length} papers
-        </div>
-        <span class="concept-difficulty difficulty-${concept.difficulty}">
+</div>
+<span class="concept-difficulty difficulty-${concept.difficulty}">
           ${concept.difficulty}
-        </span>
-      </div>
-    </div>
+</span>
+</div>
+</div>
   `).join('');
 }
 
@@ -1210,31 +1210,31 @@ function searchWiki() {
   
   if (results.length === 0) {
     grid.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-state-icon">🔍</div>
-        <h3>No results found</h3>
-        <p>Try different search terms</p>
-      </div>
+<div class="empty-state">
+<div class="empty-state-icon">🔍</div>
+<h3>No results found</h3>
+<p>Try different search terms</p>
+</div>
     `;
     return;
   }
   
   grid.innerHTML = results.map(concept => `
-    <div class="concept-card" onclick="showConceptDetail('${concept.name}')">
-      <div class="concept-header">
-        <h3 class="concept-name">${concept.name}</h3>
-        <span class="concept-category">${concept.category}</span>
-      </div>
-      <p class="concept-definition">${concept.definition.substring(0, 150)}...</p>
-      <div class="concept-meta">
-        <div class="concept-papers">
+<div class="concept-card" onclick="showConceptDetail('${concept.name}')">
+<div class="concept-header">
+<h3 class="concept-name">${concept.name}</h3>
+<span class="concept-category">${concept.category}</span>
+</div>
+<p class="concept-definition">${concept.definition.substring(0, 150)}...</p>
+<div class="concept-meta">
+<div class="concept-papers">
           📄 ${concept.papers.length} papers
-        </div>
-        <span class="concept-difficulty difficulty-${concept.difficulty}">
+</div>
+<span class="concept-difficulty difficulty-${concept.difficulty}">
           ${concept.difficulty}
-        </span>
-      </div>
-    </div>
+</span>
+</div>
+</div>
   `).join('');
 }
 
@@ -1250,100 +1250,100 @@ function showConceptDetail(conceptName) {
   const displayDefinition = userContent || concept.definition;
   
   detail.innerHTML = `
-    <div class="concept-detail-header">
-      <h2 class="concept-detail-title">${concept.name}</h2>
-      <div class="concept-detail-meta">
-        <span class="concept-category">${concept.category}</span>
-        <span class="concept-difficulty difficulty-${concept.difficulty}">${concept.difficulty}</span>
-        <span>📄 ${concept.papers.length} papers</span>
+<div class="concept-detail-header">
+<h2 class="concept-detail-title">${concept.name}</h2>
+<div class="concept-detail-meta">
+<span class="concept-category">${concept.category}</span>
+<span class="concept-difficulty difficulty-${concept.difficulty}">${concept.difficulty}</span>
+<span>📄 ${concept.papers.length} papers</span>
         ${userContent ? '<span class="user-edited-badge">✏️ User Enhanced</span>' : ''}
-      </div>
-    </div>
+</div>
+</div>
     
-    <div class="concept-detail-section">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-        <h3 style="margin: 0;">Definition</h3>
-        <div class="concept-actions">
-          <button onclick="editConcept('${conceptName}')" class="btn-edit" title="Edit this concept">
+<div class="concept-detail-section">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+<h3 style="margin: 0;">Definition</h3>
+<div class="concept-actions">
+<button onclick="editConcept('${conceptName}')" class="btn-edit" title="Edit this concept">
             ✏️ Edit
-          </button>
-          <button onclick="askAIEnhance('${conceptName}')" class="btn-ai" title="Ask AI to enhance">
+</button>
+<button onclick="askAIEnhance('${conceptName}')" class="btn-ai" title="Ask AI to enhance">
             🤖 Ask AI
-          </button>
-        </div>
-      </div>
-      <div id="conceptDefinition" class="concept-detail-definition">
+</button>
+</div>
+</div>
+<div id="conceptDefinition" class="concept-detail-definition">
         ${displayDefinition}
-      </div>
-      <div id="conceptEditor" class="concept-editor" style="display: none;">
-        <textarea id="conceptEditorText" class="concept-textarea">${displayDefinition}</textarea>
-        <div class="editor-actions">
-          <div class="ai-enhance-buttons">
-            <button onclick="aiEnhance('expand')" class="btn-ai-small" title="Add more details">
+</div>
+<div id="conceptEditor" class="concept-editor" style="display: none;">
+<textarea id="conceptEditorText" class="concept-textarea">${displayDefinition}</textarea>
+<div class="editor-actions">
+<div class="ai-enhance-buttons">
+<button onclick="aiEnhance('expand')" class="btn-ai-small" title="Add more details">
               📖 Expand
-            </button>
-            <button onclick="aiEnhance('simplify')" class="btn-ai-small" title="Make it simpler">
+</button>
+<button onclick="aiEnhance('simplify')" class="btn-ai-small" title="Make it simpler">
               💡 Simplify
-            </button>
-            <button onclick="aiEnhance('examples')" class="btn-ai-small" title="Add examples">
+</button>
+<button onclick="aiEnhance('examples')" class="btn-ai-small" title="Add examples">
               🔍 Add Examples
-            </button>
-            <button onclick="aiEnhance('technical')" class="btn-ai-small" title="Add technical depth">
+</button>
+<button onclick="aiEnhance('technical')" class="btn-ai-small" title="Add technical depth">
               ⚙️ Technical
-            </button>
-          </div>
-          <div class="editor-save-actions">
-            <button onclick="saveConceptEdit('${conceptName}')" class="btn-save">
+</button>
+</div>
+<div class="editor-save-actions">
+<button onclick="saveConceptEdit('${conceptName}')" class="btn-save">
               💾 Save
-            </button>
-            <button onclick="cancelEdit('${conceptName}')" class="btn-cancel">
+</button>
+<button onclick="cancelEdit('${conceptName}')" class="btn-cancel">
               ❌ Cancel
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+</button>
+</div>
+</div>
+</div>
+</div>
     
-    <div class="concept-detail-section">
-      <h3>Tags</h3>
-      <div class="related-concepts">
+<div class="concept-detail-section">
+<h3>Tags</h3>
+<div class="related-concepts">
         ${concept.tags.map(tag => `<span class="related-concept">${tag}</span>`).join('')}
-      </div>
-    </div>
+</div>
+</div>
     
-    <div class="concept-detail-section">
-      <h3>Related Concepts</h3>
-      <div class="related-concepts">
+<div class="concept-detail-section">
+<h3>Related Concepts</h3>
+<div class="related-concepts">
         ${concept.related.map(rel => `
-          <span class="related-concept" onclick="showConceptDetail('${rel}')">${rel}</span>
+<span class="related-concept" onclick="showConceptDetail('${rel}')">${rel}</span>
         `).join('')}
-      </div>
-    </div>
+</div>
+</div>
     
-    <div class="concept-detail-section">
-      <h3>Related Papers (${concept.papers.length})</h3>
-      <div class="papers-list">
+<div class="concept-detail-section">
+<h3>Related Papers (${concept.papers.length})</h3>
+<div class="papers-list">
         ${concept.papers.slice(0, 10).map(paper => `
-          <div class="paper-item">
-            <div class="paper-title">${paper.title}</div>
-            <div class="paper-authors">${paper.authors?.slice(0, 3).join(', ') || 'Unknown authors'}</div>
-          </div>
+<div class="paper-item">
+<div class="paper-title">${paper.title}</div>
+<div class="paper-authors">${paper.authors?.slice(0, 3).join(', ') || 'Unknown authors'}</div>
+</div>
         `).join('')}
         ${concept.papers.length > 10 ? `<p style="color: #7f8c8d; text-align: center;">... and ${concept.papers.length - 10} more papers</p>` : ''}
-      </div>
-    </div>
+</div>
+</div>
 
-    <div class="concept-detail-section">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-        <h3 style="margin: 0;">Community Contributions</h3>
-        <button onclick="showContributionForm('${conceptName}')" class="btn-contribute">
+<div class="concept-detail-section">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+<h3 style="margin: 0;">Community Contributions</h3>
+<button onclick="showContributionForm('${conceptName}')" class="btn-contribute">
           ➕ Add Contribution
-        </button>
-      </div>
-      <div id="contributionsList" class="contributions-list">
+</button>
+</div>
+<div id="contributionsList" class="contributions-list">
         ${renderContributions(conceptName)}
-      </div>
-    </div>
+</div>
+</div>
   `;
   
   modal.classList.add('active');
@@ -1428,30 +1428,30 @@ function renderContributions(conceptName) {
   }
   
   return contributions.map((contrib, index) => `
-    <div class="contribution-item" data-id="${contrib.id}">
-      <div class="contribution-header">
-        <div class="contribution-meta">
-          <span class="contribution-type-badge">${contrib.type}</span>
-          <span class="contribution-date">${new Date(contrib.timestamp).toLocaleDateString()}</span>
-        </div>
-        <div class="contribution-actions">
-          <button onclick="upvoteContribution('${conceptName}', ${contrib.id})" class="btn-upvote" title="Upvote">
+<div class="contribution-item" data-id="${contrib.id}">
+<div class="contribution-header">
+<div class="contribution-meta">
+<span class="contribution-type-badge">${contrib.type}</span>
+<span class="contribution-date">${new Date(contrib.timestamp).toLocaleDateString()}</span>
+</div>
+<div class="contribution-actions">
+<button onclick="upvoteContribution('${conceptName}', ${contrib.id})" class="btn-upvote" title="Upvote">
             👍 ${contrib.upvotes || 0}
-          </button>
-          <button onclick="deleteContribution('${conceptName}', ${contrib.id})" class="btn-delete" title="Delete">
+</button>
+<button onclick="deleteContribution('${conceptName}', ${contrib.id})" class="btn-delete" title="Delete">
             🗑️
-          </button>
-        </div>
-      </div>
-      <div class="contribution-content">
+</button>
+</div>
+</div>
+<div class="contribution-content">
         ${contrib.content}
-      </div>
+</div>
       ${contrib.tags && contrib.tags.length > 0 ? `
-        <div class="contribution-tags">
+<div class="contribution-tags">
           ${contrib.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-        </div>
+</div>
       ` : ''}
-    </div>
+</div>
   `).join('');
 }
 
@@ -1467,30 +1467,30 @@ function saveContributions(conceptName, contributions) {
 
 function showContributionForm(conceptName) {
   const formHtml = `
-    <div class="contribution-form">
-      <h4>Add Your Contribution</h4>
-      <div class="form-group">
-        <label>Type:</label>
-        <select id="contributionType">
-          <option value="explanation">💡 Explanation</option>
-          <option value="example">📝 Example</option>
-          <option value="insight">🔍 Insight</option>
-          <option value="question">❓ Question</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Content:</label>
-        <textarea id="contributionContent" rows="6" placeholder="Share your knowledge, example, or insight..."></textarea>
-      </div>
-      <div class="form-group">
-        <label>Tags (comma-separated, optional):</label>
-        <input type="text" id="contributionTags" placeholder="e.g., practical, advanced, beginner-friendly">
-      </div>
-      <div class="form-actions">
-        <button onclick="saveContribution('${conceptName}')" class="btn-save">💾 Save Contribution</button>
-        <button onclick="cancelContributionForm()" class="btn-cancel">❌ Cancel</button>
-      </div>
-    </div>
+<div class="contribution-form">
+<h4>Add Your Contribution</h4>
+<div class="form-group">
+<label>Type:</label>
+<select id="contributionType">
+<option value="explanation">💡 Explanation</option>
+<option value="example">📝 Example</option>
+<option value="insight">🔍 Insight</option>
+<option value="question">❓ Question</option>
+</select>
+</div>
+<div class="form-group">
+<label>Content:</label>
+<textarea id="contributionContent" rows="6" placeholder="Share your knowledge, example, or insight..."></textarea>
+</div>
+<div class="form-group">
+<label>Tags (comma-separated, optional):</label>
+<input type="text" id="contributionTags" placeholder="e.g., practical, advanced, beginner-friendly">
+</div>
+<div class="form-actions">
+<button onclick="saveContribution('${conceptName}')" class="btn-save">💾 Save Contribution</button>
+<button onclick="cancelContributionForm()" class="btn-cancel">❌ Cancel</button>
+</div>
+</div>
   `;
   
   const contributionsList = document.getElementById('contributionsList');
@@ -1869,27 +1869,27 @@ function renderTimeline() {
   
   if (sortedDates.length === 0) {
     container.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-state-icon">📅</div>
-        <h3>No timeline data</h3>
-        <p>Concepts will appear here as papers are added</p>
-      </div>
+<div class="empty-state">
+<div class="empty-state-icon">📅</div>
+<h3>No timeline data</h3>
+<p>Concepts will appear here as papers are added</p>
+</div>
     `;
     return;
   }
   
   container.innerHTML = sortedDates.map(date => `
-    <div class="timeline-item">
-      <div class="timeline-date">${date}</div>
-      <div class="timeline-content">
-        <h4>${timeline[date].length} new concept${timeline[date].length > 1 ? 's' : ''}</h4>
-        <div class="timeline-concepts">
+<div class="timeline-item">
+<div class="timeline-date">${date}</div>
+<div class="timeline-content">
+<h4>${timeline[date].length} new concept${timeline[date].length > 1 ? 's' : ''}</h4>
+<div class="timeline-concepts">
           ${timeline[date].map(c => `
-            <span class="related-concept" onclick="showConceptDetail('${c.name}')">${c.name}</span>
+<span class="related-concept" onclick="showConceptDetail('${c.name}')">${c.name}</span>
           `).join('')}
-        </div>
-      </div>
-    </div>
+</div>
+</div>
+</div>
   `).join('');
 }
 
@@ -1915,12 +1915,12 @@ function updateStats() {
   
   const breakdown = document.getElementById('categoryBreakdown');
   breakdown.innerHTML = `
-    <h3>Concepts by Category</h3>
+<h3>Concepts by Category</h3>
     ${Object.entries(categories).map(([cat, count]) => `
-      <div style="display: flex; justify-content: space-between; padding: 10px; background: #f8f9fa; margin-bottom: 5px; border-radius: 4px;">
-        <span style="font-weight: 600; text-transform: capitalize;">${cat}</span>
-        <span style="color: #2c5aa0; font-weight: bold;">${count} concepts</span>
-      </div>
+<div style="display: flex; justify-content: space-between; padding: 10px; background: #f8f9fa; margin-bottom: 5px; border-radius: 4px;">
+<span style="font-weight: 600; text-transform: capitalize;">${cat}</span>
+<span style="color: #2c5aa0; font-weight: bold;">${count} concepts</span>
+</div>
     `).join('')}
   `;
 }
@@ -1928,11 +1928,11 @@ function updateStats() {
 function showEmptyState() {
   const grid = document.getElementById('conceptGrid');
   grid.innerHTML = `
-    <div class="empty-state">
-      <div class="empty-state-icon">📚</div>
-      <h3>No concepts available</h3>
-      <p>Start by adding papers to build your knowledge base</p>
-    </div>
+<div class="empty-state">
+<div class="empty-state-icon">📚</div>
+<h3>No concepts available</h3>
+<p>Start by adding papers to build your knowledge base</p>
+</div>
   `;
 }
 

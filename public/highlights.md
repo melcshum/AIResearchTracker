@@ -7,86 +7,86 @@ title: "Paper Highlights"
 Extract and organize key insights, quotes, and important passages from your papers.
 
 <div class="highlights-container">
-  <div class="highlights-header">
-    <button id="addHighlightBtn" class="btn-primary">+ Add Highlight</button>
-    <div class="highlights-stats">
-      <span class="stat">✨ <span id="totalHighlights">0</span> Highlights</span>
-      <span class="stat">📄 <span id="papersWithHighlights">0</span> Papers</span>
-    </div>
-  </div>
+<div class="highlights-header">
+<button id="addHighlightBtn" class="btn-primary">+ Add Highlight</button>
+<div class="highlights-stats">
+<span class="stat">✨ <span id="totalHighlights">0</span> Highlights</span>
+<span class="stat">📄 <span id="papersWithHighlights">0</span> Papers</span>
+</div>
+</div>
 
-  <div class="filter-bar">
-    <input type="text" id="searchHighlights" placeholder="Search highlights...">
-    <select id="filterByPaper">
-      <option value="all">All Papers</option>
-    </select>
-    <select id="sortBy">
-      <option value="date">Date Added</option>
-      <option value="paper">By Paper</option>
-    </select>
-  </div>
+<div class="filter-bar">
+<input type="text" id="searchHighlights" placeholder="Search highlights...">
+<select id="filterByPaper">
+<option value="all">All Papers</option>
+</select>
+<select id="sortBy">
+<option value="date">Date Added</option>
+<option value="paper">By Paper</option>
+</select>
+</div>
 
-  <div id="highlightsList" class="highlights-list"></div>
+<div id="highlightsList" class="highlights-list"></div>
 </div>
 
 <!-- Add Highlight Modal -->
 <div id="addHighlightModal" class="modal" style="display: none;">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2>Add Highlight</h2>
-      <button class="close-btn" onclick="closeAddModal()">&times;</button>
-    </div>
-    <div class="modal-body">
-      <div class="form-group">
-        <label>Paper</label>
-        <select id="highlightPaper" required>
-          <option value="">Select a paper...</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Highlight Text</label>
-        <textarea id="highlightText" placeholder="Paste or type the highlighted text..." rows="4" required></textarea>
-      </div>
-      <div class="form-group">
-        <label>Category</label>
-        <select id="highlightCategory">
-          <option value="key-insight">Key Insight</option>
-          <option value="quote">Quote</option>
-          <option value="methodology">Methodology</option>
-          <option value="result">Result</option>
-          <option value="question">Question</option>
-          <option value="connection">Connection to Other Work</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Personal Note (optional)</label>
-        <textarea id="highlightNote" placeholder="Your thoughts on this highlight..." rows="3"></textarea>
-      </div>
-      <div class="form-group">
-        <label>Tags (comma-separated)</label>
-        <input type="text" id="highlightTags" placeholder="e.g., important, methodology, follow-up">
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button class="btn-secondary" onclick="closeAddModal()">Cancel</button>
-      <button class="btn-primary" onclick="saveHighlight()">Save Highlight</button>
-    </div>
-  </div>
+<div class="modal-content">
+<div class="modal-header">
+<h2>Add Highlight</h2>
+<button class="close-btn" onclick="closeAddModal()">&times;</button>
+</div>
+<div class="modal-body">
+<div class="form-group">
+<label>Paper</label>
+<select id="highlightPaper" required>
+<option value="">Select a paper...</option>
+</select>
+</div>
+<div class="form-group">
+<label>Highlight Text</label>
+<textarea id="highlightText" placeholder="Paste or type the highlighted text..." rows="4" required></textarea>
+</div>
+<div class="form-group">
+<label>Category</label>
+<select id="highlightCategory">
+<option value="key-insight">Key Insight</option>
+<option value="quote">Quote</option>
+<option value="methodology">Methodology</option>
+<option value="result">Result</option>
+<option value="question">Question</option>
+<option value="connection">Connection to Other Work</option>
+</select>
+</div>
+<div class="form-group">
+<label>Personal Note (optional)</label>
+<textarea id="highlightNote" placeholder="Your thoughts on this highlight..." rows="3"></textarea>
+</div>
+<div class="form-group">
+<label>Tags (comma-separated)</label>
+<input type="text" id="highlightTags" placeholder="e.g., important, methodology, follow-up">
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn-secondary" onclick="closeAddModal()">Cancel</button>
+<button class="btn-primary" onclick="saveHighlight()">Save Highlight</button>
+</div>
+</div>
 </div>
 
 <!-- Highlight Detail Modal -->
 <div id="highlightDetailModal" class="modal" style="display: none;">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2>Highlight Details</h2>
-      <button class="close-btn" onclick="closeDetailModal()">&times;</button>
-    </div>
-    <div class="modal-body" id="highlightDetailContent"></div>
-    <div class="modal-footer">
-      <button class="btn-danger" onclick="deleteHighlight()">Delete</button>
-      <button class="btn-secondary" onclick="closeDetailModal()">Close</button>
-    </div>
-  </div>
+<div class="modal-content">
+<div class="modal-header">
+<h2>Highlight Details</h2>
+<button class="close-btn" onclick="closeDetailModal()">&times;</button>
+</div>
+<div class="modal-body" id="highlightDetailContent"></div>
+<div class="modal-footer">
+<button class="btn-danger" onclick="deleteHighlight()">Delete</button>
+<button class="btn-secondary" onclick="closeDetailModal()">Close</button>
+</div>
+</div>
 </div>
 
 <style>
@@ -456,10 +456,10 @@ function renderHighlights() {
   
   if (filtered.length === 0) {
     container.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-state-icon">✨</div>
-        <p>No highlights yet. Start extracting key insights from your papers!</p>
-      </div>
+<div class="empty-state">
+<div class="empty-state-icon">✨</div>
+<p>No highlights yet. Start extracting key insights from your papers!</p>
+</div>
     `;
     return;
   }
@@ -469,24 +469,24 @@ function renderHighlights() {
     const date = new Date(h.createdAt).toLocaleDateString();
     
     return `
-      <div class="highlight-card ${h.category}" onclick="showHighlightDetail('${h.id}')">
-        <div class="highlight-header">
-          <div>
-            <div class="highlight-paper">${paper?.title || 'Unknown Paper'}</div>
-            <div class="highlight-meta">
-              <span class="highlight-category">${formatCategory(h.category)}</span>
-              <span>${date}</span>
-            </div>
-          </div>
-        </div>
-        <div class="highlight-text">"${h.text}"</div>
+<div class="highlight-card ${h.category}" onclick="showHighlightDetail('${h.id}')">
+<div class="highlight-header">
+<div>
+<div class="highlight-paper">${paper?.title || 'Unknown Paper'}</div>
+<div class="highlight-meta">
+<span class="highlight-category">${formatCategory(h.category)}</span>
+<span>${date}</span>
+</div>
+</div>
+</div>
+<div class="highlight-text">"${h.text}"</div>
         ${h.note ? `<div class="highlight-note">${h.note}</div>` : ''}
         ${h.tags && h.tags.length > 0 ? `
-          <div class="highlight-tags">
+<div class="highlight-tags">
             ${h.tags.map(t => `<span class="tag">${t}</span>`).join('')}
-          </div>
+</div>
         ` : ''}
-      </div>
+</div>
     `;
   }).join('');
 }
@@ -580,22 +580,22 @@ function showHighlightDetail(id) {
   const date = new Date(highlight.createdAt).toLocaleDateString();
   
   const content = `
-    <div class="highlight-paper">${paper?.title || 'Unknown Paper'}</div>
-    <div class="highlight-meta">
-      <span class="highlight-category">${formatCategory(highlight.category)}</span>
-      <span>Added: ${date}</span>
-    </div>
-    <div class="highlight-text">"${highlight.text}"</div>
+<div class="highlight-paper">${paper?.title || 'Unknown Paper'}</div>
+<div class="highlight-meta">
+<span class="highlight-category">${formatCategory(highlight.category)}</span>
+<span>Added: ${date}</span>
+</div>
+<div class="highlight-text">"${highlight.text}"</div>
     ${highlight.note ? `
-      <div class="highlight-note">
-        <strong>Your Note:</strong><br>
+<div class="highlight-note">
+<strong>Your Note:</strong><br>
         ${highlight.note}
-      </div>
+</div>
     ` : ''}
     ${highlight.tags && highlight.tags.length > 0 ? `
-      <div class="highlight-tags">
+<div class="highlight-tags">
         ${highlight.tags.map(t => `<span class="tag">${t}</span>`).join('')}
-      </div>
+</div>
     ` : ''}
   `;
   

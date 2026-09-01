@@ -3,72 +3,72 @@ title: "Feedback Dashboard"
 ---
 
 <div class="dashboard-container">
-  <div class="dashboard-header">
-    <h2>📊 Feedback Dashboard</h2>
-    <p class="subtitle">View and manage all your HITL contributions</p>
-  </div>
+<div class="dashboard-header">
+<h2>📊 Feedback Dashboard</h2>
+<p class="subtitle">View and manage all your HITL contributions</p>
+</div>
 
-  <div class="stats-grid">
-    <div class="stat-card">
-      <div class="stat-icon">⭐</div>
-      <div class="stat-info">
-        <div class="stat-number" id="summaryFeedbackCount">0</div>
-        <div class="stat-label">Summary Ratings</div>
-      </div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-icon">🧠</div>
-      <div class="stat-info">
-        <div class="stat-number" id="conceptValidationCount">0</div>
-        <div class="stat-label">Concept Validations</div>
-      </div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-icon">👍</div>
-      <div class="stat-info">
-        <div class="stat-number" id="recommendationRatingCount">0</div>
-        <div class="stat-label">Recommendation Ratings</div>
-      </div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-icon">📝</div>
-      <div class="stat-info">
-        <div class="stat-number" id="annotationCount">0</div>
-        <div class="stat-label">Annotations</div>
-      </div>
-    </div>
-  </div>
+<div class="stats-grid">
+<div class="stat-card">
+<div class="stat-icon">⭐</div>
+<div class="stat-info">
+<div class="stat-number" id="summaryFeedbackCount">0</div>
+<div class="stat-label">Summary Ratings</div>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">🧠</div>
+<div class="stat-info">
+<div class="stat-number" id="conceptValidationCount">0</div>
+<div class="stat-label">Concept Validations</div>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">👍</div>
+<div class="stat-info">
+<div class="stat-number" id="recommendationRatingCount">0</div>
+<div class="stat-label">Recommendation Ratings</div>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">📝</div>
+<div class="stat-info">
+<div class="stat-number" id="annotationCount">0</div>
+<div class="stat-label">Annotations</div>
+</div>
+</div>
+</div>
 
-  <div class="dashboard-tabs">
-    <button class="tab-btn active" onclick="switchTab('summary')">⭐ Summary Feedback</button>
-    <button class="tab-btn" onclick="switchTab('concept')">🧠 Concept Validation</button>
-    <button class="tab-btn" onclick="switchTab('recommendation')">👍 Recommendations</button>
-    <button class="tab-btn" onclick="switchTab('export')">💾 Export All</button>
-  </div>
+<div class="dashboard-tabs">
+<button class="tab-btn active" onclick="switchTab('summary')">⭐ Summary Feedback</button>
+<button class="tab-btn" onclick="switchTab('concept')">🧠 Concept Validation</button>
+<button class="tab-btn" onclick="switchTab('recommendation')">👍 Recommendations</button>
+<button class="tab-btn" onclick="switchTab('export')">💾 Export All</button>
+</div>
 
-  <div id="summaryTab" class="tab-content active">
-    <div class="feedback-list" id="summaryFeedbackList"></div>
-  </div>
+<div id="summaryTab" class="tab-content active">
+<div class="feedback-list" id="summaryFeedbackList"></div>
+</div>
 
-  <div id="conceptTab" class="tab-content">
-    <div class="feedback-list" id="conceptValidationList"></div>
-  </div>
+<div id="conceptTab" class="tab-content">
+<div class="feedback-list" id="conceptValidationList"></div>
+</div>
 
-  <div id="recommendationTab" class="tab-content">
-    <div class="feedback-list" id="recommendationRatingList"></div>
-  </div>
+<div id="recommendationTab" class="tab-content">
+<div class="feedback-list" id="recommendationRatingList"></div>
+</div>
 
-  <div id="exportTab" class="tab-content">
-    <div class="export-section">
-      <h3>Export Your Feedback Data</h3>
-      <p>Download all your HITL contributions for backup or analysis</p>
-      <div class="export-buttons">
-        <button onclick="exportAllFeedback('json')" class="btn-primary">📄 Export as JSON</button>
-        <button onclick="exportAllFeedback('csv')" class="btn-secondary">📊 Export as CSV</button>
-        <button onclick="clearAllFeedback()" class="btn-danger">🗑️ Clear All Feedback</button>
-      </div>
-    </div>
-  </div>
+<div id="exportTab" class="tab-content">
+<div class="export-section">
+<h3>Export Your Feedback Data</h3>
+<p>Download all your HITL contributions for backup or analysis</p>
+<div class="export-buttons">
+<button onclick="exportAllFeedback('json')" class="btn-primary">📄 Export as JSON</button>
+<button onclick="exportAllFeedback('csv')" class="btn-secondary">📊 Export as CSV</button>
+<button onclick="clearAllFeedback()" class="btn-danger">🗑️ Clear All Feedback</button>
+</div>
+</div>
+</div>
 </div>
 
 <style>
@@ -345,36 +345,36 @@ function renderSummaryFeedback() {
   
   if (allFeedback.summary.length === 0) {
     list.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-state-icon">⭐</div>
-        <p>No summary feedback yet</p>
-        <p style="font-size: 0.9rem;">Rate AI summaries in the paper reader to see them here</p>
-      </div>
+<div class="empty-state">
+<div class="empty-state-icon">⭐</div>
+<p>No summary feedback yet</p>
+<p style="font-size: 0.9rem;">Rate AI summaries in the paper reader to see them here</p>
+</div>
     `;
     return;
   }
 
   list.innerHTML = allFeedback.summary.map(feedback => `
-    <div class="feedback-item">
-      <div class="feedback-item-header">
-        <div>
-          <h3 class="feedback-item-title">Paper: ${feedback.paperId}</h3>
-          <div class="feedback-item-date">${new Date(feedback.timestamp).toLocaleString()}</div>
-        </div>
-      </div>
-      <div class="feedback-item-content">
-        <div class="feedback-rating">
+<div class="feedback-item">
+<div class="feedback-item-header">
+<div>
+<h3 class="feedback-item-title">Paper: ${feedback.paperId}</h3>
+<div class="feedback-item-date">${new Date(feedback.timestamp).toLocaleString()}</div>
+</div>
+</div>
+<div class="feedback-item-content">
+<div class="feedback-rating">
           ${renderStars(feedback.summaryRating)}
-        </div>
+</div>
         ${feedback.accuracy ? `<p><strong>Accuracy:</strong> ${feedback.accuracy}</p>` : ''}
         ${feedback.improvements && feedback.improvements.length > 0 ? `
-          <div class="feedback-tags">
+<div class="feedback-tags">
             ${feedback.improvements.map(imp => `<span class="tag">${imp}</span>`).join('')}
-          </div>
+</div>
         ` : ''}
         ${feedback.comments ? `<p style="margin-top: 0.75rem;"><em>"${feedback.comments}"</em></p>` : ''}
-      </div>
-    </div>
+</div>
+</div>
   `).join('');
 }
 
@@ -391,34 +391,34 @@ function renderConceptValidation() {
   
   if (allFeedback.concept.length === 0) {
     list.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-state-icon">🧠</div>
-        <p>No concept validations yet</p>
-        <p style="font-size: 0.9rem;">Validate AI-extracted concepts in the paper reader</p>
-      </div>
+<div class="empty-state">
+<div class="empty-state-icon">🧠</div>
+<p>No concept validations yet</p>
+<p style="font-size: 0.9rem;">Validate AI-extracted concepts in the paper reader</p>
+</div>
     `;
     return;
   }
 
   list.innerHTML = allFeedback.concept.map(item => `
-    <div class="feedback-item">
-      <div class="feedback-item-header">
-        <div>
-          <h3 class="feedback-item-title">Paper: ${item.paperId}</h3>
-          <div class="feedback-item-date">${new Date(item.timestamp).toLocaleString()}</div>
-        </div>
-      </div>
-      <div class="feedback-item-content">
-        <p><strong>${item.validations.length}</strong> concepts validated</p>
-        <div class="feedback-tags">
+<div class="feedback-item">
+<div class="feedback-item-header">
+<div>
+<h3 class="feedback-item-title">Paper: ${item.paperId}</h3>
+<div class="feedback-item-date">${new Date(item.timestamp).toLocaleString()}</div>
+</div>
+</div>
+<div class="feedback-item-content">
+<p><strong>${item.validations.length}</strong> concepts validated</p>
+<div class="feedback-tags">
           ${item.validations.map(v => `
-            <span class="tag" style="background: ${v.validated ? '#e8f5e9' : '#ffebee'}; color: ${v.validated ? '#2e7d32' : '#c62828'};">
+<span class="tag" style="background: ${v.validated ? '#e8f5e9' : '#ffebee'}; color: ${v.validated ? '#2e7d32' : '#c62828'};">
               ${v.validated ? '✓' : '✗'} ${v.concept}
-            </span>
+</span>
           `).join('')}
-        </div>
-      </div>
-    </div>
+</div>
+</div>
+</div>
   `).join('');
 }
 
@@ -427,33 +427,33 @@ function renderRecommendationRatings() {
   
   if (allFeedback.recommendation.length === 0) {
     list.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-state-icon">👍</div>
-        <p>No recommendation ratings yet</p>
-        <p style="font-size: 0.9rem;">Rate paper recommendations to see them here</p>
-      </div>
+<div class="empty-state">
+<div class="empty-state-icon">👍</div>
+<p>No recommendation ratings yet</p>
+<p style="font-size: 0.9rem;">Rate paper recommendations to see them here</p>
+</div>
     `;
     return;
   }
 
   list.innerHTML = allFeedback.recommendation.map(item => `
-    <div class="feedback-item">
-      <div class="feedback-item-header">
-        <div>
-          <h3 class="feedback-item-title">Paper: ${item.paperId}</h3>
-          <div class="feedback-item-date">${new Date(item.timestamp).toLocaleString()}</div>
-        </div>
-      </div>
-      <div class="feedback-item-content">
-        <p>
-          <strong>Helpful:</strong> 
-          <span style="color: ${item.isHelpful ? '#4caf50' : '#f44336'}; font-weight: 600;">
+<div class="feedback-item">
+<div class="feedback-item-header">
+<div>
+<h3 class="feedback-item-title">Paper: ${item.paperId}</h3>
+<div class="feedback-item-date">${new Date(item.timestamp).toLocaleString()}</div>
+</div>
+</div>
+<div class="feedback-item-content">
+<p>
+<strong>Helpful:</strong> 
+<span style="color: ${item.isHelpful ? '#4caf50' : '#f44336'}; font-weight: 600;">
             ${item.isHelpful ? '👍 Yes' : '👎 No'}
-          </span>
-        </p>
+</span>
+</p>
         ${item.feedback ? `<p style="margin-top: 0.5rem;"><em>"${item.feedback}"</em></p>` : ''}
-      </div>
-    </div>
+</div>
+</div>
   `).join('');
 }
 

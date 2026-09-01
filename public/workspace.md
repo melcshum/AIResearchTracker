@@ -3,165 +3,165 @@ title: "Research Workspace"
 ---
 
 <div class="workspace-container">
-  <!-- Top Bar -->
-  <div class="workspace-topbar">
-    <div class="topbar-left">
-      <h1>🔬 Research Workspace</h1>
-      <div class="workspace-stats">
-        <span class="stat-pill">📚 <span id="totalPapers">0</span> Papers</span>
-        <span class="stat-pill">📖 <span id="readingNow">0</span> Reading</span>
-        <span class="stat-pill">✅ <span id="completed">0</span> Completed</span>
-        <span class="stat-pill">💡 <span id="insightsCount">0</span> Insights</span>
-      </div>
-    </div>
-    <div class="topbar-right">
-      <button id="focusModeBtn" class="btn-icon" title="Focus Mode (Ctrl+F)">🎯</button>
-      <button id="quickAddBtn" class="btn-icon" title="Quick Add (Ctrl+N)">➕</button>
-      <button id="searchBtn" class="btn-icon" title="Search (Ctrl+K)">🔍</button>
-      <button id="settingsBtn" class="btn-icon" title="Settings">⚙️</button>
-    </div>
-  </div>
+<!-- Top Bar -->
+<div class="workspace-topbar">
+<div class="topbar-left">
+<h1>🔬 Research Workspace</h1>
+<div class="workspace-stats">
+<span class="stat-pill">📚 <span id="totalPapers">0</span> Papers</span>
+<span class="stat-pill">📖 <span id="readingNow">0</span> Reading</span>
+<span class="stat-pill">✅ <span id="completed">0</span> Completed</span>
+<span class="stat-pill">💡 <span id="insightsCount">0</span> Insights</span>
+</div>
+</div>
+<div class="topbar-right">
+<button id="focusModeBtn" class="btn-icon" title="Focus Mode (Ctrl+F)">🎯</button>
+<button id="quickAddBtn" class="btn-icon" title="Quick Add (Ctrl+N)">➕</button>
+<button id="searchBtn" class="btn-icon" title="Search (Ctrl+K)">🔍</button>
+<button id="settingsBtn" class="btn-icon" title="Settings">⚙️</button>
+</div>
+</div>
 
-  <!-- Main Workspace Grid -->
-  <div class="workspace-grid">
-    <!-- Left Panel: Discovery & Reading -->
-    <div class="workspace-panel panel-discovery">
-      <div class="panel-header">
-        <h2>📖 Reading Queue</h2>
-        <div class="panel-actions">
-          <button class="btn-sm" onclick="showAllPapers()">View All</button>
-        </div>
-      </div>
-      <div class="panel-content">
-        <div class="reading-tabs">
-          <button class="tab-btn active" data-tab="queue">Queue</button>
-          <button class="tab-btn" data-tab="reading">Reading Now</button>
-          <button class="tab-btn" data-tab="completed">Completed</button>
-        </div>
-        <div id="readingList" class="reading-list"></div>
-      </div>
-    </div>
+<!-- Main Workspace Grid -->
+<div class="workspace-grid">
+<!-- Left Panel: Discovery & Reading -->
+<div class="workspace-panel panel-discovery">
+<div class="panel-header">
+<h2>📖 Reading Queue</h2>
+<div class="panel-actions">
+<button class="btn-sm" onclick="showAllPapers()">View All</button>
+</div>
+</div>
+<div class="panel-content">
+<div class="reading-tabs">
+<button class="tab-btn active" data-tab="queue">Queue</button>
+<button class="tab-btn" data-tab="reading">Reading Now</button>
+<button class="tab-btn" data-tab="completed">Completed</button>
+</div>
+<div id="readingList" class="reading-list"></div>
+</div>
+</div>
 
-    <!-- Center Panel: Active Paper -->
-    <div class="workspace-panel panel-active">
-      <div class="panel-header">
-        <h2>📄 Active Paper</h2>
-        <div class="panel-actions">
-          <button class="btn-sm" onclick="markAsRead()">✓ Mark Read</button>
-          <button class="btn-sm" onclick="openFullPaper()">🔗 Open</button>
-        </div>
-      </div>
-      <div class="panel-content">
-        <div id="activePaper" class="active-paper">
-          <div class="empty-state">
-            <div class="empty-icon">📄</div>
-            <p>Select a paper to start reading</p>
-          </div>
-        </div>
-      </div>
-    </div>
+<!-- Center Panel: Active Paper -->
+<div class="workspace-panel panel-active">
+<div class="panel-header">
+<h2>📄 Active Paper</h2>
+<div class="panel-actions">
+<button class="btn-sm" onclick="markAsRead()">✓ Mark Read</button>
+<button class="btn-sm" onclick="openFullPaper()">🔗 Open</button>
+</div>
+</div>
+<div class="panel-content">
+<div id="activePaper" class="active-paper">
+<div class="empty-state">
+<div class="empty-icon">📄</div>
+<p>Select a paper to start reading</p>
+</div>
+</div>
+</div>
+</div>
 
-    <!-- Right Panel: Insights & Notes -->
-    <div class="workspace-panel panel-insights">
-      <div class="panel-header">
-        <h2>💡 Insights & Notes</h2>
-        <div class="panel-actions">
-          <button class="btn-sm" onclick="addQuickNote()">+ Note</button>
-        </div>
-      </div>
-      <div class="panel-content">
-        <div class="insights-tabs">
-          <button class="tab-btn active" data-tab="highlights">Highlights</button>
-          <button class="tab-btn" data-tab="questions">Questions</button>
-          <button class="tab-btn" data-tab="takeaways">Takeaways</button>
-        </div>
-        <div id="insightsList" class="insights-list"></div>
-      </div>
-    </div>
-  </div>
+<!-- Right Panel: Insights & Notes -->
+<div class="workspace-panel panel-insights">
+<div class="panel-header">
+<h2>💡 Insights & Notes</h2>
+<div class="panel-actions">
+<button class="btn-sm" onclick="addQuickNote()">+ Note</button>
+</div>
+</div>
+<div class="panel-content">
+<div class="insights-tabs">
+<button class="tab-btn active" data-tab="highlights">Highlights</button>
+<button class="tab-btn" data-tab="questions">Questions</button>
+<button class="tab-btn" data-tab="takeaways">Takeaways</button>
+</div>
+<div id="insightsList" class="insights-list"></div>
+</div>
+</div>
+</div>
 
-  <!-- Bottom Panel: Progress & Goals -->
-  <div class="workspace-bottom">
-    <div class="progress-section">
-      <h3>📊 Today's Progress</h3>
-      <div class="progress-bars">
-        <div class="progress-item">
-          <label>Reading Goal</label>
-          <div class="progress-bar">
-            <div class="progress-fill" id="readingProgress" style="width: 0%"></div>
-          </div>
-          <span class="progress-text" id="readingGoalText">0/0 papers</span>
-        </div>
-        <div class="progress-item">
-          <label>Notes Added</label>
-          <div class="progress-bar">
-            <div class="progress-fill" id="notesProgress" style="width: 0%"></div>
-          </div>
-          <span class="progress-text" id="notesGoalText">0 notes</span>
-        </div>
-      </div>
-    </div>
-    <div class="quick-actions-section">
-      <h3>⚡ Quick Actions</h3>
-      <div class="quick-actions">
-        <button class="action-btn" onclick="fetchNewPapers()">
-          <span class="action-icon">📥</span>
-          <span>Fetch New Papers</span>
-        </button>
-        <button class="action-btn" onclick="generateDigest()">
-          <span class="action-icon">📰</span>
-          <span>Generate Digest</span>
-        </button>
-        <button class="action-btn" onclick="exportData()">
-          <span class="action-icon">💾</span>
-          <span>Export Data</span>
-        </button>
-        <button class="action-btn" onclick="viewTimeline()">
-          <span class="action-icon">📅</span>
-          <span>View Timeline</span>
-        </button>
-      </div>
-    </div>
-  </div>
+<!-- Bottom Panel: Progress & Goals -->
+<div class="workspace-bottom">
+<div class="progress-section">
+<h3>📊 Today's Progress</h3>
+<div class="progress-bars">
+<div class="progress-item">
+<label>Reading Goal</label>
+<div class="progress-bar">
+<div class="progress-fill" id="readingProgress" style="width: 0%"></div>
+</div>
+<span class="progress-text" id="readingGoalText">0/0 papers</span>
+</div>
+<div class="progress-item">
+<label>Notes Added</label>
+<div class="progress-bar">
+<div class="progress-fill" id="notesProgress" style="width: 0%"></div>
+</div>
+<span class="progress-text" id="notesGoalText">0 notes</span>
+</div>
+</div>
+</div>
+<div class="quick-actions-section">
+<h3>⚡ Quick Actions</h3>
+<div class="quick-actions">
+<button class="action-btn" onclick="fetchNewPapers()">
+<span class="action-icon">📥</span>
+<span>Fetch New Papers</span>
+</button>
+<button class="action-btn" onclick="generateDigest()">
+<span class="action-icon">📰</span>
+<span>Generate Digest</span>
+</button>
+<button class="action-btn" onclick="exportData()">
+<span class="action-icon">💾</span>
+<span>Export Data</span>
+</button>
+<button class="action-btn" onclick="viewTimeline()">
+<span class="action-icon">📅</span>
+<span>View Timeline</span>
+</button>
+</div>
+</div>
+</div>
 </div>
 
 <!-- Quick Add Modal -->
 <div id="quickAddModal" class="modal" style="display: none;">
-  <div class="modal-content modal-sm">
-    <div class="modal-header">
-      <h3>Quick Add</h3>
-      <button class="close-btn" onclick="closeQuickAdd()">&times;</button>
-    </div>
-    <div class="modal-body">
-      <div class="quick-add-options">
-        <button class="quick-add-btn" onclick="addHighlight()">
-          <span>✨</span> Add Highlight
-        </button>
-        <button class="quick-add-btn" onclick="addQuestion()">
-          <span>❓</span> Add Question
-        </button>
-        <button class="quick-add-btn" onclick="addTakeaway()">
-          <span>💡</span> Add Takeaway
-        </button>
-        <button class="quick-add-btn" onclick="addMilestone()">
-          <span>🎯</span> Add Milestone
-        </button>
-      </div>
-    </div>
-  </div>
+<div class="modal-content modal-sm">
+<div class="modal-header">
+<h3>Quick Add</h3>
+<button class="close-btn" onclick="closeQuickAdd()">&times;</button>
+</div>
+<div class="modal-body">
+<div class="quick-add-options">
+<button class="quick-add-btn" onclick="addHighlight()">
+<span>✨</span> Add Highlight
+</button>
+<button class="quick-add-btn" onclick="addQuestion()">
+<span>❓</span> Add Question
+</button>
+<button class="quick-add-btn" onclick="addTakeaway()">
+<span>💡</span> Add Takeaway
+</button>
+<button class="quick-add-btn" onclick="addMilestone()">
+<span>🎯</span> Add Milestone
+</button>
+</div>
+</div>
+</div>
 </div>
 
 <!-- Search Modal -->
 <div id="searchModal" class="modal" style="display: none;">
-  <div class="modal-content">
-    <div class="modal-header">
-      <input type="text" id="globalSearch" placeholder="Search papers, notes, highlights..." class="search-input-large">
-      <button class="close-btn" onclick="closeSearch()">&times;</button>
-    </div>
-    <div class="modal-body">
-      <div id="searchResults" class="search-results"></div>
-    </div>
-  </div>
+<div class="modal-content">
+<div class="modal-header">
+<input type="text" id="globalSearch" placeholder="Search papers, notes, highlights..." class="search-input-large">
+<button class="close-btn" onclick="closeSearch()">&times;</button>
+</div>
+<div class="modal-body">
+<div id="searchResults" class="search-results"></div>
+</div>
+</div>
 </div>
 
 <style>
@@ -810,13 +810,13 @@ function renderReadingList() {
                        paper.status === 'read' ? '✅ Done' : '📋 Queue';
     
     return `
-      <div class="reading-item ${paper.status} ${isSelected ? 'selected' : ''}" 
+<div class="reading-item ${paper.status} ${isSelected ? 'selected' : ''}" 
            onclick="selectPaper('${paper.arxiv_id}')"
            data-paper-id="${paper.arxiv_id}">
-        <div class="reading-item-status">${statusLabel}</div>
-        <div class="reading-item-title">${paper.title}</div>
-        <div class="reading-item-meta">${paper.date} • ${paper.authors.split(',')[0]}</div>
-      </div>
+<div class="reading-item-status">${statusLabel}</div>
+<div class="reading-item-title">${paper.title}</div>
+<div class="reading-item-meta">${paper.date} • ${paper.authors.split(',')[0]}</div>
+</div>
     `;
   }).join('');
 }
@@ -841,24 +841,24 @@ function selectPaper(arxivId) {
   
   const container = document.getElementById('activePaper');
   container.innerHTML = `
-    <div class="active-paper-header">
-      <div class="active-paper-title">${paper.title}</div>
-      <div class="active-paper-meta">
-        <span>📅 ${paper.date}</span>
-        <span>👥 ${paper.authors}</span>
-        <span>🏷️ ${(paper.topics || []).join(', ')}</span>
-      </div>
-    </div>
-    <div class="active-paper-abstract">
+<div class="active-paper-header">
+<div class="active-paper-title">${paper.title}</div>
+<div class="active-paper-meta">
+<span>📅 ${paper.date}</span>
+<span>👥 ${paper.authors}</span>
+<span>🏷️ ${(paper.topics || []).join(', ')}</span>
+</div>
+</div>
+<div class="active-paper-abstract">
       ${paper.abstract || 'No abstract available'}
-    </div>
-    <div class="active-paper-actions">
-      <button class="action-btn-sm" onclick="addHighlightForPaper('${paper.arxiv_id}')">✨ Highlight</button>
-      <button class="action-btn-sm" onclick="addQuestionForPaper('${paper.arxiv_id}')">❓ Question</button>
-      <button class="action-btn-sm" onclick="addTakeawayForPaper('${paper.arxiv_id}')">💡 Takeaway</button>
-      <button class="action-btn-sm" onclick="openPaperNotes('${paper.arxiv_id}')">📝 Notes</button>
-      <button class="action-btn-sm" onclick="changeReadingStatus('${paper.arxiv_id}', '${status}')">🔄 Status</button>
-    </div>
+</div>
+<div class="active-paper-actions">
+<button class="action-btn-sm" onclick="addHighlightForPaper('${paper.arxiv_id}')">✨ Highlight</button>
+<button class="action-btn-sm" onclick="addQuestionForPaper('${paper.arxiv_id}')">❓ Question</button>
+<button class="action-btn-sm" onclick="addTakeawayForPaper('${paper.arxiv_id}')">💡 Takeaway</button>
+<button class="action-btn-sm" onclick="openPaperNotes('${paper.arxiv_id}')">📝 Notes</button>
+<button class="action-btn-sm" onclick="changeReadingStatus('${paper.arxiv_id}', '${status}')">🔄 Status</button>
+</div>
   `;
   
   // Render insights for this paper
@@ -893,10 +893,10 @@ function renderInsightsForPaper(arxivId) {
     const text = item.text || item.question || '';
     
     return `
-      <div class="insight-item ${item.type}">
-        <div class="insight-type">${item.type}</div>
-        <div class="insight-text">${text.substring(0, 200)}${text.length > 200 ? '...' : ''}</div>
-      </div>
+<div class="insight-item ${item.type}">
+<div class="insight-type">${item.type}</div>
+<div class="insight-text">${text.substring(0, 200)}${text.length > 200 ? '...' : ''}</div>
+</div>
     `;
   }).join('');
 }
@@ -934,11 +934,11 @@ function renderInsights() {
       const text = item.text || item.question || '';
       
       return `
-        <div class="insight-item ${item.type}">
-          <div class="insight-type">${item.type}</div>
-          <div class="insight-text">${text.substring(0, 150)}${text.length > 150 ? '...' : ''}</div>
+<div class="insight-item ${item.type}">
+<div class="insight-type">${item.type}</div>
+<div class="insight-text">${text.substring(0, 150)}${text.length > 150 ? '...' : ''}</div>
           ${paper ? `<div class="insight-paper">${paper.title.substring(0, 60)}...</div>` : ''}
-        </div>
+</div>
       `;
     }).join('');
   }
@@ -1033,10 +1033,10 @@ function performSearch(query) {
   }
   
   document.getElementById('searchResults').innerHTML = results.map(paper => `
-    <div class="reading-item" onclick="selectPaper('${paper.arxiv_id}'); closeSearch();">
-      <div class="reading-item-title">${paper.title}</div>
-      <div class="reading-item-meta">${paper.date} • ${paper.authors.split(',')[0]}</div>
-    </div>
+<div class="reading-item" onclick="selectPaper('${paper.arxiv_id}'); closeSearch();">
+<div class="reading-item-title">${paper.title}</div>
+<div class="reading-item-meta">${paper.date} • ${paper.authors.split(',')[0]}</div>
+</div>
   `).join('');
 }
 

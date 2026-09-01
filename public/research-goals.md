@@ -7,122 +7,122 @@ title: "Research Goals"
 Set learning goals and track your progress over time.
 
 <div class="goals-container">
-  <div class="goals-header">
-    <button id="createGoalBtn" class="btn-primary">+ Create Goal</button>
-    <div class="goals-stats">
-      <span class="stat">🎯 <span id="activeGoals">0</span> Active Goals</span>
-      <span class="stat">✅ <span id="completedGoals">0</span> Completed</span>
-    </div>
-  </div>
+<div class="goals-header">
+<button id="createGoalBtn" class="btn-primary">+ Create Goal</button>
+<div class="goals-stats">
+<span class="stat">🎯 <span id="activeGoals">0</span> Active Goals</span>
+<span class="stat">✅ <span id="completedGoals">0</span> Completed</span>
+</div>
+</div>
   
-  <div id="goalsList" class="goals-list"></div>
+<div id="goalsList" class="goals-list"></div>
 </div>
 
 <!-- Create Goal Modal -->
 <div id="createGoalModal" class="modal" style="display: none;">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2>Create New Goal</h2>
-      <button class="close-btn" onclick="closeCreateModal()">&times;</button>
-    </div>
-    <div class="modal-body">
-      <div class="form-group">
-        <label>Goal Title</label>
-        <input type="text" id="goalTitle" placeholder="e.g., Read 10 papers on GUI Agents">
-      </div>
-      <div class="form-group">
-        <label>Goal Type</label>
-        <select id="goalType">
-          <option value="papers_count">Read X papers</option>
-          <option value="topic_focus">Focus on specific topic</option>
-          <option value="time_based">Read for X days</option>
-          <option value="notes_count">Add notes to X papers</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Target Value</label>
-        <input type="number" id="goalTarget" placeholder="e.g., 10" min="1">
-      </div>
-      <div class="form-group">
-        <label>Topic (optional, for topic-focused goals)</label>
-        <select id="goalTopic">
-          <option value="">All topics</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Deadline</label>
-        <input type="date" id="goalDeadline">
-      </div>
-      <div class="form-group">
-        <label>Description (optional)</label>
-        <textarea id="goalDescription" placeholder="Why is this goal important to you?"></textarea>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button class="btn-secondary" onclick="closeCreateModal()">Cancel</button>
-      <button class="btn-primary" onclick="createGoal()">Create Goal</button>
-    </div>
-  </div>
+<div class="modal-content">
+<div class="modal-header">
+<h2>Create New Goal</h2>
+<button class="close-btn" onclick="closeCreateModal()">&times;</button>
+</div>
+<div class="modal-body">
+<div class="form-group">
+<label>Goal Title</label>
+<input type="text" id="goalTitle" placeholder="e.g., Read 10 papers on GUI Agents">
+</div>
+<div class="form-group">
+<label>Goal Type</label>
+<select id="goalType">
+<option value="papers_count">Read X papers</option>
+<option value="topic_focus">Focus on specific topic</option>
+<option value="time_based">Read for X days</option>
+<option value="notes_count">Add notes to X papers</option>
+</select>
+</div>
+<div class="form-group">
+<label>Target Value</label>
+<input type="number" id="goalTarget" placeholder="e.g., 10" min="1">
+</div>
+<div class="form-group">
+<label>Topic (optional, for topic-focused goals)</label>
+<select id="goalTopic">
+<option value="">All topics</option>
+</select>
+</div>
+<div class="form-group">
+<label>Deadline</label>
+<input type="date" id="goalDeadline">
+</div>
+<div class="form-group">
+<label>Description (optional)</label>
+<textarea id="goalDescription" placeholder="Why is this goal important to you?"></textarea>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn-secondary" onclick="closeCreateModal()">Cancel</button>
+<button class="btn-primary" onclick="createGoal()">Create Goal</button>
+</div>
+</div>
 </div>
 
 <!-- Goal Detail Modal -->
 <div id="goalDetailModal" class="modal" style="display: none;">
-  <div class="modal-content modal-large">
-    <div class="modal-header">
-      <h2 id="detailGoalTitle">Goal Title</h2>
-      <button class="close-btn" onclick="closeDetailModal()">&times;</button>
-    </div>
-    <div class="modal-body">
-      <div class="goal-progress-section">
-        <div class="progress-circle" id="goalProgressCircle">
-          <svg viewBox="0 0 100 100">
-            <circle class="progress-bg" cx="50" cy="50" r="45"/>
-            <circle class="progress-fill" cx="50" cy="50" r="45" id="progressCircle"/>
-          </svg>
-          <div class="progress-text">
-            <div class="progress-percentage" id="progressPercentage">0%</div>
-            <div class="progress-label">Complete</div>
-          </div>
-        </div>
-        <div class="goal-stats-detail">
-          <div class="stat-row">
-            <span class="stat-label">Current Progress:</span>
-            <span class="stat-value" id="currentProgress">0</span>
-          </div>
-          <div class="stat-row">
-            <span class="stat-label">Target:</span>
-            <span class="stat-value" id="targetValue">0</span>
-          </div>
-          <div class="stat-row">
-            <span class="stat-label">Deadline:</span>
-            <span class="stat-value" id="deadlineDate">-</span>
-          </div>
-          <div class="stat-row">
-            <span class="stat-label">Days Remaining:</span>
-            <span class="stat-value" id="daysRemaining">-</span>
-          </div>
-        </div>
-      </div>
+<div class="modal-content modal-large">
+<div class="modal-header">
+<h2 id="detailGoalTitle">Goal Title</h2>
+<button class="close-btn" onclick="closeDetailModal()">&times;</button>
+</div>
+<div class="modal-body">
+<div class="goal-progress-section">
+<div class="progress-circle" id="goalProgressCircle">
+<svg viewBox="0 0 100 100">
+<circle class="progress-bg" cx="50" cy="50" r="45"/>
+<circle class="progress-fill" cx="50" cy="50" r="45" id="progressCircle"/>
+</svg>
+<div class="progress-text">
+<div class="progress-percentage" id="progressPercentage">0%</div>
+<div class="progress-label">Complete</div>
+</div>
+</div>
+<div class="goal-stats-detail">
+<div class="stat-row">
+<span class="stat-label">Current Progress:</span>
+<span class="stat-value" id="currentProgress">0</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Target:</span>
+<span class="stat-value" id="targetValue">0</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Deadline:</span>
+<span class="stat-value" id="deadlineDate">-</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Days Remaining:</span>
+<span class="stat-value" id="daysRemaining">-</span>
+</div>
+</div>
+</div>
       
-      <div class="goal-description" id="goalDescriptionText"></div>
+<div class="goal-description" id="goalDescriptionText"></div>
       
-      <div class="goal-actions">
-        <button class="btn-secondary" onclick="editGoal()">✏️ Edit Goal</button>
-        <button class="btn-primary" onclick="markAsCompleted()">✅ Mark as Completed</button>
-        <button class="btn-danger" onclick="deleteGoal()">🗑️ Delete Goal</button>
-      </div>
+<div class="goal-actions">
+<button class="btn-secondary" onclick="editGoal()">✏️ Edit Goal</button>
+<button class="btn-primary" onclick="markAsCompleted()">✅ Mark as Completed</button>
+<button class="btn-danger" onclick="deleteGoal()">🗑️ Delete Goal</button>
+</div>
       
-      <div class="goal-activity">
-        <h3>📊 Progress Timeline</h3>
-        <div id="progressTimeline" class="timeline-chart"></div>
-      </div>
+<div class="goal-activity">
+<h3>📊 Progress Timeline</h3>
+<div id="progressTimeline" class="timeline-chart"></div>
+</div>
       
-      <div class="goal-papers">
-        <h3>📄 Related Papers</h3>
-        <div id="relatedPapers" class="papers-list"></div>
-      </div>
-    </div>
-  </div>
+<div class="goal-papers">
+<h3>📄 Related Papers</h3>
+<div id="relatedPapers" class="papers-list"></div>
+</div>
+</div>
+</div>
 </div>
 
 <style>
@@ -579,10 +579,10 @@ function renderGoals() {
   
   if (goals.length === 0) {
     container.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-state-icon">🎯</div>
-        <p>No goals yet. Create your first research goal to start tracking your progress!</p>
-      </div>
+<div class="empty-state">
+<div class="empty-state-icon">🎯</div>
+<p>No goals yet. Create your first research goal to start tracking your progress!</p>
+</div>
     `;
     return;
   }
@@ -593,22 +593,22 @@ function renderGoals() {
     const daysLeft = getDaysRemaining(goal);
     
     return `
-      <div class="goal-card ${status}" onclick="openGoalDetail('${goal.id}')">
-        <div class="goal-card-header">
-          <h3 class="goal-card-title">${goal.title}</h3>
-          <span class="goal-card-status status-${status}">${status}</span>
-        </div>
-        <div class="goal-progress-bar">
-          <div class="progress-bar-bg">
-            <div class="progress-bar-fill" style="width: ${progress}%"></div>
-          </div>
-          <div class="goal-card-meta">
-            <span>${progress.toFixed(0)}% complete</span>
-            <span>${daysLeft >= 0 ? `${daysLeft} days left` : 'Overdue'}</span>
-          </div>
-        </div>
+<div class="goal-card ${status}" onclick="openGoalDetail('${goal.id}')">
+<div class="goal-card-header">
+<h3 class="goal-card-title">${goal.title}</h3>
+<span class="goal-card-status status-${status}">${status}</span>
+</div>
+<div class="goal-progress-bar">
+<div class="progress-bar-bg">
+<div class="progress-bar-fill" style="width: ${progress}%"></div>
+</div>
+<div class="goal-card-meta">
+<span>${progress.toFixed(0)}% complete</span>
+<span>${daysLeft >= 0 ? `${daysLeft} days left` : 'Overdue'}</span>
+</div>
+</div>
         ${goal.description ? `<p class="goal-card-description">${goal.description}</p>` : ''}
-      </div>
+</div>
     `;
   }).join('');
 }
@@ -797,10 +797,10 @@ function renderRelatedPapers(goal) {
   }
   
   container.innerHTML = relatedPapers.slice(0, 10).map(paper => `
-    <div class="paper-item">
-      <div class="paper-item-title">${paper.title}</div>
-      <div class="paper-item-meta">${paper.authors} • ${paper.date}</div>
-    </div>
+<div class="paper-item">
+<div class="paper-item-title">${paper.title}</div>
+<div class="paper-item-meta">${paper.authors} • ${paper.date}</div>
+</div>
   `).join('');
 }
 

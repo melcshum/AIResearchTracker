@@ -7,81 +7,81 @@ title: "Paper Collections"
 Create custom curated lists of papers around specific topics, projects, or research questions.
 
 <div class="collections-container">
-  <div class="collections-header">
-    <button id="createCollectionBtn" class="btn-primary">+ Create Collection</button>
-    <div class="collections-stats">
-      <span class="stat">📁 <span id="totalCollections">0</span> Collections</span>
-      <span class="stat">📄 <span id="totalPapersInCollections">0</span> Papers</span>
-    </div>
-  </div>
+<div class="collections-header">
+<button id="createCollectionBtn" class="btn-primary">+ Create Collection</button>
+<div class="collections-stats">
+<span class="stat">📁 <span id="totalCollections">0</span> Collections</span>
+<span class="stat">📄 <span id="totalPapersInCollections">0</span> Papers</span>
+</div>
+</div>
   
-  <div id="collectionsList" class="collections-list"></div>
+<div id="collectionsList" class="collections-list"></div>
 </div>
 
 <!-- Create Collection Modal -->
 <div id="createCollectionModal" class="modal" style="display: none;">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2>Create New Collection</h2>
-      <button class="close-btn" onclick="closeCreateModal()">&times;</button>
-    </div>
-    <div class="modal-body">
-      <div class="form-group">
-        <label>Collection Name</label>
-        <input type="text" id="collectionName" placeholder="e.g., GUI Agents for Mobile Apps">
-      </div>
-      <div class="form-group">
-        <label>Description</label>
-        <textarea id="collectionDescription" placeholder="What is this collection about?"></textarea>
-      </div>
-      <div class="form-group">
-        <label>Tags (comma-separated)</label>
-        <input type="text" id="collectionTags" placeholder="e.g., mobile, gui, automation">
-      </div>
-      <div class="form-group">
-        <label>Color</label>
-        <div class="color-picker">
-          <input type="color" id="collectionColor" value="#2c5aa0">
-        </div>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button class="btn-secondary" onclick="closeCreateModal()">Cancel</button>
-      <button class="btn-primary" onclick="createCollection()">Create Collection</button>
-    </div>
-  </div>
+<div class="modal-content">
+<div class="modal-header">
+<h2>Create New Collection</h2>
+<button class="close-btn" onclick="closeCreateModal()">&times;</button>
+</div>
+<div class="modal-body">
+<div class="form-group">
+<label>Collection Name</label>
+<input type="text" id="collectionName" placeholder="e.g., GUI Agents for Mobile Apps">
+</div>
+<div class="form-group">
+<label>Description</label>
+<textarea id="collectionDescription" placeholder="What is this collection about?"></textarea>
+</div>
+<div class="form-group">
+<label>Tags (comma-separated)</label>
+<input type="text" id="collectionTags" placeholder="e.g., mobile, gui, automation">
+</div>
+<div class="form-group">
+<label>Color</label>
+<div class="color-picker">
+<input type="color" id="collectionColor" value="#2c5aa0">
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn-secondary" onclick="closeCreateModal()">Cancel</button>
+<button class="btn-primary" onclick="createCollection()">Create Collection</button>
+</div>
+</div>
 </div>
 
 <!-- Collection Detail Modal -->
 <div id="collectionDetailModal" class="modal" style="display: none;">
-  <div class="modal-content modal-large">
-    <div class="modal-header">
-      <h2 id="detailCollectionName">Collection Name</h2>
-      <button class="close-btn" onclick="closeDetailModal()">&times;</button>
-    </div>
-    <div class="modal-body">
-      <div class="collection-meta">
-        <p id="detailCollectionDescription"></p>
-        <div class="collection-tags" id="detailCollectionTags"></div>
-        <div class="collection-actions">
-          <button class="btn-secondary" onclick="addPapersToCollection()">+ Add Papers</button>
-          <button class="btn-secondary" onclick="exportCollection()">📤 Export</button>
-          <button class="btn-danger" onclick="deleteCollection()">🗑️ Delete Collection</button>
-        </div>
-      </div>
+<div class="modal-content modal-large">
+<div class="modal-header">
+<h2 id="detailCollectionName">Collection Name</h2>
+<button class="close-btn" onclick="closeDetailModal()">&times;</button>
+</div>
+<div class="modal-body">
+<div class="collection-meta">
+<p id="detailCollectionDescription"></p>
+<div class="collection-tags" id="detailCollectionTags"></div>
+<div class="collection-actions">
+<button class="btn-secondary" onclick="addPapersToCollection()">+ Add Papers</button>
+<button class="btn-secondary" onclick="exportCollection()">📤 Export</button>
+<button class="btn-danger" onclick="deleteCollection()">🗑️ Delete Collection</button>
+</div>
+</div>
       
-      <div class="add-papers-section" id="addPapersSection" style="display: none;">
-        <h3>Add Papers to Collection</h3>
-        <input type="text" id="paperSearch" placeholder="Search papers..." oninput="filterPapersForCollection()">
-        <div id="papersList" class="papers-list"></div>
-      </div>
+<div class="add-papers-section" id="addPapersSection" style="display: none;">
+<h3>Add Papers to Collection</h3>
+<input type="text" id="paperSearch" placeholder="Search papers..." oninput="filterPapersForCollection()">
+<div id="papersList" class="papers-list"></div>
+</div>
       
-      <div class="collection-papers">
-        <h3>Papers in this Collection (<span id="collectionPaperCount">0</span>)</h3>
-        <div id="collectionPapersList" class="collection-papers-list"></div>
-      </div>
-    </div>
-  </div>
+<div class="collection-papers">
+<h3>Papers in this Collection (<span id="collectionPaperCount">0</span>)</h3>
+<div id="collectionPapersList" class="collection-papers-list"></div>
+</div>
+</div>
+</div>
 </div>
 
 <style>
@@ -502,10 +502,10 @@ function renderCollections() {
   
   if (collections.length === 0) {
     container.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-state-icon">📁</div>
-        <p>No collections yet. Create your first collection to organize papers!</p>
-      </div>
+<div class="empty-state">
+<div class="empty-state-icon">📁</div>
+<p>No collections yet. Create your first collection to organize papers!</p>
+</div>
     `;
     return;
   }
@@ -516,20 +516,20 @@ function renderCollections() {
     const createdDate = new Date(collection.createdAt).toLocaleDateString();
     
     return `
-      <div class="collection-card" style="border-left-color: ${collection.color || '#2c5aa0'}" onclick="openCollectionDetail('${collection.id}')">
-        <div class="collection-card-header">
-          <h3 class="collection-card-title">${collection.name}</h3>
-          <span class="collection-card-count">${paperCount} papers</span>
-        </div>
-        <p class="collection-card-description">${collection.description || 'No description'}</p>
-        <div class="collection-card-tags">
+<div class="collection-card" style="border-left-color: ${collection.color || '#2c5aa0'}" onclick="openCollectionDetail('${collection.id}')">
+<div class="collection-card-header">
+<h3 class="collection-card-title">${collection.name}</h3>
+<span class="collection-card-count">${paperCount} papers</span>
+</div>
+<p class="collection-card-description">${collection.description || 'No description'}</p>
+<div class="collection-card-tags">
           ${tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-        </div>
-        <div class="collection-card-footer">
-          <span>Created ${createdDate}</span>
-          <span>Last updated ${new Date(collection.updatedAt).toLocaleDateString()}</span>
-        </div>
-      </div>
+</div>
+<div class="collection-card-footer">
+<span>Created ${createdDate}</span>
+<span>Last updated ${new Date(collection.updatedAt).toLocaleDateString()}</span>
+</div>
+</div>
     `;
   }).join('');
 }
@@ -627,9 +627,9 @@ function renderCollectionPapers(collection) {
   
   if (papers.length === 0) {
     container.innerHTML = `
-      <div class="empty-state">
-        <p>No papers in this collection yet. Click "Add Papers" to get started!</p>
-      </div>
+<div class="empty-state">
+<p>No papers in this collection yet. Click "Add Papers" to get started!</p>
+</div>
     `;
     return;
   }
@@ -639,14 +639,14 @@ function renderCollectionPapers(collection) {
     if (!paper) return '';
     
     return `
-      <div class="collection-paper-item">
-        <div class="collection-paper-info">
-          <div class="collection-paper-title">${paper.title}</div>
-          <div class="collection-paper-meta">${paper.authors} • ${paper.date}</div>
+<div class="collection-paper-item">
+<div class="collection-paper-info">
+<div class="collection-paper-title">${paper.title}</div>
+<div class="collection-paper-meta">${paper.authors} • ${paper.date}</div>
           ${item.notes ? `<div class="collection-paper-notes">📝 ${item.notes}</div>` : ''}
-        </div>
-        <button class="remove-paper-btn" onclick="removePaperFromCollection('${item.arxiv_id}')">Remove</button>
-      </div>
+</div>
+<button class="remove-paper-btn" onclick="removePaperFromCollection('${item.arxiv_id}')">Remove</button>
+</div>
     `;
   }).join('');
 }
@@ -683,13 +683,13 @@ function renderPapersForCollection(filter = '') {
   }
   
   container.innerHTML = availablePapers.slice(0, 20).map(paper => `
-    <div class="paper-item">
-      <div class="paper-item-info">
-        <div class="paper-item-title">${paper.title}</div>
-        <div class="paper-item-meta">${paper.authors} • ${paper.date}</div>
-      </div>
-      <button class="btn-secondary" onclick="addPaperToCollection('${paper.arxiv_id}')">Add</button>
-    </div>
+<div class="paper-item">
+<div class="paper-item-info">
+<div class="paper-item-title">${paper.title}</div>
+<div class="paper-item-meta">${paper.authors} • ${paper.date}</div>
+</div>
+<button class="btn-secondary" onclick="addPaperToCollection('${paper.arxiv_id}')">Add</button>
+</div>
   `).join('');
 }
 

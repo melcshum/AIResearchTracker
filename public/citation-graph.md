@@ -7,46 +7,46 @@ title: "Citation Graph"
 Visualize how papers cite each other and trace the evolution of research ideas.
 
 <div class="citation-controls">
-  <button id="generateGraphBtn" class="btn-primary">Generate Citation Graph</button>
-  <select id="topicFilter" class="topic-filter">
-    <option value="all">All Topics</option>
-  </select>
-  <div class="graph-legend">
-    <span class="legend-item"><span class="legend-dot foundational"></span> Foundational</span>
-    <span class="legend-item"><span class="legend-dot recent"></span> Recent</span>
-    <span class="legend-item"><span class="legend-dot highly-cited"></span> Highly Cited</span>
-  </div>
+<button id="generateGraphBtn" class="btn-primary">Generate Citation Graph</button>
+<select id="topicFilter" class="topic-filter">
+<option value="all">All Topics</option>
+</select>
+<div class="graph-legend">
+<span class="legend-item"><span class="legend-dot foundational"></span> Foundational</span>
+<span class="legend-item"><span class="legend-dot recent"></span> Recent</span>
+<span class="legend-item"><span class="legend-dot highly-cited"></span> Highly Cited</span>
+</div>
 </div>
 
 <div class="citation-stats">
-  <div class="stat-box">
-    <div class="stat-number" id="totalPapers">0</div>
-    <div class="stat-label">Total Papers</div>
-  </div>
-  <div class="stat-box">
-    <div class="stat-number" id="citationLinks">0</div>
-    <div class="stat-label">Citation Links</div>
-  </div>
-  <div class="stat-box">
-    <div class="stat-number" id="avgCitations">0</div>
-    <div class="stat-label">Avg Citations</div>
-  </div>
-  <div class="stat-box">
-    <div class="stat-number" id="foundationalPapers">0</div>
-    <div class="stat-label">Foundational</div>
-  </div>
+<div class="stat-box">
+<div class="stat-number" id="totalPapers">0</div>
+<div class="stat-label">Total Papers</div>
+</div>
+<div class="stat-box">
+<div class="stat-number" id="citationLinks">0</div>
+<div class="stat-label">Citation Links</div>
+</div>
+<div class="stat-box">
+<div class="stat-number" id="avgCitations">0</div>
+<div class="stat-label">Avg Citations</div>
+</div>
+<div class="stat-box">
+<div class="stat-number" id="foundationalPapers">0</div>
+<div class="stat-label">Foundational</div>
+</div>
 </div>
 
 <div id="citationGraph" class="citation-graph"></div>
 
 <div class="paper-relationships">
-  <h3>📊 Paper Relationships</h3>
-  <div id="relationshipList" class="relationship-list"></div>
+<h3>📊 Paper Relationships</h3>
+<div id="relationshipList" class="relationship-list"></div>
 </div>
 
 <div class="citation-timeline">
-  <h3>📅 Citation Timeline</h3>
-  <div id="citationTimeline" class="timeline-chart"></div>
+<h3>📅 Citation Timeline</h3>
+<div id="citationTimeline" class="timeline-chart"></div>
 </div>
 
 <style>
@@ -485,11 +485,11 @@ function renderD3Graph(nodes, links) {
       .duration(200)
       .style('opacity', .9);
     tooltip.html(`
-      <div class="tooltip-title">${d.title}</div>
-      <div class="tooltip-meta">${d.authors}</div>
-      <div class="tooltip-meta">Year: ${d.year}</div>
-      <div class="tooltip-meta">Citations: ${d.citations}</div>
-      <div class="tooltip-meta">Topics: ${d.topics.join(', ')}</div>
+<div class="tooltip-title">${d.title}</div>
+<div class="tooltip-meta">${d.authors}</div>
+<div class="tooltip-meta">Year: ${d.year}</div>
+<div class="tooltip-meta">Citations: ${d.citations}</div>
+<div class="tooltip-meta">Topics: ${d.topics.join(', ')}</div>
     `)
     .style('left', (event.pageX + 10) + 'px')
     .style('top', (event.pageY - 10) + 'px');
@@ -550,15 +550,15 @@ function renderRelationshipList(nodes, citationMap) {
     ].filter(Boolean) : [];
     
     return `
-      <div class="relationship-item">
-        <div class="relationship-title">${node.title}</div>
-        <div class="relationship-meta">
+<div class="relationship-item">
+<div class="relationship-title">${node.title}</div>
+<div class="relationship-meta">
           ${node.authors} • ${node.year} • ${node.citations} citations
-        </div>
-        <div class="relationship-connections">
+</div>
+<div class="relationship-connections">
           ${connections.join('')}
-        </div>
-      </div>
+</div>
+</div>
     `;
   }).join('');
 }

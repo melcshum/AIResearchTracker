@@ -434,17 +434,17 @@ function renderLearningSteps(steps) {
     ).join('');
     
     return `
-      <div class="learning-step ${step.status}">
-        <div class="step-header">
-          <div class="step-number">${step.number}</div>
-          <div class="step-title">${step.topic.name}</div>
-          <div class="step-status">${step.status === 'completed' ? '✓ Complete' : step.status === 'current' ? 'In Progress' : 'Upcoming'}</div>
-        </div>
-        <div class="step-content">
-          <div>${readCount} of ${savedCount} saved papers read (${totalCount} available)</div>
+<div class="learning-step ${step.status}">
+<div class="step-header">
+<div class="step-number">${step.number}</div>
+<div class="step-title">${step.topic.name}</div>
+<div class="step-status">${step.status === 'completed' ? '✓ Complete' : step.status === 'current' ? 'In Progress' : 'Upcoming'}</div>
+</div>
+<div class="step-content">
+<div>${readCount} of ${savedCount} saved papers read (${totalCount} available)</div>
           ${papersHtml ? `<div class="step-papers">${papersHtml}</div>` : ''}
-        </div>
-      </div>
+</div>
+</div>
     `;
   }).join('');
 }
@@ -461,10 +461,10 @@ function renderKnowledgeMap(topicProgress) {
   }));
   
   container.innerHTML = nodes.map(node => `
-    <div class="knowledge-node ${node.active ? 'active' : ''}">
-      <div class="knowledge-topic">${node.name}</div>
-      <div class="knowledge-stats">${node.saved} saved • ${node.read} read</div>
-    </div>
+<div class="knowledge-node ${node.active ? 'active' : ''}">
+<div class="knowledge-topic">${node.name}</div>
+<div class="knowledge-stats">${node.saved} saved • ${node.read} read</div>
+</div>
   `).join('');
 }
 
@@ -525,16 +525,16 @@ function generateRecommendations(topicProgress, steps) {
   }
   
   container.innerHTML = recommendations.slice(0, 4).map(rec => `
-    <div class="recommendation">
-      <div class="recommendation-icon">${rec.icon}</div>
-      <div class="recommendation-content">
-        <div class="recommendation-title">${rec.title}</div>
-        <div class="recommendation-desc">${rec.description}</div>
-        <div class="recommendation-action">
-          <a href="${rec.action.url}">${rec.action.text}</a>
-        </div>
-      </div>
-    </div>
+<div class="recommendation">
+<div class="recommendation-icon">${rec.icon}</div>
+<div class="recommendation-content">
+<div class="recommendation-title">${rec.title}</div>
+<div class="recommendation-desc">${rec.description}</div>
+<div class="recommendation-action">
+<a href="${rec.action.url}">${rec.action.text}</a>
+</div>
+</div>
+</div>
   `).join('');
 }
 

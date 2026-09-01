@@ -7,92 +7,92 @@ title: "Research Questions"
 Track questions that arise during your research and mark them as answered when you find the answers.
 
 <div class="questions-container">
-  <div class="questions-header">
-    <button id="addQuestionBtn" class="btn-primary">+ Add Question</button>
-    <div class="questions-stats">
-      <span class="stat">❓ <span id="totalQuestions">0</span> Questions</span>
-      <span class="stat">✅ <span id="answeredQuestions">0</span> Answered</span>
-      <span class="stat">⏳ <span id="pendingQuestions">0</span> Pending</span>
-    </div>
-  </div>
+<div class="questions-header">
+<button id="addQuestionBtn" class="btn-primary">+ Add Question</button>
+<div class="questions-stats">
+<span class="stat">❓ <span id="totalQuestions">0</span> Questions</span>
+<span class="stat">✅ <span id="answeredQuestions">0</span> Answered</span>
+<span class="stat">⏳ <span id="pendingQuestions">0</span> Pending</span>
+</div>
+</div>
 
-  <div class="filter-bar">
-    <input type="text" id="searchQuestions" placeholder="Search questions...">
-    <select id="filterStatus">
-      <option value="all">All Status</option>
-      <option value="pending">Pending</option>
-      <option value="answered">Answered</option>
-    </select>
-    <select id="filterTopic">
-      <option value="all">All Topics</option>
-    </select>
-    <select id="sortBy">
-      <option value="date">Date Added</option>
-      <option value="status">Status</option>
-      <option value="topic">Topic</option>
-    </select>
-  </div>
+<div class="filter-bar">
+<input type="text" id="searchQuestions" placeholder="Search questions...">
+<select id="filterStatus">
+<option value="all">All Status</option>
+<option value="pending">Pending</option>
+<option value="answered">Answered</option>
+</select>
+<select id="filterTopic">
+<option value="all">All Topics</option>
+</select>
+<select id="sortBy">
+<option value="date">Date Added</option>
+<option value="status">Status</option>
+<option value="topic">Topic</option>
+</select>
+</div>
 
-  <div id="questionsList" class="questions-list"></div>
+<div id="questionsList" class="questions-list"></div>
 </div>
 
 <!-- Add Question Modal -->
 <div id="addQuestionModal" class="modal" style="display: none;">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2>Add Research Question</h2>
-      <button class="close-btn" onclick="closeAddModal()">&times;</button>
-    </div>
-    <div class="modal-body">
-      <div class="form-group">
-        <label>Question</label>
-        <textarea id="questionText" placeholder="What question arose while reading?" rows="3" required></textarea>
-      </div>
-      <div class="form-group">
-        <label>Context (optional)</label>
-        <textarea id="questionContext" placeholder="What were you reading when this question came up?" rows="2"></textarea>
-      </div>
-      <div class="form-group">
-        <label>Related Paper (optional)</label>
-        <select id="questionPaper">
-          <option value="">No specific paper</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Topic</label>
-        <select id="questionTopic">
-          <option value="">General</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Priority</label>
-        <select id="questionPriority">
-          <option value="low">Low</option>
-          <option value="medium" selected>Medium</option>
-          <option value="high">High</option>
-        </select>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button class="btn-secondary" onclick="closeAddModal()">Cancel</button>
-      <button class="btn-primary" onclick="saveQuestion()">Save Question</button>
-    </div>
-  </div>
+<div class="modal-content">
+<div class="modal-header">
+<h2>Add Research Question</h2>
+<button class="close-btn" onclick="closeAddModal()">&times;</button>
+</div>
+<div class="modal-body">
+<div class="form-group">
+<label>Question</label>
+<textarea id="questionText" placeholder="What question arose while reading?" rows="3" required></textarea>
+</div>
+<div class="form-group">
+<label>Context (optional)</label>
+<textarea id="questionContext" placeholder="What were you reading when this question came up?" rows="2"></textarea>
+</div>
+<div class="form-group">
+<label>Related Paper (optional)</label>
+<select id="questionPaper">
+<option value="">No specific paper</option>
+</select>
+</div>
+<div class="form-group">
+<label>Topic</label>
+<select id="questionTopic">
+<option value="">General</option>
+</select>
+</div>
+<div class="form-group">
+<label>Priority</label>
+<select id="questionPriority">
+<option value="low">Low</option>
+<option value="medium" selected>Medium</option>
+<option value="high">High</option>
+</select>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn-secondary" onclick="closeAddModal()">Cancel</button>
+<button class="btn-primary" onclick="saveQuestion()">Save Question</button>
+</div>
+</div>
 </div>
 
 <!-- Question Detail Modal -->
 <div id="questionDetailModal" class="modal" style="display: none;">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2>Question Details</h2>
-      <button class="close-btn" onclick="closeDetailModal()">&times;</button>
-    </div>
-    <div class="modal-body" id="questionDetailContent"></div>
-    <div class="modal-footer">
-      <button class="btn-danger" onclick="deleteQuestion()">Delete</button>
-      <button class="btn-secondary" onclick="closeDetailModal()">Close</button>
-    </div>
-  </div>
+<div class="modal-content">
+<div class="modal-header">
+<h2>Question Details</h2>
+<button class="close-btn" onclick="closeDetailModal()">&times;</button>
+</div>
+<div class="modal-body" id="questionDetailContent"></div>
+<div class="modal-footer">
+<button class="btn-danger" onclick="deleteQuestion()">Delete</button>
+<button class="btn-secondary" onclick="closeDetailModal()">Close</button>
+</div>
+</div>
 </div>
 
 <style>
@@ -491,10 +491,10 @@ function renderQuestions() {
   
   if (filtered.length === 0) {
     container.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-state-icon">❓</div>
-        <p>No questions yet. Start tracking questions that arise during your research!</p>
-      </div>
+<div class="empty-state">
+<div class="empty-state-icon">❓</div>
+<p>No questions yet. Start tracking questions that arise during your research!</p>
+</div>
     `;
     return;
   }
@@ -505,27 +505,27 @@ function renderQuestions() {
     const priorityClass = q.priority ? `priority-${q.priority}` : '';
     
     return `
-      <div class="question-card ${q.answered ? 'answered' : ''} ${priorityClass}" onclick="showQuestionDetail('${q.id}')">
-        <div class="question-header">
-          <div class="question-text">${q.question}</div>
-          <span class="question-status ${q.answered ? 'status-answered' : 'status-pending'}">
+<div class="question-card ${q.answered ? 'answered' : ''} ${priorityClass}" onclick="showQuestionDetail('${q.id}')">
+<div class="question-header">
+<div class="question-text">${q.question}</div>
+<span class="question-status ${q.answered ? 'status-answered' : 'status-pending'}">
             ${q.answered ? '✅ Answered' : '⏳ Pending'}
-          </span>
-        </div>
-        <div class="question-meta">
-          <span>📅 ${date}</span>
+</span>
+</div>
+<div class="question-meta">
+<span>📅 ${date}</span>
           ${q.topic ? `<span class="question-tag">${q.topic}</span>` : ''}
           ${q.priority ? `<span class="question-tag">Priority: ${q.priority}</span>` : ''}
           ${paper ? `<span class="question-tag">📄 ${paper.title.substring(0, 40)}...</span>` : ''}
-        </div>
+</div>
         ${q.context ? `<div class="question-context">${q.context}</div>` : ''}
         ${q.answer ? `
-          <div class="question-answer">
-            <div class="question-answer-label">Answer:</div>
-            <div class="question-answer-text">${q.answer}</div>
-          </div>
+<div class="question-answer">
+<div class="question-answer-label">Answer:</div>
+<div class="question-answer-text">${q.answer}</div>
+</div>
         ` : ''}
-      </div>
+</div>
     `;
   }).join('');
 }
@@ -609,37 +609,37 @@ function showQuestionDetail(id) {
   const date = new Date(q.createdAt).toLocaleDateString();
   
   const content = `
-    <div style="margin-bottom: 1.5rem;">
-      <h3 style="margin-bottom: 0.5rem; color: #2c3e50;">Question</h3>
-      <p style="font-size: 1.1rem; line-height: 1.6;">${q.question}</p>
-    </div>
+<div style="margin-bottom: 1.5rem;">
+<h3 style="margin-bottom: 0.5rem; color: #2c3e50;">Question</h3>
+<p style="font-size: 1.1rem; line-height: 1.6;">${q.question}</p>
+</div>
     
     ${q.context ? `
-      <div style="margin-bottom: 1.5rem;">
-        <h4 style="margin-bottom: 0.5rem; color: #2c3e50;">Context</h4>
-        <p style="color: #555; line-height: 1.6; font-style: italic;">${q.context}</p>
-      </div>
+<div style="margin-bottom: 1.5rem;">
+<h4 style="margin-bottom: 0.5rem; color: #2c3e50;">Context</h4>
+<p style="color: #555; line-height: 1.6; font-style: italic;">${q.context}</p>
+</div>
     ` : ''}
     
-    <div style="margin-bottom: 1.5rem;">
-      <h4 style="margin-bottom: 0.5rem; color: #2c3e50;">Details</h4>
-      <p><strong>Date Added:</strong> ${date}</p>
+<div style="margin-bottom: 1.5rem;">
+<h4 style="margin-bottom: 0.5rem; color: #2c3e50;">Details</h4>
+<p><strong>Date Added:</strong> ${date}</p>
       ${q.topic ? `<p><strong>Topic:</strong> ${q.topic}</p>` : ''}
       ${q.priority ? `<p><strong>Priority:</strong> ${q.priority}</p>` : ''}
       ${paper ? `<p><strong>Related Paper:</strong> ${paper.title}</p>` : ''}
-    </div>
+</div>
     
     ${q.answer ? `
-      <div style="margin-bottom: 1.5rem; padding: 1rem; background: #d4edda; border-radius: 6px; border-left: 3px solid #27ae60;">
-        <h4 style="margin-bottom: 0.5rem; color: #155724;">Answer</h4>
-        <p style="color: #155724; line-height: 1.6;">${q.answer}</p>
-      </div>
+<div style="margin-bottom: 1.5rem; padding: 1rem; background: #d4edda; border-radius: 6px; border-left: 3px solid #27ae60;">
+<h4 style="margin-bottom: 0.5rem; color: #155724;">Answer</h4>
+<p style="color: #155724; line-height: 1.6;">${q.answer}</p>
+</div>
     ` : `
-      <div style="margin-bottom: 1.5rem;">
-        <h4 style="margin-bottom: 0.5rem; color: #2c3e50;">Add Answer</h4>
-        <textarea id="answerInput" placeholder="What's the answer to this question?" rows="4" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; resize: vertical;"></textarea>
-        <button class="btn-success" onclick="markAsAnswered()" style="margin-top: 1rem;">Mark as Answered</button>
-      </div>
+<div style="margin-bottom: 1.5rem;">
+<h4 style="margin-bottom: 0.5rem; color: #2c3e50;">Add Answer</h4>
+<textarea id="answerInput" placeholder="What's the answer to this question?" rows="4" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: inherit; resize: vertical;"></textarea>
+<button class="btn-success" onclick="markAsAnswered()" style="margin-top: 1rem;">Mark as Answered</button>
+</div>
     `}
   `;
   

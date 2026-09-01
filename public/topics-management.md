@@ -3,98 +3,98 @@ title: "Topic Management"
 ---
 
 <div class="topic-management-container">
-  <div class="header">
-    <h1>📚 Topic Management</h1>
-    <p>Configure your research topics and manage users</p>
-  </div>
+<div class="header">
+<h1>📚 Topic Management</h1>
+<p>Configure your research topics and manage users</p>
+</div>
 
-  <!-- User Switcher -->
-  <div class="card user-section">
-    <h2>👤 Active User</h2>
-    <div class="user-controls">
-      <select id="userSelect" onchange="switchUser()">
-        <option value="default">Default User</option>
-        <option value="melcshum">Mel</option>
-      </select>
-      <button onclick="createNewUser()">+ New User</button>
-    </div>
-    <div class="user-info">
-      <span id="currentUserDisplay">Current: <strong>Mel</strong></span>
-    </div>
-  </div>
+<!-- User Switcher -->
+<div class="card user-section">
+<h2>👤 Active User</h2>
+<div class="user-controls">
+<select id="userSelect" onchange="switchUser()">
+<option value="default">Default User</option>
+<option value="melcshum">Mel</option>
+</select>
+<button onclick="createNewUser()">+ New User</button>
+</div>
+<div class="user-info">
+<span id="currentUserDisplay">Current: <strong>Mel</strong></span>
+</div>
+</div>
 
-  <!-- Topics List -->
-  <div class="card topics-section">
-    <h2>🎯 Your Research Topics</h2>
-    <div id="topicsList" class="topics-list">
-      <!-- Topics will be loaded here -->
-    </div>
-    <button onclick="addNewTopic()" class="btn-primary">+ Add New Topic</button>
-  </div>
+<!-- Topics List -->
+<div class="card topics-section">
+<h2>🎯 Your Research Topics</h2>
+<div id="topicsList" class="topics-list">
+<!-- Topics will be loaded here -->
+</div>
+<button onclick="addNewTopic()" class="btn-primary">+ Add New Topic</button>
+</div>
 
-  <!-- Topic Templates -->
-  <div class="card templates-section">
-    <h2>📦 Import from Templates</h2>
-    <p>Quick-start with pre-configured topic templates</p>
-    <div id="templatesList" class="templates-grid">
-      <!-- Templates will be loaded here -->
-    </div>
-  </div>
+<!-- Topic Templates -->
+<div class="card templates-section">
+<h2>📦 Import from Templates</h2>
+<p>Quick-start with pre-configured topic templates</p>
+<div id="templatesList" class="templates-grid">
+<!-- Templates will be loaded here -->
+</div>
+</div>
 
-  <!-- Topic Editor Modal -->
-  <div id="topicEditorModal" class="modal" style="display:none;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 id="editorTitle">Edit Topic</h3>
-        <button onclick="closeEditor()" class="close-btn">&times;</button>
-      </div>
-      <div class="modal-body">
-        <form id="topicForm">
-          <div class="form-group">
-            <label>Topic Name</label>
-            <input type="text" id="topicName" required>
-          </div>
-          <div class="form-group">
-            <label>Icon (emoji)</label>
-            <input type="text" id="topicIcon" placeholder="🤖" maxlength="4">
-          </div>
-          <div class="form-group">
-            <label>Description</label>
-            <textarea id="topicDescription" rows="2"></textarea>
-          </div>
-          <div class="form-group">
-            <label>Search Queries (one per line)</label>
-            <textarea id="topicQueries" rows="4" placeholder="AI agent&#10;LLM tool use"></textarea>
-          </div>
-          <div class="form-group">
-            <label>Keywords (comma-separated)</label>
-            <input type="text" id="topicKeywords" placeholder="agent, autonomous, tool">
-          </div>
-          <div class="form-group">
-            <label>arXiv Categories</label>
-            <div class="checkbox-group">
-              <label><input type="checkbox" value="cs.AI"> cs.AI</label>
-              <label><input type="checkbox" value="cs.CL"> cs.CL</label>
-              <label><input type="checkbox" value="cs.CV"> cs.CV</label>
-              <label><input type="checkbox" value="cs.LG"> cs.LG</label>
-              <label><input type="checkbox" value="cs.MA"> cs.MA</label>
-              <label><input type="checkbox" value="cs.IR"> cs.IR</label>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>
-              <input type="checkbox" id="topicEnabled" checked>
+<!-- Topic Editor Modal -->
+<div id="topicEditorModal" class="modal" style="display:none;">
+<div class="modal-content">
+<div class="modal-header">
+<h3 id="editorTitle">Edit Topic</h3>
+<button onclick="closeEditor()" class="close-btn">&times;</button>
+</div>
+<div class="modal-body">
+<form id="topicForm">
+<div class="form-group">
+<label>Topic Name</label>
+<input type="text" id="topicName" required>
+</div>
+<div class="form-group">
+<label>Icon (emoji)</label>
+<input type="text" id="topicIcon" placeholder="🤖" maxlength="4">
+</div>
+<div class="form-group">
+<label>Description</label>
+<textarea id="topicDescription" rows="2"></textarea>
+</div>
+<div class="form-group">
+<label>Search Queries (one per line)</label>
+<textarea id="topicQueries" rows="4" placeholder="AI agent&#10;LLM tool use"></textarea>
+</div>
+<div class="form-group">
+<label>Keywords (comma-separated)</label>
+<input type="text" id="topicKeywords" placeholder="agent, autonomous, tool">
+</div>
+<div class="form-group">
+<label>arXiv Categories</label>
+<div class="checkbox-group">
+<label><input type="checkbox" value="cs.AI"> cs.AI</label>
+<label><input type="checkbox" value="cs.CL"> cs.CL</label>
+<label><input type="checkbox" value="cs.CV"> cs.CV</label>
+<label><input type="checkbox" value="cs.LG"> cs.LG</label>
+<label><input type="checkbox" value="cs.MA"> cs.MA</label>
+<label><input type="checkbox" value="cs.IR"> cs.IR</label>
+</div>
+</div>
+<div class="form-group">
+<label>
+<input type="checkbox" id="topicEnabled" checked>
               Enabled
-            </label>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button onclick="closeEditor()" class="btn-secondary">Cancel</button>
-        <button onclick="saveTopic()" class="btn-primary">Save</button>
-      </div>
-    </div>
-  </div>
+</label>
+</div>
+</form>
+</div>
+<div class="modal-footer">
+<button onclick="closeEditor()" class="btn-secondary">Cancel</button>
+<button onclick="saveTopic()" class="btn-primary">Save</button>
+</div>
+</div>
+</div>
 </div>
 
 <style>
@@ -461,26 +461,26 @@ function createTopicElement(topic) {
   const keywordsCount = topic.keywords ? topic.keywords.length : 0;
 
   div.innerHTML = `
-    <div class="topic-info">
-      <div class="topic-header">
-        <span class="topic-icon">${topic.icon || '📄'}</span>
-        <span class="topic-name">${topic.name}</span>
-        <label class="toggle-switch">
-          <input type="checkbox" ${topic.enabled ? 'checked' : ''} onchange="toggleTopic('${topic.id}', this.checked)">
-          <span class="toggle-slider"></span>
-        </label>
-      </div>
-      <div class="topic-description">${topic.description || ''}</div>
-      <div class="topic-meta">
-        <span>🔍 ${queriesCount} queries</span>
-        <span>🏷️ ${keywordsCount} keywords</span>
-        <span>📁 ${(topic.categories || []).join(', ')}</span>
-      </div>
-    </div>
-    <div class="topic-actions">
-      <button class="btn-icon" onclick="editTopic('${topic.id}')" title="Edit">✏️</button>
-      <button class="btn-icon" onclick="deleteTopic('${topic.id}')" title="Delete">🗑️</button>
-    </div>
+<div class="topic-info">
+<div class="topic-header">
+<span class="topic-icon">${topic.icon || '📄'}</span>
+<span class="topic-name">${topic.name}</span>
+<label class="toggle-switch">
+<input type="checkbox" ${topic.enabled ? 'checked' : ''} onchange="toggleTopic('${topic.id}', this.checked)">
+<span class="toggle-slider"></span>
+</label>
+</div>
+<div class="topic-description">${topic.description || ''}</div>
+<div class="topic-meta">
+<span>🔍 ${queriesCount} queries</span>
+<span>🏷️ ${keywordsCount} keywords</span>
+<span>📁 ${(topic.categories || []).join(', ')}</span>
+</div>
+</div>
+<div class="topic-actions">
+<button class="btn-icon" onclick="editTopic('${topic.id}')" title="Edit">✏️</button>
+<button class="btn-icon" onclick="deleteTopic('${topic.id}')" title="Delete">🗑️</button>
+</div>
   `;
 
   return div;
@@ -650,9 +650,9 @@ async function loadTemplates() {
       card.onclick = () => importTemplate(template.id);
 
       card.innerHTML = `
-        <div class="template-icon">${template.icon}</div>
-        <div class="template-name">${template.name}</div>
-        <div class="template-description">${template.description}</div>
+<div class="template-icon">${template.icon}</div>
+<div class="template-name">${template.name}</div>
+<div class="template-description">${template.description}</div>
       `;
 
       templatesList.appendChild(card);

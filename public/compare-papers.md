@@ -278,13 +278,13 @@ function renderPaperCheckboxes() {
   }
   
   container.innerHTML = allPapers.map(paper => `
-    <label class="paper-checkbox">
-      <input type="checkbox" value="${paper.arxiv_id}" onchange="updateSelection()">
-      <div class="paper-checkbox-content">
-        <div class="paper-checkbox-title">${paper.title}</div>
-        <div class="paper-checkbox-meta">${paper.date} • ${paper.authors}</div>
-      </div>
-    </label>
+<label class="paper-checkbox">
+<input type="checkbox" value="${paper.arxiv_id}" onchange="updateSelection()">
+<div class="paper-checkbox-content">
+<div class="paper-checkbox-title">${paper.title}</div>
+<div class="paper-checkbox-meta">${paper.date} • ${paper.authors}</div>
+</div>
+</label>
   `).join('');
 }
 
@@ -320,83 +320,83 @@ function renderComparison(papers) {
   
   // Basic Info
   html += `
-    <div class="comparison-section">
-      <div class="comparison-section-header">📋 Basic Information</div>
-      <div class="comparison-section-content">
+<div class="comparison-section">
+<div class="comparison-section-header">📋 Basic Information</div>
+<div class="comparison-section-content">
         ${papers.map(paper => `
-          <div class="comparison-cell">
-            <div class="comparison-cell-title">${paper.title}</div>
-            <div class="comparison-cell-content">
-              <p><strong>Authors:</strong> ${paper.authors}</p>
-              <p><strong>Date:</strong> ${paper.date}</p>
-              <p><strong>arXiv ID:</strong> ${paper.arxiv_id}</p>
-              <p><strong>Topics:</strong> ${(paper.topics || []).join(', ')}</p>
-            </div>
-          </div>
+<div class="comparison-cell">
+<div class="comparison-cell-title">${paper.title}</div>
+<div class="comparison-cell-content">
+<p><strong>Authors:</strong> ${paper.authors}</p>
+<p><strong>Date:</strong> ${paper.date}</p>
+<p><strong>arXiv ID:</strong> ${paper.arxiv_id}</p>
+<p><strong>Topics:</strong> ${(paper.topics || []).join(', ')}</p>
+</div>
+</div>
         `).join('')}
-      </div>
-    </div>
+</div>
+</div>
   `;
   
   // Abstracts
   html += `
-    <div class="comparison-section">
-      <div class="comparison-section-header">📝 Abstracts</div>
-      <div class="comparison-section-content">
+<div class="comparison-section">
+<div class="comparison-section-header">📝 Abstracts</div>
+<div class="comparison-section-content">
         ${papers.map(paper => `
-          <div class="comparison-cell">
-            <div class="comparison-cell-title">${paper.title}</div>
-            <div class="comparison-cell-content">
-              <p>${paper.abstract || 'No abstract available'}</p>
-            </div>
-          </div>
+<div class="comparison-cell">
+<div class="comparison-cell-title">${paper.title}</div>
+<div class="comparison-cell-content">
+<p>${paper.abstract || 'No abstract available'}</p>
+</div>
+</div>
         `).join('')}
-      </div>
-    </div>
+</div>
+</div>
   `;
   
   // Topics Comparison
   const allTopics = [...new Set(papers.flatMap(p => p.topics || []))];
   html += `
-    <div class="comparison-section">
-      <div class="comparison-section-header">🏷️ Topic Coverage</div>
-      <div class="comparison-section-content">
+<div class="comparison-section">
+<div class="comparison-section-header">🏷️ Topic Coverage</div>
+<div class="comparison-section-content">
         ${papers.map(paper => {
           const paperTopics = paper.topics || [];
           return `
-            <div class="comparison-cell">
-              <div class="comparison-cell-title">${paper.title}</div>
-              <div class="comparison-cell-content">
-                <ul>
+<div class="comparison-cell">
+<div class="comparison-cell-title">${paper.title}</div>
+<div class="comparison-cell-content">
+<ul>
                   ${allTopics.map(topic => {
                     const hasTopic = paperTopics.includes(topic);
                     return `<li>${hasTopic ? '✅' : '❌'} ${topic}</li>`;
                   }).join('')}
-                </ul>
-              </div>
-            </div>
+</ul>
+</div>
+</div>
           `;
         }).join('')}
-      </div>
-    </div>
+</div>
+</div>
   `;
   
   // Key Insights
   html += `
-    <div class="comparison-section">
-      <div class="comparison-section-header">💡 Key Insights</div>
-      <div class="comparison-section-content">
+<div class="comparison-section">
+<div class="comparison-section-header">💡 Key Insights</div>
+<div class="comparison-section-content">
         ${papers.map(paper => `
-          <div class="comparison-cell">
-            <div class="comparison-cell-title">${paper.title}</div>
-            <div class="comparison-cell-content">
-              <p><strong>Focus:</strong> ${extractFocus(paper.abstract)}</p>
-              <p><strong>Approach:</strong> ${extractApproach(paper.abstract)}</p>
-            </div>
-          </div>
+<div class="comparison-cell">
+<div class="comparison-cell-title">${paper.title}</div>
+<div class="comparison-cell-content">
+<p><strong>Focus:</strong> ${extractFocus(paper.abstract)}</p>
+<p><strong>Approach:</strong> ${extractApproach(paper.abstract)}</p>
+</div>
+</div>
         `).join('')}
-      </div>
-    </div>
+</div>
+</div>
   `;
   
   content.innerHTML = html;

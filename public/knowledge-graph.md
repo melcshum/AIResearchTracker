@@ -7,80 +7,80 @@ title: "Knowledge Graph"
 Explore the interconnected landscape of your research papers, authors, topics, and concepts.
 
 <div class="knowledge-graph-container">
-  <div class="graph-controls">
-    <div class="control-group">
-      <label>Node Types:</label>
-      <div class="checkbox-group">
-        <label><input type="checkbox" id="showPapers" checked> Papers</label>
-        <label><input type="checkbox" id="showAuthors" checked> Authors</label>
-        <label><input type="checkbox" id="showTopics" checked> Topics</label>
-        <label><input type="checkbox" id="showConcepts" checked> Concepts</label>
-      </div>
-    </div>
+<div class="graph-controls">
+<div class="control-group">
+<label>Node Types:</label>
+<div class="checkbox-group">
+<label><input type="checkbox" id="showPapers" checked> Papers</label>
+<label><input type="checkbox" id="showAuthors" checked> Authors</label>
+<label><input type="checkbox" id="showTopics" checked> Topics</label>
+<label><input type="checkbox" id="showConcepts" checked> Concepts</label>
+</div>
+</div>
     
-    <div class="control-group">
-      <label>Layout:</label>
-      <select id="layoutType">
-        <option value="force">Force-Directed</option>
-        <option value="radial">Radial</option>
-        <option value="hierarchical">Hierarchical</option>
-      </select>
-    </div>
+<div class="control-group">
+<label>Layout:</label>
+<select id="layoutType">
+<option value="force">Force-Directed</option>
+<option value="radial">Radial</option>
+<option value="hierarchical">Hierarchical</option>
+</select>
+</div>
     
-    <div class="control-group">
-      <label>Filter by Topic:</label>
-      <select id="topicFilter">
-        <option value="all">All Topics</option>
-      </select>
-    </div>
+<div class="control-group">
+<label>Filter by Topic:</label>
+<select id="topicFilter">
+<option value="all">All Topics</option>
+</select>
+</div>
     
-    <button id="resetZoomBtn" class="btn-secondary">Reset View</button>
-    <button id="exportGraphBtn" class="btn-secondary">Export Graph</button>
-  </div>
+<button id="resetZoomBtn" class="btn-secondary">Reset View</button>
+<button id="exportGraphBtn" class="btn-secondary">Export Graph</button>
+</div>
   
-  <div class="graph-legend">
-    <div class="legend-item">
-      <div class="legend-color paper"></div>
-      <span>Papers</span>
-    </div>
-    <div class="legend-item">
-      <div class="legend-color author"></div>
-      <span>Authors</span>
-    </div>
-    <div class="legend-item">
-      <div class="legend-color topic"></div>
-      <span>Topics</span>
-    </div>
-    <div class="legend-item">
-      <div class="legend-color concept"></div>
-      <span>Concepts</span>
-    </div>
-  </div>
+<div class="graph-legend">
+<div class="legend-item">
+<div class="legend-color paper"></div>
+<span>Papers</span>
+</div>
+<div class="legend-item">
+<div class="legend-color author"></div>
+<span>Authors</span>
+</div>
+<div class="legend-item">
+<div class="legend-color topic"></div>
+<span>Topics</span>
+</div>
+<div class="legend-item">
+<div class="legend-color concept"></div>
+<span>Concepts</span>
+</div>
+</div>
   
-  <div class="graph-stats">
-    <div class="stat-box">
-      <div class="stat-number" id="totalNodes">0</div>
-      <div class="stat-label">Total Nodes</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-number" id="totalEdges">0</div>
-      <div class="stat-label">Connections</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-number" id="totalClusters">0</div>
-      <div class="stat-label">Clusters</div>
-    </div>
-  </div>
+<div class="graph-stats">
+<div class="stat-box">
+<div class="stat-number" id="totalNodes">0</div>
+<div class="stat-label">Total Nodes</div>
+</div>
+<div class="stat-box">
+<div class="stat-number" id="totalEdges">0</div>
+<div class="stat-label">Connections</div>
+</div>
+<div class="stat-box">
+<div class="stat-number" id="totalClusters">0</div>
+<div class="stat-label">Clusters</div>
+</div>
+</div>
   
-  <div id="graphContainer" class="graph-container"></div>
+<div id="graphContainer" class="graph-container"></div>
   
-  <div id="nodeDetails" class="node-details" style="display: none;">
-    <div class="details-header">
-      <h3 id="detailsTitle">Node Details</h3>
-      <button class="close-btn" onclick="closeDetails()">&times;</button>
-    </div>
-    <div class="details-content" id="detailsContent"></div>
-  </div>
+<div id="nodeDetails" class="node-details" style="display: none;">
+<div class="details-header">
+<h3 id="detailsTitle">Node Details</h3>
+<button class="close-btn" onclick="closeDetails()">&times;</button>
+</div>
+<div class="details-content" id="detailsContent"></div>
+</div>
 </div>
 
 <style>
@@ -716,54 +716,54 @@ function showNodeDetails(node) {
   
   if (node.type === 'paper') {
     content = `
-      <div class="details-section">
-        <h4>Authors</h4>
-        <p>${node.authors}</p>
-      </div>
-      <div class="details-section">
-        <h4>Date</h4>
-        <p>${node.date}</p>
-      </div>
-      <div class="details-section">
-        <h4>Topics</h4>
-        <p>${node.topics.join(', ')}</p>
-      </div>
-      <div class="details-section">
-        <h4>Abstract</h4>
-        <p>${node.abstract || 'No abstract available'}</p>
-      </div>
-      <div class="details-section">
-        <h4>Links</h4>
-        <ul class="details-list">
-          <li><a href="${node.url}" target="_blank" class="details-link">View Paper →</a></li>
-        </ul>
-      </div>
+<div class="details-section">
+<h4>Authors</h4>
+<p>${node.authors}</p>
+</div>
+<div class="details-section">
+<h4>Date</h4>
+<p>${node.date}</p>
+</div>
+<div class="details-section">
+<h4>Topics</h4>
+<p>${node.topics.join(', ')}</p>
+</div>
+<div class="details-section">
+<h4>Abstract</h4>
+<p>${node.abstract || 'No abstract available'}</p>
+</div>
+<div class="details-section">
+<h4>Links</h4>
+<ul class="details-list">
+<li><a href="${node.url}" target="_blank" class="details-link">View Paper →</a></li>
+</ul>
+</div>
     `;
   } else if (node.type === 'author') {
     content = `
-      <div class="details-section">
-        <h4>Papers (${node.papers.length})</h4>
-        <ul class="details-list">
+<div class="details-section">
+<h4>Papers (${node.papers.length})</h4>
+<ul class="details-list">
           ${node.papers.slice(0, 10).map(arxivId => {
             const paper = allPapers.find(p => p.arxiv_id === arxivId);
             return paper ? `<li><a href="${paper.url}" target="_blank" class="details-link">${paper.title}</a></li>` : '';
           }).join('')}
           ${node.papers.length > 10 ? `<li>... and ${node.papers.length - 10} more</li>` : ''}
-        </ul>
-      </div>
+</ul>
+</div>
     `;
   } else if (node.type === 'topic' || node.type === 'concept') {
     content = `
-      <div class="details-section">
-        <h4>Related Papers (${node.papers.length})</h4>
-        <ul class="details-list">
+<div class="details-section">
+<h4>Related Papers (${node.papers.length})</h4>
+<ul class="details-list">
           ${node.papers.slice(0, 10).map(arxivId => {
             const paper = allPapers.find(p => p.arxiv_id === arxivId);
             return paper ? `<li><a href="${paper.url}" target="_blank" class="details-link">${paper.title}</a></li>` : '';
           }).join('')}
           ${node.papers.length > 10 ? `<li>... and ${node.papers.length - 10} more</li>` : ''}
-        </ul>
-      </div>
+</ul>
+</div>
     `;
   }
   

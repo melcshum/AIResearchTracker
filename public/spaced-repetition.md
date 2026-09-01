@@ -7,93 +7,93 @@ title: "Spaced Repetition"
 Review your saved papers at optimal intervals to maximize retention and understanding.
 
 <div class="spaced-repetition-container">
-  <div class="review-header">
-    <div class="review-stats">
-      <div class="stat-card">
-        <div class="stat-number" id="dueToday">0</div>
-        <div class="stat-label">Due Today</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number" id="upcomingWeek">0</div>
-        <div class="stat-label">Due This Week</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number" id="totalReviews">0</div>
-        <div class="stat-label">Total Reviews</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number" id="streak">0</div>
-        <div class="stat-label">Day Streak 🔥</div>
-      </div>
-    </div>
-    <button id="startReviewBtn" class="btn-primary">Start Review Session</button>
-  </div>
+<div class="review-header">
+<div class="review-stats">
+<div class="stat-card">
+<div class="stat-number" id="dueToday">0</div>
+<div class="stat-label">Due Today</div>
+</div>
+<div class="stat-card">
+<div class="stat-number" id="upcomingWeek">0</div>
+<div class="stat-label">Due This Week</div>
+</div>
+<div class="stat-card">
+<div class="stat-number" id="totalReviews">0</div>
+<div class="stat-label">Total Reviews</div>
+</div>
+<div class="stat-card">
+<div class="stat-number" id="streak">0</div>
+<div class="stat-label">Day Streak 🔥</div>
+</div>
+</div>
+<button id="startReviewBtn" class="btn-primary">Start Review Session</button>
+</div>
 
-  <div id="reviewSession" class="review-session" style="display: none;">
-    <div class="session-header">
-      <h2>Review Session</h2>
-      <div class="session-progress">
-        <span id="currentCard">1</span> / <span id="totalCards">0</span>
-      </div>
-      <button id="endSessionBtn" class="btn-secondary">End Session</button>
-    </div>
+<div id="reviewSession" class="review-session" style="display: none;">
+<div class="session-header">
+<h2>Review Session</h2>
+<div class="session-progress">
+<span id="currentCard">1</span> / <span id="totalCards">0</span>
+</div>
+<button id="endSessionBtn" class="btn-secondary">End Session</button>
+</div>
     
-    <div class="review-card" id="reviewCard">
-      <div class="card-header">
-        <div class="card-title" id="paperTitle">Paper Title</div>
-        <div class="card-meta">
-          <span id="paperAuthors">Authors</span> • 
-          <span id="paperDate">Date</span>
-        </div>
-      </div>
+<div class="review-card" id="reviewCard">
+<div class="card-header">
+<div class="card-title" id="paperTitle">Paper Title</div>
+<div class="card-meta">
+<span id="paperAuthors">Authors</span> • 
+<span id="paperDate">Date</span>
+</div>
+</div>
       
-      <div class="card-content">
-        <div class="abstract-section">
-          <h3>Abstract</h3>
-          <p id="paperAbstract">Abstract text</p>
-        </div>
+<div class="card-content">
+<div class="abstract-section">
+<h3>Abstract</h3>
+<p id="paperAbstract">Abstract text</p>
+</div>
         
-        <div class="notes-section">
-          <h3>Your Notes</h3>
-          <div id="paperNotes">No notes yet</div>
-        </div>
+<div class="notes-section">
+<h3>Your Notes</h3>
+<div id="paperNotes">No notes yet</div>
+</div>
         
-        <div class="summary-section">
-          <h3>AI Summary</h3>
-          <div id="paperSummary">No summary available</div>
-        </div>
-      </div>
+<div class="summary-section">
+<h3>AI Summary</h3>
+<div id="paperSummary">No summary available</div>
+</div>
+</div>
       
-      <div class="card-actions">
-        <button class="review-btn difficult" onclick="ratePaper('difficult')">
-          <span class="btn-label">Difficult</span>
-          <span class="btn-interval">Review in 1 day</span>
-        </button>
-        <button class="review-btn moderate" onclick="ratePaper('moderate')">
-          <span class="btn-label">Moderate</span>
-          <span class="btn-interval">Review in 3 days</span>
-        </button>
-        <button class="review-btn easy" onclick="ratePaper('easy')">
-          <span class="btn-label">Easy</span>
-          <span class="btn-interval">Review in 7 days</span>
-        </button>
-        <button class="review-btn mastered" onclick="ratePaper('mastered')">
-          <span class="btn-label">Mastered</span>
-          <span class="btn-interval">Review in 14 days</span>
-        </button>
-      </div>
-    </div>
-  </div>
+<div class="card-actions">
+<button class="review-btn difficult" onclick="ratePaper('difficult')">
+<span class="btn-label">Difficult</span>
+<span class="btn-interval">Review in 1 day</span>
+</button>
+<button class="review-btn moderate" onclick="ratePaper('moderate')">
+<span class="btn-label">Moderate</span>
+<span class="btn-interval">Review in 3 days</span>
+</button>
+<button class="review-btn easy" onclick="ratePaper('easy')">
+<span class="btn-label">Easy</span>
+<span class="btn-interval">Review in 7 days</span>
+</button>
+<button class="review-btn mastered" onclick="ratePaper('mastered')">
+<span class="btn-label">Mastered</span>
+<span class="btn-interval">Review in 14 days</span>
+</button>
+</div>
+</div>
+</div>
 
-  <div id="upcomingReviews" class="upcoming-reviews">
-    <h2>📅 Upcoming Reviews</h2>
-    <div class="reviews-timeline" id="reviewsTimeline"></div>
-  </div>
+<div id="upcomingReviews" class="upcoming-reviews">
+<h2>📅 Upcoming Reviews</h2>
+<div class="reviews-timeline" id="reviewsTimeline"></div>
+</div>
 
-  <div id="reviewHistory" class="review-history">
-    <h2>📊 Review History</h2>
-    <div class="history-chart" id="historyChart"></div>
-  </div>
+<div id="reviewHistory" class="review-history">
+<h2>📊 Review History</h2>
+<div class="history-chart" id="historyChart"></div>
+</div>
 </div>
 
 <style>
@@ -626,12 +626,12 @@ function renderUpcomingReviews() {
     const papers = upcomingByDay[date];
     
     return `
-      <div class="timeline-day">
-        <div class="timeline-day-header">${dateStr} (${papers.length} paper${papers.length !== 1 ? 's' : ''})</div>
-        <div class="timeline-papers">
+<div class="timeline-day">
+<div class="timeline-day-header">${dateStr} (${papers.length} paper${papers.length !== 1 ? 's' : ''})</div>
+<div class="timeline-papers">
           ${papers.map(p => `<div class="timeline-paper">${p.title.substring(0, 50)}...</div>`).join('')}
-        </div>
-      </div>
+</div>
+</div>
     `;
   }).join('');
 }
@@ -659,7 +659,7 @@ function renderReviewHistory() {
   const maxCount = Math.max(...dates.map(d => byDate[d]));
   
   container.innerHTML = `
-    <div style="display: flex; align-items: end; justify-content: space-around; height: 100%; gap: 0.5rem;">
+<div style="display: flex; align-items: end; justify-content: space-around; height: 100%; gap: 0.5rem;">
       ${dates.map(date => {
         const count = byDate[date];
         const height = (count / maxCount) * 100;
@@ -667,14 +667,14 @@ function renderReviewHistory() {
         const label = dateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
         
         return `
-          <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
-            <div style="background: #2c5aa0; width: 100%; height: ${height}%; border-radius: 4px 4px 0 0; min-height: 10px;"></div>
-            <div style="margin-top: 0.5rem; font-size: 0.75rem; color: #666;">${label}</div>
-            <div style="font-size: 0.85rem; font-weight: 600; color: #2c5aa0;">${count}</div>
-          </div>
+<div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+<div style="background: #2c5aa0; width: 100%; height: ${height}%; border-radius: 4px 4px 0 0; min-height: 10px;"></div>
+<div style="margin-top: 0.5rem; font-size: 0.75rem; color: #666;">${label}</div>
+<div style="font-size: 0.85rem; font-weight: 600; color: #2c5aa0;">${count}</div>
+</div>
         `;
       }).join('')}
-    </div>
+</div>
   `;
 }
 

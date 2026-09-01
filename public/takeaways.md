@@ -7,92 +7,92 @@ title: "Key Takeaways"
 Extract the main conclusions, contributions, and insights from each paper you read.
 
 <div class="takeaways-container">
-  <div class="takeaways-header">
-    <button id="addTakeawayBtn" class="btn-primary">+ Add Takeaway</button>
-    <div class="takeaways-stats">
-      <span class="stat">💡 <span id="totalTakeaways">0</span> Takeaways</span>
-      <span class="stat">📄 <span id="papersWithTakeaways">0</span> Papers</span>
-    </div>
-  </div>
+<div class="takeaways-header">
+<button id="addTakeawayBtn" class="btn-primary">+ Add Takeaway</button>
+<div class="takeaways-stats">
+<span class="stat">💡 <span id="totalTakeaways">0</span> Takeaways</span>
+<span class="stat">📄 <span id="papersWithTakeaways">0</span> Papers</span>
+</div>
+</div>
 
-  <div class="filter-bar">
-    <input type="text" id="searchTakeaways" placeholder="Search takeaways...">
-    <select id="filterByPaper">
-      <option value="all">All Papers</option>
-    </select>
-    <select id="sortBy">
-      <option value="date">Date Added</option>
-      <option value="paper">By Paper</option>
-    </select>
-  </div>
+<div class="filter-bar">
+<input type="text" id="searchTakeaways" placeholder="Search takeaways...">
+<select id="filterByPaper">
+<option value="all">All Papers</option>
+</select>
+<select id="sortBy">
+<option value="date">Date Added</option>
+<option value="paper">By Paper</option>
+</select>
+</div>
 
-  <div id="takeawaysList" class="takeaways-list"></div>
+<div id="takeawaysList" class="takeaways-list"></div>
 </div>
 
 <!-- Add Takeaway Modal -->
 <div id="addTakeawayModal" class="modal" style="display: none;">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2>Add Key Takeaway</h2>
-      <button class="close-btn" onclick="closeAddModal()">&times;</button>
-    </div>
-    <div class="modal-body">
-      <div class="form-group">
-        <label>Paper</label>
-        <select id="takeawayPaper" required>
-          <option value="">Select a paper...</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Category</label>
-        <select id="takeawayCategory">
-          <option value="main-conclusion">Main Conclusion</option>
-          <option value="key-contribution">Key Contribution</option>
-          <option value="methodology">Methodology Insight</option>
-          <option value="result">Important Result</option>
-          <option value="limitation">Limitation</option>
-          <option value="future-work">Future Work</option>
-          <option value="implication">Implication</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Takeaway</label>
-        <textarea id="takeawayText" placeholder="What's the key takeaway from this paper?" rows="4" required></textarea>
-      </div>
-      <div class="form-group">
-        <label>Supporting Details (optional)</label>
-        <textarea id="takeawayDetails" placeholder="Additional context or evidence..." rows="3"></textarea>
-      </div>
-      <div class="form-group">
-        <label>Importance</label>
-        <select id="takeawayImportance">
-          <option value="low">Low</option>
-          <option value="medium" selected>Medium</option>
-          <option value="high">High</option>
-          <option value="critical">Critical</option>
-        </select>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button class="btn-secondary" onclick="closeAddModal()">Cancel</button>
-      <button class="btn-primary" onclick="saveTakeaway()">Save Takeaway</button>
-    </div>
-  </div>
+<div class="modal-content">
+<div class="modal-header">
+<h2>Add Key Takeaway</h2>
+<button class="close-btn" onclick="closeAddModal()">&times;</button>
+</div>
+<div class="modal-body">
+<div class="form-group">
+<label>Paper</label>
+<select id="takeawayPaper" required>
+<option value="">Select a paper...</option>
+</select>
+</div>
+<div class="form-group">
+<label>Category</label>
+<select id="takeawayCategory">
+<option value="main-conclusion">Main Conclusion</option>
+<option value="key-contribution">Key Contribution</option>
+<option value="methodology">Methodology Insight</option>
+<option value="result">Important Result</option>
+<option value="limitation">Limitation</option>
+<option value="future-work">Future Work</option>
+<option value="implication">Implication</option>
+</select>
+</div>
+<div class="form-group">
+<label>Takeaway</label>
+<textarea id="takeawayText" placeholder="What's the key takeaway from this paper?" rows="4" required></textarea>
+</div>
+<div class="form-group">
+<label>Supporting Details (optional)</label>
+<textarea id="takeawayDetails" placeholder="Additional context or evidence..." rows="3"></textarea>
+</div>
+<div class="form-group">
+<label>Importance</label>
+<select id="takeawayImportance">
+<option value="low">Low</option>
+<option value="medium" selected>Medium</option>
+<option value="high">High</option>
+<option value="critical">Critical</option>
+</select>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn-secondary" onclick="closeAddModal()">Cancel</button>
+<button class="btn-primary" onclick="saveTakeaway()">Save Takeaway</button>
+</div>
+</div>
 </div>
 
 <!-- Takeaway Detail Modal -->
 <div id="takeawayDetailModal" class="modal" style="display: none;">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2>Takeaway Details</h2>
-      <button class="close-btn" onclick="closeDetailModal()">&times;</button>
-    </div>
-    <div class="modal-body" id="takeawayDetailContent"></div>
-    <div class="modal-footer">
-      <button class="btn-danger" onclick="deleteTakeaway()">Delete</button>
-      <button class="btn-secondary" onclick="closeDetailModal()">Close</button>
-    </div>
-  </div>
+<div class="modal-content">
+<div class="modal-header">
+<h2>Takeaway Details</h2>
+<button class="close-btn" onclick="closeDetailModal()">&times;</button>
+</div>
+<div class="modal-body" id="takeawayDetailContent"></div>
+<div class="modal-footer">
+<button class="btn-danger" onclick="deleteTakeaway()">Delete</button>
+<button class="btn-secondary" onclick="closeDetailModal()">Close</button>
+</div>
+</div>
 </div>
 
 <style>
@@ -444,10 +444,10 @@ function renderTakeaways() {
   
   if (filtered.length === 0) {
     container.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-state-icon">💡</div>
-        <p>No takeaways yet. Start extracting key insights from your papers!</p>
-      </div>
+<div class="empty-state">
+<div class="empty-state-icon">💡</div>
+<p>No takeaways yet. Start extracting key insights from your papers!</p>
+</div>
     `;
     return;
   }
@@ -458,25 +458,25 @@ function renderTakeaways() {
     const importanceClass = t.importance ? `importance-${t.importance}` : '';
     
     return `
-      <div class="takeaway-card ${importanceClass}" onclick="showTakeawayDetail('${t.id}')">
-        <div class="takeaway-header">
-          <div>
-            <div class="takeaway-paper">${paper?.title || 'Unknown Paper'}</div>
-            <div class="takeaway-meta">
-              <span class="takeaway-category">${formatCategory(t.category)}</span>
-              <span>${date}</span>
+<div class="takeaway-card ${importanceClass}" onclick="showTakeawayDetail('${t.id}')">
+<div class="takeaway-header">
+<div>
+<div class="takeaway-paper">${paper?.title || 'Unknown Paper'}</div>
+<div class="takeaway-meta">
+<span class="takeaway-category">${formatCategory(t.category)}</span>
+<span>${date}</span>
               ${t.importance ? `<span>Importance: ${t.importance}</span>` : ''}
-            </div>
-          </div>
-        </div>
-        <div class="takeaway-text">${t.text}</div>
+</div>
+</div>
+</div>
+<div class="takeaway-text">${t.text}</div>
         ${t.details ? `
-          <div class="takeaway-details">
-            <div class="takeaway-details-label">Supporting Details:</div>
+<div class="takeaway-details">
+<div class="takeaway-details-label">Supporting Details:</div>
             ${t.details}
-          </div>
+</div>
         ` : ''}
-      </div>
+</div>
     `;
   }).join('');
 }
@@ -569,21 +569,21 @@ function showTakeawayDetail(id) {
   const date = new Date(takeaway.createdAt).toLocaleDateString();
   
   const content = `
-    <div class="takeaway-paper" style="font-size: 1.2rem; margin-bottom: 1rem;">${paper?.title || 'Unknown Paper'}</div>
-    <div class="takeaway-meta" style="margin-bottom: 1.5rem;">
-      <span class="takeaway-category">${formatCategory(takeaway.category)}</span>
-      <span>Added: ${date}</span>
+<div class="takeaway-paper" style="font-size: 1.2rem; margin-bottom: 1rem;">${paper?.title || 'Unknown Paper'}</div>
+<div class="takeaway-meta" style="margin-bottom: 1.5rem;">
+<span class="takeaway-category">${formatCategory(takeaway.category)}</span>
+<span>Added: ${date}</span>
       ${takeaway.importance ? `<span>Importance: ${takeaway.importance}</span>` : ''}
-    </div>
-    <div style="margin-bottom: 1.5rem;">
-      <h4 style="margin-bottom: 0.5rem; color: #2c3e50;">Takeaway</h4>
-      <p style="font-size: 1.05rem; line-height: 1.6;">${takeaway.text}</p>
-    </div>
+</div>
+<div style="margin-bottom: 1.5rem;">
+<h4 style="margin-bottom: 0.5rem; color: #2c3e50;">Takeaway</h4>
+<p style="font-size: 1.05rem; line-height: 1.6;">${takeaway.text}</p>
+</div>
     ${takeaway.details ? `
-      <div style="margin-bottom: 1.5rem;">
-        <h4 style="margin-bottom: 0.5rem; color: #2c3e50;">Supporting Details</h4>
-        <p style="color: #555; line-height: 1.6;">${takeaway.details}</p>
-      </div>
+<div style="margin-bottom: 1.5rem;">
+<h4 style="margin-bottom: 0.5rem; color: #2c3e50;">Supporting Details</h4>
+<p style="color: #555; line-height: 1.6;">${takeaway.details}</p>
+</div>
     ` : ''}
   `;
   

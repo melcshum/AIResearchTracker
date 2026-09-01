@@ -953,11 +953,11 @@ function selectTerm(element) {
   currentTerm.id = termId;
   
   document.getElementById('selectedTerm').innerHTML = `
-    <div class="term-name">${currentTerm.name}</div>
-    <div class="term-definition">${currentTerm.definition}</div>
-    <div class="term-stats">
-      <span class="stat-badge">${getBacklinkCount(termId)} connections</span>
-    </div>
+<div class="term-name">${currentTerm.name}</div>
+<div class="term-definition">${currentTerm.definition}</div>
+<div class="term-stats">
+<span class="stat-badge">${getBacklinkCount(termId)} connections</span>
+</div>
   `;
   document.getElementById('actionButtons').style.display = 'flex';
   
@@ -991,10 +991,10 @@ function searchSources() {
     }
     
     results.innerHTML = relatedPapers.map(paper => `
-      <div class="search-result-item" onclick="selectSource('${paper.arxiv_id}')">
-        <div class="search-result-title">${paper.title}</div>
-        <div class="search-result-meta">${paper.authors} • ${paper.date}</div>
-      </div>
+<div class="search-result-item" onclick="selectSource('${paper.arxiv_id}')">
+<div class="search-result-title">${paper.title}</div>
+<div class="search-result-meta">${paper.authors} • ${paper.date}</div>
+</div>
     `).join('');
   }, 500);
 }
@@ -1018,11 +1018,11 @@ function viewRelatedPapers() {
     }
     
     papersDiv.innerHTML = relatedPapers.map(paper => `
-      <div class="related-paper-item">
-        <div class="related-paper-title">${paper.title}</div>
-        <div class="related-paper-meta">${paper.authors} • ${paper.date}</div>
-        <div class="related-paper-abstract">${paper.abstract.substring(0, 150)}...</div>
-      </div>
+<div class="related-paper-item">
+<div class="related-paper-title">${paper.title}</div>
+<div class="related-paper-meta">${paper.authors} • ${paper.date}</div>
+<div class="related-paper-abstract">${paper.abstract.substring(0, 150)}...</div>
+</div>
     `).join('');
   }, 500);
 }
@@ -1040,13 +1040,13 @@ function viewHistory() {
   }
   
   historyDiv.innerHTML = versions.map((v, i) => `
-    <div class="version-item">
-      <div class="version-header">
-        <span>Version ${versions.length - i}</span>
-        <span>${new Date(v.timestamp).toLocaleString()}</span>
-      </div>
-      <div class="version-content">${v.content}</div>
-    </div>
+<div class="version-item">
+<div class="version-header">
+<span>Version ${versions.length - i}</span>
+<span>${new Date(v.timestamp).toLocaleString()}</span>
+</div>
+<div class="version-content">${v.content}</div>
+</div>
   `).join('');
 }
 
@@ -1078,8 +1078,8 @@ function submitExplanation() {
   hideAllPanels();
   document.getElementById('reviewPanel').style.display = 'block';
   document.getElementById('reviewContent').innerHTML = `
-    <strong>Term:</strong> ${currentTerm.name}<br><br>
-    <strong>Your Explanation:</strong><br>
+<strong>Term:</strong> ${currentTerm.name}<br><br>
+<strong>Your Explanation:</strong><br>
     ${explanation}
   `;
   
@@ -1170,13 +1170,13 @@ function renderContributions() {
   }
   
   list.innerHTML = wikiContributions.slice(0, 10).map(c => `
-    <div class="contribution-item">
-      <div class="contribution-header">
-        <strong>${c.term}</strong> - ${c.type} ${c.type === 'question' ? 'asked' : 'added'}
-        <span class="contribution-meta">${new Date(c.timestamp).toLocaleString()}</span>
-      </div>
-      <div class="contribution-preview">${c.content.substring(0, 150)}${c.content.length > 150 ? '...' : ''}</div>
-    </div>
+<div class="contribution-item">
+<div class="contribution-header">
+<strong>${c.term}</strong> - ${c.type} ${c.type === 'question' ? 'asked' : 'added'}
+<span class="contribution-meta">${new Date(c.timestamp).toLocaleString()}</span>
+</div>
+<div class="contribution-preview">${c.content.substring(0, 150)}${c.content.length > 150 ? '...' : ''}</div>
+</div>
   `).join('');
 }
 
@@ -1222,14 +1222,14 @@ function searchWiki() {
     resultsDiv.innerHTML = results.slice(0, 10).map(r => {
       if (r.type === 'term') {
         return `<div class="search-result-item" onclick="jumpToTerm('${r.id}')">
-          <strong>${r.name}</strong><br>
-          <small>${r.description}</small>
-        </div>`;
+<strong>${r.name}</strong><br>
+<small>${r.description}</small>
+</div>`;
       } else {
         return `<div class="search-result-item">
-          <strong>${r.term}</strong> - contribution<br>
-          <small>${r.content}...</small>
-        </div>`;
+<strong>${r.term}</strong> - contribution<br>
+<small>${r.content}...</small>
+</div>`;
       }
     }).join('');
   }
@@ -1334,51 +1334,51 @@ function viewBacklinks() {
     const contributions = backlinks.filter(b => b.type === 'contribution');
     
     backlinksList.innerHTML = `
-      <div class="backlinks-info">
-        <p><strong>${backlinks.length}</strong> connections found for <strong>${currentTerm.name}</strong></p>
-        <div class="backlink-stats">
-          <span class="stat-tag">📚 ${terms.length} related terms</span>
-          <span class="stat-tag">📄 ${papers.length} papers</span>
-          <span class="stat-tag">💬 ${contributions.length} contributions</span>
-        </div>
-      </div>
+<div class="backlinks-info">
+<p><strong>${backlinks.length}</strong> connections found for <strong>${currentTerm.name}</strong></p>
+<div class="backlink-stats">
+<span class="stat-tag">📚 ${terms.length} related terms</span>
+<span class="stat-tag">📄 ${papers.length} papers</span>
+<span class="stat-tag">💬 ${contributions.length} contributions</span>
+</div>
+</div>
       ${terms.length > 0 ? `
-        <h5>Related Terms</h5>
+<h5>Related Terms</h5>
         ${terms.map(b => `
-          <div class="backlink-item" onclick="jumpToTerm('${b.source}')">
-            <div class="backlink-title">${b.sourceName}</div>
-            <div class="backlink-meta">${b.relationship} • term</div>
-          </div>
+<div class="backlink-item" onclick="jumpToTerm('${b.source}')">
+<div class="backlink-title">${b.sourceName}</div>
+<div class="backlink-meta">${b.relationship} • term</div>
+</div>
         `).join('')}
       ` : ''}
       ${papers.length > 0 ? `
-        <h5>Related Papers</h5>
+<h5>Related Papers</h5>
         ${papers.map(b => `
-          <div class="backlink-item">
-            <div class="backlink-title">${b.sourceName}</div>
-            <div class="backlink-meta">${b.relationship} • paper</div>
+<div class="backlink-item">
+<div class="backlink-title">${b.sourceName}</div>
+<div class="backlink-meta">${b.relationship} • paper</div>
             ${b.context ? `<div class="backlink-context">${b.context}</div>` : ''}
-          </div>
+</div>
         `).join('')}
       ` : ''}
       ${contributions.length > 0 ? `
-        <h5>Mentioned in Contributions</h5>
+<h5>Mentioned in Contributions</h5>
         ${contributions.map(b => `
-          <div class="backlink-item">
-            <div class="backlink-title">${b.sourceName}</div>
-            <div class="backlink-meta">${b.relationship} • contribution</div>
+<div class="backlink-item">
+<div class="backlink-title">${b.sourceName}</div>
+<div class="backlink-meta">${b.relationship} • contribution</div>
             ${b.context ? `<div class="backlink-context">${b.context}</div>` : ''}
-          </div>
+</div>
         `).join('')}
       ` : ''}
     `;
   } else {
     backlinksList.innerHTML = `
-      <div class="backlinks-empty">
-        <p class="hint">No backlinks found for <strong>${currentTerm.name}</strong>.</p>
-        <p class="hint">Be the first to connect this term to other concepts or papers!</p>
-        <button class="wiki-btn primary" onclick="addExplanation()">💡 Add Connection</button>
-      </div>
+<div class="backlinks-empty">
+<p class="hint">No backlinks found for <strong>${currentTerm.name}</strong>.</p>
+<p class="hint">Be the first to connect this term to other concepts or papers!</p>
+<button class="wiki-btn primary" onclick="addExplanation()">💡 Add Connection</button>
+</div>
     `;
   }
 }

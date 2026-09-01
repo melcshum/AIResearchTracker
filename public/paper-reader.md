@@ -3,61 +3,61 @@ title: "Paper Reader"
 ---
 
 <div class="reader-container">
-  <!-- Reader Header -->
-  <div class="reader-header">
-    <div class="reader-controls">
-      <button id="backBtn" class="btn-icon" title="Back to Workspace">← Back</button>
-      <div class="reader-title" id="paperTitle">Select a paper to read</div>
-      <div class="reader-actions">
-        <button id="bookmarkBtn" class="btn-icon" title="Bookmark">🔖</button>
-        <button id="highlightBtn" class="btn-icon" title="Highlight">🖍️</button>
-        <button id="noteBtn" class="btn-icon" title="Add Note">📝</button>
-        <button id="questionBtn" class="btn-icon" title="Add Question">❓</button>
-        <button id="conceptValidationBtn" class="btn-icon" title="Validate AI Concepts">🧠</button>
-        <button id="feedbackBtn" class="btn-icon" title="Rate AI Summary">⭐</button>
-        <button id="exportAnnotationsBtn" class="btn-icon" title="Export Annotations">💾</button>
-        <button id="fullScreenBtn" class="btn-icon" title="Full Screen">⛶</button>
-      </div>
-    </div>
-  </div>
+<!-- Reader Header -->
+<div class="reader-header">
+<div class="reader-controls">
+<button id="backBtn" class="btn-icon" title="Back to Workspace">← Back</button>
+<div class="reader-title" id="paperTitle">Select a paper to read</div>
+<div class="reader-actions">
+<button id="bookmarkBtn" class="btn-icon" title="Bookmark">🔖</button>
+<button id="highlightBtn" class="btn-icon" title="Highlight">🖍️</button>
+<button id="noteBtn" class="btn-icon" title="Add Note">📝</button>
+<button id="questionBtn" class="btn-icon" title="Add Question">❓</button>
+<button id="conceptValidationBtn" class="btn-icon" title="Validate AI Concepts">🧠</button>
+<button id="feedbackBtn" class="btn-icon" title="Rate AI Summary">⭐</button>
+<button id="exportAnnotationsBtn" class="btn-icon" title="Export Annotations">💾</button>
+<button id="fullScreenBtn" class="btn-icon" title="Full Screen">⛶</button>
+</div>
+</div>
+</div>
 
-  <!-- Reader Content -->
-  <div class="reader-content">
-    <!-- Left Sidebar: Table of Contents -->
-    <aside class="reader-sidebar" id="tocSidebar">
-      <h3>📑 Contents</h3>
-      <nav id="tableOfContents"></nav>
-    </aside>
+<!-- Reader Content -->
+<div class="reader-content">
+<!-- Left Sidebar: Table of Contents -->
+<aside class="reader-sidebar" id="tocSidebar">
+<h3>📑 Contents</h3>
+<nav id="tableOfContents"></nav>
+</aside>
 
-    <!-- Main Reading Area -->
-    <main class="reader-main" id="readingArea">
-      <div class="paper-metadata" id="paperMetadata"></div>
-      <div class="paper-content" id="paperContent">
-        <div class="empty-state">
-          <h2>📖 Ready to Read</h2>
-          <p>Select a paper from your reading queue or search to begin</p>
-          <button onclick="window.location.href='workspace.html'" class="btn-primary">Go to Workspace</button>
-        </div>
-      </div>
-    </main>
+<!-- Main Reading Area -->
+<main class="reader-main" id="readingArea">
+<div class="paper-metadata" id="paperMetadata"></div>
+<div class="paper-content" id="paperContent">
+<div class="empty-state">
+<h2>📖 Ready to Read</h2>
+<p>Select a paper from your reading queue or search to begin</p>
+<button onclick="window.location.href='workspace.html'" class="btn-primary">Go to Workspace</button>
+</div>
+</div>
+</main>
 
-    <!-- Right Sidebar: Annotations -->
-    <aside class="reader-sidebar" id="annotationsSidebar">
-      <h3>📝 Annotations</h3>
-      <div class="annotations-list" id="annotationsList">
-        <div class="empty-annotations">
-          <p>No annotations yet</p>
-          <p class="hint">Select text to highlight or add notes</p>
-        </div>
-      </div>
-    </aside>
-  </div>
+<!-- Right Sidebar: Annotations -->
+<aside class="reader-sidebar" id="annotationsSidebar">
+<h3>📝 Annotations</h3>
+<div class="annotations-list" id="annotationsList">
+<div class="empty-annotations">
+<p>No annotations yet</p>
+<p class="hint">Select text to highlight or add notes</p>
+</div>
+</div>
+</aside>
+</div>
 
-  <!-- Reading Progress Bar -->
-  <div class="reading-progress-bar">
-    <div class="progress-fill" id="progressFill"></div>
-    <span class="progress-text" id="progressText">0%</span>
-  </div>
+<!-- Reading Progress Bar -->
+<div class="reading-progress-bar">
+<div class="progress-fill" id="progressFill"></div>
+<span class="progress-text" id="progressText">0%</span>
+</div>
 </div>
 
 <style>
@@ -724,29 +724,29 @@ function displayPaper(paper) {
   
   // Display metadata
   const metadataHtml = `
-    <h1>${paper.title}</h1>
-    <div class="authors">${paper.authors || 'Unknown authors'}</div>
-    <div class="date">📅 ${paper.date || 'Unknown date'}</div>
-    <div class="abstract">
-      <strong>Abstract:</strong>
-      <p>${paper.abstract || 'No abstract available'}</p>
-    </div>
+<h1>${paper.title}</h1>
+<div class="authors">${paper.authors || 'Unknown authors'}</div>
+<div class="date">📅 ${paper.date || 'Unknown date'}</div>
+<div class="abstract">
+<strong>Abstract:</strong>
+<p>${paper.abstract || 'No abstract available'}</p>
+</div>
   `;
   document.getElementById('paperMetadata').innerHTML = metadataHtml;
   
   // Display content (in real implementation, this would load the full paper markdown)
   const contentHtml = `
-    <h2>Introduction</h2>
-    <p>${paper.abstract || 'Paper content would be loaded here...'}</p>
+<h2>Introduction</h2>
+<p>${paper.abstract || 'Paper content would be loaded here...'}</p>
     
-    <h2>Methodology</h2>
-    <p>Detailed methodology section would appear here with full paper content.</p>
+<h2>Methodology</h2>
+<p>Detailed methodology section would appear here with full paper content.</p>
     
-    <h2>Results</h2>
-    <p>Results and findings would be displayed here.</p>
+<h2>Results</h2>
+<p>Results and findings would be displayed here.</p>
     
-    <h2>Conclusion</h2>
-    <p>Conclusion and future work would be shown here.</p>
+<h2>Conclusion</h2>
+<p>Conclusion and future work would be shown here.</p>
   `;
   document.getElementById('paperContent').innerHTML = contentHtml;
   
@@ -813,9 +813,9 @@ function showContextMenu() {
     menu.id = 'contextMenu';
     menu.className = 'context-menu';
     menu.innerHTML = `
-      <button onclick="addHighlight()">🖍️ Highlight</button>
-      <button onclick="addNote()">📝 Add Note</button>
-      <button onclick="addQuestion()">❓ Add Question</button>
+<button onclick="addHighlight()">🖍️ Highlight</button>
+<button onclick="addNote()">📝 Add Note</button>
+<button onclick="addQuestion()">❓ Add Question</button>
     `;
     document.body.appendChild(menu);
   }
@@ -909,23 +909,23 @@ function displayAnnotations() {
   
   if (annotations.length === 0) {
     list.innerHTML = `
-      <div class="empty-annotations">
-        <p>No annotations yet</p>
-        <p class="hint">Select text to highlight or add notes</p>
-      </div>
+<div class="empty-annotations">
+<p>No annotations yet</p>
+<p class="hint">Select text to highlight or add notes</p>
+</div>
     `;
     return;
   }
   
   list.innerHTML = annotations.map(ann => `
-    <div class="annotation-item ${ann.type}">
-      <div class="annotation-text">"${ann.text}"</div>
+<div class="annotation-item ${ann.type}">
+<div class="annotation-text">"${ann.text}"</div>
       ${ann.note ? `<div class="annotation-note">${ann.note}</div>` : ''}
-      <div class="annotation-actions">
-        <button onclick="editAnnotation(${ann.id})">Edit</button>
-        <button onclick="deleteAnnotation(${ann.id})">Delete</button>
-      </div>
-    </div>
+<div class="annotation-actions">
+<button onclick="editAnnotation(${ann.id})">Edit</button>
+<button onclick="deleteAnnotation(${ann.id})">Delete</button>
+</div>
+</div>
   `).join('');
 }
 
@@ -997,76 +997,76 @@ function showFeedbackModal() {
   const modal = document.createElement('div');
   modal.className = 'modal show';
   modal.innerHTML = `
-    <div class="modal-content feedback-modal">
-      <span class="modal-close" onclick="closeFeedbackModal()">&times;</span>
-      <h2>⭐ Rate AI Summary</h2>
-      <p>Help us improve AI-generated summaries by providing feedback</p>
+<div class="modal-content feedback-modal">
+<span class="modal-close" onclick="closeFeedbackModal()">&times;</span>
+<h2>⭐ Rate AI Summary</h2>
+<p>Help us improve AI-generated summaries by providing feedback</p>
       
-      <div class="feedback-section">
-        <h3>Summary Quality</h3>
-        <div class="rating-stars" data-rating="summary">
-          <span class="star" data-value="1">★</span>
-          <span class="star" data-value="2">★</span>
-          <span class="star" data-value="3">★</span>
-          <span class="star" data-value="4">★</span>
-          <span class="star" data-value="5">★</span>
-        </div>
-      </div>
+<div class="feedback-section">
+<h3>Summary Quality</h3>
+<div class="rating-stars" data-rating="summary">
+<span class="star" data-value="1">★</span>
+<span class="star" data-value="2">★</span>
+<span class="star" data-value="3">★</span>
+<span class="star" data-value="4">★</span>
+<span class="star" data-value="5">★</span>
+</div>
+</div>
 
-      <div class="feedback-section">
-        <h3>Accuracy</h3>
-        <div class="accuracy-options">
-          <label class="radio-option">
-            <input type="radio" name="accuracy" value="accurate">
-            <span>✓ Accurate - captures key points well</span>
-          </label>
-          <label class="radio-option">
-            <input type="radio" name="accuracy" value="partially">
-            <span>◐ Partially accurate - misses some details</span>
-          </label>
-          <label class="radio-option">
-            <input type="radio" name="accuracy" value="inaccurate">
-            <span>✗ Inaccurate - misrepresents content</span>
-          </label>
-        </div>
-      </div>
+<div class="feedback-section">
+<h3>Accuracy</h3>
+<div class="accuracy-options">
+<label class="radio-option">
+<input type="radio" name="accuracy" value="accurate">
+<span>✓ Accurate - captures key points well</span>
+</label>
+<label class="radio-option">
+<input type="radio" name="accuracy" value="partially">
+<span>◐ Partially accurate - misses some details</span>
+</label>
+<label class="radio-option">
+<input type="radio" name="accuracy" value="inaccurate">
+<span>✗ Inaccurate - misrepresents content</span>
+</label>
+</div>
+</div>
 
-      <div class="feedback-section">
-        <h3>What could be improved?</h3>
-        <div class="improvement-tags">
-          <label class="tag-option">
-            <input type="checkbox" value="too-brief">
-            <span>Too brief</span>
-          </label>
-          <label class="tag-option">
-            <input type="checkbox" value="too-verbose">
-            <span>Too verbose</span>
-          </label>
-          <label class="tag-option">
-            <input type="checkbox" value="missing-methods">
-            <span>Missing methods</span>
-          </label>
-          <label class="tag-option">
-            <input type="checkbox" value="missing-results">
-            <span>Missing results</span>
-          </label>
-          <label class="tag-option">
-            <input type="checkbox" value="unclear">
-            <span>Unclear language</span>
-          </label>
-        </div>
-      </div>
+<div class="feedback-section">
+<h3>What could be improved?</h3>
+<div class="improvement-tags">
+<label class="tag-option">
+<input type="checkbox" value="too-brief">
+<span>Too brief</span>
+</label>
+<label class="tag-option">
+<input type="checkbox" value="too-verbose">
+<span>Too verbose</span>
+</label>
+<label class="tag-option">
+<input type="checkbox" value="missing-methods">
+<span>Missing methods</span>
+</label>
+<label class="tag-option">
+<input type="checkbox" value="missing-results">
+<span>Missing results</span>
+</label>
+<label class="tag-option">
+<input type="checkbox" value="unclear">
+<span>Unclear language</span>
+</label>
+</div>
+</div>
 
-      <div class="feedback-section">
-        <h3>Additional Comments (Optional)</h3>
-        <textarea id="feedbackComments" placeholder="Share specific feedback about the summary..."></textarea>
-      </div>
+<div class="feedback-section">
+<h3>Additional Comments (Optional)</h3>
+<textarea id="feedbackComments" placeholder="Share specific feedback about the summary..."></textarea>
+</div>
 
-      <div class="feedback-actions">
-        <button class="btn-secondary" onclick="closeFeedbackModal()">Cancel</button>
-        <button class="btn-primary" onclick="submitFeedback()">Submit Feedback</button>
-      </div>
-    </div>
+<div class="feedback-actions">
+<button class="btn-secondary" onclick="closeFeedbackModal()">Cancel</button>
+<button class="btn-primary" onclick="submitFeedback()">Submit Feedback</button>
+</div>
+</div>
   `;
   
   document.body.appendChild(modal);
@@ -1313,35 +1313,35 @@ function showConceptValidation() {
   const modal = document.createElement('div');
   modal.className = 'modal show';
   modal.innerHTML = `
-    <div class="modal-content concept-validation-modal">
-      <span class="modal-close" onclick="closeConceptValidation()">&times;</span>
-      <h2>🧠 Validate AI-Extracted Concepts</h2>
-      <p>Help improve concept extraction by confirming or rejecting detected concepts</p>
+<div class="modal-content concept-validation-modal">
+<span class="modal-close" onclick="closeConceptValidation()">&times;</span>
+<h2>🧠 Validate AI-Extracted Concepts</h2>
+<p>Help improve concept extraction by confirming or rejecting detected concepts</p>
       
-      <div class="concept-validation-list">
+<div class="concept-validation-list">
         ${concepts.map((concept, idx) => `
-          <div class="concept-validation-item" data-concept="${concept.name}" data-index="${idx}">
-            <div class="concept-info">
-              <strong>${concept.name}</strong>
-              <span class="concept-confidence">${concept.confidence}% confidence</span>
-            </div>
-            <div class="concept-actions">
-              <button class="btn-validate btn-confirm" onclick="validateConcept(${idx}, true)">✓ Confirm</button>
-              <button class="btn-validate btn-reject" onclick="validateConcept(${idx}, false)">✗ Reject</button>
-            </div>
-          </div>
+<div class="concept-validation-item" data-concept="${concept.name}" data-index="${idx}">
+<div class="concept-info">
+<strong>${concept.name}</strong>
+<span class="concept-confidence">${concept.confidence}% confidence</span>
+</div>
+<div class="concept-actions">
+<button class="btn-validate btn-confirm" onclick="validateConcept(${idx}, true)">✓ Confirm</button>
+<button class="btn-validate btn-reject" onclick="validateConcept(${idx}, false)">✗ Reject</button>
+</div>
+</div>
         `).join('')}
-      </div>
+</div>
 
-      <div class="validation-summary">
-        <p><strong>Progress:</strong> <span id="validationProgress">0</span> / ${concepts.length} validated</p>
-      </div>
+<div class="validation-summary">
+<p><strong>Progress:</strong> <span id="validationProgress">0</span> / ${concepts.length} validated</p>
+</div>
 
-      <div class="feedback-actions">
-        <button class="btn-secondary" onclick="closeConceptValidation()">Close</button>
-        <button class="btn-primary" onclick="saveConceptValidation()">Save All</button>
-      </div>
-    </div>
+<div class="feedback-actions">
+<button class="btn-secondary" onclick="closeConceptValidation()">Close</button>
+<button class="btn-primary" onclick="saveConceptValidation()">Save All</button>
+</div>
+</div>
   `;
   
   document.body.appendChild(modal);
@@ -1449,15 +1449,15 @@ function addRecommendationRating(paperId) {
   const ratingContainer = document.createElement('div');
   ratingContainer.className = 'recommendation-rating';
   ratingContainer.innerHTML = `
-    <p>Was this recommendation helpful?</p>
-    <div class="rating-buttons">
-      <button class="btn-rate btn-thumbs-up" onclick="rateRecommendation('${paperId}', true)">👍 Yes</button>
-      <button class="btn-rate btn-thumbs-down" onclick="rateRecommendation('${paperId}', false)">👎 No</button>
-    </div>
-    <div class="rating-feedback" style="display: none;">
-      <textarea placeholder="Why? (optional)" rows="2"></textarea>
-      <button class="btn-small" onclick="submitRatingFeedback('${paperId}')">Submit</button>
-    </div>
+<p>Was this recommendation helpful?</p>
+<div class="rating-buttons">
+<button class="btn-rate btn-thumbs-up" onclick="rateRecommendation('${paperId}', true)">👍 Yes</button>
+<button class="btn-rate btn-thumbs-down" onclick="rateRecommendation('${paperId}', false)">👎 No</button>
+</div>
+<div class="rating-feedback" style="display: none;">
+<textarea placeholder="Why? (optional)" rows="2"></textarea>
+<button class="btn-small" onclick="submitRatingFeedback('${paperId}')">Submit</button>
+</div>
   `;
   return ratingContainer;
 }

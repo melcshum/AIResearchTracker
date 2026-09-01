@@ -336,17 +336,17 @@ function renderTopicProgress() {
   });
   
   container.innerHTML = topicStats.map(stat => `
-    <div class="topic-card">
-      <div class="topic-name">${stat.name}</div>
-      <div class="topic-stats">
-        <span>${stat.saved} saved</span>
-        <span>${stat.read} read</span>
-        <span>${stat.total} available</span>
-      </div>
-      <div class="progress-bar">
-        <div class="progress-fill" style="width: ${stat.progress}%"></div>
-      </div>
-    </div>
+<div class="topic-card">
+<div class="topic-name">${stat.name}</div>
+<div class="topic-stats">
+<span>${stat.saved} saved</span>
+<span>${stat.read} read</span>
+<span>${stat.total} available</span>
+</div>
+<div class="progress-bar">
+<div class="progress-fill" style="width: ${stat.progress}%"></div>
+</div>
+</div>
   `).join('');
 }
 
@@ -362,13 +362,13 @@ function renderRecentBookmarks() {
   const papers = recent.map(id => allPapers.find(p => p.arxiv_id === id)).filter(p => p);
   
   container.innerHTML = papers.map(paper => `
-    <div class="recent-paper">
-      <div class="recent-paper-info">
-        <div class="recent-paper-title">${paper.title}</div>
-        <div class="recent-paper-meta">${paper.authors} • ${paper.date}</div>
-      </div>
-      <a href="${paper.url}" class="recent-paper-action">Read →</a>
-    </div>
+<div class="recent-paper">
+<div class="recent-paper-info">
+<div class="recent-paper-title">${paper.title}</div>
+<div class="recent-paper-meta">${paper.authors} • ${paper.date}</div>
+</div>
+<a href="${paper.url}" class="recent-paper-action">Read →</a>
+</div>
   `).join('');
 }
 
@@ -390,13 +390,13 @@ function renderRecentNotes() {
     const preview = note.length > 100 ? note.substring(0, 100) + '...' : note;
     
     return `
-      <div class="recent-paper">
-        <div class="recent-paper-info">
-          <div class="recent-paper-title">${paper.title}</div>
-          <div class="recent-paper-meta">${preview}</div>
-        </div>
-        <a href="${paper.url}" class="recent-paper-action">View →</a>
-      </div>
+<div class="recent-paper">
+<div class="recent-paper-info">
+<div class="recent-paper-title">${paper.title}</div>
+<div class="recent-paper-meta">${preview}</div>
+</div>
+<a href="${paper.url}" class="recent-paper-action">View →</a>
+</div>
     `;
   }).join('');
 }
@@ -428,9 +428,9 @@ function renderReadingActivity() {
   container.innerHTML = activity.map(a => {
     const height = (a.count / maxCount) * 100;
     return `
-      <div class="activity-bar" style="height: ${height}%" title="${a.count} papers on ${a.date}">
-        <div class="activity-bar-label">${a.label}</div>
-      </div>
+<div class="activity-bar" style="height: ${height}%" title="${a.count} papers on ${a.date}">
+<div class="activity-bar-label">${a.label}</div>
+</div>
     `;
   }).join('');
 }

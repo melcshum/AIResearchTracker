@@ -7,121 +7,121 @@ title: "Export & Import"
 Backup your research data, share curated lists, or import from other systems.
 
 <div class="export-import-container">
-  <div class="section">
-    <h2>📤 Export Your Data</h2>
-    <p>Download your bookmarks, notes, summaries, and reading progress in various formats.</p>
+<div class="section">
+<h2>📤 Export Your Data</h2>
+<p>Download your bookmarks, notes, summaries, and reading progress in various formats.</p>
     
-    <div class="export-options">
-      <div class="export-card">
-        <div class="export-icon">📋</div>
-        <h3>Export Bookmarks</h3>
-        <p>Export all your bookmarked papers with metadata</p>
-        <div class="export-buttons">
-          <button onclick="exportBookmarks('json')" class="btn-primary">JSON</button>
-          <button onclick="exportBookmarks('csv')" class="btn-secondary">CSV</button>
-          <button onclick="exportBookmarks('markdown')" class="btn-secondary">Markdown</button>
-        </div>
-      </div>
+<div class="export-options">
+<div class="export-card">
+<div class="export-icon">📋</div>
+<h3>Export Bookmarks</h3>
+<p>Export all your bookmarked papers with metadata</p>
+<div class="export-buttons">
+<button onclick="exportBookmarks('json')" class="btn-primary">JSON</button>
+<button onclick="exportBookmarks('csv')" class="btn-secondary">CSV</button>
+<button onclick="exportBookmarks('markdown')" class="btn-secondary">Markdown</button>
+</div>
+</div>
       
-      <div class="export-card">
-        <div class="export-icon">📝</div>
-        <h3>Export Notes</h3>
-        <p>Export all your paper notes and annotations</p>
-        <div class="export-buttons">
-          <button onclick="exportNotes('json')" class="btn-primary">JSON</button>
-          <button onclick="exportNotes('markdown')" class="btn-secondary">Markdown</button>
-        </div>
-      </div>
+<div class="export-card">
+<div class="export-icon">📝</div>
+<h3>Export Notes</h3>
+<p>Export all your paper notes and annotations</p>
+<div class="export-buttons">
+<button onclick="exportNotes('json')" class="btn-primary">JSON</button>
+<button onclick="exportNotes('markdown')" class="btn-secondary">Markdown</button>
+</div>
+</div>
       
-      <div class="export-card">
-        <div class="export-icon">🤖</div>
-        <h3>Export AI Summaries</h3>
-        <p>Export all AI-generated paper summaries</p>
-        <div class="export-buttons">
-          <button onclick="exportSummaries('json')" class="btn-primary">JSON</button>
-          <button onclick="exportSummaries('markdown')" class="btn-secondary">Markdown</button>
-        </div>
-      </div>
+<div class="export-card">
+<div class="export-icon">🤖</div>
+<h3>Export AI Summaries</h3>
+<p>Export all AI-generated paper summaries</p>
+<div class="export-buttons">
+<button onclick="exportSummaries('json')" class="btn-primary">JSON</button>
+<button onclick="exportSummaries('markdown')" class="btn-secondary">Markdown</button>
+</div>
+</div>
       
-      <div class="export-card">
-        <div class="export-icon">📊</div>
-        <h3>Export Reading Progress</h3>
-        <p>Export your reading status and progress tracking</p>
-        <div class="export-buttons">
-          <button onclick="exportProgress('json')" class="btn-primary">JSON</button>
-          <button onclick="exportProgress('csv')" class="btn-secondary">CSV</button>
-        </div>
-      </div>
+<div class="export-card">
+<div class="export-icon">📊</div>
+<h3>Export Reading Progress</h3>
+<p>Export your reading status and progress tracking</p>
+<div class="export-buttons">
+<button onclick="exportProgress('json')" class="btn-primary">JSON</button>
+<button onclick="exportProgress('csv')" class="btn-secondary">CSV</button>
+</div>
+</div>
       
-      <div class="export-card full-width">
-        <div class="export-icon">💾</div>
-        <h3>Export Complete Backup</h3>
-        <p>Export everything: bookmarks, notes, summaries, progress, and topics</p>
-        <div class="export-buttons">
-          <button onclick="exportCompleteBackup()" class="btn-primary">Download Full Backup (JSON)</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="export-card full-width">
+<div class="export-icon">💾</div>
+<h3>Export Complete Backup</h3>
+<p>Export everything: bookmarks, notes, summaries, progress, and topics</p>
+<div class="export-buttons">
+<button onclick="exportCompleteBackup()" class="btn-primary">Download Full Backup (JSON)</button>
+</div>
+</div>
+</div>
+</div>
   
-  <div class="section">
-    <h2>📥 Import Data</h2>
-    <p>Import data from a backup file or from other systems.</p>
+<div class="section">
+<h2>📥 Import Data</h2>
+<p>Import data from a backup file or from other systems.</p>
     
-    <div class="import-options">
-      <div class="import-card">
-        <div class="import-icon">💾</div>
-        <h3>Import Complete Backup</h3>
-        <p>Restore from a complete backup file</p>
-        <input type="file" id="importBackup" accept=".json" onchange="importCompleteBackup(event)" class="file-input">
-        <label for="importBackup" class="file-label">Choose File</label>
-      </div>
+<div class="import-options">
+<div class="import-card">
+<div class="import-icon">💾</div>
+<h3>Import Complete Backup</h3>
+<p>Restore from a complete backup file</p>
+<input type="file" id="importBackup" accept=".json" onchange="importCompleteBackup(event)" class="file-input">
+<label for="importBackup" class="file-label">Choose File</label>
+</div>
       
-      <div class="import-card">
-        <div class="import-icon">📋</div>
-        <h3>Import Bookmarks</h3>
-        <p>Import bookmarks from JSON or CSV file</p>
-        <input type="file" id="importBookmarks" accept=".json,.csv" onchange="importBookmarks(event)" class="file-input">
-        <label for="importBookmarks" class="file-label">Choose File</label>
-      </div>
+<div class="import-card">
+<div class="import-icon">📋</div>
+<h3>Import Bookmarks</h3>
+<p>Import bookmarks from JSON or CSV file</p>
+<input type="file" id="importBookmarks" accept=".json,.csv" onchange="importBookmarks(event)" class="file-input">
+<label for="importBookmarks" class="file-label">Choose File</label>
+</div>
       
-      <div class="import-card">
-        <div class="import-icon">📝</div>
-        <h3>Import Notes</h3>
-        <p>Import notes from JSON or Markdown file</p>
-        <input type="file" id="importNotes" accept=".json,.md" onchange="importNotes(event)" class="file-input">
-        <label for="importNotes" class="file-label">Choose File</label>
-      </div>
-    </div>
-  </div>
+<div class="import-card">
+<div class="import-icon">📝</div>
+<h3>Import Notes</h3>
+<p>Import notes from JSON or Markdown file</p>
+<input type="file" id="importNotes" accept=".json,.md" onchange="importNotes(event)" class="file-input">
+<label for="importNotes" class="file-label">Choose File</label>
+</div>
+</div>
+</div>
   
-  <div class="section">
-    <h2>🔗 Integration Options</h2>
-    <p>Export data in formats compatible with popular research tools.</p>
+<div class="section">
+<h2>🔗 Integration Options</h2>
+<p>Export data in formats compatible with popular research tools.</p>
     
-    <div class="integration-options">
-      <div class="integration-card">
-        <div class="integration-icon">📚</div>
-        <h3>Zotero Export</h3>
-        <p>Export bookmarks in BibTeX format for Zotero</p>
-        <button onclick="exportToZotero()" class="btn-secondary">Export BibTeX</button>
-      </div>
+<div class="integration-options">
+<div class="integration-card">
+<div class="integration-icon">📚</div>
+<h3>Zotero Export</h3>
+<p>Export bookmarks in BibTeX format for Zotero</p>
+<button onclick="exportToZotero()" class="btn-secondary">Export BibTeX</button>
+</div>
       
-      <div class="integration-card">
-        <div class="integration-icon">📓</div>
-        <h3>Notion Export</h3>
-        <p>Export data in Notion-compatible format</p>
-        <button onclick="exportToNotion()" class="btn-secondary">Export for Notion</button>
-      </div>
+<div class="integration-card">
+<div class="integration-icon">📓</div>
+<h3>Notion Export</h3>
+<p>Export data in Notion-compatible format</p>
+<button onclick="exportToNotion()" class="btn-secondary">Export for Notion</button>
+</div>
       
-      <div class="integration-card">
-        <div class="integration-icon">📊</div>
-        <h3>Spreadsheet Export</h3>
-        <p>Export all data as CSV for Excel/Google Sheets</p>
-        <button onclick="exportToSpreadsheet()" class="btn-secondary">Export CSV</button>
-      </div>
-    </div>
-  </div>
+<div class="integration-card">
+<div class="integration-icon">📊</div>
+<h3>Spreadsheet Export</h3>
+<p>Export all data as CSV for Excel/Google Sheets</p>
+<button onclick="exportToSpreadsheet()" class="btn-secondary">Export CSV</button>
+</div>
+</div>
+</div>
 </div>
 
 <style>

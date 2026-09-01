@@ -723,14 +723,14 @@ function selectNode(d) {
   ).length;
 
   details.innerHTML = `
-    <div class="kg-detail-title">${d.label}</div>
-    <span class="kg-detail-type ${d.type}">${d.type.toUpperCase()}</span>
-    <div class="kg-detail-def">${d.definition || 'No description available'}</div>
-    <div class="kg-detail-meta">
+<div class="kg-detail-title">${d.label}</div>
+<span class="kg-detail-type ${d.type}">${d.type.toUpperCase()}</span>
+<div class="kg-detail-def">${d.definition || 'No description available'}</div>
+<div class="kg-detail-meta">
       ${d.arxiv ? `<div>📄 arXiv: <a href="papers/2026-08-31/${d.arxiv}*.html" target="_blank">${d.arxiv}</a></div>` : ''}
-      <div>🔗 ${connCount} connections</div>
-      <div>📏 Radius: ${Math.round(nodeRadius(d))}px</div>
-    </div>
+<div>🔗 ${connCount} connections</div>
+<div>📏 Radius: ${Math.round(nodeRadius(d))}px</div>
+</div>
   `;
 
   // Update connections panel
@@ -747,10 +747,10 @@ function selectNode(d) {
       const other = graphNodes.find(n => n.id === otherId);
       const direction = sid === d.id ? '→' : '←';
       return `
-        <div class="kg-conn-item" onclick="focusNode('${otherId}')">
-          <div class="kg-conn-title">${direction} ${other ? other.label : otherId}</div>
-          <div class="kg-conn-rel">${l.strength} link · ${other ? other.type : ''}</div>
-        </div>
+<div class="kg-conn-item" onclick="focusNode('${otherId}')">
+<div class="kg-conn-title">${direction} ${other ? other.label : otherId}</div>
+<div class="kg-conn-rel">${l.strength} link · ${other ? other.type : ''}</div>
+</div>
       `;
     }).join('');
   } else {
@@ -895,9 +895,9 @@ function buildNavigateList() {
   const sorted = [...graphNodes].sort((a, b) => a.label.localeCompare(b.label));
 
   navList.innerHTML = sorted.map(n => `
-    <div class="kg-nav-item" onclick="focusNode('${n.id}')">
+<div class="kg-nav-item" onclick="focusNode('${n.id}')">
       ${n.type === 'term' ? '📚' : n.type === 'paper' ? '📄' : '🏷️'} ${n.label}
-    </div>
+</div>
   `).join('');
 }
 
