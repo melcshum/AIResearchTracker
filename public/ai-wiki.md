@@ -557,6 +557,227 @@ title: "AI Wiki - Knowledge Base"
   font-weight: 600;
 }
 
+/* Phase 3: User Contributions Styles */
+.btn-contribute {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-contribute:hover {
+  background: #45a049;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.contributions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contribution-item {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.2s;
+}
+
+.contribution-item:hover {
+  border-color: #2c5aa0;
+  box-shadow: 0 2px 8px rgba(44, 90, 160, 0.1);
+}
+
+.contribution-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.contribution-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.contribution-type-badge {
+  background: #2c5aa0;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.contribution-date {
+  color: #7f8c8d;
+  font-size: 13px;
+}
+
+.contribution-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-upvote {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #4caf50;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-upvote:hover {
+  background: #c8e6c9;
+  transform: translateY(-1px);
+}
+
+.btn-delete {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef5350;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-delete:hover {
+  background: #ffcdd2;
+  transform: translateY(-1px);
+}
+
+.contribution-content {
+  color: #2c3e50;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  white-space: pre-wrap;
+}
+
+.contribution-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.no-contributions {
+  text-align: center;
+  color: #7f8c8d;
+  font-style: italic;
+  padding: 20px;
+}
+
+/* Contribution Form Styles */
+.contribution-form {
+  background: #fff3e0;
+  border: 2px solid #ff9800;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.contribution-form h4 {
+  margin: 0 0 16px 0;
+  color: #f57c00;
+  font-size: 18px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-group select,
+.form-group textarea,
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-group select:focus,
+.form-group textarea:focus,
+.form-group input:focus {
+  outline: none;
+  border-color: #2c5aa0;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.btn-save {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-save:hover {
+  background: #45a049;
+}
+
+.btn-cancel {
+  background: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-cancel:hover {
+  background: #d0d0d0;
+}
+
 .concept-editor {
   margin-top: 15px;
   border: 2px solid #e0e0e0;
@@ -1111,6 +1332,18 @@ function showConceptDetail(conceptName) {
         ${concept.papers.length > 10 ? `<p style="color: #7f8c8d; text-align: center;">... and ${concept.papers.length - 10} more papers</p>` : ''}
       </div>
     </div>
+
+    <div class="concept-detail-section">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <h3 style="margin: 0;">Community Contributions</h3>
+        <button onclick="showContributionForm('${conceptName}')" class="btn-contribute">
+          ➕ Add Contribution
+        </button>
+      </div>
+      <div id="contributionsList" class="contributions-list">
+        ${renderContributions(conceptName)}
+      </div>
+    </div>
   `;
   
   modal.classList.add('active');
@@ -1184,6 +1417,158 @@ function saveConceptEdit(conceptName) {
   
   // Refresh the concept detail to show the badge
   showConceptDetail(conceptName);
+}
+
+// Phase 3: User Contributions System
+function renderContributions(conceptName) {
+  const contributions = getContributions(conceptName);
+  
+  if (contributions.length === 0) {
+    return '<p class="no-contributions">No contributions yet. Be the first to share your insights!</p>';
+  }
+  
+  return contributions.map((contrib, index) => `
+    <div class="contribution-item" data-id="${contrib.id}">
+      <div class="contribution-header">
+        <div class="contribution-meta">
+          <span class="contribution-type-badge">${contrib.type}</span>
+          <span class="contribution-date">${new Date(contrib.timestamp).toLocaleDateString()}</span>
+        </div>
+        <div class="contribution-actions">
+          <button onclick="upvoteContribution('${conceptName}', ${contrib.id})" class="btn-upvote" title="Upvote">
+            👍 ${contrib.upvotes || 0}
+          </button>
+          <button onclick="deleteContribution('${conceptName}', ${contrib.id})" class="btn-delete" title="Delete">
+            🗑️
+          </button>
+        </div>
+      </div>
+      <div class="contribution-content">
+        ${contrib.content}
+      </div>
+      ${contrib.tags && contrib.tags.length > 0 ? `
+        <div class="contribution-tags">
+          ${contrib.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+        </div>
+      ` : ''}
+    </div>
+  `).join('');
+}
+
+function getContributions(conceptName) {
+  const key = `wiki_contributions_${conceptName}`;
+  return JSON.parse(localStorage.getItem(key) || '[]');
+}
+
+function saveContributions(conceptName, contributions) {
+  const key = `wiki_contributions_${conceptName}`;
+  localStorage.setItem(key, JSON.stringify(contributions));
+}
+
+function showContributionForm(conceptName) {
+  const formHtml = `
+    <div class="contribution-form">
+      <h4>Add Your Contribution</h4>
+      <div class="form-group">
+        <label>Type:</label>
+        <select id="contributionType">
+          <option value="explanation">💡 Explanation</option>
+          <option value="example">📝 Example</option>
+          <option value="insight">🔍 Insight</option>
+          <option value="question">❓ Question</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Content:</label>
+        <textarea id="contributionContent" rows="6" placeholder="Share your knowledge, example, or insight..."></textarea>
+      </div>
+      <div class="form-group">
+        <label>Tags (comma-separated, optional):</label>
+        <input type="text" id="contributionTags" placeholder="e.g., practical, advanced, beginner-friendly">
+      </div>
+      <div class="form-actions">
+        <button onclick="saveContribution('${conceptName}')" class="btn-save">💾 Save Contribution</button>
+        <button onclick="cancelContributionForm()" class="btn-cancel">❌ Cancel</button>
+      </div>
+    </div>
+  `;
+  
+  const contributionsList = document.getElementById('contributionsList');
+  contributionsList.insertAdjacentHTML('afterbegin', formHtml);
+  
+  // Hide the add button
+  const addBtn = contributionsList.parentElement.querySelector('.btn-contribute');
+  if (addBtn) addBtn.style.display = 'none';
+}
+
+function cancelContributionForm() {
+  const form = document.querySelector('.contribution-form');
+  if (form) form.remove();
+  
+  // Show the add button again
+  const addBtn = document.querySelector('.btn-contribute');
+  if (addBtn) addBtn.style.display = 'block';
+}
+
+function saveContribution(conceptName) {
+  const type = document.getElementById('contributionType').value;
+  const content = document.getElementById('contributionContent').value.trim();
+  const tagsInput = document.getElementById('contributionTags').value.trim();
+  
+  if (!content) {
+    alert('Please enter some content');
+    return;
+  }
+  
+  const tags = tagsInput ? tagsInput.split(',').map(t => t.trim()).filter(t => t) : [];
+  
+  const contribution = {
+    id: Date.now(),
+    type: type,
+    content: content,
+    tags: tags,
+    timestamp: new Date().toISOString(),
+    upvotes: 0
+  };
+  
+  const contributions = getContributions(conceptName);
+  contributions.unshift(contribution); // Add to beginning
+  saveContributions(conceptName, contributions);
+  
+  // Refresh the contributions list
+  document.getElementById('contributionsList').innerHTML = renderContributions(conceptName);
+  
+  showNotification('✓ Contribution added successfully!', 'success');
+}
+
+function deleteContribution(conceptName, contributionId) {
+  if (!confirm('Are you sure you want to delete this contribution?')) {
+    return;
+  }
+  
+  let contributions = getContributions(conceptName);
+  contributions = contributions.filter(c => c.id !== contributionId);
+  saveContributions(conceptName, contributions);
+  
+  // Refresh the contributions list
+  document.getElementById('contributionsList').innerHTML = renderContributions(conceptName);
+  
+  showNotification('✓ Contribution deleted', 'success');
+}
+
+function upvoteContribution(conceptName, contributionId) {
+  const contributions = getContributions(conceptName);
+  const contribution = contributions.find(c => c.id === contributionId);
+  
+  if (contribution) {
+    contribution.upvotes = (contribution.upvotes || 0) + 1;
+    saveContributions(conceptName, contributions);
+    
+    // Refresh the contributions list
+    document.getElementById('contributionsList').innerHTML = renderContributions(conceptName);
+    
+    showNotification('✓ Upvoted!', 'success');
+  }
 }
 
 // Ask AI to enhance the concept
