@@ -1,21 +1,61 @@
 /* AI Research Tracker - Global Styles */
 
-/* Override Quarto's default content width - make it wider */
-main.content, #quarto-document-content, .page-columns {
+/* Remove ALL width constraints - use full viewport */
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
   max-width: 100% !important;
+}
+
+html {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Override Quarto containers */
+.quarto-container,
+.quarto-content,
+#quarto-content,
+.page-columns,
+.page-layout-article,
+.page-layout-full,
+main.content,
+#quarto-document-content {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Override Bootstrap containers */
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl,
+.container-fluid {
+  max-width: 100% !important;
+  width: 100% !important;
   margin: 0 !important;
   padding: 0 2rem !important;
 }
 
-/* Override Bootstrap container width */
-.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+/* Navbar should be full width */
+.navbar {
   max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
   padding: 0 2rem !important;
 }
 
-/* Override grid column widths */
-.page-columns .page-columns-full {
-  grid-column: 1 / -1 !important;
+/* Content area */
+.content {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 2rem !important;
 }
 
 /* Base styles */
@@ -30,7 +70,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #1e3a8a;
 }
 
-/* Navbar */
+/* Navbar styling */
 .navbar {
   background: linear-gradient(135deg, #1e3a8a 0%, #0d9488 100%) !important;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -72,14 +112,6 @@ a {
 
 a:hover {
   color: #096b62;
-}
-
-/* Content */
-.content {
-  background: white;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 /* Paper cards */
