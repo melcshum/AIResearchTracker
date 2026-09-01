@@ -1,0 +1,47 @@
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  // Initialize Mermaid with startOnLoad disabled
+  mermaid.initialize({ 
+    startOnLoad: false,
+    theme: 'default',
+    securityLevel: 'loose'
+  });
+  
+  // Convert Quarto's mermaid code blocks and render them
+  document.addEventListener('DOMContentLoaded', async function() {
+    console.log('[Mermaid] Script starting...');
+    
+    try {
+      // Convert <pre class="mermaid"><code> to <div class="mermaid">
+      var mermaidDivs = [];
+      var preElements = document.querySelectorAll('pre.mermaid');
+      console.log('[Mermaid] Found', preElements.length, 'pre.mermaid elements');
+      
+      preElements.forEach(function(pre, index) {
+        var code = pre.querySelector('code');
+        if (code) {
+          var div = document.createElement('div');
+          div.className = 'mermaid';
+          div.textContent = code.textContent;
+          pre.parentNode.replaceChild(div, pre);
+          mermaidDivs.push(div);
+          console.log('[Mermaid] Converted diagram', index + 1, ':', code.textContent.substring(0, 50));
+        }
+      });
+      
+      // Render all converted diagrams
+      if (mermaidDivs.length > 0) {
+        console.log('[Mermaid] Rendering', mermaidDivs.length, 'diagrams...');
+        await mermaid.run({ 
+          nodes: mermaidDivs,
+          suppressErrors: false
+        });
+        console.log('[Mermaid] Rendering complete');
+      } else {
+        console.log('[Mermaid] No diagrams found to render');
+      }
+    } catch (error) {
+      console.error('[Mermaid] Error:', error);
+    }
+  });
+</script>

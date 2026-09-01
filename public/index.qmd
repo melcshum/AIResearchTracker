@@ -1,0 +1,411 @@
+---
+title: "AI Research Portal"
+---
+
+<div class="landing-container">
+
+<div class="landing-hero">
+<div class="hero-badge">🎓 Research Portal</div>
+<h1>AI Research Discovery</h1>
+<p class="hero-subtitle">Explore cutting-edge research in AI agents, reasoning, RAG, and multi-modal systems</p>
+<div class="hero-stats">
+<div class="stat">
+<div class="stat-value">77+</div>
+<div class="stat-label">Papers</div>
+</div>
+<div class="stat">
+<div class="stat-value">346</div>
+<div class="stat-label">Authors</div>
+</div>
+<div class="stat">
+<div class="stat-value">4</div>
+<div class="stat-label">Topics</div>
+</div>
+</div>
+</div>
+
+<div class="quick-actions">
+<a href="global-search.html" class="action-btn primary">
+<span class="action-icon">🔍</span>
+<span class="action-text">Search Papers</span>
+</a>
+<a href="reading-list.html" class="action-btn secondary">
+<span class="action-icon">📋</span>
+<span class="action-text">Reading List</span>
+</a>
+<a href="wiki.html" class="action-btn secondary">
+<span class="action-icon">🧠</span>
+<span class="action-text">Knowledge Wiki</span>
+</a>
+<a href="recommendations.html" class="action-btn secondary">
+<span class="action-icon">💡</span>
+<span class="action-text">Recommendations</span>
+</a>
+</div>
+
+<div class="content-grid">
+
+<div class="content-card featured">
+<div class="card-header">
+<h2>📚 Research Topics</h2>
+</div>
+<div class="topic-grid">
+<a href="topics/ai-agents.html" class="topic-card">
+<div class="topic-icon">🤖</div>
+<div class="topic-name">AI Agents</div>
+<div class="topic-desc">Autonomous systems & tool use</div>
+</a>
+<a href="topics/llm-reasoning.html" class="topic-card">
+<div class="topic-icon">🧠</div>
+<div class="topic-name">LLM Reasoning</div>
+<div class="topic-desc">Chain-of-thought & verification</div>
+</a>
+<a href="topics/rag-retrieval.html" class="topic-card">
+<div class="topic-icon">🔍</div>
+<div class="topic-name">RAG & Retrieval</div>
+<div class="topic-desc">Knowledge grounding & search</div>
+</a>
+<a href="topics/multi-modal.html" class="topic-card">
+<div class="topic-icon">🎬</div>
+<div class="topic-name">Multi-Modal</div>
+<div class="topic-desc">Vision-language & audio</div>
+</a>
+</div>
+</div>
+
+<div class="content-card">
+<div class="card-header">
+<h2>🔬 Research Tools</h2>
+</div>
+<div class="tool-list">
+<a href="search-papers.html" class="tool-item">
+<span class="tool-icon">📄</span>
+<span class="tool-name">Advanced Search</span>
+<span class="tool-desc">Full-text search with filters</span>
+</a>
+<a href="compare-papers.html" class="tool-item">
+<span class="tool-icon">⚖️</span>
+<span class="tool-name">Compare Papers</span>
+<span class="tool-desc">Side-by-side analysis</span>
+</a>
+<a href="tag-cloud.html" class="tool-item">
+<span class="tool-icon">🏷️</span>
+<span class="tool-name">Concept Explorer</span>
+<span class="tool-desc">Visual topic mapping</span>
+</a>
+<a href="authors.html" class="tool-item">
+<span class="tool-icon">👥</span>
+<span class="tool-name">Author Profiles</span>
+<span class="tool-desc">Researcher directory</span>
+</a>
+</div>
+</div>
+
+<div class="content-card">
+<div class="card-header">
+<h2>📊 Analytics & Insights</h2>
+</div>
+<div class="tool-list">
+<a href="statistics.html" class="tool-item">
+<span class="tool-icon">📈</span>
+<span class="tool-name">Research Statistics</span>
+<span class="tool-desc">Trends and patterns</span>
+</a>
+<a href="wiki-graph.html" class="tool-item">
+<span class="tool-icon">🕸️</span>
+<span class="tool-name">Knowledge Graph</span>
+<span class="tool-desc">Interactive concept map</span>
+</a>
+<a href="concept-explorer.html" class="tool-item">
+<span class="tool-icon">🗺️</span>
+<span class="tool-name">Concept Explorer</span>
+<span class="tool-desc">Topic relationships</span>
+</a>
+<a href="digests/index.html" class="tool-item">
+<span class="tool-icon">📰</span>
+<span class="tool-name">Weekly Digests</span>
+<span class="tool-desc">Curated summaries</span>
+</a>
+</div>
+</div>
+
+<div class="content-card">
+<div class="card-header">
+<h2>🎯 Learning Paths</h2>
+</div>
+<div class="tool-list">
+<a href="learning-paths.html" class="tool-item">
+<span class="tool-icon">🛤️</span>
+<span class="tool-name">Structured Learning</span>
+<span class="tool-desc">Guided research paths</span>
+</a>
+<a href="must-read-papers.html" class="tool-item">
+<span class="tool-icon">⭐</span>
+<span class="tool-name">Must-Read Papers</span>
+<span class="tool-desc">Essential research</span>
+</a>
+<a href="research-workflow.html" class="tool-item">
+<span class="tool-icon">🔄</span>
+<span class="tool-name">Research Workflow</span>
+<span class="tool-desc">Methodology guide</span>
+</a>
+<a href="rss.xml" class="tool-item">
+<span class="tool-icon">📡</span>
+<span class="tool-name">RSS Feed</span>
+<span class="tool-desc">Stay updated</span>
+</a>
+</div>
+</div>
+
+</div>
+
+<div class="landing-footer">
+<a href="../index.html" class="back-link">← Back to Home</a>
+<p>AI Research Tracker • Automated arXiv paper curation</p>
+</div>
+
+</div>
+
+<style>
+.landing-container {
+max-width: 1400px;
+margin: 0 auto;
+padding: 2rem;
+}
+
+.landing-hero {
+text-align: center;
+padding: 4rem 2rem;
+background: linear-gradient(135deg, #1e3a8a 0%, #0d9488 100%);
+border-radius: 16px;
+color: white;
+margin-bottom: 2rem;
+}
+
+.hero-badge {
+display: inline-block;
+padding: 0.5rem 1.5rem;
+background: rgba(255,255,255,0.2);
+border-radius: 20px;
+font-size: 0.9rem;
+font-weight: 600;
+margin-bottom: 1rem;
+}
+
+.landing-hero h1 {
+font-size: 3rem;
+margin: 0 0 1rem 0;
+font-weight: 700;
+font-family: Georgia, serif;
+}
+
+.hero-subtitle {
+font-size: 1.2rem;
+opacity: 0.95;
+margin: 0 0 2rem 0;
+}
+
+.hero-stats {
+display: flex;
+justify-content: center;
+gap: 3rem;
+}
+
+.stat {
+text-align: center;
+}
+
+.stat-value {
+font-size: 2.5rem;
+font-weight: 700;
+line-height: 1;
+}
+
+.stat-label {
+font-size: 0.9rem;
+opacity: 0.9;
+margin-top: 0.5rem;
+}
+
+.quick-actions {
+display: flex;
+gap: 1rem;
+margin-bottom: 2rem;
+flex-wrap: wrap;
+}
+
+.action-btn {
+flex: 1;
+min-width: 200px;
+padding: 1.5rem;
+border-radius: 12px;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 1rem;
+transition: all 0.3s ease;
+font-weight: 600;
+}
+
+.action-btn.primary {
+background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+color: white;
+}
+
+.action-btn.secondary {
+background: white;
+color: #1f2937;
+border: 2px solid #e5e7eb;
+}
+
+.action-btn:hover {
+transform: translateY(-4px);
+box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.action-icon {
+font-size: 2rem;
+}
+
+.content-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+gap: 1.5rem;
+margin-bottom: 2rem;
+}
+
+.content-card {
+background: white;
+border-radius: 12px;
+padding: 1.5rem;
+box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.content-card.featured {
+grid-column: 1 / -1;
+}
+
+.card-header h2 {
+font-size: 1.5rem;
+margin: 0 0 1rem 0;
+color: #1f2937;
+font-family: Georgia, serif;
+}
+
+.topic-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 1rem;
+}
+
+.topic-card {
+padding: 1.5rem;
+background: #f8fafc;
+border-radius: 8px;
+text-decoration: none;
+color: inherit;
+transition: all 0.2s ease;
+border: 2px solid transparent;
+text-align: center;
+}
+
+.topic-card:hover {
+background: #f0fdfa;
+border-color: #0d9488;
+transform: translateY(-2px);
+}
+
+.topic-icon {
+font-size: 2.5rem;
+margin-bottom: 0.5rem;
+}
+
+.topic-name {
+font-weight: 600;
+font-size: 1.1rem;
+margin-bottom: 0.25rem;
+}
+
+.topic-desc {
+font-size: 0.85rem;
+color: #6b7280;
+}
+
+.tool-list {
+display: flex;
+flex-direction: column;
+gap: 0.75rem;
+}
+
+.tool-item {
+display: flex;
+align-items: center;
+gap: 1rem;
+padding: 1rem;
+background: #f8fafc;
+border-radius: 8px;
+text-decoration: none;
+color: inherit;
+transition: all 0.2s ease;
+}
+
+.tool-item:hover {
+background: #f0f9ff;
+transform: translateX(4px);
+}
+
+.tool-icon {
+font-size: 1.5rem;
+}
+
+.tool-name {
+font-weight: 600;
+flex: 1;
+}
+
+.tool-desc {
+font-size: 0.85rem;
+color: #6b7280;
+}
+
+.landing-footer {
+text-align: center;
+padding: 2rem;
+color: #6b7280;
+}
+
+.back-link {
+display: inline-block;
+padding: 0.75rem 1.5rem;
+background: #f3f4f6;
+border-radius: 8px;
+text-decoration: none;
+color: #1f2937;
+font-weight: 600;
+margin-bottom: 1rem;
+transition: all 0.2s ease;
+}
+
+.back-link:hover {
+background: #e5e7eb;
+}
+
+@media (max-width: 768px) {
+.landing-hero h1 {
+  font-size: 2rem;
+}
+
+.hero-stats {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.quick-actions {
+  flex-direction: column;
+}
+
+.content-grid {
+  grid-template-columns: 1fr;
+}
+}
+</style>

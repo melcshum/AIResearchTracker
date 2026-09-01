@@ -1,0 +1,110 @@
+# AI Agents
+
+Recent papers on AI Agents.
+
+## Foundations
+
+### What is an AI Agent?
+
+An AI agent is an autonomous system that perceives its environment, reasons about how to achieve goals, and takes actions through tools or APIs. Unlike simple chatbots that respond to single prompts, agents:
+
+- **Maintain state** across multi-turn interactions and long-running tasks
+- **Use tools** — calling APIs, executing code, browsing the web, querying databases
+- **Plan multi-step actions** to decompose complex goals into tractable subtasks
+- **Learn from feedback** to improve performance over time
+
+### Core Components
+
+1. **Perception**: Processing inputs from text, images, structured data, or sensor streams
+2. **Reasoning & Planning**: Decomposing goals, evaluating alternatives, verifying intermediate results
+3. **Action**: Executing tool calls, generating outputs, controlling external systems
+4. **Memory**: Short-term (working context) and long-term (retrieved knowledge, learned skills)
+
+### Agent Architectures
+
+```{mermaid}
+graph LR
+    A[User Goal] --> B[Planning Module]
+    B --> C{Tool Selection}
+    C --> D[API Call]
+    C --> E[Code Execution]
+    C --> F[Web Search]
+    D --> G[Observation]
+    E --> G
+    F --> G
+    G --> B
+    B --> H[Final Answer]
+```
+
+- **ReAct**: Interleaved reasoning and acting — the agent thinks, acts, observes, then thinks again
+- **Tool-Use Agents**: LLMs that call external APIs, run code, or search the web as part of reasoning
+- **Multi-Agent Systems**: Multiple specialized agents collaborating through message-passing or shared memory
+- **Embodied Agents**: Agents operating in simulated or physical environments (GUI automation, robotics)
+- **World Models**: Internal simulations of environment dynamics for predictive planning without real-world interaction
+
+### Key Challenges
+
+- **Safety & Governance**: Ensuring agents act within policy boundaries when given broad capabilities
+- **Compositional Risk**: Benign subtasks reassembled across sessions can create harmful objectives
+- **Reliability**: Agents must handle tool failures, ambiguous inputs, and unexpected states gracefully
+- **Efficiency**: Minimizing token and compute costs while maintaining reasoning quality
+
+## Active Research Directions
+
+### World Models for Embodied Agents (Week 35)
+WM-R1 introduces latent world models for GUI agents, enabling predictive planning rather than reactive pattern-matching. This represents a shift toward model-based RL for embodied agents, mirroring advances in robotics and game-playing AI.
+
+### Compositional Safety Risks (Week 35)
+Cross-session decomposition attacks reveal that scaling capabilities creates new attack surfaces. Benign subqueries across independent sessions can be reassembled into forbidden objectives. Larger models paradoxically increase vulnerability — a fundamental scaling law for safety.
+
+### Out-of-Band Governance (Week 35)
+Constitutional frameworks propose 4-layer governance at trusted tool boundaries, addressing the gap between agent capabilities and judgment. Focus on verifiable, interpretable enforcement mechanisms.
+
+### Hybrid Neuro-Symbolic Approaches (Week 35)
+CareGraph demonstrates that combining LLMs with structured knowledge (knowledge graphs) improves medical reasoning. Multiple domains show that external structure enhances verifiability and explainability.
+
+## Key Concepts
+
+- **World Models**: Latent state representations enabling predictive planning in GUI agents
+- **Compositional Safety**: Risk from reassembling benign subqueries into harmful objectives
+- **Intent-Aligned Retrieval**: Small (22M) intent classifiers outperform larger embedding models for safety
+- **Trusted Tool Boundaries**: Governance enforcement at the interface between agents and tools
+- **Hybrid AI**: Combining neural methods with structured knowledge for domain-specific tasks
+
+## Recent Papers
+
+
+### [2608.27475] Hypothesize, Evaluate, Refine: A Scientific Agent for PDE Discovery with Unknown Spatial Coefficient Fields
+- **Authors:** Huang, Y, He, W, Lin, Z, Liu, C, Liang, D, Cui, Z
+- **Date:** 2026-08-31
+- **URL:** https://arxiv.org/abs/2608.27475
+- **Abstract:** Discovering PDEs in heterogeneous media requires jointly identifying the governing operator and the unknown spatial fields that parameterize it. These tasks are coupled: changing field placement changes the differential law, while a sufficiently flexible field can conceal structural error on a singl...
+
+
+### [2608.27484] CareGraph: An Auditable Hybrid AI Framework for Evidence-Grounded Personalized Longitudinal Health Intelligence
+- **Authors:** Ghawate, P, Patil, T
+- **Date:** 2026-08-31
+- **URL:** https://arxiv.org/abs/2608.27484
+- **Abstract:** Artificial intelligence is transforming personalized healthcare, yet fragmented clinical, self reported, and wearable evidence remains difficult to interpret and trace. We present CareGraph, an auditable hybrid AI framework that converts heterogeneous records into prioritized trends, missing context...
+
+
+### [2608.27508] WM-R1: Training GUI Agents to Reason and leverage World Models with Reinforcement Learning
+- **Authors:** Han, Y, Qian, T
+- **Date:** 2026-08-31
+- **URL:** https://arxiv.org/abs/2608.27508
+- **Abstract:** GUI agents trained with reinforcement learning (RL) have showcased strong environment learning capabilities on mobile platforms. However, RL typically demands extensive real-environment interactions, leading to high resource costs and instability, especially in GUI scenarios. To address these, we pr...
+
+
+### [2608.27524] SETU: An Agentic Ecosystem for Multilingual, Persona-Aware Communication Coaching
+- **Authors:** Tejas, J M, Roy, U B, Goswami, T, Goswami, S, Dhar, M
+- **Date:** 2026-08-31
+- **URL:** https://arxiv.org/abs/2608.27524
+- **Abstract:** Corporate training teams need scalable and explainable tools to improve workforce communication in multilingual settings. Existing systems often score text, audio, or video in isolation, or produce black-box outputs that are difficult to audit for coaching use. This paper presents SETU, an agentic e...
+
+
+### [2608.27646] If Agents Were Angels, No Governance Would Be Necessary: Out-of-Band Policy Enforcement at a Trusted Tool Boundary
+- **Authors:** Millstone, M, Akidau, T, Br%C3%BCderl, J, Pekker, M
+- **Date:** 2026-08-31
+- **URL:** https://arxiv.org/abs/2608.27646
+- **Abstract:** Give an agent a human&#39;s credential and it inherits the person&#39;s reach without the judgment that limits its use. It can sweep every reachable record into model context, where hidden instructions steer its next call, and every request stays credential-valid while the agent exceeds its job or a...
+

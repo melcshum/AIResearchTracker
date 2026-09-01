@@ -1,0 +1,153 @@
+---
+title: "Concept Explorer"
+---
+
+Interactive visualization of how research concepts connect across papers. Click on any concept to see related papers and connections.
+
+## Concept Map
+
+```{mermaid}
+flowchart TB
+    subgraph Agents["AI Agents"]
+        A1[Tool Use]
+        A2[Planning]
+        A3[World Models]
+        A4[Multi-Agent]
+        A5[Safety & Governance]
+    end
+    
+    subgraph Reasoning["LLM Reasoning"]
+        R1[Chain-of-Thought]
+        R2[Early Exit]
+        R3[Verification]
+        R4[Token Budget]
+    end
+    
+    subgraph Retrieval["RAG & Retrieval"]
+        T1[Dense Retrieval]
+        T2[Knowledge Graphs]
+        T3[Hybrid Search]
+        T4[Intent-Aligned]
+    end
+    
+    subgraph Multimodal["Multi-Modal"]
+        M1[Vision-Language]
+        M2[Document Understanding]
+        M3[Multimodal Safety]
+        M4[Continual Learning]
+    end
+    
+    %% Cross-domain connections
+    A1 --> R1
+    A2 --> R2
+    A3 --> M1
+    A4 --> M1
+    A5 --> T4
+    R1 --> T1
+    R3 --> T2
+    M1 --> T1
+    M2 --> T2
+    M3 --> A5
+```
+
+## Concept Definitions
+
+### AI Agents
+Autonomous systems that perceive their environment, reason about actions, and execute tools to achieve goals.
+
+**Key Concepts:**
+- **Tool Use**: Agents can call APIs, execute code, and interact with external systems
+- **Planning**: Breaking complex goals into sequential steps with verification
+- **World Models**: Internal simulations for predictive planning without real-world interaction
+- **Multi-Agent Systems**: Multiple specialized agents collaborating on complex tasks
+- **Safety & Governance**: Ensuring agents act within policy boundaries
+
+**Recent Papers:**
+- [WM-R1: Training GUI Agents with World Models](papers/2026-08-31/2608.27508-WM-R1-Training-GUI-Agents-to-Reason-and-leverage-W.html)
+- [If Agents Were Angels: Governance at Tool Boundaries](papers/2026-08-31/2608.27646-If-Agents-Were-Angels-No-Governance-Would-Be-Neces.html)
+- [SETU: Multilingual Communication Coaching Agent](papers/2026-08-31/2608.27524-SETU-An-Agentic-Ecosystem-for-Multilingual-Persona.html)
+
+### LLM Reasoning
+Methods for improving how language models think through complex problems step-by-step.
+
+**Key Concepts:**
+- **Chain-of-Thought**: Sequential reasoning through intermediate steps
+- **Early Exit**: Stopping reasoning when answers stabilize (saves 30-50% tokens)
+- **Verification**: Checking intermediate steps for correctness
+- **Token Budget**: Understanding when reasoning overhead helps vs hurts
+
+**Recent Papers:**
+- [SABER: Stability-Aware Early Exit](papers/2026-08-31/2608.27963-SABER-Stability-Aware-Early-Exit-for-LLM-Reasoning.html)
+- [Thinking Costs Tokens: Budget Thresholds](papers/2026-08-31/2608.27506-Thinking-Costs-Tokens-When-More-Structure-is-Worth.html)
+- [The Illusion of What If: Counterfactual Reasoning](papers/2026-08-31/2608.27953-The-Illusion-of-textitWhat-If-Evaluating-the-Break.html)
+
+### RAG & Retrieval
+Techniques for grounding LLM outputs in retrieved external knowledge.
+
+**Key Concepts:**
+- **retrieval" onclick="window.location.href='wiki.html'">retrieval" onclick="window.location.href='wiki.html'">Dense Retrieval</span></span>**: Semantic search using learned embedding" onclick="window.location.href='wiki.html'">embedding" onclick="window.location.href='wiki.html'">embeddings</span></span>
+- **Knowledge Graphs**: Structured representations for explicit reasoning
+- **Hybrid Search**: Combining dense and sparse retrieval methods
+- **Intent-Aligned Retrieval**: Matching retrieval to user intent for safety
+
+**Recent Papers:**
+- [Retrieving Relations, Detecting Fallacies](papers/2026-08-31/2608.27471-Retrieving-Relations-Detecting-Fallacies-A-RAG-App.html)
+- [CareGraph: Hybrid AI for Health Intelligence](papers/2026-08-31/2608.27484-CareGraph-An-Auditable-Hybrid-AI-Framework-for-Evi.html)
+- [Cross-Session Decomposition Attacks](papers/2026-08-31/2608.27945-Cross-Session-Decomposition-Attacks-Scaling-Risk-a.html)
+
+### Multi-Modal Models
+Systems that process and reason across multiple data types (text, images, audio, video).
+
+**Key Concepts:**
+- **Vision-Language Models**: Processing images and text together
+- **Document Understanding**: Reading and reasoning about structured documents
+- **Multimodal Safety**: Content moderation across modalities
+- **Continual Learning**: Acquiring new capabilities without forgetting old ones
+
+**Recent Papers:**
+- [See, Hypothesize, Validate: Multimodal PDE Discovery](papers/2026-08-31/2608.27869-See-Hypothesize-Validate-Multimodal-Agentic-Framew.html)
+- [WeAgent-MMSearch: Text-Vision Search Agents](papers/2026-08-31/2608.28062-WeAgent-MMSearch-Native-Text-Vision-Interaction-fo.html)
+- [Nemotron 3.5: Multimodal Safety Moderation](papers/2026-08-31/2608.27548-Nemotron-35-Content-Safety-Moderator-A-Compact-Mul.html)
+
+## Cross-Domain Connections
+
+Many breakthrough papers span multiple research areas:
+
+**Agents + Reasoning + World Models:**
+- [WM-R1](papers/2026-08-31/2608.27508-WM-R1-Training-GUI-Agents-to-Reason-and-leverage-W.html) combines agent architecture, reasoning efficiency, and world models for GUI automation
+
+**Agents + Retrieval + Safety:**
+- [Cross-Session Decomposition Attacks](papers/2026-08-31/2608.27945-Cross-Session-Decomposition-Attacks-Scaling-Risk-a.html) reveals safety risks at the intersection of agents and retrieval
+
+**Multi-Modal + Agents + Verification:**
+- [See, Hypothesize, Validate](papers/2026-08-31/2608.27869-See-Hypothesize-Validate-Multimodal-Agentic-Framew.html) demonstrates multimodal agents with explicit verification for scientific discovery
+
+**Reasoning + Retrieval:**
+- [From Documents to Reasoning](papers/2026-08-31/2608.27919-From-Documents-to-Reasoning-A-Validated-Synthetic.html) shows retrieval-grounded reasoning for financial QA
+
+## Research Trends
+
+### Efficiency is King
+Multiple papers focus on reducing computational costs while maintaining quality:
+- Early exit methods save 30-50% of tokens
+- Token budget thresholds show when reasoning helps vs hurts
+- Compact models for specific tasks outperform large general models
+
+### Safety at Scale
+As capabilities increase, so do attack surfaces:
+- Compositional safety risks from combining benign queries
+- Need for governance at trusted tool boundaries
+- Multimodal safety requires new approaches
+
+### Hybrid Approaches Win
+Combining methods often outperforms pure approaches:
+- Hybrid neuro-symbolic AI (CareGraph)
+- Hybrid search (dense + sparse retrieval)
+- Agents with both world models and real-world interaction
+
+## Explore Further
+
+- [Glossary](concepts/glossary.html) - Definitions of all key terms
+- [Papers by Concept](concepts/papers-by-concept.html) - Papers organized by concepts they address
+- [Learning Paths](learning-paths.html) - Structured reading guides
+- [Weekly Digests](digests/index.html) - Trend analysis and highlights

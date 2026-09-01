@@ -1,0 +1,130 @@
+project:
+  type: website
+  output-dir: ../_site/public
+
+website:
+  title: "AI Research Portal"
+  site-url: ""
+  
+  navbar:
+    background: primary
+    left:
+      - text: "🏠 Home"
+        href: index.html
+      - text: "📚 Topics"
+        menu:
+          - text: "🤖 AI Agents"
+            href: topics/ai-agents.html
+          - text: "🧠 LLM Reasoning"
+            href: topics/llm-reasoning.html
+          - text: "🔍 RAG & Retrieval"
+            href: topics/rag-retrieval.html
+          - text: "🎬 Multi-Modal"
+            href: topics/multi-modal.html
+      - text: "📄 Papers"
+        menu:
+          - text: "🔍 Global Search"
+            href: global-search.html
+          - text: "📋 Reading List"
+            href: reading-list.html
+          - text: "📝 My Notes"
+            href: notes.html
+          - text: "⚖️ Compare Papers"
+            href: compare-papers.html
+      - text: "🧠 Knowledge"
+        menu:
+          - text: "📖 Wiki"
+            href: wiki.html
+          - text: "🕸️ Knowledge Graph"
+            href: wiki-graph.html
+          - text: "🗺️ Concept Explorer"
+            href: concept-explorer.html
+          - text: "💡 Recommendations"
+            href: recommendations.html
+      - text: "📊 Analytics"
+        menu:
+          - text: "📈 Statistics"
+            href: statistics.html
+          - text: "🏷️ Tag Cloud"
+            href: tag-cloud.html
+          - text: "👥 Authors"
+            href: authors.html
+          - text: "📰 Weekly Digests"
+            href: digests/index.html
+  
+  sidebar:
+    style: docked
+    contents:
+      - section: "📚 Research Topics"
+        contents:
+          - text: "🤖 AI Agents"
+            href: topics/ai-agents.html
+          - text: "🧠 LLM Reasoning"
+            href: topics/llm-reasoning.html
+          - text: "🔍 RAG & Retrieval"
+            href: topics/rag-retrieval.html
+          - text: "🎬 Multi-Modal"
+            href: topics/multi-modal.html
+      - section: "🔬 Research Tools"
+        contents:
+          - text: "🔍 Global Search"
+            href: global-search.html
+          - text: "📄 Search Papers"
+            href: search-papers.html
+          - text: "📋 Reading List"
+            href: reading-list.html
+          - text: "📝 My Notes"
+            href: notes.html
+          - text: "⚖️ Compare Papers"
+            href: compare-papers.html
+          - text: "💡 Recommendations"
+            href: recommendations.html
+      - section: "🧠 Knowledge Base"
+        contents:
+          - text: "📖 Wiki"
+            href: wiki.html
+          - text: "🕸️ Knowledge Graph"
+            href: wiki-graph.html
+          - text: "🗺️ Concept Explorer"
+            href: concept-explorer.html
+          - text: "📚 Glossary"
+            href: concepts/glossary.html
+          - text: "🔗 Connections"
+            href: concepts/connections.html
+          - text: "📄 Papers by Concept"
+            href: concepts/papers-by-concept.html
+      - section: "📊 Analytics"
+        contents:
+          - text: "📈 Statistics"
+            href: statistics.html
+          - text: "🏷️ Tag Cloud"
+            href: tag-cloud.html
+          - text: "👥 Authors"
+            href: authors.html
+          - text: "📰 Weekly Digests"
+            href: digests/index.html
+      - section: "🎯 Learning"
+        contents:
+          - text: "🛤️ Learning Paths"
+            href: learning-paths.html
+          - text: "⭐ Must-Read Papers"
+            href: must-read-papers.html
+          - text: "🔄 Research Workflow"
+            href: research-workflow.html
+          - text: "📡 RSS Feed"
+            href: rss.xml
+
+format:
+  html:
+    theme:
+      - cosmo
+      - public-theme.scss
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-fold: false
+    include-in-header:
+      - file: ../_includes/mermaid.html
+      - file: ../_includes/custom-head.html
+    include-after-body:
+      - file: ../_includes/theme-toggle.html

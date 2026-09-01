@@ -1,0 +1,98 @@
+---
+title: "How These Concepts Connect"
+---
+
+AI research doesn't happen in silos — the most impactful work sits at the intersections. This page maps how agents, reasoning, retrieval, and multi-modal systems relate to each other.
+
+## The Big Picture
+
+```{mermaid}
+flowchart TB
+    subgraph Core["Core AI Capabilities"]
+        R[LLM Reasoning<br/>Chain-of-thought, planning, verification]
+        RET[RAG & Retrieval<br/>Dense search, knowledge graphs, citations]
+        MM[Multi-Modal Models<br/>Vision, audio, document understanding]
+    end
+
+    subgraph Agent["AI Agents"]
+        A[Autonomous Agents<br/>Tool use, multi-step planning, memory]
+    end
+
+    R --> A
+    RET --> A
+    MM --> A
+
+    A -->|agents reason about<br/>what to retrieve| RET
+    A -->|agents use reasoning<br/>to plan actions| R
+    A -->|agents perceive via<br/>multi-modal inputs| MM
+
+    R <-->|reasoning grounded<br/>in retrieved facts| RET
+    R <-->|reasoning over images,<br/>audio, documents| MM
+    RET <-->|retrieval enhanced<br/>by visual/semantic cues| MM
+
+    style Agent fill:#2d5016,stroke:#4a7c28,color:#fff
+    style Core fill:#1a3a5c,stroke:#2d5f8a,color:#fff
+```
+
+## Key Intersections
+
+### Agents + Reasoning
+
+Agents need reasoning to decide what to do next. The ReAct paradigm interleaves thinking and acting: the agent reasons about which tool to call, observes the result, then reasons again. Recent work on **efficiency-aware reasoning** (early exit, token budgets) directly impacts agent cost — an agent that over-thinks each step becomes prohibitively expensive.
+
+**Key papers:** [SABER](topics/llm-reasoning.html) (early exit for reasoning), [Thinking Costs Tokens](topics/llm-reasoning.html) (token budget thresholds)
+
+### Agents + Retrieval
+
+Agents use retrieval to access knowledge they don't have in parameters. **Agentic RAG** flips the traditional pipeline: instead of always retrieving, the agent decides *when* to retrieve, *what* to retrieve, and *how* to use results. This is more flexible than fixed retrieve-then-generate pipelines.
+
+**Key papers:** [CareGraph](topics/ai-agents.html) (knowledge graphs for agents), [Cross-Session Decomposition Attacks](topics/rag-retrieval.html) (safety of retrieval in agents)
+
+### Agents + Multi-Modal
+
+Modern agents operate in visual environments. **GUI agents** (like WM-R1) perceive screens, reason about UI elements, and take actions like clicking or typing. **Multimodal search agents** (like WeAgent-MMSearch) keep retrieved images in context for visually grounded reasoning.
+
+**Key papers:** [WM-R1](topics/ai-agents.html) (world models for GUI agents), [WeAgent-MMSearch](topics/multi-modal.html) (text-vision interaction)
+
+### Reasoning + Retrieval
+
+Reasoning benefits enormously from retrieval. When a model retrieves relevant facts before reasoning, it reduces hallucination and improves factual accuracy. Conversely, reasoning can improve retrieval — a model can decompose a complex query into sub-queries, or verify retrieved facts through logical consistency.
+
+**Key papers:** [RRDF](topics/rag-retrieval.html) (RAG for fallacy detection), [Financial Numerical Reasoning](topics/llm-reasoning.html) (retrieval-grounded reasoning)
+
+### Reasoning + Multi-Modal
+
+Multi-modal inputs create new reasoning challenges. A model must reason about visual relationships, spatial layouts, and temporal sequences — not just text. **Document understanding** combines OCR, layout analysis, and semantic reasoning. **Visual question answering** requires grounding text reasoning in visual evidence.
+
+**Key papers:** [See, Hypothesize, Validate](topics/multi-modal.html) (multimodal PDE discovery), [Nemotron 3.5](topics/multi-modal.html) (multimodal safety reasoning)
+
+### Retrieval + Multi-Modal
+
+Retrieval isn't just for text. **Image retrieval** finds visually similar images using learned embedding" onclick="window.location.href='wiki.html'">embedding" onclick="window.location.href='wiki.html'">embeddings</span></span>. **Document retrieval** handles PDFs, slides, and scanned pages. **Cross-modal retrieval** maps queries in one modality to documents in another (e.g., text query → image results).
+
+**Key papers:** [MAP Benchmark](topics/multi-modal.html) (accessibility-aware place retrieval), [CoRe-MoE](topics/multi-modal.html) (continual learning for retrieval tasks)
+
+## Learning Paths
+
+Depending on your background, here are suggested reading orders:
+
+### Path 1: New to AI → Agents
+
+1. Start with [LLM Reasoning foundations](topics/llm-reasoning.html#foundations) — understand how models think
+2. Read [RAG foundations](topics/rag-retrieval.html#foundations) — understand how models access knowledge
+3. Read [Multi-Modal foundations](topics/multi-modal.html#foundations) — understand how models perceive
+4. Finally, [AI Agents](topics/ai-agents.html) — see how it all comes together
+
+### Path 2: Software Engineer → Agents
+
+1. Start with [AI Agents foundations](topics/ai-agents.html#foundations) — the architecture you'll build
+2. Read [RAG foundations](topics/rag-retrieval.html#foundations) — how to give agents knowledge
+3. Browse the [Glossary](glossary.html) for tool-use and planning terms
+4. Dive into [agent papers](topics/ai-agents.html#recent-papers) for state of the art
+
+### Path 3: ML Researcher → Cutting Edge
+
+1. Read the [latest digest](digests/week-2026-35.html) for this week's developments
+2. Browse [papers by date](papers/index.html) for the newest work
+3. Use the [Glossary](glossary.html) to quickly look up unfamiliar terms
+4. Follow cross-links between topics to trace research threads

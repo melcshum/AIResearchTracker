@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Activity Feed</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 8px; }
+        button { padding: 10px 20px; margin: 5px; cursor: pointer; background: #667eea; color: white; border: none; border-radius: 6px; }
+        button:hover { background: #764ba2; }
+        .success { color: green; }
+        .error { color: red; }
+        pre { background: #f5f5f5; padding: 10px; border-radius: 4px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Activity Feed Test Suite</h1>
+    
+    <div class="test-section">
+        <h2>1. Test Data Setup</h2>
+        <button onclick="addTestBookmarks()">Add Test Bookmarks</button>
+        <button onclick="addTestNotes()">Add Test Notes</button>
+        <button onclick="addTestWikiContributions()">Add Test Wiki Contributions</button>
+        <button onclick="clearAllData()">Clear All Data</button>
+    </div>
+
+    <div class="test-section">
+        <h2>2. Current localStorage Data</h2>
+        <button onclick="showBookmarks()">Show Bookmarks</button>
+        <button onclick="showNotes()">Show Notes</button>
+        <button onclick="showWikiContributions()">Show Wiki Contributions</button>
+        <pre id="dataDisplay">Click a button to view data...</pre>
+    </div>
+
+    <div class="test-section">
+        <h2>3. Activity Feed Preview</h2>
+        <button onclick="previewActivityFeed()">Preview Activity Feed</button>
+        <div id="activityPreview" style="margin-top: 15px;"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>4. Test Results</h2>
+        <button onclick="runAllTests()">Run All Tests</button>
+        <pre id="testResults">Click "Run All Tests" to verify functionality...</pre>
+    </div>
+
+    <script>
+        // Test data generators
+        function addTestBookmarks() {
+            const now = Date.now();
+            const bookmarks = [
+                {
+                    id: 'test-paper-1',
+                    title: 'WM-R1: Training GUI Agents to Reason',
+                    status: 'Reading',
+                    timestamp: new Date(now - 2 * 60 * 60 * 1000).toISOString(), // 2 hours ago
+                    statusTimestamps: {
+                        'Inbox': new Date(now - 3 * 60 * 60 * 1000).toISOString(),
+                        'Reading': new Date(now - 2 * 60 * 60 * 1000).toISOString()
+                    }
+                },
+                {
+                    id: 'test-paper-2',
+                    title: 'Hypothesize-Evaluate-Refine: A Scientific Agent',
+                    status: 'Read',
+                    timestamp: new Date(now - 5 * 60 * 60 * 1000).toISOString(), // 5 hours ago
+                    statusTimestamps: {
+                        'Inbox': new Date(now - 24 * 60 * 60 * 1000).toISOString(),
+                        'Reading': new Date(now - 10 * 60 * 60 * 1000).toISOString(),
+                        'Read': new Date(now - 5 * 60 * 60 * 1000).toISOString()
+                    }
+                },
+                {
+                    id: 'test-paper-3',
+                    title: 'CoRe-MoE: Compact Reusable MoE',
+                    status: 'Cited',
+                    timestamp: new Date(now - 24 * 60 * 60 * 1000).toISOString(), // 1 day ago
+                    statusTimestamps: {
+                        'Inbox': new Date(now - 3 * 24 * 60 * 60 * 1000).toISOString(),
+                        'Reading': new Date(now - 2 * 24 * 60 * 60 * 1000).toISOString(),
+                        'Read': new Date(now - 1 * 24 * 60 * 60 * 1000).toISOString(),
+                        'Cited': new Date(now - 24 * 60 * 60 * 1000).toISOString()
+                    }
+                }
+            ];
+            localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+            document.getElementById('dataDisplay').textContent = '✅ Added 3 test bookmarks';
+        }
+
+        function addTestNotes() {
+            const now = Date.now();
+            const notes = {
+                'test-paper-1': {
+                    content: 'This paper introduces a novel approach to GUI agent training with structured reasoning capabilities.',
+                    timestamp: new Date(now - 2 * 60 * 60 * 1000).toISOString()
+                },
+                'test-paper-2': {
+                    content: 'Interesting methodology combining hypothesis generation with evaluation loops.',
+                    timestamp: new Date(now - 5 * 60 * 60 * 1000).toISOString()
+                }
+            };
+            localStorage.setItem('paperNotes', JSON.stringify(notes));
+            document.getElementById('dataDisplay').textContent = '✅ Added 2 test notes';
+        }
+
+        function addTestWikiContributions() {
+            const now = Date.now();
+            const contributions = [
+                {
+                    term: 'Chain-of-Thought',
+                    definition: 'A reasoning technique where the model generates intermediate steps before producing the final answer.',
+                    timestamp: new Date(now - 3 * 24 * 60 * 60 * 1000).toISOString()
+                },
+                {
+                    term: 'Retrieval-Augmented Generation',
+                    definition: 'A technique that combines retrieval of relevant documents with text generation to improve accuracy.',
+                    timestamp: new Date(now - 5 * 24 * 60 * 60 * 1000).toISOString()
+                }
+            ];
+            localStorage.setItem('wikiContributions', JSON.stringify(contributions));
+            document.getElementById('dataDisplay').textContent = '✅ Added 2 test wiki contributions';
+        }
+
+        function clearAllData() {
+            localStorage.removeItem('bookmarks');
+            localStorage.removeItem('paperNotes');
+            localStorage.removeItem('wikiContributions');
+            document.getElementById('dataDisplay').textContent = '🗑️ Cleared all test data';
+            document.getElementById('activityPreview').innerHTML = '';
+        }
+
+        function showBookmarks() {
+            const data = localStorage.getItem('bookmarks');
+            document.getElementById('dataDisplay').textContent = data ? JSON.stringify(JSON.parse(data), null, 2) : 'No bookmarks found';
+        }
+
+        function showNotes() {
+            const data = localStorage.getItem('paperNotes');
+            document.getElementById('dataDisplay').textContent = data ? JSON.stringify(JSON.parse(data), null, 2) : 'No notes found';
+        }
+
+        function showWikiContributions() {
+            const data = localStorage.getItem('wikiContributions');
+            document.getElementById('dataDisplay').textContent = data ? JSON.stringify(JSON.parse(data), null, 2) : 'No wiki contributions found';
+        }
+
+        function previewActivityFeed() {
+            const bookmarks = JSON.parse(localStorage.getItem('bookmarks') || '[]');
+            const notes = JSON.parse(localStorage.getItem('paperNotes') || '{}');
+            const wikiContributions = JSON.parse(localStorage.getItem('wikiContributions') || '[]');
+            
+            const activities = [];
+            
+            // Add bookmark activities
+            bookmarks.forEach(bookmark => {
+                if (bookmark.timestamp) {
+                    activities.push({
+                        type: 'bookmark',
+                        icon: '📥',
+                        title: 'Paper bookmarked',
+                        desc: bookmark.title || bookmark.id,
+                        time: bookmark.timestamp
+                    });
+                }
+                
+                if (bookmark.statusTimestamps) {
+                    Object.entries(bookmark.statusTimestamps).forEach(([status, timestamp]) => {
+                        if (timestamp && status !== 'Inbox') {
+                            const statusIcons = {
+                                'Reading': '📖',
+                                'Read': '✅',
+                                'Cited': '📚',
+                                'Archived': '🗄️'
+                            };
+                            const statusTitles = {
+                                'Reading': 'Started reading',
+                                'Read': 'Finished reading',
+                                'Cited': 'Paper cited',
+                                'Archived': 'Paper archived'
+                            };
+                            activities.push({
+                                type: 'status',
+                                icon: statusIcons[status] || '📄',
+                                title: statusTitles[status] || `Status: ${status}`,
+                                desc: bookmark.title || bookmark.id,
+                                time: timestamp
+                            });
+                        }
+                    });
+                }
+            });
+            
+            // Add note activities
+            Object.entries(notes).forEach(([paperId, noteData]) => {
+                if (noteData.timestamp && noteData.content) {
+                    activities.push({
+                        type: 'note',
+                        icon: '📝',
+                        title: 'Note added',
+                        desc: noteData.content.substring(0, 50) + '...',
+                        time: noteData.timestamp
+                    });
+                }
+            });
+            
+            // Add wiki contribution activities
+            wikiContributions.forEach(contribution => {
+                if (contribution.timestamp) {
+                    activities.push({
+                        type: 'wiki',
+                        icon: '🔗',
+                        title: 'Wiki contribution',
+                        desc: `Added definition for "${contribution.term}"`,
+                        time: contribution.timestamp
+                    });
+                }
+            });
+            
+            // Sort by timestamp
+            activities.sort((a, b) => new Date(b.time) - new Date(a.time));
+            
+            // Take top 5
+            const recentActivities = activities.slice(0, 5);
+            
+            // Render preview
+            if (recentActivities.length === 0) {
+                document.getElementById('activityPreview').innerHTML = '<p style="color: #666;">No recent activity. Add some test data first!</p>';
+            } else {
+                const html = recentActivities.map(activity => {
+                    const timeAgo = getTimeAgo(new Date(activity.time));
+                    return `
+                        <div style="display: flex; gap: 10px; padding: 10px; background: #f9fafb; border-radius: 6px; margin-bottom: 8px;">
+                            <div style="font-size: 1.5rem;">${activity.icon}</div>
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; font-size: 0.9rem;">${activity.title}</div>
+                                <div style="font-size: 0.85rem; color: #6b7280;">${activity.desc}</div>
+                                <div style="font-size: 0.75rem; color: #9ca3af;">${timeAgo}</div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                document.getElementById('activityPreview').innerHTML = html;
+            }
+        }
+
+        function getTimeAgo(date) {
+            const seconds = Math.floor((new Date() - date) / 1000);
+            if (seconds < 60) return 'just now';
+            if (seconds < 3600) return `${Math.floor(seconds / 60)} minutes ago`;
+            if (seconds < 86400) return `${Math.floor(seconds / 3600)} hours ago`;
+            if (seconds < 604800) return `${Math.floor(seconds / 86400)} days ago`;
+            if (seconds < 2592000) return `${Math.floor(seconds / 604800)} weeks ago`;
+            return date.toLocaleDateString();
+        }
+
+        function runAllTests() {
+            const results = [];
+            
+            // Test 1: localStorage access
+            try {
+                localStorage.setItem('test', 'value');
+                localStorage.removeItem('test');
+                results.push('✅ Test 1: localStorage access - PASS');
+            } catch (e) {
+                results.push('❌ Test 1: localStorage access - FAIL: ' + e.message);
+            }
+            
+            // Test 2: Bookmark data structure
+            try {
+                const bookmarks = JSON.parse(localStorage.getItem('bookmarks') || '[]');
+                if (Array.isArray(bookmarks)) {
+                    results.push('✅ Test 2: Bookmark data structure - PASS (' + bookmarks.length + ' bookmarks)');
+                } else {
+                    results.push('❌ Test 2: Bookmark data structure - FAIL: Not an array');
+                }
+            } catch (e) {
+                results.push('❌ Test 2: Bookmark data structure - FAIL: ' + e.message);
+            }
+            
+            // Test 3: Notes data structure
+            try {
+                const notes = JSON.parse(localStorage.getItem('paperNotes') || '{}');
+                if (typeof notes === 'object' && !Array.isArray(notes)) {
+                    results.push('✅ Test 3: Notes data structure - PASS (' + Object.keys(notes).length + ' notes)');
+                } else {
+                    results.push('❌ Test 3: Notes data structure - FAIL: Not an object');
+                }
+            } catch (e) {
+                results.push('❌ Test 3: Notes data structure - FAIL: ' + e.message);
+            }
+            
+            // Test 4: Wiki contributions data structure
+            try {
+                const contributions = JSON.parse(localStorage.getItem('wikiContributions') || '[]');
+                if (Array.isArray(contributions)) {
+                    results.push('✅ Test 4: Wiki contributions data structure - PASS (' + contributions.length + ' contributions)');
+                } else {
+                    results.push('❌ Test 4: Wiki contributions data structure - FAIL: Not an array');
+                }
+            } catch (e) {
+                results.push('❌ Test 4: Wiki contributions data structure - FAIL: ' + e.message);
+            }
+            
+            // Test 5: Activity aggregation
+            try {
+                const bookmarks = JSON.parse(localStorage.getItem('bookmarks') || '[]');
+                const notes = JSON.parse(localStorage.getItem('paperNotes') || '{}');
+                const wikiContributions = JSON.parse(localStorage.getItem('wikiContributions') || '[]');
+                
+                let activityCount = 0;
+                bookmarks.forEach(b => {
+                    if (b.timestamp) activityCount++;
+                    if (b.statusTimestamps) {
+                        Object.values(b.statusTimestamps).forEach(t => { if (t) activityCount++; });
+                    }
+                });
+                Object.values(notes).forEach(n => { if (n.timestamp) activityCount++; });
+                wikiContributions.forEach(c => { if (c.timestamp) activityCount++; });
+                
+                results.push('✅ Test 5: Activity aggregation - PASS (' + activityCount + ' total activities)');
+            } catch (e) {
+                results.push('❌ Test 5: Activity aggregation - FAIL: ' + e.message);
+            }
+            
+            // Test 6: Time formatting
+            try {
+                const testDate = new Date();
+                const timeAgo = getTimeAgo(testDate);
+                if (timeAgo === 'just now') {
+                    results.push('✅ Test 6: Time formatting - PASS');
+                } else {
+                    results.push('❌ Test 6: Time formatting - FAIL: Expected "just now", got "' + timeAgo + '"');
+                }
+            } catch (e) {
+                results.push('❌ Test 6: Time formatting - FAIL: ' + e.message);
+            }
+            
+            document.getElementById('testResults').textContent = results.join('\n');
+        }
+    </script>
+</body>
+</html>

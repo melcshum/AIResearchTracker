@@ -1,0 +1,201 @@
+/* Private Theme - Technical Dashboard Style */
+/* Dark slate + indigo + emerald palette */
+
+/* Typography */
+$body-font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+$heading-font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+/* Colors */
+$primary: #334155;
+$secondary: #6366f1;
+$accent: #10b981;
+$dark-bg: #0f172a;
+$card-bg: #1e293b;
+
+/* Base styles */
+body {
+  font-family: $body-font-family;
+  background: $dark-bg;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-family;
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+/* Navbar */
+.navbar {
+  background: $primary !important;
+  border-bottom: 2px solid $secondary;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.navbar-brand {
+  font-family: $heading-font-family;
+  font-weight: 700;
+  color: $accent !important;
+}
+
+.navbar-nav .nav-link {
+  color: #cbd5e1 !important;
+  
+  &:hover {
+    color: $accent !important;
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  background: $card-bg;
+  border-right: 1px solid #334155;
+}
+
+.sidebar-item {
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  color: #cbd5e1;
+  
+  &:hover {
+    background: #334155;
+    color: $accent;
+    border-left: 3px solid $accent;
+  }
+}
+
+/* Cards */
+.card {
+  background: $card-bg;
+  border: 1px solid #334155;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    border-color: $secondary;
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.2);
+  }
+}
+
+.card-header {
+  background: $primary;
+  border-bottom: 2px solid $secondary;
+  color: #f1f5f9;
+}
+
+/* Buttons */
+.btn-primary {
+  background: $secondary;
+  border-color: $secondary;
+  
+  &:hover {
+    background: darken($secondary, 10%);
+    border-color: darken($secondary, 10%);
+  }
+}
+
+.btn-success {
+  background: $accent;
+  border-color: $accent;
+  
+  &:hover {
+    background: darken($accent, 10%);
+    border-color: darken($accent, 10%);
+  }
+}
+
+/* Links */
+a {
+  color: $secondary;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: $accent;
+  }
+}
+
+/* Content */
+.content {
+  background: $card-bg;
+  border-radius: 4px;
+  padding: 2rem;
+  border: 1px solid #334155;
+}
+
+/* Code blocks */
+pre, code {
+  background: #0f172a;
+  color: #10b981;
+  border: 1px solid #334155;
+  border-radius: 4px;
+}
+
+/* Tables */
+table {
+  background: $card-bg;
+  border: 1px solid #334155;
+  
+  th {
+    background: $primary;
+    color: $accent;
+    border-bottom: 2px solid $secondary;
+  }
+  
+  td {
+    border-bottom: 1px solid #334155;
+  }
+  
+  tr:hover {
+    background: rgba(99, 102, 241, 0.1);
+  }
+}
+
+/* Status indicators */
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  
+  &.success {
+    background: rgba(16, 185, 129, 0.2);
+    color: $accent;
+    border: 1px solid $accent;
+  }
+  
+  &.warning {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+    border: 1px solid #f59e0b;
+  }
+  
+  &.error {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border: 1px solid #ef4444;
+  }
+}
+
+/* Metrics */
+.metric-card {
+  background: $card-bg;
+  border-left: 4px solid $secondary;
+  padding: 1.5rem;
+  border-radius: 4px;
+  
+  .metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $accent;
+    font-family: $heading-font-family;
+  }
+  
+  .metric-label {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}

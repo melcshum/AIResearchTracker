@@ -1,0 +1,22 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "AI Research Tracker"
+  site-url: ""
+  
+  navbar:
+    background: primary
+    left:
+      - text: "🌐 Research Portal"
+        href: public/index.html
+      - text: "🔧 Admin Dashboard"
+        href: private/index.html
+
+format:
+  html:
+    theme: cosmo
+    toc: false
+    include-in-header:
+      - file: _includes/custom-head.html

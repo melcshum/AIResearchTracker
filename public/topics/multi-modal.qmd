@@ -1,0 +1,123 @@
+# Multi-Modal Models
+
+Recent papers on Multi-Modal Models.
+
+## Foundations
+
+### What are Multi-Modal Models?
+
+Multi-modal models process and reason across multiple types of data — text, images, audio, video, and structured data — within a single system. Unlike unimodal models that handle one input type, multi-modal systems can draw inferences across modalities, enabling capabilities like visual question answering, image captioning, audio understanding, and cross-modal reasoning.
+
+### Core Architectures
+
+```{mermaid}
+graph TB
+    subgraph VLM["Vision-Language Model"]
+        I[Image] --> VE[Visual Encoder<br/>ViT/SigLIP]
+        T[Text] --> TE[Text Encoder<br/>LLM]
+        VE --> Proj[Projection Layer]
+        Proj --> LLM[Language Model]
+        TE --> LLM
+        LLM --> O[Output: Caption, Answer, etc.]
+    end
+
+    subgraph Audio["Audio-Language Model"]
+        A[Audio] --> AE[Audio Encoder]
+        AE --> LLM2[Language Model]
+        LLM2 --> O2[Output]
+    end
+
+    subgraph Omni["Omni-Modal Model"]
+        I2[Image] --> Shared[Shared Encoder]
+        A2[Audio] --> Shared
+        T2[Text] --> Shared
+        Shared --> LLM3[Language Model]
+        LLM3 --> O3[Output]
+    end
+```
+
+- **Vision-Language Models (VLMs)**: Combine a visual encoder (e.g., ViT, SigLIP) with a language model, projecting image features into the same embedding space as text. Examples: LLaVA, GPT-4V, Gemini, Qwen-VL.
+- **Audio-Language Models**: Integrate speech recognition and audio understanding with language models for tasks like spoken dialogue, audio captioning, and sound event detection.
+- **Omni-Modal Models**: Unified architectures that handle text, images, audio, and video in a single model with shared representations.
+
+### Key Capabilities
+
+1. **Visual Question Answering**: Answering questions about images using both visual and linguistic understanding
+2. **Image/Video Captioning**: Generating natural language descriptions of visual content
+3. **Document Understanding**: Reading and reasoning about scanned documents, charts, tables, and screenshots
+4. **Grounded Generation**: Producing outputs tied to specific regions of an image or moments in a video
+5. **Cross-Modal Reasoning**: Using information from one modality to inform understanding of another
+
+### Training Approaches
+
+- **Contrastive Learning**: Aligning representations across modalities (e.g., CLIP matches images to text descriptions)
+- **Instruction Tuning**: Fine-tuning on multi-modal instruction datasets for task following
+- **Mixture-of-Experts (MoE)**: Using specialized expert sub-networks for different modalities or tasks, enabling efficient scaling
+- **Continual Learning**: Sequentially acquiring new multi-modal capabilities without forgetting previously learned ones
+
+### Key Challenges
+
+- **Catastrophic forgetting**: Learning new modalities or tasks can degrade performance on old ones
+- **Hallucination**: Models may generate plausible but incorrect descriptions of visual content
+- **Safety**: Multi-modal inputs create new attack surfaces — adversarial images, misleading documents, harmful audio
+- **Evaluation**: Benchmarks must test genuine cross-modal reasoning, not just unimodal shortcuts
+
+## Active Research Directions
+
+### Multimodal Safety Moderation (Week 35)
+Nemotron 3.5 demonstrates compact multimodal content safety moderation across images, documents, screenshots, and text under domain-varying policies. Moving beyond text-only guardrails to comprehensive multimodal safety.
+
+### Continual Multimodal Learning (Week 35)
+CoRe-MoE addresses catastrophic forgetting in multimodal instruction tuning through compact, reusable Mixture-of-Experts with LoRA. Enables sequential task acquisition while preserving previously learned knowledge.
+
+### Multimodal Search Agents (Week 35)
+WeAgent-MMSearch enables native text-vision interaction for multimodal search, ensuring retrieved images remain in context for visually grounded trajectories rather than being discarded as text-only.
+
+### Accessibility Planning (Week 35)
+MAP benchmark evaluates multimodal AI as assistants for users with accessibility requirements, verifying or recommending points of interest meeting specific accessibility needs.
+
+## Key Concepts
+
+- **Multimodal Safety**: Content moderation across images, documents, screenshots under varying policies
+- **Continual Multimodal Learning**: Sequential task acquisition without catastrophic forgetting
+- **Native Text-Vision Interaction**: Keeping retrieved images in context for grounded reasoning
+- **Accessibility-Aware Planning**: Multimodal systems assisting users with specific accessibility requirements
+- **Compact Safety Models**: Small multimodal models for deployment-time safety moderation
+
+## Recent Papers
+
+
+### [2608.27548] Nemotron 3.5 Content Safety Moderator: A Compact Multimodal, Multilingual, and Reasoning Enabled Content Safety Moderator
+- **Authors:** Singh, V, Doshi, A, Narsimhan, M, Ghosh, S, Luna, K
+- **Date:** 2026-08-31
+- **URL:** https://arxiv.org/abs/2608.27548
+- **Abstract:** Safety moderation for deployed AI applications is moving beyond text-only prompts: systems increasingly need to judge images, documents, screenshots, and generated responses under policies that vary across domains. Existing guardrails usually cover only part of this setting, making it difficult to c...
+
+
+### [2608.27867] CoRe-MoE: Compact Reusable MoE for Continual Multimodal Instruction Tuning
+- **Authors:** Liu, R, Gu, N, Ai, M, Li, Y, Fu, P, Lin, Z, Wang, W
+- **Date:** 2026-08-31
+- **URL:** https://arxiv.org/abs/2608.27867
+- **Abstract:** Continual multimodal instruction tuning requires multimodal large language models to acquire new task abilities sequentially while preserving previously learned knowledge. LoRA-MoE provides a promising solution by introducing expert-based capacity, but repeatedly learning and maintaining full LoRA e...
+
+
+### [2608.27869] See, Hypothesize, Validate: Multimodal Agentic Framework for Discovering Governing PDEs
+- **Authors:** Pekhale, S M, Roy, A, Sarkar, R, Chakraborty, S
+- **Date:** 2026-08-31
+- **URL:** https://arxiv.org/abs/2608.27869
+- **Abstract:** Discovering governing partial differential equations (PDEs) from observational data remains a core challenge across the sciences. Existing sparse-regression, symbolic-regression, and LLM-based approaches can be constrained by predefined libraries, noise sensitivity, hallucination, or limited iterati...
+
+
+### [2608.28062] WeAgent-MMSearch: Native Text-Vision Interaction for Multimodal Search Agents
+- **Authors:** Liu, Z, Zhang, H, Niu, L, Cao, Z, Li, H, Liu, J, Chen, W, Zhao, C, Yu, C, Meng, F
+- **Date:** 2026-08-31
+- **URL:** https://arxiv.org/abs/2608.28062
+- **Abstract:** Multimodal search agents extend parametric knowledge with newly emerging and long-tail evidence from the open web. Yet many existing agentic search environments often expose retrieved evidence only as text and omit tool-returned images from subsequent context, reducing visually grounded trajectories...
+
+
+### [2608.28384] MAP: A Benchmark on Multimodal Accessibility Planning for Real World Places
+- **Authors:** Armitage, J, Tsochantaridis, I, Mazzone, L, Yan, C, Narayanan, S, Ebling, S
+- **Date:** 2026-08-31
+- **URL:** https://arxiv.org/abs/2608.28384
+- **Abstract:** We introduce MAP, the first benchmark to evaluate multimodal AI systems as assistants for users with accessibility requirements when planning visits to places in the real world. In our evaluation, systems are presented with requests to verify or recommend a point of interest meeting an accessibility...
+

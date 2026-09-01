@@ -1,0 +1,800 @@
+{
+  "papers/index.md": {
+    "index.html": "1ecdc5e4"
+  },
+  "digests/index.md": {
+    "index.html": "5eced41b"
+  },
+  "topics/llm-reasoning.md": {
+    "llm-reasoning.html": "b4fd2a4d"
+  },
+  "topics/ai-agents.md": {
+    "ai-agents.html": "4904608d"
+  },
+  "topics/multi-modal.md": {
+    "multi-modal.html": "cf9ee829"
+  },
+  "topics/rag-retrieval.md": {
+    "rag-retrieval.html": "0f089414"
+  },
+  "papers/2026-08-31/2608.27475-Hypothesize-Evaluate-Refine-A-Scientific-Agent-for.md": {
+    "2608.27475-Hypothesize-Evaluate-Refine-A-Scientific-Agent-for.html": "e6b65218"
+  },
+  "papers/2026-08-31/2608.27508-WM-R1-Training-GUI-Agents-to-Reason-and-leverage-W.md": {
+    "2608.27508-WM-R1-Training-GUI-Agents-to-Reason-and-leverage-W.html": "34e53409"
+  },
+  "papers/2026-08-31/2608.27484-CareGraph-An-Auditable-Hybrid-AI-Framework-for-Evi.md": {
+    "2608.27484-CareGraph-An-Auditable-Hybrid-AI-Framework-for-Evi.html": "7f9ad6b5"
+  },
+  "papers/2026-08-31/2608.27524-SETU-An-Agentic-Ecosystem-for-Multilingual-Persona.md": {
+    "2608.27524-SETU-An-Agentic-Ecosystem-for-Multilingual-Persona.html": "7ec83248"
+  },
+  "digests/week-2026-35.md": {
+    "week-2026-35.html": "104ce7a2"
+  },
+  "papers/2026-08-31/2608.27506-Thinking-Costs-Tokens-When-More-Structure-is-Worth.md": {
+    "2608.27506-Thinking-Costs-Tokens-When-More-Structure-is-Worth.html": "15a2e3cb"
+  },
+  "papers/2026-08-31/2608.27471-Retrieving-Relations-Detecting-Fallacies-A-RAG-App.md": {
+    "2608.27471-Retrieving-Relations-Detecting-Fallacies-A-RAG-App.html": "318c7ce9"
+  },
+  "papers/2026-08-31/2608.27646-If-Agents-Were-Angels-No-Governance-Would-Be-Neces.md": {
+    "2608.27646-If-Agents-Were-Angels-No-Governance-Would-Be-Neces.html": "ed17e585"
+  },
+  "papers/2026-08-31/2608.27840-An-Empirical-Evaluation-of-Cross-City-POI-Recommen.md": {
+    "2608.27840-An-Empirical-Evaluation-of-Cross-City-POI-Recommen.html": "a3e1e76a"
+  },
+  "papers/2026-08-31/2608.27953-The-Illusion-of-textitWhat-If-Evaluating-the-Break.md": {
+    "2608.27953-The-Illusion-of-textitWhat-If-Evaluating-the-Break.html": "80824834"
+  },
+  "papers/2026-08-31/2608.27963-SABER-Stability-Aware-Early-Exit-for-LLM-Reasoning.md": {
+    "2608.27963-SABER-Stability-Aware-Early-Exit-for-LLM-Reasoning.html": "6ec1dcb2"
+  },
+  "papers/2026-08-31/2608.27945-Cross-Session-Decomposition-Attacks-Scaling-Risk-a.md": {
+    "2608.27945-Cross-Session-Decomposition-Attacks-Scaling-Risk-a.html": "daf7af77"
+  },
+  "papers/2026-08-31/2608.28384-MAP-A-Benchmark-on-Multimodal-Accessibility-Planni.md": {
+    "2608.28384-MAP-A-Benchmark-on-Multimodal-Accessibility-Planni.html": "e916c77a"
+  },
+  "papers/2026-08-31/2608.27869-See-Hypothesize-Validate-Multimodal-Agentic-Framew.md": {
+    "2608.27869-See-Hypothesize-Validate-Multimodal-Agentic-Framew.html": "acd37ef5"
+  },
+  "papers/2026-08-31/2608.28062-WeAgent-MMSearch-Native-Text-Vision-Interaction-fo.md": {
+    "2608.28062-WeAgent-MMSearch-Native-Text-Vision-Interaction-fo.html": "2ff5f035"
+  },
+  "papers/2026-08-31/2608.27548-Nemotron-35-Content-Safety-Moderator-A-Compact-Mul.md": {
+    "2608.27548-Nemotron-35-Content-Safety-Moderator-A-Compact-Mul.html": "ecc48ff8"
+  },
+  "papers/2026-08-31/2608.27867-CoRe-MoE-Compact-Reusable-MoE-for-Continual-Multim.md": {
+    "2608.27867-CoRe-MoE-Compact-Reusable-MoE-for-Continual-Multim.html": "fc712082"
+  },
+  "papers/2026-08-31/2608.27919-From-Documents-to-Reasoning-A-Validated-Synthetic.md": {
+    "2608.27919-From-Documents-to-Reasoning-A-Validated-Synthetic.html": "78444352"
+  },
+  "index.md": {
+    "index.html": "594c82cf"
+  },
+  "concepts/glossary.md": {
+    "glossary.html": "bccb47df"
+  },
+  "concepts/connections.md": {
+    "connections.html": "72820ee8"
+  },
+  "concepts/papers-by-concept.md": {
+    "papers-by-concept.html": "ef2b06b8"
+  },
+  "learning-paths.md": {
+    "learning-paths.html": "b64d946e"
+  },
+  "must-read-papers.md": {
+    "must-read-papers.html": "48a10a55"
+  },
+  "resources.md": {
+    "resources.html": "4e9b0433"
+  },
+  "faq.md": {
+    "faq.html": "9a0f1898"
+  },
+  "comparison-tables.md": {
+    "comparison-tables.html": "db2820b4"
+  },
+  "concepts/connections.qmd": {
+    "connections.html": "482a1c64"
+  },
+  "topics/llm-reasoning.qmd": {
+    "llm-reasoning.html": "505f1ab7"
+  },
+  "topics/ai-agents.qmd": {
+    "ai-agents.html": "32a8ea86"
+  },
+  "topics/multi-modal.qmd": {
+    "multi-modal.html": "a72c5c29"
+  },
+  "topics/rag-retrieval.qmd": {
+    "rag-retrieval.html": "88172988"
+  },
+  "search-papers.md": {
+    "search-papers.html": "9936221e"
+  },
+  "concept-explorer.qmd": {
+    "concept-explorer.html": "e2c01ffd"
+  },
+  "compare-papers.md": {
+    "compare-papers.html": "394569ab"
+  },
+  "reading-list.md": {
+    "reading-list.html": "da056c1d"
+  },
+  "authors.md": {
+    "authors.html": "ff68f3ec"
+  },
+  "statistics.md": {
+    "statistics.html": "f5ea3de4"
+  },
+  "notes.md": {
+    "notes.html": "b1916076"
+  },
+  "tag-cloud.md": {
+    "tag-cloud.html": "0dae54a1"
+  },
+  "papers/2025-10-03/2510.02816v1-NCV-A-Node-Wise-Consistency-Verification-Approach-for-Low-Cost-Structured-Error-.md": {
+    "2510.02816v1-NCV-A-Node-Wise-Consistency-Verification-Approach-for-Low-Cost-Structured-Error-.html": "2da154f6"
+  },
+  "papers/2026-05-28/2605.30003v1-Discovering-Cooperative-Pipelines-Autoresearch-for-Sequential-Social-Dilemmas.md": {
+    "2605.30003v1-Discovering-Cooperative-Pipelines-Autoresearch-for-Sequential-Social-Dilemmas.html": "6d36af72"
+  },
+  "papers/2026-08-24/2608.22688v1-FashionKG-RAG-Knowledge-Graph-Enhanced-Retrieval-Augmented-Generation-for-Fashio.md": {
+    "2608.22688v1-FashionKG-RAG-Knowledge-Graph-Enhanced-Retrieval-Augmented-Generation-for-Fashio.html": "04291366"
+  },
+  "papers/2026-08-23/2608.22634v1-GeoRisk-RAG-A-Hierarchy-Aware-Risk-Framework-for-Improving-RAG-Reliability-throu.md": {
+    "2608.22634v1-GeoRisk-RAG-A-Hierarchy-Aware-Risk-Framework-for-Improving-RAG-Reliability-throu.html": "4f287807"
+  },
+  "papers/2026-08-15/2608.15012v1-SysEvolve-An-AI-native-safe-autonomous-adversarial-attack-defense-co-evolutionar.md": {
+    "2608.15012v1-SysEvolve-An-AI-native-safe-autonomous-adversarial-attack-defense-co-evolutionar.html": "e82e00c8"
+  },
+  "papers/2026-07-24/2607.22319v1-Towards-Trustworthy-and-Cost-Efficient-Data-Integration-From-Naïve-RAG-to-Agenti.md": {
+    "2607.22319v1-Towards-Trustworthy-and-Cost-Efficient-Data-Integration-From-Naïve-RAG-to-Agenti.html": "ac787e37"
+  },
+  "papers/2026-01-03/2601.01126v2-RoboPhD-Self-Improving-Text-to-SQL-Through-Autonomous-Agent-Evolution.md": {
+    "2601.01126v2-RoboPhD-Self-Improving-Text-to-SQL-Through-Autonomous-Agent-Evolution.html": "d3f24998"
+  },
+  "papers/2026-02-23/2602.20426v2-Learning-to-Rewrite-Tool-Descriptions-for-Reliable-LLM-Agent-Tool-Use.md": {
+    "2602.20426v2-Learning-to-Rewrite-Tool-Descriptions-for-Reliable-LLM-Agent-Tool-Use.html": "a129ca58"
+  },
+  "papers/2026-08-28/2608.28543v1-Rational-torsion-on-simple-genus-two-Jacobians.md": {
+    "2608.28543v1-Rational-torsion-on-simple-genus-two-Jacobians.html": "c20b956d"
+  },
+  "papers/2026-08-28/2608.28246v1-Training-free-Suction-Grasp-Detection-for-Deformed-Aseptic-Cartons-Using-Vision-.md": {
+    "2608.28246v1-Training-free-Suction-Grasp-Detection-for-Deformed-Aseptic-Cartons-Using-Vision-.html": "a76e4e17"
+  },
+  "papers/2026-08-28/2608.28567v1-GeBDA-Building-Damage-Assessment-as-Text-Based-Sequence-Prediction.md": {
+    "2608.28567v1-GeBDA-Building-Damage-Assessment-as-Text-Based-Sequence-Prediction.html": "2df5be42"
+  },
+  "papers/2026-08-28/2608.28577v1-How-Long-Range-Tails-Reshape-Non-Hermitian-Spectra.md": {
+    "2608.28577v1-How-Long-Range-Tails-Reshape-Non-Hermitian-Spectra.html": "fe04946c"
+  },
+  "papers/2026-08-28/2608.28581v1-Renormalization-guided-cascade-upscaling-for-lattice-field-generation.md": {
+    "2608.28581v1-Renormalization-guided-cascade-upscaling-for-lattice-field-generation.html": "7135db2e"
+  },
+  "papers/2026-08-28/2608.28584v1-Bounds-for-inertialess-dynamo.md": {
+    "2608.28584v1-Bounds-for-inertialess-dynamo.html": "c30a4c8c"
+  },
+  "papers/2026-08-28/2608.28583v1-Layer-Controlled-Intermolecular-Coupling-and-Many-Body-Effects-in-C_60-Films.md": {
+    "2608.28583v1-Layer-Controlled-Intermolecular-Coupling-and-Many-Body-Effects-in-C_60-Films.html": "8c57db03"
+  },
+  "papers/2026-08-28/2608.28553v1-Logos-An-Agent-Harness-on-a-Cross-Process-Bus.md": {
+    "2608.28553v1-Logos-An-Agent-Harness-on-a-Cross-Process-Bus.html": "dcbbd3ef"
+  },
+  "papers/2026-08-28/2608.28514v1-Fast-and-efficient-nested-sampling-with-BEST.md": {
+    "2608.28514v1-Fast-and-efficient-nested-sampling-with-BEST.html": "4c87a298"
+  },
+  "papers/2026-08-28/2608.28541v1-An-Enclosed-Mode-Is-a-Gauge-Choice-Topology-Relative-to-Reach-in-Certified-Code-.md": {
+    "2608.28541v1-An-Enclosed-Mode-Is-a-Gauge-Choice-Topology-Relative-to-Reach-in-Certified-Code-.html": "20284acb"
+  },
+  "papers/2026-08-28/2608.28503v1-SG-UMP-Sequence-Guided-Universal-Multimodal-Prioritization-Calculation-Framework.md": {
+    "2608.28503v1-SG-UMP-Sequence-Guided-Universal-Multimodal-Prioritization-Calculation-Framework.html": "d1fc1cd7"
+  },
+  "papers/2026-08-28/2608.28579v1-Modular-Functors-with-Singularities-from-Vertex-Operator-Algebras-Beyond-Rigidit.md": {
+    "2608.28579v1-Modular-Functors-with-Singularities-from-Vertex-Operator-Algebras-Beyond-Rigidit.html": "b61cfa60"
+  },
+  "papers/2026-08-28/2608.28248v1-Synth-JDoc-Synthesizing-a-Japanese-Document-Image-Dataset-for-OCR-with-Diverse-L.md": {
+    "2608.28248v1-Synth-JDoc-Synthesizing-a-Japanese-Document-Image-Dataset-for-OCR-with-Diverse-L.html": "42a4fe87"
+  },
+  "papers/2026-08-28/2608.28572v1-PULSAR-Pooled-Unified-Late-Interaction-Search-and-Retrieval-for-Enterprise-Visua.md": {
+    "2608.28572v1-PULSAR-Pooled-Unified-Late-Interaction-Search-and-Retrieval-for-Enterprise-Visua.html": "a8d9effa"
+  },
+  "papers/2026-08-28/2608.28588v1-Interaction-corrections-to-topological-density-three-point-functions-in-two-dime.md": {
+    "2608.28588v1-Interaction-corrections-to-topological-density-three-point-functions-in-two-dime.html": "71bdec81"
+  },
+  "papers/2026-08-28/2608.28566v1-On-two-proofs-of-d2-mixing-of-weighted-Dikin-walks.md": {
+    "2608.28566v1-On-two-proofs-of-d2-mixing-of-weighted-Dikin-walks.html": "25675e9d"
+  },
+  "papers/2026-08-28/2608.28576v1-Learning-a-Size-Weight-Frontier-for-Synthetic-Augmented-Inference.md": {
+    "2608.28576v1-Learning-a-Size-Weight-Frontier-for-Synthetic-Augmented-Inference.html": "daeee216"
+  },
+  "papers/2026-08-28/2608.28403v1-Recovering-Software-Architecture-Intent-from-Historical-Work-Items-using-Generat.md": {
+    "2608.28403v1-Recovering-Software-Architecture-Intent-from-Historical-Work-Items-using-Generat.html": "458a7c74"
+  },
+  "papers/2026-08-28/2608.28542v1-Offline-Verifiable-Accountability-for-Cross-Organization-Agent-Messaging-A-Prese.md": {
+    "2608.28542v1-Offline-Verifiable-Accountability-for-Cross-Organization-Agent-Messaging-A-Prese.html": "ddf65dfe"
+  },
+  "papers/2026-08-28/2608.28216v1-WALDO-One-Shot-Exemplar-Conditioned-Object-Detection-in-Cluttered-Scenes.md": {
+    "2608.28216v1-WALDO-One-Shot-Exemplar-Conditioned-Object-Detection-in-Cluttered-Scenes.html": "ba871d65"
+  },
+  "papers/2026-08-28/2608.28547v1-DARTS-Decoder-Aware-Representation-Tuning-via-Surgery-for-Model-Merging.md": {
+    "2608.28547v1-DARTS-Decoder-Aware-Representation-Tuning-via-Surgery-for-Model-Merging.html": "b2a5e80e"
+  },
+  "papers/2026-08-28/2608.28578v1-Aero-Hand-Open-A-Simulation-Ready-Tendon-Driven-Hand-for-Dexterous-Manipulation-.md": {
+    "2608.28578v1-Aero-Hand-Open-A-Simulation-Ready-Tendon-Driven-Hand-for-Dexterous-Manipulation-.html": "92cf30a9"
+  },
+  "papers/2026-08-28/2608.28534v1-InstructMesh-Selective-Refinement-of-Generative-3D-Models-for-Fabrication.md": {
+    "2608.28534v1-InstructMesh-Selective-Refinement-of-Generative-3D-Models-for-Fabrication.html": "db41545c"
+  },
+  "papers/2026-08-28/2608.28144v1-The-Shape-of-Power-A-Multilingual-Framework-for-Social-Power-Reasoning-in-Dialog.md": {
+    "2608.28144v1-The-Shape-of-Power-A-Multilingual-Framework-for-Social-Power-Reasoning-in-Dialog.html": "04312958"
+  },
+  "papers/2026-08-28/2608.28580v1-Renormalization-guided-inverse-blocking-for-lattice-field-generation-constructio.md": {
+    "2608.28580v1-Renormalization-guided-inverse-blocking-for-lattice-field-generation-constructio.html": "e35d0a5d"
+  },
+  "papers/2026-08-28/2608.28570v1-ChainSplat-A-Physics-Inspired-Screw-Theoretic-Model-for-Learning-Deformable-Line.md": {
+    "2608.28570v1-ChainSplat-A-Physics-Inspired-Screw-Theoretic-Model-for-Learning-Deformable-Line.html": "be59bad1"
+  },
+  "papers/2026-08-28/2608.28589v1-QGPINNs-A-Physics-Informed-Neural-Network-Framework-for-Nonlocal-Differential-Eq.md": {
+    "2608.28589v1-QGPINNs-A-Physics-Informed-Neural-Network-Framework-for-Nonlocal-Differential-Eq.html": "d7f93230"
+  },
+  "papers/2026-08-28/2608.28218v1-Focus-Where-It-Counts-A-Salience-Driven-Vision-Language-Model-for-Low-Vision-Ass.md": {
+    "2608.28218v1-Focus-Where-It-Counts-A-Salience-Driven-Vision-Language-Model-for-Low-Vision-Ass.html": "ab9c1dad"
+  },
+  "papers/2026-08-28/2608.28554v1-Machine-learned-designs-of-functional-colloidal-foldamers.md": {
+    "2608.28554v1-Machine-learned-designs-of-functional-colloidal-foldamers.html": "1ee37344"
+  },
+  "papers/2026-08-28/2608.28551v1-The-Erdős-Hajnal-Property-for-the-six-vertex-Graph-with-Edge-Set-abbccddeafbfdf.md": {
+    "2608.28551v1-The-Erdős-Hajnal-Property-for-the-six-vertex-Graph-with-Edge-Set-abbccddeafbfdf.html": "d87a270f"
+  },
+  "papers/2026-08-28/2608.28399v1-RetailAgent-Structured-Adverse-Timing-in-Self-Conditioned-Multimodal-LLM-Trading.md": {
+    "2608.28399v1-RetailAgent-Structured-Adverse-Timing-in-Self-Conditioned-Multimodal-LLM-Trading.html": "0db18d9a"
+  },
+  "papers/2026-08-28/2608.28549v1-Video-Generative-Models-as-Geometry-Learner.md": {
+    "2608.28549v1-Video-Generative-Models-as-Geometry-Learner.html": "f8ca7f06"
+  },
+  "papers/2026-08-28/2608.28529v1-Relaxed-Sender-Anonymity-for-CBDC-Interbank-Settlement-A-Zero-Knowledge-Approach.md": {
+    "2608.28529v1-Relaxed-Sender-Anonymity-for-CBDC-Interbank-Settlement-A-Zero-Knowledge-Approach.html": "00a50c2b"
+  },
+  "papers/2026-08-28/2608.27809v1-LINE-Conversation-History-Retrieval-for-Personal-Memory-RAG-Evaluating-Search-Re.md": {
+    "2608.27809v1-LINE-Conversation-History-Retrieval-for-Personal-Memory-RAG-Evaluating-Search-Re.html": "63003718"
+  },
+  "papers/2026-08-28/2608.28532v1-xTRUCE-A-Provably-Safe-Arbiter-for-Multi-xApp-Conflict-Mitigation-in-Agentic-O-R.md": {
+    "2608.28532v1-xTRUCE-A-Provably-Safe-Arbiter-for-Multi-xApp-Conflict-Mitigation-in-Agentic-O-R.html": "83312cd2"
+  },
+  "papers/2026-08-28/2608.28563v1-Exact-quantification-of-nonlocal-magic.md": {
+    "2608.28563v1-Exact-quantification-of-nonlocal-magic.html": "99c2528f"
+  },
+  "papers/2026-08-28/2608.28383v1-Semantic-Head-Specialization-Guides-Hybrid-ViT-Attention-for-Multimodal-LLMs.md": {
+    "2608.28383v1-Semantic-Head-Specialization-Guides-Hybrid-ViT-Attention-for-Multimodal-LLMs.html": "0f451d4d"
+  },
+  "papers/2026-08-28/2608.28586v1-Continuity-equation-on-metric-spaces-via-measure-valued-derivations-and-BV-Wasse.md": {
+    "2608.28586v1-Continuity-equation-on-metric-spaces-via-measure-valued-derivations-and-BV-Wasse.html": "0e1373f4"
+  },
+  "papers/2026-08-28/2608.28389v1-CamoDocs-A-Poisoning-Attack-Against-Retrieval-Augmented-Language-Models-Using-Ca.md": {
+    "2608.28389v1-CamoDocs-A-Poisoning-Attack-Against-Retrieval-Augmented-Language-Models-Using-Ca.html": "a49f55c9"
+  },
+  "papers/2026-08-27/2608.27101v1-pro-team-at-LLMs4OL-2026-Tasks-Flagship-and-Reuse-Retrieval-Augmented-Generation.md": {
+    "2608.27101v1-pro-team-at-LLMs4OL-2026-Tasks-Flagship-and-Reuse-Retrieval-Augmented-Generation.html": "0e208d93"
+  },
+  "papers/2026-08-27/2608.27036v1-Reasoning-about-In-Context-Samples-for-Machine-Translation.md": {
+    "2608.27036v1-Reasoning-about-In-Context-Samples-for-Machine-Translation.html": "ba28ae9c"
+  },
+  "papers/2026-08-27/2608.27046v1-Performance-Foundations-of-Parallel-Distributed-Reasoning-Language-Models.md": {
+    "2608.27046v1-Performance-Foundations-of-Parallel-Distributed-Reasoning-Language-Models.html": "c42b0772"
+  },
+  "papers/2026-08-27/2608.27661v1-Knowing-Before-Answering-Decoding-Language-Models-for-Reliable-RAG.md": {
+    "2608.27661v1-Knowing-Before-Answering-Decoding-Language-Models-for-Reliable-RAG.html": "fe970cd3"
+  },
+  "papers/2026-08-27/2608.26921v1-AraMS-28k-The-Largest-Publicly-Released-Line-Level-Dataset-of-Historical-Arabic-.md": {
+    "2608.26921v1-AraMS-28k-The-Largest-Publicly-Released-Line-Level-Dataset-of-Historical-Arabic-.html": "4e6d4e16"
+  },
+  "papers/2026-08-27/2608.26870v1-C-Unseen-Weak-Signal-Detection-in-Dynamic-Temporal-Knowledge-Graphs-via-LLM-Reas.md": {
+    "2608.26870v1-C-Unseen-Weak-Signal-Detection-in-Dynamic-Temporal-Knowledge-Graphs-via-LLM-Reas.html": "c6bdab34"
+  },
+  "papers/2026-08-27/2608.27121v1-How-AI-Experiences-Art-Emergent-Aesthetic-Structure-in-a-Self-Supervised-Multimo.md": {
+    "2608.27121v1-How-AI-Experiences-Art-Emergent-Aesthetic-Structure-in-a-Self-Supervised-Multimo.html": "aa2fad35"
+  },
+  "papers/2026-08-27/2608.26856v1-From-Reasoning-to-Pixels-Grounded-Medical-Multimodal-LLMs-for-VQA-and-Segmentati.md": {
+    "2608.26856v1-From-Reasoning-to-Pixels-Grounded-Medical-Multimodal-LLMs-for-VQA-and-Segmentati.html": "2b07e3cc"
+  },
+  "papers/2026-08-27/2608.26623v1-AgentJudgeBench-A-Multi-Difficulty-Benchmark-for-Evaluating-LLM-Judges-on-Agenti.md": {
+    "2608.26623v1-AgentJudgeBench-A-Multi-Difficulty-Benchmark-for-Evaluating-LLM-Judges-on-Agenti.html": "1a5a0c81"
+  },
+  "papers/2026-07-03/2607.03233v1-Agentic-and-Generative-AI-for-Open-Source-Intelligence-and-Cyber-Investigations-.md": {
+    "2607.03233v1-Agentic-and-Generative-AI-for-Open-Source-Intelligence-and-Cyber-Investigations-.html": "719c3430"
+  },
+  "papers/2026-04-06/2604.04820v1-ANX-Protocol-First-Design-for-AI-Agent-Interaction-with-a-Supporting-3EX-Decoupl.md": {
+    "2604.04820v1-ANX-Protocol-First-Design-for-AI-Agent-Interaction-with-a-Supporting-3EX-Decoupl.html": "6d12f71f"
+  },
+  "papers/2026-07-16/2607.14642v1-MCPEvol-Bench-Benchmarking-LLM-Agent-Performance-Across-Dynamic-Evolutions-of-MC.md": {
+    "2607.14642v1-MCPEvol-Bench-Benchmarking-LLM-Agent-Performance-Across-Dynamic-Evolutions-of-MC.html": "104fe2fa"
+  },
+  "papers/2026-06-18/2606.20041v1-AI-Economist-Agent-An-Agentic-Framework-for-Model-Grounded-Economic-Analysis-wit.md": {
+    "2606.20041v1-AI-Economist-Agent-An-Agentic-Framework-for-Model-Grounded-Economic-Analysis-wit.html": "04be4a9e"
+  },
+  "papers/2026-05-06/2605.04637v1-SWE-WebDevBench-Evaluating-Coding-Agent-Application-Platforms-as-Virtual-Softwar.md": {
+    "2605.04637v1-SWE-WebDevBench-Evaluating-Coding-Agent-Application-Platforms-as-Virtual-Softwar.html": "821857d3"
+  },
+  "papers/2025-10-22/2510.20036v2-ToolScope-Enhancing-LLM-Agent-Tool-Use-through-Tool-Merging-and-Context-Aware-Fi.md": {
+    "2510.20036v2-ToolScope-Enhancing-LLM-Agent-Tool-Use-through-Tool-Merging-and-Context-Aware-Fi.html": "4e93e974"
+  },
+  "AUTOMATION.md": {
+    "AUTOMATION.html": "dd2ca8ba"
+  },
+  "SHORTCUTS_SETUP.md": {
+    "SHORTCUTS_SETUP.html": "ccd69fb8"
+  },
+  "COMPLETE_AUTOMATION_GUIDE.md": {
+    "COMPLETE_AUTOMATION_GUIDE.html": "34694b1c"
+  },
+  "index.qmd": {
+    "index.html": "accd9871"
+  },
+  "UI_ENHANCEMENTS.md": {
+    "UI_ENHANCEMENTS.html": "de784079"
+  },
+  "DESIGN_GUIDE.md": {
+    "DESIGN_GUIDE.html": "7050de70"
+  },
+  "research-workflow.md": {
+    "research-workflow.html": "a95e71eb"
+  },
+  "wiki.md": {
+    "wiki.html": "ef8df423"
+  },
+  "admin.md": {
+    "admin.html": "161f189b"
+  },
+  "settings.md": {
+    "settings.html": "05229a22"
+  },
+  "dashboard.md": {
+    "dashboard.html": "99c28399"
+  },
+  "requirements.md": {
+    "requirements.html": "7814d9db"
+  },
+  "admin-hub.md": {
+    "admin-hub.html": "b107314a"
+  },
+  "researcher-hub.md": {
+    "researcher-hub.html": "1326ac66"
+  },
+  "engineer-hub.md": {
+    "engineer-hub.html": "4022e90c"
+  },
+  "wiki-graph.md": {
+    "wiki-graph.html": "33bd0f89"
+  },
+  "OBSIDIAN_ENHANCEMENTS.md": {
+    "OBSIDIAN_ENHANCEMENTS.html": "40f25fa9"
+  },
+  "BACKLINKS_IMPLEMENTATION.md": {
+    "BACKLINKS_IMPLEMENTATION.html": "793053db"
+  },
+  "global-search.md": {
+    "global-search.html": "2966680a"
+  },
+  "system-architecture.md": {
+    "system-architecture.html": "4d3fd1cf"
+  },
+  "SYSTEM_ARCHITECTURE.md": {
+    "SYSTEM_ARCHITECTURE.html": "3f802b55"
+  },
+  "internal-hub.md": {
+    "internal-hub.html": "e09d28e8"
+  },
+  "external-hub.md": {
+    "external-hub.html": "82e0ba9b"
+  },
+  "UI_REFINEMENT_SUMMARY.md": {
+    "UI_REFINEMENT_SUMMARY.html": "d401b67c"
+  },
+  "system-health.md": {
+    "system-health.html": "2815eaf5"
+  },
+  "SESSION_SUMMARY.md": {
+    "SESSION_SUMMARY.html": "21fce442"
+  },
+  "recommendations.md": {
+    "recommendations.html": "7f3db93e"
+  },
+  "public/search-papers.md": {
+    "search-papers.html": "a4c146b6"
+  },
+  "public/authors.md": {
+    "authors.html": "36e9987f"
+  },
+  "public/papers/2025-10-03/2510.02816v1-NCV-A-Node-Wise-Consistency-Verification-Approach-for-Low-Cost-Structured-Error-.md": {
+    "2510.02816v1-NCV-A-Node-Wise-Consistency-Verification-Approach-for-Low-Cost-Structured-Error-.html": "5a79f514"
+  },
+  "public/papers/2026-05-28/2605.30003v1-Discovering-Cooperative-Pipelines-Autoresearch-for-Sequential-Social-Dilemmas.md": {
+    "2605.30003v1-Discovering-Cooperative-Pipelines-Autoresearch-for-Sequential-Social-Dilemmas.html": "0c09deb6"
+  },
+  "public/papers/2026-08-24/2608.22688v1-FashionKG-RAG-Knowledge-Graph-Enhanced-Retrieval-Augmented-Generation-for-Fashio.md": {
+    "2608.22688v1-FashionKG-RAG-Knowledge-Graph-Enhanced-Retrieval-Augmented-Generation-for-Fashio.html": "a54d172a"
+  },
+  "public/papers/2026-08-23/2608.22634v1-GeoRisk-RAG-A-Hierarchy-Aware-Risk-Framework-for-Improving-RAG-Reliability-throu.md": {
+    "2608.22634v1-GeoRisk-RAG-A-Hierarchy-Aware-Risk-Framework-for-Improving-RAG-Reliability-throu.html": "2e736e86"
+  },
+  "public/papers/2026-08-15/2608.15012v1-SysEvolve-An-AI-native-safe-autonomous-adversarial-attack-defense-co-evolutionar.md": {
+    "2608.15012v1-SysEvolve-An-AI-native-safe-autonomous-adversarial-attack-defense-co-evolutionar.html": "1a70e661"
+  },
+  "public/papers/2026-08-31/2608.27506-Thinking-Costs-Tokens-When-More-Structure-is-Worth.md": {
+    "2608.27506-Thinking-Costs-Tokens-When-More-Structure-is-Worth.html": "eee300a6"
+  },
+  "public/papers/2026-08-31/2608.27471-Retrieving-Relations-Detecting-Fallacies-A-RAG-App.md": {
+    "2608.27471-Retrieving-Relations-Detecting-Fallacies-A-RAG-App.html": "edb787b6"
+  },
+  "public/papers/2026-08-31/2608.27646-If-Agents-Were-Angels-No-Governance-Would-Be-Neces.md": {
+    "2608.27646-If-Agents-Were-Angels-No-Governance-Would-Be-Neces.html": "aac384df"
+  },
+  "public/papers/2026-08-31/2608.27475-Hypothesize-Evaluate-Refine-A-Scientific-Agent-for.md": {
+    "2608.27475-Hypothesize-Evaluate-Refine-A-Scientific-Agent-for.html": "2356a965"
+  },
+  "public/papers/2026-08-31/2608.27840-An-Empirical-Evaluation-of-Cross-City-POI-Recommen.md": {
+    "2608.27840-An-Empirical-Evaluation-of-Cross-City-POI-Recommen.html": "8d315d47"
+  },
+  "public/papers/2026-08-31/2608.27508-WM-R1-Training-GUI-Agents-to-Reason-and-leverage-W.md": {
+    "2608.27508-WM-R1-Training-GUI-Agents-to-Reason-and-leverage-W.html": "c0277c82"
+  },
+  "public/papers/2026-08-31/2608.27484-CareGraph-An-Auditable-Hybrid-AI-Framework-for-Evi.md": {
+    "2608.27484-CareGraph-An-Auditable-Hybrid-AI-Framework-for-Evi.html": "9621de3c"
+  },
+  "public/papers/2026-08-31/2608.27953-The-Illusion-of-textitWhat-If-Evaluating-the-Break.md": {
+    "2608.27953-The-Illusion-of-textitWhat-If-Evaluating-the-Break.html": "f5440eae"
+  },
+  "public/papers/2026-08-31/2608.27963-SABER-Stability-Aware-Early-Exit-for-LLM-Reasoning.md": {
+    "2608.27963-SABER-Stability-Aware-Early-Exit-for-LLM-Reasoning.html": "526b4f3a"
+  },
+  "public/papers/2026-08-31/2608.27945-Cross-Session-Decomposition-Attacks-Scaling-Risk-a.md": {
+    "2608.27945-Cross-Session-Decomposition-Attacks-Scaling-Risk-a.html": "2d557309"
+  },
+  "public/papers/2026-08-31/2608.27869-See-Hypothesize-Validate-Multimodal-Agentic-Framew.md": {
+    "2608.27869-See-Hypothesize-Validate-Multimodal-Agentic-Framew.html": "b67bd98f"
+  },
+  "public/papers/2026-08-31/2608.27524-SETU-An-Agentic-Ecosystem-for-Multilingual-Persona.md": {
+    "2608.27524-SETU-An-Agentic-Ecosystem-for-Multilingual-Persona.html": "41804c28"
+  },
+  "public/papers/2026-08-31/2608.27548-Nemotron-35-Content-Safety-Moderator-A-Compact-Mul.md": {
+    "2608.27548-Nemotron-35-Content-Safety-Moderator-A-Compact-Mul.html": "29899377"
+  },
+  "public/papers/2026-08-31/2608.27867-CoRe-MoE-Compact-Reusable-MoE-for-Continual-Multim.md": {
+    "2608.27867-CoRe-MoE-Compact-Reusable-MoE-for-Continual-Multim.html": "c0d44a66"
+  },
+  "public/papers/2026-08-31/2608.27919-From-Documents-to-Reasoning-A-Validated-Synthetic.md": {
+    "2608.27919-From-Documents-to-Reasoning-A-Validated-Synthetic.html": "bb1df5b2"
+  },
+  "public/papers/2026-07-24/2607.22319v1-Towards-Trustworthy-and-Cost-Efficient-Data-Integration-From-Naïve-RAG-to-Agenti.md": {
+    "2607.22319v1-Towards-Trustworthy-and-Cost-Efficient-Data-Integration-From-Naïve-RAG-to-Agenti.html": "55ec41bb"
+  },
+  "public/papers/2026-01-03/2601.01126v2-RoboPhD-Self-Improving-Text-to-SQL-Through-Autonomous-Agent-Evolution.md": {
+    "2601.01126v2-RoboPhD-Self-Improving-Text-to-SQL-Through-Autonomous-Agent-Evolution.html": "6102063a"
+  },
+  "public/papers/2026-02-23/2602.20426v2-Learning-to-Rewrite-Tool-Descriptions-for-Reliable-LLM-Agent-Tool-Use.md": {
+    "2602.20426v2-Learning-to-Rewrite-Tool-Descriptions-for-Reliable-LLM-Agent-Tool-Use.html": "17c7bca0"
+  },
+  "public/papers/index.md": {
+    "index.html": "7cb8240b"
+  },
+  "public/papers/2026-08-28/2608.28543v1-Rational-torsion-on-simple-genus-two-Jacobians.md": {
+    "2608.28543v1-Rational-torsion-on-simple-genus-two-Jacobians.html": "49f8a757"
+  },
+  "public/papers/2026-08-28/2608.28246v1-Training-free-Suction-Grasp-Detection-for-Deformed-Aseptic-Cartons-Using-Vision-.md": {
+    "2608.28246v1-Training-free-Suction-Grasp-Detection-for-Deformed-Aseptic-Cartons-Using-Vision-.html": "c42802db"
+  },
+  "public/papers/2026-08-28/2608.28567v1-GeBDA-Building-Damage-Assessment-as-Text-Based-Sequence-Prediction.md": {
+    "2608.28567v1-GeBDA-Building-Damage-Assessment-as-Text-Based-Sequence-Prediction.html": "f902d1ed"
+  },
+  "public/papers/2026-08-28/2608.28577v1-How-Long-Range-Tails-Reshape-Non-Hermitian-Spectra.md": {
+    "2608.28577v1-How-Long-Range-Tails-Reshape-Non-Hermitian-Spectra.html": "8bd5f4ed"
+  },
+  "public/papers/2026-08-28/2608.28581v1-Renormalization-guided-cascade-upscaling-for-lattice-field-generation.md": {
+    "2608.28581v1-Renormalization-guided-cascade-upscaling-for-lattice-field-generation.html": "76165ac0"
+  },
+  "public/papers/2026-08-28/2608.28584v1-Bounds-for-inertialess-dynamo.md": {
+    "2608.28584v1-Bounds-for-inertialess-dynamo.html": "dee03b12"
+  },
+  "public/papers/2026-08-28/2608.28583v1-Layer-Controlled-Intermolecular-Coupling-and-Many-Body-Effects-in-C_60-Films.md": {
+    "2608.28583v1-Layer-Controlled-Intermolecular-Coupling-and-Many-Body-Effects-in-C_60-Films.html": "e150265e"
+  },
+  "public/papers/2026-08-28/2608.28553v1-Logos-An-Agent-Harness-on-a-Cross-Process-Bus.md": {
+    "2608.28553v1-Logos-An-Agent-Harness-on-a-Cross-Process-Bus.html": "a6d1d96a"
+  },
+  "public/papers/2026-08-28/2608.28514v1-Fast-and-efficient-nested-sampling-with-BEST.md": {
+    "2608.28514v1-Fast-and-efficient-nested-sampling-with-BEST.html": "4081e9ee"
+  },
+  "public/papers/2026-08-28/2608.28541v1-An-Enclosed-Mode-Is-a-Gauge-Choice-Topology-Relative-to-Reach-in-Certified-Code-.md": {
+    "2608.28541v1-An-Enclosed-Mode-Is-a-Gauge-Choice-Topology-Relative-to-Reach-in-Certified-Code-.html": "05a67e1f"
+  },
+  "public/papers/2026-08-28/2608.28503v1-SG-UMP-Sequence-Guided-Universal-Multimodal-Prioritization-Calculation-Framework.md": {
+    "2608.28503v1-SG-UMP-Sequence-Guided-Universal-Multimodal-Prioritization-Calculation-Framework.html": "1f6d5572"
+  },
+  "public/papers/2026-08-28/2608.28579v1-Modular-Functors-with-Singularities-from-Vertex-Operator-Algebras-Beyond-Rigidit.md": {
+    "2608.28579v1-Modular-Functors-with-Singularities-from-Vertex-Operator-Algebras-Beyond-Rigidit.html": "591b725a"
+  },
+  "public/papers/2026-08-28/2608.28248v1-Synth-JDoc-Synthesizing-a-Japanese-Document-Image-Dataset-for-OCR-with-Diverse-L.md": {
+    "2608.28248v1-Synth-JDoc-Synthesizing-a-Japanese-Document-Image-Dataset-for-OCR-with-Diverse-L.html": "563a30df"
+  },
+  "public/papers/2026-08-28/2608.28572v1-PULSAR-Pooled-Unified-Late-Interaction-Search-and-Retrieval-for-Enterprise-Visua.md": {
+    "2608.28572v1-PULSAR-Pooled-Unified-Late-Interaction-Search-and-Retrieval-for-Enterprise-Visua.html": "c5833e56"
+  },
+  "public/papers/2026-08-28/2608.28588v1-Interaction-corrections-to-topological-density-three-point-functions-in-two-dime.md": {
+    "2608.28588v1-Interaction-corrections-to-topological-density-three-point-functions-in-two-dime.html": "b0b33f73"
+  },
+  "public/papers/2026-08-28/2608.28566v1-On-two-proofs-of-d2-mixing-of-weighted-Dikin-walks.md": {
+    "2608.28566v1-On-two-proofs-of-d2-mixing-of-weighted-Dikin-walks.html": "55aeef64"
+  },
+  "public/papers/2026-08-28/2608.28576v1-Learning-a-Size-Weight-Frontier-for-Synthetic-Augmented-Inference.md": {
+    "2608.28576v1-Learning-a-Size-Weight-Frontier-for-Synthetic-Augmented-Inference.html": "37e80a84"
+  },
+  "public/papers/2026-08-28/2608.28403v1-Recovering-Software-Architecture-Intent-from-Historical-Work-Items-using-Generat.md": {
+    "2608.28403v1-Recovering-Software-Architecture-Intent-from-Historical-Work-Items-using-Generat.html": "60bad1fd"
+  },
+  "public/papers/2026-08-28/2608.28542v1-Offline-Verifiable-Accountability-for-Cross-Organization-Agent-Messaging-A-Prese.md": {
+    "2608.28542v1-Offline-Verifiable-Accountability-for-Cross-Organization-Agent-Messaging-A-Prese.html": "4e600443"
+  },
+  "public/papers/2026-08-28/2608.28216v1-WALDO-One-Shot-Exemplar-Conditioned-Object-Detection-in-Cluttered-Scenes.md": {
+    "2608.28216v1-WALDO-One-Shot-Exemplar-Conditioned-Object-Detection-in-Cluttered-Scenes.html": "7006c9a6"
+  },
+  "public/papers/2026-08-28/2608.28547v1-DARTS-Decoder-Aware-Representation-Tuning-via-Surgery-for-Model-Merging.md": {
+    "2608.28547v1-DARTS-Decoder-Aware-Representation-Tuning-via-Surgery-for-Model-Merging.html": "18f3a4b6"
+  },
+  "public/papers/2026-08-28/2608.28578v1-Aero-Hand-Open-A-Simulation-Ready-Tendon-Driven-Hand-for-Dexterous-Manipulation-.md": {
+    "2608.28578v1-Aero-Hand-Open-A-Simulation-Ready-Tendon-Driven-Hand-for-Dexterous-Manipulation-.html": "d66d9983"
+  },
+  "public/papers/2026-08-28/2608.28534v1-InstructMesh-Selective-Refinement-of-Generative-3D-Models-for-Fabrication.md": {
+    "2608.28534v1-InstructMesh-Selective-Refinement-of-Generative-3D-Models-for-Fabrication.html": "b0a61f45"
+  },
+  "public/papers/2026-08-28/2608.28144v1-The-Shape-of-Power-A-Multilingual-Framework-for-Social-Power-Reasoning-in-Dialog.md": {
+    "2608.28144v1-The-Shape-of-Power-A-Multilingual-Framework-for-Social-Power-Reasoning-in-Dialog.html": "d455c5e0"
+  },
+  "public/papers/2026-08-28/2608.28580v1-Renormalization-guided-inverse-blocking-for-lattice-field-generation-constructio.md": {
+    "2608.28580v1-Renormalization-guided-inverse-blocking-for-lattice-field-generation-constructio.html": "29c4d7ec"
+  },
+  "public/papers/2026-08-28/2608.28570v1-ChainSplat-A-Physics-Inspired-Screw-Theoretic-Model-for-Learning-Deformable-Line.md": {
+    "2608.28570v1-ChainSplat-A-Physics-Inspired-Screw-Theoretic-Model-for-Learning-Deformable-Line.html": "a312ba37"
+  },
+  "public/papers/2026-08-28/2608.28589v1-QGPINNs-A-Physics-Informed-Neural-Network-Framework-for-Nonlocal-Differential-Eq.md": {
+    "2608.28589v1-QGPINNs-A-Physics-Informed-Neural-Network-Framework-for-Nonlocal-Differential-Eq.html": "8a49f9ac"
+  },
+  "public/papers/2026-08-28/2608.28218v1-Focus-Where-It-Counts-A-Salience-Driven-Vision-Language-Model-for-Low-Vision-Ass.md": {
+    "2608.28218v1-Focus-Where-It-Counts-A-Salience-Driven-Vision-Language-Model-for-Low-Vision-Ass.html": "041807b9"
+  },
+  "public/papers/2026-08-28/2608.28554v1-Machine-learned-designs-of-functional-colloidal-foldamers.md": {
+    "2608.28554v1-Machine-learned-designs-of-functional-colloidal-foldamers.html": "fca7155a"
+  },
+  "public/papers/2026-08-28/2608.28551v1-The-Erdős-Hajnal-Property-for-the-six-vertex-Graph-with-Edge-Set-abbccddeafbfdf.md": {
+    "2608.28551v1-The-Erdős-Hajnal-Property-for-the-six-vertex-Graph-with-Edge-Set-abbccddeafbfdf.html": "ddc0a6bf"
+  },
+  "public/papers/2026-08-28/2608.28399v1-RetailAgent-Structured-Adverse-Timing-in-Self-Conditioned-Multimodal-LLM-Trading.md": {
+    "2608.28399v1-RetailAgent-Structured-Adverse-Timing-in-Self-Conditioned-Multimodal-LLM-Trading.html": "c5cca5a6"
+  },
+  "public/papers/2026-08-28/2608.28549v1-Video-Generative-Models-as-Geometry-Learner.md": {
+    "2608.28549v1-Video-Generative-Models-as-Geometry-Learner.html": "20ee53b8"
+  },
+  "public/papers/2026-08-28/2608.28529v1-Relaxed-Sender-Anonymity-for-CBDC-Interbank-Settlement-A-Zero-Knowledge-Approach.md": {
+    "2608.28529v1-Relaxed-Sender-Anonymity-for-CBDC-Interbank-Settlement-A-Zero-Knowledge-Approach.html": "e678bba7"
+  },
+  "public/papers/2026-08-28/2608.27809v1-LINE-Conversation-History-Retrieval-for-Personal-Memory-RAG-Evaluating-Search-Re.md": {
+    "2608.27809v1-LINE-Conversation-History-Retrieval-for-Personal-Memory-RAG-Evaluating-Search-Re.html": "817cdd40"
+  },
+  "public/papers/2026-08-28/2608.28532v1-xTRUCE-A-Provably-Safe-Arbiter-for-Multi-xApp-Conflict-Mitigation-in-Agentic-O-R.md": {
+    "2608.28532v1-xTRUCE-A-Provably-Safe-Arbiter-for-Multi-xApp-Conflict-Mitigation-in-Agentic-O-R.html": "18dcc522"
+  },
+  "public/papers/2026-08-28/2608.28563v1-Exact-quantification-of-nonlocal-magic.md": {
+    "2608.28563v1-Exact-quantification-of-nonlocal-magic.html": "68f011ca"
+  },
+  "public/papers/2026-08-28/2608.28383v1-Semantic-Head-Specialization-Guides-Hybrid-ViT-Attention-for-Multimodal-LLMs.md": {
+    "2608.28383v1-Semantic-Head-Specialization-Guides-Hybrid-ViT-Attention-for-Multimodal-LLMs.html": "09ba1a87"
+  },
+  "public/papers/2026-08-28/2608.28586v1-Continuity-equation-on-metric-spaces-via-measure-valued-derivations-and-BV-Wasse.md": {
+    "2608.28586v1-Continuity-equation-on-metric-spaces-via-measure-valued-derivations-and-BV-Wasse.html": "1e073459"
+  },
+  "public/papers/2026-08-28/2608.28389v1-CamoDocs-A-Poisoning-Attack-Against-Retrieval-Augmented-Language-Models-Using-Ca.md": {
+    "2608.28389v1-CamoDocs-A-Poisoning-Attack-Against-Retrieval-Augmented-Language-Models-Using-Ca.html": "e4bccafa"
+  },
+  "public/papers/2026-08-27/2608.27101v1-pro-team-at-LLMs4OL-2026-Tasks-Flagship-and-Reuse-Retrieval-Augmented-Generation.md": {
+    "2608.27101v1-pro-team-at-LLMs4OL-2026-Tasks-Flagship-and-Reuse-Retrieval-Augmented-Generation.html": "07f20b41"
+  },
+  "public/papers/2026-08-27/2608.27036v1-Reasoning-about-In-Context-Samples-for-Machine-Translation.md": {
+    "2608.27036v1-Reasoning-about-In-Context-Samples-for-Machine-Translation.html": "e026d980"
+  },
+  "public/papers/2026-08-27/2608.27046v1-Performance-Foundations-of-Parallel-Distributed-Reasoning-Language-Models.md": {
+    "2608.27046v1-Performance-Foundations-of-Parallel-Distributed-Reasoning-Language-Models.html": "6eca0e53"
+  },
+  "public/papers/2026-08-27/2608.27661v1-Knowing-Before-Answering-Decoding-Language-Models-for-Reliable-RAG.md": {
+    "2608.27661v1-Knowing-Before-Answering-Decoding-Language-Models-for-Reliable-RAG.html": "fd2ab7ae"
+  },
+  "public/papers/2026-08-27/2608.26921v1-AraMS-28k-The-Largest-Publicly-Released-Line-Level-Dataset-of-Historical-Arabic-.md": {
+    "2608.26921v1-AraMS-28k-The-Largest-Publicly-Released-Line-Level-Dataset-of-Historical-Arabic-.html": "23be3cba"
+  },
+  "public/papers/2026-08-27/2608.26870v1-C-Unseen-Weak-Signal-Detection-in-Dynamic-Temporal-Knowledge-Graphs-via-LLM-Reas.md": {
+    "2608.26870v1-C-Unseen-Weak-Signal-Detection-in-Dynamic-Temporal-Knowledge-Graphs-via-LLM-Reas.html": "65012431"
+  },
+  "public/papers/2026-08-27/2608.27121v1-How-AI-Experiences-Art-Emergent-Aesthetic-Structure-in-a-Self-Supervised-Multimo.md": {
+    "2608.27121v1-How-AI-Experiences-Art-Emergent-Aesthetic-Structure-in-a-Self-Supervised-Multimo.html": "c76d543e"
+  },
+  "public/papers/2026-08-27/2608.26856v1-From-Reasoning-to-Pixels-Grounded-Medical-Multimodal-LLMs-for-VQA-and-Segmentati.md": {
+    "2608.26856v1-From-Reasoning-to-Pixels-Grounded-Medical-Multimodal-LLMs-for-VQA-and-Segmentati.html": "264f4208"
+  },
+  "public/papers/2026-08-27/2608.26623v1-AgentJudgeBench-A-Multi-Difficulty-Benchmark-for-Evaluating-LLM-Judges-on-Agenti.md": {
+    "2608.26623v1-AgentJudgeBench-A-Multi-Difficulty-Benchmark-for-Evaluating-LLM-Judges-on-Agenti.html": "e0524dce"
+  },
+  "public/papers/2026-07-03/2607.03233v1-Agentic-and-Generative-AI-for-Open-Source-Intelligence-and-Cyber-Investigations-.md": {
+    "2607.03233v1-Agentic-and-Generative-AI-for-Open-Source-Intelligence-and-Cyber-Investigations-.html": "9c16ff9e"
+  },
+  "public/papers/2026-04-06/2604.04820v1-ANX-Protocol-First-Design-for-AI-Agent-Interaction-with-a-Supporting-3EX-Decoupl.md": {
+    "2604.04820v1-ANX-Protocol-First-Design-for-AI-Agent-Interaction-with-a-Supporting-3EX-Decoupl.html": "2bd49bad"
+  },
+  "public/papers/2026-07-16/2607.14642v1-MCPEvol-Bench-Benchmarking-LLM-Agent-Performance-Across-Dynamic-Evolutions-of-MC.md": {
+    "2607.14642v1-MCPEvol-Bench-Benchmarking-LLM-Agent-Performance-Across-Dynamic-Evolutions-of-MC.html": "9ee5c2fb"
+  },
+  "public/papers/2026-06-18/2606.20041v1-AI-Economist-Agent-An-Agentic-Framework-for-Model-Grounded-Economic-Analysis-wit.md": {
+    "2606.20041v1-AI-Economist-Agent-An-Agentic-Framework-for-Model-Grounded-Economic-Analysis-wit.html": "6ceb956f"
+  },
+  "public/papers/2026-05-06/2605.04637v1-SWE-WebDevBench-Evaluating-Coding-Agent-Application-Platforms-as-Virtual-Softwar.md": {
+    "2605.04637v1-SWE-WebDevBench-Evaluating-Coding-Agent-Application-Platforms-as-Virtual-Softwar.html": "292c750d"
+  },
+  "public/papers/2025-10-22/2510.20036v2-ToolScope-Enhancing-LLM-Agent-Tool-Use-through-Tool-Merging-and-Context-Aware-Fi.md": {
+    "2510.20036v2-ToolScope-Enhancing-LLM-Agent-Tool-Use-through-Tool-Merging-and-Context-Aware-Fi.html": "06ca6bf2"
+  },
+  "public/wiki.md": {
+    "wiki.html": "efb6fe76"
+  },
+  "public/global-search.md": {
+    "global-search.html": "0bac0f87"
+  },
+  "public/compare-papers.md": {
+    "compare-papers.html": "8ac9468e"
+  },
+  "public/statistics.md": {
+    "statistics.html": "3216f5f5"
+  },
+  "public/index.qmd": {
+    "index.html": "c15a168e"
+  },
+  "public/reading-list.md": {
+    "reading-list.html": "35b9d417"
+  },
+  "public/learning-paths.md": {
+    "learning-paths.html": "d466112b"
+  },
+  "public/must-read-papers.md": {
+    "must-read-papers.html": "696f04ee"
+  },
+  "public/concepts/connections.qmd": {
+    "connections.html": "082ff444"
+  },
+  "public/concepts/glossary.md": {
+    "glossary.html": "6cc51566"
+  },
+  "public/concepts/papers-by-concept.md": {
+    "papers-by-concept.html": "0b0384ed"
+  },
+  "public/research-workflow.md": {
+    "research-workflow.html": "9c5b9589"
+  },
+  "public/concept-explorer.qmd": {
+    "concept-explorer.html": "a0aebafb"
+  },
+  "public/wiki-graph.md": {
+    "wiki-graph.html": "4e3d6cec"
+  },
+  "public/digests/week-2026-35.md": {
+    "week-2026-35.html": "1988f7db"
+  },
+  "public/digests/index.md": {
+    "index.html": "3653634a"
+  },
+  "public/notes.md": {
+    "notes.html": "262ca110"
+  },
+  "public/tag-cloud.md": {
+    "tag-cloud.html": "c6082fbd"
+  },
+  "public/recommendations.md": {
+    "recommendations.html": "7ee900c5"
+  },
+  "public/topics/llm-reasoning.qmd": {
+    "llm-reasoning.html": "091471d6"
+  },
+  "public/topics/ai-agents.qmd": {
+    "ai-agents.html": "a48f599b"
+  },
+  "public/topics/multi-modal.qmd": {
+    "multi-modal.html": "62a0398b"
+  },
+  "public/topics/rag-retrieval.qmd": {
+    "rag-retrieval.html": "e73afdd2"
+  },
+  "public/external-hub.md": {
+    "external-hub.html": "04cdbff6"
+  },
+  "RESTRUCTURING_PLAN.md": {
+    "RESTRUCTURING_PLAN.html": "84eefae2"
+  },
+  "private/requirements.md": {
+    "requirements.html": "c3aae4dc"
+  },
+  "private/settings.md": {
+    "settings.html": "347b0aad"
+  },
+  "private/COMPLETE_AUTOMATION_GUIDE.md": {
+    "COMPLETE_AUTOMATION_GUIDE.html": "ba9f480a"
+  },
+  "private/UI_ENHANCEMENTS.md": {
+    "UI_ENHANCEMENTS.html": "2354b19a"
+  },
+  "private/admin.md": {
+    "admin.html": "3df19528"
+  },
+  "private/system-architecture.md": {
+    "system-architecture.html": "0e3e2419"
+  },
+  "private/system-health.md": {
+    "system-health.html": "c2e58b7d"
+  },
+  "private/index.qmd": {
+    "index.html": "d97f7500"
+  },
+  "private/DESIGN_GUIDE.md": {
+    "DESIGN_GUIDE.html": "11847bf9"
+  },
+  "private/BACKLINKS_IMPLEMENTATION.md": {
+    "BACKLINKS_IMPLEMENTATION.html": "5566c6e0"
+  },
+  "private/SYSTEM_ARCHITECTURE.md": {
+    "SYSTEM_ARCHITECTURE.html": "003ade65"
+  },
+  "private/SESSION_SUMMARY.md": {
+    "SESSION_SUMMARY.html": "cd2ca7f6"
+  },
+  "private/OBSIDIAN_ENHANCEMENTS.md": {
+    "OBSIDIAN_ENHANCEMENTS.html": "4f69e316"
+  },
+  "private/UI_REFINEMENT_SUMMARY.md": {
+    "UI_REFINEMENT_SUMMARY.html": "2fc69a6c"
+  },
+  "private/SHORTCUTS_SETUP.md": {
+    "SHORTCUTS_SETUP.html": "24928f22"
+  },
+  "private/internal-hub.md": {
+    "internal-hub.html": "445212e1"
+  },
+  "private/AUTOMATION.md": {
+    "AUTOMATION.html": "f58f1f4f"
+  },
+  "private/resources.md": {
+    "resources.html": "d076cd03"
+  },
+  "private/dashboard.md": {
+    "dashboard.html": "2ad30ee3"
+  },
+  "private/faq.md": {
+    "faq.html": "2327bb5f"
+  },
+  "private/comparison-tables.md": {
+    "comparison-tables.html": "0113248f"
+  },
+  "private/admin-hub.md": {
+    "admin-hub.html": "160ee631"
+  },
+  "private/RESTRUCTURING_PLAN.md": {
+    "RESTRUCTURING_PLAN.html": "2dbc626e"
+  },
+  "private/researcher-hub.md": {
+    "researcher-hub.html": "b1179e77"
+  },
+  "private/engineer-hub.md": {
+    "engineer-hub.html": "674b4558"
+  },
+  "public/global-search.qmd": {
+    "global-search.html": "35274139"
+  }
+}

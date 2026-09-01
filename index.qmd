@@ -1,0 +1,189 @@
+---
+title: "AI Research Tracker"
+---
+
+<div class="router-container">
+
+<div class="router-hero">
+<h1>AI Research Tracker</h1>
+<p class="router-subtitle">Choose your path to continue</p>
+</div>
+
+<div class="router-cards">
+
+<a href="public/index.html" class="router-card public-card">
+<div class="card-icon">🌐</div>
+<h2>Research Portal</h2>
+<p class="card-audience">For Researchers & Academics</p>
+<div class="card-features">
+<div class="feature">📄 Browse 77+ AI research papers</div>
+<div class="feature">🔍 Search and discover papers</div>
+<div class="feature">📝 Manage your reading list</div>
+<div class="feature">🧠 Explore knowledge wiki</div>
+<div class="feature">💡 Get personalized recommendations</div>
+<div class="feature">📊 View research analytics</div>
+</div>
+<div class="card-cta">Enter Research Portal →</div>
+</a>
+
+<a href="private/index.html" class="router-card private-card">
+<div class="card-icon">🔧</div>
+<h2>Admin Dashboard</h2>
+<p class="card-audience">For Technical Staff & Admins</p>
+<div class="card-features">
+<div class="feature">🏗️ System architecture docs</div>
+<div class="feature">📊 Monitor system health</div>
+<div class="feature">⚙️ Configure automation</div>
+<div class="feature">📋 View requirements</div>
+<div class="feature">🎨 Design guidelines</div>
+<div class="feature">🔧 Technical documentation</div>
+</div>
+<div class="card-cta">Enter Admin Dashboard →</div>
+</a>
+
+</div>
+
+<div class="router-footer">
+<p>AI Research Tracker • Automated arXiv paper curation system</p>
+</div>
+
+</div>
+
+<style>
+.router-container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 2rem;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+}
+
+.router-hero {
+text-align: center;
+padding: 3rem 2rem;
+background: linear-gradient(135deg, #1e3a8a 0%, #0d9488 100%);
+border-radius: 16px;
+color: white;
+margin-bottom: 3rem;
+}
+
+.router-hero h1 {
+font-size: 3rem;
+margin: 0 0 1rem 0;
+font-weight: 700;
+}
+
+.router-subtitle {
+font-size: 1.3rem;
+opacity: 0.95;
+margin: 0;
+}
+
+.router-cards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+gap: 2rem;
+margin-bottom: 3rem;
+flex: 1;
+}
+
+.router-card {
+background: white;
+border-radius: 12px;
+padding: 2.5rem;
+text-decoration: none;
+color: inherit;
+transition: all 0.3s ease;
+box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+display: flex;
+flex-direction: column;
+border: 3px solid transparent;
+}
+
+.router-card:hover {
+transform: translateY(-8px);
+box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.public-card:hover {
+border-color: #0d9488;
+}
+
+.private-card:hover {
+border-color: #6366f1;
+}
+
+.card-icon {
+font-size: 4rem;
+margin-bottom: 1rem;
+}
+
+.router-card h2 {
+font-size: 2rem;
+margin: 0 0 0.5rem 0;
+color: #1f2937;
+}
+
+.card-audience {
+font-size: 1rem;
+color: #6b7280;
+margin: 0 0 1.5rem 0;
+font-weight: 500;
+}
+
+.card-features {
+flex: 1;
+margin-bottom: 1.5rem;
+}
+
+.feature {
+padding: 0.5rem 0;
+color: #4b5563;
+font-size: 0.95rem;
+}
+
+.card-cta {
+padding: 1rem;
+border-radius: 8px;
+text-align: center;
+font-weight: 600;
+font-size: 1.1rem;
+transition: all 0.2s ease;
+}
+
+.public-card .card-cta {
+background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+color: white;
+}
+
+.private-card .card-cta {
+background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+color: white;
+}
+
+.router-card:hover .card-cta {
+transform: scale(1.05);
+}
+
+.router-footer {
+text-align: center;
+padding: 2rem;
+color: #6b7280;
+font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+.router-hero h1 {
+  font-size: 2rem;
+}
+
+.router-cards {
+  grid-template-columns: 1fr;
+}
+
+.router-card {
+  padding: 1.5rem;
+}
+}
+</style>

@@ -1,0 +1,641 @@
+---
+title: "Global Search"
+format:
+  html:
+    include-in-header: 
+      - text: |
+          <style>
+          .global-search-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+          }
+          .search-header {
+            text-align: center;
+            margin-bottom: 2rem;
+          }
+          .search-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+          }
+          .search-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+          }
+          .search-shortcut-hint {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+          }
+          .search-shortcut-hint kbd {
+            background: var(--bg-primary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+          }
+          .search-box-wrapper {
+            margin-bottom: 1.5rem;
+          }
+          .search-input-container {
+            position: relative;
+            margin-bottom: 1rem;
+          }
+          .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            pointer-events: none;
+          }
+          .global-search-input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 3rem;
+            font-size: 1.1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            background: var(--bg-primary);
+            color: var(--text-color);
+            transition: all 0.2s;
+          }
+          .global-search-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+          }
+          .clear-search-btn {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: all 0.2s;
+          }
+          .clear-search-btn:hover {
+            background: var(--bg-secondary);
+            color: var(--text-color);
+          }
+          .search-filters {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+          .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            background: var(--bg-primary);
+            color: var(--text-color);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+          }
+          .filter-btn:hover {
+            background: var(--bg-secondary);
+            border-color: var(--accent-color);
+          }
+          .filter-btn.active {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+          }
+          .search-stats {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+          }
+          .search-results {
+            min-height: 400px;
+          }
+          .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+          }
+          .empty-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+          }
+          .empty-state h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+          }
+          .search-tips {
+            margin-top: 2rem;
+            text-align: left;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          .search-tips h4 {
+            margin-bottom: 0.75rem;
+            color: var(--text-color);
+          }
+          .search-tips ul {
+            list-style: none;
+            padding: 0;
+          }
+          .search-tips li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+          }
+          .search-tips li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+          }
+          .search-tips kbd {
+            background: var(--bg-primary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            border: 1px solid var(--border-color);
+          }
+          .search-result-item {
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            transition: all 0.2s;
+            cursor: pointer;
+          }
+          .search-result-item:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+          }
+          .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.75rem;
+          }
+          .result-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin: 0;
+            flex: 1;
+          }
+          .result-type {
+            padding: 0.25rem 0.75rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            white-space: nowrap;
+            margin-left: 1rem;
+          }
+          .result-type.paper { background: #e3f2fd; color: #1976d2; }
+          .result-type.wiki { background: #f3e5f5; color: #7b1fa2; }
+          .result-type.topic { background: #e8f5e9; color: #388e3c; }
+          .result-type.concept { background: #fff3e0; color: #f57c00; }
+          .result-type.page { background: #fce4ec; color: #c2185b; }
+          .result-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+          }
+          .result-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+          }
+          .result-context {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+          }
+          .result-context mark {
+            background: rgba(102, 126, 234, 0.2);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            color: var(--text-color);
+            font-weight: 600;
+          }
+          .result-keywords {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+          }
+          .keyword-tag {
+            padding: 0.25rem 0.75rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+          }
+          .no-results {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-muted);
+          }
+          .no-results h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+          }
+          @media (max-width: 768px) {
+            .search-header h1 {
+              font-size: 2rem;
+            }
+            .global-search-input {
+              font-size: 1rem;
+            }
+            .search-filters {
+              justify-content: flex-start;
+            }
+            .filter-btn {
+              font-size: 0.85rem;
+              padding: 0.4rem 0.8rem;
+            }
+          }
+          </style>
+---
+
+<div class="global-search-container">
+
+<div class="search-header">
+
+# 🔍 Global Search
+
+Search across all papers, wiki terms, topics, and pages
+
+<div class="search-shortcut-hint">
+<kbd>Cmd/Ctrl</kbd> + <kbd>K</kbd> to search from anywhere
+</div>
+
+</div>
+
+<div class="search-box-wrapper">
+
+<div class="search-input-container">
+
+<span class="search-icon">🔍</span>
+<input type="text" id="globalSearchInput" class="global-search-input" placeholder="Search for papers, concepts, topics..." autocomplete="off">
+<button id="clearSearchBtn" class="clear-search-btn" style="display: none;">✕</button>
+
+</div>
+
+<div class="search-filters">
+
+<button class="filter-btn active" data-filter="all">All</button>
+<button class="filter-btn" data-filter="papers">Papers</button>
+<button class="filter-btn" data-filter="wiki">Wiki</button>
+<button class="filter-btn" data-filter="topics">Topics</button>
+<button class="filter-btn" data-filter="concepts">Concepts</button>
+<button class="filter-btn" data-filter="pages">Pages</button>
+
+</div>
+
+</div>
+
+<div class="search-stats" id="searchStats">
+
+<span id="resultCount">0 results</span>
+<span id="searchTime"></span>
+
+</div>
+
+<div class="search-results" id="searchResults">
+
+<div class="empty-state">
+
+<div class="empty-icon">🔎</div>
+
+### Start typing to search
+
+Search across 77 papers, 14 wiki terms, 4 topics, and more
+
+<div class="search-tips">
+
+#### Search Tips:
+
+- Type keywords to find matching papers, concepts, and pages
+- Use the filter buttons to narrow results by category
+- Press <kbd>Cmd/Ctrl</kbd> + <kbd>K</kbd> to focus search from anywhere
+- Results are ranked by relevance
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="../_includes/search-index.js"></script>
+<script>
+// Fuzzy search implementation
+function fuzzyMatch(text, query) {
+  text = text.toLowerCase();
+  query = query.toLowerCase();
+  
+  if (text === query) return { match: true, score: 100 };
+  if (text.includes(query)) return { match: true, score: 80 };
+  
+  const words = text.split(/\s+/);
+  if (words.some(w => w.startsWith(query))) return { match: true, score: 70 };
+  
+  let queryIdx = 0;
+  let score = 0;
+  let consecutive = 0;
+  
+  for (let i = 0; i < text.length && queryIdx < query.length; i++) {
+    if (text[i] === query[queryIdx]) {
+      queryIdx++;
+      consecutive++;
+      score += consecutive * 2;
+    } else {
+      consecutive = 0;
+    }
+  }
+  
+  if (queryIdx === query.length) {
+    return { match: true, score: Math.min(score, 60) };
+  }
+  
+  return { match: false, score: 0 };
+}
+
+function searchIndex(query, filter = 'all') {
+  const startTime = performance.now();
+  const results = [];
+  const queryTerms = query.toLowerCase().split(/\s+/).filter(t => t.length > 0);
+  
+  if (queryTerms.length === 0) return { results: [], time: 0 };
+  
+  const categories = filter === 'all' 
+    ? ['papers', 'wiki', 'topics', 'concepts', 'pages']
+    : [filter];
+  
+  categories.forEach(category => {
+    if (!SEARCH_INDEX[category]) return;
+    
+    SEARCH_INDEX[category].forEach(item => {
+      let bestScore = 0;
+      let matchedField = '';
+      
+      const titleMatch = fuzzyMatch(item.title || '', query);
+      if (titleMatch.match) {
+        bestScore = Math.max(bestScore, titleMatch.score * 1.5);
+        matchedField = 'title';
+      }
+      
+      if (item.keywords) {
+        item.keywords.forEach(keyword => {
+          const kwMatch = fuzzyMatch(keyword, query);
+          if (kwMatch.match) {
+            bestScore = Math.max(bestScore, kwMatch.score);
+            matchedField = matchedField || 'keywords';
+          }
+        });
+      }
+      
+      const searchText = item.abstract || item.definition || item.content || '';
+      const contentMatch = fuzzyMatch(searchText, query);
+      if (contentMatch.match) {
+        bestScore = Math.max(bestScore, contentMatch.score * 0.8);
+        matchedField = matchedField || 'content';
+      }
+      
+      if (queryTerms.length > 1) {
+        const allTermsMatch = queryTerms.every(term => {
+          return fuzzyMatch(item.title || '', term).match ||
+                 (item.keywords && item.keywords.some(kw => fuzzyMatch(kw, term).match)) ||
+                 fuzzyMatch(searchText, term).match;
+        });
+        
+        if (!allTermsMatch) bestScore = 0;
+      }
+      
+      if (bestScore > 0) {
+        results.push({
+          ...item,
+          category: category,
+          score: bestScore,
+          matchedField: matchedField
+        });
+      }
+    });
+  });
+  
+  results.sort((a, b) => b.score - a.score);
+  
+  const endTime = performance.now();
+  return {
+    results: results.slice(0, 50),
+    time: (endTime - startTime).toFixed(2)
+  };
+}
+
+function highlightText(text, query) {
+  if (!query || !text) return text;
+  
+  const queryTerms = query.toLowerCase().split(/\s+/).filter(t => t.length > 0);
+  let result = text;
+  
+  queryTerms.forEach(term => {
+    const regex = new RegExp(`(${term})`, 'gi');
+    result = result.replace(regex, '<mark>$1</mark>');
+  });
+  
+  return result;
+}
+
+function getContextSnippet(text, query, maxLength = 200) {
+  if (!text) return '';
+  
+  const queryTerms = query.toLowerCase().split(/\s+/).filter(t => t.length > 0);
+  const lowerText = text.toLowerCase();
+  
+  let matchPos = -1;
+  for (const term of queryTerms) {
+    const pos = lowerText.indexOf(term);
+    if (pos !== -1 && (matchPos === -1 || pos < matchPos)) {
+      matchPos = pos;
+    }
+  }
+  
+  if (matchPos === -1) {
+    return text.substring(0, maxLength) + (text.length > maxLength ? '...' : '');
+  }
+  
+  const start = Math.max(0, matchPos - 50);
+  const end = Math.min(text.length, start + maxLength);
+  let snippet = text.substring(start, end);
+  
+  if (start > 0) snippet = '...' + snippet;
+  if (end < text.length) snippet = snippet + '...';
+  
+  return snippet;
+}
+
+function renderResults(results, query) {
+  const container = document.getElementById('searchResults');
+  
+  if (results.length === 0) {
+    container.innerHTML = `
+      <div class="no-results">
+        <h3>No results found</h3>
+        <p>Try different keywords or adjust your search filters</p>
+      </div>
+    `;
+    return;
+  }
+  
+  const html = results.map(result => {
+    const typeClass = result.category;
+    const typeLabel = result.category.charAt(0).toUpperCase() + result.category.slice(1);
+    
+    let metaHtml = '';
+    if (result.category === 'paper') {
+      metaHtml = `
+        <div class="result-meta">
+          ${result.authors ? `<span class="result-meta-item">👤 ${result.authors}</span>` : ''}
+          ${result.arxiv_id ? `<span class="result-meta-item">📄 ${result.arxiv_id}</span>` : ''}
+          ${result.date ? `<span class="result-meta-item">📅 ${result.date}</span>` : ''}
+        </div>
+      `;
+    }
+    
+    const context = result.category === 'paper' 
+      ? getContextSnippet(result.abstract, query)
+      : result.category === 'wiki'
+      ? result.definition
+      : getContextSnippet(result.content, query);
+    
+    const keywordsHtml = result.keywords && result.keywords.length > 0
+      ? `<div class="result-keywords">
+           ${result.keywords.slice(0, 5).map(kw => `<span class="keyword-tag">${kw}</span>`).join('')}
+         </div>`
+      : '';
+    
+    return `
+      <div class="search-result-item" onclick="window.location.href='${result.url}'">
+        <div class="result-header">
+          <h3 class="result-title">${highlightText(result.title, query)}</h3>
+          <span class="result-type ${typeClass}">${typeLabel}</span>
+        </div>
+        ${metaHtml}
+        <div class="result-context">
+          ${highlightText(context, query)}
+        </div>
+        ${keywordsHtml}
+      </div>
+    `;
+  }).join('');
+  
+  container.innerHTML = html;
+}
+
+let currentFilter = 'all';
+let searchTimeout = null;
+
+function performSearch() {
+  const query = document.getElementById('globalSearchInput').value.trim();
+  const clearBtn = document.getElementById('clearSearchBtn');
+  const statsEl = document.getElementById('searchStats');
+  
+  clearBtn.style.display = query ? 'block' : 'none';
+  
+  if (!query) {
+    document.getElementById('searchResults').innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">🔎</div>
+        <h3>Start typing to search</h3>
+        <p>Search across 77 papers, 14 wiki terms, 4 topics, and more</p>
+        <div class="search-tips">
+          <h4>Search Tips:</h4>
+          <ul>
+            <li>Type keywords to find matching papers, concepts, and pages</li>
+            <li>Use the filter buttons to narrow results by category</li>
+            <li>Press <kbd>Cmd/Ctrl</kbd> + <kbd>K</kbd> to focus search from anywhere</li>
+            <li>Results are ranked by relevance</li>
+          </ul>
+        </div>
+      </div>
+    `;
+    statsEl.style.display = 'none';
+    return;
+  }
+  
+  statsEl.style.display = 'flex';
+  
+  const { results, time } = searchIndex(query, currentFilter);
+  
+  document.getElementById('resultCount').textContent = `${results.length} result${results.length !== 1 ? 's' : ''}`;
+  document.getElementById('searchTime').textContent = `${time}ms`;
+  
+  renderResults(results, query);
+}
+
+document.getElementById('globalSearchInput').addEventListener('input', () => {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(performSearch, 150);
+});
+
+document.getElementById('clearSearchBtn').addEventListener('click', () => {
+  document.getElementById('globalSearchInput').value = '';
+  performSearch();
+  document.getElementById('globalSearchInput').focus();
+});
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    performSearch();
+  });
+});
+
+document.addEventListener('keydown', (e) => {
+  if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+    e.preventDefault();
+    const input = document.getElementById('globalSearchInput');
+    input.focus();
+    input.select();
+    input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+});
+
+window.addEventListener('load', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('q')) {
+    const query = urlParams.get('q');
+    document.getElementById('globalSearchInput').value = query;
+    performSearch();
+  }
+});
+</script>

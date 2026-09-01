@@ -1,0 +1,25 @@
+<script>
+// Theme Toggle
+(function() {
+  const themeToggle = document.createElement('button');
+  themeToggle.className = 'theme-toggle';
+  themeToggle.innerHTML = '🌙';
+  themeToggle.setAttribute('aria-label', 'Toggle dark mode');
+  themeToggle.onclick = function() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    themeToggle.innerHTML = newTheme === 'dark' ? '☀️' : '🌙';
+  };
+  
+  // Check for saved theme preference
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    themeToggle.innerHTML = savedTheme === 'dark' ? '☀️' : '🌙';
+  }
+  
+  document.body.appendChild(themeToggle);
+})();
+</script>
