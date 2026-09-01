@@ -56,24 +56,24 @@ title: "Research Wiki"
 <h3>AI Agent Systems</h3>
 <p>
 An AI agent is an autonomous system that can 
-perceive its environment, 
-reason about actions, and 
-act to achieve goals. Modern AI agents often use 
-large language models as their reasoning core, combined with 
-tool use capabilities and 
-planning algorithms.
+<span class="wiki-term" data-term="perception">perceive its environment</span>, 
+<span class="wiki-term" data-term="reasoning">reason about actions</span>, and 
+<span class="wiki-term" data-term="action">act to achieve goals</span>. Modern AI agents often use 
+<span class="wiki-term" data-term="llm">large language models</span> as their reasoning core, combined with 
+<span class="wiki-term" data-term="tool-use">tool use capabilities</span> and 
+<span class="wiki-term" data-term="planning">planning algorithms</span>.
 </p>
 <p>
-Key components include memory systems for maintaining context, 
-retrieval mechanisms for accessing knowledge, and 
-multi-agent coordination for complex tasks.
+Key components include <span class="wiki-term" data-term="memory">memory systems</span> for maintaining context, 
+<span class="wiki-term" data-term="retrieval">retrieval mechanisms</span> for accessing knowledge, and 
+<span class="wiki-term" data-term="multi-agent">multi-agent coordination</span> for complex tasks.
 </p>
 <h3>Retrieval-Augmented Generation</h3>
 <p>
-RAG combines retrieval with generation by first searching a knowledge base for relevant documents, then using those documents as context for the language model. This approach reduces hallucination and provides verifiable citations.
+<span class="wiki-term" data-term="rag">RAG</span> combines <span class="wiki-term" data-term="retrieval">retrieval</span> with generation by first searching a knowledge base for relevant documents, then using those documents as context for the language model. This approach reduces hallucination and provides verifiable citations.
 </p>
 <p>
-Advanced RAG systems use dense retrieval with vector embeddings, hybrid search combining lexical and semantic methods, and reranking to improve result quality.
+Advanced RAG systems use <span class="wiki-term" data-term="dense-retrieval">dense retrieval</span> with <span class="wiki-term" data-term="embeddings">vector embeddings</span>, <span class="wiki-term" data-term="hybrid-search">hybrid search</span> combining lexical and semantic methods, and <span class="wiki-term" data-term="reranking">reranking</span> to improve result quality.
 </p>
 </div>
 
