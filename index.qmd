@@ -5,73 +5,6 @@ description: "Human-in-the-loop research platform for AI agents, reasoning, RAG,
 
 <div class="landing-page">
 
-<!-- Hero Section -->
-<div class="hero-section">
-  <div class="hero-content">
-    <div class="hero-badge">
-      <span class="badge-icon">🎓</span>
-      <span class="badge-text">Research Platform</span>
-    </div>
-    
-    <h1 class="hero-title">
-      AI Research <span class="highlight">Tracker</span>
-    </h1>
-    
-    <p class="hero-subtitle">
-      A <strong>human-in-the-loop</strong> platform where you actively shape research 
-      knowledge through annotation, validation, and collaboration.
-    </p>
-
-    <div class="hero-cta">
-      <a href="public/workspace.html" class="btn btn-primary btn-lg">
-        <span class="btn-icon">🔬</span>
-        Start Researching
-      </a>
-      <a href="public/getting-started.html" class="btn btn-secondary btn-lg">
-        <span class="btn-icon">📖</span>
-        Learn More
-      </a>
-    </div>
-
-    <div class="hero-stats">
-      <div class="stat-card">
-        <div class="stat-value">102+</div>
-        <div class="stat-label">Research Papers</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value">4</div>
-        <div class="stat-label">Research Topics</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value">346+</div>
-        <div class="stat-label">Authors</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value">HITL</div>
-        <div class="stat-label">Human-in-the-Loop</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="hero-visual">
-    <div class="visual-card">
-      <div class="visual-icon">🤝</div>
-      <h3>Collaborative Knowledge</h3>
-      <p>Build shared understanding with AI assistance</p>
-    </div>
-    <div class="visual-card">
-      <div class="visual-icon">⚡</div>
-      <h3>Active Learning</h3>
-      <p>Your feedback improves AI outputs in real-time</p>
-    </div>
-    <div class="visual-card">
-      <div class="visual-icon">📊</div>
-      <h3>Structured Insights</h3>
-      <p>Organize research with smart tools</p>
-    </div>
-  </div>
-</div>
-
 <!-- How It Works Section -->
 <div class="how-it-works">
   <h2>How It Works</h2>
@@ -228,61 +161,7 @@ description: "Human-in-the-loop research platform for AI agents, reasoning, RAG,
   padding: 0 20px;
 }
 
-/* Hero Section */
-.hero-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  padding: 80px 0;
-  align-items: center;
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 24px;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 24px;
-}
-
-.badge-icon {
-  font-size: 16px;
-}
-
-.hero-title {
-  font-size: 56px;
-  font-weight: 800;
-  line-height: 1.1;
-  margin: 0 0 20px 0;
-  color: #1a1a2e;
-}
-
-.hero-title .highlight {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero-subtitle {
-  font-size: 20px;
-  line-height: 1.6;
-  color: #666;
-  margin: 0 0 32px 0;
-  max-width: 540px;
-}
-
-.hero-cta {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 48px;
-}
-
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -308,22 +187,6 @@ description: "Human-in-the-loop research platform for AI agents, reasoning, RAG,
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
-.btn-secondary {
-  background: #f5f5f5;
-  color: #333;
-  border: 2px solid #e0e0e0;
-}
-
-.btn-secondary:hover {
-  background: #e8e8e8;
-  border-color: #d0d0d0;
-}
-
-.btn-lg {
-  padding: 16px 32px;
-  font-size: 16px;
-}
-
 .btn-xl {
   padding: 18px 40px;
   font-size: 18px;
@@ -331,72 +194,6 @@ description: "Human-in-the-loop research platform for AI agents, reasoning, RAG,
 
 .btn-icon {
   font-size: 20px;
-}
-
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.stat-card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border: 1px solid #f0f0f0;
-}
-
-.stat-value {
-  font-size: 32px;
-  font-weight: 700;
-  color: #667eea;
-  margin-bottom: 4px;
-}
-
-.stat-label {
-  font-size: 14px;
-  color: #666;
-}
-
-/* Visual Cards */
-.hero-visual {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.visual-card {
-  background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
-  padding: 30px;
-  border-radius: 16px;
-  border: 1px solid #e8ecff;
-  transition: all 0.3s ease;
-}
-
-.visual-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
-}
-
-.visual-icon {
-  font-size: 40px;
-  margin-bottom: 12px;
-}
-
-.visual-card h3 {
-  font-size: 20px;
-  font-weight: 700;
-  margin: 0 0 8px 0;
-  color: #1a1a2e;
-}
-
-.visual-card p {
-  font-size: 15px;
-  color: #666;
-  margin: 0;
-  line-height: 1.5;
 }
 
 /* How It Works */
@@ -667,15 +464,6 @@ description: "Human-in-the-loop research platform for AI agents, reasoning, RAG,
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .hero-section {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .hero-title {
-    font-size: 42px;
-  }
-
   .workflow-steps {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -690,22 +478,6 @@ description: "Human-in-the-loop research platform for AI agents, reasoning, RAG,
 }
 
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: 36px;
-  }
-
-  .hero-subtitle {
-    font-size: 18px;
-  }
-
-  .hero-stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .hero-cta {
-    flex-direction: column;
-  }
-
   .workflow-steps {
     grid-template-columns: 1fr;
   }
