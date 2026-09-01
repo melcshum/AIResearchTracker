@@ -21,6 +21,8 @@ website:
         href: public/ai-wiki.html
       - text: "🎯 Recommendations"
         href: public/recommendations.html
+      - text: "📊 Compare Papers"
+        href: public/compare-papers.html
       - text: "🔧 Admin Dashboard"
         href: private/index.html
 
