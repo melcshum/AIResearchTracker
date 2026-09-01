@@ -481,6 +481,51 @@ def list_templates():
         print()
 
 
+def load_user_data(username=None):
+    """Load user-specific data (bookmarks, notes, reading progress)."""
+    if username is None:
+        username = get_current_user()
+    
+    user_dir = USERS_DIR / username
+    data_file = user_dir / 'user-data.json'
+    
+    # Default structure
+    default_data = {
+        'bookmarks': [],
+        'notes': {},
+        'readingProgress': {}
+    }
+    
+    if not data_file.exists():
+        return default_data
+    
+    try:
+        with open(data_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            # Ensure all keys exist
+            for key in default_data:
+                if key not in data:
+                    data[key] = default_data[key]
+            return data
+    except Exception as e:
+        print(f"Warning: Could not load user data for {username}: {e}")
+        return default_data
+
+
+def save_user_data(username, data):
+    """Save user-specific data."""
+    user_dir = USERS_DIR / username
+    data_file = user_dir / 'user-data.json'
+    
+    try:
+        with open(data_file, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        return True
+    except Exception as e:
+        print(f"Error: Could not save user data for {username}: {e}")
+        return False
+
+
 if __name__ == '__main__':
     import sys
     

@@ -6,10 +6,11 @@ Provides REST API endpoints for user and topic management.
 
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+from datetime import date
 from user_manager import (
     get_current_user, set_current_user, create_user, list_users,
     load_user_config, save_user_config, get_enabled_topics,
-    load_templates, import_template
+    load_templates, import_template, load_user_data, save_user_data
 )
 import json
 
@@ -205,6 +206,143 @@ def import_template_endpoint():
         return jsonify({'success': True})
     except ValueError as e:
         return jsonify({'error': str(e)}), 400
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+# User data endpoints (bookmarks, notes, reading progress)
+@app.route('/api/user/data', methods=['GET'])
+def get_user_data():
+    """Get current user's data (bookmarks, notes, reading progress)."""
+    try:
+        username = get_current_user()
+        data = load_user_data(username)
+        return jsonify(data)
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/user/data', methods=['POST'])
+def update_user_data():
+    """Update current user's data."""
+    try:
+        username = get_current_user()
+        data = request.json
+        save_user_data(username, data)
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/user/bookmarks', methods=['GET'])
+def get_bookmarks():
+    """Get user's bookmarks."""
+    try:
+        username = get_current_user()
+        data = load_user_data(username)
+        return jsonify({'bookmarks': data.get('bookmarks', [])})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/user/bookmarks', methods=['POST'])
+def add_bookmark():
+    """Add a bookmark."""
+    try:
+        username = get_current_user()
+        data = load_user_data(username)
+        paper_id = request.json.get('paperId')
+        
+        if not paper_id:
+            return jsonify({'error': 'paperId required'}), 400
+        
+        # Add if not exists
+        if paper_id not in data['bookmarks']:
+            data['bookmarks'].append(paper_id)
+            save_user_data(username, data)
+        
+        return jsonify({'success': True, 'bookmarks': data['bookmarks']})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/user/bookmarks/<paper_id>', methods=['DELETE'])
+def remove_bookmark(paper_id):
+    """Remove a bookmark."""
+    try:
+        username = get_current_user()
+        data = load_user_data(username)
+        
+        if paper_id in data['bookmarks']:
+            data['bookmarks'].remove(paper_id)
+            save_user_data(username, data)
+        
+        return jsonify({'success': True, 'bookmarks': data['bookmarks']})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/user/notes', methods=['GET'])
+def get_notes():
+    """Get user's notes."""
+    try:
+        username = get_current_user()
+        data = load_user_data(username)
+        return jsonify({'notes': data.get('notes', {})})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/user/notes/<paper_id>', methods=['GET'])
+def get_paper_note(paper_id):
+    """Get note for a specific paper."""
+    try:
+        username = get_current_user()
+        data = load_user_data(username)
+        note = data.get('notes', {}).get(paper_id, '')
+        return jsonify({'note': note})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/user/notes/<paper_id>', methods=['POST'])
+def save_paper_note(paper_id):
+    """Save note for a specific paper."""
+    try:
+        username = get_current_user()
+        data = load_user_data(username)
+        note = request.json.get('note', '')
+        
+        if 'notes' not in data:
+            data['notes'] = {}
+        
+        data['notes'][paper_id] = note
+        save_user_data(username, data)
+        
+        return jsonify({'success': True, 'note': note})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/user/reading-progress', methods=['GET'])
+def get_reading_progress():
+    """Get user's reading progress."""
+    try:
+        username = get_current_user()
+        data = load_user_data(username)
+        return jsonify({'readingProgress': data.get('readingProgress', {})})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/user/reading-progress/<paper_id>', methods=['POST'])
+def update_reading_progress(paper_id):
+    """Update reading progress for a specific paper."""
+    try:
+        username = get_current_user()
+        data = load_user_data(username)
+        status = request.json.get('status')  # 'unread', 'reading', 'read'
+        
+        if 'readingProgress' not in data:
+            data['readingProgress'] = {}
+        
+        data['readingProgress'][paper_id] = {
+            'status': status,
+            'updatedAt': date.today().isoformat()
+        }
+        save_user_data(username, data)
+        
+        return jsonify({'success': True, 'progress': data['readingProgress'][paper_id]})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
