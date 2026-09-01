@@ -19,6 +19,8 @@ website:
         href: public/digests/index.html
       - text: "🤖 AI Wiki Assistant"
         href: public/ai-wiki.html
+      - text: "🎯 Recommendations"
+        href: public/recommendations.html
       - text: "🔧 Admin Dashboard"
         href: private/index.html
 
