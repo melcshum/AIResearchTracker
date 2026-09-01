@@ -252,6 +252,68 @@ main.content, #quarto-document-content {
   gap: 1rem;
   flex: 1;
   min-height: 0;
+  max-width: 100%;
+}
+
+/* Large screen optimization */
+@media (min-width: 1800px) {
+  .workspace-grid {
+    grid-template-columns: 350px 1.2fr 400px;
+    gap: 1.25rem;
+  }
+  
+  .workspace-stats {
+    gap: 1.5rem;
+  }
+  
+  .stat-pill {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+  
+  .panel-header {
+    padding: 1.25rem 1.75rem;
+  }
+  
+  .panel-header h2 {
+    font-size: 1.2rem;
+  }
+  
+  .reading-item {
+    padding: 1rem 1.25rem;
+  }
+  
+  .paper-title {
+    font-size: 1.05rem;
+  }
+  
+  .paper-meta {
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra large screens (2200px+) */
+@media (min-width: 2200px) {
+  .workspace-grid {
+    grid-template-columns: 380px 1.3fr 450px;
+    gap: 1.5rem;
+  }
+  
+  .workspace-container {
+    padding: 1.25rem;
+  }
+  
+  .panel-header {
+    padding: 1.5rem 2rem;
+  }
+  
+  .paper-title {
+    font-size: 1.1rem;
+  }
+  
+  .reading-item {
+    padding: 1.25rem 1.5rem;
+  }
 }
 
 .workspace-panel {
