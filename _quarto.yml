@@ -29,6 +29,8 @@ website:
         href: public/collections.html
       - text: "🎯 Research Goals"
         href: public/research-goals.html
+      - text: "🔄 Spaced Repetition"
+        href: public/spaced-repetition.html
       - text: "💾 Export/Import"
         href: public/export-import.html
       - text: "🔧 Admin Dashboard"
