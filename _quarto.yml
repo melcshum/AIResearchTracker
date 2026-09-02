@@ -51,6 +51,8 @@ website:
             href: public/search-papers.html
           - text: "📅 Timeline"
             href: public/timeline.html
+          - text: "📄 Conference Papers"
+            href: public/conference-papers/ai-wiki-companion-2026.html
       - text: "⚙️ Tools"
         menu:
           - text: "🎯 Research Goals"

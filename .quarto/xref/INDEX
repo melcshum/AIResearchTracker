@@ -1132,5 +1132,8 @@
   },
   "public/learning-journey.md": {
     "learning-journey.html": "84e7d151"
+  },
+  "public/conference-papers/ai-wiki-companion-2026.md": {
+    "ai-wiki-companion-2026.html": "e1fe35fc"
   }
 }
