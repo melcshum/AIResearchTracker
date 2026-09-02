@@ -51,6 +51,26 @@ title: "Paper Reader"
 </div>
 </div>
 </aside>
+
+<!-- AI Companion Panel (Right Sidebar) -->
+<aside class="reader-sidebar ai-companion-sidebar" id="aiCompanionSidebar" style="display: none;">
+<h3>🤖 AI Companion</h3>
+<div class="companion-modes">
+<button class="companion-mode-btn active" onclick="switchCompanionMode('reflect')">Reflect</button>
+<button class="companion-mode-btn" onclick="switchCompanionMode('scaffold')">Scaffold</button>
+<button class="companion-mode-btn" onclick="switchCompanionMode('consolidate')">Consolidate</button>
+</div>
+<div class="companion-content" id="companionContent">
+<div class="companion-intro">
+<p>Select a concept in the paper and choose a mode:</p>
+<ul>
+<li><strong>Reflect:</strong> Metacognitive questions</li>
+<li><strong>Scaffold:</strong> Gap detection & hints</li>
+<li><strong>Consolidate:</strong> Recall practice</li>
+</ul>
+</div>
+</div>
+</aside>
 </div>
 
 <!-- Reading Progress Bar -->
@@ -61,6 +81,10 @@ title: "Paper Reader"
 </div>
 
 <style>
+/* Import shared AI Companion styles */
+@import url('/css/ai-companion.css');
+
+/* Page-specific styles only (no AI Companion duplication) */
 .reader-container {
   display: flex;
   flex-direction: column;
@@ -1515,5 +1539,17 @@ document.getElementById('backBtn')?.addEventListener('click', () => {
 
 // Initialize
 document.getElementById('readingArea')?.addEventListener('scroll', updateReadingProgress);
+
+// Event listener for concept selection in paper text
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('highlight') || e.target.classList.contains('concept-link')) {
+    const concept = e.target.dataset.concept || e.target.textContent;
+    const explanation = prompt('Explain this concept in your own words:', '');
+    if (explanation) {
+      selectConceptForCompanion(concept, explanation);
+    }
+  }
+});
+
 loadPaper();
 </script>

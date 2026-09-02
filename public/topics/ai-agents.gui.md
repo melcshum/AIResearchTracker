@@ -7,7 +7,7 @@ title: "🖥️ GUI Agents"
 <h1>🖥️ GUI Agents</h1>
 <p class="topic-description">Agents that interact with graphical user interfaces</p>
 <div class="topic-meta">
-<span>📄 46 papers</span>
+<span>📄 55 papers</span>
 <span>🔍 3 search queries</span>
 <span>🏷️ 4 keywords</span>
 </div>
@@ -17,6 +17,61 @@ title: "🖥️ GUI Agents"
 <div class="papers-section">
 <h2>📄 Recent Papers</h2>
 <div class="papers-list">
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.01325v1" target="_blank">VerTox: Verifiable Reward-Guided Corpus Poisoning Against Neural Ranking Models</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Zhiqi Huang, Vivek Datla, Zhichao Xu, Puxuan Yu, Vivek Srikumar, Alfy Samuel</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.01325v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.00909v1" target="_blank">A multicenter benchmark and clinically structured metric for coronary CTA report generation</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Zhiyu Ye, Yue Sun, Limiao Zou, Cheng Xu, Keting Xu, Tong Hu, Yue Yu, Hairong Zheng, Yining Wang, Ton...</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.00909v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.01059v1" target="_blank">Dyn-3D: Unveiling and Resolving Ego-Motion Ambiguity in Vision-Language Models</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Jiayu Ding, Zhuodong Liu, Lei Zhang, Manyu Xiong, Hongbo Jin, Haoran Tang, Hongbo Zhang, Changen Zhu...</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.01059v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.01318v1" target="_blank">Reliability Challenges in Diffusion Vision-Language Models</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Md. Atabuzzaman, Chris Thomas</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.01318v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.01567v1" target="_blank">Selective Agent Guidance via Entropy: Learning Autonomous Policies from Imperfect VLM Teachers</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Matteo Merler, Giovanni Bonetta, Davide Zago, Rossella Cancelliere, Bernardo Magnini</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.01567v1</span>
+</div>
+</div>
 
 <div class="paper-card">
 <div class="paper-title">
@@ -64,12 +119,45 @@ title: "🖥️ GUI Agents"
 
 <div class="paper-card">
 <div class="paper-title">
+<a href="https://arxiv.org/abs/2609.00231v1" target="_blank">Beyond Language Priors: Diagnosing and Fixing Visual-Origin Hallucinations in Multimodal LLM</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Peiyang Xu, Xiaopei Zhu, Jun Zhu, Xiaolin Hu</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2609.00231v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
 <a href="https://arxiv.org/abs/2608.30163v1" target="_blank">Doc-REFRAG: Rethinking Multimodal Document Retrieval-Augmented Generation</a>
 </div>
 <div class="paper-meta">
 <span class="paper-authors">Ruofan Hu, Shengyang Xu, Minjie Hong, Xiaoda Yang, Sashuai Zhou, Ke Lei, Tao Jin, Zhou Zhao</span>
 <span class="paper-date">2026-08-31</span>
 <span class="paper-arxiv">arXiv:2608.30163v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.00457v1" target="_blank">Can LLMs Use Relational Transformer Embeddings?</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Francisco Galuppo Azevedo, Clarissa Lima Loures</span>
+<span class="paper-date">2026-08-31</span>
+<span class="paper-arxiv">arXiv:2609.00457v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.00048v1" target="_blank">GUI-CC: Benchmarking Contextual Consistency of GUI World Models as Agent Environments</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Lin Fu, Zheyuan Yang, Tianhui Zhang, Jinbiao Wei, Guo Gan, Boxu Liu, Yilun Zhao, Yu Rong</span>
+<span class="paper-date">2026-08-30</span>
+<span class="paper-arxiv">arXiv:2609.00048v1</span>
 </div>
 </div>
 
@@ -147,94 +235,6 @@ title: "🖥️ GUI Agents"
 <span class="paper-authors">Xinyuan Gui, Shaowen Wang, Sheng Sun, Zijian Wang, Zishu Yu, Zheming Yang</span>
 <span class="paper-date">2026-08-28</span>
 <span class="paper-arxiv">arXiv:2608.28726v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.28383v1" target="_blank">Semantic Head Specialization Guides Hybrid ViT Attention for Multimodal LLMs</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Chenhong He, Lei Li, Shicheng Li, Hanglong Lv, Lingpeng Kong, Qi Liu, Tong Yang, Shuhuai Ren</span>
-<span class="paper-date">2026-08-28</span>
-<span class="paper-arxiv">arXiv:2608.28383v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.27046v1" target="_blank">Performance Foundations of Parallel & Distributed Reasoning Language Models</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Maciej Besta, Leonard Schmidt, Lara Nonino, Robert Gerstenberger, Pierre Pang, Patrik Okanovic, Ales...</span>
-<span class="paper-date">2026-08-27</span>
-<span class="paper-arxiv">arXiv:2608.27046v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.26684v1" target="_blank">Reason in the Words You Speak: Idiolectal Paraphrasing Off-Policy Traces for Reasoning Distillation in VideoLLMs</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Ji Soo Lee, Jinyoung Park, Seohyun Lee, Jongha Kim, Joonmyung Choi, Jinsung Yoon, Hyunwoo J. Kim</span>
-<span class="paper-date">2026-08-27</span>
-<span class="paper-arxiv">arXiv:2608.26684v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.26856v1" target="_blank">From Reasoning to Pixels: Grounded Medical Multimodal LLMs for VQA and Segmentation</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Haowen Gu, Gensheng Pei, Junzhu Mao, Qiong Wang, Mingwu Ren, Yazhou Yao</span>
-<span class="paper-date">2026-08-27</span>
-<span class="paper-arxiv">arXiv:2608.26856v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.27508v1" target="_blank">WM-R1: Training GUI Agents to Reason and leverage World Models with Reinforcement Learning</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Yu Han, Tianwen Qian</span>
-<span class="paper-date">2026-08-27</span>
-<span class="paper-arxiv">arXiv:2608.27508v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.26623v1" target="_blank">AgentJudgeBench: A Multi-Difficulty Benchmark for Evaluating LLM Judges on Agentic Tool-Calling</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Abhigya Verma, Amit Kumar Saha, Seganrasan Subramanian, Sai Harshitha Aluru</span>
-<span class="paper-date">2026-08-27</span>
-<span class="paper-arxiv">arXiv:2608.26623v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.25777v1" target="_blank">LocalLSTC: A Long Short-Term Control Architecture for Locally Deployed GUI Agents</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Weiming Li, Helen Paik, Yulei Sui</span>
-<span class="paper-date">2026-08-26</span>
-<span class="paper-arxiv">arXiv:2608.25777v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.25457v2" target="_blank">MACGen: Toward Functionally Correct and Secure Code Generation via Multi-Agent Collaboration</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Miseon Yu, Jaehoon Choi, Younghan Lee, Yunheung Paek</span>
-<span class="paper-date">2026-08-26</span>
-<span class="paper-arxiv">arXiv:2608.25457v2</span>
 </div>
 </div>
 

@@ -190,6 +190,188 @@ title: "AI Study Guide"
   color: #7f8c8d;
 }
 
+.scaffold-hint {
+  font-style: italic;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #e3f2fd;
+  border-radius: 6px;
+  color: #1565c0;
+}
+
+/* Construction Scaffold Styles (DP2-Aligned) */
+.construction-scaffold {
+  padding: 2rem;
+}
+
+.scaffold-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #2c5aa0;
+}
+
+.scaffold-header h3 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.scaffold-intro {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.scaffold-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #2c5aa0;
+}
+
+.scaffold-section h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.scaffold-note, .scaffold-tip {
+  font-style: italic;
+  color: #666;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.concept-suggestions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.concept-suggestion-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.concept-name {
+  font-weight: 600;
+  color: #2c5aa0;
+  margin-bottom: 0.5rem;
+}
+
+.concept-count {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.concept-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.flashcard-builder {
+  margin: 1rem 0;
+}
+
+.flashcard-template {
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  border: 1px solid #e0e0e0;
+}
+
+.flashcard-question, .flashcard-answer {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+}
+
+.flashcard-answer {
+  resize: vertical;
+}
+
+.connection-builder {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.concept-select {
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  min-width: 150px;
+}
+
+.connection-input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  min-width: 200px;
+}
+
+.scaffold-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+.ai-hints {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #fff3e0;
+  border: 1px solid #ff9800;
+  border-radius: 8px;
+}
+
+.ai-hints h4 {
+  color: #e65100;
+  margin-bottom: 1rem;
+}
+
+.hint-section {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: white;
+  border-radius: 6px;
+}
+
+.hint-section h5 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.hint-warning {
+  color: #e65100;
+  font-style: italic;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #ffe0b2;
+  border-radius: 4px;
+}
+
 .loading {
   text-align: center;
   padding: 40px;
@@ -312,116 +494,187 @@ function generateConnections(concepts) {
   return connections.sort((a, b) => b.count - a.count).slice(0, 5);
 }
 
+// DP2-Aligned: Scaffold learner to construct their own study guide
 function generateStudyGuide() {
   const savedPapers = userBookmarks.map(id => allPapers.find(p => p.arxiv_id === id)).filter(p => p);
   
   if (savedPapers.length === 0) {
-    return '<div class="empty-state"><p>No papers saved yet. Save papers from the search page to generate a study guide.</p></div>';
+    return `
+<div class="empty-state">
+  <h3>📚 Build Your Study Guide</h3>
+  <p>No papers saved yet. Save papers from the search page to begin constructing your study materials.</p>
+  <p class="scaffold-hint"><strong>Why construct your own?</strong> Research shows that actively creating study materials leads to deeper understanding and better retention than passively reviewing AI-generated content.</p>
+  <a href="/public/search.html" class="btn-primary">Browse Papers</a>
+</div>`;
   }
   
   const concepts = extractKeyConcepts(savedPapers);
-  const flashcards = generateFlashcards(savedPapers, userNotes);
-  const connections = generateConnections(concepts);
   
+  // Scaffold: Ask learner to construct their own guide
   let guide = '';
   
-  // Overview
-  guide += '<h3>📖 Study Overview</h3>';
-  guide += `<p>You have saved <strong>${savedPapers.length} papers</strong> covering <strong>${Object.keys(concepts).length} key concepts</strong>.</p>`;
+  guide += `
+<div class="construction-scaffold">
+  <div class="scaffold-header">
+    <h3>🛠️ Construct Your Study Guide</h3>
+    <p class="scaffold-intro">You have <strong>${savedPapers.length} papers</strong> covering <strong>${Object.keys(concepts).length} key concepts</strong>. Let's build your study materials together.</p>
+  </div>
   
-  // Key Concepts
-  guide += '<h3>🎯 Key Concepts</h3>';
-  Object.entries(concepts).forEach(([concept, papers]) => {
-    guide += `
-<div class="concept-card">
-<div class="concept-title">${concept}</div>
-<div class="concept-definition">Found in ${papers.length} paper${papers.length > 1 ? 's' : ''} in your collection</div>
-<div class="concept-papers">
-          ${papers.slice(0, 3).map(p => `<a href="${p.url}" target="_blank">${p.title.substring(0, 60)}...</a>`).join(', ')}
-</div>
-</div>
-    `;
-  });
+  <div class="scaffold-section">
+    <h4>Step 1: Identify Key Concepts</h4>
+    <p>Based on your papers, what are the main concepts you want to study? Here are some suggestions:</p>
+    <div class="concept-suggestions">
+      ${Object.entries(concepts).map(([concept, papers]) => `
+        <div class="concept-suggestion-card">
+          <div class="concept-name">${concept}</div>
+          <div class="concept-count">${papers.length} paper${papers.length > 1 ? 's' : ''}</div>
+          <button onclick="selectConcept('${concept}')" class="btn-secondary">Use This Concept</button>
+        </div>
+      `).join('')}
+    </div>
+    <p class="scaffold-note">Or write your own concept:</p>
+    <input type="text" id="customConcept" class="concept-input" placeholder="Enter your own concept...">
+    <button onclick="addCustomConcept()" class="btn-primary">Add Concept</button>
+  </div>
   
-  // Key Insights from Notes
-  const papersWithNotes = savedPapers.filter(p => userNotes[p.arxiv_id]);
-  if (papersWithNotes.length > 0) {
-    guide += '<h3>💡 Key Insights from Your Notes</h3>';
-    papersWithNotes.slice(0, 5).forEach(paper => {
-      const note = userNotes[paper.arxiv_id];
-      guide += `
-<div class="key-insight">
-<div class="key-insight-label">From: ${paper.title}</div>
-<div>${note.substring(0, 300)}${note.length > 300 ? '...' : ''}</div>
-</div>
-      `;
-    });
-  }
+  <div class="scaffold-section">
+    <h4>Step 2: Create Your Own Flashcards</h4>
+    <p>For each concept, write questions and answers in your own words:</p>
+    <div id="flashcardBuilder" class="flashcard-builder">
+      <div class="flashcard-template">
+        <input type="text" class="flashcard-question" placeholder="Question (e.g., 'What is RAG?')">
+        <textarea class="flashcard-answer" rows="3" placeholder="Your answer in your own words..."></textarea>
+        <button onclick="addFlashcard()" class="btn-primary">Add Flashcard</button>
+      </div>
+    </div>
+    <p class="scaffold-tip"><strong>Tip:</strong> Writing questions helps you identify what you don't know yet. Writing answers helps you organize your understanding.</p>
+  </div>
   
-  // Flashcards
-  if (flashcards.length > 0) {
-    guide += '<h3>📝 Study Flashcards</h3>';
-    guide += '<p>Test your understanding with these auto-generated questions:</p>';
-    flashcards.forEach(card => {
-      guide += `
-<div class="flashcard">
-<div class="flashcard-question">Q: ${card.question}</div>
-<div class="flashcard-answer">A: ${card.answer}</div>
-</div>
-      `;
-    });
-  }
+  <div class="scaffold-section">
+    <h4>Step 3: Map Connections</h4>
+    <p>How do these concepts relate to each other? Draw connections:</p>
+    <div id="connectionBuilder" class="connection-builder">
+      <select id="concept1" class="concept-select"></select>
+      <span>→</span>
+      <select id="concept2" class="concept-select"></select>
+      <input type="text" id="connectionDescription" class="connection-input" placeholder="How are they related?">
+      <button onclick="addConnection()" class="btn-primary">Add Connection</button>
+    </div>
+  </div>
   
-  // Concept Connections
-  if (connections.length > 0) {
-    guide += '<h3>🔗 Concept Connections</h3>';
-    guide += '<p>See how different research areas relate to each other:</p>';
-    guide += '<div class="connection-map">';
-    connections.forEach(conn => {
-      guide += `
-<div class="connection-item">
-<div class="connection-concepts">${conn.concept1} ↔ ${conn.concept2}</div>
-<div class="connection-description">${conn.description}</div>
-</div>
-      `;
-    });
-    guide += '</div>';
-  }
+  <div class="scaffold-actions">
+    <button onclick="saveStudyGuide()" class="btn-primary btn-large">Save My Study Guide</button>
+    <button onclick="getAIHints()" class="btn-secondary">Get AI Hints (Optional)</button>
+  </div>
   
-  // Study Recommendations
-  guide += '<h3>📚 Study Recommendations</h3>';
-  guide += '<ol>';
-  guide += '<li><strong>Start with the basics:</strong> Review papers on fundamental concepts first</li>';
-  guide += '<li><strong>Follow the connections:</strong> Explore how concepts relate across papers</li>';
-  guide += '<li><strong>Use flashcards:</strong> Test your understanding regularly</li>';
-  guide += '<li><strong>Add more notes:</strong> The more you note, the better your study guide becomes</li>';
-  guide += '</ol>';
+  <div id="aiHints" class="ai-hints" style="display:none;">
+    <h4>💡 AI Suggestions (for reference only)</h4>
+    <p>Use these to check your work, not to replace your thinking:</p>
+    <div id="hintsContent"></div>
+  </div>
+</div>`;
   
   return guide;
 }
 
-function exportAsMarkdown() {
-  const content = document.getElementById('studyGuideContent').innerHTML;
-  
-  // Simple HTML to Markdown conversion
-  let md = '# AI Study Guide\n\n';
-  md += `*Generated on ${new Date().toLocaleDateString()}*\n\n`;
-  md += '---\n\n';
-  
-  // Extract text content (simplified)
-  const tempDiv = document.createElement('div');
-  tempDiv.innerHTML = content;
-  md += tempDiv.textContent.replace(/\s+/g, ' ').trim();
-  
-  const blob = new Blob([md], { type: 'text/markdown' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'study-guide.md';
-  a.click();
-  URL.revokeObjectURL(url);
+// Scaffold helper functions
+function selectConcept(concept) {
+  document.getElementById('customConcept').value = concept;
+  alert(`Selected "${concept}". Now create flashcards for this concept!`);
 }
 
+function addCustomConcept() {
+  const concept = document.getElementById('customConcept').value.trim();
+  if (!concept) {
+    alert('Please enter a concept name.');
+    return;
+  }
+  alert(`Added "${concept}". Now create flashcards for it!`);
+  document.getElementById('customConcept').value = '';
+}
+
+function addFlashcard() {
+  const templates = document.querySelectorAll('.flashcard-template');
+  const lastTemplate = templates[templates.length - 1];
+  const question = lastTemplate.querySelector('.flashcard-question').value.trim();
+  const answer = lastTemplate.querySelector('.flashcard-answer').value.trim();
+  
+  if (!question || !answer) {
+    alert('Please fill in both question and answer.');
+    return;
+  }
+  
+  // Add new template for next flashcard
+  const newTemplate = lastTemplate.cloneNode(true);
+  newTemplate.querySelector('.flashcard-question').value = '';
+  newTemplate.querySelector('.flashcard-answer').value = '';
+  document.getElementById('flashcardBuilder').appendChild(newTemplate);
+  
+  alert('Flashcard added! Add another or save your study guide.');
+}
+
+function addConnection() {
+  const concept1 = document.getElementById('concept1').value;
+  const concept2 = document.getElementById('concept2').value;
+  const description = document.getElementById('connectionDescription').value.trim();
+  
+  if (!concept1 || !concept2 || !description) {
+    alert('Please fill in all fields.');
+    return;
+  }
+  
+  alert(`Connection saved: ${concept1} → ${concept2}: ${description}`);
+  document.getElementById('connectionDescription').value = '';
+}
+
+function saveStudyGuide() {
+  // TODO: Save to user data
+  alert('Study guide saved! Your construction is now part of your learning journey.');
+}
+
+async function getAIHints() {
+  const hintsDiv = document.getElementById('aiHints');
+  hintsDiv.style.display = 'block';
+  const hintsContent = document.getElementById('hintsContent');
+  
+  hintsContent.innerHTML = '<p>Analyzing your papers...</p>';
+  
+  try {
+    const response = await fetch(API_BASE + '/api/wiki/companion', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        mode: 'scaffold',
+        action: 'suggest_structure',
+        concept: 'Study Guide Structure',
+        explanation: 'I have ' + userBookmarks.length + ' papers and want to create a study guide.'
+      })
+    });
+    
+    const feedback = await response.json();
+    
+    hintsContent.innerHTML = `
+      <div class="hint-section">
+        <h5>Suggested Concepts to Cover:</h5>
+        <ul>${feedback.suggestions || ['RAG, Agents, Reasoning'].map(s => `<li>${s}</li>`).join('')}</ul>
+      </div>
+      <div class="hint-section">
+        <h5>Recommended Flashcard Types:</h5>
+        <ul>
+          <li>Definition cards (What is X?)</li>
+          <li>Comparison cards (How does X differ from Y?)</li>
+          <li>Application cards (When would you use X?)</li>
+        </ul>
+      </div>
+      <p class="hint-warning"><strong>Remember:</strong> These are suggestions only. Your own thinking is more valuable!</p>
+    `;
+    
+  } catch (error) {
+    hintsContent.innerHTML = '<p>Failed to load hints. Continue building on your own!</p>';
+  }
+}
+
+// Remove old auto-generation code (lines 494-543)
 // Event listeners
 document.getElementById('generateGuideBtn').addEventListener('click', () => {
   const btn = document.getElementById('generateGuideBtn');

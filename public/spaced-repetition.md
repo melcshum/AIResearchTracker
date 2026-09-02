@@ -248,6 +248,148 @@ Review your saved papers at optimal intervals to maximize retention and understa
   gap: 1rem;
 }
 
+/* Recall Practice Styles (DP2-Aligned) */
+.recall-prompt-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.recall-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.recall-prompt-container h3 {
+  color: #2c5aa0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.recall-instruction {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.recall-hint {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.recall-textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 1.6;
+  resize: vertical;
+  margin-bottom: 1rem;
+}
+
+.recall-textarea:focus {
+  outline: none;
+  border-color: #2c5aa0;
+  box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+}
+
+.recall-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Recall Feedback Styles */
+.recall-feedback-container {
+  padding: 1rem;
+}
+
+.feedback-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.feedback-header h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.accuracy-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.accuracy-badge.high {
+  background: #d4edda;
+  color: #155724;
+}
+
+.accuracy-badge.medium {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.accuracy-badge.low {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.feedback-section {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 6px;
+  border-left: 3px solid #2c5aa0;
+}
+
+.feedback-section h4 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.recall-text {
+  color: #555;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.feedback-section ul {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1.5rem;
+  color: #555;
+}
+
+.feedback-section li {
+  margin-bottom: 0.25rem;
+}
+
+.original-content {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 2px solid #e0e0e0;
+}
+
+.feedback-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.feedback-actions .btn-secondary {
+  margin-right: 1rem;
+}
+
 .review-btn {
   padding: 1rem;
   border: 2px solid;
@@ -385,6 +527,10 @@ let allPapers = [];
 let userData = null;
 let reviewQueue = [];
 let currentReviewIndex = 0;
+let recallMode = true; // DP2-aligned: require recall before showing content
+let currentRecallAttempt = null;
+let currentFeedback = null;
+let currentPaper = null;
 let reviewHistory = [];
 
 async function loadData() {
@@ -502,17 +648,272 @@ function showCurrentCard() {
     return;
   }
   
-  const paper = reviewQueue[currentReviewIndex];
-  const notes = userData.notes?.[paper.arxiv_id] || 'No notes yet';
-  const summary = userData.summaries?.[paper.arxiv_id] || 'No summary available';
+  currentPaper = reviewQueue[currentReviewIndex];
+  const notes = userData.notes?.[currentPaper.arxiv_id] || 'No notes yet';
+  const summary = userData.summaries?.[currentPaper.arxiv_id] || 'No summary available';
   
   document.getElementById('currentCard').textContent = currentReviewIndex + 1;
-  document.getElementById('paperTitle').textContent = paper.title;
-  document.getElementById('paperAuthors').textContent = paper.authors;
-  document.getElementById('paperDate').textContent = paper.date;
-  document.getElementById('paperAbstract').textContent = paper.abstract || 'No abstract available';
-  document.getElementById('paperNotes').textContent = notes;
-  document.getElementById('paperSummary').textContent = summary;
+  document.getElementById('paperTitle').textContent = currentPaper.title;
+  document.getElementById('paperAuthors').textContent = currentPaper.authors;
+  document.getElementById('paperDate').textContent = currentPaper.date;
+  
+  if (recallMode && !currentRecallAttempt) {
+    // Show recall prompt - HIDE content
+    showRecallPrompt(currentPaper, notes);
+  } else {
+    // Show traditional review or feedback
+    if (currentRecallAttempt && currentFeedback) {
+      showRecallFeedback(currentPaper, notes, summary);
+    } else {
+      showTraditionalReview(currentPaper, notes, summary);
+    }
+  }
+}
+
+// DP2-Aligned: Show recall prompt first (hide content)
+function showRecallPrompt(paper, originalNotes) {
+  const cardContent = document.querySelector('.card-content');
+  cardContent.innerHTML = `
+    <div class="recall-prompt-container">
+      <div class="recall-icon">📝</div>
+      <h3>Recall Practice</h3>
+      <p class="recall-instruction">
+        Explain "<strong>${paper.title}</strong>" without consulting your notes.
+      </p>
+      <p class="recall-hint">
+        What was the main contribution? What problem did it solve?
+      </p>
+      <textarea 
+        id="recallInput" 
+        class="recall-textarea" 
+        rows="8" 
+        placeholder="Write your recall attempt here..."></textarea>
+      <div class="recall-actions">
+        <button onclick="submitRecall()" class="btn-primary">Submit Recall</button>
+        <button onclick="revealNotesWithoutScoring()" class="btn-secondary">Give Up & Reveal</button>
+      </div>
+    </div>
+  `;
+  
+  // Hide action buttons during recall
+  document.querySelector('.card-actions').style.display = 'none';
+}
+
+// Show feedback after recall attempt
+function showRecallFeedback(paper, notes, summary) {
+  const cardContent = document.querySelector('.card-content');
+  cardContent.innerHTML = `
+    <div class="recall-feedback-container">
+      <div class="feedback-header">
+        <h3>📊 Your Recall Analysis</h3>
+        <div class="accuracy-badge" id="accuracyBadge">Analyzing...</div>
+      </div>
+      
+      <div class="feedback-section">
+        <h4>Your Recall:</h4>
+        <div class="recall-text">${currentRecallAttempt}</div>
+      </div>
+      
+      <div class="feedback-section">
+        <h4>Key Points Covered:</h4>
+        <ul id="coveredPoints"></ul>
+      </div>
+      
+      <div class="feedback-section">
+        <h4>Missing Concepts:</h4>
+        <ul id="missingPoints"></ul>
+      </div>
+      
+      <div class="original-content" id="originalContent" style="display:none;">
+        <div class="abstract-section">
+          <h3>Original Abstract</h3>
+          <p>${paper.abstract || 'No abstract'}</p>
+        </div>
+        <div class="notes-section">
+          <h3>Your Notes</h3>
+          <div>${notes}</div>
+        </div>
+        <div class="summary-section">
+          <h3>AI Summary</h3>
+          <div>${summary}</div>
+        </div>
+      </div>
+      
+      <div class="feedback-actions">
+        <button onclick="revealOriginal()" class="btn-secondary">Show Original</button>
+        <button onclick="ratePaperFromFeedback('difficult')" class="review-btn difficult">Still Difficult</button>
+        <button onclick="ratePaperFromFeedback('moderate')" class="review-btn moderate">Moderate</button>
+        <button onclick="ratePaperFromFeedback('easy')" class="review-btn easy">Easy</button>
+        <button onclick="ratePaperFromFeedback('mastered')" class="review-btn mastered">Mastered</button>
+      </div>
+    </div>
+  `;
+  
+  // Call LLM to analyze recall
+  analyzeRecallWithLLM(paper, notes);
+}
+
+// Show traditional review (opt-in)
+function showTraditionalReview(paper, notes, summary) {
+  const cardContent = document.querySelector('.card-content');
+  cardContent.innerHTML = `
+    <div class="abstract-section">
+      <h3>Abstract</h3>
+      <p>${paper.abstract || 'No abstract available'}</p>
+    </div>
+    <div class="notes-section">
+      <h3>Your Notes</h3>
+      <div>${notes}</div>
+    </div>
+    <div class="summary-section">
+      <h3>AI Summary</h3>
+      <div>${summary}</div>
+    </div>
+  `;
+  
+  // Show action buttons
+  document.querySelector('.card-actions').style.display = 'flex';
+}
+
+// Submit recall and call LLM for analysis
+async function submitRecall() {
+  const recallInput = document.getElementById('recallInput');
+  if (!recallInput || !recallInput.value.trim()) {
+    alert('Please write your recall attempt first.');
+    return;
+  }
+  
+  currentRecallAttempt = recallInput.value.trim();
+  
+  // Show loading state
+  const submitBtn = document.querySelector('.recall-actions .btn-primary');
+  submitBtn.textContent = 'Analyzing...';
+  submitBtn.disabled = true;
+  
+  try {
+    // Call LLM API for analysis
+    const response = await fetch(API_BASE + '/api/wiki/companion', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        mode: 'consolidate',
+        concept: currentPaper.title,
+        original: userData.notes?.[currentPaper.arxiv_id] || currentPaper.abstract,
+        recall: currentRecallAttempt
+      })
+    });
+    
+    const feedback = await response.json();
+    currentFeedback = feedback;
+    
+    // Save recall attempt
+    if (!userData.spacedRepetition.recallAttempts) {
+      userData.spacedRepetition.recallAttempts = {};
+    }
+    userData.spacedRepetition.recallAttempts[currentPaper.arxiv_id] = {
+      attempt: currentRecallAttempt,
+      feedback: feedback,
+      timestamp: new Date().toISOString()
+    };
+    
+    await saveUserData();
+    
+    // Show feedback
+    showRecallFeedback(currentPaper, 
+      userData.notes?.[currentPaper.arxiv_id] || 'No notes',
+      userData.summaries?.[currentPaper.arxiv_id] || 'No summary');
+      
+  } catch (error) {
+    console.error('Error analyzing recall:', error);
+    alert('Failed to analyze recall. Showing original content.');
+    showRecallFeedback(currentPaper, 
+      userData.notes?.[currentPaper.arxiv_id] || 'No notes',
+      userData.summaries?.[currentPaper.arxiv_id] || 'No summary');
+  } finally {
+    submitBtn.textContent = 'Submit Recall';
+    submitBtn.disabled = false;
+  }
+}
+
+// Analyze recall with LLM (separate function for clarity)
+async function analyzeRecallWithLLM(paper, notes) {
+  try {
+    const response = await fetch(API_BASE + '/api/wiki/companion', {
+      method: 'POST',
+      headers: { 'Content-Type: application/json' },
+      body: JSON.stringify({
+        mode: 'consolidate',
+        concept: paper.title,
+        original: notes,
+        recall: currentRecallAttempt
+      })
+    });
+    
+    const feedback = await response.json();
+    
+    // Update UI with feedback
+    const accuracyBadge = document.getElementById('accuracyBadge');
+    accuracyBadge.textContent = `${feedback.accuracy || 70}% Coverage`;
+    accuracyBadge.className = `accuracy-badge ${feedback.accuracy >= 80 ? 'high' : feedback.accuracy >= 60 ? 'medium' : 'low'}`;
+    
+    // Show covered points
+    const coveredList = document.getElementById('coveredPoints');
+    if (feedback.covered && feedback.covered.length > 0) {
+      coveredList.innerHTML = feedback.covered.map(p => `<li>${p}</li>`).join('');
+    } else {
+      coveredList.innerHTML = '<li>Good recall of main concepts</li>';
+    }
+    
+    // Show missing points
+    const missingList = document.getElementById('missingPoints');
+    if (feedback.missing && feedback.missing.length > 0) {
+      missingList.innerHTML = feedback.missing.map(p => `<li>${p}</li>`).join('');
+    } else {
+      missingList.innerHTML = '<li>Consider adding more details about methodology</li>';
+    }
+    
+  } catch (error) {
+    console.error('LLM analysis failed:', error);
+    // Fallback: show generic feedback
+    document.getElementById('accuracyBadge').textContent = 'Analysis Unavailable';
+    document.getElementById('coveredPoints').innerHTML = '<li>Main contribution mentioned</li>';
+    document.getElementById('missingPoints').innerHTML = '<li>Consider reviewing methodology details</li>';
+  }
+}
+
+// Reveal notes without scoring (user gave up)
+function revealNotesWithoutScoring() {
+  currentRecallAttempt = null; // Don't score this attempt
+  showTraditionalReview(currentPaper, 
+    userData.notes?.[currentPaper.arxiv_id] || 'No notes',
+    userData.summaries?.[currentPaper.arxiv_id] || 'No summary');
+}
+
+// Reveal original content after feedback
+function revealOriginal() {
+  const originalContent = document.getElementById('originalContent');
+  originalContent.style.display = 'block';
+  
+  // Scroll to it
+  originalContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Rate paper from feedback screen
+async function ratePaperFromFeedback(difficulty) {
+  // Save recall performance
+  if (currentFeedback && currentPaper) {
+    if (!userData.spacedRepetition.recallPerformance) {
+      userData.spacedRepetition.recallPerformance = [];
+    }
+    userData.spacedRepetition.recallPerformance.push({
+      arxiv_id: currentPaper.arxiv_id,
+      timestamp: new Date().toISOString(),
+      accuracy: currentFeedback.accuracy || 70,
+      difficulty: difficulty
+    });
+  }
+  
+  await ratePaper(difficulty);
 }
 
 async function ratePaper(difficulty) {

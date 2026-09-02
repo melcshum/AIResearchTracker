@@ -12,18 +12,37 @@ title: "Admin: About This Project"
 <h2>🎯 Project Aim</h2>
 <div class="aim-card">
 <p>
-The <strong>AI Research Tracker</strong> is a personalised learning platform powered by AI assistance, designed to help users create their own learning journey.
+The <strong>AI Research Tracker</strong> is a learner-in-the-loop personal knowledge environment designed to position GenAI as a metacognitive and formative scaffold rather than as a substitute knowledge producer.
 </p>
+<p>
+The platform addresses a central tension in educational GenAI: the same cognitive activities that AI can efficiently automate—explaining, organising, connecting, and reformulating information—may themselves constitute important processes through which learning occurs.
+</p>
+<h3>Core Design Principles</h3>
 <ul>
-<li><strong>Personalised Learning Journey</strong> — Enter topics to research and save them to build a customised learning path tailored to your interests</li>
-<li><strong>Structured Learning Pathway</strong> — Offers a clear, organised progression through topics from foundational concepts to advanced material</li>
-<li><strong>AI-Powered Note Organisation</strong> — Utilises AI tools to aid learning and help users organise, summarise, and connect their notes</li>
-<li><strong>Automated Research Retrieval</strong> — Systematically retrieves and includes research papers and other sources on a periodic basis</li>
-<li><strong>AI-Built Learning Materials</strong> — Analyses retrieved content and builds structured learning materials, summaries, and study aids</li>
-<li><strong>Enhanced Wiki with AI Features</strong> — AI-powered wiki support for knowledge building, concept linking, and interactive exploration</li>
+<li><strong>DP1: Learner Ownership</strong> — Learners author and retain control over knowledge artefacts; AI suggestions require explicit evaluation before incorporation</li>
+<li><strong>DP2: Scaffold Rather Than Substitute</strong> — AI supports cognitive activity without automatically performing learning-relevant intellectual work on the learner's behalf</li>
+<li><strong>DP3: Reflection Before Correction</strong> — Learners inspect and reconsider their reasoning before direct correction is supplied, supporting metacognitive monitoring</li>
+<li><strong>DP4: Continuous Knowledge Integration</strong> — New learning relates to previously constructed knowledge, triggering revision of earlier representations</li>
+</ul>
+<h3>Five-Stage Knowledge Construction Cycle</h3>
+<ol>
+<li><strong>Construct</strong> — Learner develops initial explanation or representation in personal wiki</li>
+<li><strong>Reflect</strong> — AI generates metacognitive prompts to examine confidence and completeness</li>
+<li><strong>Scaffold</strong> — AI provides targeted questions, hints, and connection suggestions</li>
+<li><strong>Consolidate & Apply</strong> — Learner retrieves and applies knowledge independently of stored artefacts</li>
+<li><strong>Revisit & Extend</strong> — New concepts integrate with prior knowledge, revising earlier entries</li>
+</ol>
+<h3>Key Features</h3>
+<ul>
+<li><strong>Personalised Learning Journey</strong> — Enter topics to research and build customised learning paths</li>
+<li><strong>AI Wiki Companion</strong> — Four modes (Write, Review, Coach, Update) that scaffold rather than substitute</li>
+<li><strong>Prompt Before Provide</strong> — AI encourages learners to articulate understanding before receiving explanations</li>
+<li><strong>Automated Research Retrieval</strong> — Systematically fetches papers while preserving learner agency in knowledge construction</li>
+<li><strong>Concept Graph & Knowledge Base</strong> — Persistent, networked knowledge representation that evolves over time</li>
+<li><strong>Formative Evaluation</strong> — Tracks conceptual understanding, knowledge-artefact development, and learner responses to AI scaffolding</li>
 </ul>
 <p>
-Behind the scenes, AI-driven automation handles the heavy lifting — fetching papers, enhancing metadata, generating insights, and curating content — so users can focus on learning.
+The central design challenge is not simply to determine what AI can do for the learner, but to determine <strong>what the learner should continue to do because doing it is part of learning</strong>.
 </p>
 </div>
 </div>

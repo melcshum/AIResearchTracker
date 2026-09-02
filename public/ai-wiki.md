@@ -192,9 +192,35 @@ title: "AI Wiki - Knowledge Base"
 <div id="conceptDetail"></div>
 </div>
 </div>
+
+<!-- AI Companion Panel (Right Sidebar) -->
+<aside class="ai-companion-panel" id="aiCompanionPanel" style="display: none;">
+<h3>🤖 AI Companion</h3>
+<div class="companion-modes">
+<button class="companion-mode-btn active" onclick="switchAIMode('construct')">Construct</button>
+<button class="companion-mode-btn" onclick="switchAIMode('reflect')">Reflect</button>
+<button class="companion-mode-btn" onclick="switchAIMode('scaffold')">Scaffold</button>
+<button class="companion-mode-btn" onclick="switchAIMode('consolidate')">Consolidate</button>
+</div>
+<div class="companion-content" id="companionContent">
+<div class="companion-intro">
+<p>Select a concept to work with:</p>
+<ul>
+<li><strong>Construct:</strong> Write your initial explanation</li>
+<li><strong>Reflect:</strong> Get metacognitive questions</li>
+<li><strong>Scaffold:</strong> Receive gap detection & hints</li>
+<li><strong>Consolidate:</strong> Practice recall</li>
+</ul>
+</div>
+</div>
+</aside>
 </div>
 
 <style>
+/* Import shared AI Companion styles */
+@import url('/css/ai-companion.css');
+
+/* Page-specific styles only (no AI Companion duplication) */
 /* Learn by Building Styles */
 .learn-header {
   text-align: center;
@@ -1252,21 +1278,6 @@ title: "AI Wiki - Knowledge Base"
 .empty-state-icon {
   font-size: 64px;
   margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-  .wiki-header {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  
-  .wiki-search input {
-    width: 100%;
-  }
-  
-  .concept-grid {
-    grid-template-columns: 1fr;
-  }
 }
 </style>
 
@@ -2526,7 +2537,7 @@ loadWikiData();
 // Search on Enter key
 document.getElementById('wikiSearch').addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
-    searchWiki();
-  }
+  searchWiki();
 });
-</script>
+
+// Initialize

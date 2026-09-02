@@ -7,7 +7,7 @@ title: "👥 Multi-Agent Systems"
 <h1>👥 Multi-Agent Systems</h1>
 <p class="topic-description">Systems with multiple cooperating agents</p>
 <div class="topic-meta">
-<span>📄 28 papers</span>
+<span>📄 29 papers</span>
 <span>🔍 2 search queries</span>
 <span>🏷️ 3 keywords</span>
 </div>
@@ -17,6 +17,17 @@ title: "👥 Multi-Agent Systems"
 <div class="papers-section">
 <h2>📄 Recent Papers</h2>
 <div class="papers-list">
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.00859v1" target="_blank">Reinforcement Learning Enhanced LLM Agents for Complex Vehicle Routing Problems</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Yi Chen, Zikang Yu, Jiahai Wang, Jinbiao Chen, Jianpeng Zhou, Zizhen Zhang</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.00859v1</span>
+</div>
+</div>
 
 <div class="paper-card">
 <div class="paper-title">
@@ -224,17 +235,6 @@ title: "👥 Multi-Agent Systems"
 <span class="paper-authors">Luiz Giacomossi, Zafer Yigit, Marwan Shakarna, Shoaib Saleemi, Ivan Tomasic, Baran Çurüklü, Håkan Fo...</span>
 <span class="paper-date">2026-08-21</span>
 <span class="paper-arxiv">arXiv:2608.20906v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.18878v1" target="_blank">DentAgent: Evidence-Centric Multi-Agent Coordination for Multimodal Dental Reasoning</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Zijie Meng, Xiwei Dai, Yixuan Tang, Jin Hao, Yang Feng, Fudong Zhu, Xiaoqiang Liu, Shaosheng Cao, Zu...</span>
-<span class="paper-date">2026-08-19</span>
-<span class="paper-arxiv">arXiv:2608.18878v1</span>
 </div>
 </div>
 

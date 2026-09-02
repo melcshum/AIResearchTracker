@@ -2,17 +2,41 @@
 
 ## Mission
 
-A personalised learning platform powered by AI assistance, helping users create their own learning journey.
+A learner-in-the-loop personal knowledge environment designed to position GenAI as a metacognitive and formative scaffold rather than as a substitute knowledge producer.
+
+### Core Philosophy
+
+The platform addresses a central tension in educational GenAI: the same cognitive activities that AI can efficiently automate—explaining, organising, connecting, and reformulating information—may themselves constitute important processes through which learning occurs.
+
+**Central Design Challenge:** Determine what the learner should continue to do because doing it is part of learning.
+
+### Design Principles
+
+1. **DP1: Learner Ownership** — Learners author and retain control over knowledge artefacts; AI suggestions require explicit evaluation before incorporation
+2. **DP2: Scaffold Rather Than Substitute** — AI supports cognitive activity without automatically performing learning-relevant intellectual work on the learner's behalf
+3. **DP3: Reflection Before Correction** — Learners inspect and reconsider their reasoning before direct correction is supplied, supporting metacognitive monitoring
+4. **DP4: Continuous Knowledge Integration** — New learning relates to previously constructed knowledge, triggering revision of earlier representations
+
+### Five-Stage Knowledge Construction Cycle
+
+1. **Construct** — Learner develops initial explanation or representation in personal wiki
+2. **Reflect** — AI generates metacognitive prompts to examine confidence and completeness
+3. **Scaffold** — AI provides targeted questions, hints, and connection suggestions
+4. **Consolidate & Apply** — Learner retrieves and applies knowledge independently of stored artefacts
+5. **Revisit & Extend** — New concepts integrate with prior knowledge, revising earlier entries
+
+### Key Interaction Model: Prompt Before Provide
+
+When learners request information about a concept, the AI Companion first encourages them to articulate their current understanding before receiving direct explanations. This creates productive cognitive friction that supports retrieval and reflection.
 
 ### Primary Objectives
 
-1. **Personalised Learning Journey** — Users enter topics to research and save them to build a customised learning path tailored to their interests
-2. **Structured Learning Pathway** — Offers a clear, organised progression through topics from foundational concepts to advanced material
-3. **AI-Powered Note Organisation** — Utilises AI tools to aid learning and help users organise, summarise, and connect their notes
-4. **Automated Research Retrieval** — Systematically retrieves and includes research papers and other sources on a periodic basis
-5. **AI-Built Learning Materials** — Analyses retrieved content and builds structured learning materials, summaries, and study aids
-6. **Enhanced Wiki with AI Features** — AI-powered wiki support for knowledge building, concept linking, and interactive exploration
-7. **Behind-the-Scenes Automation** — AI-driven automation handles paper fetching, metadata enhancement, and content curation so users can focus on learning
+1. **Personalised Learning Journey** — Users enter topics to research and build customised learning paths while maintaining epistemic agency
+2. **AI Wiki Companion** — Four modes (Write, Review, Coach, Update) that scaffold rather than substitute cognitive activity
+3. **Automated Research Retrieval** — Systematically fetches papers while preserving learner agency in knowledge construction
+4. **Concept Graph & Knowledge Base** — Persistent, networked knowledge representation that evolves over time
+5. **Formative Evaluation** — Tracks conceptual understanding, knowledge-artefact development, and learner responses to AI scaffolding
+6. **Behind-the-Scenes Automation** — AI-driven automation handles paper fetching, metadata enhancement, and content curation so users can focus on learning
 
 ## Multi-User Topic Management
 
@@ -305,25 +329,34 @@ Includes integration guides for Zotero, Obsidian, LaTeX, and daily/weekly workfl
 
 ## Interactive Wiki
 
-### Knowledge Building Workflow (`wiki.md`)
-5-step interactive process for exploring and contributing to the wiki:
+### Knowledge Construction Workflow (`wiki.md`)
+The wiki implements the learner-in-the-loop 5-stage knowledge construction cycle:
 
-1. **Select** 👆 — Click any highlighted term to explore
-2. **Question** ❓ — Ask what you want to know
-3. **Search** 🔍 — Find reliable academic sources
-4. **Explain** 💡 — Build explanations with examples and citations
-5. **Review** ✅ — Review and approve contributions
+1. **Construct** ✍️ — Learner writes initial explanation in their own words
+2. **Reflect** 🤔 — AI Companion generates metacognitive prompts: "Which part are you least confident about?"
+3. **Scaffold** 🏗️ — AI provides targeted questions, hints, and connection suggestions (Prompt Before Provide)
+4. **Consolidate & Apply** 💡 — Learner retrieves and applies knowledge independently
+5. **Revisit & Extend** 🔗 — New concepts integrate with prior knowledge, revising earlier entries
 
-Features:
-- Interactive term highlighting with hover effects
-- Visual workflow guide with gradient background
-- Source search with citation tracking
-- Explanation tools (simplify, add examples, add citations)
-- Review and approval workflow
-- Recent contributions feed
-- Bidirectional linking with backlinks panel
-- Version history tracking
-- Export/Import (JSON)
+### AI Companion Functions
+
+| Function | Intended Learning Role | Example |
+|----------|----------------------|---------|
+| **Socratic Questioning** | Elicit explanation, justification, comparison | "Why does this relationship hold?" |
+| **Knowledge Gap Detection** | Draw attention to incomplete concepts | "Your explanation discusses training but not generalisation" |
+| **Connection Recommendation** | Encourage integration of new and existing knowledge | "Could this relate to your earlier entry on bias-variance?" |
+| **Misconception Challenge** | Prompt reconsideration of inaccurate reasoning | "Would this claim remain true for unseen data?" |
+| **Evidence Prompting** | Encourage verification of knowledge claims | "What source supports this statement?" |
+| **Retrieval Questions** | Promote recall and transfer | "Explain without consulting the wiki" |
+
+### Wiki Features
+
+- **Learner-authored entries** — AI suggestions require explicit evaluation before incorporation
+- **Bidirectional linking** — Backlinks panel with connection count badge
+- **Version history** — Track how conceptual representations evolve over time
+- **Concept graph** — D3.js force-directed visualization of knowledge relationships
+- **Prompt Before Provide** — AI encourages articulation before direct explanation
+- **Export/Import** — JSON export for personal knowledge management
 
 ## Quick Commands
 
@@ -389,11 +422,22 @@ python3 inject_wikilinks.py
 
 ## Success Criteria
 
+- **Learner Agency**: Learners remain the primary constructors of knowledge; AI scaffolds without substituting cognitive activity
+- **Metacognitive Engagement**: Learners actively monitor, evaluate, and revise their understanding with AI-supported prompts
+- **Knowledge Evolution**: Wiki entries show substantive revision over time as understanding deepens
 - **Research Automation**: Zero-touch daily paper updates with one-click manual override
 - **Knowledge Accessibility**: Searchable, browsable research database with visual analytics
 - **Knowledge Graph**: Obsidian-style wiki with bidirectional linking and interactive visualization
-- **Role-Based UX**: Tailored experiences for researchers, admins, and engineers
 - **Documentation Quality**: Self-documenting workflows with comprehensive logs and guides
+
+## Conference Paper
+
+**"From Notes to Knowledge: Designing an AI Wiki Companion for Learner-in-the-Loop Knowledge Construction"**
+- Location: `public/conference-papers/ai-wiki-companion-2026.md`
+- Status: Draft (To Be Submitted)
+- Date: September 2, 2026
+- Keywords: learner-in-the-loop, AI wiki, knowledge construction, writing-to-learn, metacognition, self-regulated learning, cognitive offloading, epistemic agency
+- This paper provides the theoretical foundation for the entire platform design
 
 ## Current Stats (Sep 1, 2026)
 

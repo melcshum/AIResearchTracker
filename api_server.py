@@ -434,6 +434,215 @@ def save_wiki_data():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+# Wiki Companion endpoints (LLM-powered)
+@app.route('/api/wiki/companion', methods=['POST'])
+def wiki_companion():
+    """AI Learning Companion for knowledge construction."""
+    try:
+        import requests
+        import json
+        
+        data = request.json
+        mode = data.get('mode')  # 'construct', 'reflect', 'scaffold', 'consolidate', 'revisit'
+        explanation = data.get('explanation', '')
+        concept = data.get('concept', '')
+        prior_explanations = data.get('prior_explanations', [])
+        retrieval_attempt = data.get('retrieval_attempt', '')
+        
+        if not explanation and mode != 'consolidate' and mode != 'revisit':
+            return jsonify({'error': 'Explanation required'}), 400
+        
+        # Build prompt based on mode
+        if mode == 'reflect':
+            prompt = f"""You are a metacognitive coach. The learner wrote this explanation of {concept}:
+"{explanation}"
+
+Generate 2-3 reflective questions that help them examine their understanding.
+Focus on: confidence, completeness, assumptions, explanatory adequacy.
+Do NOT provide answers. Only ask questions.
+
+Format your response as a JSON array of strings:
+["Question 1?", "Question 2?", "Question 3?"]"""
+        
+        elif mode == 'scaffold':
+            action = data.get('action', 'detect_gaps')
+            if action == 'detect_gaps':
+                prompt = f"""You are a knowledge construction scaffold. The learner wrote this explanation of {concept}:
+"{explanation}"
+
+Analyze for missing key concepts and provide suggestions as questions.
+
+Respond ONLY with valid JSON in this exact format:
+{{
+  "missingTerms": ["term1", "term2"],
+  "suggestions": ["Question about concept A?", "Consider how B relates?"]
+}}
+
+Do not include any text before or after the JSON. No markdown. No explanations."""
+            else:
+                prompt = f"""You are a knowledge construction scaffold. The learner wrote this explanation of {concept}:
+"{explanation}"
+
+Analyze for:
+1. Missing concepts (concepts they should mention but didn't)
+2. Potential misconceptions (statements that might be inaccurate)
+3. Connection opportunities (related concepts they could link to)
+
+Provide feedback as questions, not corrections.
+Example: "You discussed X but not Y. How are they related?"
+
+Format your response as JSON:
+{{
+  "missing_concepts": ["Concept A", "Concept B"],
+  "misconceptions": ["Question about potential misconception"],
+  "connections": ["Could this relate to Concept C?"]
+}}"""
+        
+        elif mode == 'consolidate':
+            prompt = f"""The learner's original explanation of {concept}:
+"{explanation}"
+
+Their retrieval attempt (from memory):
+"{retrieval_attempt}"
+
+Compare and provide formative feedback:
+- What did they recall correctly?
+- What did they miss?
+- What misconceptions emerged?
+
+Format your response as JSON:
+{{
+  "correct_recall": ["Point 1", "Point 2"],
+  "missed_points": ["Point 1", "Point 2"],
+  "misconceptions": ["Misconception 1"],
+  "feedback": "Encouraging summary with targeted questions"
+}}"""
+        
+        elif mode == 'revisit':
+            related_concepts = data.get('related_concepts', [])
+            prompt = f"""The learner is learning about {concept}.
+Their explanation: "{explanation}"
+
+Related concepts they've learned before: {related_concepts}
+
+Generate questions that help them:
+1. Integrate this new concept with prior knowledge
+2. Identify if earlier explanations need revision
+3. Build meaningful connections
+
+Format your response as JSON:
+{{
+  "integration_questions": ["Question 1", "Question 2"],
+  "revision_suggestions": ["Concept X may need revision because..."],
+  "connections": ["How {concept} relates to Concept Y"]
+}}"""
+        
+        else:
+            return jsonify({'error': f'Unknown mode: {mode}'}), 400
+        
+        # Call Ollama
+        response = requests.post(
+            'http://localhost:11434/api/generate',
+            json={
+                'model': 'gemma4-64k',
+                'prompt': prompt,
+                'stream': False,
+                'format': 'json'
+            },
+            timeout=30
+        )
+        
+        if response.status_code != 200:
+            return jsonify({'error': f'Ollama error: {response.status_code}'}), 500
+        
+        result = response.json()
+        response_text = result.get('response', '{}')
+        
+        # Parse JSON response
+        try:
+            parsed = json.loads(response_text)
+        except json.JSONDecodeError:
+            # Try to extract JSON from text
+            import re
+            match = re.search(r'\{.*\}', response_text, re.DOTALL)
+            if match:
+                parsed = json.loads(match.group())
+            else:
+                parsed = {'error': 'Failed to parse LLM response', 'raw': response_text}
+        
+        return jsonify(parsed)
+        
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': str(e)}), 500
+
+# Knowledge Context endpoint (DP4: Continuous Knowledge Integration)
+@app.route('/api/wiki/context', methods=['POST'])
+def get_knowledge_context():
+    """Select relevant wiki entries for AI interaction."""
+    try:
+        import json
+        from user_manager import load_user_data
+        
+        data = request.json
+        concept = data.get('concept', '')
+        username = get_current_user()
+        
+        if not concept:
+            return jsonify({'error': 'Concept required'}), 400
+        
+        # Load user's wiki data
+        user_data = load_user_data(username)
+        wiki_data = user_data.get('wiki', {})
+        
+        # Find related concepts
+        related_concepts = []
+        concept_lower = concept.lower()
+        
+        for entry_concept, entry_data in wiki_data.items():
+            if entry_concept.lower() == concept_lower:
+                continue  # Skip self
+            
+            # Check for connections, related concepts, keywords
+            connections = entry_data.get('connections', [])
+            keywords = entry_data.get('keywords', [])
+            
+            # Simple relevance scoring
+            relevance_score = 0
+            if concept_lower in ' '.join(connections).lower():
+                relevance_score += 2
+            if concept_lower in ' '.join(keywords).lower():
+                relevance_score += 1
+            
+            # Check if this concept is mentioned in the current concept's data
+            current_entry = wiki_data.get(concept, {})
+            current_connections = current_entry.get('connections', [])
+            if entry_concept in current_connections:
+                relevance_score += 3
+            
+            if relevance_score > 0:
+                related_concepts.append({
+                    'concept': entry_concept,
+                    'summary': entry_data.get('explanation', '')[:100] + '...',
+                    'relevance': relevance_score,
+                    'connections': connections[:3]
+                })
+        
+        # Sort by relevance
+        related_concepts.sort(key=lambda x: x['relevance'], reverse=True)
+        
+        # Return top 5
+        return jsonify({
+            'context': related_concepts[:5],
+            'total_related': len(related_concepts)
+        })
+        
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': str(e)}), 500
+
 if __name__ == '__main__':
     print("Starting Topic Management API Server...")
     print("Current user:", get_current_user())

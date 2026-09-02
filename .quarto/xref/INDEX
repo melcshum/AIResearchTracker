@@ -1135,5 +1135,137 @@
   },
   "public/conference-papers/ai-wiki-companion-2026.md": {
     "ai-wiki-companion-2026.html": "e1fe35fc"
+  },
+  "private/WIKI_ENHANCEMENT_PLAN.md": {
+    "WIKI_ENHANCEMENT_PLAN.html": "7ed165db"
+  },
+  "private/WIKI_PHASE1_SUMMARY.md": {
+    "WIKI_PHASE1_SUMMARY.html": "ef56208e"
+  },
+  "private/WIKI_PHASE2_SUMMARY.md": {
+    "WIKI_PHASE2_SUMMARY.html": "5dd0b9d0"
+  },
+  "private/AUDIT_5STAGE_CYCLE.md": {
+    "AUDIT_5STAGE_CYCLE.html": "fd213e55"
+  },
+  "private/PHASE3A_IMPLEMENTATION_PLAN.md": {
+    "PHASE3A_IMPLEMENTATION_PLAN.html": "c863dd92"
+  },
+  "private/PHASE3A_AUDIT_REPORT.md": {
+    "PHASE3A_AUDIT_REPORT.html": "5c5af899"
+  },
+  "private/PHASE3B_SUMMARY.md": {
+    "PHASE3B_SUMMARY.html": "de8d8d42"
+  },
+  "private/PHASE3_FINAL_STATUS.md": {
+    "PHASE3_FINAL_STATUS.html": "8118df69"
+  },
+  "private/PHASE1_SHARED_COMPONENTS.md": {
+    "PHASE1_SHARED_COMPONENTS.html": "96b5dc21"
+  },
+  "private/DESIGN_REVIEW_CLEANUP.md": {
+    "DESIGN_REVIEW_CLEANUP.html": "d798af7a"
+  },
+  "private/PHASE2_WIKI_REFACTOR.md": {
+    "PHASE2_WIKI_REFACTOR.html": "26f08f8e"
+  },
+  "private/PHASE2_PAPER_READER_REFACTOR.md": {
+    "PHASE2_PAPER_READER_REFACTOR.html": "52f2f066"
+  },
+  "papers/2026-08-30/2609.00067v1-Do-Multimodal-LLMs-See-Before-They-Read-Diagnosing-Contextual-Sycophancy.md": {
+    "2609.00067v1-Do-Multimodal-LLMs-See-Before-They-Read-Diagnosing-Contextual-Sycophancy.html": "bfad540e"
+  },
+  "papers/2026-08-30/2609.00048v1-GUI-CC-Benchmarking-Contextual-Consistency-of-GUI-World-Models-as-Agent-Environm.md": {
+    "2609.00048v1-GUI-CC-Benchmarking-Contextual-Consistency-of-GUI-World-Models-as-Agent-Environm.html": "5e629b34"
+  },
+  "papers/2026-08-31/2609.00293v1-Slow-to-See-Slow-to-Suppress-Understanding-the-Effects-of-Modality-in-Context-Me.md": {
+    "2609.00293v1-Slow-to-See-Slow-to-Suppress-Understanding-the-Effects-of-Modality-in-Context-Me.html": "cc878fcb"
+  },
+  "papers/2026-08-31/2609.00231v1-Beyond-Language-Priors-Diagnosing-and-Fixing-Visual-Origin-Hallucinations-in-Mul.md": {
+    "2609.00231v1-Beyond-Language-Priors-Diagnosing-and-Fixing-Visual-Origin-Hallucinations-in-Mul.html": "e1b826ab"
+  },
+  "papers/2026-08-31/2609.00457v1-Can-LLMs-Use-Relational-Transformer-Embeddings.md": {
+    "2609.00457v1-Can-LLMs-Use-Relational-Transformer-Embeddings.html": "5feb599c"
+  },
+  "papers/2026-09-01/2609.01404v1-Evaluating-Multimodal-LLMs-as-Generalist-Vision-Language-Action-Agents-for-Drone.md": {
+    "2609.01404v1-Evaluating-Multimodal-LLMs-as-Generalist-Vision-Language-Action-Agents-for-Drone.html": "1b15237c"
+  },
+  "papers/2026-09-01/2609.00763v1-Automated-Tree-Knowledge-Graph-Construction-using-Ontology-Expansion-and-Retriev.md": {
+    "2609.00763v1-Automated-Tree-Knowledge-Graph-Construction-using-Ontology-Expansion-and-Retriev.html": "67878c49"
+  },
+  "papers/2026-09-01/2609.00550v1-Same-Semantics-Different-Outcome-On-the-Modality-Robustness-of-Multimodal-LLMs-u.md": {
+    "2609.00550v1-Same-Semantics-Different-Outcome-On-the-Modality-Robustness-of-Multimodal-LLMs-u.html": "b705493d"
+  },
+  "papers/2026-09-01/2609.01375v1-IntroConformal-Conformal-Factuality-Guarantees-for-Large-Vision-Language-Models-.md": {
+    "2609.01375v1-IntroConformal-Conformal-Factuality-Guarantees-for-Large-Vision-Language-Models-.html": "42cd08cc"
+  },
+  "papers/2026-09-01/2609.01383v1-InSight-A-Benchmark-for-Agentic-Claim-Verification-in-Interactive-Visualizations.md": {
+    "2609.01383v1-InSight-A-Benchmark-for-Agentic-Claim-Verification-in-Interactive-Visualizations.html": "8e093b4e"
+  },
+  "papers/2026-09-01/2609.00689v1-SCoNE-Selective-Context-aware-Neuron-Editing-for-Robust-Retrieval-Augmented-Gene.md": {
+    "2609.00689v1-SCoNE-Selective-Context-aware-Neuron-Editing-for-Robust-Retrieval-Augmented-Gene.html": "fc36d815"
+  },
+  "papers/2026-09-01/2609.00858v1-Verifiable-Disaster-Storylines-and-Causal-Knowledge-Graphs-A-Citation-Grounded-P.md": {
+    "2609.00858v1-Verifiable-Disaster-Storylines-and-Causal-Knowledge-Graphs-A-Citation-Grounded-P.html": "f04a2e6f"
+  },
+  "papers/2026-09-01/2609.00604v1-NeuroGraph-An-AI-Graph-Driven-Neuro-Symbolic-Framework-for-Explainable-Threat-Re.md": {
+    "2609.00604v1-NeuroGraph-An-AI-Graph-Driven-Neuro-Symbolic-Framework-for-Explainable-Threat-Re.html": "21498f2d"
+  },
+  "papers/2026-09-01/2609.01289v1-Agentic-Multimodal-Models-for-Environmental-Hyperspectral-Unmixing.md": {
+    "2609.01289v1-Agentic-Multimodal-Models-for-Environmental-Hyperspectral-Unmixing.html": "c5f94d29"
+  },
+  "papers/2026-09-01/2609.00629v1-ExpArt-KG-Artwork-Image-Description-Generation-through-Iterative-Exploration-of-.md": {
+    "2609.00629v1-ExpArt-KG-Artwork-Image-Description-Generation-through-Iterative-Exploration-of-.html": "fe847332"
+  },
+  "papers/2026-09-01/2609.01200v1-Compressing-AI-Traffic-Standardized-Neural-Network-Coding-of-Visual-Token-Repres.md": {
+    "2609.01200v1-Compressing-AI-Traffic-Standardized-Neural-Network-Coding-of-Visual-Token-Repres.html": "a7e4cd61"
+  },
+  "papers/2026-09-01/2609.01325v1-VerTox-Verifiable-Reward-Guided-Corpus-Poisoning-Against-Neural-Ranking-Models.md": {
+    "2609.01325v1-VerTox-Verifiable-Reward-Guided-Corpus-Poisoning-Against-Neural-Ranking-Models.html": "ed363de6"
+  },
+  "papers/2026-09-01/2609.01117v1-Latent-Recurrent-Thoughts-Recurrent-Refinement-of-Proposed-Latents-for-Reasoning.md": {
+    "2609.01117v1-Latent-Recurrent-Thoughts-Recurrent-Refinement-of-Proposed-Latents-for-Reasoning.html": "2a0dd495"
+  },
+  "papers/2026-09-01/2609.00909v1-A-multicenter-benchmark-and-clinically-structured-metric-for-coronary-CTA-report.md": {
+    "2609.00909v1-A-multicenter-benchmark-and-clinically-structured-metric-for-coronary-CTA-report.html": "bef31f3e"
+  },
+  "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.md": {
+    "2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html": "2fa5ced2"
+  },
+  "papers/2026-09-01/2609.01601v1-Adaptive-Critical-Token-Aware-Retrieval-for-Repository-Level-Code-Generation.md": {
+    "2609.01601v1-Adaptive-Critical-Token-Aware-Retrieval-for-Repository-Level-Code-Generation.html": "5e53bbe3"
+  },
+  "papers/2026-09-01/2609.01409v1-EdiTikZ-Scientific-Figure-Editing-from-Revision-Trajectories.md": {
+    "2609.01409v1-EdiTikZ-Scientific-Figure-Editing-from-Revision-Trajectories.html": "88423e3b"
+  },
+  "papers/2026-09-01/2609.01059v1-Dyn-3D-Unveiling-and-Resolving-Ego-Motion-Ambiguity-in-Vision-Language-Models.md": {
+    "2609.01059v1-Dyn-3D-Unveiling-and-Resolving-Ego-Motion-Ambiguity-in-Vision-Language-Models.html": "b5233086"
+  },
+  "papers/2026-09-01/2609.01318v1-Reliability-Challenges-in-Diffusion-Vision-Language-Models.md": {
+    "2609.01318v1-Reliability-Challenges-in-Diffusion-Vision-Language-Models.html": "f0ef98b2"
+  },
+  "papers/2026-09-01/2609.00543v1-Feedback-Assisted-Trust-Propagation-over-Document-Relation-Graphs-for-Retrieval-.md": {
+    "2609.00543v1-Feedback-Assisted-Trust-Propagation-over-Document-Relation-Graphs-for-Retrieval-.html": "084655e3"
+  },
+  "papers/2026-09-01/2609.00948v1-From-Terminology-to-Diagrams-Visual-Instruction-Generation-for-Scientific-Diagra.md": {
+    "2609.00948v1-From-Terminology-to-Diagrams-Visual-Instruction-Generation-for-Scientific-Diagra.html": "e674020e"
+  },
+  "papers/2026-09-01/2609.01567v1-Selective-Agent-Guidance-via-Entropy-Learning-Autonomous-Policies-from-Imperfect.md": {
+    "2609.01567v1-Selective-Agent-Guidance-via-Entropy-Learning-Autonomous-Policies-from-Imperfect.html": "83dd182a"
+  },
+  "papers/2026-09-01/2609.00746v1-Text-Capability-Loss-in-Vision-Language-Adaptation-An-Attention-Sink-Diagnosis.md": {
+    "2609.00746v1-Text-Capability-Loss-in-Vision-Language-Adaptation-An-Attention-Sink-Diagnosis.html": "8a388595"
+  },
+  "papers/2026-09-01/2609.00859v1-Reinforcement-Learning-Enhanced-LLM-Agents-for-Complex-Vehicle-Routing-Problems.md": {
+    "2609.00859v1-Reinforcement-Learning-Enhanced-LLM-Agents-for-Complex-Vehicle-Routing-Problems.html": "2374b4e9"
+  },
+  "papers/2026-09-01/2609.01316v1-MIDR-Enrichment-Augmented-Indexing-for-Multimodal-Document-Retrieval.md": {
+    "2609.01316v1-MIDR-Enrichment-Augmented-Indexing-for-Multimodal-Document-Retrieval.html": "63d87855"
+  },
+  "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.md": {
+    "2609.00028v1-UI-Venus-2-Technical-Report.html": "383a283b"
+  },
+  "private/PHASE2_ALL_PAGES_REFACTORED.md": {
+    "PHASE2_ALL_PAGES_REFACTORED.html": "e9e1f599"
   }
 }

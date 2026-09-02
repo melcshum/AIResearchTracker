@@ -8,6 +8,71 @@ title: "Research Wiki"
 <p class="wiki-subtitle">Interactive knowledge building with real paper references and persistent contributions</p>
 </div>
 
+<div class="wiki-learning-hero">
+<div class="hero-content">
+<div class="hero-text">
+<h3>🎯 Start Your Learning Journey</h3>
+<p>Build deep understanding by explaining concepts in your own words. Click any highlighted term below to begin.</p>
+<div class="hero-actions">
+<a href="#" class="btn-start-learning" id="startLearningBtn">Start Learning →</a>
+<a href="learning-journey.html" class="btn-view-journey">View Learning Path</a>
+</div>
+</div>
+<div class="hero-progress">
+<div class="progress-stat">
+<div class="stat-icon">📖</div>
+<div class="stat-value" id="wikiTermsExplored">0</div>
+<div class="stat-label">Terms Explored</div>
+</div>
+<div class="progress-stat">
+<div class="stat-icon">✍️</div>
+<div class="stat-value" id="wikiExplanationsWritten">0</div>
+<div class="stat-label">Explanations</div>
+</div>
+<div class="progress-stat">
+<div class="stat-icon">🌳</div>
+<div class="stat-value" id="wikiMastered">0</div>
+<div class="stat-label">Mastered</div>
+</div>
+</div>
+</div>
+<div class="hero-ai-companion">
+<h4>🤖 AI Learning Companion</h4>
+<div class="companion-features">
+<div class="companion-feature">
+<div class="feature-icon">✍️</div>
+<div class="feature-text">
+<strong>Write Mode:</strong> AI observes as you construct knowledge
+</div>
+</div>
+<div class="companion-feature">
+<div class="feature-icon">🤔</div>
+<div class="feature-text">
+<strong>Reflect Mode:</strong> Metacognitive prompts guide self-assessment
+</div>
+</div>
+<div class="companion-feature">
+<div class="feature-icon">🏗️</div>
+<div class="feature-text">
+<strong>Scaffold Mode:</strong> Targeted hints without giving answers
+</div>
+</div>
+<div class="companion-feature">
+<div class="feature-icon">💬</div>
+<div class="feature-text">
+<strong>Chat Mode:</strong> Ask questions and get personalized guidance</div>
+</div>
+</div>
+</div>
+<div class="hero-last-activity" id="lastActivitySection" style="display: none;">
+<h4>📍 Continue Where You Left Off</h4>
+<div class="last-activity-content">
+<span id="lastActivityText"></span>
+<a href="#" id="continueLearningBtn" class="btn-continue">Continue Learning →</a>
+</div>
+</div>
+</div>
+
 <div class="wiki-search-bar">
 <input type="text" id="wikiSearch" placeholder="🔍 Search wiki entries, terms, and concepts..." onkeyup="searchWiki()">
 <div id="searchResults" class="wiki-search-results"></div>
@@ -15,38 +80,38 @@ title: "Research Wiki"
 
 <div class="wiki-workflow-guide">
 <div class="workflow-step">
-<div class="step-icon">👆</div>
+<div class="step-icon">✍️</div>
 <div class="step-content">
-<h4>1. Select a Term</h4>
-<p>Click any highlighted term in the article to begin exploring</p>
+<h4>1. Construct</h4>
+<p>Write your initial explanation in your own words. AI observes but doesn't intervene yet, preserving your epistemic agency.</p>
 </div>
 </div>
 <div class="workflow-step">
-<div class="step-icon">❓</div>
+<div class="step-icon">🤔</div>
 <div class="step-content">
-<h4>2. Ask Questions</h4>
-<p>What would you like to know? Formulate your research question</p>
+<h4>2. Reflect</h4>
+<p>AI generates metacognitive prompts: "Which part are you least confident about?" You examine your understanding before correction.</p>
 </div>
 </div>
 <div class="workflow-step">
-<div class="step-icon">🔍</div>
+<div class="step-icon">🏗️</div>
 <div class="step-content">
-<h4>3. Search Sources</h4>
-<p>Find reliable academic sources and papers to answer your question</p>
+<h4>3. Scaffold</h4>
+<p>AI provides targeted questions, hints, and connection suggestions. It identifies gaps without rewriting. Prompt Before Provide.</p>
 </div>
 </div>
 <div class="workflow-step">
 <div class="step-icon">💡</div>
 <div class="step-content">
-<h4>4. Build Explanation</h4>
-<p>Synthesize information, add examples, and cite sources</p>
+<h4>4. Consolidate (Optional)</h4>
+<p>Retrieve and apply knowledge independently. Explain without consulting the wiki, then compare to your original explanation.</p>
 </div>
 </div>
 <div class="workflow-step">
-<div class="step-icon">✅</div>
+<div class="step-icon">🔗</div>
 <div class="step-content">
-<h4>5. Review & Approve</h4>
-<p>Review your contribution, refine if needed, and submit to the wiki</p>
+<h4>5. Revisit & Extend</h4>
+<p>New concepts integrate with prior knowledge. AI identifies related entries and prompts comparison, integration, or revision.</p>
 </div>
 </div>
 </div>
@@ -177,51 +242,60 @@ Key techniques include <span class="wiki-term" data-term="rlhf">RLHF</span> (Rei
 
 <div id="aiCompanionPanel" class="wiki-panel ai-companion">
 <h4>🤖 AI Learning Companion</h4>
+<p class="companion-intro">Follows the 5-stage knowledge construction cycle. AI scaffolds rather than substitutes.</p>
 <div class="ai-companion-modes">
-<button class="ai-mode-btn active" onclick="switchAIMode('write')" title="Help me write">✍️ Write</button>
-<button class="ai-mode-btn" onclick="switchAIMode('review')" title="Review my explanation">🔍 Review</button>
-<button class="ai-mode-btn" onclick="switchAIMode('coach')" title="Guide my learning">🎯 Coach</button>
-<button class="ai-mode-btn" onclick="switchAIMode('update')" title="Suggest updates">🔄 Update</button>
+<button class="ai-mode-btn active" onclick="switchAIMode('construct')" title="Write your explanation">✍️ Construct</button>
+<button class="ai-mode-btn" onclick="switchAIMode('reflect')" title="Examine your understanding">🤔 Reflect</button>
+<button class="ai-mode-btn" onclick="switchAIMode('scaffold')" title="Get targeted support">🏗️ Scaffold</button>
+<button class="ai-mode-btn" onclick="switchAIMode('consolidate')" title="Retrieve from memory">💡 Consolidate</button>
+<button class="ai-mode-btn" onclick="switchAIMode('revisit')" title="Connect to prior knowledge">🔗 Revisit</button>
 </div>
 
-<div id="aiWriteMode" class="ai-mode-content active">
+<div id="aiConstructMode" class="ai-mode-content active">
 <div class="ai-prompt">
-<p class="ai-hint">💡 I'll help you explain this concept. Start typing, and I'll provide suggestions.</p>
+<p class="ai-hint">✍️ Write your initial explanation. I'll observe but won't intervene yet — your understanding comes first.</p>
 <button class="ai-action-btn" onclick="aiStartDraft()">📝 Start Draft</button>
 <button class="ai-action-btn" onclick="aiSuggestStructure()">🏗️ Suggest Structure</button>
-<button class="ai-action-btn" onclick="aiProvideHints()">💡 Give Hints</button>
 </div>
 <div id="aiWritingAssist" class="ai-assist-area"></div>
 </div>
 
-<div id="aiReviewMode" class="ai-mode-content">
+<div id="aiReflectMode" class="ai-mode-content">
 <div class="ai-prompt">
-<p class="ai-hint">🔍 I'll review your explanation and identify gaps or unclear parts.</p>
-<button class="ai-action-btn" onclick="aiReviewExplanation()">📊 Review Now</button>
-<button class="ai-action-btn" onclick="aiCheckAccuracy()">✓ Check Accuracy</button>
-<button class="ai-action-btn" onclick="aiFindGaps()">🕳️ Find Gaps</button>
+<p class="ai-hint">🤔 Let's examine your understanding. I'll ask questions to help you reflect — no corrections yet.</p>
+<button class="ai-action-btn" onclick="aiGenerateReflectionPrompts()">💭 Generate Reflection Questions</button>
+<button class="ai-action-btn" onclick="aiConfidenceCheck()">📊 Confidence Check</button>
 </div>
-<div id="aiReviewResult" class="ai-assist-area"></div>
+<div id="aiReflectResult" class="ai-assist-area"></div>
 </div>
 
-<div id="aiCoachMode" class="ai-mode-content">
+<div id="aiScaffoldMode" class="ai-mode-content">
 <div class="ai-prompt">
-<p class="ai-hint">🎯 I'll track your progress and suggest what to learn next.</p>
-<button class="ai-action-btn" onclick="aiAssessMastery()">📈 Assess Mastery</button>
-<button class="ai-action-btn" onclick="aiSuggestNext()">➡️ What's Next?</button>
-<button class="ai-action-btn" onclick="aiCreateQuiz()">📝 Quick Quiz</button>
+<p class="ai-hint">🏗️ I'll provide targeted support based on your explanation. I'll ask before telling — Prompt Before Provide.</p>
+<button class="ai-action-btn" onclick="aiDetectGaps()">🕳️ Identify Gaps</button>
+<button class="ai-action-btn" onclick="aiChallengeMisconceptions()">❓ Challenge Assumptions</button>
+<button class="ai-action-btn" onclick="aiSuggestConnections()">🔗 Suggest Connections (on request)</button>
 </div>
-<div id="aiCoachingResult" class="ai-assist-area"></div>
+<div id="aiScaffoldResult" class="ai-assist-area"></div>
 </div>
 
-<div id="aiUpdateMode" class="ai-mode-content">
+<div id="aiConsolidateMode" class="ai-mode-content">
 <div class="ai-prompt">
-<p class="ai-hint">🔄 I'll monitor new research and suggest updates to your understanding.</p>
-<button class="ai-action-btn" onclick="aiCheckNewPapers()">📄 Check New Papers</button>
-<button class="ai-action-btn" onclick="aiSuggestUpdates()">💡 Suggest Updates</button>
-<button class="ai-action-btn" onclick="aiCompareVersions()">⚖️ Compare Versions</button>
+<p class="ai-hint">💡 Optional: Test your retrieval. Explain without consulting the wiki, then compare.</p>
+<button class="ai-action-btn" onclick="aiStartRetrieval()">🧠 Start Retrieval Practice</button>
+<button class="ai-action-btn" onclick="aiCompareExplanations()">⚖️ Compare Explanations</button>
 </div>
-<div id="aiUpdateResult" class="ai-assist-area"></div>
+<div id="aiConsolidateResult" class="ai-assist-area"></div>
+</div>
+
+<div id="aiRevisitMode" class="ai-mode-content">
+<div class="ai-prompt">
+<p class="ai-hint">🔗 Connect new learning to prior knowledge. I'll show related entries and prompt revision.</p>
+<button class="ai-action-btn" onclick="aiShowRelatedEntries()">📚 Show Related Entries</button>
+<button class="ai-action-btn" onclick="aiPromptRevision()">🔄 Prompt Revision</button>
+<button class="ai-action-btn" onclick="aiShowVersionHistory()">📜 Version History</button>
+</div>
+<div id="aiRevisitResult" class="ai-assist-area"></div>
 </div>
 </div>
 </div>
@@ -251,6 +325,10 @@ Key techniques include <span class="wiki-term" data-term="rlhf">RLHF</span> (Rei
 </div>
 
 <style>
+/* Import shared AI Companion styles */
+@import url('/css/ai-companion.css');
+
+/* Page-specific styles only (no AI Companion duplication) */
 .wiki-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -800,152 +878,6 @@ Key techniques include <span class="wiki-term" data-term="rlhf">RLHF</span> (Rei
   font-weight: 500;
 }
 
-/* AI Companion Styles */
-.ai-companion {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  border: 2px solid #667eea;
-  border-radius: 12px;
-  padding: 15px;
-  margin-top: 15px;
-}
-
-.ai-companion h4 {
-  margin: 0 0 12px 0;
-  color: #2c3e50;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.ai-companion-modes {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #e0e0e0;
-  padding-bottom: 10px;
-}
-
-.ai-mode-btn {
-  flex: 1;
-  padding: 8px 12px;
-  background: white;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 500;
-  transition: all 0.2s;
-  color: #666;
-}
-
-.ai-mode-btn:hover {
-  background: #f0f4f8;
-  border-color: #667eea;
-  transform: translateY(-2px);
-}
-
-.ai-mode-btn.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border-color: #667eea;
-  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
-}
-
-.ai-mode-content {
-  display: none;
-}
-
-.ai-mode-content.active {
-  display: block;
-  animation: fadeIn 0.3s;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.ai-prompt {
-  background: white;
-  border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 12px;
-}
-
-.ai-hint {
-  color: #666;
-  font-size: 13px;
-  margin: 0 0 10px 0;
-  line-height: 1.5;
-}
-
-.ai-action-btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin: 4px 4px 4px 0;
-  background: white;
-  border: 1px solid #667eea;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 12px;
-  color: #667eea;
-  transition: all 0.2s;
-}
-
-.ai-action-btn:hover {
-  background: #667eea;
-  color: white;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3);
-}
-
-.ai-assist-area {
-  background: white;
-  border-radius: 8px;
-  padding: 12px;
-  min-height: 80px;
-  font-size: 13px;
-  line-height: 1.6;
-  color: #333;
-}
-
-.ai-assist-area:empty {
-  display: none;
-}
-
-.ai-assist-area .ai-message {
-  padding: 10px;
-  background: #f8f9fa;
-  border-left: 3px solid #667eea;
-  border-radius: 4px;
-  margin-bottom: 8px;
-}
-
-.ai-assist-area .ai-suggestion {
-  padding: 8px;
-  background: #fff3cd;
-  border-left: 3px solid #ffc107;
-  border-radius: 4px;
-  margin: 6px 0;
-}
-
-.ai-assist-area .ai-warning {
-  padding: 8px;
-  background: #f8d7da;
-  border-left: 3px solid #dc3545;
-  border-radius: 4px;
-  margin: 6px 0;
-}
-
-.ai-assist-area .ai-success {
-  padding: 8px;
-  background: #d4edda;
-  border-left: 3px solid #28a745;
-  border-radius: 4px;
-  margin: 6px 0;
-}
-
 .backlink-stats {
   display: flex;
   gap: 10px;
@@ -972,6 +904,120 @@ h5 {
 </style>
 
 <script>
+// Import shared AI Companion
+import('/js/ai-companion.js').then(() => {
+  // Initialize page-specific AI Companion
+  const aiCompanion = new AICompanion({
+    apiBase: 'http://localhost:5001/api/wiki',
+    currentPage: 'wiki',
+    onModeChange: (mode) => {
+      console.log('Mode changed to:', mode);
+    },
+    onFeedbackReceived: (data) => {
+      console.log('Feedback received:', data);
+    },
+    onError: (error) => {
+      console.error('AI Companion error:', error);
+    }
+  });
+  
+  // Initialize after DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    aiCompanion.init('.companion-mode-container', '.companion-content');
+    initWikiLearningHero();
+  });
+});
+
+// Wiki Learning Hero functionality
+function initWikiLearningHero() {
+  const contributions = JSON.parse(localStorage.getItem('wikiContributions') || '[]');
+  
+  // Calculate stats
+  const terms = new Set(contributions.map(c => c.termId));
+  const explanations = contributions.filter(c => c.type === 'explanation');
+  const mastered = contributions.filter(c => c.type === 'explanation' && c.content && c.content.length > 200).length;
+  
+  // Update progress stats
+  document.getElementById('wikiTermsExplored').textContent = terms.size;
+  document.getElementById('wikiExplanationsWritten').textContent = explanations.length;
+  document.getElementById('wikiMastered').textContent = mastered;
+  
+  // Show last activity if exists
+  if (contributions.length > 0) {
+    const lastContribution = contributions[contributions.length - 1];
+    const lastActivitySection = document.getElementById('lastActivitySection');
+    const lastActivityText = document.getElementById('lastActivityText');
+    
+    if (lastActivitySection && lastActivityText) {
+      const termName = lastContribution.termName || 'a term';
+      const timeAgo = getTimeAgo(lastContribution.timestamp);
+      lastActivityText.textContent = `You last explored "${termName}" ${timeAgo}`;
+      lastActivitySection.style.display = 'block';
+      
+      // Set continue button to scroll to the term
+      document.getElementById('continueLearningBtn').onclick = (e) => {
+        e.preventDefault();
+        const termElement = document.querySelector(`[data-term="${lastContribution.termId}"]`);
+        if (termElement) {
+          termElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          termElement.style.animation = 'pulse 2s';
+        }
+      };
+    }
+  }
+  
+  // Start learning button - scroll to first unexplored term or first term
+  document.getElementById('startLearningBtn').onclick = (e) => {
+    e.preventDefault();
+    const exploredTermIds = new Set(contributions.map(c => c.termId));
+    const allTerms = document.querySelectorAll('.wiki-term');
+    
+    let targetTerm = null;
+    for (let term of allTerms) {
+      const termId = term.getAttribute('data-term');
+      if (!exploredTermIds.has(termId)) {
+        targetTerm = term;
+        break;
+      }
+    }
+    
+    if (!targetTerm && allTerms.length > 0) {
+      targetTerm = allTerms[0];
+    }
+    
+    if (targetTerm) {
+      targetTerm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      targetTerm.click();
+    }
+  };
+}
+
+function getTimeAgo(timestamp) {
+  const now = new Date();
+  const then = new Date(timestamp);
+  const diffMs = now - then;
+  const diffMins = Math.floor(diffMs / 60000);
+  const diffHours = Math.floor(diffMs / 3600000);
+  const diffDays = Math.floor(diffMs / 86400000);
+  
+  if (diffMins < 1) return 'just now';
+  if (diffMins < 60) return `${diffMins} minute${diffMins > 1 ? 's' : ''} ago`;
+  if (diffHours < 24) return `${diffHours} hour${diffHours > 1 ? 's' : ''} ago`;
+  if (diffDays < 7) return `${diffDays} day${diffDays > 1 ? 's' : ''} ago`;
+  return then.toLocaleDateString();
+}
+
+</script>
+
+<style>
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+</style>
+
+<script>
+
 let currentTerm = null;
 let wikiContributions = JSON.parse(localStorage.getItem('wikiContributions') || '[]');
 let termVersions = JSON.parse(localStorage.getItem('termVersions') || '{}');
@@ -1507,16 +1553,17 @@ function aiStartDraft() {
   const area = document.getElementById('aiWritingAssist');
   area.innerHTML = `
 <div class="ai-message">
-<strong>📝 Starting draft for "${currentTerm.name}"</strong>
-<p>Here's a structure to help you explain this concept:</p>
+<strong>✍️ Construct mode: Write your initial explanation</strong>
+<p>Start by writing what you currently understand about "${currentTerm.name}". I'll observe but won't intervene yet — your understanding comes first.</p>
 <div class="ai-suggestion">
-<strong>1. Definition:</strong> Start with a clear, concise definition<br>
-<strong>2. Key Components:</strong> What are the main parts?<br>
-<strong>3. How it Works:</strong> Explain the mechanism<br>
-<strong>4. Example:</strong> Provide a concrete example<br>
-<strong>5. Related Concepts:</strong> Connect to ${currentTerm.relatedTerms.slice(0, 3).join(', ')}
+<strong>Consider including:</strong><br>
+• Your current definition of the concept<br>
+• Key components or mechanisms<br>
+• How it works or what it does<br>
+• An example from your experience<br>
+• Connections to related concepts
 </div>
-<p>Try writing your explanation, then use "Review" mode to get feedback!</p>
+<p>Write your explanation in the text area, then move to <strong>Reflect</strong> mode to examine your understanding.</p>
 </div>
   `;
 }
@@ -1579,109 +1626,382 @@ function aiProvideHints() {
   `;
 }
 
-function aiReviewExplanation() {
+// REFLECT MODE - Metacognitive prompts (using LLM API)
+function aiGenerateReflectionPrompts() {
   const textarea = document.getElementById('explanationInput');
   if (!textarea || !textarea.value.trim()) {
     alert('Please write an explanation first in the "Add Explanation" panel');
     return;
   }
   
-  const explanation = textarea.value;
-  const area = document.getElementById('aiReviewResult');
-  const wordCount = explanation.split(/\s+/).length;
-  const sentenceCount = explanation.split(/[.!?]+/).length;
+  if (!currentTerm) {
+    alert('Please select a term first');
+    return;
+  }
   
-  // Check for key terms
-  const missingTerms = currentTerm.keywords.filter(k => 
-    !explanation.toLowerCase().includes(k.toLowerCase())
+  const explanation = textarea.value;
+  const concept = currentTerm.name;
+  const area = document.getElementById('aiReflectResult');
+  
+  area.innerHTML = '<div class="ai-message"><strong>🤔 Generating reflection prompts...</strong><br><em>Calling local LLM (this may take a moment)</em></div>';
+  
+  fetch('http://localhost:5001/api/wiki/companion', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      mode: 'reflect',
+      explanation: explanation,
+      concept: concept
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.error) {
+      area.innerHTML = `<div class="ai-error"><strong>Error:</strong> ${data.error}</div>`;
+      return;
+    }
+    
+    let html = '<div class="ai-message"><strong>🤔 Metacognitive Reflection Prompts</strong><p>Based on your explanation, consider these questions:</p><ul>';
+    
+    if (Array.isArray(data)) {
+      data.forEach(q => {
+        html += `<li><strong>${q}</strong></li>`;
+      });
+    } else if (data.questions) {
+      data.questions.forEach(q => {
+        html += `<li><strong>${q}</strong></li>`;
+      });
+    } else {
+      // Fallback: show whatever structure we got
+      Object.keys(data).forEach(key => {
+        if (Array.isArray(data[key])) {
+          data[key].forEach(item => {
+            html += `<li><strong>${item}</strong></li>`;
+          });
+        }
+      });
+    }
+    
+    html += '</ul><p>Take a moment to think about these questions. When you\'re ready, move to <strong>Scaffold</strong> mode for targeted support.</p></div>';
+    area.innerHTML = html;
+  })
+  .catch(error => {
+    area.innerHTML = `<div class="ai-error"><strong>Error:</strong> ${error.message}. Make sure the API server is running on port 5001.</div>`;
+  });
+}
+
+function aiConfidenceCheck() {
+  const textarea = document.getElementById('explanationInput');
+  if (!textarea || !textarea.value.trim()) {
+    alert('Please write an explanation first');
+    return;
+  }
+  
+  const area = document.getElementById('aiReflectResult');
+  
+  area.innerHTML = `
+<div class="ai-message">
+<strong>📊 Confidence Check</strong>
+<p>Rate your confidence in different aspects of your explanation:</p>
+<div class="ai-suggestion">
+<strong>Definition accuracy:</strong> [1-5] ___<br>
+<strong>Mechanism explanation:</strong> [1-5] ___<br>
+<strong>Example quality:</strong> [1-5] ___<br>
+<strong>Connections to other concepts:</strong> [1-5] ___<br>
+<strong>Overall understanding:</strong> [1-5] ___
+</div>
+<p>Areas with lower scores are good candidates for further exploration in <strong>Scaffold</strong> mode.</p>
+</div>
+  `;
+}
+
+// SCAFFOLD MODE - Targeted support with Prompt Before Provide (using LLM API)
+function aiDetectGaps() {
+  const textarea = document.getElementById('explanationInput');
+  if (!textarea || !textarea.value.trim()) {
+    alert('Please write an explanation first');
+    return;
+  }
+  
+  if (!currentTerm) {
+    alert('Please select a term first');
+    return;
+  }
+  
+  const explanation = textarea.value;
+  const concept = currentTerm.name;
+  const area = document.getElementById('aiScaffoldResult');
+  
+  area.innerHTML = '<div class="ai-message"><strong>🕳️ Identifying gaps...</strong><br><em>Calling local LLM (this may take a moment)</em></div>';
+  
+  fetch('http://localhost:5001/api/wiki/companion', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      mode: 'scaffold',
+      explanation: explanation,
+      concept: concept,
+      action: 'detect_gaps'
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.error) {
+      area.innerHTML = `<div class="ai-error"><strong>Error:</strong> ${data.error}</div>`;
+      return;
+    }
+    
+    let html = '<div class="ai-message"><strong>🕳️ Identify Gaps</strong>';
+    
+    if (data.missingTerms && data.missingTerms.length > 0) {
+      html += `<div class="ai-warning">Your explanation doesn't mention these key terms: ${data.missingTerms.slice(0, 3).join(', ')}</div>`;
+      html += `<div class="ai-suggestion"><strong>Question:</strong> How do these terms relate to ${concept}?</div>`;
+    } else {
+      html += '<div class="ai-success">✓ You\'ve covered the key terminology</div>';
+    }
+    
+    if (data.suggestions && data.suggestions.length > 0) {
+      html += '<div class="ai-suggestion"><strong>Consider:</strong></div><ul>';
+      data.suggestions.forEach(s => {
+        html += `<li>${s}</li>`;
+      });
+      html += '</ul>';
+    }
+    
+    html += `<p><strong>Prompt Before Provide:</strong> Think about these gaps before I provide explanations. What do you think is missing?</p>`;
+    html += '</div>';
+    
+    area.innerHTML = html;
+  })
+  .catch(error => {
+    area.innerHTML = `<div class="ai-error"><strong>Error:</strong> ${error.message}. Make sure the API server is running on port 5001.</div>`;
+  });
+}
+
+function aiChallengeMisconceptions() {
+  if (!currentTerm) {
+    alert('Please select a term first');
+    return;
+  }
+  
+  const area = document.getElementById('aiScaffoldResult');
+  
+  area.innerHTML = `
+<div class="ai-message">
+<strong>❓ Challenge Assumptions</strong>
+<p>Common misconceptions about ${currentTerm.name}:</p>
+<div class="ai-suggestion">
+<strong>Question 1:</strong> Does ${currentTerm.name} always work the same way in all contexts?<br>
+<strong>Question 2:</strong> What are the limitations or edge cases?<br>
+<strong>Question 3:</strong> How is this different from similar concepts?
+</div>
+<p><strong>Your turn:</strong> Review your explanation. Do any of these questions reveal potential misconceptions? Revise if needed.</p>
+</div>
+  `;
+}
+
+function aiSuggestConnections() {
+  if (!currentTerm) {
+    alert('Please select a term first');
+    return;
+  }
+  
+  const area = document.getElementById('aiScaffoldResult');
+  const relatedNames = currentTerm.relatedTerms.slice(0, 5).map(id => wikiTerms[id]?.name).filter(Boolean);
+  
+  area.innerHTML = `
+<div class="ai-message">
+<strong>🔗 Suggest Connections (on request)</strong>
+<p>Related concepts you might connect to:</p>
+<div class="ai-suggestion">
+${relatedNames.map(name => `• ${name}`).join('<br>')}
+</div>
+<p><strong>Ask yourself:</strong> How do these concepts relate? Can you add these connections to your explanation?</p>
+</div>
+  `;
+}
+
+// CONSOLIDATE MODE - Retrieval practice (optional)
+function aiStartRetrieval() {
+  if (!currentTerm) {
+    alert('Please select a term first');
+    return;
+  }
+  
+  const area = document.getElementById('aiConsolidateResult');
+  
+  area.innerHTML = `
+<div class="ai-message">
+<strong>🧠 Retrieval Practice</strong>
+<p><strong>Instructions:</strong></p>
+<div class="ai-suggestion">
+1. Close or hide the wiki article<br>
+2. Write your explanation of ${currentTerm.name} from memory<br>
+3. Don't look at your previous explanation or the wiki<br>
+4. When done, click "Compare Explanations" to see how your retrieval compares
+</div>
+<p>This tests your actual understanding, not just your ability to copy information.</p>
+<button class="ai-action-btn" onclick="aiShowRetrievalPrompt()">📝 Show Retrieval Prompt</button>
+</div>
+  `;
+}
+
+function aiShowRetrievalPrompt() {
+  const area = document.getElementById('aiConsolidateResult');
+  
+  area.innerHTML = `
+<div class="ai-message">
+<strong>📝 Write from Memory</strong>
+<p>Explain ${currentTerm.name} without looking at any references:</p>
+<textarea id="retrievalTextarea" style="width: 100%; min-height: 150px; margin-top: 10px;" placeholder="Write your explanation from memory..."></textarea>
+<button class="ai-action-btn" onclick="aiCompareExplanations()" style="margin-top: 10px;">⚖️ Compare with Original</button>
+</div>
+  `;
+}
+
+function aiCompareExplanations() {
+  const retrievalTextarea = document.getElementById('retrievalTextarea');
+  const originalTextarea = document.getElementById('explanationInput');
+  
+  if (!retrievalTextarea || !retrievalTextarea.value.trim()) {
+    alert('Please write your retrieval explanation first');
+    return;
+  }
+  
+  if (!originalTextarea || !originalTextarea.value.trim()) {
+    alert('No original explanation found. Please write one first in the "Add Explanation" panel.');
+    return;
+  }
+  
+  const original = originalTextarea.value;
+  const retrieval = retrievalTextarea.value;
+  const area = document.getElementById('aiConsolidateResult');
+  
+  // Simple comparison: word overlap
+  const originalWords = new Set(original.toLowerCase().split(/\s+/));
+  const retrievalWords = retrieval.toLowerCase().split(/\s+/);
+  const overlap = retrievalWords.filter(w => originalWords.has(w)).length;
+  const coverage = Math.round((overlap / retrievalWords.length) * 100);
+  
+  area.innerHTML = `
+<div class="ai-message">
+<strong>⚖️ Comparison Results</strong>
+<p><strong>Word overlap:</strong> ${coverage}% of your retrieval matches your original explanation</p>
+<div class="ai-suggestion">
+<strong>What this means:</strong><br>
+• High overlap (80%+): Strong retention of key concepts<br>
+• Medium overlap (50-80%): Good understanding, some details lost<br>
+• Low overlap (<50%): Consider reviewing the concept again
+</div>
+<p><strong>Reflection:</strong> What did you remember well? What did you forget? This reveals what you truly understand vs. what you were just copying.</p>
+</div>
+  `;
+}
+
+// REVISIT MODE - Connect to prior knowledge and version history
+function aiShowRelatedEntries() {
+  if (!currentTerm) {
+    alert('Please select a term first');
+    return;
+  }
+  
+  const area = document.getElementById('aiRevisitResult');
+  
+  // Find user's previous contributions on related terms
+  const relatedContributions = wikiContributions.filter(c => 
+    currentTerm.relatedTerms.includes(c.termId)
   );
   
-  // Check for related concepts
-  const mentionedRelated = currentTerm.relatedTerms.filter(id => {
-    const term = wikiTerms[id];
-    return term && explanation.toLowerCase().includes(term.name.toLowerCase());
-  });
+  let feedback = '<div class="ai-message"><strong>📚 Related Entries from Your Wiki</strong>';
   
-  let feedback = '<div class="ai-message"><strong>📊 Explanation Review</strong>';
-  
-  // Length feedback
-  if (wordCount < 50) {
-    feedback += '<div class="ai-warning">⚠️ Your explanation is quite brief (' + wordCount + ' words). Consider adding more detail.</div>';
-  } else if (wordCount > 300) {
-    feedback += '<div class="ai-suggestion">💡 Your explanation is comprehensive (' + wordCount + ' words). Consider breaking it into paragraphs for readability.</div>';
+  if (relatedContributions.length > 0) {
+    feedback += '<p>You\'ve written about these related concepts:</p>';
+    const grouped = {};
+    relatedContributions.forEach(c => {
+      if (!grouped[c.term]) grouped[c.term] = [];
+      grouped[c.term].push(c);
+    });
+    
+    Object.entries(grouped).slice(0, 5).forEach(([term, contribs]) => {
+      feedback += `<div class="ai-suggestion"><strong>${term}:</strong> ${contribs.length} contribution(s)<br>`;
+      feedback += `<em>${contribs[0].content.substring(0, 80)}...</em></div>`;
+    });
+    
+    feedback += `<p><strong>Question:</strong> Does learning about ${currentTerm.name} change how you understand these related concepts?</p>`;
   } else {
-    feedback += '<div class="ai-success">✓ Good length: ' + wordCount + ' words</div>';
-  }
-  
-  // Missing terms
-  if (missingTerms.length > 0) {
-    feedback += '<div class="ai-warning">⚠️ Consider including these key terms: ' + missingTerms.slice(0, 5).join(', ') + '</div>';
-  } else {
-    feedback += '<div class="ai-success">✓ You\'ve covered the key terminology</div>';
-  }
-  
-  // Related concepts
-  if (mentionedRelated.length === 0) {
-    feedback += '<div class="ai-suggestion">💡 Try connecting this to related concepts like: ' + 
-      currentTerm.relatedTerms.slice(0, 3).map(id => wikiTerms[id]?.name).filter(Boolean).join(', ') + '</div>';
-  } else {
-    feedback += '<div class="ai-success">✓ Good connections to: ' + 
-      mentionedRelated.map(id => wikiTerms[id]?.name).join(', ') + '</div>';
+    feedback += `<p>You haven't written about related concepts yet. Consider exploring: ${currentTerm.relatedTerms.slice(0, 3).map(id => wikiTerms[id]?.name).filter(Boolean).join(', ')}</p>`;
   }
   
   feedback += '</div>';
   area.innerHTML = feedback;
 }
 
-function aiCheckAccuracy() {
-  if (!currentTerm) {
-    alert('Please select a term first');
+function aiPromptRevision() {
+  const versions = termVersions[currentTerm.id] || [];
+  const area = document.getElementById('aiRevisitResult');
+  
+  if (versions.length === 0) {
+    area.innerHTML = `
+<div class="ai-message">
+<strong>🔄 Prompt Revision</strong>
+<p>No previous versions found. Write your first explanation, then revise it as your understanding deepens.</p>
+</div>
+    `;
     return;
   }
   
-  const area = document.getElementById('aiReviewResult');
+  const latestVersion = versions[versions.length - 1];
+  
   area.innerHTML = `
 <div class="ai-message">
-<strong>✓ Accuracy Check for ${currentTerm.name}</strong>
-<p><strong>Official Definition:</strong> ${currentTerm.definition}</p>
+<strong>🔄 Revise Your Understanding</strong>
+<p><strong>Latest version:</strong> ${new Date(latestVersion.timestamp).toLocaleDateString()}</p>
 <div class="ai-suggestion">
-<strong>Key points to verify:</strong><br>
-• Does your explanation match this definition?<br>
-• Are the technical details correct?<br>
-• Have you cited reliable sources?<br>
-• Are there any common misconceptions to address?
+<strong>Consider revising:</strong><br>
+• Add new insights from recent papers<br>
+• Clarify confusing parts<br>
+• Add examples or applications<br>
+• Connect to newly learned concepts<br>
+• Correct any misconceptions you've discovered
 </div>
-<p>Compare your explanation with the definition above to ensure accuracy.</p>
+<p>Each revision deepens your understanding. Your current version has ${latestVersion.content.split(/\s+/).length} words.</p>
 </div>
   `;
 }
 
-function aiFindGaps() {
-  if (!currentTerm) {
-    alert('Please select a term first');
+function aiShowVersionHistory() {
+  const versions = termVersions[currentTerm.id] || [];
+  const area = document.getElementById('aiRevisitResult');
+  
+  if (versions.length === 0) {
+    area.innerHTML = `
+<div class="ai-message">
+<strong>📜 Version History</strong>
+<p>No versions yet. Start writing explanations to track how your understanding evolves!</p>
+</div>
+    `;
     return;
   }
   
-  const area = document.getElementById('aiReviewResult');
-  const questions = [
-    'What problem does this solve?',
-    'How does it work technically?',
-    'What are the limitations?',
-    'How does it compare to alternatives?',
-    'What are real-world applications?',
-    'What are common misconceptions?'
-  ];
+  let feedback = '<div class="ai-message"><strong>📜 Your Understanding Evolution</strong>';
+  feedback += `<p>${versions.length} version(s) for ${currentTerm.name}:</p>`;
   
-  area.innerHTML = `
-<div class="ai-message">
-<strong>🕳️ Potential Gaps to Address</strong>
-<p>Consider if your explanation answers these questions:</p>
-<div class="ai-suggestion">
-${questions.map(q => `□ ${q}`).join('<br>')}
-</div>
-<p>Check off what you've covered and add details for missing areas.</p>
-</div>
-  `;
+  versions.forEach((v, i) => {
+    const wordCount = v.content.split(/\s+/).length;
+    const date = new Date(v.timestamp).toLocaleDateString();
+    feedback += `<div class="ai-suggestion"><strong>v${i + 1}</strong> (${date}) — ${wordCount} words<br>`;
+    feedback += `<em>${v.content.substring(0, 100)}...</em></div>`;
+  });
+  
+  if (versions.length > 1) {
+    const first = versions[0].content.split(/\s+/).length;
+    const latest = versions[versions.length - 1].content.split(/\s+/).length;
+    const growth = latest - first;
+    feedback += `<p><strong>Growth:</strong> ${growth > 0 ? '+' : ''}${growth} words from v1 to v${versions.length}</p>`;
+  }
+  
+  feedback += '</div>';
+  area.innerHTML = feedback;
 }
 
 function aiAssessMastery() {

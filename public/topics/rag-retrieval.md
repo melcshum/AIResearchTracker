@@ -7,7 +7,7 @@ title: "🔍 RAG & Retrieval"
 <h1>🔍 RAG & Retrieval</h1>
 <p class="topic-description">Dense retrieval, hybrid search, knowledge grounding, and citation systems</p>
 <div class="topic-meta">
-<span>📄 45 papers</span>
+<span>📄 66 papers</span>
 <span>🔍 3 search queries</span>
 <span>🏷️ 5 keywords</span>
 </div>
@@ -17,6 +17,193 @@ title: "🔍 RAG & Retrieval"
 <div class="papers-section">
 <h2>📄 Recent Papers</h2>
 <div class="papers-list">
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.00763v1" target="_blank">Automated Tree Knowledge Graph Construction using Ontology Expansion and Retrieval from Vietnamese History Textbooks</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Ket Doan Nguyen, Minh N. H. Nguyen</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.00763v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.00550v1" target="_blank">Same Semantics, Different Outcome: On the Modality Robustness of Multimodal LLMs under Knowledge Conflict</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Jungyeon Lee, Yejin Yoon, Taeuk Kim</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.00550v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.00689v1" target="_blank">SCoNE: Selective Context-aware Neuron Editing for Robust Retrieval-Augmented Generation</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Chaewon Kim, Seo Yeon Park</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.00689v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.00858v1" target="_blank">Verifiable Disaster Storylines and Causal Knowledge Graphs: A Citation-Grounded Pipeline from Heterogeneous Humanitarian Sources</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Ivan Decostanzi, Michele Ronco, Sergio Consoli, Christina Corbane, Lorenzo Bertolini, Indaco Biazzo,...</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.00858v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.00604v1" target="_blank">NeuroGraph: An AI Graph-Driven Neuro-Symbolic Framework for Explainable Threat Reasoning in Advanced Manufacturing</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Padmeswari Nandiya, Ahmad Mohsin, Ahmed Ibrahim, Iqbal H. Sarker, Helge Janicke</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.00604v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.01289v1" target="_blank">Agentic Multimodal Models for Environmental Hyperspectral Unmixing</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Michał Cholewa, Luca Ciampi, Nicola Messina, Przemysław Głomb, Giuseppe Amato</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.01289v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.00629v1" target="_blank">ExpArt-KG: Artwork Image Description Generation through Iterative Exploration of Knowledge Graphs</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Yuta Kato, Shintaro Ozaki, Kazuki Hayashi, Yusuke Sakai, Hidetaka Kamigaito, Katsuhiko Hayashi, Taro...</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.00629v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.01200v1" target="_blank">Compressing AI Traffic: Standardized Neural Network Coding of Visual-Token Representations in Split Vision-Language Inference</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Reza Heidari, Hamed R. Tavakoli, Juho Kannala</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.01200v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.01325v1" target="_blank">VerTox: Verifiable Reward-Guided Corpus Poisoning Against Neural Ranking Models</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Zhiqi Huang, Vivek Datla, Zhichao Xu, Puxuan Yu, Vivek Srikumar, Alfy Samuel</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.01325v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.00866v1" target="_blank">Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Yumi Lee, Harim Oh, Hyoryung Kim, Minji Kim, Eunsu Kim, Hyeseong Lee, Junya Fukuoka, Andrey Bychkov,...</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.00866v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.01601v1" target="_blank">Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Kefeng Duan, Dewu Zheng, Yanlin Wang, Terry Yue Zhuo, Mingwei Liu, Jianxing Yu, Jiachi Chen, Ensheng...</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.01601v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.01409v1" target="_blank">EdiTikZ: Scientific Figure Editing from Revision Trajectories</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Christian Greisinger, Zhixue Zhao, Steffen Eger</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.01409v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.01059v1" target="_blank">Dyn-3D: Unveiling and Resolving Ego-Motion Ambiguity in Vision-Language Models</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Jiayu Ding, Zhuodong Liu, Lei Zhang, Manyu Xiong, Hongbo Jin, Haoran Tang, Hongbo Zhang, Changen Zhu...</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.01059v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.00543v1" target="_blank">Feedback-Assisted Trust Propagation over Document Relation Graphs for Retrieval-Augmented Generation</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Zhuoheng Li, Ying Chen</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.00543v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.00948v1" target="_blank">From Terminology to Diagrams: Visual-Instruction Generation for Scientific Diagram Understanding</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Raul Ortega, José Manuel Gómez-Pérez</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.00948v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.00859v1" target="_blank">Reinforcement Learning Enhanced LLM Agents for Complex Vehicle Routing Problems</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Yi Chen, Zikang Yu, Jiahai Wang, Jinbiao Chen, Jianpeng Zhou, Zizhen Zhang</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.00859v1</span>
+</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title">
+<a href="https://arxiv.org/abs/2609.01316v1" target="_blank">MIDR: Enrichment-Augmented Indexing for Multimodal Document Retrieval</a>
+</div>
+<div class="paper-meta">
+<span class="paper-authors">Debanjan Mahata, Atharva Tendle, Daniel Preotiuc-Pietro, Yong Zhuang, Ozan Irsoy</span>
+<span class="paper-date">2026-09-01</span>
+<span class="paper-arxiv">arXiv:2609.01316v1</span>
+</div>
+</div>
 
 <div class="paper-card">
 <div class="paper-title">
@@ -48,193 +235,6 @@ title: "🔍 RAG & Retrieval"
 <span class="paper-authors">Shaoan Wang, Aocheng Luo, Fei Huang, Jingyi Xu, Xiaoyang Wang, Yueyu Wang, Qianli Ma, Fan Yang, Ran ...</span>
 <span class="paper-date">2026-08-31</span>
 <span class="paper-arxiv">arXiv:2608.30935v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.30996v1" target="_blank">Faithfulness Is Not Free: Auditing Offline KV-Cache Quantization in Retrieval-Augmented Generation</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Atta Ul Asad, Ahsan Bilal, Muhammad Ali, Muhammad Haseeb, Dean F. Hougen</span>
-<span class="paper-date">2026-08-31</span>
-<span class="paper-arxiv">arXiv:2608.30996v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.31115v1" target="_blank">InsightToast: Proactive Information Retrieval & Glanceable Visualization in the Side Channel of Data-Rich Meetings</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Mohammad Abolnejadian, Matthew Brehmer</span>
-<span class="paper-date">2026-08-31</span>
-<span class="paper-arxiv">arXiv:2608.31115v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.31137v1" target="_blank">OntoAligner-Ensemble: Voting-Based Fusion across Heterogeneous Ontology Alignment Techniques</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Hamed Babaei Giglou, Sören Auer, Peio Popov, Mahsa Sanaei, Jennifer D'Souza</span>
-<span class="paper-date">2026-08-31</span>
-<span class="paper-arxiv">arXiv:2608.31137v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.31118v1" target="_blank">When Does Bigger Help? A Controlled Study of LLM Scale for Ontology Learning</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Hamed Babaei Giglou, Sören Auer, Jennifer D'Souza</span>
-<span class="paper-date">2026-08-31</span>
-<span class="paper-arxiv">arXiv:2608.31118v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.30550v1" target="_blank">GarmentWeaver: Schema-Aware Structured Synthesis for Multimodal Sewing Patterns</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Yinwen Lu, Weihao Luo, Yueqi Zhong</span>
-<span class="paper-date">2026-08-31</span>
-<span class="paper-arxiv">arXiv:2608.30550v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.30420v1" target="_blank">Whole-Slide Image Analysis under Realistic Few-Shot Annotation Protocols</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Tiffanie Godelaine, Maxime Zanella, Karim El Khoury, Benoit Macq, Christophe De Vleeschouwer</span>
-<span class="paper-date">2026-08-31</span>
-<span class="paper-arxiv">arXiv:2608.30420v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.30163v1" target="_blank">Doc-REFRAG: Rethinking Multimodal Document Retrieval-Augmented Generation</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Ruofan Hu, Shengyang Xu, Minjie Hong, Xiaoda Yang, Sashuai Zhou, Ke Lei, Tao Jin, Zhou Zhao</span>
-<span class="paper-date">2026-08-31</span>
-<span class="paper-arxiv">arXiv:2608.30163v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.30213v1" target="_blank">Towards a Joint Khmer Text Recognition and Word Segmentation</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Marry Kong, Rina Buoy, Sovisal Chenda, Nguonly Taing, Masakazu Iwamura, Koichi Kise</span>
-<span class="paper-date">2026-08-31</span>
-<span class="paper-arxiv">arXiv:2608.30213v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.31139v1" target="_blank">Configurable Semantic Chunking for Biomedical Information Extraction in Retrieval-Augmented Generation</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Riya Ahuja, Tim Kacprowski, Roya Shiasi Sardoabi</span>
-<span class="paper-date">2026-08-31</span>
-<span class="paper-arxiv">arXiv:2608.31139v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.29753v1" target="_blank">PAGE-RAG: Provenance-Aware Graph Evidence Promotion for Fixed-Budget Multi-hop Retrieval-Augmented Generation</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Haokun Deng, Xunkai Li, Hongchao Qin, Rong-Hua Li</span>
-<span class="paper-date">2026-08-30</span>
-<span class="paper-arxiv">arXiv:2608.29753v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.29953v1" target="_blank">SearchWiki: Learning to Build and Navigate Knowledge Wikis for Active Information Seeking</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Guransh Singh, Vishwajeet Kumar, Arkadeep Acharya, Adnan Qidwai, Jaydeep Sen, Sachindra Joshi</span>
-<span class="paper-date">2026-08-30</span>
-<span class="paper-arxiv">arXiv:2608.29953v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.29263v1" target="_blank">RACER: Reinforced Agent Collaboration for Explainable Reasoning on Knowledge Graphs</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Yuwei Lou, Hao Hu, Yuzhou Jiang, Zongfei Zhang, Liang Wang, Jincai Liu, Jidong Ge, Xianping Tao</span>
-<span class="paper-date">2026-08-29</span>
-<span class="paper-arxiv">arXiv:2608.29263v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.27036v1" target="_blank">Reasoning about In-Context Samples for Machine-Translation</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Maxime Bouthors, Josep Crego, François Yvon</span>
-<span class="paper-date">2026-08-27</span>
-<span class="paper-arxiv">arXiv:2608.27036v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.26870v1" target="_blank">C-Unseen: Weak Signal Detection in Dynamic Temporal Knowledge Graphs via LLM Reasoning</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Yassir Lairgi, Ludovic Moncla, Khalid Benabdeslem, Rémy Cazabet, Pierre Cléau</span>
-<span class="paper-date">2026-08-27</span>
-<span class="paper-arxiv">arXiv:2608.26870v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.27508v1" target="_blank">WM-R1: Training GUI Agents to Reason and leverage World Models with Reinforcement Learning</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Yu Han, Tianwen Qian</span>
-<span class="paper-date">2026-08-27</span>
-<span class="paper-arxiv">arXiv:2608.27508v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.25777v1" target="_blank">LocalLSTC: A Long Short-Term Control Architecture for Locally Deployed GUI Agents</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Weiming Li, Helen Paik, Yulei Sui</span>
-<span class="paper-date">2026-08-26</span>
-<span class="paper-arxiv">arXiv:2608.25777v1</span>
-</div>
-</div>
-
-<div class="paper-card">
-<div class="paper-title">
-<a href="https://arxiv.org/abs/2608.25457v2" target="_blank">MACGen: Toward Functionally Correct and Secure Code Generation via Multi-Agent Collaboration</a>
-</div>
-<div class="paper-meta">
-<span class="paper-authors">Miseon Yu, Jaehoon Choi, Younghan Lee, Yunheung Paek</span>
-<span class="paper-date">2026-08-26</span>
-<span class="paper-arxiv">arXiv:2608.25457v2</span>
 </div>
 </div>
 

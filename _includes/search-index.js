@@ -238,6 +238,228 @@ const SEARCH_INDEX = {
         "sophisticated",
         "model"
       ]
+    },
+    {
+      "id": "chain-of-thought",
+      "title": "Chain-of-Thought",
+      "definition": "Breaking down complex reasoning into intermediate steps",
+      "category": "general",
+      "url": "wiki.html",
+      "keywords": [
+        "chain",
+        "thought",
+        "breaking",
+        "down",
+        "complex",
+        "reasoning",
+        "into",
+        "intermediate",
+        "steps"
+      ]
+    },
+    {
+      "id": "tree-of-thought",
+      "title": "Tree-of-Thought",
+      "definition": "Exploring multiple reasoning paths in parallel",
+      "category": "general",
+      "url": "wiki.html",
+      "keywords": [
+        "tree",
+        "thought",
+        "exploring",
+        "multiple",
+        "reasoning",
+        "paths",
+        "parallel"
+      ]
+    },
+    {
+      "id": "self-consistency",
+      "title": "Self-Consistency",
+      "definition": "Sampling multiple solutions and selecting the most coherent through voting",
+      "category": "general",
+      "url": "wiki.html",
+      "keywords": [
+        "self",
+        "consistency",
+        "sampling",
+        "multiple",
+        "solutions",
+        "selecting",
+        "most",
+        "coherent",
+        "through",
+        "voting"
+      ]
+    },
+    {
+      "id": "function-calling",
+      "title": "Function Calling",
+      "definition": "Structured interfaces for invoking external APIs and tools",
+      "category": "general",
+      "url": "wiki.html",
+      "keywords": [
+        "function",
+        "calling",
+        "structured",
+        "interfaces",
+        "invoking",
+        "external",
+        "apis",
+        "tools"
+      ]
+    },
+    {
+      "id": "grounding",
+      "title": "Grounding",
+      "definition": "Understanding when and how to apply tools appropriately",
+      "category": "general",
+      "url": "wiki.html",
+      "keywords": [
+        "grounding",
+        "understanding",
+        "when",
+        "how",
+        "apply",
+        "tools",
+        "appropriately"
+      ]
+    },
+    {
+      "id": "debate",
+      "title": "Multi-Agent Debate",
+      "definition": "Agents argue different perspectives to reach better conclusions",
+      "category": "general",
+      "url": "wiki.html",
+      "keywords": [
+        "multi",
+        "agent",
+        "debate",
+        "agents",
+        "argue",
+        "different",
+        "perspectives",
+        "reach",
+        "better",
+        "conclusions"
+      ]
+    },
+    {
+      "id": "consensus",
+      "title": "Consensus",
+      "definition": "Agents converge on shared understanding through collaboration",
+      "category": "general",
+      "url": "wiki.html",
+      "keywords": [
+        "consensus",
+        "agents",
+        "converge",
+        "shared",
+        "understanding",
+        "through",
+        "collaboration"
+      ]
+    },
+    {
+      "id": "hierarchy",
+      "title": "Hierarchical Coordination",
+      "definition": "Manager agents delegate tasks to worker agents",
+      "category": "general",
+      "url": "wiki.html",
+      "keywords": [
+        "agents",
+        "hierarchical",
+        "coordination",
+        "manager",
+        "delegate",
+        "tasks",
+        "worker"
+      ]
+    },
+    {
+      "id": "safety",
+      "title": "AI Safety",
+      "definition": "Ensuring AI systems behave reliably and avoid harmful outcomes",
+      "category": "general",
+      "url": "wiki.html",
+      "keywords": [
+        "safety",
+        "ensuring",
+        "systems",
+        "behave",
+        "reliably",
+        "avoid",
+        "harmful",
+        "outcomes"
+      ]
+    },
+    {
+      "id": "alignment",
+      "title": "AI Alignment",
+      "definition": "Ensuring AI systems pursue intended goals and respect human values",
+      "category": "general",
+      "url": "wiki.html",
+      "keywords": [
+        "alignment",
+        "ensuring",
+        "systems",
+        "pursue",
+        "intended",
+        "goals",
+        "respect",
+        "human",
+        "values"
+      ]
+    },
+    {
+      "id": "rlhf",
+      "title": "RLHF",
+      "definition": "Reinforcement Learning from Human Feedback - training models using human preferences",
+      "category": "general",
+      "url": "wiki.html",
+      "keywords": [
+        "human",
+        "rlhf",
+        "reinforcement",
+        "learning",
+        "feedback",
+        "training",
+        "models",
+        "using",
+        "preferences"
+      ]
+    },
+    {
+      "id": "constitutional-ai",
+      "title": "Constitutional AI",
+      "definition": "Self-improvement guided by a set of principles or constitution",
+      "category": "general",
+      "url": "wiki.html",
+      "keywords": [
+        "constitutional",
+        "self",
+        "improvement",
+        "guided",
+        "set",
+        "principles",
+        "constitution"
+      ]
+    },
+    {
+      "id": "guardrails",
+      "title": "Guardrails",
+      "definition": "Constraints on agent behavior to prevent harmful actions",
+      "category": "general",
+      "url": "wiki.html",
+      "keywords": [
+        "guardrails",
+        "constraints",
+        "agent",
+        "behavior",
+        "prevent",
+        "harmful",
+        "actions"
+      ]
     }
   ],
   "papers": [
@@ -334,21 +556,21 @@ const SEARCH_INDEX = {
     {
       "title": "GeoRisk-RAG: A Hierarchy-Aware Risk Framework for Improving RAG Reliability through Selective Answering",
       "authors": "** Meenu Ravi, Shailik Sarkar, Lulwah AlKulaib, Yordanos Tessema, Chang-Tien Lu",
-      "abstract": "Current work on improving reliability in llm \" onclick=\"window.location.href='wiki.html'\">large language model ( LLM )- generated answers has primarily leveraged rag \" onclick=\"window.location.href='wiki.html'\"> Retrieval -Augmented Generation ( RAG ), knowledge-graph augmentation, and reinforcement",
+      "abstract": "Current work on improving reliability in llm\" onclick=\"window.location.href='wiki.html'\">llm\" onclick=\"window.location.href='wiki.html'\">large language model (LLM)- generated answers has primarily leveraged rag\" onclick=\"window.location.href='wiki.html'\">rag\" onclick=\"window.location.href='wiki.html",
       "arxiv_id": "",
       "topics": [],
       "url": "public/papers/2026-08-23/2608.22634v1-GeoRisk-RAG-A-Hierarchy-Aware-Risk-Framework-for-Improving-RAG-Reliability-throu.html",
       "keywords": [
         "rag",
-        "improving",
-        "reliability",
-        "llm",
         "onclick",
         "window",
         "location",
         "href",
         "wiki",
         "html",
+        "llm",
+        "improving",
+        "reliability",
         "georisk",
         "hierarchy",
         "aware",
@@ -424,7 +646,7 @@ const SEARCH_INDEX = {
     {
       "title": "Retrieving Relations, Detecting Fallacies: A RAG Approach to Political Debate Analysis",
       "authors": "Id('bookmarkBtn');",
-      "abstract": "Fallacies are arguments that employ invalid reasoning , making their automatic detection critical in sensitive contexts such as high-stakes political debates, where public opinion is shaped. Spotting a fallacious argument requires contextual knowledge beyond its pure surface text. This entails world",
+      "abstract": "Fallacies are arguments that employ invalid reasoning, making their automatic detection critical in sensitive contexts such as high-stakes political debates, where public opinion is shaped. Spotting a fallacious argument requires contextual knowledge beyond its pure surface text. This entails world ",
       "arxiv_id": "2608.27471",
       "topics": [],
       "url": "public/papers/2026-08-31/2608.27471-Retrieving-Relations-Detecting-Fallacies-A-RAG-App.html",
@@ -700,7 +922,7 @@ const SEARCH_INDEX = {
     {
       "title": "See, Hypothesize, Validate: Multimodal Agentic Framework for Discovering Governing PDEs",
       "authors": "Id('bookmarkBtn');",
-      "abstract": "Discovering governing partial differential equations (PDEs) from observational data remains a core challenge across the sciences. Existing sparse-regression, symbolic-regression, and LLM -based approaches can be constrained by predefined libraries, noise sensitivity, hallucination , or limited itera",
+      "abstract": "Discovering governing partial differential equations (PDEs) from observational data remains a core challenge across the sciences. Existing sparse-regression, symbolic-regression, and LLM-based approaches can be constrained by predefined libraries, noise sensitivity, hallucination, or limited iterati",
       "arxiv_id": "2608.27869",
       "topics": [
         "ai-agents"
@@ -918,7 +1140,7 @@ const SEARCH_INDEX = {
     {
       "title": "Learning to Rewrite Tool Descriptions for Reliable LLM-Agent Tool Use",
       "authors": "** Ruocheng Guo, Kaiwen Dong, Xiang Gao, Kamalika Das",
-      "abstract": "While most efforts to improve LLM -based tool-using agents focus on the agent itself - through larger models, better prompting, or fine-tuning - agent performance increasingly plateaus due to the quality of the tool interfaces these agents consume. Tool descriptions are often written for human devel",
+      "abstract": "While most efforts to improve LLM-based tool-using agents focus on the agent itself - through larger models, better prompting, or fine-tuning - agent performance increasingly plateaus due to the quality of the tool interfaces these agents consume. Tool descriptions are often written for human develo",
       "arxiv_id": "",
       "topics": [
         "ai-agents"
@@ -1854,7 +2076,7 @@ const SEARCH_INDEX = {
     {
       "title": "RetailAgent: Structured Adverse Timing in Self-Conditioned Multimodal LLM Trading Agents",
       "authors": "** Yupeng Zhang, Liuyuan Jiang, Hongyi Huang, Bingheng Li, Lisha Chen",
-      "abstract": "In financial markets, a sequential policy that reacts systematically to price movements may become predictable to other market participants. This paper studies whether llm \" onclick=\"window.location.href='wiki.html'\">large language model ( LLM ) agents exhibit such directional structure through Reta",
+      "abstract": "In financial markets, a sequential policy that reacts systematically to price movements may become predictable to other market participants. This paper studies whether llm\" onclick=\"window.location.href='wiki.html'\">llm\" onclick=\"window.location.href='wiki.html'\">large language model (LLM) agents ex",
       "arxiv_id": "",
       "topics": [
         "ai-agents"
@@ -1863,6 +2085,12 @@ const SEARCH_INDEX = {
       "keywords": [
         "llm",
         "agents",
+        "onclick",
+        "window",
+        "location",
+        "href",
+        "wiki",
+        "html",
         "retailagent",
         "structured",
         "adverse",
@@ -1874,13 +2102,7 @@ const SEARCH_INDEX = {
         "financial",
         "markets",
         "sequential",
-        "policy",
-        "reacts",
-        "systematically",
-        "price",
-        "movements",
-        "become",
-        "predictable"
+        "policy"
       ]
     },
     {
@@ -1946,7 +2168,7 @@ const SEARCH_INDEX = {
     {
       "title": "LINE Conversation History Retrieval for Personal Memory RAG: Evaluating Search Representations and Hybrid Retrieval",
       "authors": "** Akito Hattori",
-      "abstract": "As an initial step toward personal memory rag \" onclick=\"window.location.href='wiki.html'\"> retrieval -augmented generation ( RAG ) for large language models (LLMs), this study presents a retrieval -only case study over one user's LINE conversation history. We segmented 358,896 messages into 22,329 ",
+      "abstract": "As an initial step toward personal memory rag\" onclick=\"window.location.href='wiki.html'\">rag\" onclick=\"window.location.href='wiki.html'\">retrieval-augmented generation (RAG) for large language models (LLMs), this study presents a retrieval-only case study over one user's LINE conversation history. ",
       "arxiv_id": "",
       "topics": [],
       "url": "public/papers/2026-08-28/2608.27809v1-LINE-Conversation-History-Retrieval-for-Personal-Memory-RAG-Evaluating-Search-Re.html",
@@ -1958,34 +2180,40 @@ const SEARCH_INDEX = {
         "history",
         "personal",
         "memory",
+        "onclick",
+        "window",
+        "location",
+        "href",
+        "wiki",
+        "html",
         "study",
         "evaluating",
         "search",
         "representations",
         "hybrid",
         "initial",
-        "step",
-        "toward",
-        "onclick",
-        "window",
-        "location",
-        "href",
-        "wiki"
+        "step"
       ]
     },
     {
       "title": "xTRUCE: A Provably Safe Arbiter for Multi-xApp Conflict Mitigation in Agentic O-RAN",
       "authors": "** Le Xia, Rose Qingyang Hu, Paul S. Kudyba, Zhenlin An, Haijian Sun",
-      "abstract": "The open radio access network (O-RAN) is evolving toward agentic operation, where llm \" onclick=\"window.location.href='wiki.html'\">large language model ( LLM )-driven xApps/rApps generate control proposals under operator intents. However, such proposals may be conflicting, infeasible, or hallucinate",
+      "abstract": "The open radio access network (O-RAN) is evolving toward agentic operation, where llm\" onclick=\"window.location.href='wiki.html'\">llm\" onclick=\"window.location.href='wiki.html'\">large language model (LLM)-driven xApps/rApps generate control proposals under operator intents. However, such proposals m",
       "arxiv_id": "",
       "topics": [
         "ai-agents"
       ],
       "url": "public/papers/2026-08-28/2608.28532v1-xTRUCE-A-Provably-Safe-Arbiter-for-Multi-xApp-Conflict-Mitigation-in-Agentic-O-R.html",
       "keywords": [
+        "llm",
         "agentic",
         "ran",
-        "llm",
+        "onclick",
+        "window",
+        "location",
+        "href",
+        "wiki",
+        "html",
         "proposals",
         "xtruce",
         "provably",
@@ -1996,13 +2224,7 @@ const SEARCH_INDEX = {
         "conflict",
         "mitigation",
         "open",
-        "radio",
-        "access",
-        "network",
-        "evolving",
-        "toward",
-        "operation",
-        "where"
+        "radio"
       ]
     },
     {
@@ -2098,16 +2320,22 @@ const SEARCH_INDEX = {
     {
       "title": "CamoDocs: A Poisoning Attack Against Retrieval-Augmented Language Models Using Camouflaged Documents",
       "authors": "** Jaewon Jung, Haizhong Zheng, Hongsun Jang, Jaeyong Song, Beidi Chen, Jinho Lee",
-      "abstract": "rag \" onclick=\"window.location.href='wiki.html'\"> Retrieval -augmented generation ( RAG ) augments LLMs with external documents, but public or user-editable sources expose RAG systems to data poisoning: attackers can inject malicious documents to steer outputs toward targeted answers. Existing poiso",
+      "abstract": "rag\" onclick=\"window.location.href='wiki.html'\">rag\" onclick=\"window.location.href='wiki.html'\">Retrieval-augmented generation (RAG) augments LLMs with external documents, but public or user-editable sources expose RAG systems to data poisoning: attackers can inject malicious documents to steer outp",
       "arxiv_id": "",
       "topics": [],
       "url": "public/papers/2026-08-28/2608.28389v1-CamoDocs-A-Poisoning-Attack-Against-Retrieval-Augmented-Language-Models-Using-Ca.html",
       "keywords": [
-        "documents",
         "rag",
+        "documents",
         "poisoning",
         "retrieval",
         "augmented",
+        "onclick",
+        "window",
+        "location",
+        "href",
+        "wiki",
+        "html",
         "camodocs",
         "attack",
         "against",
@@ -2115,12 +2343,6 @@ const SEARCH_INDEX = {
         "models",
         "using",
         "camouflaged",
-        "onclick",
-        "window",
-        "location",
-        "href",
-        "wiki",
-        "html",
         "generation",
         "augments"
       ]
@@ -2158,7 +2380,7 @@ const SEARCH_INDEX = {
     {
       "title": "Reasoning about In-Context Samples for Machine-Translation",
       "authors": "** Maxime Bouthors, Josep Crego, François Yvon",
-      "abstract": "Large Language Models (LLMs) can be trained to perform chain-of-thoughts reasoning in order to improve the reliability of their responses. In this work, we investigate how explicit reasoning can be leveraged for LLM -Based Machine Translation (MT) with in-context samples. We introduce a novel fragme",
+      "abstract": "Large Language Models (LLMs) can be trained to perform chain-of-thoughts reasoning in order to improve the reliability of their responses. In this work, we investigate how explicit reasoning can be leveraged for LLM-Based Machine Translation (MT) with in-context samples. We introduce a novel fragmen",
       "arxiv_id": "",
       "topics": [],
       "url": "public/papers/2026-08-27/2608.27036v1-Reasoning-about-In-Context-Samples-for-Machine-Translation.html",
@@ -2218,12 +2440,18 @@ const SEARCH_INDEX = {
     {
       "title": "Knowing Before Answering: Decoding Language Models for Reliable RAG",
       "authors": "** Syed Mahbubul Huq, Christopher Child, Tillman Weyde, Pranava Madhyastha",
-      "abstract": "In rag \" onclick=\"window.location.href='wiki.html'\"> Retrieval -Augmented Generation ( RAG ), retrieval may provide insufficient or conflicting information needed to answer a question. The system should not only know when to answer but also be able to identify cases in which the documents provided i",
+      "abstract": "In rag\" onclick=\"window.location.href='wiki.html'\">rag\" onclick=\"window.location.href='wiki.html'\">Retrieval-Augmented Generation (RAG), retrieval may provide insufficient or conflicting information needed to answer a question. The system should not only know when to answer but also be able to ident",
       "arxiv_id": "",
       "topics": [],
       "url": "public/papers/2026-08-27/2608.27661v1-Knowing-Before-Answering-Decoding-Language-Models-for-Reliable-RAG.html",
       "keywords": [
         "rag",
+        "onclick",
+        "window",
+        "location",
+        "href",
+        "wiki",
+        "html",
         "retrieval",
         "answer",
         "knowing",
@@ -2233,12 +2461,6 @@ const SEARCH_INDEX = {
         "language",
         "models",
         "reliable",
-        "onclick",
-        "window",
-        "location",
-        "href",
-        "wiki",
-        "html",
         "augmented",
         "generation",
         "provide",
@@ -2338,7 +2560,7 @@ const SEARCH_INDEX = {
     {
       "title": "From Reasoning to Pixels: Grounded Medical Multimodal LLMs for VQA and Segmentation",
       "authors": "** Haowen Gu, Gensheng Pei, Junzhu Mao, Qiong Wang, Mingwu Ren, Yazhou Yao",
-      "abstract": "Although Multimodal Large Language Models (MLLMs) have demonstrated impressive performance in Medical Visual Question Answering (Med-VQA), their reliance on global image features often lacks precise pixel-level grounding , thereby limiting clinical trustworthiness. To bridge the semantic gap between",
+      "abstract": "Although Multimodal Large Language Models (MLLMs) have demonstrated impressive performance in Medical Visual Question Answering (Med-VQA), their reliance on global image features often lacks precise pixel-level grounding, thereby limiting clinical trustworthiness. To bridge the semantic gap between ",
       "arxiv_id": "",
       "topics": [],
       "url": "public/papers/2026-08-27/2608.26856v1-From-Reasoning-to-Pixels-Grounded-Medical-Multimodal-LLMs-for-VQA-and-Segmentati.html",
@@ -2368,7 +2590,7 @@ const SEARCH_INDEX = {
     {
       "title": "AgentJudgeBench: A Multi-Difficulty Benchmark for Evaluating LLM Judges on Agentic Tool-Calling",
       "authors": "** Abhigya Verma, Amit Kumar Saha, Seganrasan Subramanian, Sai Harshitha Aluru",
-      "abstract": "LLM judges are widely used to evaluate agentic tool-calling systems, yet their reliability on structured, dependency-driven workflows remains largely unexamined. We present AgentJudgeBench, the first benchmark to systematically study LLM -as-a-judge reliability for agentic tool-calling over workflow",
+      "abstract": "LLM judges are widely used to evaluate agentic tool-calling systems, yet their reliability on structured, dependency-driven workflows remains largely unexamined. We present AgentJudgeBench, the first benchmark to systematically study LLM-as-a-judge reliability for agentic tool-calling over workflow ",
       "arxiv_id": "",
       "topics": [
         "ai-agents"
@@ -2400,7 +2622,7 @@ const SEARCH_INDEX = {
     {
       "title": "Agentic and Generative AI for Open-Source Intelligence and Cyber Investigations: Taxonomy, Evaluation, Challenges, and Future Directions",
       "authors": "** Eduardo Almeida Palmieri, Mohamed Chahine Ghanem, Dipo Dunsin, Zubair Baig, Ed de Quincey, Kim-Kw",
-      "abstract": "The rapid growth of publicly available digital information has rendered manual open-source intelligence (OSINT) analysis insufficient for modern intelligence, cybersecurity, and cyber investigation. Large language models (LLMs) and agentic AI systems, capable of tool use , multi-step reasoning , and",
+      "abstract": "The rapid growth of publicly available digital information has rendered manual open-source intelligence (OSINT) analysis insufficient for modern intelligence, cybersecurity, and cyber investigation. Large language models (LLMs) and agentic AI systems, capable of tool use, multi-step reasoning, and i",
       "arxiv_id": "",
       "topics": [
         "ai-agents"
@@ -2432,7 +2654,7 @@ const SEARCH_INDEX = {
     {
       "title": "ANX: Protocol-First Design for AI Agent Interaction with a Supporting 3EX Decoupled Architecture",
       "authors": "** Xu Mingze",
-      "abstract": "AI agents , autonomous digital actors, need agent-native protocols; existing methods include GUI automation and MCP-based skills, with defects of high token consumption, fragmented interaction, inadequate security, due to lacking a unified top-level framework and key components, each independent mod",
+      "abstract": "AI agents, autonomous digital actors, need agent-native protocols; existing methods include GUI automation and MCP-based skills, with defects of high token consumption, fragmented interaction, inadequate security, due to lacking a unified top-level framework and key components, each independent modu",
       "arxiv_id": "",
       "topics": [
         "ai-agents"
@@ -2496,7 +2718,7 @@ const SEARCH_INDEX = {
     {
       "title": "AI Economist Agent: An Agentic Framework for Model-Grounded Economic Analysis with RAG, Knowledge Graphs, and Large Language Models",
       "authors": "** Masahiro Kato",
-      "abstract": "We propose a model-grounded RAG -based AI economist with an agentic framework for economic scenario analysis using large language models (LLMs) and knowledge graphs. While LLMs can generate fluent economic narratives, economists are often required to make economic claims grounded by economic theory ",
+      "abstract": "We propose a model-grounded RAG-based AI economist with an agentic framework for economic scenario analysis using large language models (LLMs) and knowledge graphs. While LLMs can generate fluent economic narratives, economists are often required to make economic claims grounded by economic theory a",
       "arxiv_id": "",
       "topics": [
         "ai-agents"
@@ -2560,7 +2782,7 @@ const SEARCH_INDEX = {
     {
       "title": "ToolScope: Enhancing LLM Agent Tool Use through Tool Merging and Context-Aware Filtering",
       "authors": "** Marianne Menglin Liu, Daniel Garcia, Fjona Parllaku, Vikas Upadhyay, Syed Fahad Allam Shah, Dan R",
-      "abstract": "llm \" onclick=\"window.location.href='wiki.html'\">Large language model ( LLM ) agents rely on external tools to solve complex tasks, but real-world toolsets often contain redundant tools with overlapping names and descriptions, introducing ambiguity and reducing selection accuracy. LLMs also face str",
+      "abstract": "llm\" onclick=\"window.location.href='wiki.html'\">llm\" onclick=\"window.location.href='wiki.html'\">Large language model (LLM) agents rely on external tools to solve complex tasks, but real-world toolsets often contain redundant tools with overlapping names and descriptions, introducing ambiguity and re",
       "arxiv_id": "",
       "topics": [
         "ai-agents"
@@ -2569,6 +2791,12 @@ const SEARCH_INDEX = {
       "keywords": [
         "llm",
         "tool",
+        "onclick",
+        "window",
+        "location",
+        "href",
+        "wiki",
+        "html",
         "tools",
         "toolscope",
         "enhancing",
@@ -2579,127 +2807,12 @@ const SEARCH_INDEX = {
         "context",
         "aware",
         "filtering",
-        "onclick",
-        "window",
-        "location",
-        "href",
-        "wiki",
-        "html",
         "large",
         "language"
       ]
     }
   ],
-  "topics": [
-    {
-      "title": "LLM Reasoning",
-      "url": "public/topics/llm-reasoning.html",
-      "content": "LLM Reasoning Recent papers on LLM Reasoning . Foundations What is LLM Reasoning? LLM reasoning refers to a model's ability to perform multi-step inference, decompose complex problems, and produce verifiable chains of thought. Rather than pattern-matching a single answer, reasoning models work through intermediate steps — similar to how humans solve hard problems by thinking them through. Reasoning Paradigms Chain-of-Thought (CoT): The model generates step-by-step reasoning before producing a fi",
-      "keywords": [
-        "reasoning",
-        "aware",
-        "thinking",
-        "early",
-        "exit",
-        "llm",
-        "when",
-        "training",
-        "complexity",
-        "penalties",
-        "stability",
-        "model",
-        "models",
-        "intermediate",
-        "steps",
-        "counterfactual",
-        "performance",
-        "authors",
-        "date",
-        "url"
-      ]
-    },
-    {
-      "title": "AI Agents",
-      "url": "public/topics/ai-agents.html",
-      "content": "AI Agents Recent papers on AI Agents . Foundations What is an AI Agent? An AI agent is an autonomous system that perceives its environment, reasons about how to achieve goals, and takes actions through tools or APIs. Unlike simple chatbots that respond to single prompts, agents: Maintain state across multi-turn interactions and long-running tasks Use tools — calling APIs, executing code, browsing the web, querying databases Plan multi-step actions to decompose complex goals into tractable subtas",
-      "keywords": [
-        "agents",
-        "agent",
-        "models",
-        "tool",
-        "gui",
-        "world",
-        "into",
-        "reasoning",
-        "safety",
-        "governance",
-        "authors",
-        "date",
-        "url",
-        "https",
-        "arxiv",
-        "org",
-        "abs",
-        "abstract",
-        "environment",
-        "tools"
-      ]
-    },
-    {
-      "title": "Multi-Modal Models",
-      "url": "public/topics/multi-modal.html",
-      "content": "Multi-Modal Models Recent papers on Multi-Modal Models. Foundations What are Multi-Modal Models? Multi-modal models process and reason across multiple types of data — text, images, audio, video, and structured data — within a single system. Unlike unimodal models that handle one input type, multi-modal systems can draw inferences across modalities, enabling capabilities like visual question answering, image captioning, audio understanding, and cross-modal reasoning . Core Architectures Vision-La",
-      "keywords": [
-        "multimodal",
-        "models",
-        "modal",
-        "text",
-        "images",
-        "safety",
-        "multi",
-        "accessibility",
-        "across",
-        "audio",
-        "visual",
-        "reasoning",
-        "language",
-        "content",
-        "learning",
-        "systems",
-        "understanding",
-        "documents",
-        "instruction",
-        "tuning"
-      ]
-    },
-    {
-      "title": "RAG & Retrieval",
-      "url": "public/topics/rag-retrieval.html",
-      "content": "RAG & Retrieval Recent papers on RAG & Retrieval . Foundations What is RAG? rag \" onclick=\"window.location.href='wiki.html'\"> Retrieval -Augmented Generation ( RAG ) combines information retrieval with text generation: instead of relying solely on parametric knowledge stored in model weights, the model retrieves relevant documents at inference time and uses them to ground its response. This reduces hallucination , improves factual accuracy, and enables models to access up-to-date or proprietary ",
-      "keywords": [
-        "retrieval",
-        "knowledge",
-        "rag",
-        "cross",
-        "window",
-        "model",
-        "documents",
-        "date",
-        "methods",
-        "world",
-        "intent",
-        "onclick",
-        "location",
-        "href",
-        "wiki",
-        "html",
-        "generation",
-        "models",
-        "into",
-        "hybrid"
-      ]
-    }
-  ],
+  "topics": [],
   "concepts": [
     {
       "title": "AI Concepts Glossary",
@@ -2709,6 +2822,12 @@ const SEARCH_INDEX = {
         "reasoning",
         "retrieval",
         "agent",
+        "onclick",
+        "window",
+        "location",
+        "href",
+        "wiki",
+        "html",
         "concepts",
         "across",
         "text",
@@ -2719,13 +2838,7 @@ const SEARCH_INDEX = {
         "using",
         "planning",
         "steps",
-        "reducing",
-        "onclick",
-        "window",
-        "location",
-        "href",
-        "wiki",
-        "html"
+        "reducing"
       ]
     },
     {
@@ -2758,15 +2871,40 @@ const SEARCH_INDEX = {
   ],
   "pages": [
     {
+      "title": "Dashboard",
+      "url": "public/dashboard.html",
+      "content": "📊 Learning Dashboard Track your research journey across all topics 📚 0 Total Papers Saved 📖 0 Papers Read ✍️ 0 Papers with Notes 🎯 0 Active Topics 📈 Progress by Topic ⭐ Recent Bookmarks ✍️ Recent Notes 📚 Reading Activity .dashboard-container { max-width: 1200px; margin: 0 auto; padding: 20px; } .das",
+      "keywords": [
+        "const",
+        "length",
+        "font",
+        "papers",
+        "recent",
+        "container",
+        "margin",
+        "color",
+        "border",
+        "size",
+        "return",
+        "activity",
+        "document",
+        "map",
+        "dashboard",
+        "progress",
+        "topic",
+        "padding",
+        "background",
+        "paper"
+      ]
+    },
+    {
       "title": "Reading List",
       "url": "public/reading-list.html",
       "content": "📚 Reading List All Status 📥 Inbox 📖 Reading ✅ Read 📝 Cited 🗄️ Archived Export BibTeX Export Markdown Clear All 0 Inbox 0 Reading 0 Read 0 Cited Your reading list is empty. Click the bookmark icon on any paper to add it here. 0 papers saved .reading-list-container { max-width: 1000px; margin: 0 auto;",
       "keywords": [
-        "const",
         "arxivid",
-        "list",
+        "const",
         "url",
-        "status",
         "paper",
         "papers",
         "border",
@@ -2776,39 +2914,41 @@ const SEARCH_INDEX = {
         "font",
         "authors",
         "reasoning",
+        "status",
         "abstract",
-        "notes",
         "date",
+        "reading",
         "topics",
         "html",
-        "reading"
+        "margin",
+        "padding"
       ]
     },
     {
       "title": "Search Papers",
       "url": "public/search-papers.html",
-      "content": "Filter by topic: All Topics AI Agents LLM Reasoning RAG & Retrieval Multi-Modal Sort by: Date (Newest First) Title (A-Z) Authors (A-Z) .search-container { max-width: 1200px; margin: 0 auto; padding: 20px; } .search-box { width: 100%; padding: 12px 20px; font-size: 16px; border: 2px solid #ddd; borde",
+      "content": "Filter by topic: All Topics Sort by: Date (Newest First) Title (A-Z) Authors (A-Z) .search-container { max-width: 1200px; margin: 0 auto; padding: 20px; } .search-box { width: 100%; padding: 12px 20px; font-size: 16px; border: 2px solid #ddd; border-radius: 8px; margin-bottom: 20px; } .search-box:fo",
       "keywords": [
         "reasoning",
+        "topics",
+        "const",
+        "paper",
+        "arxivid",
+        "data",
         "title",
         "date",
         "authors",
         "url",
-        "paper",
-        "https",
-        "topics",
         "agents",
+        "https",
+        "topic",
         "abstract",
         "models",
         "retrieval",
         "arxiv",
         "org",
         "abs",
-        "across",
-        "multimodal",
-        "arxivid",
-        "data",
-        "evaluation"
+        "across"
       ]
     },
     {
@@ -2841,28 +2981,28 @@ const SEARCH_INDEX = {
     {
       "title": "Compare Papers",
       "url": "public/compare-papers.html",
-      "content": "Select 2-4 papers to compare side-by-side. Select papers to compare: -- Select Paper 1 -- -- Select Paper 2 -- -- Select Paper 3 (optional) -- -- Select Paper 4 (optional) -- Compare Papers .compare-container { max-width: 1400px; margin: 0 auto; padding: 20px; } .paper-selector { background: #f8f9fa",
+      "content": "📊 Compare Papers Analyze multiple papers side-by-side to understand different approaches Select papers to compare: Compare Selected (0) Paper Comparison Close .compare-container { max-width: 1400px; margin: 0 auto; padding: 20px; } .compare-header { margin-bottom: 30px; } .compare-header h2 { margin",
       "keywords": [
-        "papers",
-        "html",
-        "topics",
-        "reasoning",
-        "title",
         "paper",
-        "authors",
-        "date",
-        "abstract",
-        "url",
-        "agents",
-        "margin",
-        "comparison",
         "border",
-        "multimodal",
-        "bottom",
-        "select",
+        "comparison",
+        "margin",
         "padding",
+        "color",
+        "background",
+        "bottom",
+        "font",
         "const",
-        "font"
+        "papers",
+        "content",
+        "abstract",
+        "solid",
+        "document",
+        "compare",
+        "radius",
+        "display",
+        "checkbox",
+        "size"
       ]
     },
     {
@@ -2925,25 +3065,25 @@ const SEARCH_INDEX = {
       "content": "All Topics AI Agents LLM Reasoning RAG & Retrieval Multi-Modal Cloud View List View .tagcloud-container { max-width: 1200px; margin: 0 auto; padding: 20px; } .tagcloud-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 15px; } .f",
       "keywords": [
         "reasoning",
-        "tag",
-        "papers",
-        "size",
-        "url",
         "agents",
-        "item",
-        "title",
-        "topics",
+        "papers",
+        "rag",
+        "url",
+        "agent",
+        "tag",
         "date",
-        "models",
-        "retrieval",
-        "font",
-        "const",
+        "topics",
+        "title",
+        "authors",
         "abstract",
-        "data",
-        "multimodal",
-        "paper",
         "html",
-        "document"
+        "size",
+        "models",
+        "llm",
+        "while",
+        "across",
+        "knowledge",
+        "retrieval"
       ]
     },
     {
@@ -2995,9 +3135,9 @@ const SEARCH_INDEX = {
         "multiple",
         "recent",
         "methods",
-        "search",
-        "research",
-        "across"
+        "onclick",
+        "window",
+        "location"
       ]
     },
     {
@@ -3057,7 +3197,7 @@ const SEARCH_INDEX = {
     {
       "title": "Research Workflow",
       "url": "public/research-workflow.html",
-      "content": "Research Workflow Guide This guide explains how to use the AI Research Tracker effectively throughout your research process, from discovery to citation. The Research Lifecycle Discovery Phase 📥 Goal: Find relevant papers for your research How to use: Browse papers by topic ( AI Agents , LLM Reasonin",
+      "content": "Research Workflow Guide This guide explains how to use the AI Research Tracker effectively throughout your research process, from discovery to citation. The Research Lifecycle Discovery Phase 📥 Goal: Find relevant papers for your research How to use: Browse papers by topic (AI Agents, LLM Reasoning,",
       "keywords": [
         "reading",
         "papers",

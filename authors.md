@@ -360,6 +360,156 @@ const authorsData = [
     ]
   },
   {
+    "name": "Guo Gan",
+    "paper_count": 2,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning"
+    ],
+    "papers": [
+      {
+        "title": "GUI-CC: Benchmarking Contextual Consistency of GUI World Models as Agent Environments",
+        "url": "papers/2026-08-30/2609.00048v1-GUI-CC-Benchmarking-Contextual-Consistency-of-GUI-World-Models-as-Agent-Environm.html",
+        "date": "2026-08-30",
+        "topics": [
+          "ai-agents.gui",
+          "ai-agents"
+        ]
+      },
+      {
+        "title": "Are Android GUI Agents Robust Against Runtime Anomalies? AnTrap: Evaluating Agents in Dynamic Adversarial Environments",
+        "url": "papers/2026-08-25/2608.24099v1-Are-Android-GUI-Agents-Robust-Against-Runtime-Anomalies-AnTrap-Evaluating-Agents.html",
+        "date": "2026-08-25",
+        "topics": [
+          "ai-agents",
+          "ai-agents.gui",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yilun Zhao",
+    "paper_count": 2,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning"
+    ],
+    "papers": [
+      {
+        "title": "GUI-CC: Benchmarking Contextual Consistency of GUI World Models as Agent Environments",
+        "url": "papers/2026-08-30/2609.00048v1-GUI-CC-Benchmarking-Contextual-Consistency-of-GUI-World-Models-as-Agent-Environm.html",
+        "date": "2026-08-30",
+        "topics": [
+          "ai-agents.gui",
+          "ai-agents"
+        ]
+      },
+      {
+        "title": "Are Android GUI Agents Robust Against Runtime Anomalies? AnTrap: Evaluating Agents in Dynamic Adversarial Environments",
+        "url": "papers/2026-08-25/2608.24099v1-Are-Android-GUI-Agents-Robust-Against-Runtime-Anomalies-AnTrap-Evaluating-Agents.html",
+        "date": "2026-08-25",
+        "topics": [
+          "ai-agents",
+          "ai-agents.gui",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jinbiao Wei",
+    "paper_count": 2,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning"
+    ],
+    "papers": [
+      {
+        "title": "GUI-CC: Benchmarking Contextual Consistency of GUI World Models as Agent Environments",
+        "url": "papers/2026-08-30/2609.00048v1-GUI-CC-Benchmarking-Contextual-Consistency-of-GUI-World-Models-as-Agent-Environm.html",
+        "date": "2026-08-30",
+        "topics": [
+          "ai-agents.gui",
+          "ai-agents"
+        ]
+      },
+      {
+        "title": "Are Android GUI Agents Robust Against Runtime Anomalies? AnTrap: Evaluating Agents in Dynamic Adversarial Environments",
+        "url": "papers/2026-08-25/2608.24099v1-Are-Android-GUI-Agents-Robust-Against-Runtime-Anomalies-AnTrap-Evaluating-Agents.html",
+        "date": "2026-08-25",
+        "topics": [
+          "ai-agents",
+          "ai-agents.gui",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zheyuan Yang",
+    "paper_count": 2,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning"
+    ],
+    "papers": [
+      {
+        "title": "GUI-CC: Benchmarking Contextual Consistency of GUI World Models as Agent Environments",
+        "url": "papers/2026-08-30/2609.00048v1-GUI-CC-Benchmarking-Contextual-Consistency-of-GUI-World-Models-as-Agent-Environm.html",
+        "date": "2026-08-30",
+        "topics": [
+          "ai-agents.gui",
+          "ai-agents"
+        ]
+      },
+      {
+        "title": "Are Android GUI Agents Robust Against Runtime Anomalies? AnTrap: Evaluating Agents in Dynamic Adversarial Environments",
+        "url": "papers/2026-08-25/2608.24099v1-Are-Android-GUI-Agents-Robust-Against-Runtime-Anomalies-AnTrap-Evaluating-Agents.html",
+        "date": "2026-08-25",
+        "topics": [
+          "ai-agents",
+          "ai-agents.gui",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lin Fu",
+    "paper_count": 2,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning"
+    ],
+    "papers": [
+      {
+        "title": "GUI-CC: Benchmarking Contextual Consistency of GUI World Models as Agent Environments",
+        "url": "papers/2026-08-30/2609.00048v1-GUI-CC-Benchmarking-Contextual-Consistency-of-GUI-World-Models-as-Agent-Environm.html",
+        "date": "2026-08-30",
+        "topics": [
+          "ai-agents.gui",
+          "ai-agents"
+        ]
+      },
+      {
+        "title": "Are Android GUI Agents Robust Against Runtime Anomalies? AnTrap: Evaluating Agents in Dynamic Adversarial Environments",
+        "url": "papers/2026-08-25/2608.24099v1-Are-Android-GUI-Agents-Robust-Against-Runtime-Anomalies-AnTrap-Evaluating-Agents.html",
+        "date": "2026-08-25",
+        "topics": [
+          "ai-agents",
+          "ai-agents.gui",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
     "name": "Hamed Babaei Giglou",
     "paper_count": 2,
     "topics": [
@@ -447,6 +597,94 @@ const authorsData = [
         "topics": [
           "llm-reasoning",
           "rag-retrieval",
+          "ai-agents.gui"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Geewook Kim",
+    "paper_count": 2,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching",
+        "url": "papers/2026-09-01/2609.01404v1-Evaluating-Multimodal-LLMs-as-Generalist-Vision-Language-Action-Agents-for-Drone.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents",
+          "llm-reasoning"
+        ]
+      },
+      {
+        "title": "Text Capability Loss in Vision-Language Adaptation: An Attention-Sink Diagnosis",
+        "url": "papers/2026-09-01/2609.00746v1-Text-Capability-Loss-in-Vision-Language-Adaptation-An-Attention-Sink-Diagnosis.html",
+        "date": "2026-09-01",
+        "topics": [
+          "llm-reasoning",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Md. Atabuzzaman",
+    "paper_count": 2,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "IntroConformal: Conformal Factuality Guarantees for Large Vision-Language Models via Introspective Signals",
+        "url": "papers/2026-09-01/2609.01375v1-IntroConformal-Conformal-Factuality-Guarantees-for-Large-Vision-Language-Models-.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning"
+        ]
+      },
+      {
+        "title": "Reliability Challenges in Diffusion Vision-Language Models",
+        "url": "papers/2026-09-01/2609.01318v1-Reliability-Challenges-in-Diffusion-Vision-Language-Models.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents.gui"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Chris Thomas",
+    "paper_count": 2,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "IntroConformal: Conformal Factuality Guarantees for Large Vision-Language Models via Introspective Signals",
+        "url": "papers/2026-09-01/2609.01375v1-IntroConformal-Conformal-Factuality-Guarantees-for-Large-Vision-Language-Models-.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning"
+        ]
+      },
+      {
+        "title": "Reliability Challenges in Diffusion Vision-Language Models",
+        "url": "papers/2026-09-01/2609.01318v1-Reliability-Challenges-in-Diffusion-Vision-Language-Models.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
           "ai-agents.gui"
         ]
       }
@@ -2158,48 +2396,6 @@ const authorsData = [
     ]
   },
   {
-    "name": "Guo Gan",
-    "paper_count": 1,
-    "topics": [
-      "ai-agents",
-      "ai-agents.gui",
-      "llm-reasoning"
-    ],
-    "papers": [
-      {
-        "title": "Are Android GUI Agents Robust Against Runtime Anomalies? AnTrap: Evaluating Agents in Dynamic Adversarial Environments",
-        "url": "papers/2026-08-25/2608.24099v1-Are-Android-GUI-Agents-Robust-Against-Runtime-Anomalies-AnTrap-Evaluating-Agents.html",
-        "date": "2026-08-25",
-        "topics": [
-          "ai-agents",
-          "ai-agents.gui",
-          "llm-reasoning"
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Yilun Zhao",
-    "paper_count": 1,
-    "topics": [
-      "ai-agents",
-      "ai-agents.gui",
-      "llm-reasoning"
-    ],
-    "papers": [
-      {
-        "title": "Are Android GUI Agents Robust Against Runtime Anomalies? AnTrap: Evaluating Agents in Dynamic Adversarial Environments",
-        "url": "papers/2026-08-25/2608.24099v1-Are-Android-GUI-Agents-Robust-Against-Runtime-Anomalies-AnTrap-Evaluating-Agents.html",
-        "date": "2026-08-25",
-        "topics": [
-          "ai-agents",
-          "ai-agents.gui",
-          "llm-reasoning"
-        ]
-      }
-    ]
-  },
-  {
     "name": "Cong Chen",
     "paper_count": 1,
     "topics": [
@@ -2221,70 +2417,7 @@ const authorsData = [
     ]
   },
   {
-    "name": "Jinbiao Wei",
-    "paper_count": 1,
-    "topics": [
-      "ai-agents",
-      "ai-agents.gui",
-      "llm-reasoning"
-    ],
-    "papers": [
-      {
-        "title": "Are Android GUI Agents Robust Against Runtime Anomalies? AnTrap: Evaluating Agents in Dynamic Adversarial Environments",
-        "url": "papers/2026-08-25/2608.24099v1-Are-Android-GUI-Agents-Robust-Against-Runtime-Anomalies-AnTrap-Evaluating-Agents.html",
-        "date": "2026-08-25",
-        "topics": [
-          "ai-agents",
-          "ai-agents.gui",
-          "llm-reasoning"
-        ]
-      }
-    ]
-  },
-  {
     "name": "Tingyu Song",
-    "paper_count": 1,
-    "topics": [
-      "ai-agents",
-      "ai-agents.gui",
-      "llm-reasoning"
-    ],
-    "papers": [
-      {
-        "title": "Are Android GUI Agents Robust Against Runtime Anomalies? AnTrap: Evaluating Agents in Dynamic Adversarial Environments",
-        "url": "papers/2026-08-25/2608.24099v1-Are-Android-GUI-Agents-Robust-Against-Runtime-Anomalies-AnTrap-Evaluating-Agents.html",
-        "date": "2026-08-25",
-        "topics": [
-          "ai-agents",
-          "ai-agents.gui",
-          "llm-reasoning"
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Zheyuan Yang",
-    "paper_count": 1,
-    "topics": [
-      "ai-agents",
-      "ai-agents.gui",
-      "llm-reasoning"
-    ],
-    "papers": [
-      {
-        "title": "Are Android GUI Agents Robust Against Runtime Anomalies? AnTrap: Evaluating Agents in Dynamic Adversarial Environments",
-        "url": "papers/2026-08-25/2608.24099v1-Are-Android-GUI-Agents-Robust-Against-Runtime-Anomalies-AnTrap-Evaluating-Agents.html",
-        "date": "2026-08-25",
-        "topics": [
-          "ai-agents",
-          "ai-agents.gui",
-          "llm-reasoning"
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Lin Fu",
     "paper_count": 1,
     "topics": [
       "ai-agents",
@@ -3591,6 +3724,101 @@ const authorsData = [
           "rag-retrieval",
           "llm-reasoning",
           "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yi-Cheng Lai",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Do Multimodal LLMs See Before They Read? Diagnosing Contextual Sycophancy",
+        "url": "papers/2026-08-30/2609.00067v1-Do-Multimodal-LLMs-See-Before-They-Read-Diagnosing-Contextual-Sycophancy.html",
+        "date": "2026-08-30",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hen-Hsen Huang",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Do Multimodal LLMs See Before They Read? Diagnosing Contextual Sycophancy",
+        "url": "papers/2026-08-30/2609.00067v1-Do-Multimodal-LLMs-See-Before-They-Read-Diagnosing-Contextual-Sycophancy.html",
+        "date": "2026-08-30",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tianhui Zhang",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui"
+    ],
+    "papers": [
+      {
+        "title": "GUI-CC: Benchmarking Contextual Consistency of GUI World Models as Agent Environments",
+        "url": "papers/2026-08-30/2609.00048v1-GUI-CC-Benchmarking-Contextual-Consistency-of-GUI-World-Models-as-Agent-Environm.html",
+        "date": "2026-08-30",
+        "topics": [
+          "ai-agents.gui",
+          "ai-agents"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Boxu Liu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui"
+    ],
+    "papers": [
+      {
+        "title": "GUI-CC: Benchmarking Contextual Consistency of GUI World Models as Agent Environments",
+        "url": "papers/2026-08-30/2609.00048v1-GUI-CC-Benchmarking-Contextual-Consistency-of-GUI-World-Models-as-Agent-Environm.html",
+        "date": "2026-08-30",
+        "topics": [
+          "ai-agents.gui",
+          "ai-agents"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yu Rong",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui"
+    ],
+    "papers": [
+      {
+        "title": "GUI-CC: Benchmarking Contextual Consistency of GUI World Models as Agent Environments",
+        "url": "papers/2026-08-30/2609.00048v1-GUI-CC-Benchmarking-Contextual-Consistency-of-GUI-World-Models-as-Agent-Environm.html",
+        "date": "2026-08-30",
+        "topics": [
+          "ai-agents.gui",
+          "ai-agents"
         ]
       }
     ]
@@ -5653,6 +5881,69 @@ const authorsData = [
     ]
   },
   {
+    "name": "Athulith Paraselli",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Slow to See, Slow to Suppress: Understanding the Effects of Modality in Context-Memory Conflicts",
+        "url": "papers/2026-08-31/2609.00293v1-Slow-to-See-Slow-to-Suppress-Understanding-the-Effects-of-Modality-in-Context-Me.html",
+        "date": "2026-08-31",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Etha Tianze Hua",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Slow to See, Slow to Suppress: Understanding the Effects of Modality in Context-Memory Conflicts",
+        "url": "papers/2026-08-31/2609.00293v1-Slow-to-See-Slow-to-Suppress-Understanding-the-Effects-of-Modality-in-Context-Me.html",
+        "date": "2026-08-31",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ellie Pavlick",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Slow to See, Slow to Suppress: Understanding the Effects of Modality in Context-Memory Conflicts",
+        "url": "papers/2026-08-31/2609.00293v1-Slow-to-See-Slow-to-Suppress-Understanding-the-Effects-of-Modality-in-Context-Me.html",
+        "date": "2026-08-31",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
     "name": "Zixing Lei",
     "paper_count": 1,
     "topics": [
@@ -5878,6 +6169,98 @@ const authorsData = [
           "llm-reasoning",
           "ai-agents.multi-agent",
           "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Peiyang Xu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Beyond Language Priors: Diagnosing and Fixing Visual-Origin Hallucinations in Multimodal LLM",
+        "url": "papers/2026-08-31/2609.00231v1-Beyond-Language-Priors-Diagnosing-and-Fixing-Visual-Origin-Hallucinations-in-Mul.html",
+        "date": "2026-08-31",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning",
+          "rag-retrieval",
+          "ai-agents.gui"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Xiaopei Zhu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Beyond Language Priors: Diagnosing and Fixing Visual-Origin Hallucinations in Multimodal LLM",
+        "url": "papers/2026-08-31/2609.00231v1-Beyond-Language-Priors-Diagnosing-and-Fixing-Visual-Origin-Hallucinations-in-Mul.html",
+        "date": "2026-08-31",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning",
+          "rag-retrieval",
+          "ai-agents.gui"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jun Zhu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Beyond Language Priors: Diagnosing and Fixing Visual-Origin Hallucinations in Multimodal LLM",
+        "url": "papers/2026-08-31/2609.00231v1-Beyond-Language-Priors-Diagnosing-and-Fixing-Visual-Origin-Hallucinations-in-Mul.html",
+        "date": "2026-08-31",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning",
+          "rag-retrieval",
+          "ai-agents.gui"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Xiaolin Hu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Beyond Language Priors: Diagnosing and Fixing Visual-Origin Hallucinations in Multimodal LLM",
+        "url": "papers/2026-08-31/2609.00231v1-Beyond-Language-Priors-Diagnosing-and-Fixing-Visual-Origin-Hallucinations-in-Mul.html",
+        "date": "2026-08-31",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning",
+          "rag-retrieval",
+          "ai-agents.gui"
         ]
       }
     ]
@@ -6236,6 +6619,52 @@ const authorsData = [
         "topics": [
           "multi-modal",
           "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Francisco Galuppo Azevedo",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Can LLMs Use Relational Transformer Embeddings?",
+        "url": "papers/2026-08-31/2609.00457v1-Can-LLMs-Use-Relational-Transformer-Embeddings.html",
+        "date": "2026-08-31",
+        "topics": [
+          "llm-reasoning",
+          "rag-retrieval",
+          "ai-agents.gui",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Clarissa Lima Loures",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Can LLMs Use Relational Transformer Embeddings?",
+        "url": "papers/2026-08-31/2609.00457v1-Can-LLMs-Use-Relational-Transformer-Embeddings.html",
+        "date": "2026-08-31",
+        "topics": [
+          "llm-reasoning",
+          "rag-retrieval",
+          "ai-agents.gui",
+          "multi-modal"
         ]
       }
     ]
@@ -6771,6 +7200,3542 @@ const authorsData = [
           "ai-agents",
           "llm-reasoning",
           "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jaewoo Park",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching",
+        "url": "papers/2026-09-01/2609.01404v1-Evaluating-Multimodal-LLMs-as-Generalist-Vision-Language-Action-Agents-for-Drone.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Minyoung Lee",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching",
+        "url": "papers/2026-09-01/2609.01404v1-Evaluating-Multimodal-LLMs-as-Generalist-Vision-Language-Action-Agents-for-Drone.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sukmin Seo",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching",
+        "url": "papers/2026-09-01/2609.01404v1-Evaluating-Multimodal-LLMs-as-Generalist-Vision-Language-Action-Agents-for-Drone.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Moonbin Yim",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching",
+        "url": "papers/2026-09-01/2609.01404v1-Evaluating-Multimodal-LLMs-as-Generalist-Vision-Language-Action-Agents-for-Drone.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hyunwook Yoon",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching",
+        "url": "papers/2026-09-01/2609.01404v1-Evaluating-Multimodal-LLMs-as-Generalist-Vision-Language-Action-Agents-for-Drone.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dohoon Ryu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching",
+        "url": "papers/2026-09-01/2609.01404v1-Evaluating-Multimodal-LLMs-as-Generalist-Vision-Language-Action-Agents-for-Drone.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Daehee Kim",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching",
+        "url": "papers/2026-09-01/2609.01404v1-Evaluating-Multimodal-LLMs-as-Generalist-Vision-Language-Action-Agents-for-Drone.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Myungseo Song",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching",
+        "url": "papers/2026-09-01/2609.01404v1-Evaluating-Multimodal-LLMs-as-Generalist-Vision-Language-Action-Agents-for-Drone.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jihyuk Byun",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching",
+        "url": "papers/2026-09-01/2609.01404v1-Evaluating-Multimodal-LLMs-as-Generalist-Vision-Language-Action-Agents-for-Drone.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Seunggyu Chang",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching",
+        "url": "papers/2026-09-01/2609.01404v1-Evaluating-Multimodal-LLMs-as-Generalist-Vision-Language-Action-Agents-for-Drone.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Taeho Kil",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching",
+        "url": "papers/2026-09-01/2609.01404v1-Evaluating-Multimodal-LLMs-as-Generalist-Vision-Language-Action-Agents-for-Drone.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jiseob Kim",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching",
+        "url": "papers/2026-09-01/2609.01404v1-Evaluating-Multimodal-LLMs-as-Generalist-Vision-Language-Action-Agents-for-Drone.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bado Lee",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control: Commanding, Approaching, Tracking and Searching",
+        "url": "papers/2026-09-01/2609.01404v1-Evaluating-Multimodal-LLMs-as-Generalist-Vision-Language-Action-Agents-for-Drone.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ket Doan Nguyen",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Automated Tree Knowledge Graph Construction using Ontology Expansion and Retrieval from Vietnamese History Textbooks",
+        "url": "papers/2026-09-01/2609.00763v1-Automated-Tree-Knowledge-Graph-Construction-using-Ontology-Expansion-and-Retriev.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "llm-reasoning",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Minh N. H. Nguyen",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Automated Tree Knowledge Graph Construction using Ontology Expansion and Retrieval from Vietnamese History Textbooks",
+        "url": "papers/2026-09-01/2609.00763v1-Automated-Tree-Knowledge-Graph-Construction-using-Ontology-Expansion-and-Retriev.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "llm-reasoning",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jungyeon Lee",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Same Semantics, Different Outcome: On the Modality Robustness of Multimodal LLMs under Knowledge Conflict",
+        "url": "papers/2026-09-01/2609.00550v1-Same-Semantics-Different-Outcome-On-the-Modality-Robustness-of-Multimodal-LLMs-u.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yejin Yoon",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Same Semantics, Different Outcome: On the Modality Robustness of Multimodal LLMs under Knowledge Conflict",
+        "url": "papers/2026-09-01/2609.00550v1-Same-Semantics-Different-Outcome-On-the-Modality-Robustness-of-Multimodal-LLMs-u.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Taeuk Kim",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Same Semantics, Different Outcome: On the Modality Robustness of Multimodal LLMs under Knowledge Conflict",
+        "url": "papers/2026-09-01/2609.00550v1-Same-Semantics-Different-Outcome-On-the-Modality-Robustness-of-Multimodal-LLMs-u.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Christian Alexander",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "IntroConformal: Conformal Factuality Guarantees for Large Vision-Language Models via Introspective Signals",
+        "url": "papers/2026-09-01/2609.01375v1-IntroConformal-Conformal-Factuality-Guarantees-for-Large-Vision-Language-Models-.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Maeve Hutchinson",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "InSight: A Benchmark for Agentic Claim Verification in Interactive Visualizations",
+        "url": "papers/2026-09-01/2609.01383v1-InSight-A-Benchmark-for-Agentic-Claim-Verification-in-Interactive-Visualizations.html",
+        "date": "2026-09-01",
+        "topics": [
+          "llm-reasoning",
+          "ai-agents",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Syed Mahbubul Huq",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "InSight: A Benchmark for Agentic Claim Verification in Interactive Visualizations",
+        "url": "papers/2026-09-01/2609.01383v1-InSight-A-Benchmark-for-Agentic-Claim-Verification-in-Interactive-Visualizations.html",
+        "date": "2026-09-01",
+        "topics": [
+          "llm-reasoning",
+          "ai-agents",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mohammad Albinhassan",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "InSight: A Benchmark for Agentic Claim Verification in Interactive Visualizations",
+        "url": "papers/2026-09-01/2609.01383v1-InSight-A-Benchmark-for-Agentic-Claim-Verification-in-Interactive-Visualizations.html",
+        "date": "2026-09-01",
+        "topics": [
+          "llm-reasoning",
+          "ai-agents",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Radu Jianu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "InSight: A Benchmark for Agentic Claim Verification in Interactive Visualizations",
+        "url": "papers/2026-09-01/2609.01383v1-InSight-A-Benchmark-for-Agentic-Claim-Verification-in-Interactive-Visualizations.html",
+        "date": "2026-09-01",
+        "topics": [
+          "llm-reasoning",
+          "ai-agents",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Aidan Slingsby",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "InSight: A Benchmark for Agentic Claim Verification in Interactive Visualizations",
+        "url": "papers/2026-09-01/2609.01383v1-InSight-A-Benchmark-for-Agentic-Claim-Verification-in-Interactive-Visualizations.html",
+        "date": "2026-09-01",
+        "topics": [
+          "llm-reasoning",
+          "ai-agents",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pranava Madhyastha",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "InSight: A Benchmark for Agentic Claim Verification in Interactive Visualizations",
+        "url": "papers/2026-09-01/2609.01383v1-InSight-A-Benchmark-for-Agentic-Claim-Verification-in-Interactive-Visualizations.html",
+        "date": "2026-09-01",
+        "topics": [
+          "llm-reasoning",
+          "ai-agents",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Chaewon Kim",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "SCoNE: Selective Context-aware Neuron Editing for Robust Retrieval-Augmented Generation",
+        "url": "papers/2026-09-01/2609.00689v1-SCoNE-Selective-Context-aware-Neuron-Editing-for-Robust-Retrieval-Augmented-Gene.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "llm-reasoning",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Seo Yeon Park",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "SCoNE: Selective Context-aware Neuron Editing for Robust Retrieval-Augmented Generation",
+        "url": "papers/2026-09-01/2609.00689v1-SCoNE-Selective-Context-aware-Neuron-Editing-for-Robust-Retrieval-Augmented-Gene.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "llm-reasoning",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ivan Decostanzi",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Verifiable Disaster Storylines and Causal Knowledge Graphs: A Citation-Grounded Pipeline from Heterogeneous Humanitarian Sources",
+        "url": "papers/2026-09-01/2609.00858v1-Verifiable-Disaster-Storylines-and-Causal-Knowledge-Graphs-A-Citation-Grounded-P.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Michele Ronco",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Verifiable Disaster Storylines and Causal Knowledge Graphs: A Citation-Grounded Pipeline from Heterogeneous Humanitarian Sources",
+        "url": "papers/2026-09-01/2609.00858v1-Verifiable-Disaster-Storylines-and-Causal-Knowledge-Graphs-A-Citation-Grounded-P.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sergio Consoli",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Verifiable Disaster Storylines and Causal Knowledge Graphs: A Citation-Grounded Pipeline from Heterogeneous Humanitarian Sources",
+        "url": "papers/2026-09-01/2609.00858v1-Verifiable-Disaster-Storylines-and-Causal-Knowledge-Graphs-A-Citation-Grounded-P.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Christina Corbane",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Verifiable Disaster Storylines and Causal Knowledge Graphs: A Citation-Grounded Pipeline from Heterogeneous Humanitarian Sources",
+        "url": "papers/2026-09-01/2609.00858v1-Verifiable-Disaster-Storylines-and-Causal-Knowledge-Graphs-A-Citation-Grounded-P.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lorenzo Bertolini",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Verifiable Disaster Storylines and Causal Knowledge Graphs: A Citation-Grounded Pipeline from Heterogeneous Humanitarian Sources",
+        "url": "papers/2026-09-01/2609.00858v1-Verifiable-Disaster-Storylines-and-Causal-Knowledge-Graphs-A-Citation-Grounded-P.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Indaco Biazzo",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Verifiable Disaster Storylines and Causal Knowledge Graphs: A Citation-Grounded Pipeline from Heterogeneous Humanitarian Sources",
+        "url": "papers/2026-09-01/2609.00858v1-Verifiable-Disaster-Storylines-and-Causal-Knowledge-Graphs-A-Citation-Grounded-P.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Daria Mihaila",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Verifiable Disaster Storylines and Causal Knowledge Graphs: A Citation-Grounded Pipeline from Heterogeneous Humanitarian Sources",
+        "url": "papers/2026-09-01/2609.00858v1-Verifiable-Disaster-Storylines-and-Causal-Knowledge-Graphs-A-Citation-Grounded-P.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Manuel Garcia-Herranz",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Verifiable Disaster Storylines and Causal Knowledge Graphs: A Citation-Grounded Pipeline from Heterogeneous Humanitarian Sources",
+        "url": "papers/2026-09-01/2609.00858v1-Verifiable-Disaster-Storylines-and-Causal-Knowledge-Graphs-A-Citation-Grounded-P.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Felix Schwebel",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Verifiable Disaster Storylines and Causal Knowledge Graphs: A Citation-Grounded Pipeline from Heterogeneous Humanitarian Sources",
+        "url": "papers/2026-09-01/2609.00858v1-Verifiable-Disaster-Storylines-and-Causal-Knowledge-Graphs-A-Citation-Grounded-P.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yelena Mejova",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Verifiable Disaster Storylines and Causal Knowledge Graphs: A Citation-Grounded Pipeline from Heterogeneous Humanitarian Sources",
+        "url": "papers/2026-09-01/2609.00858v1-Verifiable-Disaster-Storylines-and-Causal-Knowledge-Graphs-A-Citation-Grounded-P.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kyriaki Kalimeri",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Verifiable Disaster Storylines and Causal Knowledge Graphs: A Citation-Grounded Pipeline from Heterogeneous Humanitarian Sources",
+        "url": "papers/2026-09-01/2609.00858v1-Verifiable-Disaster-Storylines-and-Causal-Knowledge-Graphs-A-Citation-Grounded-P.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Padmeswari Nandiya",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "NeuroGraph: An AI Graph-Driven Neuro-Symbolic Framework for Explainable Threat Reasoning in Advanced Manufacturing",
+        "url": "papers/2026-09-01/2609.00604v1-NeuroGraph-An-AI-Graph-Driven-Neuro-Symbolic-Framework-for-Explainable-Threat-Re.html",
+        "date": "2026-09-01",
+        "topics": [
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ahmad Mohsin",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "NeuroGraph: An AI Graph-Driven Neuro-Symbolic Framework for Explainable Threat Reasoning in Advanced Manufacturing",
+        "url": "papers/2026-09-01/2609.00604v1-NeuroGraph-An-AI-Graph-Driven-Neuro-Symbolic-Framework-for-Explainable-Threat-Re.html",
+        "date": "2026-09-01",
+        "topics": [
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ahmed Ibrahim",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "NeuroGraph: An AI Graph-Driven Neuro-Symbolic Framework for Explainable Threat Reasoning in Advanced Manufacturing",
+        "url": "papers/2026-09-01/2609.00604v1-NeuroGraph-An-AI-Graph-Driven-Neuro-Symbolic-Framework-for-Explainable-Threat-Re.html",
+        "date": "2026-09-01",
+        "topics": [
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Iqbal H. Sarker",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "NeuroGraph: An AI Graph-Driven Neuro-Symbolic Framework for Explainable Threat Reasoning in Advanced Manufacturing",
+        "url": "papers/2026-09-01/2609.00604v1-NeuroGraph-An-AI-Graph-Driven-Neuro-Symbolic-Framework-for-Explainable-Threat-Re.html",
+        "date": "2026-09-01",
+        "topics": [
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Helge Janicke",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "NeuroGraph: An AI Graph-Driven Neuro-Symbolic Framework for Explainable Threat Reasoning in Advanced Manufacturing",
+        "url": "papers/2026-09-01/2609.00604v1-NeuroGraph-An-AI-Graph-Driven-Neuro-Symbolic-Framework-for-Explainable-Threat-Re.html",
+        "date": "2026-09-01",
+        "topics": [
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Micha\u0142 Cholewa",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Agentic Multimodal Models for Environmental Hyperspectral Unmixing",
+        "url": "papers/2026-09-01/2609.01289v1-Agentic-Multimodal-Models-for-Environmental-Hyperspectral-Unmixing.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents",
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Luca Ciampi",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Agentic Multimodal Models for Environmental Hyperspectral Unmixing",
+        "url": "papers/2026-09-01/2609.01289v1-Agentic-Multimodal-Models-for-Environmental-Hyperspectral-Unmixing.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents",
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Nicola Messina",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Agentic Multimodal Models for Environmental Hyperspectral Unmixing",
+        "url": "papers/2026-09-01/2609.01289v1-Agentic-Multimodal-Models-for-Environmental-Hyperspectral-Unmixing.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents",
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Przemys\u0142aw G\u0142omb",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Agentic Multimodal Models for Environmental Hyperspectral Unmixing",
+        "url": "papers/2026-09-01/2609.01289v1-Agentic-Multimodal-Models-for-Environmental-Hyperspectral-Unmixing.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents",
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Giuseppe Amato",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Agentic Multimodal Models for Environmental Hyperspectral Unmixing",
+        "url": "papers/2026-09-01/2609.01289v1-Agentic-Multimodal-Models-for-Environmental-Hyperspectral-Unmixing.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents",
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yuta Kato",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "ExpArt-KG: Artwork Image Description Generation through Iterative Exploration of Knowledge Graphs",
+        "url": "papers/2026-09-01/2609.00629v1-ExpArt-KG-Artwork-Image-Description-Generation-through-Iterative-Exploration-of-.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shintaro Ozaki",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "ExpArt-KG: Artwork Image Description Generation through Iterative Exploration of Knowledge Graphs",
+        "url": "papers/2026-09-01/2609.00629v1-ExpArt-KG-Artwork-Image-Description-Generation-through-Iterative-Exploration-of-.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kazuki Hayashi",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "ExpArt-KG: Artwork Image Description Generation through Iterative Exploration of Knowledge Graphs",
+        "url": "papers/2026-09-01/2609.00629v1-ExpArt-KG-Artwork-Image-Description-Generation-through-Iterative-Exploration-of-.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yusuke Sakai",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "ExpArt-KG: Artwork Image Description Generation through Iterative Exploration of Knowledge Graphs",
+        "url": "papers/2026-09-01/2609.00629v1-ExpArt-KG-Artwork-Image-Description-Generation-through-Iterative-Exploration-of-.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hidetaka Kamigaito",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "ExpArt-KG: Artwork Image Description Generation through Iterative Exploration of Knowledge Graphs",
+        "url": "papers/2026-09-01/2609.00629v1-ExpArt-KG-Artwork-Image-Description-Generation-through-Iterative-Exploration-of-.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Katsuhiko Hayashi",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "ExpArt-KG: Artwork Image Description Generation through Iterative Exploration of Knowledge Graphs",
+        "url": "papers/2026-09-01/2609.00629v1-ExpArt-KG-Artwork-Image-Description-Generation-through-Iterative-Exploration-of-.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Taro Watanabe",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "ExpArt-KG: Artwork Image Description Generation through Iterative Exploration of Knowledge Graphs",
+        "url": "papers/2026-09-01/2609.00629v1-ExpArt-KG-Artwork-Image-Description-Generation-through-Iterative-Exploration-of-.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Reza Heidari",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Compressing AI Traffic: Standardized Neural Network Coding of Visual-Token Representations in Split Vision-Language Inference",
+        "url": "papers/2026-09-01/2609.01200v1-Compressing-AI-Traffic-Standardized-Neural-Network-Coding-of-Visual-Token-Repres.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hamed R. Tavakoli",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Compressing AI Traffic: Standardized Neural Network Coding of Visual-Token Representations in Split Vision-Language Inference",
+        "url": "papers/2026-09-01/2609.01200v1-Compressing-AI-Traffic-Standardized-Neural-Network-Coding-of-Visual-Token-Repres.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Juho Kannala",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Compressing AI Traffic: Standardized Neural Network Coding of Visual-Token Representations in Split Vision-Language Inference",
+        "url": "papers/2026-09-01/2609.01200v1-Compressing-AI-Traffic-Standardized-Neural-Network-Coding-of-Visual-Token-Repres.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zhiqi Huang",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "VerTox: Verifiable Reward-Guided Corpus Poisoning Against Neural Ranking Models",
+        "url": "papers/2026-09-01/2609.01325v1-VerTox-Verifiable-Reward-Guided-Corpus-Poisoning-Against-Neural-Ranking-Models.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "ai-agents.gui",
+          "multi-modal",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Vivek Datla",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "VerTox: Verifiable Reward-Guided Corpus Poisoning Against Neural Ranking Models",
+        "url": "papers/2026-09-01/2609.01325v1-VerTox-Verifiable-Reward-Guided-Corpus-Poisoning-Against-Neural-Ranking-Models.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "ai-agents.gui",
+          "multi-modal",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zhichao Xu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "VerTox: Verifiable Reward-Guided Corpus Poisoning Against Neural Ranking Models",
+        "url": "papers/2026-09-01/2609.01325v1-VerTox-Verifiable-Reward-Guided-Corpus-Poisoning-Against-Neural-Ranking-Models.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "ai-agents.gui",
+          "multi-modal",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Puxuan Yu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "VerTox: Verifiable Reward-Guided Corpus Poisoning Against Neural Ranking Models",
+        "url": "papers/2026-09-01/2609.01325v1-VerTox-Verifiable-Reward-Guided-Corpus-Poisoning-Against-Neural-Ranking-Models.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "ai-agents.gui",
+          "multi-modal",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Vivek Srikumar",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "VerTox: Verifiable Reward-Guided Corpus Poisoning Against Neural Ranking Models",
+        "url": "papers/2026-09-01/2609.01325v1-VerTox-Verifiable-Reward-Guided-Corpus-Poisoning-Against-Neural-Ranking-Models.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "ai-agents.gui",
+          "multi-modal",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Alfy Samuel",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "VerTox: Verifiable Reward-Guided Corpus Poisoning Against Neural Ranking Models",
+        "url": "papers/2026-09-01/2609.01325v1-VerTox-Verifiable-Reward-Guided-Corpus-Poisoning-Against-Neural-Ranking-Models.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "ai-agents.gui",
+          "multi-modal",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zhaoliang Chen",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Latent Recurrent Thoughts: Recurrent Refinement of Proposed Latents for Reasoning with Frozen LLMs",
+        "url": "papers/2026-09-01/2609.01117v1-Latent-Recurrent-Thoughts-Recurrent-Refinement-of-Proposed-Latents-for-Reasoning.html",
+        "date": "2026-09-01",
+        "topics": [
+          "llm-reasoning",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jie Fu",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Latent Recurrent Thoughts: Recurrent Refinement of Proposed Latents for Reasoning with Frozen LLMs",
+        "url": "papers/2026-09-01/2609.01117v1-Latent-Recurrent-Thoughts-Recurrent-Refinement-of-Proposed-Latents-for-Reasoning.html",
+        "date": "2026-09-01",
+        "topics": [
+          "llm-reasoning",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zhiyu Ye",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "A multicenter benchmark and clinically structured metric for coronary CTA report generation",
+        "url": "papers/2026-09-01/2609.00909v1-A-multicenter-benchmark-and-clinically-structured-metric-for-coronary-CTA-report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents.gui",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yue Sun",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "A multicenter benchmark and clinically structured metric for coronary CTA report generation",
+        "url": "papers/2026-09-01/2609.00909v1-A-multicenter-benchmark-and-clinically-structured-metric-for-coronary-CTA-report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents.gui",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Limiao Zou",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "A multicenter benchmark and clinically structured metric for coronary CTA report generation",
+        "url": "papers/2026-09-01/2609.00909v1-A-multicenter-benchmark-and-clinically-structured-metric-for-coronary-CTA-report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents.gui",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cheng Xu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "A multicenter benchmark and clinically structured metric for coronary CTA report generation",
+        "url": "papers/2026-09-01/2609.00909v1-A-multicenter-benchmark-and-clinically-structured-metric-for-coronary-CTA-report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents.gui",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Keting Xu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "A multicenter benchmark and clinically structured metric for coronary CTA report generation",
+        "url": "papers/2026-09-01/2609.00909v1-A-multicenter-benchmark-and-clinically-structured-metric-for-coronary-CTA-report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents.gui",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tong Hu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "A multicenter benchmark and clinically structured metric for coronary CTA report generation",
+        "url": "papers/2026-09-01/2609.00909v1-A-multicenter-benchmark-and-clinically-structured-metric-for-coronary-CTA-report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents.gui",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yue Yu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "A multicenter benchmark and clinically structured metric for coronary CTA report generation",
+        "url": "papers/2026-09-01/2609.00909v1-A-multicenter-benchmark-and-clinically-structured-metric-for-coronary-CTA-report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents.gui",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hairong Zheng",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "A multicenter benchmark and clinically structured metric for coronary CTA report generation",
+        "url": "papers/2026-09-01/2609.00909v1-A-multicenter-benchmark-and-clinically-structured-metric-for-coronary-CTA-report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents.gui",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yining Wang",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "A multicenter benchmark and clinically structured metric for coronary CTA report generation",
+        "url": "papers/2026-09-01/2609.00909v1-A-multicenter-benchmark-and-clinically-structured-metric-for-coronary-CTA-report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents.gui",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tong Zhang",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "A multicenter benchmark and clinically structured metric for coronary CTA report generation",
+        "url": "papers/2026-09-01/2609.00909v1-A-multicenter-benchmark-and-clinically-structured-metric-for-coronary-CTA-report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents.gui",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yumi Lee",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Harim Oh",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hyoryung Kim",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Minji Kim",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Eunsu Kim",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hyeseong Lee",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Junya Fukuoka",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Andrey Bychkov",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jijgee Munkhdelger",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Rajiv Kumar Kaushal",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ayushi Sahay",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Rajni Yadav",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bharathi Prabakaran",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sulen Sarioglu",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Serdar Balc\u0131",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ilknur Turkmen",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yuri Tolkach",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Christian Harder",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Julian Westerdorf",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Reinhard Buettner",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Audun Ljone Henriksen",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sepp De Raedt",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Byung Hyun Lee",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sungjin Lim",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Joohoon Lee",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gwanghyun Kim",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Se Young Chun",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Suryakant Singh",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Saarthak Kapse",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Prateek Prasanna",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kyung A Kim",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yousun Kang",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sehwan Yoo",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sungman Hong",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shubham Innani",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Michael Feldman",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Spyridon Bakas",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ujjwal Baid",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Prasad Dutande",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Suhas Gajare",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bhakti Baheti",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Serkan S\u00f6kmen",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ece Tu\u011fba Cebeci",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ahmet Hal\u0131c\u0131",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Musa Balc\u0131",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kardelen Pe\u00e7enek",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Srividhya Sainath",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kyongseok Jang",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Messi H. J. Lee",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Noorul Wahab",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bodong Du",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jiaming Zhang",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Qixiang Zhang",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jang-Hwan Choi",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sangjeong Ahn",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Benchmarking Vision-Language Models for Automated Pathology Diagnosis and Report Generation",
+        "url": "papers/2026-09-01/2609.00866v1-Benchmarking-Vision-Language-Models-for-Automated-Pathology-Diagnosis-and-Report.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kefeng Duan",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation",
+        "url": "papers/2026-09-01/2609.01601v1-Adaptive-Critical-Token-Aware-Retrieval-for-Repository-Level-Code-Generation.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dewu Zheng",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation",
+        "url": "papers/2026-09-01/2609.01601v1-Adaptive-Critical-Token-Aware-Retrieval-for-Repository-Level-Code-Generation.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yanlin Wang",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation",
+        "url": "papers/2026-09-01/2609.01601v1-Adaptive-Critical-Token-Aware-Retrieval-for-Repository-Level-Code-Generation.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Terry Yue Zhuo",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation",
+        "url": "papers/2026-09-01/2609.01601v1-Adaptive-Critical-Token-Aware-Retrieval-for-Repository-Level-Code-Generation.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mingwei Liu",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation",
+        "url": "papers/2026-09-01/2609.01601v1-Adaptive-Critical-Token-Aware-Retrieval-for-Repository-Level-Code-Generation.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jianxing Yu",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation",
+        "url": "papers/2026-09-01/2609.01601v1-Adaptive-Critical-Token-Aware-Retrieval-for-Repository-Level-Code-Generation.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jiachi Chen",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation",
+        "url": "papers/2026-09-01/2609.01601v1-Adaptive-Critical-Token-Aware-Retrieval-for-Repository-Level-Code-Generation.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ensheng Shi",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation",
+        "url": "papers/2026-09-01/2609.01601v1-Adaptive-Critical-Token-Aware-Retrieval-for-Repository-Level-Code-Generation.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Xilin Liu",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation",
+        "url": "papers/2026-09-01/2609.01601v1-Adaptive-Critical-Token-Aware-Retrieval-for-Repository-Level-Code-Generation.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yuchi Ma",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation",
+        "url": "papers/2026-09-01/2609.01601v1-Adaptive-Critical-Token-Aware-Retrieval-for-Repository-Level-Code-Generation.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zibin Zheng",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation",
+        "url": "papers/2026-09-01/2609.01601v1-Adaptive-Critical-Token-Aware-Retrieval-for-Repository-Level-Code-Generation.html",
+        "date": "2026-09-01",
+        "topics": [
+          "rag-retrieval",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Christian Greisinger",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "EdiTikZ: Scientific Figure Editing from Revision Trajectories",
+        "url": "papers/2026-09-01/2609.01409v1-EdiTikZ-Scientific-Figure-Editing-from-Revision-Trajectories.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zhixue Zhao",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "EdiTikZ: Scientific Figure Editing from Revision Trajectories",
+        "url": "papers/2026-09-01/2609.01409v1-EdiTikZ-Scientific-Figure-Editing-from-Revision-Trajectories.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Steffen Eger",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "EdiTikZ: Scientific Figure Editing from Revision Trajectories",
+        "url": "papers/2026-09-01/2609.01409v1-EdiTikZ-Scientific-Figure-Editing-from-Revision-Trajectories.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jiayu Ding",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Dyn-3D: Unveiling and Resolving Ego-Motion Ambiguity in Vision-Language Models",
+        "url": "papers/2026-09-01/2609.01059v1-Dyn-3D-Unveiling-and-Resolving-Ego-Motion-Ambiguity-in-Vision-Language-Models.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents.gui",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zhuodong Liu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Dyn-3D: Unveiling and Resolving Ego-Motion Ambiguity in Vision-Language Models",
+        "url": "papers/2026-09-01/2609.01059v1-Dyn-3D-Unveiling-and-Resolving-Ego-Motion-Ambiguity-in-Vision-Language-Models.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents.gui",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lei Zhang",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Dyn-3D: Unveiling and Resolving Ego-Motion Ambiguity in Vision-Language Models",
+        "url": "papers/2026-09-01/2609.01059v1-Dyn-3D-Unveiling-and-Resolving-Ego-Motion-Ambiguity-in-Vision-Language-Models.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents.gui",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Manyu Xiong",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Dyn-3D: Unveiling and Resolving Ego-Motion Ambiguity in Vision-Language Models",
+        "url": "papers/2026-09-01/2609.01059v1-Dyn-3D-Unveiling-and-Resolving-Ego-Motion-Ambiguity-in-Vision-Language-Models.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents.gui",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hongbo Jin",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Dyn-3D: Unveiling and Resolving Ego-Motion Ambiguity in Vision-Language Models",
+        "url": "papers/2026-09-01/2609.01059v1-Dyn-3D-Unveiling-and-Resolving-Ego-Motion-Ambiguity-in-Vision-Language-Models.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents.gui",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Haoran Tang",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Dyn-3D: Unveiling and Resolving Ego-Motion Ambiguity in Vision-Language Models",
+        "url": "papers/2026-09-01/2609.01059v1-Dyn-3D-Unveiling-and-Resolving-Ego-Motion-Ambiguity-in-Vision-Language-Models.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents.gui",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hongbo Zhang",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Dyn-3D: Unveiling and Resolving Ego-Motion Ambiguity in Vision-Language Models",
+        "url": "papers/2026-09-01/2609.01059v1-Dyn-3D-Unveiling-and-Resolving-Ego-Motion-Ambiguity-in-Vision-Language-Models.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents.gui",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Changen Zhu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Dyn-3D: Unveiling and Resolving Ego-Motion Ambiguity in Vision-Language Models",
+        "url": "papers/2026-09-01/2609.01059v1-Dyn-3D-Unveiling-and-Resolving-Ego-Motion-Ambiguity-in-Vision-Language-Models.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents.gui",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Wenbo Xing",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Dyn-3D: Unveiling and Resolving Ego-Motion Ambiguity in Vision-Language Models",
+        "url": "papers/2026-09-01/2609.01059v1-Dyn-3D-Unveiling-and-Resolving-Ego-Motion-Ambiguity-in-Vision-Language-Models.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "ai-agents.gui",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zhuoheng Li",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Feedback-Assisted Trust Propagation over Document Relation Graphs for Retrieval-Augmented Generation",
+        "url": "papers/2026-09-01/2609.00543v1-Feedback-Assisted-Trust-Propagation-over-Document-Relation-Graphs-for-Retrieval-.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ying Chen",
+    "paper_count": 1,
+    "topics": [
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Feedback-Assisted Trust Propagation over Document Relation Graphs for Retrieval-Augmented Generation",
+        "url": "papers/2026-09-01/2609.00543v1-Feedback-Assisted-Trust-Propagation-over-Document-Relation-Graphs-for-Retrieval-.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Raul Ortega",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "From Terminology to Diagrams: Visual-Instruction Generation for Scientific Diagram Understanding",
+        "url": "papers/2026-09-01/2609.00948v1-From-Terminology-to-Diagrams-Visual-Instruction-Generation-for-Scientific-Diagra.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jos\u00e9 Manuel G\u00f3mez-P\u00e9rez",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "From Terminology to Diagrams: Visual-Instruction Generation for Scientific Diagram Understanding",
+        "url": "papers/2026-09-01/2609.00948v1-From-Terminology-to-Diagrams-Visual-Instruction-Generation-for-Scientific-Diagra.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "llm-reasoning",
+          "rag-retrieval"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Matteo Merler",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Selective Agent Guidance via Entropy: Learning Autonomous Policies from Imperfect VLM Teachers",
+        "url": "papers/2026-09-01/2609.01567v1-Selective-Agent-Guidance-via-Entropy-Learning-Autonomous-Policies-from-Imperfect.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents",
+          "ai-agents.gui",
+          "llm-reasoning",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Giovanni Bonetta",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Selective Agent Guidance via Entropy: Learning Autonomous Policies from Imperfect VLM Teachers",
+        "url": "papers/2026-09-01/2609.01567v1-Selective-Agent-Guidance-via-Entropy-Learning-Autonomous-Policies-from-Imperfect.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents",
+          "ai-agents.gui",
+          "llm-reasoning",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Davide Zago",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Selective Agent Guidance via Entropy: Learning Autonomous Policies from Imperfect VLM Teachers",
+        "url": "papers/2026-09-01/2609.01567v1-Selective-Agent-Guidance-via-Entropy-Learning-Autonomous-Policies-from-Imperfect.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents",
+          "ai-agents.gui",
+          "llm-reasoning",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Rossella Cancelliere",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Selective Agent Guidance via Entropy: Learning Autonomous Policies from Imperfect VLM Teachers",
+        "url": "papers/2026-09-01/2609.01567v1-Selective-Agent-Guidance-via-Entropy-Learning-Autonomous-Policies-from-Imperfect.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents",
+          "ai-agents.gui",
+          "llm-reasoning",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bernardo Magnini",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Selective Agent Guidance via Entropy: Learning Autonomous Policies from Imperfect VLM Teachers",
+        "url": "papers/2026-09-01/2609.01567v1-Selective-Agent-Guidance-via-Entropy-Learning-Autonomous-Policies-from-Imperfect.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents",
+          "ai-agents.gui",
+          "llm-reasoning",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Minsik Choi",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Text Capability Loss in Vision-Language Adaptation: An Attention-Sink Diagnosis",
+        "url": "papers/2026-09-01/2609.00746v1-Text-Capability-Loss-in-Vision-Language-Adaptation-An-Attention-Sink-Diagnosis.html",
+        "date": "2026-09-01",
+        "topics": [
+          "llm-reasoning",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Young Geun Kim",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal"
+    ],
+    "papers": [
+      {
+        "title": "Text Capability Loss in Vision-Language Adaptation: An Attention-Sink Diagnosis",
+        "url": "papers/2026-09-01/2609.00746v1-Text-Capability-Loss-in-Vision-Language-Adaptation-An-Attention-Sink-Diagnosis.html",
+        "date": "2026-09-01",
+        "topics": [
+          "llm-reasoning",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yi Chen",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.multi-agent",
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Reinforcement Learning Enhanced LLM Agents for Complex Vehicle Routing Problems",
+        "url": "papers/2026-09-01/2609.00859v1-Reinforcement-Learning-Enhanced-LLM-Agents-for-Complex-Vehicle-Routing-Problems.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "rag-retrieval",
+          "ai-agents.multi-agent"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zikang Yu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.multi-agent",
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Reinforcement Learning Enhanced LLM Agents for Complex Vehicle Routing Problems",
+        "url": "papers/2026-09-01/2609.00859v1-Reinforcement-Learning-Enhanced-LLM-Agents-for-Complex-Vehicle-Routing-Problems.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "rag-retrieval",
+          "ai-agents.multi-agent"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jiahai Wang",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.multi-agent",
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Reinforcement Learning Enhanced LLM Agents for Complex Vehicle Routing Problems",
+        "url": "papers/2026-09-01/2609.00859v1-Reinforcement-Learning-Enhanced-LLM-Agents-for-Complex-Vehicle-Routing-Problems.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "rag-retrieval",
+          "ai-agents.multi-agent"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jinbiao Chen",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.multi-agent",
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Reinforcement Learning Enhanced LLM Agents for Complex Vehicle Routing Problems",
+        "url": "papers/2026-09-01/2609.00859v1-Reinforcement-Learning-Enhanced-LLM-Agents-for-Complex-Vehicle-Routing-Problems.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "rag-retrieval",
+          "ai-agents.multi-agent"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jianpeng Zhou",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.multi-agent",
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Reinforcement Learning Enhanced LLM Agents for Complex Vehicle Routing Problems",
+        "url": "papers/2026-09-01/2609.00859v1-Reinforcement-Learning-Enhanced-LLM-Agents-for-Complex-Vehicle-Routing-Problems.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "rag-retrieval",
+          "ai-agents.multi-agent"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zizhen Zhang",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.multi-agent",
+      "llm-reasoning",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "Reinforcement Learning Enhanced LLM Agents for Complex Vehicle Routing Problems",
+        "url": "papers/2026-09-01/2609.00859v1-Reinforcement-Learning-Enhanced-LLM-Agents-for-Complex-Vehicle-Routing-Problems.html",
+        "date": "2026-09-01",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "rag-retrieval",
+          "ai-agents.multi-agent"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Debanjan Mahata",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "MIDR: Enrichment-Augmented Indexing for Multimodal Document Retrieval",
+        "url": "papers/2026-09-01/2609.01316v1-MIDR-Enrichment-Augmented-Indexing-for-Multimodal-Document-Retrieval.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Atharva Tendle",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "MIDR: Enrichment-Augmented Indexing for Multimodal Document Retrieval",
+        "url": "papers/2026-09-01/2609.01316v1-MIDR-Enrichment-Augmented-Indexing-for-Multimodal-Document-Retrieval.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Daniel Preotiuc-Pietro",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "MIDR: Enrichment-Augmented Indexing for Multimodal Document Retrieval",
+        "url": "papers/2026-09-01/2609.01316v1-MIDR-Enrichment-Augmented-Indexing-for-Multimodal-Document-Retrieval.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yong Zhuang",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "MIDR: Enrichment-Augmented Indexing for Multimodal Document Retrieval",
+        "url": "papers/2026-09-01/2609.01316v1-MIDR-Enrichment-Augmented-Indexing-for-Multimodal-Document-Retrieval.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval",
+          "llm-reasoning"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ozan Irsoy",
+    "paper_count": 1,
+    "topics": [
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "MIDR: Enrichment-Augmented Indexing for Multimodal Document Retrieval",
+        "url": "papers/2026-09-01/2609.01316v1-MIDR-Enrichment-Augmented-Indexing-for-Multimodal-Document-Retrieval.html",
+        "date": "2026-09-01",
+        "topics": [
+          "multi-modal",
+          "rag-retrieval",
+          "llm-reasoning"
         ]
       }
     ]
@@ -10539,6 +14504,781 @@ const authorsData = [
           "llm-reasoning",
           "multi-modal",
           "ai-agents.gui"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Venus Team",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zhuohan Cai",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Haoxing Chen",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jiaxuan Chen",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Weizhi Chen",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Changlong Gao",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zhangxuan Gu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yuan Guo",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yusong Hu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jianrong Jiang",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jianguo Li",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Runze Li",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Jinzhen Lin",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zhenyu Ma",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Changhua Meng",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Han Peng",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Xinyu Qiu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shuheng Shen",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zhongyi Shui",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Weiqiang Wang",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ming Wen",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zhuoer Xu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hang Yan",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kaiwen Yang",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ruilin Yao",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Nanjun Yu",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zhengwen Zeng",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lianrui Zhang",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yunzhu Zhang",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zhe Zhao",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Beitong Zhou",
+    "paper_count": 1,
+    "topics": [
+      "ai-agents",
+      "ai-agents.gui",
+      "llm-reasoning",
+      "multi-modal",
+      "rag-retrieval"
+    ],
+    "papers": [
+      {
+        "title": "UI-Venus-2 Technical Report",
+        "url": "papers/2026-08-27/2609.00028v1-UI-Venus-2-Technical-Report.html",
+        "date": "2026-08-27",
+        "topics": [
+          "ai-agents",
+          "llm-reasoning",
+          "ai-agents.gui",
+          "rag-retrieval",
+          "multi-modal"
         ]
       }
     ]
