@@ -437,14 +437,24 @@ python3 inject_wikilinks.py
 - Status: Draft (To Be Submitted)
 - Date: September 2, 2026
 - Keywords: learner-in-the-loop, AI wiki, knowledge construction, writing-to-learn, metacognition, self-regulated learning, cognitive offloading, epistemic agency
-- This paper provides the theoretical foundation for the entire platform design
+- **Core Contribution**: Design framework for educational GenAI that positions AI as metacognitive scaffold rather than substitute knowledge producer
+- **Research Questions**: 
+  - RQ1: How to design learner-in-the-loop AI wiki supporting knowledge construction while maintaining learner agency?
+  - RQ2: To what extent does the AI Wiki Companion support students' knowledge construction and conceptual understanding?
+  - RQ3: How do learners evaluate and act upon AI-generated scaffolding during knowledge artefact construction?
+  - RQ4: How do students perceive the usefulness of AI-supported reflection, feedback, and knowledge linking?
+- **Theoretical Foundation**: Writing-to-learn, metacognition, self-regulated learning, personal knowledge management, human-in-the-loop AI
+- **Design Principles**: DP1 Learner Ownership, DP2 Scaffold Rather Than Substitute, DP3 Reflection Before Correction, DP4 Continuous Knowledge Integration
+- **Five-Stage Cycle**: Construct → Reflect → Scaffold → Consolidate & Apply → Revisit & Extend
+- **Interaction Model**: Prompt Before Provide
+- **Evaluation Framework**: Mixed-method formative study examining conceptual understanding, knowledge artefact quality, learner response to AI scaffolding, and perceived usefulness
 
-## Current Stats (Sep 1, 2026)
+## Current Stats (Sep 2, 2026)
 
-- **77 papers** tracked from arXiv
-- **346 authors** indexed
-- **123 pages** rendered (up from 119)
-- **113 search index items** (77 papers + 14 wiki terms + 4 topics + 2 concepts + 16 pages)
+- **133 papers** tracked from arXiv (47 daily batches)
+- **851 authors** indexed
+- **123 pages** rendered
+- **119 search index items** (77 papers + 27 wiki terms + 4 topics + 2 concepts + 16 pages)
 - **34 graph nodes** (4 topics + 18 terms + 12 papers)
 - **67 graph connections**
 - **23 wiki terms** injected across 75+ files
@@ -452,50 +462,48 @@ python3 inject_wikilinks.py
 - **2 main sections**: Research Portal (Researcher/Admin), Internal Part (Architecture/Engineering)
 - **Live at**: http://100.64.0.17:8001
 
-## Recent Enhancements (Sep 1, 2026)
+## Recent Enhancements (Sep 2, 2026)
 
-### Navigation Reorganization ✅
-- **Two-Part Structure**: Research Portal (Researcher/Admin) + Internal Part (Architecture/Engineering)
-- **Dashboard**: Unified hub with External + Internal selection cards
-- **External Hub**: Consolidated Researcher and Admin tools with clear sections
-- **Internal Hub**: System architecture documentation with interactive UML diagrams
-- **Link Verification**: All 36 internal links confirmed accessible (HTTP 200)
+### UI/UX Learning Workflow - All 5 Phases Complete ✅
 
-### Phase 1: Bidirectional Linking ✅
-- Backlinks panel with connection count badge
-- Auto-indexing of term relationships
-- Grouped display (terms, papers, contributions)
-- Context previews and click-to-navigate
+**Phase 1: Navigation Restructure**
+- Updated `_quarto.yml` with learning-centric navigation
+- Tested all links work
+- Updated landing page
 
-### Phase 2: Interactive Knowledge Graph ✅
-- D3.js force-directed graph (34 nodes, 67 links)
-- Zoom, pan, click-to-focus, drag
-- Filter by type (term, paper, topic)
-- Search and detail panel
+**Phase 2: Learning Journey Page**
+- Created `learning-journey.md` with 5-stage visual path
+- Added progress tracking and stage completion indicators
+- Implemented color-coded stage navigation
 
-### Phase 3: WikiLink Syntax ✅
-- Auto-injection of 23 wiki terms
-- Token-based approach (preserves HTML)
-- Clickable spans across 75+ files
+**Phase 3: Wiki as Learning Entry Point**
+- Added "Start Learning" hero section with progress stats
+- Enhanced AI Companion visibility (4 modes: Write/Review/Coach/Update)
+- Added learning progress indicators (terms explored, explanations written, mastery levels)
+- Implemented "Continue Learning" feature
 
-### Phase 4: Global Search ✅
-- Fuzzy search with relevance scoring
-- Multi-term search with category filters
-- Cmd/Ctrl+K keyboard shortcut
-- 113 items indexed (papers, wiki, topics, concepts, pages)
+**Phase 4: Progress Dashboard**
+- Enhanced dashboard with 6 learning metrics cards
+- Added 5-stage completion visualization with progress bars
+- Implemented 28-day learning streak counter with heatmap
+- Added achievement badge system (8 unlockable achievements)
 
-### System Architecture Documentation ✅
-- Comprehensive `SYSTEM_ARCHITECTURE.md` (14KB)
-- Interactive UML diagrams (`system-architecture.md`)
-  - Component diagram
-  - Sequence diagram (automation pipeline)
-  - Class diagram (Python modules)
-  - Data flow diagram
-  - Deployment diagram
+**Phase 5: Stage Transition Navigation**
+- Created `js/stage-navigation.js` component
+- Added breadcrumbs showing current learning stage
+- Implemented "Next Step" buttons guiding to next stage
+- Added contextual tool recommendations
+- Integrated into 6 key pages (wiki, highlights, ai-wiki, spaced-repetition, takeaways, questions)
 
-### UI/UX Refinement (Sep 1, 2026) ✅
-- **External Hub**: Interactive 5-phase workflow visualization (Discovery → Screening → Reading → Synthesis → Citation)
-- **Internal Hub**: 8-layer architecture diagram, component relationships, data flow pipeline, tech stack visualization
-- **Dashboard**: Enhanced with feature highlights and quick stats
-- **UI Refinement Summary**: Comprehensive documentation of all refinements
+### System Maintenance
+- Rebuilt search index: 119 items (up from 5)
+- Updated statistics dashboard: 133 papers
+- Generated authors page: 851 authors
+- Updated tag cloud: 77 papers indexed
+
+### Conference Paper Alignment
+- Updated `AGENTS.md` with full paper details
+- Added research questions (RQ1-RQ4)
+- Documented design principles and 5-stage cycle
+- Linked implementation status to paper framework
 - **Total Pages**: 124 (up from 123)

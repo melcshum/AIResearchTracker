@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Knowledge Graph – AI Research Tracker</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6191c8c4c757b97205a8995aa6c30869.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+  }
+</style>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">AI Research Tracker</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../public/learning-journey.html"> 
+<span class="menu-text">🎓 Learning Journey</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-write" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">✍️ Write</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-write">    
+        <li>
+    <a class="dropdown-item" href="../public/wiki.html">
+ <span class="dropdown-text">📖 AI Wiki</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/paper-reader.html">
+ <span class="dropdown-text">📄 Paper Reader</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/workspace.html">
+ <span class="dropdown-text">🔬 Research Workspace</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-review" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🔍 Review</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-review">    
+        <li>
+    <a class="dropdown-item" href="../public/highlights.html">
+ <span class="dropdown-text">✨ Highlights</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/takeaways.html">
+ <span class="dropdown-text">💡 Takeaways</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/questions.html">
+ <span class="dropdown-text">❓ Questions</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-enhance" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🤖 Enhance</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-enhance">    
+        <li>
+    <a class="dropdown-item" href="../public/ai-wiki.html">
+ <span class="dropdown-text">💬 AI Wiki Assistant</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/ai-study-guide.html">
+ <span class="dropdown-text">🎓 AI Study Guide</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/feedback-dashboard.html">
+ <span class="dropdown-text">📊 Feedback Dashboard</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-attain" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🧠 Attain</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-attain">    
+        <li>
+    <a class="dropdown-item" href="../public/spaced-repetition.html">
+ <span class="dropdown-text">🔄 Spaced Repetition</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/my-learning-path.html">
+ <span class="dropdown-text">🎯 Learning Path</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/recommendations.html">
+ <span class="dropdown-text">💡 Recommendations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-update" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">📈 Update</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-update">    
+        <li>
+    <a class="dropdown-item" href="../public/digests/index.html">
+ <span class="dropdown-text">📰 Weekly Digest</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/search-papers.html">
+ <span class="dropdown-text">📚 Paper Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/timeline.html">
+ <span class="dropdown-text">📅 Timeline</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/conference-papers/ai-wiki-companion-2026.html">
+ <span class="dropdown-text">📄 Conference Papers</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">⚙️ Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../public/research-goals.html">
+ <span class="dropdown-text">🎯 Research Goals</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/export-import.html">
+ <span class="dropdown-text">💾 Export/Import</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/citation-graph.html">
+ <span class="dropdown-text">🕸️ Citation Graph</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/collections.html">
+ <span class="dropdown-text">📁 Collections</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../private/index.html">
+ <span class="dropdown-text">🔧 Admin Dashboard</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Knowledge Graph</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="kg-container">
+<div class="kg-header">
+<h2 class="anchored">
+🕸️ Knowledge Graph
+</h2>
+<p class="kg-subtitle">
+Interactive visualization of connections between concepts, papers, and research areas
+</p>
+<div class="kg-toolbar">
+<div class="kg-filters">
+<button class="kg-filter active" data-filter="all" onclick="filterGraph('all')">
+All
+</button>
+<button class="kg-filter" data-filter="term" onclick="filterGraph('term')">
+📚 Terms
+</button>
+<button class="kg-filter" data-filter="paper" onclick="filterGraph('paper')">
+📄 Papers
+</button>
+<button class="kg-filter" data-filter="topic" onclick="filterGraph('topic')">
+🏷️ Topics
+</button>
+</div>
+<div class="kg-controls">
+<p><input type="text" id="graphSearch" placeholder="🔍 Search nodes..." onkeyup="searchGraph()"> <button class="kg-btn" onclick="resetView()">↺ Reset</button> <button class="kg-btn" onclick="toggleLabels()">🏷️ Labels</button> <button class="kg-btn" onclick="toggleForce()">⚡ Physics</button></p>
+</div>
+</div>
+</div>
+<div class="kg-main">
+<div class="kg-canvas-wrap">
+<div id="graphCanvas" class="kg-canvas">
+
+</div>
+<div class="kg-legend">
+<div class="legend-row">
+<span class="legend-circle term"></span> Wiki Term
+</div>
+<div class="legend-row">
+<span class="legend-circle paper"></span> Paper
+</div>
+<div class="legend-row">
+<span class="legend-circle topic"></span> Topic
+</div>
+<div class="legend-row">
+<span class="legend-line-strong"></span> Strong link
+</div>
+<div class="legend-row">
+<span class="legend-line-weak"></span> Weak link
+</div>
+</div>
+<div class="kg-stats">
+<p><span id="nodeCount">0 nodes</span> · <span id="linkCount">0 links</span></p>
+</div>
+</div>
+<div class="kg-sidebar">
+<div id="nodePanel" class="kg-panel">
+<h3 class="anchored">
+📌 Node Details
+</h3>
+<div id="nodeDetails" class="kg-details">
+<p class="kg-hint">
+Click any node to explore
+</p>
+</div>
+</div>
+<div id="connectionsPanel" class="kg-panel">
+<h3 class="anchored">
+🔗 Connections
+</h3>
+<div id="connectionsList" class="kg-connections">
+<p class="kg-hint">
+Select a node to see connections
+</p>
+</div>
+</div>
+<div id="navigatePanel" class="kg-panel">
+<h3 class="anchored">
+🧭 Navigate
+</h3>
+<div id="navigateList" class="kg-navigate">
+<p class="kg-hint">
+Jump to any node
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<style>
+.kg-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.kg-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.kg-header h2 {
+  font-size: 2rem;
+  color: #1a1a2e;
+  margin-bottom: 8px;
+}
+
+.kg-subtitle {
+  color: #666;
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+}
+
+.kg-toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.kg-filters {
+  display: flex;
+  gap: 6px;
+  background: #f0f2f5;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.kg-filter {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #555;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.kg-filter:hover { background: rgba(255,255,255,0.6); }
+.kg-filter.active { background: white; color: #667eea; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+
+.kg-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#graphSearch {
+  padding: 8px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 13px;
+  width: 180px;
+  transition: border-color 0.2s;
+}
+
+#graphSearch:focus { border-color: #667eea; outline: none; }
+
+.kg-btn {
+  padding: 8px 14px;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  background: white;
+  color: #667eea;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.kg-btn:hover { background: #667eea; color: white; }
+
+.kg-main {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+  min-height: 650px;
+}
+
+.kg-canvas-wrap {
+  position: relative;
+  background: linear-gradient(135deg, #f8f9ff 0%, #eef1ff 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(102,126,234,0.12);
+  overflow: hidden;
+}
+
+.kg-canvas {
+  width: 100%;
+  height: 650px;
+}
+
+.kg-canvas svg {
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+
+.kg-canvas svg:active { cursor: grabbing; }
+
+.kg-legend {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  font-size: 12px;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  color: #555;
+}
+
+.legend-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legend-circle.term { background: #667eea; }
+.legend-circle.paper { background: #f093fb; }
+.legend-circle.topic { background: #4facfe; }
+
+.legend-line-strong {
+  width: 20px;
+  height: 3px;
+  background: #667eea;
+  border-radius: 2px;
+}
+
+.legend-line-weak {
+  width: 20px;
+  height: 1px;
+  background: #aaa;
+}
+
+.kg-stats {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255,255,255,0.9);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+.kg-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.kg-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.kg-panel h3 {
+  margin: 0 0 12px 0;
+  color: #1a1a2e;
+  font-size: 1rem;
+}
+
+.kg-details, .kg-connections, .kg-navigate {
+  min-height: 80px;
+}
+
+.kg-hint {
+  color: #999;
+  font-style: italic;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 13px;
+}
+
+.kg-detail-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 8px;
+}
+
+.kg-detail-type {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.kg-detail-type.term { background: #667eea; }
+.kg-detail-type.paper { background: #f093fb; }
+.kg-detail-type.topic { background: #4facfe; }
+
+.kg-detail-def {
+  color: #555;
+  line-height: 1.6;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.kg-detail-meta {
+  font-size: 12px;
+  color: #888;
+}
+
+.kg-conn-item {
+  padding: 10px 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-left: 3px solid #667eea;
+}
+
+.kg-conn-item:hover {
+  background: #eef1ff;
+  transform: translateX(4px);
+}
+
+.kg-conn-title {
+  font-weight: 600;
+  font-size: 13px;
+  color: #2c3e50;
+}
+
+.kg-conn-rel {
+  font-size: 11px;
+  color: #999;
+  margin-top: 2px;
+}
+
+.kg-nav-item {
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-size: 13px;
+  color: #444;
+}
+
+.kg-nav-item:hover {
+  background: #667eea;
+  color: white;
+}
+
+/* SVG node/link styles */
+.graph-node { cursor: pointer; }
+.graph-node circle {
+  transition: all 0.2s;
+  stroke: white;
+  stroke-width: 2px;
+}
+.graph-node:hover circle {
+  stroke: #1a1a2e;
+  stroke-width: 3px;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+}
+.graph-node.selected circle {
+  stroke: #ff6b6b;
+  stroke-width: 3px;
+  filter: drop-shadow(0 0 8px rgba(255,107,107,0.5));
+}
+.graph-node.dimmed { opacity: 0.15; }
+.graph-node.highlighted circle {
+  stroke: #ffd93d;
+  stroke-width: 3px;
+}
+
+.graph-label {
+  font-size: 11px;
+  font-weight: 600;
+  fill: #2c3e50;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.graph-link {
+  stroke: #b0b8d1;
+  stroke-opacity: 0.5;
+  transition: stroke-opacity 0.2s;
+}
+
+.graph-link.strong { stroke-width: 2.5px; stroke: #667eea; stroke-opacity: 0.6; }
+.graph-link.weak { stroke-width: 1px; stroke-dasharray: 4,4; }
+.graph-link.dimmed { stroke-opacity: 0.05; }
+.graph-link.highlighted { stroke: #ffd93d; stroke-opacity: 0.9; stroke-width: 3px; }
+
+@media (max-width: 1024px) {
+  .kg-main { grid-template-columns: 1fr; }
+  .kg-canvas { height: 450px; }
+}
+</style>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+// ============================================================
+// KNOWLEDGE GRAPH — Full interactive force-directed visualization
+// ============================================================
+
+let graphNodes = [];
+let graphLinks = [];
+let simulation = null;
+let svg, g, linkSel, nodeSel, labelSel;
+let zoomBehavior;
+let showLabels = true;
+let physicsActive = true;
+let selectedNode = null;
+let currentFilter = 'all';
+
+// Color palette
+const COLORS = {
+  term: '#667eea',
+  paper: '#f093fb',
+  topic: '#4facfe',
+  link: '#b0b8d1',
+  linkStrong: '#667eea',
+  highlight: '#ffd93d',
+  selected: '#ff6b6b'
+};
+
+// Size by connection count
+function nodeRadius(d) {
+  const conns = graphLinks.filter(l =>
+    (l.source.id || l.source) === d.id || (l.target.id || l.target) === d.id
+  ).length;
+  if (d.type === 'topic') return 28 + conns * 2;
+  if (d.type === 'term') return 18 + conns * 1.5;
+  return 12 + conns;
+}
+
+// ---- DATA: Build from wiki terms + papers ----
+function buildGraphData() {
+  const nodes = [];
+  const links = [];
+  const nodeIds = new Set();
+
+  // Topic nodes
+  const topics = [
+    { id: 'topic-agents', label: 'AI Agents', type: 'topic', definition: 'Autonomous systems that perceive, reason, and act to achieve goals' },
+    { id: 'topic-reasoning', label: 'LLM Reasoning', type: 'topic', definition: 'Chain-of-thought, self-consistency, and verification techniques' },
+    { id: 'topic-rag', label: 'RAG & Retrieval', type: 'topic', definition: 'Dense retrieval, hybrid search, and knowledge grounding' },
+    { id: 'topic-multimodal', label: 'Multi-Modal', type: 'topic', definition: 'Vision-language models and cross-modal reasoning' }
+  ];
+  topics.forEach(t => { nodes.push(t); nodeIds.add(t.id); });
+
+  // Wiki terms
+  const terms = [
+    { id: 'ai-agent', label: 'AI Agent', type: 'term', definition: 'Autonomous system that perceives, reasons, and acts' },
+    { id: 'llm', label: 'LLM', type: 'term', definition: 'Large Language Model — core reasoning engine' },
+    { id: 'rag', label: 'RAG', type: 'term', definition: 'Retrieval-Augmented Generation' },
+    { id: 'reasoning', label: 'Reasoning', type: 'term', definition: 'Step-by-step problem solving and logical inference' },
+    { id: 'tool-use', label: 'Tool Use', type: 'term', definition: 'Invoking external functions and APIs' },
+    { id: 'planning', label: 'Planning', type: 'term', definition: 'Decomposing goals into action sequences' },
+    { id: 'retrieval', label: 'Retrieval', type: 'term', definition: 'Finding relevant information from knowledge bases' },
+    { id: 'dense-retrieval', label: 'Dense Retrieval', type: 'term', definition: 'Semantic search with vector embeddings' },
+    { id: 'multi-agent', label: 'Multi-Agent', type: 'term', definition: 'Multiple agents collaborating on complex tasks' },
+    { id: 'memory', label: 'Memory', type: 'term', definition: 'Storing and retrieving context across interactions' },
+    { id: 'cot', label: 'Chain-of-Thought', type: 'term', definition: 'Step-by-step reasoning prompting technique' },
+    { id: 'self-consistency', label: 'Self-Consistency', type: 'term', definition: 'Sampling multiple reasoning paths for verification' },
+    { id: 'verification', label: 'Verification', type: 'term', definition: 'Checking correctness of generated outputs' },
+    { id: 'embedding', label: 'Embeddings', type: 'term', definition: 'Dense vector representations of text/images' },
+    { id: 'reranking', label: 'Reranking', type: 'term', definition: 'Re-scoring retrieved results for relevance' },
+    { id: 'hallucination', label: 'Hallucination', type: 'term', definition: 'Generating factually incorrect information' },
+    { id: 'grounding', label: 'Grounding', type: 'term', definition: 'Connecting outputs to verifiable sources' },
+    { id: 'vision-lang', label: 'Vision-Language', type: 'term', definition: 'Models processing both images and text' }
+  ];
+  terms.forEach(t => { nodes.push(t); nodeIds.add(t.id); });
+
+  // Topic → term links
+  links.push({ source: 'topic-agents', target: 'ai-agent', strength: 'strong' });
+  links.push({ source: 'topic-agents', target: 'tool-use', strength: 'strong' });
+  links.push({ source: 'topic-agents', target: 'planning', strength: 'strong' });
+  links.push({ source: 'topic-agents', target: 'multi-agent', strength: 'strong' });
+  links.push({ source: 'topic-agents', target: 'memory', strength: 'weak' });
+  links.push({ source: 'topic-reasoning', target: 'reasoning', strength: 'strong' });
+  links.push({ source: 'topic-reasoning', target: 'cot', strength: 'strong' });
+  links.push({ source: 'topic-reasoning', target: 'self-consistency', strength: 'strong' });
+  links.push({ source: 'topic-reasoning', target: 'verification', strength: 'strong' });
+  links.push({ source: 'topic-reasoning', target: 'llm', strength: 'strong' });
+  links.push({ source: 'topic-rag', target: 'rag', strength: 'strong' });
+  links.push({ source: 'topic-rag', target: 'retrieval', strength: 'strong' });
+  links.push({ source: 'topic-rag', target: 'dense-retrieval', strength: 'strong' });
+  links.push({ source: 'topic-rag', target: 'reranking', strength: 'strong' });
+  links.push({ source: 'topic-rag', target: 'embedding', strength: 'strong' });
+  links.push({ source: 'topic-rag', target: 'grounding', strength: 'weak' });
+  links.push({ source: 'topic-multimodal', target: 'vision-lang', strength: 'strong' });
+  links.push({ source: 'topic-multimodal', target: 'embedding', strength: 'weak' });
+
+  // Term → term links
+  links.push({ source: 'ai-agent', target: 'llm', strength: 'strong' });
+  links.push({ source: 'ai-agent', target: 'tool-use', strength: 'strong' });
+  links.push({ source: 'ai-agent', target: 'planning', strength: 'strong' });
+  links.push({ source: 'ai-agent', target: 'reasoning', strength: 'strong' });
+  links.push({ source: 'ai-agent', target: 'memory', strength: 'strong' });
+  links.push({ source: 'rag', target: 'retrieval', strength: 'strong' });
+  links.push({ source: 'rag', target: 'llm', strength: 'strong' });
+  links.push({ source: 'rag', target: 'grounding', strength: 'strong' });
+  links.push({ source: 'rag', target: 'hallucination', strength: 'weak' });
+  links.push({ source: 'retrieval', target: 'dense-retrieval', strength: 'strong' });
+  links.push({ source: 'retrieval', target: 'embedding', strength: 'strong' });
+  links.push({ source: 'retrieval', target: 'reranking', strength: 'strong' });
+  links.push({ source: 'reasoning', target: 'cot', strength: 'strong' });
+  links.push({ source: 'reasoning', target: 'self-consistency', strength: 'strong' });
+  links.push({ source: 'reasoning', target: 'planning', strength: 'strong' });
+  links.push({ source: 'reasoning', target: 'verification', strength: 'strong' });
+  links.push({ source: 'multi-agent', target: 'ai-agent', strength: 'strong' });
+  links.push({ source: 'multi-agent', target: 'planning', strength: 'weak' });
+  links.push({ source: 'memory', target: 'retrieval', strength: 'strong' });
+  links.push({ source: 'memory', target: 'embedding', strength: 'weak' });
+  links.push({ source: 'cot', target: 'self-consistency', strength: 'strong' });
+  links.push({ source: 'verification', target: 'hallucination', strength: 'weak' });
+  links.push({ source: 'grounding', target: 'hallucination', strength: 'strong' });
+  links.push({ source: 'vision-lang', target: 'embedding', strength: 'strong' });
+  links.push({ source: 'llm', target: 'hallucination', strength: 'weak' });
+  links.push({ source: 'llm', target: 'cot', strength: 'strong' });
+
+  // Paper nodes (key papers)
+  const papers = [
+    { id: 'p-260827508', label: 'WM-R1', type: 'paper', arxiv: '2608.27508', definition: 'Training GUI Agents to Reason with World Models' },
+    { id: 'p-260827475', label: 'HER Agent', type: 'paper', arxiv: '2608.27475', definition: 'Hypothesize-Evaluate-Refine: A Scientific Agent' },
+    { id: 'p-260827471', label: 'RAG Fallacies', type: 'paper', arxiv: '2608.27471', definition: 'Retrieving Relations & Detecting Fallacies via RAG' },
+    { id: 'p-260827963', label: 'SABER', type: 'paper', arxiv: '2608.27963', definition: 'Stability-Aware Early Exit for LLM Reasoning' },
+    { id: 'p-260827869', label: 'Multimodal PDE', type: 'paper', arxiv: '2608.27869', definition: 'See-Hypothesize-Validate: Multimodal Agentic Framework' },
+    { id: 'p-260827646', label: 'Angel Agents', type: 'paper', arxiv: '2608.27646', definition: 'If Agents Were Angels: No Governance Would Be Necessary' },
+    { id: 'p-260827524', label: 'SETU', type: 'paper', arxiv: '2608.27524', definition: 'Agentic Ecosystem for Multilingual Personalization' },
+    { id: 'p-260827919', label: 'Docs→Reasoning', type: 'paper', arxiv: '2608.27919', definition: 'From Documents to Reasoning: Validated Synthetic Data' },
+    { id: 'p-260827484', label: 'CareGraph', type: 'paper', arxiv: '2608.27484', definition: 'Auditable Hybrid AI for Evidence-Based Care' },
+    { id: 'p-260722319', label: 'Naïve→Agentic RAG', type: 'paper', arxiv: '2607.22319', definition: 'Trustworthy and Cost-Efficient: Naïve RAG to Agentic' },
+    { id: 'p-260827809', label: 'LINE-Conv', type: 'paper', arxiv: '2608.27809', definition: 'Conversation History Retrieval for Personal Memory RAG' },
+    { id: 'p-260828389', label: 'CamoDocs', type: 'paper', arxiv: '2608.28389', definition: 'Poisoning Attack Against Retrieval-Augmented Language Models' }
+  ];
+  papers.forEach(p => { nodes.push(p); nodeIds.add(p.id); });
+
+  // Paper → term links
+  links.push({ source: 'p-260827508', target: 'ai-agent', strength: 'strong' });
+  links.push({ source: 'p-260827508', target: 'reasoning', strength: 'strong' });
+  links.push({ source: 'p-260827508', target: 'vision-lang', strength: 'strong' });
+  links.push({ source: 'p-260827475', target: 'ai-agent', strength: 'strong' });
+  links.push({ source: 'p-260827475', target: 'reasoning', strength: 'strong' });
+  links.push({ source: 'p-260827475', target: 'verification', strength: 'strong' });
+  links.push({ source: 'p-260827471', target: 'rag', strength: 'strong' });
+  links.push({ source: 'p-260827471', target: 'retrieval', strength: 'strong' });
+  links.push({ source: 'p-260827471', target: 'reasoning', strength: 'weak' });
+  links.push({ source: 'p-260827963', target: 'reasoning', strength: 'strong' });
+  links.push({ source: 'p-260827963', target: 'llm', strength: 'strong' });
+  links.push({ source: 'p-260827963', target: 'verification', strength: 'weak' });
+  links.push({ source: 'p-260827869', target: 'vision-lang', strength: 'strong' });
+  links.push({ source: 'p-260827869', target: 'multi-agent', strength: 'strong' });
+  links.push({ source: 'p-260827869', target: 'verification', strength: 'strong' });
+  links.push({ source: 'p-260827646', target: 'ai-agent', strength: 'strong' });
+  links.push({ source: 'p-260827646', target: 'multi-agent', strength: 'strong' });
+  links.push({ source: 'p-260827524', target: 'ai-agent', strength: 'strong' });
+  links.push({ source: 'p-260827524', target: 'llm', strength: 'strong' });
+  links.push({ source: 'p-260827919', target: 'rag', strength: 'strong' });
+  links.push({ source: 'p-260827919', target: 'reasoning', strength: 'strong' });
+  links.push({ source: 'p-260827484', target: 'rag', strength: 'strong' });
+  links.push({ source: 'p-260827484', target: 'grounding', strength: 'strong' });
+  links.push({ source: 'p-260722319', target: 'rag', strength: 'strong' });
+  links.push({ source: 'p-260722319', target: 'retrieval', strength: 'strong' });
+  links.push({ source: 'p-260722319', target: 'ai-agent', strength: 'strong' });
+  links.push({ source: 'p-260827809', target: 'rag', strength: 'strong' });
+  links.push({ source: 'p-260827809', target: 'memory', strength: 'strong' });
+  links.push({ source: 'p-260827809', target: 'retrieval', strength: 'strong' });
+  links.push({ source: 'p-260828389', target: 'rag', strength: 'strong' });
+  links.push({ source: 'p-260828389', target: 'retrieval', strength: 'strong' });
+  links.push({ source: 'p-260828389', target: 'hallucination', strength: 'strong' });
+
+  graphNodes = nodes;
+  graphLinks = links;
+  return { nodes, links };
+}
+
+// ---- INITIALIZE GRAPH ----
+function initGraph() {
+  const container = document.getElementById('graphCanvas');
+  const width = container.clientWidth;
+  const height = container.clientHeight || 650;
+
+  const data = buildGraphData();
+
+  svg = d3.select('#graphCanvas')
+    .append('svg')
+    .attr('width', width)
+    .attr('height', height);
+
+  // Arrow marker
+  svg.append('defs').append('marker')
+    .attr('id', 'arrowhead')
+    .attr('viewBox', '0 -5 10 10')
+    .attr('refX', 20)
+    .attr('refY', 0)
+    .attr('markerWidth', 6)
+    .attr('markerHeight', 6)
+    .attr('orient', 'auto')
+    .append('path')
+    .attr('d', 'M0,-5L10,0L0,5')
+    .attr('fill', COLORS.link);
+
+  g = svg.append('g');
+
+  // Zoom behavior
+  zoomBehavior = d3.zoom()
+    .scaleExtent([0.2, 5])
+    .on('zoom', (event) => {
+      g.attr('transform', event.transform);
+    });
+  svg.call(zoomBehavior);
+
+  // Draw links
+  linkSel = g.append('g').attr('class', 'links')
+    .selectAll('line')
+    .data(data.links)
+    .enter().append('line')
+    .attr('class', d => `graph-link ${d.strength}`)
+    .attr('stroke-width', d => d.strength === 'strong' ? 2.5 : 1);
+
+  // Draw nodes
+  nodeSel = g.append('g').attr('class', 'nodes')
+    .selectAll('g')
+    .data(data.nodes)
+    .enter().append('g')
+    .attr('class', 'graph-node')
+    .call(d3.drag()
+      .on('start', dragStarted)
+      .on('drag', dragged)
+      .on('end', dragEnded))
+    .on('click', (event, d) => {
+      event.stopPropagation();
+      selectNode(d);
+    });
+
+  nodeSel.append('circle')
+    .attr('r', d => nodeRadius(d))
+    .attr('fill', d => COLORS[d.type])
+    .attr('opacity', 0.85);
+
+  // Labels
+  labelSel = g.append('g').attr('class', 'labels')
+    .selectAll('text')
+    .data(data.nodes)
+    .enter().append('text')
+    .attr('class', 'graph-label')
+    .attr('dy', d => nodeRadius(d) + 14)
+    .text(d => d.label);
+
+  // Force simulation
+  simulation = d3.forceSimulation(data.nodes)
+    .force('link', d3.forceLink(data.links).id(d => d.id).distance(d => d.strength === 'strong' ? 80 : 140))
+    .force('charge', d3.forceManyBody().strength(-350))
+    .force('center', d3.forceCenter(width / 2, height / 2))
+    .force('collision', d3.forceCollide().radius(d => nodeRadius(d) + 10))
+    .force('x', d3.forceX(width / 2).strength(0.05))
+    .force('y', d3.forceY(height / 2).strength(0.05))
+    .on('tick', ticked);
+
+  // Click background to deselect
+  svg.on('click', () => deselectAll());
+
+  // Update stats
+  document.getElementById('nodeCount').textContent = `${data.nodes.length} nodes`;
+  document.getElementById('linkCount').textContent = `${data.links.length} links`;
+
+  // Build navigate list
+  buildNavigateList();
+}
+
+function ticked() {
+  linkSel
+    .attr('x1', d => d.source.x)
+    .attr('y1', d => d.source.y)
+    .attr('x2', d => d.target.x)
+    .attr('y2', d => d.target.y);
+
+  nodeSel.attr('transform', d => `translate(${d.x},${d.y})`);
+  labelSel.attr('x', d => d.x).attr('y', d => d.y);
+}
+
+// ---- DRAG ----
+function dragStarted(event, d) {
+  if (!event.active) simulation.alphaTarget(0.3).restart();
+  d.fx = d.x;
+  d.fy = d.y;
+}
+
+function dragged(event, d) {
+  d.fx = event.x;
+  d.fy = event.y;
+}
+
+function dragEnded(event, d) {
+  if (!event.active) simulation.alphaTarget(0);
+  d.fx = null;
+  d.fy = null;
+}
+
+// ---- SELECT NODE ----
+function selectNode(d) {
+  selectedNode = d;
+
+  // Highlight selected + neighbors
+  const neighborIds = new Set();
+  graphLinks.forEach(l => {
+    const sid = l.source.id || l.source;
+    const tid = l.target.id || l.target;
+    if (sid === d.id) neighborIds.add(tid);
+    if (tid === d.id) neighborIds.add(sid);
+  });
+  neighborIds.add(d.id);
+
+  nodeSel.classed('selected', n => n.id === d.id)
+    .classed('dimmed', n => !neighborIds.has(n.id))
+    .classed('highlighted', n => neighborIds.has(n.id) && n.id !== d.id);
+
+  linkSel.classed('dimmed', l => {
+    const sid = l.source.id || l.source;
+    const tid = l.target.id || l.target;
+    return sid !== d.id && tid !== d.id;
+  }).classed('highlighted', l => {
+    const sid = l.source.id || l.source;
+    const tid = l.target.id || l.target;
+    return sid === d.id || tid === d.id;
+  });
+
+  // Update detail panel
+  const details = document.getElementById('nodeDetails');
+  const connCount = graphLinks.filter(l =>
+    (l.source.id || l.source) === d.id || (l.target.id || l.target) === d.id
+  ).length;
+
+  details.innerHTML = `
+<div class="kg-detail-title">${d.label}</div>
+<span class="kg-detail-type ${d.type}">${d.type.toUpperCase()}</span>
+<div class="kg-detail-def">${d.definition || 'No description available'}</div>
+<div class="kg-detail-meta">
+      ${d.arxiv ? `<div>📄 arXiv: <a href="papers/2026-08-31/${d.arxiv}*.html" target="_blank">${d.arxiv}</a></div>` : ''}
+<div>🔗 ${connCount} connections</div>
+<div>📏 Radius: ${Math.round(nodeRadius(d))}px</div>
+</div>
+  `;
+
+  // Update connections panel
+  const connections = graphLinks.filter(l =>
+    (l.source.id || l.source) === d.id || (l.target.id || l.target) === d.id
+  );
+
+  const connList = document.getElementById('connectionsList');
+  if (connections.length > 0) {
+    connList.innerHTML = connections.map(l => {
+      const sid = l.source.id || l.source;
+      const tid = l.target.id || l.target;
+      const otherId = sid === d.id ? tid : sid;
+      const other = graphNodes.find(n => n.id === otherId);
+      const direction = sid === d.id ? '→' : '←';
+      return `
+<div class="kg-conn-item" onclick="focusNode('${otherId}')">
+<div class="kg-conn-title">${direction} ${other ? other.label : otherId}</div>
+<div class="kg-conn-rel">${l.strength} link · ${other ? other.type : ''}</div>
+</div>
+      `;
+    }).join('');
+  } else {
+    connList.innerHTML = '<p class="kg-hint">No connections</p>';
+  }
+}
+
+function deselectAll() {
+  selectedNode = null;
+  nodeSel.classed('selected', false).classed('dimmed', false).classed('highlighted', false);
+  linkSel.classed('dimmed', false).classed('highlighted', false);
+  document.getElementById('nodeDetails').innerHTML = '<p class="kg-hint">Click any node to explore</p>';
+  document.getElementById('connectionsList').innerHTML = '<p class="kg-hint">Select a node to see connections</p>';
+}
+
+// ---- FOCUS / ZOOM TO NODE ----
+function focusNode(nodeId) {
+  const node = graphNodes.find(n => n.id === nodeId);
+  if (!node) return;
+
+  selectNode(node);
+
+  const container = document.getElementById('graphCanvas');
+  const width = container.clientWidth;
+  const height = container.clientHeight || 650;
+  const scale = 1.5;
+
+  svg.transition().duration(750).call(
+    zoomBehavior.transform,
+    d3.zoomIdentity
+      .translate(width / 2, height / 2)
+      .scale(scale)
+      .translate(-node.x, -node.y)
+  );
+}
+
+// ---- FILTER ----
+function filterGraph(filter) {
+  currentFilter = filter;
+
+  document.querySelectorAll('.kg-filter').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.filter === filter);
+  });
+
+  nodeSel.style('display', d => {
+    if (filter === 'all') return null;
+    return d.type === filter ? null : 'none';
+  });
+
+  labelSel.style('display', d => {
+    if (filter === 'all') return null;
+    return d.type === filter ? null : 'none';
+  });
+
+  linkSel.style('display', l => {
+    if (filter === 'all') return null;
+    const sType = (typeof l.source === 'object' ? l.source : graphNodes.find(n => n.id === l.source))?.type;
+    const tType = (typeof l.target === 'object' ? l.target : graphNodes.find(n => n.id === l.target))?.type;
+    return (sType === filter || tType === filter) ? null : 'none';
+  });
+
+  // Update visible counts
+  const visibleNodes = graphNodes.filter(n => filter === 'all' || n.type === filter);
+  const visibleLinks = graphLinks.filter(l => {
+    if (filter === 'all') return true;
+    const sType = (typeof l.source === 'object' ? l.source : graphNodes.find(n => n.id === l.source))?.type;
+    const tType = (typeof l.target === 'object' ? l.target : graphNodes.find(n => n.id === l.target))?.type;
+    return sType === filter || tType === filter;
+  });
+
+  document.getElementById('nodeCount').textContent = `${visibleNodes.length} nodes`;
+  document.getElementById('linkCount').textContent = `${visibleLinks.length} links`;
+}
+
+// ---- SEARCH ----
+function searchGraph() {
+  const query = document.getElementById('graphSearch').value.toLowerCase().trim();
+  if (!query) {
+    nodeSel.classed('dimmed', false).classed('highlighted', false);
+    linkSel.classed('dimmed', false);
+    return;
+  }
+
+  const matchIds = new Set();
+  graphNodes.forEach(n => {
+    if (n.label.toLowerCase().includes(query) || (n.definition || '').toLowerCase().includes(query)) {
+      matchIds.add(n.id);
+    }
+  });
+
+  nodeSel.classed('dimmed', n => !matchIds.has(n.id))
+    .classed('highlighted', n => matchIds.has(n.id));
+
+  linkSel.classed('dimmed', l => {
+    const sid = l.source.id || l.source;
+    const tid = l.target.id || l.target;
+    return !matchIds.has(sid) && !matchIds.has(tid);
+  });
+
+  // If single match, focus it
+  if (matchIds.size === 1) {
+    const id = [...matchIds][0];
+    focusNode(id);
+  }
+}
+
+// ---- CONTROLS ----
+function resetView() {
+  const container = document.getElementById('graphCanvas');
+  const width = container.clientWidth;
+  const height = container.clientHeight || 650;
+
+  svg.transition().duration(500).call(
+    zoomBehavior.transform,
+    d3.zoomIdentity.translate(0, 0).scale(1)
+  );
+
+  deselectAll();
+  document.getElementById('graphSearch').value = '';
+  filterGraph('all');
+}
+
+function toggleLabels() {
+  showLabels = !showLabels;
+  labelSel.style('display', showLabels ? null : 'none');
+}
+
+function toggleForce() {
+  physicsActive = !physicsActive;
+  if (physicsActive) {
+    simulation.alpha(0.5).restart();
+  } else {
+    simulation.stop();
+    // Pin all nodes
+    graphNodes.forEach(n => { n.fx = n.x; n.fy = n.y; });
+  }
+}
+
+// ---- NAVIGATE LIST ----
+function buildNavigateList() {
+  const navList = document.getElementById('navigateList');
+  const sorted = [...graphNodes].sort((a, b) => a.label.localeCompare(b.label));
+
+  navList.innerHTML = sorted.map(n => `
+<div class="kg-nav-item" onclick="focusNode('${n.id}')">
+      ${n.type === 'term' ? '📚' : n.type === 'paper' ? '📄' : '🏷️'} ${n.label}
+</div>
+  `).join('');
+}
+
+// ---- INIT ON LOAD ----
+document.addEventListener('DOMContentLoaded', initGraph);
+</script>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>phase3a_implementation_plan – AI Research Tracker</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6191c8c4c757b97205a8995aa6c30869.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+  }
+</style>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">AI Research Tracker</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../public/learning-journey.html"> 
+<span class="menu-text">🎓 Learning Journey</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-write" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">✍️ Write</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-write">    
+        <li>
+    <a class="dropdown-item" href="../public/wiki.html">
+ <span class="dropdown-text">📖 AI Wiki</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/paper-reader.html">
+ <span class="dropdown-text">📄 Paper Reader</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/workspace.html">
+ <span class="dropdown-text">🔬 Research Workspace</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-review" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🔍 Review</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-review">    
+        <li>
+    <a class="dropdown-item" href="../public/highlights.html">
+ <span class="dropdown-text">✨ Highlights</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/takeaways.html">
+ <span class="dropdown-text">💡 Takeaways</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/questions.html">
+ <span class="dropdown-text">❓ Questions</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-enhance" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🤖 Enhance</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-enhance">    
+        <li>
+    <a class="dropdown-item" href="../public/ai-wiki.html">
+ <span class="dropdown-text">💬 AI Wiki Assistant</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/ai-study-guide.html">
+ <span class="dropdown-text">🎓 AI Study Guide</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/feedback-dashboard.html">
+ <span class="dropdown-text">📊 Feedback Dashboard</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-attain" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🧠 Attain</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-attain">    
+        <li>
+    <a class="dropdown-item" href="../public/spaced-repetition.html">
+ <span class="dropdown-text">🔄 Spaced Repetition</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/my-learning-path.html">
+ <span class="dropdown-text">🎯 Learning Path</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/recommendations.html">
+ <span class="dropdown-text">💡 Recommendations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-update" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">📈 Update</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-update">    
+        <li>
+    <a class="dropdown-item" href="../public/digests/index.html">
+ <span class="dropdown-text">📰 Weekly Digest</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/search-papers.html">
+ <span class="dropdown-text">📚 Paper Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/timeline.html">
+ <span class="dropdown-text">📅 Timeline</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/conference-papers/ai-wiki-companion-2026.html">
+ <span class="dropdown-text">📄 Conference Papers</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">⚙️ Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../public/research-goals.html">
+ <span class="dropdown-text">🎯 Research Goals</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/export-import.html">
+ <span class="dropdown-text">💾 Export/Import</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/citation-graph.html">
+ <span class="dropdown-text">🕸️ Citation Graph</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/collections.html">
+ <span class="dropdown-text">📁 Collections</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../private/index.html">
+ <span class="dropdown-text">🔧 Admin Dashboard</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="phase-3a-implementation-plan-fix-critical-dp2-violations" class="level1">
+<h1>Phase 3A Implementation Plan: Fix Critical DP2 Violations</h1>
+<p><strong>Date:</strong> September 2, 2026<br>
+<strong>Goal:</strong> Reframe <code>spaced-repetition.md</code> and <code>ai-study-guide.md</code> to honor DP2 (Scaffold Rather Than Substitute)<br>
+<strong>Duration:</strong> 2-3 hours<br>
+<strong>Status:</strong> Ready to Execute</p>
+<hr>
+<section id="phase-3a-overview" class="level2">
+<h2 class="anchored" data-anchor-id="phase-3a-overview">Phase 3A Overview</h2>
+<section id="problem-statement" class="level3">
+<h3 class="anchored" data-anchor-id="problem-statement">Problem Statement</h3>
+<p>Two core pages violate the “Scaffold Rather Than Substitute” principle: 1. <strong>Spaced Repetition</strong> - Shows abstract + notes + AI summary upfront instead of requiring recall first 2. <strong>AI Study Guide</strong> - Auto-generates content instead of scaffolding learner construction</p>
+</section>
+<section id="success-criteria" class="level3">
+<h3 class="anchored" data-anchor-id="success-criteria">Success Criteria</h3>
+<ul>
+<li>✅ Spaced Repetition requires learner to write recall attempt before showing content</li>
+<li>✅ AI Study Guide requires learner to construct concepts before AI suggests additions</li>
+<li>✅ Both pages provide formative feedback on learner’s construction</li>
+<li>✅ All changes tracked in version history</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="task-1-reframe-spaced-repetition-priority-high" class="level2">
+<h2 class="anchored" data-anchor-id="task-1-reframe-spaced-repetition-priority-high">Task 1: Reframe Spaced Repetition (Priority: HIGH)</h2>
+<section id="current-behavior-dp2-violation" class="level3">
+<h3 class="anchored" data-anchor-id="current-behavior-dp2-violation">Current Behavior (DP2 Violation)</h3>
+<pre><code>┌─────────────────────────────────────────────┐
+│ Spaced Repetition                           │
+├─────────────────────────────────────────────┤
+│ Paper: "RAG for GUI Agents"                 │
+│                                             │
+│ 📄 Abstract: [ALWAYS VISIBLE]              │
+│ "This paper proposes..."                    │
+│                                             │
+│ 📝 Your Notes: [ALWAYS VISIBLE]            │
+│ "Key contribution is..."                    │
+│                                             │
+│ 🤖 AI Summary: [ALWAYS VISIBLE]            │
+│ "Main points: 1)... 2)..."                  │
+│                                             │
+│ [Rate: Easy | Moderate | Hard]              │
+└─────────────────────────────────────────────┘</code></pre>
+</section>
+<section id="target-behavior-dp2-aligned" class="level3">
+<h3 class="anchored" data-anchor-id="target-behavior-dp2-aligned">Target Behavior (DP2 Aligned)</h3>
+<pre><code>┌─────────────────────────────────────────────┐
+│ Spaced Repetition                           │
+├─────────────────────────────────────────────┤
+│ Paper: "RAG for GUI Agents"                 │
+│                                             │
+│ 📝 RECALL PROMPT:                           │
+│ "Explain this paper's main contribution     │
+│ without consulting your notes."             │
+│                                             │
+│ [TEXTAREA FOR RECALL ATTEMPT]               │
+│                                             │
+│ [Submit Recall]  [Reveal Notes]             │
+└─────────────────────────────────────────────┘
+         ↓ After Submit ↓
+┌─────────────────────────────────────────────┐
+│ 📊 Formative Feedback:                      │
+│ "You mentioned: retrieval, RAG, agents      │
+│ Missing: contrastive learning, length-aware │
+│ Accuracy: 70%                               │
+│                                             │
+│ [Reveal Original] [Mark as Learned]         │
+└─────────────────────────────────────────────┘</code></pre>
+</section>
+<section id="implementation-steps" class="level3">
+<h3 class="anchored" data-anchor-id="implementation-steps">Implementation Steps</h3>
+<section id="step-1.1-add-recall-mode-toggle" class="level4">
+<h4 class="anchored" data-anchor-id="step-1.1-add-recall-mode-toggle">Step 1.1: Add Recall Mode Toggle</h4>
+<ul>
+<li>Add <code>recallMode</code> state variable</li>
+<li>Add toggle button to switch between “Recall First” and “Review” modes</li>
+<li>Default to “Recall First” (DP2 aligned)</li>
+</ul>
+</section>
+<section id="step-1.2-create-recall-prompt-ui" class="level4">
+<h4 class="anchored" data-anchor-id="step-1.2-create-recall-prompt-ui">Step 1.2: Create Recall Prompt UI</h4>
+<ul>
+<li>Hide abstract, notes, AI summary in Recall mode</li>
+<li>Show prompt text + textarea</li>
+<li>Add “Submit Recall” and “Reveal Notes” buttons</li>
+</ul>
+</section>
+<section id="step-1.3-implement-recall-comparison" class="level4">
+<h4 class="anchored" data-anchor-id="step-1.3-implement-recall-comparison">Step 1.3: Implement Recall Comparison</h4>
+<ul>
+<li>Call LLM API with learner’s recall + original notes</li>
+<li>Get formative feedback (accuracy, missing concepts)</li>
+<li>Display feedback to learner</li>
+</ul>
+</section>
+<section id="step-1.4-track-recall-performance" class="level4">
+<h4 class="anchored" data-anchor-id="step-1.4-track-recall-performance">Step 1.4: Track Recall Performance</h4>
+<ul>
+<li>Save recall attempts to <code>userData.spacedRepetition</code></li>
+<li>Track accuracy over time</li>
+<li>Show progress dashboard</li>
+</ul>
+</section>
+</section>
+<section id="code-changes-required" class="level3">
+<h3 class="anchored" data-anchor-id="code-changes-required">Code Changes Required</h3>
+<p><strong>File:</strong> <code>public/spaced-repetition.md</code></p>
+<p><strong>Changes:</strong> 1. Add recall mode state:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> recallMode <span class="op">=</span> <span class="kw">true</span><span class="op">;</span> <span class="co">// Default to DP2-aligned mode</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> currentRecallAttempt <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> currentFeedback <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="2" type="1">
+<li>Modify review card rendering:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">renderReviewCard</span>(paper) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (recallMode) {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Show recall prompt</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">createRecallPrompt</span>(paper)<span class="op">;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Show traditional review</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fu">createTraditionalReview</span>(paper)<span class="op">;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="3" type="1">
+<li>Add recall submission handler:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">async</span> <span class="kw">function</span> <span class="fu">submitRecall</span>() {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> recall <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'recallInput'</span>)<span class="op">.</span><span class="at">value</span><span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> original <span class="op">=</span> <span class="fu">getOriginalNotes</span>(paperId)<span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Call LLM for feedback</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> feedback <span class="op">=</span> <span class="cf">await</span> <span class="fu">fetch</span>(<span class="st">'/api/wiki/companion'</span><span class="op">,</span> {</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">method</span><span class="op">:</span> <span class="st">'POST'</span><span class="op">,</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">body</span><span class="op">:</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>({</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'consolidate'</span><span class="op">,</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>      <span class="dt">original</span><span class="op">:</span> original<span class="op">,</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>      <span class="dt">recall</span><span class="op">:</span> recall<span class="op">,</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">concept</span><span class="op">:</span> paper<span class="op">.</span><span class="at">title</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">displayFeedback</span>(feedback)<span class="op">;</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">saveRecallAttempt</span>(paperId<span class="op">,</span> recall<span class="op">,</span> feedback)<span class="op">;</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="4" type="1">
+<li>Add API endpoint for consolidate mode (if not exists)</li>
+</ol>
+</section>
+<section id="acceptance-criteria" class="level3">
+<h3 class="anchored" data-anchor-id="acceptance-criteria">Acceptance Criteria</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Spaced repetition defaults to recall-first mode</label></li>
+<li><label><input type="checkbox">Abstract/notes hidden until learner submits recall</label></li>
+<li><label><input type="checkbox">LLM provides formative feedback on recall attempt</label></li>
+<li><label><input type="checkbox">Recall performance tracked over time</label></li>
+<li><label><input type="checkbox">Traditional review mode still available (opt-in)</label></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="task-2-reframe-ai-study-guide-priority-high" class="level2">
+<h2 class="anchored" data-anchor-id="task-2-reframe-ai-study-guide-priority-high">Task 2: Reframe AI Study Guide (Priority: HIGH)</h2>
+<section id="current-behavior-dp2-violation-1" class="level3">
+<h3 class="anchored" data-anchor-id="current-behavior-dp2-violation-1">Current Behavior (DP2 Violation)</h3>
+<pre><code>┌─────────────────────────────────────────────┐
+│ AI Study Guide                              │
+├─────────────────────────────────────────────┤
+│ [Generate Study Guide] [Export]             │
+│                                             │
+│ AI generates everything:                    │
+│                                             │
+│ 🎯 Key Concepts:                            │
+│ - AI Agents (auto-extracted)               │
+│ - RAG (auto-extracted)                     │
+│ - Reasoning (auto-extracted)               │
+│                                             │
+│ 📝 Flashcards:                              │
+│ Q: What is RAG? (auto-generated)           │
+│ A: RAG is...                               │
+│                                             │
+│ 🔗 Connections:                             │
+│ - AI Agents ↔ RAG (auto-detected)          │
+└─────────────────────────────────────────────┘</code></pre>
+</section>
+<section id="target-behavior-dp2-aligned-1" class="level3">
+<h3 class="anchored" data-anchor-id="target-behavior-dp2-aligned-1">Target Behavior (DP2 Aligned)</h3>
+<pre><code>┌─────────────────────────────────────────────┐
+│ Build Your Study Guide                      │
+├─────────────────────────────────────────────┤
+│ Step 1: What concepts matter to you?        │
+│                                             │
+│ [Learner writes concept list]               │
+│                                             │
+│ AI Suggestion: "Consider adding             │
+│ 'contrastive learning' based on your        │
+│ saved papers."                              │
+│                                             │
+│ [Add Suggestion] [Skip]                     │
+│                                             │
+│ [Next: Create Flashcards]                   │
+└─────────────────────────────────────────────┘
+         ↓ After Construction ↓
+┌─────────────────────────────────────────────┐
+│ 📊 Your Guide vs Reference:                 │
+│                                             │
+│ You included: 5 concepts                    │
+│ Reference has: 8 concepts                   │
+│                                             │
+│ Missing: contrastive learning,              │
+│          length-aware,                      │
+│          GUI evaluation                     │
+│                                             │
+│ [Review Gaps] [Finalize Guide]              │
+└─────────────────────────────────────────────┘</code></pre>
+</section>
+<section id="implementation-steps-1" class="level3">
+<h3 class="anchored" data-anchor-id="implementation-steps-1">Implementation Steps</h3>
+<section id="step-2.1-change-entry-flow" class="level4">
+<h4 class="anchored" data-anchor-id="step-2.1-change-entry-flow">Step 2.1: Change Entry Flow</h4>
+<ul>
+<li>Replace “Generate Study Guide” with “Build Your Guide”</li>
+<li>Add multi-step wizard (Concepts → Flashcards → Connections)</li>
+<li>Each step requires learner input before AI suggestions</li>
+</ul>
+</section>
+<section id="step-2.2-scaffold-concept-identification" class="level4">
+<h4 class="anchored" data-anchor-id="step-2.2-scaffold-concept-identification">Step 2.2: Scaffold Concept Identification</h4>
+<ul>
+<li>Prompt: “What 3-5 concepts do you want to study?”</li>
+<li>Learner writes list</li>
+<li>AI suggests: “Based on your papers, consider X, Y”</li>
+<li>Learner accepts/rejects suggestions</li>
+</ul>
+</section>
+<section id="step-2.3-scaffold-flashcard-creation" class="level4">
+<h4 class="anchored" data-anchor-id="step-2.3-scaffold-flashcard-creation">Step 2.3: Scaffold Flashcard Creation</h4>
+<ul>
+<li>For each concept, prompt: “Write a question about X”</li>
+<li>Learner writes question + answer</li>
+<li>AI hints: “Consider asking about Y”</li>
+<li>AI compares to reference flashcards</li>
+</ul>
+</section>
+<section id="step-2.4-compare-to-reference" class="level4">
+<h4 class="anchored" data-anchor-id="step-2.4-compare-to-reference">Step 2.4: Compare to Reference</h4>
+<ul>
+<li>Generate reference guide (existing code)</li>
+<li>Compare learner’s guide to reference</li>
+<li>Show gaps and recommendations</li>
+<li>Learner revises if desired</li>
+</ul>
+</section>
+</section>
+<section id="code-changes-required-1" class="level3">
+<h3 class="anchored" data-anchor-id="code-changes-required-1">Code Changes Required</h3>
+<p><strong>File:</strong> <code>public/ai-study-guide.md</code></p>
+<p><strong>Changes:</strong> 1. Replace auto-generation with wizard:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">startStudyGuide</span>() {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">showStep1_Concepts</span>()<span class="op">;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">showStep1_Concepts</span>() {</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  content<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="vs">`</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;h3&gt;Step 1: Identify Key Concepts&lt;/h3&gt;</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;p&gt;What concepts do you want to study? (3-5 concepts)&lt;/p&gt;</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;textarea id="conceptInput" rows="4"&gt;&lt;/textarea&gt;</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;button onclick="submitConcepts()"&gt;Next: Flashcards&lt;/button&gt;</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="vs">  `</span><span class="op">;</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="2" type="1">
+<li>Add AI suggestion handler:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">async</span> <span class="kw">function</span> <span class="fu">suggestConcepts</span>(learnerConcepts) {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> response <span class="op">=</span> <span class="cf">await</span> <span class="fu">fetch</span>(<span class="st">'/api/wiki/companion'</span><span class="op">,</span> {</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">method</span><span class="op">:</span> <span class="st">'POST'</span><span class="op">,</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">body</span><span class="op">:</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>({</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'scaffold'</span><span class="op">,</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">action</span><span class="op">:</span> <span class="st">'suggest_concepts'</span><span class="op">,</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">learnerInput</span><span class="op">:</span> learnerConcepts<span class="op">,</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">papers</span><span class="op">:</span> savedPapers</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> suggestions <span class="op">=</span> <span class="cf">await</span> response<span class="op">.</span><span class="fu">json</span>()<span class="op">;</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">displaySuggestions</span>(suggestions)<span class="op">;</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="3" type="1">
+<li>Add comparison function:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">compareGuides</span>(learnerGuide<span class="op">,</span> referenceGuide) {</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> missing <span class="op">=</span> referenceGuide<span class="op">.</span><span class="at">concepts</span><span class="op">.</span><span class="fu">filter</span>(c <span class="kw">=&gt;</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">!</span>learnerGuide<span class="op">.</span><span class="at">concepts</span><span class="op">.</span><span class="fu">includes</span>(c)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">accuracy</span><span class="op">:</span> <span class="fu">calculateAccuracy</span>(learnerGuide<span class="op">,</span> referenceGuide)<span class="op">,</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">missing</span><span class="op">:</span> missing<span class="op">,</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">recommendations</span><span class="op">:</span> <span class="fu">generateRecommendations</span>(missing)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="acceptance-criteria-1" class="level3">
+<h3 class="anchored" data-anchor-id="acceptance-criteria-1">Acceptance Criteria</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Study guide requires learner to identify concepts first</label></li>
+<li><label><input type="checkbox">AI provides suggestions (not auto-generation)</label></li>
+<li><label><input type="checkbox">Learner must write flashcards (AI provides hints)</label></li>
+<li><label><input type="checkbox">Comparison shows gaps between learner’s guide and reference</label></li>
+<li><label><input type="checkbox">Learner can revise based on feedback</label></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="task-3-add-consolidate-mode-to-wiki.md-priority-medium" class="level2">
+<h2 class="anchored" data-anchor-id="task-3-add-consolidate-mode-to-wiki.md-priority-medium">Task 3: Add Consolidate Mode to wiki.md (Priority: MEDIUM)</h2>
+<section id="current-behavior" class="level3">
+<h3 class="anchored" data-anchor-id="current-behavior">Current Behavior</h3>
+<ul>
+<li>Consolidate mode UI exists but not functional</li>
+<li>No retrieval practice implementation</li>
+</ul>
+</section>
+<section id="target-behavior" class="level3">
+<h3 class="anchored" data-anchor-id="target-behavior">Target Behavior</h3>
+<ol type="1">
+<li>Learner clicks “Consolidate” mode</li>
+<li>AI hides the wiki entry</li>
+<li>Prompt: “Explain this concept without the wiki”</li>
+<li>Learner writes from memory</li>
+<li>AI compares to original, provides feedback</li>
+<li>Track mastery over time</li>
+</ol>
+</section>
+<section id="code-changes-required-2" class="level3">
+<h3 class="anchored" data-anchor-id="code-changes-required-2">Code Changes Required</h3>
+<p><strong>File:</strong> <code>public/wiki.md</code></p>
+<p><strong>Changes:</strong> 1. Implement consolidate mode handler:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">async</span> <span class="kw">function</span> <span class="fu">aiConsolidateKnowledge</span>() {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>currentTerm) {</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">alert</span>(<span class="st">'Please select a term first'</span>)<span class="op">;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Hide wiki content</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'wikiContent'</span>)<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">display</span> <span class="op">=</span> <span class="st">'none'</span><span class="op">;</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Show recall prompt</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> prompt <span class="op">=</span> <span class="vs">`Explain "</span><span class="sc">${</span>currentTerm<span class="sc">}</span><span class="vs">" without consulting the wiki.`</span><span class="op">;</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">showRecallInput</span>(prompt<span class="op">,</span> currentTerm)<span class="op">;</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="2" type="1">
+<li>Add comparison to LLM:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">async</span> <span class="kw">function</span> <span class="fu">compareRecall</span>(term<span class="op">,</span> recall<span class="op">,</span> original) {</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> response <span class="op">=</span> <span class="cf">await</span> <span class="fu">fetch</span>(<span class="st">'/api/wiki/companion'</span><span class="op">,</span> {</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">method</span><span class="op">:</span> <span class="st">'POST'</span><span class="op">,</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">body</span><span class="op">:</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">stringify</span>({</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">'consolidate'</span><span class="op">,</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">concept</span><span class="op">:</span> term<span class="op">,</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">recall</span><span class="op">:</span> recall<span class="op">,</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">original</span><span class="op">:</span> original</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> feedback <span class="op">=</span> <span class="cf">await</span> response<span class="op">.</span><span class="fu">json</span>()<span class="op">;</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">displayConsolidationFeedback</span>(feedback)<span class="op">;</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="acceptance-criteria-2" class="level3">
+<h3 class="anchored" data-anchor-id="acceptance-criteria-2">Acceptance Criteria</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Consolidate mode hides wiki content</label></li>
+<li><label><input type="checkbox">Learner writes recall attempt</label></li>
+<li><label><input type="checkbox">AI provides formative feedback</label></li>
+<li><label><input type="checkbox">Mastery tracked over time</label></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="task-4-add-formative-evaluation-tracking-priority-low" class="level2">
+<h2 class="anchored" data-anchor-id="task-4-add-formative-evaluation-tracking-priority-low">Task 4: Add Formative Evaluation Tracking (Priority: LOW)</h2>
+<section id="goal" class="level3">
+<h3 class="anchored" data-anchor-id="goal">Goal</h3>
+<p>Track learner responses to AI scaffolding to measure metacognitive engagement</p>
+</section>
+<section id="data-to-track" class="level3">
+<h3 class="anchored" data-anchor-id="data-to-track">Data to Track</h3>
+<ul>
+<li>Time spent in each mode (Construct, Reflect, Scaffold, Consolidate)</li>
+<li>Accept/reject/modify rates for AI suggestions</li>
+<li>Recall accuracy over time</li>
+<li>Number of revisions per entry</li>
+<li>Version history (v1 → v2 → v3)</li>
+</ul>
+</section>
+<section id="schema" class="level3">
+<h3 class="anchored" data-anchor-id="schema">Schema</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>userData<span class="op">.</span><span class="at">metacognitiveTracking</span> <span class="op">=</span> {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">wikiInteractions</span><span class="op">:</span> [</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>      <span class="dt">term</span><span class="op">:</span> <span class="st">"RAG"</span><span class="op">,</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">timestamp</span><span class="op">:</span> <span class="st">"2026-09-02T10:30:00Z"</span><span class="op">,</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">mode</span><span class="op">:</span> <span class="st">"reflect"</span><span class="op">,</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">action</span><span class="op">:</span> <span class="st">"accept_suggestion"</span><span class="op">,</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">duration</span><span class="op">:</span> <span class="dv">45</span><span class="op">,</span> <span class="co">// seconds</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>      <span class="dt">revision</span><span class="op">:</span> <span class="dv">2</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="dt">recallPerformance</span><span class="op">:</span> [</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>      <span class="dt">concept</span><span class="op">:</span> <span class="st">"RAG"</span><span class="op">,</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>      <span class="dt">timestamp</span><span class="op">:</span> <span class="st">"2026-09-02T11:00:00Z"</span><span class="op">,</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>      <span class="dt">accuracy</span><span class="op">:</span> <span class="fl">0.75</span><span class="op">,</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>      <span class="dt">feedback</span><span class="op">:</span> <span class="st">"Good coverage of retrieval, missing embeddings"</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  <span class="dt">masteryProgress</span><span class="op">:</span> {</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RAG"</span><span class="op">:</span> { <span class="dt">level</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">lastReviewed</span><span class="op">:</span> <span class="st">"2026-09-02"</span><span class="op">,</span> <span class="dt">accuracy</span><span class="op">:</span> <span class="fl">0.85</span> }<span class="op">,</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Agents"</span><span class="op">:</span> { <span class="dt">level</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">lastReviewed</span><span class="op">:</span> <span class="st">"2026-08-30"</span><span class="op">,</span> <span class="dt">accuracy</span><span class="op">:</span> <span class="fl">0.70</span> }</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="implementation" class="level3">
+<h3 class="anchored" data-anchor-id="implementation">Implementation</h3>
+<ol type="1">
+<li>Add tracking middleware to API server</li>
+<li>Log interactions on each mode switch</li>
+<li>Calculate mastery scores</li>
+<li>Display progress dashboard</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="execution-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="execution-checklist">Execution Checklist</h2>
+<section id="task-1-spaced-repetition-reframe" class="level3">
+<h3 class="anchored" data-anchor-id="task-1-spaced-repetition-reframe">Task 1: Spaced Repetition Reframe</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Add recall mode state variables</label></li>
+<li><label><input type="checkbox">Create recall prompt UI (hide content, show textarea)</label></li>
+<li><label><input type="checkbox">Implement recall submission handler</label></li>
+<li><label><input type="checkbox">Add LLM comparison call</label></li>
+<li><label><input type="checkbox">Track recall performance in userData</label></li>
+<li><label><input type="checkbox">Test recall flow end-to-end</label></li>
+<li><label><input type="checkbox">Rebuild site and verify</label></li>
+</ul>
+</section>
+<section id="task-2-ai-study-guide-reframe" class="level3">
+<h3 class="anchored" data-anchor-id="task-2-ai-study-guide-reframe">Task 2: AI Study Guide Reframe</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Replace “Generate” with “Build Your Guide”</label></li>
+<li><label><input type="checkbox">Create multi-step wizard (Concepts → Flashcards → Compare)</label></li>
+<li><label><input type="checkbox">Add concept suggestion handler</label></li>
+<li><label><input type="checkbox">Implement guide comparison</label></li>
+<li><label><input type="checkbox">Show gaps and recommendations</label></li>
+<li><label><input type="checkbox">Test wizard flow end-to-end</label></li>
+<li><label><input type="checkbox">Rebuild site and verify</label></li>
+</ul>
+</section>
+<section id="task-3-consolidate-mode" class="level3">
+<h3 class="anchored" data-anchor-id="task-3-consolidate-mode">Task 3: Consolidate Mode</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Implement consolidate mode handler in wiki.md</label></li>
+<li><label><input type="checkbox">Add recall input UI</label></li>
+<li><label><input type="checkbox">Add LLM comparison call</label></li>
+<li><label><input type="checkbox">Display consolidation feedback</label></li>
+<li><label><input type="checkbox">Track mastery in userData</label></li>
+<li><label><input type="checkbox">Test consolidate flow</label></li>
+<li><label><input type="checkbox">Rebuild site and verify</label></li>
+</ul>
+</section>
+<section id="task-4-formative-tracking" class="level3">
+<h3 class="anchored" data-anchor-id="task-4-formative-tracking">Task 4: Formative Tracking</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Add tracking schema to userData</label></li>
+<li><label><input type="checkbox">Add logging middleware to API server</label></li>
+<li><label><input type="checkbox">Calculate mastery scores</label></li>
+<li><label><input type="checkbox">Create progress dashboard UI</label></li>
+<li><label><input type="checkbox">Test tracking end-to-end</label></li>
+<li><label><input type="checkbox">Rebuild site and verify</label></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="testing-plan" class="level2">
+<h2 class="anchored" data-anchor-id="testing-plan">Testing Plan</h2>
+<section id="unit-tests" class="level3">
+<h3 class="anchored" data-anchor-id="unit-tests">Unit Tests</h3>
+<ol type="1">
+<li>Recall prompt hides content correctly</li>
+<li>LLM comparison returns valid feedback</li>
+<li>Guide comparison calculates accuracy correctly</li>
+<li>Tracking data saves to userData</li>
+</ol>
+</section>
+<section id="integration-tests" class="level3">
+<h3 class="anchored" data-anchor-id="integration-tests">Integration Tests</h3>
+<ol type="1">
+<li>Complete spaced repetition flow (recall → feedback → reveal)</li>
+<li>Complete study guide flow (concepts → flashcards → compare)</li>
+<li>Complete wiki consolidate flow (hide → recall → feedback)</li>
+</ol>
+</section>
+<section id="user-acceptance-tests" class="level3">
+<h3 class="anchored" data-anchor-id="user-acceptance-tests">User Acceptance Tests</h3>
+<ol type="1">
+<li>Verify DP2 alignment (no content shown before recall)</li>
+<li>Verify formative feedback is helpful</li>
+<li>Verify tracking doesn’t impede workflow</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="risk-mitigation" class="level2">
+<h2 class="anchored" data-anchor-id="risk-mitigation">Risk Mitigation</h2>
+<section id="risk-1-llm-slow-response" class="level3">
+<h3 class="anchored" data-anchor-id="risk-1-llm-slow-response">Risk 1: LLM Slow Response</h3>
+<ul>
+<li><strong>Mitigation:</strong> Add loading states, show “Analyzing…” message</li>
+<li><strong>Fallback:</strong> Use static feedback if LLM times out</li>
+</ul>
+</section>
+<section id="risk-2-learner-resistance" class="level3">
+<h3 class="anchored" data-anchor-id="risk-2-learner-resistance">Risk 2: Learner Resistance</h3>
+<ul>
+<li><strong>Mitigation:</strong> Explain DP2 rationale in onboarding</li>
+<li><strong>Option:</strong> Keep traditional mode available (opt-in)</li>
+</ul>
+</section>
+<section id="risk-3-data-persistence" class="level3">
+<h3 class="anchored" data-anchor-id="risk-3-data-persistence">Risk 3: Data Persistence</h3>
+<ul>
+<li><strong>Mitigation:</strong> Save to userData.json immediately</li>
+<li><strong>Backup:</strong> Export tracking data periodically</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="success-metrics" class="level2">
+<h2 class="anchored" data-anchor-id="success-metrics">Success Metrics</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th>Target</th>
+<th>Current</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Spaced Repetition DP2 Compliance</td>
+<td>100%</td>
+<td>0%</td>
+</tr>
+<tr class="even">
+<td>Study Guide DP2 Compliance</td>
+<td>100%</td>
+<td>0%</td>
+</tr>
+<tr class="odd">
+<td>Consolidate Mode Functional</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Formative Tracking Implemented</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>Learner Recall Accuracy</td>
+<td>Track over time</td>
+<td>N/A</td>
+</tr>
+<tr class="even">
+<td>Metacognitive Engagement Score</td>
+<td>Track over time</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="dependencies" class="level2">
+<h2 class="anchored" data-anchor-id="dependencies">Dependencies</h2>
+<ul>
+<li>✅ Phase 1 Complete (UI alignment)</li>
+<li>✅ Phase 2 Complete (LLM integration)</li>
+<li>✅ API server running on port 5001</li>
+<li>✅ Ollama running with gemma4-64k</li>
+<li>⏳ Phase 3A (this plan)</li>
+<li>🔲 Phase 3B (Revisit mode, version history)</li>
+</ul>
+<hr>
+</section>
+<section id="rollback-plan" class="level2">
+<h2 class="anchored" data-anchor-id="rollback-plan">Rollback Plan</h2>
+<p>If issues arise: 1. Keep original files in <code>private/backups/</code> 2. Git commit before each major change 3. Revert with <code>git checkout HEAD -- &lt;file&gt;</code> 4. Rebuild site to verify rollback</p>
+<hr>
+</section>
+<section id="next-steps-after-phase-3a" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps-after-phase-3a">Next Steps After Phase 3A</h2>
+<ol type="1">
+<li><strong>User Testing:</strong> Have 2-3 learners test the new flows</li>
+<li><strong>Feedback Collection:</strong> Gather feedback on DP2 alignment</li>
+<li><strong>Iterate:</strong> Refine based on feedback</li>
+<li><strong>Phase 3B:</strong> Implement Revisit mode and version history</li>
+<li><strong>Formative Evaluation:</strong> Measure learning outcomes</li>
+</ol>
+<hr>
+<p><strong>Plan Status:</strong> Ready to Execute<br>
+<strong>Estimated Duration:</strong> 2-3 hours<br>
+<strong>Next Action:</strong> Begin Task 1 (Spaced Repetition Reframe)</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

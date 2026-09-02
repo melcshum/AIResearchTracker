@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Global Search – AI Research Tracker</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6191c8c4c757b97205a8995aa6c30869.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+  }
+</style>
+<style>
+.global-search-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.search-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.search-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+.search-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.search-shortcut-hint {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.search-shortcut-hint kbd {
+  background: var(--bg-primary);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.search-box-wrapper {
+  margin-bottom: 1.5rem;
+}
+.search-input-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+.global-search-input {
+  width: 100%;
+  padding: 1rem 3rem 1rem 3rem;
+  font-size: 1.1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-primary);
+  color: var(--text-color);
+  transition: all 0.2s;
+}
+.global-search-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+.clear-search-btn {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+.clear-search-btn:hover {
+  background: var(--bg-secondary);
+  color: var(--text-color);
+}
+.search-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  background: var(--bg-primary);
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.filter-btn:hover {
+  background: var(--bg-secondary);
+  border-color: var(--accent-color);
+}
+.filter-btn.active {
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+.search-stats {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.search-results {
+  min-height: 400px;
+}
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-muted);
+}
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+.empty-state h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+.search-tips {
+  margin-top: 2rem;
+  text-align: left;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.search-tips h4 {
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+}
+.search-tips ul {
+  list-style: none;
+  padding: 0;
+}
+.search-tips li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.search-tips li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+}
+.search-tips kbd {
+  background: var(--bg-primary);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  border: 1px solid var(--border-color);
+}
+.search-result-item {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.search-result-item:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 0.75rem;
+}
+.result-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin: 0;
+  flex: 1;
+}
+.result-type {
+  padding: 0.25rem 0.75rem;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+.result-type.paper { background: #e3f2fd; color: #1976d2; }
+.result-type.wiki { background: #f3e5f5; color: #7b1fa2; }
+.result-type.topic { background: #e8f5e9; color: #388e3c; }
+.result-type.concept { background: #fff3e0; color: #f57c00; }
+.result-type.page { background: #fce4ec; color: #c2185b; }
+.result-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+}
+.result-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.result-context {
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+.result-context mark {
+  background: rgba(102, 126, 234, 0.2);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  color: var(--text-color);
+  font-weight: 600;
+}
+.result-keywords {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.keyword-tag {
+  padding: 0.25rem 0.75rem;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.no-results {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--text-muted);
+}
+.no-results h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+@media (max-width: 768px) {
+  .search-header h1 {
+    font-size: 2rem;
+  }
+  .global-search-input {
+    font-size: 1rem;
+  }
+  .search-filters {
+    justify-content: flex-start;
+  }
+  .filter-btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+</style>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">AI Research Tracker</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../public/learning-journey.html"> 
+<span class="menu-text">🎓 Learning Journey</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-write" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">✍️ Write</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-write">    
+        <li>
+    <a class="dropdown-item" href="../public/wiki.html">
+ <span class="dropdown-text">📖 AI Wiki</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/paper-reader.html">
+ <span class="dropdown-text">📄 Paper Reader</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/workspace.html">
+ <span class="dropdown-text">🔬 Research Workspace</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-review" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🔍 Review</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-review">    
+        <li>
+    <a class="dropdown-item" href="../public/highlights.html">
+ <span class="dropdown-text">✨ Highlights</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/takeaways.html">
+ <span class="dropdown-text">💡 Takeaways</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/questions.html">
+ <span class="dropdown-text">❓ Questions</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-enhance" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🤖 Enhance</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-enhance">    
+        <li>
+    <a class="dropdown-item" href="../public/ai-wiki.html">
+ <span class="dropdown-text">💬 AI Wiki Assistant</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/ai-study-guide.html">
+ <span class="dropdown-text">🎓 AI Study Guide</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/feedback-dashboard.html">
+ <span class="dropdown-text">📊 Feedback Dashboard</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-attain" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🧠 Attain</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-attain">    
+        <li>
+    <a class="dropdown-item" href="../public/spaced-repetition.html">
+ <span class="dropdown-text">🔄 Spaced Repetition</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/my-learning-path.html">
+ <span class="dropdown-text">🎯 Learning Path</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/recommendations.html">
+ <span class="dropdown-text">💡 Recommendations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-update" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">📈 Update</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-update">    
+        <li>
+    <a class="dropdown-item" href="../public/digests/index.html">
+ <span class="dropdown-text">📰 Weekly Digest</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/search-papers.html">
+ <span class="dropdown-text">📚 Paper Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/timeline.html">
+ <span class="dropdown-text">📅 Timeline</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/conference-papers/ai-wiki-companion-2026.html">
+ <span class="dropdown-text">📄 Conference Papers</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">⚙️ Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../public/research-goals.html">
+ <span class="dropdown-text">🎯 Research Goals</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/export-import.html">
+ <span class="dropdown-text">💾 Export/Import</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/citation-graph.html">
+ <span class="dropdown-text">🕸️ Citation Graph</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../public/collections.html">
+ <span class="dropdown-text">📁 Collections</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../private/index.html">
+ <span class="dropdown-text">🔧 Admin Dashboard</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Global Search</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="global-search-container">
+<section id="global-search" class="level1 search-header">
+<h1>🔍 Global Search</h1>
+<p>Search across all papers, wiki terms, topics, and pages</p>
+<div class="search-shortcut-hint">
+<p><kbd>Cmd/Ctrl</kbd> + <kbd>K</kbd> to search from anywhere</p>
+</div>
+</section>
+<div class="search-box-wrapper">
+<div class="search-input-container">
+<p><span class="search-icon">🔍</span> <input type="text" id="globalSearchInput" class="global-search-input" placeholder="Search for papers, concepts, topics..." autocomplete="off"> <button id="clearSearchBtn" class="clear-search-btn" style="display: none;">✕</button></p>
+</div>
+<div class="search-filters">
+<button class="filter-btn active" data-filter="all">
+All
+</button>
+<button class="filter-btn" data-filter="papers">
+Papers
+</button>
+<button class="filter-btn" data-filter="wiki">
+Wiki
+</button>
+<button class="filter-btn" data-filter="topics">
+Topics
+</button>
+<button class="filter-btn" data-filter="concepts">
+Concepts
+</button>
+<button class="filter-btn" data-filter="pages">
+Pages
+</button>
+</div>
+</div>
+<div id="searchStats" class="search-stats">
+<p><span id="resultCount">0 results</span> <span id="searchTime"></span></p>
+</div>
+<div id="searchResults" class="search-results">
+<div class="empty-state">
+<div class="empty-icon">
+🔎
+</div>
+<section id="start-typing-to-search" class="level3">
+<h3 class="anchored" data-anchor-id="start-typing-to-search">Start typing to search</h3>
+<p>Search across 77 papers, 14 wiki terms, 4 topics, and more</p>
+<section id="search-tips" class="level4 search-tips">
+<h4 class="anchored" data-anchor-id="search-tips">Search Tips:</h4>
+<ul>
+<li>Type keywords to find matching papers, concepts, and pages</li>
+<li>Use the filter buttons to narrow results by category</li>
+<li>Press <kbd>Cmd/Ctrl</kbd> + <kbd>K</kbd> to focus search from anywhere</li>
+<li>Results are ranked by relevance</li>
+</ul>
+</section>
+</section>
+</div>
+</div>
+</div>
+<script src="../_includes/search-index.js"></script>
+<script>
+// Fuzzy search implementation
+function fuzzyMatch(text, query) {
+  text = text.toLowerCase();
+  query = query.toLowerCase();
+  
+  if (text === query) return { match: true, score: 100 };
+  if (text.includes(query)) return { match: true, score: 80 };
+  
+  const words = text.split(/\s+/);
+  if (words.some(w => w.startsWith(query))) return { match: true, score: 70 };
+  
+  let queryIdx = 0;
+  let score = 0;
+  let consecutive = 0;
+  
+  for (let i = 0; i < text.length && queryIdx < query.length; i++) {
+    if (text[i] === query[queryIdx]) {
+      queryIdx++;
+      consecutive++;
+      score += consecutive * 2;
+    } else {
+      consecutive = 0;
+    }
+  }
+  
+  if (queryIdx === query.length) {
+    return { match: true, score: Math.min(score, 60) };
+  }
+  
+  return { match: false, score: 0 };
+}
+
+function searchIndex(query, filter = 'all') {
+  const startTime = performance.now();
+  const results = [];
+  const queryTerms = query.toLowerCase().split(/\s+/).filter(t => t.length > 0);
+  
+  if (queryTerms.length === 0) return { results: [], time: 0 };
+  
+  const categories = filter === 'all' 
+    ? ['papers', 'wiki', 'topics', 'concepts', 'pages']
+    : [filter];
+  
+  categories.forEach(category => {
+    if (!SEARCH_INDEX[category]) return;
+    
+    SEARCH_INDEX[category].forEach(item => {
+      let bestScore = 0;
+      let matchedField = '';
+      
+      const titleMatch = fuzzyMatch(item.title || '', query);
+      if (titleMatch.match) {
+        bestScore = Math.max(bestScore, titleMatch.score * 1.5);
+        matchedField = 'title';
+      }
+      
+      if (item.keywords) {
+        item.keywords.forEach(keyword => {
+          const kwMatch = fuzzyMatch(keyword, query);
+          if (kwMatch.match) {
+            bestScore = Math.max(bestScore, kwMatch.score);
+            matchedField = matchedField || 'keywords';
+          }
+        });
+      }
+      
+      const searchText = item.abstract || item.definition || item.content || '';
+      const contentMatch = fuzzyMatch(searchText, query);
+      if (contentMatch.match) {
+        bestScore = Math.max(bestScore, contentMatch.score * 0.8);
+        matchedField = matchedField || 'content';
+      }
+      
+      if (queryTerms.length > 1) {
+        const allTermsMatch = queryTerms.every(term => {
+          return fuzzyMatch(item.title || '', term).match ||
+                 (item.keywords && item.keywords.some(kw => fuzzyMatch(kw, term).match)) ||
+                 fuzzyMatch(searchText, term).match;
+        });
+        
+        if (!allTermsMatch) bestScore = 0;
+      }
+      
+      if (bestScore > 0) {
+        results.push({
+          ...item,
+          category: category,
+          score: bestScore,
+          matchedField: matchedField
+        });
+      }
+    });
+  });
+  
+  results.sort((a, b) => b.score - a.score);
+  
+  const endTime = performance.now();
+  return {
+    results: results.slice(0, 50),
+    time: (endTime - startTime).toFixed(2)
+  };
+}
+
+function highlightText(text, query) {
+  if (!query || !text) return text;
+  
+  const queryTerms = query.toLowerCase().split(/\s+/).filter(t => t.length > 0);
+  let result = text;
+  
+  queryTerms.forEach(term => {
+    const regex = new RegExp(`(${term})`, 'gi');
+    result = result.replace(regex, '<mark>$1</mark>');
+  });
+  
+  return result;
+}
+
+function getContextSnippet(text, query, maxLength = 200) {
+  if (!text) return '';
+  
+  const queryTerms = query.toLowerCase().split(/\s+/).filter(t => t.length > 0);
+  const lowerText = text.toLowerCase();
+  
+  let matchPos = -1;
+  for (const term of queryTerms) {
+    const pos = lowerText.indexOf(term);
+    if (pos !== -1 && (matchPos === -1 || pos < matchPos)) {
+      matchPos = pos;
+    }
+  }
+  
+  if (matchPos === -1) {
+    return text.substring(0, maxLength) + (text.length > maxLength ? '...' : '');
+  }
+  
+  const start = Math.max(0, matchPos - 50);
+  const end = Math.min(text.length, start + maxLength);
+  let snippet = text.substring(start, end);
+  
+  if (start > 0) snippet = '...' + snippet;
+  if (end < text.length) snippet = snippet + '...';
+  
+  return snippet;
+}
+
+function renderResults(results, query) {
+  const container = document.getElementById('searchResults');
+  
+  if (results.length === 0) {
+    container.innerHTML = `
+      <div class="no-results">
+        <h3>No results found</h3>
+        <p>Try different keywords or adjust your search filters</p>
+      </div>
+    `;
+    return;
+  }
+  
+  const html = results.map(result => {
+    const typeClass = result.category;
+    const typeLabel = result.category.charAt(0).toUpperCase() + result.category.slice(1);
+    
+    let metaHtml = '';
+    if (result.category === 'paper') {
+      metaHtml = `
+        <div class="result-meta">
+          ${result.authors ? `<span class="result-meta-item">👤 ${result.authors}</span>` : ''}
+          ${result.arxiv_id ? `<span class="result-meta-item">📄 ${result.arxiv_id}</span>` : ''}
+          ${result.date ? `<span class="result-meta-item">📅 ${result.date}</span>` : ''}
+        </div>
+      `;
+    }
+    
+    const context = result.category === 'paper' 
+      ? getContextSnippet(result.abstract, query)
+      : result.category === 'wiki'
+      ? result.definition
+      : getContextSnippet(result.content, query);
+    
+    const keywordsHtml = result.keywords && result.keywords.length > 0
+      ? `<div class="result-keywords">
+           ${result.keywords.slice(0, 5).map(kw => `<span class="keyword-tag">${kw}</span>`).join('')}
+         </div>`
+      : '';
+    
+    return `
+      <div class="search-result-item" onclick="window.location.href='${result.url}'">
+        <div class="result-header">
+          <h3 class="result-title">${highlightText(result.title, query)}</h3>
+          <span class="result-type ${typeClass}">${typeLabel}</span>
+        </div>
+        ${metaHtml}
+        <div class="result-context">
+          ${highlightText(context, query)}
+        </div>
+        ${keywordsHtml}
+      </div>
+    `;
+  }).join('');
+  
+  container.innerHTML = html;
+}
+
+let currentFilter = 'all';
+let searchTimeout = null;
+
+function performSearch() {
+  const query = document.getElementById('globalSearchInput').value.trim();
+  const clearBtn = document.getElementById('clearSearchBtn');
+  const statsEl = document.getElementById('searchStats');
+  
+  clearBtn.style.display = query ? 'block' : 'none';
+  
+  if (!query) {
+    document.getElementById('searchResults').innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">🔎</div>
+        <h3>Start typing to search</h3>
+        <p>Search across 77 papers, 14 wiki terms, 4 topics, and more</p>
+        <div class="search-tips">
+          <h4>Search Tips:</h4>
+          <ul>
+            <li>Type keywords to find matching papers, concepts, and pages</li>
+            <li>Use the filter buttons to narrow results by category</li>
+            <li>Press <kbd>Cmd/Ctrl</kbd> + <kbd>K</kbd> to focus search from anywhere</li>
+            <li>Results are ranked by relevance</li>
+          </ul>
+        </div>
+      </div>
+    `;
+    statsEl.style.display = 'none';
+    return;
+  }
+  
+  statsEl.style.display = 'flex';
+  
+  const { results, time } = searchIndex(query, currentFilter);
+  
+  document.getElementById('resultCount').textContent = `${results.length} result${results.length !== 1 ? 's' : ''}`;
+  document.getElementById('searchTime').textContent = `${time}ms`;
+  
+  renderResults(results, query);
+}
+
+document.getElementById('globalSearchInput').addEventListener('input', () => {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(performSearch, 150);
+});
+
+document.getElementById('clearSearchBtn').addEventListener('click', () => {
+  document.getElementById('globalSearchInput').value = '';
+  performSearch();
+  document.getElementById('globalSearchInput').focus();
+});
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    performSearch();
+  });
+});
+
+document.addEventListener('keydown', (e) => {
+  if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+    e.preventDefault();
+    const input = document.getElementById('globalSearchInput');
+    input.focus();
+    input.select();
+    input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+});
+
+window.addEventListener('load', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('q')) {
+    const query = urlParams.get('q');
+    document.getElementById('globalSearchInput').value = query;
+    performSearch();
+  }
+});
+</script>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
