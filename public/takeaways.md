@@ -617,3 +617,4 @@ document.getElementById('sortBy').addEventListener('change', renderTakeaways);
 // Initialize
 loadData();
 </script>
+<script src="js/stage-navigation.js"></script>

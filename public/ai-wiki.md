@@ -2539,5 +2539,5 @@ document.getElementById('wikiSearch').addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
   searchWiki();
 });
-
-// Initialize
+</script>
+<script src="js/stage-navigation.js"></script>

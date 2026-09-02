@@ -1085,3 +1085,4 @@ document.getElementById('endSessionBtn').addEventListener('click', endSession);
 // Initialize
 loadData();
 </script>
+<script src="js/stage-navigation.js"></script>

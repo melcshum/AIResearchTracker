@@ -693,3 +693,4 @@ document.getElementById('sortBy').addEventListener('change', renderQuestions);
 // Initialize
 loadData();
 </script>
+<script src="js/stage-navigation.js"></script>

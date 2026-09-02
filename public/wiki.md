@@ -2426,3 +2426,4 @@ document.addEventListener('click', (e) => {
   }
 });
 </script>
+<script src="js/stage-navigation.js"></script>
