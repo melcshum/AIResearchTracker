@@ -449,11 +449,11 @@ python3 inject_wikilinks.py
 - **Interaction Model**: Prompt Before Provide
 - **Evaluation Framework**: Mixed-method formative study examining conceptual understanding, knowledge artefact quality, learner response to AI scaffolding, and perceived usefulness
 
-## Current Stats (Sep 2, 2026)
+## Current Stats (Sep 3, 2026)
 
 - **133 papers** tracked from arXiv (47 daily batches)
 - **851 authors** indexed
-- **123 pages** rendered
+- **124 pages** rendered
 - **119 search index items** (77 papers + 27 wiki terms + 4 topics + 2 concepts + 16 pages)
 - **34 graph nodes** (4 topics + 18 terms + 12 papers)
 - **67 graph connections**
@@ -462,7 +462,23 @@ python3 inject_wikilinks.py
 - **2 main sections**: Research Portal (Researcher/Admin), Internal Part (Architecture/Engineering)
 - **Live at**: http://100.64.0.17:8001
 
-## Recent Enhancements (Sep 2, 2026)
+## Recent Enhancements (Sep 3, 2026)
+
+### UI/UX Fixes - Conference Paper ✅
+
+**Critical Fixes Applied:**
+- Removed duplicate abstract and keywords sections (Quarto auto-renders from YAML frontmatter)
+- Added `site_libs/` directory to `public/` to resolve CSS/JS 404 errors
+- Created symlink for bootstrap CSS hash mismatch (`bootstrap-21bc5de5...` → `bootstrap-6191c8c...`)
+- Regenerated conference paper HTML with correct theme paths
+- Fixed server binding to 0.0.0.0 for Tailscale accessibility
+
+**Verification:**
+- HTTP 200 OK on all resources
+- All 9 main sections present (Abstract, Introduction, Theoretical Background, Proposed System, Formative Evaluation, Discussion, Limitations, Conclusion, References)
+- File size: 197KB (2,365 lines)
+- No 404 errors in page resources
+- Bootstrap, syntax highlighting, and custom CSS all loading correctly
 
 ### UI/UX Learning Workflow - All 5 Phases Complete ✅
 
