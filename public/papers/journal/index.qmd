@@ -1,0 +1,433 @@
+---
+title: "Journal Publications"
+description: "Peer-reviewed journal articles and extended versions of our research"
+---
+
+<div class="papers-container">
+
+<div class="papers-header">
+<div class="header-badge">📚 Journal Publications</div>
+<h1>Journal Papers</h1>
+<p class="header-subtitle">Peer-reviewed articles and extended research publications</p>
+</div>
+
+<div class="papers-filters">
+<div class="search-box">
+<input type="text" placeholder="Search journal papers..." id="journal-search">
+</div>
+<div class="filter-group">
+<select id="year-filter">
+<option value="">All Years</option>
+<option value="2026">2026</option>
+<option value="2025">2025</option>
+<option value="2024">2024</option>
+</select>
+<select id="venue-filter">
+<option value="">All Venues</option>
+<option value="nature">Nature</option>
+<option value="ieee">IEEE</option>
+<option value="acm">ACM</option>
+<option value="jmlr">JMLR</option>
+</select>
+</div>
+</div>
+
+<div class="papers-grid" id="journal-papers-list">
+<!-- Journal papers will be dynamically loaded here -->
+<div class="paper-card empty-state">
+<div class="empty-icon">📭</div>
+<h3>No journal papers yet</h3>
+<p>Journal publications will appear here once published.</p>
+</div>
+</div>
+
+<div class="papers-stats">
+<div class="stat-item">
+<span class="stat-number" id="journal-count">0</span>
+<span class="stat-label">Journal Papers</span>
+</div>
+<div class="stat-item">
+<span class="stat-number" id="journal-citations">0</span>
+<span class="stat-label">Total Citations</span>
+</div>
+<div class="stat-item">
+<span class="stat-number" id="journal-h-index">0</span>
+<span class="stat-label">h-index</span>
+</div>
+</div>
+
+</div>
+
+<script>
+// Journal papers data (will be populated from backend)
+const journalPapers = [];
+
+function renderJournalPapers() {
+  const container = document.getElementById('journal-papers-list');
+  if (journalPapers.length === 0) {
+    container.innerHTML = `
+      <div class="paper-card empty-state">
+        <div class="empty-icon">📭</div>
+        <h3>No journal papers yet</h3>
+        <p>Journal publications will appear here once published.</p>
+        <p class="empty-hint">This is where your peer-reviewed journal articles will be displayed.</p>
+      </div>
+    `;
+    return;
+  }
+  
+  container.innerHTML = journalPapers.map(paper => `
+    <div class="paper-card journal-card" data-venue="${paper.venue}" data-year="${paper.year}">
+      <div class="paper-badge journal-badge">${paper.venue}</div>
+      <h3 class="paper-title">${paper.title}</h3>
+      <p class="paper-authors">${paper.authors}</p>
+      <div class="paper-meta">
+        <span class="paper-venue">${paper.venue}</span>
+        <span class="paper-year">${paper.year}</span>
+        <span class="paper-volume">${paper.volume || ''}</span>
+      </div>
+      <p class="paper-abstract">${paper.abstract}</p>
+      <div class="paper-tags">
+        ${paper.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+      </div>
+      <div class="paper-actions">
+        ${paper.pdf ? `<a href="${paper.pdf}" class="btn primary">📄 PDF</a>` : ''}
+        ${paper.code ? `<a href="${paper.code}" class="btn secondary">💻 Code</a>` : ''}
+        ${paper.data ? `<a href="${paper.data}" class="btn secondary">📊 Data</a>` : ''}
+      </div>
+    </div>
+  `).join('');
+  
+  document.getElementById('journal-count').textContent = journalPapers.length;
+}
+
+// Search and filter functionality
+document.getElementById('journal-search').addEventListener('input', (e) => {
+  const query = e.target.value.toLowerCase();
+  const filtered = journalPapers.filter(p => 
+    p.title.toLowerCase().includes(query) ||
+    p.authors.toLowerCase().includes(query) ||
+    p.abstract.toLowerCase().includes(query)
+  );
+  renderFilteredPapers(filtered);
+});
+
+document.getElementById('year-filter').addEventListener('change', (e) => {
+  const year = e.target.value;
+  const filtered = year ? journalPapers.filter(p => p.year === year) : journalPapers;
+  renderFilteredPapers(filtered);
+});
+
+document.getElementById('venue-filter').addEventListener('change', (e) => {
+  const venue = e.target.value;
+  const filtered = venue ? journalPapers.filter(p => p.venue.toLowerCase().includes(venue.toLowerCase())) : journalPapers;
+  renderFilteredPapers(filtered);
+});
+
+function renderFilteredPapers(papers) {
+  const container = document.getElementById('journal-papers-list');
+  if (papers.length === 0) {
+    container.innerHTML = `
+      <div class="paper-card empty-state">
+        <div class="empty-icon">🔍</div>
+        <h3>No papers found</h3>
+        <p>Try adjusting your search or filters.</p>
+      </div>
+    `;
+    return;
+  }
+  
+  container.innerHTML = papers.map(paper => `
+    <div class="paper-card journal-card" data-venue="${paper.venue}" data-year="${paper.year}">
+      <div class="paper-badge journal-badge">${paper.venue}</div>
+      <h3 class="paper-title">${paper.title}</h3>
+      <p class="paper-authors">${paper.authors}</p>
+      <div class="paper-meta">
+        <span class="paper-venue">${paper.venue}</span>
+        <span class="paper-year">${paper.year}</span>
+        <span class="paper-volume">${paper.volume || ''}</span>
+      </div>
+      <p class="paper-abstract">${paper.abstract}</p>
+      <div class="paper-tags">
+        ${paper.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+      </div>
+      <div class="paper-actions">
+        ${paper.pdf ? `<a href="${paper.pdf}" class="btn primary">📄 PDF</a>` : ''}
+        ${paper.code ? `<a href="${paper.code}" class="btn secondary">💻 Code</a>` : ''}
+        ${paper.data ? `<a href="${paper.data}" class="btn secondary">📊 Data</a>` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+// Initial render
+renderJournalPapers();
+</script>
+
+<style>
+.papers-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.papers-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.papers-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #1a202c;
+}
+
+.header-subtitle {
+  color: #718096;
+  font-size: 1.1rem;
+}
+
+.papers-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 300px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.filter-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter-group select {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+}
+
+.papers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.paper-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.paper-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.paper-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.journal-badge {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+}
+
+.paper-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1a202c;
+  line-height: 1.4;
+}
+
+.paper-authors {
+  color: #4a5568;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.paper-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #718096;
+  margin-bottom: 1rem;
+}
+
+.paper-abstract {
+  color: #4a5568;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  background: #edf2f7;
+  color: #4a5568;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.paper-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn.primary {
+  background: #667eea;
+  color: white;
+}
+
+.btn.primary:hover {
+  background: #5a67d8;
+}
+
+.btn.secondary {
+  background: #edf2f7;
+  color: #4a5568;
+}
+
+.btn.secondary:hover {
+  background: #e2e8f0;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: #718096;
+  margin-bottom: 0.5rem;
+}
+
+.empty-hint {
+  font-size: 0.875rem;
+  color: #a0aec0;
+  font-style: italic;
+}
+
+.papers-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  border-radius: 12px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  color: #718096;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .papers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .papers-filters {
+    flex-direction: column;
+  }
+  
+  .search-box {
+    min-width: 100%;
+  }
+  
+  .papers-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+</style>

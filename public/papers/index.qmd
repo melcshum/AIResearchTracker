@@ -1,0 +1,391 @@
+---
+title: "All Publications"
+description: "Browse all research publications including conference papers, journal articles, and white papers"
+---
+
+<div class="papers-landing">
+
+<div class="landing-header">
+<h1>📚 Research Publications</h1>
+<p class="subtitle">Explore our complete collection of research papers, journal articles, and technical reports</p>
+</div>
+
+<div class="publication-types">
+
+<div class="type-card conference-card">
+<div class="type-icon">🎤</div>
+<h2>Conference Papers</h2>
+<p class="type-desc">Peer-reviewed conference proceedings and presentations</p>
+<div class="type-stats" id="conf-count">Loading...</div>
+<div class="type-actions">
+<a href="conference/index.html" class="btn primary">View Conference Papers</a>
+<a href="conference/index.html" class="btn secondary">Browse All</a>
+</div>
+</div>
+
+<div class="type-card journal-card">
+<div class="type-icon">📖</div>
+<h2>Journal Publications</h2>
+<p class="type-desc">Extended peer-reviewed journal articles and monographs</p>
+<div class="type-stats" id="journal-count">0 papers</div>
+<div class="type-actions">
+<a href="journal/index.html" class="btn primary">View Journal Papers</a>
+<a href="journal/index.html" class="btn secondary">Browse All</a>
+</div>
+</div>
+
+<div class="type-card whitepaper-card">
+<div class="type-icon">📄</div>
+<h2>White Papers</h2>
+<p class="type-desc">Technical reports, preprints, and working papers</p>
+<div class="type-stats" id="whitepaper-count">0 papers</div>
+<div class="type-actions">
+<a href="white-papers/index.html" class="btn primary">View White Papers</a>
+<a href="white-papers/index.html" class="btn secondary">Browse All</a>
+</div>
+</div>
+
+</div>
+
+<div class="quick-links">
+<h2>Quick Access</h2>
+<div class="link-grid">
+<a href="../authors.html" class="quick-link">
+<span class="link-icon">👥</span>
+<span class="link-text">Author Index</span>
+</a>
+<a href="../citation-graph.html" class="quick-link">
+<span class="link-icon">🔗</span>
+<span class="link-text">Citation Graph</span>
+</a>
+<a href="../collections.html" class="quick-link">
+<span class="link-icon">📂</span>
+<span class="link-text">Collections</span>
+</a>
+<a href="../concept-explorer.html" class="quick-link">
+<span class="link-icon">🏷️</span>
+<span class="link-text">Concept Explorer</span>
+</a>
+<a href="../search-papers.html" class="quick-link">
+<span class="link-icon">🔍</span>
+<span class="link-text">Advanced Search</span>
+</a>
+<a href="../compare-papers.html" class="quick-link">
+<span class="link-icon">⚖️</span>
+<span class="link-text">Compare Papers</span>
+</a>
+</div>
+</div>
+
+<div class="featured-section">
+<h2>Featured Publications</h2>
+<div class="featured-grid" id="featured-papers">
+<!-- Featured papers will be loaded dynamically -->
+</div>
+</div>
+
+</div>
+
+<script>
+// Count papers in each category
+function countPapers() {
+  // Conference papers count
+  fetch('conference/index.html')
+    .then(res => res.text())
+    .then(html => {
+      const count = (html.match(/paper-card/g) || []).length - 1; // Subtract empty state
+      document.getElementById('conf-count').textContent = count + ' papers';
+    });
+  
+  // Journal papers count (currently 0)
+  document.getElementById('journal-count').textContent = '0 papers';
+  
+  // White papers count (currently 0)
+  document.getElementById('whitepaper-count').textContent = '0 papers';
+}
+
+// Load featured papers
+function loadFeaturedPapers() {
+  const featured = [
+    {
+      title: 'From Notes to Knowledge: Designing an AI Wiki Companion for Learner-in-the-Loop Knowledge Construction',
+      type: 'conference',
+      venue: 'LAK/AIED 2027',
+      authors: 'Research Team, AI Education Research',
+      year: '2026',
+      link: 'conference/ai-wiki-companion-2026.html'
+    }
+  ];
+  
+  document.getElementById('featured-papers').innerHTML = featured.map(paper => `
+    <div class="featured-card">
+      <div class="featured-badge featured-${paper.type}">${paper.type.toUpperCase()}</div>
+      <h3 class="featured-title">${paper.title}</h3>
+      <p class="featured-authors">${paper.authors}</p>
+      <div class="featured-meta">
+        <span class="featured-venue">${paper.venue}</span>
+        <span class="featured-year">${paper.year}</span>
+      </div>
+      <a href="${paper.link}" class="btn primary">View Paper</a>
+    </div>
+  `).join('');
+}
+
+countPapers();
+loadFeaturedPapers();
+</script>
+
+<style>
+.papers-landing {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.landing-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.landing-header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #718096;
+}
+
+.publication-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.type-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.type-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.type-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.type-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #1a202c;
+}
+
+.type-desc {
+  color: #718096;
+  margin-bottom: 1rem;
+}
+
+.type-stats {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 1.5rem;
+}
+
+.type-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.conference-card {
+  border-top: 4px solid #667eea;
+}
+
+.journal-card {
+  border-top: 4px solid #10b981;
+}
+
+.whitepaper-card {
+  border-top: 4px solid #f59e0b;
+}
+
+.quick-links {
+  margin: 3rem 0;
+}
+
+.quick-links h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #1a202c;
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.quick-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #1a202c;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+
+.quick-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  color: #667eea;
+}
+
+.link-icon {
+  font-size: 1.5rem;
+}
+
+.link-text {
+  font-weight: 500;
+}
+
+.featured-section {
+  margin-top: 3rem;
+}
+
+.featured-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #1a202c;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+
+.featured-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.featured-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.featured-conference {
+  background: #667eea;
+  color: white;
+}
+
+.featured-journal {
+  background: #10b981;
+  color: white;
+}
+
+.featured-whitepaper {
+  background: #f59e0b;
+  color: white;
+}
+
+.featured-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1a202c;
+  line-height: 1.4;
+}
+
+.featured-authors {
+  color: #4a5568;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.featured-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #718096;
+  margin-bottom: 1rem;
+}
+
+.featured-card .btn {
+  width: 100%;
+  text-align: center;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+}
+
+.btn.primary {
+  background: #667eea;
+  color: white;
+}
+
+.btn.primary:hover {
+  background: #5a67d8;
+}
+
+.btn.secondary {
+  background: #edf2f7;
+  color: #4a5568;
+}
+
+.btn.secondary:hover {
+  background: #e2e8f0;
+}
+
+@media (max-width: 768px) {
+  .publication-types {
+    grid-template-columns: 1fr;
+  }
+  
+  .link-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

@@ -290,6 +290,43 @@ The central design challenge is not simply to determine what AI can do for the l
 </div>
 
 <div class="admin-section">
+<h2>📚 Internal Publications</h2>
+<div class="publications-panel">
+<p>Access internal project papers, conference submissions, and research documentation:</p>
+<div class="publication-links">
+<a href="papers/index.html" class="pub-link all-papers">
+<span class="pub-icon">📚</span>
+<div class="pub-info">
+<strong>All Publications</strong>
+<span>Browse conference papers, journal articles, and white papers</span>
+</div>
+</a>
+<a href="papers/conference/index.html" class="pub-link conference">
+<span class="pub-icon">🎤</span>
+<div class="pub-info">
+<strong>Conference Papers</strong>
+<span>Peer-reviewed conference proceedings</span>
+</div>
+</a>
+<a href="papers/journal/index.html" class="pub-link journal">
+<span class="pub-icon">📖</span>
+<div class="pub-info">
+<strong>Journal Publications</strong>
+<span>Extended peer-reviewed journal articles</span>
+</div>
+</a>
+<a href="papers/white-papers/index.html" class="pub-link whitepaper">
+<span class="pub-icon">📄</span>
+<div class="pub-info">
+<strong>White Papers</strong>
+<span>Technical reports and preprints</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+
+<div class="admin-section">
 <h2>🚀 Quick Start</h2>
 <div class="quick-start">
 <div class="command-block">
@@ -678,5 +715,87 @@ The central design challenge is not simply to determine what AI can do for the l
 .doc-link:hover {
   background: #e9ecef;
   transform: translateX(4px);
+}
+
+/* Publications Panel Styles */
+.publications-panel {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.publications-panel p {
+  color: #4a5568;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.publication-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+}
+
+.pub-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #2c3e50;
+  transition: all 0.2s;
+  border-left: 4px solid #667eea;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.pub-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pub-link.all-papers {
+  border-left-color: #667eea;
+}
+
+.pub-link.conference {
+  border-left-color: #3182ce;
+}
+
+.pub-link.journal {
+  border-left-color: #38a169;
+}
+
+.pub-link.whitepaper {
+  border-left-color: #d69e2e;
+}
+
+.pub-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.pub-info {
+  flex: 1;
+}
+
+.pub-info strong {
+  display: block;
+  color: #2c3e50;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.pub-info span {
+  color: #718096;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .publication-links {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

@@ -1,0 +1,376 @@
+---
+title: "Conference Papers"
+description: "Peer-reviewed conference proceedings and presentations"
+---
+
+<div class="papers-container">
+
+<div class="papers-header">
+<div class="header-badge conference">Conference Papers</div>
+<h1>🎤 Conference Proceedings</h1>
+<p class="header-subtitle">Peer-reviewed papers presented at academic conferences</p>
+</div>
+
+<div class="papers-filter-section">
+<div class="filter-controls">
+<div class="search-box">
+<input type="text" id="conference-search" placeholder="Search papers by title, author, or topic..." class="search-input">
+<svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<circle cx="11" cy="11" r="8"></circle>
+<path d="m21 21-4.35-4.35"></path>
+</svg>
+</div>
+<div class="filter-group">
+<select id="conference-year-filter" class="filter-select">
+<option value="all">All Years</option>
+<option value="2026">2026</option>
+<option value="2025">2025</option>
+<option value="2024">2024</option>
+</select>
+<select id="conference-topic-filter" class="filter-select">
+<option value="all">All Topics</option>
+<option value="ai-agents">AI Agents</option>
+<option value="rag">RAG & Retrieval</option>
+<option value="reasoning">LLM Reasoning</option>
+<option value="multi-modal">Multi-modal</option>
+</select>
+</div>
+</div>
+</div>
+
+<div class="papers-grid" id="conference-papers-grid">
+
+<!-- Paper 1: AI Wiki Companion -->
+<div class="paper-card conference-paper" data-year="2026" data-topic="ai-education">
+<div class="paper-badge">Conference Paper</div>
+<div class="paper-content">
+<h3 class="paper-title">
+<a href="ai-wiki-companion-2026.html">From Notes to Knowledge: Designing an AI Wiki Companion for Learner-in-the-Loop Knowledge Construction</a>
+</h3>
+<div class="paper-meta">
+<span class="paper-authors">Research Team, AI Education Research</span>
+<span class="paper-venue">LAK/AIED 2027 Submission</span>
+<span class="paper-date">September 2026</span>
+</div>
+<p class="paper-abstract">
+Generative artificial intelligence (GenAI) has substantially reduced the effort required to produce summaries, explanations, structured notes, and other learning artefacts. Although these tools lower the barrier to producing polished outputs, they may also reduce the depth of cognitive engagement required for genuine knowledge construction. This paper presents the design and formative evaluation of an AI Wiki Companion that positions GenAI as a metacognitive scaffold rather than a substitute knowledge producer.
+</p>
+<div class="paper-tags">
+<span class="tag">knowledge construction</span>
+<span class="tag">self-regulated learning</span>
+<span class="tag">metacognitive scaffolding</span>
+<span class="tag">generative AI</span>
+</div>
+<div class="paper-actions">
+<a href="ai-wiki-companion-2026.html" class="btn btn-primary">View Paper</a>
+<a href="#" class="btn btn-outline">Download PDF</a>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="papers-footer">
+<p class="footer-text">Showing <span id="conference-paper-count">1</span> conference paper(s)</p>
+</div>
+
+</div>
+
+<script type="module">
+// Conference papers filtering and search
+import { setupPaperFilters } from '../js/paper-filters.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  setupPaperFilters('conference');
+});
+</script>
+
+<style>
+/* Conference papers specific styles */
+.papers-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.papers-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.header-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.header-badge.conference {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.papers-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.header-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.papers-filter-section {
+  margin-bottom: 40px;
+}
+
+.filter-controls {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+}
+
+.filter-group {
+  display: flex;
+  gap: 15px;
+}
+
+.filter-select {
+  padding: 12px 15px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.papers-grid {
+  display: grid;
+  gap: 30px;
+}
+
+.paper-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  transition: all 0.3s;
+  border: 1px solid #e2e8f0;
+}
+
+.paper-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.paper-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 20px 20px 0 20px;
+  border-radius: 6px;
+}
+
+.paper-content {
+  padding: 25px 30px 30px;
+}
+
+.paper-title {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.paper-title a {
+  color: #2c3e50;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.paper-title a:hover {
+  color: #667eea;
+}
+
+.paper-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.paper-authors {
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.paper-venue {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.paper-venue::before {
+  content: "📍";
+}
+
+.paper-date {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.paper-date::before {
+  content: "📅";
+}
+
+.paper-abstract {
+  color: #4a5568;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #f0f4f8;
+  color: #4a5568;
+  font-size: 12px;
+  border-radius: 15px;
+  text-decoration: none;
+}
+
+.tag:hover {
+  background: #e2e8f0;
+}
+
+.paper-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-outline {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+.btn-outline:hover {
+  background: #667eea;
+  color: white;
+}
+
+.papers-footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.footer-text {
+  color: #666;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .papers-header h1 {
+    font-size: 2rem;
+  }
+  
+  .filter-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search-box {
+    min-width: 100%;
+  }
+  
+  .filter-group {
+    flex-direction: column;
+  }
+  
+  .paper-actions {
+    flex-direction: column;
+  }
+}
+</style>

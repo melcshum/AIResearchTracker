@@ -1,0 +1,119 @@
+---
+title: "Template: Journal Paper"
+description: "Template for creating new journal paper entries"
+---
+
+# Journal Paper Template
+
+Use this template to create new journal paper entries. Copy this file and fill in the details.
+
+## YAML Frontmatter
+
+```yaml
+---
+title: "Your Paper Title Here"
+authors:
+  - Author One
+  - Author Two
+journal: "Journal Name"
+year: 2026
+volume: "12"
+issue: "3"
+pages: "123-145"
+doi: "10.1234/journal.2026.123456"
+keywords:
+  - keyword 1
+  - keyword 2
+  - keyword 3
+abstract: |
+  Your abstract text here. This should be a concise summary of your research,
+  including the problem, methodology, key results, and significance.
+pdf: "path/to/paper.pdf"
+code: "https://github.com/username/repo"
+data: "https://doi.org/data-doi"
+---
+```
+
+## Paper Content
+
+### Overview
+
+[Provide a brief overview of the paper]
+
+### Key Contributions
+
+1. **Contribution 1**: Description of the first key contribution
+2. **Contribution 2**: Description of the second key contribution
+3. **Contribution 3**: Description of the third key contribution
+
+### Methodology
+
+[Describe the methodology used in the research]
+
+### Results
+
+[Present the key results and findings]
+
+### Discussion
+
+[Discuss the implications and significance of the results]
+
+### References
+
+[Include references in the appropriate format]
+
+---
+
+## How to Use
+
+1. Copy this template to `public/papers/journal/[paper-name].qmd`
+2. Fill in the YAML frontmatter with your paper details
+3. Add your paper content below
+4. Place PDF in `public/papers/journal/pdfs/` if available
+5. Link code and data repositories if available
+6. Update the journal papers index to include your paper
+
+## Metadata Fields
+
+- **title**: Full paper title
+- **authors**: List of all authors
+- **journal**: Journal name (e.g., "Nature Machine Intelligence")
+- **year**: Publication year
+- **volume**: Volume number (if applicable)
+- **issue**: Issue number (if applicable)
+- **pages**: Page range
+- **doi**: Digital Object Identifier
+- **keywords**: List of relevant keywords
+- **abstract**: Paper abstract
+- **pdf**: Link to PDF file
+- **code**: Link to code repository
+- **data**: Link to data repository
+
+## Example Entry
+
+```yaml
+---
+title: "From Notes to Knowledge: Designing an AI Wiki Companion"
+authors:
+  - Research Team
+  - AI Education Research
+journal: "Journal of Learning Analytics"
+year: 2027
+volume: "8"
+issue: "1"
+pages: "45-78"
+doi: "10.1234/jla.2027.123456"
+keywords:
+  - generative AI
+  - knowledge construction
+  - self-regulated learning
+  - metacognitive scaffolding
+abstract: |
+  Generative artificial intelligence (GenAI) has substantially reduced the effort
+  required to produce summaries, explanations, structured notes, and other learning
+  artefacts. This paper presents the design and evaluation of an AI Wiki Companion
+  that positions GenAI as a metacognitive scaffold rather than a substitute.
+pdf: "pdfs/ai-wiki-companion-journal-2027.pdf"
+code: "https://github.com/melcshum/AIResearchTracker"
+---
+```
