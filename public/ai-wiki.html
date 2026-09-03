@@ -313,8 +313,8 @@ Comprehensive knowledge base of AI concepts, methods, and research
 <button class="tab-btn active" onclick="switchTab('browse')">
 📖 Browse
 </button>
-<button class="tab-btn" onclick="switchTab('learn')">
-🎯 Learn by Building
+<button class="tab-btn" onclick="switchTab('knowledge')">
+🎯 Knowledge Construction
 </button>
 <button class="tab-btn" onclick="switchTab('graph')">
 🕸️ Concept Graph
@@ -326,111 +326,126 @@ Comprehensive knowledge base of AI concepts, methods, and research
 📊 Statistics
 </button>
 </div>
-<!-- Learn by Building Tab -->
-<div id="learnTab" class="tab-content">
-<div class="learn-header">
-<h3 class="anchored">
-🎯 Learn by Building
-</h3>
-<p>
-Construct your understanding by building explanations from scratch
-</p>
-</div>
-<div class="learn-mode-selector">
-<div class="mode-card" onclick="startLearningMode('build')">
-<div class="mode-icon">
-🏗️
-</div>
-<h4 class="anchored">
-Build Understanding
-</h4>
-<p>
-Create your own explanation guided by structured prompts
-</p>
-</div>
-<div class="mode-card" onclick="startLearningMode('teach')">
-<div class="mode-icon">
-👨‍🏫
-</div>
-<h4 class="anchored">
-Teaching Mode
-</h4>
-<p>
-Explain concepts as if teaching someone else
-</p>
-</div>
-<div class="mode-card" onclick="startLearningMode('compare')">
-<div class="mode-icon">
-⚖️
-</div>
-<h4 class="anchored">
-Compare &amp; Reflect
-</h4>
-<p>
-Compare your understanding to expert explanations
-</p>
-</div>
-</div>
-<div id="learningWorkspace" class="learning-workspace" style="display: none;">
-<div class="learning-header">
-<h3 id="learningTitle" class="anchored">
-Building Understanding
-</h3>
-<div class="mastery-indicator">
-<p><span class="mastery-level">🌱 Learning</span> <button onclick="updateMastery()" class="btn-mastery">Update Progress</button></p>
-</div>
-</div>
-<div class="concept-selector">
-<p><label>Select a concept to work on:</label> <select id="learningConceptSelect" onchange="loadConceptForLearning()"> <option value="">– Choose a concept –</option> </select></p>
-</div>
-<div id="learningTemplate" class="learning-template" style="display: none;">
-<div class="template-section">
-<h4 class="anchored">
-📝 Your Explanation
-</h4>
-<textarea id="userExplanation" class="learning-textarea" placeholder="Explain this concept in your own words..."></textarea>
-</div>
-<div class="template-section">
-<h4 class="anchored">
-🔑 Key Ideas
-</h4>
-<textarea id="keyIdeas" class="learning-textarea-small" placeholder="What are the 3-5 most important points?"></textarea>
-</div>
-<div class="template-section">
-<h4 class="anchored">
-💡 Examples &amp; Applications
-</h4>
-<textarea id="examples" class="learning-textarea-small" placeholder="Give concrete examples or real-world applications..."></textarea>
-</div>
-<div class="template-section">
-<h4 class="anchored">
-🔗 Connections
-</h4>
-<textarea id="connections" class="learning-textarea-small" placeholder="How does this relate to other concepts you've learned?"></textarea>
-</div>
-<div class="template-section">
-<h4 class="anchored">
-❓ Questions &amp; Uncertainties
-</h4>
-<textarea id="questions" class="learning-textarea-small" placeholder="What still confuses you? What would you like to explore further?"></textarea>
-</div>
-<div class="learning-actions">
-<button onclick="saveLearningProgress()" class="btn-save">
-💾 Save Progress
-</button>
-<button onclick="getAIFeedback()" class="btn-ai">
-🤖 Get AI Feedback
-</button>
-<button onclick="viewExpertExplanation()" class="btn-compare">
-📚 View Expert Explanation
-</button>
-</div>
-<div id="aiFeedback" class="ai-feedback" style="display: none;">
+<!-- Knowledge Construction Tab -->
+<div id="knowledgeTab" class="tab-content">
+  <div class="knowledge-header">
+    <h2>🎯 Knowledge Construction</h2>
+    <p>Build understanding through the 5-stage learning cycle: Construct → Reflect → Scaffold → Consolidate → Revisit</p>
+  </div>
 
-</div>
-<div id="expertExplanation" class="expert-explanation" style="display: none;">
+  <!-- Progress Panel -->
+  <div class="progress-panel">
+    <h4>📊 Learning Progress</h4>
+    <div class="progress-bar-container">
+      <div id="progressBar" class="progress-bar-fill" style="width: 0%">0%</div>
+    </div>
+    <div class="progress-stats">
+      <span id="progressText">0% Complete</span>
+      <span id="progressStats">0 of 5 stages completed</span>
+    </div>
+    <div class="stage-completion-indicators">
+      <div class="stage-indicator" data-stage="construct">○ Construct</div>
+      <div class="stage-indicator" data-stage="reflect">○ Reflect</div>
+      <div class="stage-indicator" data-stage="scaffold">○ Scaffold</div>
+      <div class="stage-indicator" data-stage="consolidate">○ Consolidate</div>
+      <div class="stage-indicator" data-stage="revisit">○ Revisit</div>
+    </div>
+    
+    <!-- Mastery Progression Chart -->
+    <div class="mastery-chart-container">
+      <h5>📈 Mastery Progression</h5>
+      <div id="masteryChart" class="mastery-chart"></div>
+    </div>
+  </div>
 
-</div>
+  <!-- Stage Progress Arrow Diagram -->
+  <div class="stage-progress-container">
+    <div class="stage-arrow" data-stage="construct" onclick="navigateToStage('construct')">
+      <span class="stage-number">1</span>
+      <span class="stage-label">Construct</span>
+      <div class="stage-description">Write your explanation</div>
+    </div>
+    <div class="stage-arrow" data-stage="reflect" onclick="navigateToStage('reflect')">
+      <span class="stage-number">2</span>
+      <span class="stage-label">Reflect</span>
+      <div class="stage-description">Examine your understanding</div>
+    </div>
+    <div class="stage-arrow" data-stage="scaffold" onclick="navigateToStage('scaffold')">
+      <span class="stage-number">3</span>
+      <span class="stage-label">Scaffold</span>
+      <div class="stage-description">Get targeted guidance</div>
+    </div>
+    <div class="stage-arrow" data-stage="consolidate" onclick="navigateToStage('consolidate')">
+      <span class="stage-number">4</span>
+      <span class="stage-label">Consolidate</span>
+      <div class="stage-description">Apply your knowledge</div>
+    </div>
+    <div class="stage-arrow" data-stage="revisit" onclick="navigateToStage('revisit')">
+      <span class="stage-number">5</span>
+      <span class="stage-label">Revisit</span>
+      <div class="stage-description">Connect & extend</div>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="knowledge-main-container">
+    <div class="knowledge-content">
+      <div class="concept-selector">
+        <label for="knowledgeConceptSelect">Select a concept:</label>
+        <select id="knowledgeConceptSelect" onchange="loadConceptForConstruction()">
+          <option value="">-- Select a Concept --</option>
+        </select>
+      </div>
+
+      <div id="stageContent" class="stage-content" style="display: none;">
+        <!-- Dynamic content based on current stage -->
+      </div>
+
+      <div id="welcomeMessage" class="welcome-message">
+        <h4>Welcome to Knowledge Construction</h4>
+        <p>Select a concept above to begin the 5-stage learning cycle. You can navigate flexibly between stages:</p>
+        <ul>
+          <li><strong>Construct:</strong> Write your initial explanation in your own words</li>
+          <li><strong>Reflect:</strong> Examine your understanding with AI-generated prompts</li>
+          <li><strong>Scaffold:</strong> Receive targeted guidance to fill knowledge gaps</li>
+          <li><strong>Consolidate:</strong> Apply your knowledge to new scenarios</li>
+          <li><strong>Revisit:</strong> Connect this concept to your prior knowledge</li>
+        </ul>
+      </div>
+
+      <!-- Revision History Panel -->
+      <div class="revision-history-panel">
+        <h4>📜 Revision History</h4>
+        <div id="revisionHistory" class="revision-timeline">
+          <p class="no-revisions">No revisions yet. Start writing to see your progress!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collapsible AI Companion Sidebar -->
+    <div id="aiCompanionSidebar" class="ai-companion-sidebar collapsed">
+      <button class="sidebar-toggle" onclick="toggleSidebar()">
+        <span class="toggle-icon">◀</span>
+      </button>
+      <div class="sidebar-content">
+        <div class="sidebar-header">
+          <h4>🤖 AI Companion</h4>
+          <p class="sidebar-subtitle">Your learning assistant</p>
+        </div>
+
+        <div id="aiCompanionContent" class="companion-content">
+          <div class="companion-intro">
+            <p>Use the arrow diagram above to navigate between stages. The AI will guide you through the learning cycle.</p>
+          </div>
+        </div>
+
+        <div id="aiCompanionLoading" class="companion-loading">
+          <div class="loading-spinner"></div>
+          <div class="loading-text">Processing...</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </div>
 </div>
@@ -538,20 +553,6 @@ Tags
 <h3 class="anchored">
 🤖 AI Companion
 </h3>
-<div class="companion-modes">
-<button class="companion-mode-btn active" onclick="switchAIMode('construct')">
-Construct
-</button>
-<button class="companion-mode-btn" onclick="switchAIMode('reflect')">
-Reflect
-</button>
-<button class="companion-mode-btn" onclick="switchAIMode('scaffold')">
-Scaffold
-</button>
-<button class="companion-mode-btn" onclick="switchAIMode('consolidate')">
-Consolidate
-</button>
-</div>
 <div id="companionContent" class="companion-content">
 <div class="companion-intro">
 <p>
@@ -2899,6 +2900,7 @@ document.getElementById('wikiSearch').addEventListener('keypress', (e) => {
 });
 </script>
 <script src="js/stage-navigation.js"></script>
+<script src="js/knowledge-construction.js"></script>
 
 
 

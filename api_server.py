@@ -643,6 +643,441 @@ def get_knowledge_context():
         traceback.print_exc()
         return jsonify({'error': str(e)}), 500
 
+# Stage-specific endpoints (MVP with mock scaffolding)
+@app.route('/api/wiki/construct', methods=['POST'])
+def construct_entry():
+    """Save learner-authored wiki entry (Construct stage)."""
+    try:
+        from user_manager import load_user_data, save_user_data
+        
+        data = request.json
+        concept = data.get('concept', '')
+        explanation = data.get('explanation', '')
+        username = get_current_user()
+        
+        if not concept or not explanation:
+            return jsonify({'error': 'Concept and explanation required'}), 400
+        
+        # Load user's wiki data
+        user_data = load_user_data(username)
+        if 'wiki' not in user_data:
+            user_data['wiki'] = {}
+        
+        wiki_data = user_data['wiki']
+        
+        # Save or update entry
+        if concept not in wiki_data:
+            wiki_data[concept] = {
+                'explanation': explanation,
+                'created': date.today().isoformat(),
+                'revisions': [],
+                'connections': [],
+                'keywords': []
+            }
+        else:
+            # Save revision
+            wiki_data[concept]['revisions'].append({
+                'explanation': wiki_data[concept]['explanation'],
+                'timestamp': date.today().isoformat()
+            })
+            wiki_data[concept]['explanation'] = explanation
+        
+        # Save back to user data
+        user_data['wiki'] = wiki_data
+        save_user_data(username, user_data)
+        
+        return jsonify({
+            'success': True,
+            'entry_id': concept,
+            'message': 'Entry saved successfully'
+        })
+        
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/wiki/reflect', methods=['POST'])
+def generate_reflection_prompt():
+    """Generate metacognitive reflection prompt (Reflect stage)."""
+    try:
+        data = request.json
+        concept = data.get('concept', '')
+        explanation = data.get('explanation', '')
+        use_llm = data.get('use_llm', False)  # Toggle between LLM and mock
+        
+        if not explanation:
+            return jsonify({'error': 'Explanation required'}), 400
+        
+        # Option 1: Use LLM if available
+        if use_llm:
+            # Forward to existing wiki_companion endpoint
+            return wiki_companion()
+        
+        # Option 2: Mock scaffolding (for MVP without LLM)
+        # Template-based reflection prompts
+        reflection_templates = [
+            f"What part of your explanation of {concept} are you least confident about?",
+            f"Does your explanation of {concept} account for all key aspects, or are some missing?",
+            f"How would you test whether your understanding of {concept} is correct?",
+            f"What assumptions underpin your explanation of {concept}?",
+            f"Could someone with a different perspective challenge your explanation of {concept}? How?"
+        ]
+        
+        # Select prompt based on explanation length (simple heuristic)
+        word_count = len(explanation.split())
+        if word_count < 20:
+            prompt = f"Your explanation of {concept} is brief. What additional details could you add?"
+        elif word_count > 100:
+            prompt = f"You've written extensively about {concept}. What's the core insight you want to capture?"
+        else:
+            import random
+            prompt = random.choice(reflection_templates)
+        
+        return jsonify({
+            'success': True,
+            'prompt': prompt,
+            'mode': 'mock'  # Indicate this is a mock response
+        })
+        
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/wiki/scaffold', methods=['POST'])
+def generate_scaffolding():
+    """Generate scaffolding response (Scaffold stage)."""
+    try:
+        data = request.json
+        concept = data.get('concept', '')
+        explanation = data.get('explanation', '')
+        action = data.get('action', 'detect_gaps')  # detect_gaps, suggest_connections, challenge_misconceptions
+        use_llm = data.get('use_llm', False)
+        
+        if not explanation:
+            return jsonify({'error': 'Explanation required'}), 400
+        
+        # Option 1: Use LLM if available
+        if use_llm:
+            return wiki_companion()
+        
+        # Option 2: Mock scaffolding (for MVP without LLM)
+        # Template-based scaffolding responses
+        
+        # Mock knowledge base for common ML concepts
+        MOCK_KNOWLEDGE = {
+            'overfitting': {
+                'missing_concepts': ['generalisation', 'training vs test performance', 'bias-variance tradeoff'],
+                'connections': ['regularisation', 'cross-validation', 'model complexity'],
+                'misconceptions': [
+                    'Does overfitting only happen with complex models?',
+                    'How does overfitting relate to model performance on unseen data?'
+                ]
+            },
+            'regularisation': {
+                'missing_concepts': ['L1 vs L2', 'penalty term', 'model complexity control'],
+                'connections': ['overfitting', 'bias-variance tradeoff', 'hyperparameter tuning'],
+                'misconceptions': [
+                    'Does regularisation always improve model performance?',
+                    'How do you choose the right regularisation strength?'
+                ]
+            },
+            'cross-validation': {
+                'missing_concepts': ['train-test split', 'k-fold', 'validation set'],
+                'connections': ['overfitting', 'model evaluation', 'hyperparameter tuning'],
+                'misconceptions': [
+                    'Is cross-validation only for model selection?',
+                    'How does cross-validation help with overfitting?'
+                ]
+            }
+        }
+        
+        # Check if concept exists in mock knowledge base
+        concept_lower = concept.lower()
+        if concept_lower in MOCK_KNOWLEDGE:
+            knowledge = MOCK_KNOWLEDGE[concept_lower]
+            
+            if action == 'detect_gaps':
+                # Check what's missing from explanation
+                missing = []
+                for term in knowledge['missing_concepts']:
+                    if term not in explanation.lower():
+                        missing.append(term)
+                
+                return jsonify({
+                    'success': True,
+                    'missing_concepts': missing,
+                    'suggestions': [f"Consider adding: {term}" for term in missing[:3]],
+                    'mode': 'mock'
+                })
+            
+            elif action == 'suggest_connections':
+                return jsonify({
+                    'success': True,
+                    'related_concepts': knowledge['connections'],
+                    'questions': [f"How does {concept} relate to {conn}?" for conn in knowledge['connections'][:2]],
+                    'mode': 'mock'
+                })
+            
+            else:  # challenge_misconceptions
+                return jsonify({
+                    'success': True,
+                    'potential_misconceptions': knowledge['misconceptions'],
+                    'questions': knowledge['misconceptions'][:2],
+                    'mode': 'mock'
+                })
+        
+        # Default fallback for unknown concepts
+        default_scaffolding = {
+            'success': True,
+            'questions': [
+                f"What key concepts related to {concept} might be missing?",
+                f"How does {concept} connect to what you've learned before?",
+                f"Can you think of a counterexample to your explanation?"
+            ],
+            'mode': 'mock'
+        }
+        return jsonify(default_scaffolding)
+        
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/wiki/consolidate', methods=['POST'])
+def generate_consolidate_task():
+    """Generate consolidation and application task (Consolidate & Apply stage)."""
+    try:
+        data = request.json
+        concept = data.get('concept', '')
+        retrieval_attempt = data.get('retrieval_attempt', '') or data.get('explanation', '')
+        use_llm = data.get('use_llm', False)
+        
+        if not retrieval_attempt:
+            return jsonify({'error': 'Retrieval attempt required'}), 400
+        
+        # Option 1: Use LLM if available
+        if use_llm:
+            return wiki_companion()
+        
+        # Option 2: Mock scaffolding
+        consolidation_tasks = [
+            f"Explain {concept} in your own words without consulting your notes.",
+            f"How would you apply {concept} to a real-world scenario?",
+            f"What would happen if {concept} were not true?",
+            f"Compare {concept} with a related concept you know.",
+            f"Create an example that demonstrates {concept} in action."
+        ]
+        
+        import random
+        task = random.choice(consolidation_tasks)
+        
+        return jsonify({
+            'success': True,
+            'task': task,
+            'mode': 'mock'
+        })
+        
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/wiki/revisit', methods=['POST'])
+def generate_revisit_prompt():
+    """Generate revisit and extension prompt (Revisit & Extend stage)."""
+    try:
+        from user_manager import load_user_data
+        
+        data = request.json
+        new_concept = data.get('concept', '')
+        username = get_current_user()
+        
+        # Load user's wiki data
+        user_data = load_user_data(username)
+        wiki_data = user_data.get('wiki', {})
+        
+        # Find potentially related older entries
+        related_entries = []
+        for entry_concept in wiki_data.keys():
+            if entry_concept.lower() == new_concept.lower():
+                continue
+            
+            # Simple keyword matching
+            entry_data = wiki_data[entry_concept]
+            connections = entry_data.get('connections', [])
+            keywords = entry_data.get('keywords', [])
+            
+            if new_concept.lower() in ' '.join(connections + keywords).lower():
+                related_entries.append(entry_concept)
+        
+        if related_entries:
+            prompts = [
+                f"You've just learned about {new_concept}. How does it relate to your earlier entry on {related_entries[0]}?",
+                f"Does your new understanding of {new_concept} require you to revise your explanation of {related_entries[0]}?",
+                f"How would you integrate {new_concept} with what you previously wrote about {related_entries[0]}?"
+            ]
+            
+            return jsonify({
+                'success': True,
+                'related_entries': related_entries,
+                'prompts': prompts,
+                'mode': 'mock'
+            })
+        else:
+            return jsonify({
+                'success': True,
+                'related_entries': [],
+                'prompts': [
+                    f"Think about how {new_concept} might relate to concepts you've learned before.",
+                    "Are there any earlier entries that could benefit from this new knowledge?"
+                ],
+                'mode': 'mock'
+            })
+        
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': str(e)}), 500
+
+# Concept Graph endpoint
+@app.route('/api/wiki/concept-graph', methods=['GET'])
+def get_concept_graph():
+    """Get concept graph for visualization."""
+    try:
+        concept = request.args.get('concept')
+        depth = int(request.args.get('depth', 1))
+        
+        if not concept:
+            return jsonify({'error': 'Concept required'}), 400
+        
+        username = get_current_user()
+        user_data = load_user_data(username)
+        wiki_data = user_data.get('wiki', {})
+        
+        # Build graph with current concept and related concepts
+        nodes = []
+        edges = []
+        visited_concepts = set()
+        
+        # Add current concept
+        if concept in wiki_data:
+            nodes.append({
+                'id': concept,
+                'label': concept,
+                'visited': True
+            })
+            visited_concepts.add(concept)
+            
+            # Add related concepts based on connections and keywords
+            concept_data = wiki_data[concept]
+            connections = concept_data.get('connections', [])
+            keywords = concept_data.get('keywords', [])
+            
+            for conn in connections[:depth * 3]:  # Limit to depth * 3 connections
+                if conn not in visited_concepts:
+                    nodes.append({
+                        'id': conn,
+                        'label': conn,
+                        'visited': conn in wiki_data
+                    })
+                    visited_concepts.add(conn)
+                    edges.append({
+                        'source': concept,
+                        'target': conn,
+                        'type': 'connection'
+                    })
+            
+            # Add keyword-based connections
+            for keyword in keywords[:depth * 2]:
+                # Find other concepts with same keyword
+                for other_concept, other_data in wiki_data.items():
+                    if other_concept != concept and keyword in other_data.get('keywords', []):
+                        if other_concept not in visited_concepts:
+                            nodes.append({
+                                'id': other_concept,
+                                'label': other_concept,
+                                'visited': True
+                            })
+                            visited_concepts.add(other_concept)
+                            edges.append({
+                                'source': concept,
+                                'target': other_concept,
+                                'type': 'keyword'
+                            })
+        
+        return jsonify({
+            'success': True,
+            'graph': {
+                'nodes': nodes,
+                'edges': edges
+            }
+        })
+        
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': str(e)}), 500
+
+# Revisit connections endpoint
+@app.route('/api/wiki/revisit', methods=['POST'])
+def generate_revisit_connections():
+    """Generate connection suggestions for revisit stage."""
+    try:
+        data = request.json
+        concept = data.get('concept')
+        
+        if not concept:
+            return jsonify({'error': 'Concept required'}), 400
+        
+        username = get_current_user()
+        user_data = load_user_data(username)
+        wiki_data = user_data.get('wiki', {})
+        
+        connections = []
+        
+        if concept in wiki_data:
+            concept_data = wiki_data[concept]
+            
+            # Generate connection suggestions based on stage history
+            stages_completed = concept_data.get('stages_completed', [])
+            
+            if 'construct' in stages_completed:
+                connections.append(f"Review your initial explanation of {concept}. What would you add or change now?")
+            
+            if 'reflect' in stages_completed:
+                connections.append(f"Think about the gaps you identified in {concept}. How have they been addressed?")
+            
+            if 'scaffold' in stages_completed:
+                connections.append(f"Consider the scaffolding you received for {concept}. How has it shaped your understanding?")
+            
+            if 'consolidate' in stages_completed:
+                connections.append(f"Apply {concept} to a new problem. How does your understanding transfer?")
+            
+            # Add cross-concept connections
+            related_concepts = concept_data.get('connections', [])
+            for related in related_concepts[:3]:
+                if related in wiki_data:
+                    connections.append(f"Compare {concept} with {related}. What similarities and differences do you notice?")
+        
+        if not connections:
+            connections = [
+                f"Think about how {concept} relates to other concepts you've learned.",
+                f"What questions do you still have about {concept}?",
+                f"How might you apply {concept} in a different context?"
+            ]
+        
+        return jsonify({
+            'success': True,
+            'connections': connections
+        })
+        
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': str(e)}), 500
+
 if __name__ == '__main__':
     print("Starting Topic Management API Server...")
     print("Current user:", get_current_user())

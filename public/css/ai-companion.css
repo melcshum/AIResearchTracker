@@ -1,56 +1,98 @@
 /**
- * AI Companion - Shared Styles
+ * AI Companion - Unified Styles
  * 
- * Unified CSS for all AI Companion instances across wiki.md, paper-reader.md, ai-wiki.md
+ * Consolidated CSS for all AI Companion instances
+ * Includes: Base styles, Knowledge Construction, Stage Progress, Sidebar
  */
 
 /* ============================================
-   AI Companion Sidebar/Panel Base Styles
+   AI Companion Sidebar Base Styles
    ============================================ */
 
-.ai-companion-sidebar,
-.ai-companion-panel {
+.ai-companion-sidebar {
   position: fixed;
   right: 0;
   top: 60px;
-  width: 320px;
+  width: 350px;
   height: calc(100vh - 60px);
   background: white;
-  border-left: 1px solid #e0e0e0;
+  border-left: 2px solid #e0e0e0;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  z-index: 1000;
-  transform: translateX(100%);
   transition: transform 0.3s ease;
-}
-
-.ai-companion-sidebar.open,
-.ai-companion-panel.open {
-  transform: translateX(0);
-}
-
-/* ============================================
-   Mode Buttons Container
-   ============================================ */
-
-.companion-mode-container {
+  z-index: 1000;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 16px;
-  background: #f8f9fa;
+}
+
+.ai-companion-sidebar.collapsed {
+  transform: translateX(310px);
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 60px;
+  background: #4a90d9;
+  color: white;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  z-index: 1001;
+}
+
+.sidebar-toggle:hover {
+  background: #3a7bc8;
+}
+
+/* Sidebar Content Areas */
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  padding: 20px;
+  background: linear-gradient(135deg, #4a90d9, #357abd);
+  color: white;
   border-bottom: 1px solid #e0e0e0;
 }
 
-.companion-mode-buttons {
+.sidebar-header h4 {
+  margin: 0 0 4px 0;
+  color: white !important;
+  font-size: 18px;
+}
+
+.sidebar-subtitle {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* Mode Buttons Container */
+.companion-mode-container {
+  padding: 16px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .companion-mode-btn {
-  padding: 10px 14px;
+  padding: 12px 16px;
   border: 1px solid #ddd;
   border-radius: 6px;
   background: white;
@@ -61,12 +103,13 @@
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
 .companion-mode-btn:hover {
   background: #f0f4ff;
   border-color: #4a90d9;
+  transform: translateX(4px);
 }
 
 .companion-mode-btn.active {
@@ -75,18 +118,19 @@
   border-color: #4a90d9;
 }
 
-.companion-mode-btn .mode-icon {
-  font-size: 16px;
+.mode-icon {
+  font-size: 18px;
 }
 
-/* ============================================
-   Content Container
-   ============================================ */
+.mode-label {
+  flex: 1;
+}
 
+/* Content Container */
 .companion-content {
   flex: 1;
   overflow-y: auto;
-  padding: 16px;
+  padding: 20px;
 }
 
 .companion-intro {
@@ -113,10 +157,7 @@
   line-height: 1.5;
 }
 
-/* ============================================
-   Textarea
-   ============================================ */
-
+/* Textarea */
 .companion-textarea {
   width: 100%;
   padding: 12px;
@@ -136,46 +177,578 @@
   box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.1);
 }
 
-/* ============================================
-   Buttons
-   ============================================ */
-
-.companion-content .btn-primary,
-.companion-content .btn-secondary {
-  padding: 10px 16px;
+/* Buttons */
+.btn-primary,
+.btn-secondary {
+  padding: 12px 24px;
   border: none;
   border-radius: 6px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  margin-right: 8px;
-  margin-bottom: 8px;
 }
 
-.companion-content .btn-primary {
+.btn-primary {
   background: #4a90d9;
   color: white;
 }
 
-.companion-content .btn-primary:hover {
-  background: #3a7bc8;
+.btn-primary:hover {
+  background: #357abd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(74, 144, 217, 0.3);
 }
 
-.companion-content .btn-secondary {
-  background: #f0f4ff;
+.btn-secondary {
+  background: white;
   color: #4a90d9;
-  border: 1px solid #4a90d9;
+  border: 2px solid #4a90d9;
 }
 
-.companion-content .btn-secondary:hover {
-  background: #e0e8ff;
+.btn-secondary:hover {
+  background: #f0f4ff;
+}
+
+.btn-tertiary {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: transparent;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+}
+
+.btn-tertiary:hover {
+  background: #f9fafb;
+  color: #374151;
+  border-color: #9ca3af;
 }
 
 /* ============================================
-   User Explanation Display
+   Learner vs AI Content Distinction
    ============================================ */
 
+.learner-content {
+  background: #ffffff;
+  border-left: 4px solid #3b82f6;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 6px;
+  position: relative;
+}
+
+.learner-content::before {
+  content: '✍️ Your Explanation';
+  position: absolute;
+  top: -10px;
+  left: 16px;
+  background: #3b82f6;
+  color: white;
+  padding: 2px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ai-suggestion {
+  background: #f0f9ff;
+  border-left: 4px solid #10b981;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 6px;
+  position: relative;
+}
+
+.ai-suggestion::before {
+  content: '🤖 AI Suggestion';
+  position: absolute;
+  top: -10px;
+  left: 16px;
+  background: #10b981;
+  color: white;
+  padding: 2px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.suggestion-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.btn-accept,
+.btn-reject,
+.btn-modify {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-accept {
+  background: #10b981;
+  color: white;
+}
+
+.btn-accept:hover {
+  background: #059669;
+}
+
+.btn-reject {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-reject:hover {
+  background: #dc2626;
+}
+
+.btn-modify {
+  background: #f59e0b;
+  color: white;
+}
+
+.btn-modify:hover {
+  background: #d97706;
+}
+
+/* ============================================
+   Concept Graph (Revisit Stage)
+   ============================================ */
+
+.concept-graph-container {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.concept-graph-container h4 {
+  margin: 0 0 16px 0;
+  color: #1e293b;
+  font-size: 16px;
+}
+
+.mini-concept-graph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.mini-graph-svg {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.graph-node {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.graph-node:hover {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+.current-node {
+  cursor: default;
+}
+
+.related-node {
+  cursor: pointer;
+}
+
+.graph-label {
+  pointer-events: none;
+  user-select: none;
+}
+
+.graph-edge {
+  pointer-events: none;
+}
+
+.graph-legend {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.no-graph {
+  text-align: center;
+  color: #94a3b8;
+  font-style: italic;
+  padding: 40px 20px;
+}
+
+/* ============================================
+   Accessibility Enhancements
+   ============================================ */
+
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #3b82f6;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 10000;
+  border-radius: 0 4px 4px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Focus indicators for keyboard navigation */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.stage-arrow:focus {
+  outline: 3px solid #3b82f6;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+/* ARIA live regions for screen readers */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  animation: slideInRight 0.3s ease;
+  max-width: 400px;
+}
+
+.notification[aria-live] {
+  /* Ensure screen readers announce notifications */
+  position: relative;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .btn-primary {
+    border: 2px solid white;
+  }
+  
+  .btn-secondary {
+    border: 2px solid #3b82f6;
+  }
+  
+  .stage-arrow {
+    border: 2px solid #1e293b;
+  }
+  
+  .learner-content,
+  .ai-suggestion {
+    border-width: 3px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Loading Indicator */
+.companion-loading {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.companion-loading.active {
+  display: block;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #4a90d9;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-size: 14px;
+  color: #666;
+}
+
+/* ============================================
+   Knowledge Construction Tab Styles
+   ============================================ */
+
+.knowledge-header {
+  margin-bottom: 24px;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+}
+
+.knowledge-header h3 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  color: white !important;
+}
+
+.knowledge-header p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.95;
+}
+
+/* ============================================
+   Stage Progress Arrow Diagram
+   ============================================ */
+
+.stage-progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.stage-arrow {
+  position: relative;
+  flex: 1;
+  min-width: 140px;
+  padding: 16px 24px 16px 48px;
+  background: #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%, 20px 50%);
+  text-align: left;
+}
+
+.stage-arrow:first-child {
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%);
+  padding-left: 24px;
+}
+
+.stage-arrow:hover {
+  background: #d0d0d0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stage-arrow.active {
+  background: linear-gradient(135deg, #4a90d9, #357abd);
+  color: white;
+  box-shadow: 0 4px 12px rgba(74, 144, 217, 0.3);
+}
+
+.stage-arrow.completed {
+  background: linear-gradient(135deg, #4caf50, #3d8b40);
+  color: white;
+}
+
+.stage-number {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0.3;
+}
+
+.stage-arrow.active .stage-number,
+.stage-arrow.completed .stage-number {
+  opacity: 1;
+}
+
+.stage-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.stage-description {
+  display: block;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* ============================================
+   Knowledge Construction Main Container
+   ============================================ */
+
+.knowledge-main-container {
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.knowledge-content {
+  flex: 1;
+  transition: margin-right 0.3s ease;
+}
+
+.ai-companion-sidebar:not(.collapsed) ~ .knowledge-content {
+  margin-right: 370px;
+}
+
+.concept-selector {
+  margin-bottom: 20px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #4a90d9;
+}
+
+.concept-selector label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.concept-selector select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+}
+
+.concept-selector select:focus {
+  outline: none;
+  border-color: #4a90d9;
+  box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.1);
+}
+
+.stage-content {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 24px;
+  min-height: 400px;
+  margin-bottom: 20px;
+}
+
+.welcome-message {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.welcome-message h4 {
+  margin: 0 0 16px 0;
+  color: #4a90d9;
+}
+
+.welcome-message ul {
+  margin: 16px 0;
+  padding-left: 24px;
+}
+
+.welcome-message li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.welcome-message strong {
+  color: #4a90d9;
+}
+
+/* ============================================
+   Stage-Specific Content Styles
+   ============================================ */
+
+.stage-textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.stage-textarea:focus {
+  outline: none;
+  border-color: #4a90d9;
+  box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.1);
+}
+
+.stage-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* ============================================
+   AI Feedback Components
+   ============================================ */
+
+/* User Explanation Display */
 .user-explanation {
   margin-bottom: 16px;
   padding: 12px;
@@ -198,10 +771,7 @@
   white-space: pre-wrap;
 }
 
-/* ============================================
-   Reflection Prompts
-   ============================================ */
-
+/* Reflection Prompts */
 .reflection-prompts {
   margin-top: 16px;
 }
@@ -235,10 +805,7 @@
   line-height: 1.5;
 }
 
-/* ============================================
-   Gap Analysis
-   ============================================ */
-
+/* Gap Analysis */
 .gap-analysis {
   margin-top: 16px;
 }
@@ -270,10 +837,7 @@
   font-weight: 500;
 }
 
-/* ============================================
-   Scaffold Suggestions
-   ============================================ */
-
+/* Scaffold Suggestions */
 .scaffold-suggestions {
   margin-top: 16px;
 }
@@ -305,10 +869,7 @@
   line-height: 1.5;
 }
 
-/* ============================================
-   Connection Recommendations (DP4)
-   ============================================ */
-
+/* Connection Recommendations */
 .connection-recommendations {
   margin-top: 16px;
 }
@@ -345,10 +906,7 @@
   line-height: 1.5;
 }
 
-/* ============================================
-   Consolidate Task & Feedback
-   ============================================ */
-
+/* Consolidate Task & Feedback */
 .consolidate-task {
   margin-bottom: 16px;
 }
@@ -411,10 +969,7 @@
   line-height: 1.5;
 }
 
-/* ============================================
-   Revisit Suggestions (DP4)
-   ============================================ */
-
+/* Revisit Suggestions */
 .revisit-suggestions {
   margin-top: 16px;
 }
@@ -451,10 +1006,7 @@
   line-height: 1.5;
 }
 
-/* ============================================
-   Messages
-   ============================================ */
-
+/* Messages */
 .companion-message {
   padding: 12px;
   border-radius: 6px;
@@ -499,49 +1051,80 @@
 }
 
 /* ============================================
-   Loading Indicator
-   ============================================ */
-
-.companion-loading {
-  display: none;
-  text-align: center;
-  padding: 20px;
-}
-
-.companion-loading.active {
-  display: block;
-}
-
-.loading-spinner {
-  width: 40px;
-  height: 40px;
-  border: 3px solid #f3f3f3;
-  border-top: 3px solid #4a90d9;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: 0 auto 12px;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.loading-text {
-  font-size: 14px;
-  color: #666;
-}
-
-/* ============================================
    Responsive Design
    ============================================ */
 
+@media (max-width: 1024px) {
+  .stage-progress-container {
+    flex-wrap: wrap;
+  }
+  
+  .stage-arrow {
+    min-width: calc(50% - 8px);
+  }
+  
+  .ai-companion-sidebar {
+    width: 300px;
+  }
+  
+  .ai-companion-sidebar.collapsed {
+    transform: translateX(260px);
+  }
+  
+  .ai-companion-sidebar:not(.collapsed) ~ .knowledge-content {
+    margin-right: 320px;
+  }
+}
+
 @media (max-width: 768px) {
-  .ai-companion-sidebar,
-  .ai-companion-panel {
+  .stage-progress-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .stage-arrow {
     width: 100%;
-    height: 100%;
+    min-width: 100%;
+    clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 0 100%, 15px 50%);
+  }
+  
+  .stage-arrow:first-child {
+    clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 0 100%);
+  }
+  
+  .knowledge-main-container {
+    flex-direction: column;
+  }
+  
+  .ai-companion-sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
     top: 0;
+    border-left: none;
+    border-top: 2px solid #e0e0e0;
+  }
+  
+  .ai-companion-sidebar.collapsed {
+    transform: translateY(calc(100% - 60px));
+  }
+  
+  .sidebar-toggle {
+    left: 50%;
+    top: -40px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 40px;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .ai-companion-sidebar:not(.collapsed) ~ .knowledge-content {
+    margin-right: 0;
+  }
+  
+  .stage-content {
+    min-height: 300px;
   }
   
   .companion-mode-btn {
@@ -573,4 +1156,802 @@
 
 .companion-text-center { text-align: center; }
 .companion-text-small { font-size: 12px; }
-.companion-text-bold { font-weight: bold; }
+
+/* ============================================
+   Notifications
+   ============================================ */
+
+.notification {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+  animation: slideInRight 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+  max-width: 400px;
+}
+
+.notification-info {
+  background: #e3f2fd;
+  color: #1976d2;
+  border-left: 4px solid #2196f3;
+}
+
+.notification-success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-left: 4px solid #4caf50;
+}
+
+.notification-warning {
+  background: #fff3e0;
+  color: #f57c00;
+  border-left: 4px solid #ff9800;
+}
+
+.notification-error {
+  background: #ffebee;
+  color: #c62828;
+  border-left: 4px solid #f44336;
+}
+
+.notification.fade-out {
+  animation: fadeOut 0.3s ease;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   Celebration
+   ============================================ */
+
+.celebration {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 32px 48px;
+  border-radius: 16px;
+  font-size: 24px;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 10001;
+  animation: celebrationPop 0.5s ease;
+}
+
+.celebration.fade-out {
+  animation: fadeOut 0.5s ease;
+}
+
+@keyframes celebrationPop {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   Prompt Response (Prompt Before Provide)
+   ============================================ */
+
+.prompt-response {
+  margin: 16px 0;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #4a90d9;
+}
+
+.prompt-level-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.level-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+}
+
+.level-badge.level-1 {
+  background: #ffc107;
+}
+
+.level-badge.level-2 {
+  background: #ff9800;
+}
+
+.level-badge.level-3 {
+  background: #f44336;
+}
+
+.btn-more-help {
+  padding: 8px 16px;
+  background: white;
+  color: #4a90d9;
+  border: 2px solid #4a90d9;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-more-help:hover {
+  background: #4a90d9;
+  color: white;
+}
+
+.prompt-content {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ============================================
+   Button States
+   ============================================ */
+
+.btn-primary.saving {
+  background: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn-primary.success {
+  background: #10b981;
+}
+
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.8s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   Error Messages
+   ============================================ */
+
+.error {
+  color: #c62828;
+  background: #ffebee;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border-left: 4px solid #f44336;
+  font-size: 14px;
+  margin: 12px 0;
+}
+
+/* ============================================
+   Task Box
+   ============================================ */
+
+.task-box {
+  background: #fff3e0;
+  border: 2px solid #ff9800;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.task-box p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ============================================
+   Focus Indicators (Accessibility)
+   ============================================ */
+
+*:focus {
+  outline: 3px solid #4a90d9;
+  outline-offset: 2px;
+}
+
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid #4a90d9;
+  outline-offset: 2px;
+}
+
+.stage-arrow:focus {
+  outline: 3px solid #4a90d9;
+  outline-offset: 4px;
+}
+
+/* ============================================
+   Skip Link (Accessibility)
+   ============================================ */
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #4a90d9;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 10002;
+  border-radius: 0 0 4px 0;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ============================================
+   ARIA Live Regions (Screen Reader)
+   ============================================ */
+
+[aria-live="polite"],
+[aria-live="assertive"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============================================
+   Revision History
+   ============================================ */
+
+.revision-history-panel {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 20px;
+  border: 1px solid #e0e0e0;
+}
+
+.revision-history-panel h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.revision-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.revision-item {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 12px;
+  transition: all 0.2s ease;
+}
+
+.revision-item:hover {
+  border-color: #4a90d9;
+  box-shadow: 0 2px 8px rgba(74, 144, 217, 0.1);
+}
+
+.revision-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.revision-stage {
+  font-weight: 600;
+  color: #4a90d9;
+  font-size: 14px;
+}
+
+.revision-time {
+  font-size: 12px;
+  color: #666;
+}
+
+.revision-preview {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  padding: 8px;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.revision-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-small {
+  padding: 4px 12px;
+  font-size: 12px;
+  border: 1px solid #4a90d9;
+  background: white;
+  color: #4a90d9;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-small:hover {
+  background: #4a90d9;
+  color: white;
+}
+
+.no-revisions {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  padding: 20px;
+}
+
+/* ============================================
+   Modal Styles
+   ============================================ */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease;
+}
+
+.modal-content.modal-large {
+  max-width: 900px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #999;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.btn-close:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.modal-body {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.revision-stage-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #4a90d9;
+  color: white;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.revision-content {
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 6px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  font-size: 14px;
+  color: #333;
+}
+
+/* ============================================
+   Diff View
+   ============================================ */
+
+.diff-view {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.diff-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.diff-from {
+  color: #dc3545;
+}
+
+.diff-to {
+  color: #28a745;
+}
+
+.diff-content {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.diff-line {
+  padding: 4px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.diff-unchanged {
+  background: white;
+  color: #333;
+}
+
+.diff-removed {
+  background: #ffeef0;
+  color: #dc3545;
+  border-left: 3px solid #dc3545;
+}
+
+.diff-added {
+  background: #e6ffed;
+  color: #28a745;
+  border-left: 3px solid #28a745;
+}
+
+.no-changes {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  padding: 40px;
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   Progress Tracking
+   ============================================ */
+
+.progress-panel {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+}
+
+.progress-panel h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progress-bar-container {
+  background: #e0e0e0;
+  border-radius: 10px;
+  height: 20px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4a90d9, #357abd);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.progress-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #666;
+}
+
+.stage-completion-indicators {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.stage-indicator {
+  flex: 1;
+  padding: 8px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.stage-indicator.pending {
+  background: #e0e0e0;
+  color: #999;
+}
+
+.stage-indicator.in-progress {
+  background: #fff3cd;
+  color: #856404;
+  border: 2px solid #ffc107;
+}
+
+.stage-indicator.completed {
+  background: #d4edda;
+  color: #155724;
+  border: 2px solid #28a745;
+}
+
+/* ============================================
+   Learner vs AI Content Distinction
+   ============================================ */
+
+.learner-content {
+  background: white;
+  border-left: 4px solid #4a90d9;
+  padding: 12px 16px;
+  margin: 12px 0;
+  border-radius: 0 6px 6px 0;
+  position: relative;
+}
+
+.learner-content::before {
+  content: '✍️ Your Explanation';
+  position: absolute;
+  top: -20px;
+  left: 16px;
+  font-size: 11px;
+  color: #4a90d9;
+  font-weight: 600;
+  background: white;
+  padding: 0 8px;
+}
+
+.ai-suggestion {
+  background: #f0f4ff;
+  border-left: 4px solid #10b981;
+  padding: 12px 16px;
+  margin: 12px 0;
+  border-radius: 0 6px 6px 0;
+  position: relative;
+}
+
+.ai-suggestion::before {
+  content: '🤖 AI Suggestion';
+  position: absolute;
+  top: -20px;
+  left: 16px;
+  font-size: 11px;
+  color: #10b981;
+  font-weight: 600;
+  background: #f0f4ff;
+  padding: 0 8px;
+}
+
+.ai-suggestion .suggestion-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.btn-accept {
+  padding: 6px 12px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.btn-accept:hover {
+  background: #059669;
+}
+
+.btn-reject {
+  padding: 6px 12px;
+  background: white;
+  color: #dc3545;
+  border: 1px solid #dc3545;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.btn-reject:hover {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-modify {
+  padding: 6px 12px;
+  background: white;
+  color: #4a90d9;
+  border: 1px solid #4a90d9;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.btn-modify:hover {
+  background: #4a90d9;
+  color: white;
+}
+
+/* ============================================
+   Responsive Adjustments
+   ============================================ */
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    max-height: 90vh;
+  }
+  
+  .modal-content.modal-large {
+    max-width: 95%;
+  }
+  
+  .diff-header {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .revision-actions {
+    flex-direction: column;
+  }
+  
+  .btn-small {
+    width: 100%;
+  }
+  
+  .stage-completion-indicators {
+    flex-direction: column;
+  }
+}

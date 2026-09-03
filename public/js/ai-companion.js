@@ -13,8 +13,13 @@
 
 class AICompanion {
   constructor(config = {}) {
-    // Configuration
-    this.apiBase = config.apiBase || 'http://localhost:5001/api/wiki';
+    // Configuration - dynamically detect API base from current hostname
+    const hostname = window.location.hostname;
+    const defaultApiBase = hostname === 'localhost' || hostname === '127.0.0.1' 
+      ? 'http://localhost:5001/api/wiki'
+      : `http://${hostname}:5001/api/wiki`;
+    
+    this.apiBase = config.apiBase || defaultApiBase;
     this.currentPage = config.currentPage || 'wiki';
     
     // State
@@ -281,7 +286,8 @@ class AICompanion {
   async generateReflectionPrompts(explanation) {
     await this._callAPI('reflect', {
       concept: this.currentConcept,
-      explanation: explanation
+      explanation: explanation,
+      use_llm: false
     }, (response) => {
       this._displayReflectionPrompts(response);
     });
@@ -291,7 +297,19 @@ class AICompanion {
    * Display reflection prompts
    */
   _displayReflectionPrompts(response) {
-    const prompts = response.prompts || response.questions || [];
+    // Handle both single prompt string and array of prompts
+    let prompts = [];
+    
+    if (response.prompt) {
+      // Single prompt string
+      prompts = [response.prompt];
+    } else if (response.prompts && Array.isArray(response.prompts)) {
+      // Array of prompts
+      prompts = response.prompts;
+    } else if (response.questions && Array.isArray(response.questions)) {
+      // Questions array
+      prompts = response.questions;
+    }
     
     if (prompts.length === 0) {
       this._showMessage('No reflection prompts generated', 'info');
@@ -481,7 +499,8 @@ class AICompanion {
     await this._callAPI('consolidate', {
       concept: this.currentConcept,
       original: this.userExplanation,
-      retrieval_attempt: recall
+      retrieval_attempt: recall,
+      use_llm: false
     }, (response) => {
       this._displayConsolidateFeedback(response);
     });
@@ -491,37 +510,55 @@ class AICompanion {
    * Display consolidation feedback
    */
   _displayConsolidateFeedback(response) {
-    const accuracy = response.accuracy || response.score || 0;
-    const feedback = response.feedback || response.comments || [];
-    
-    // Accuracy score
-    const scoreDiv = document.createElement('div');
-    scoreDiv.className = 'accuracy-score';
-    scoreDiv.innerHTML = `
-      <div class="score-circle">
-        <span class="score-number">${accuracy}%</span>
-      </div>
-      <p>Retrieval Accuracy</p>
-    `;
-    this.contentContainer.appendChild(scoreDiv);
-    
-    // Feedback
-    if (feedback.length > 0) {
-      const feedbackDiv = document.createElement('div');
-      feedbackDiv.className = 'consolidate-feedback';
+    // Handle both accuracy score format and task format
+    if (response.task) {
+      // Backend returns a single task string
+      const taskDiv = document.createElement('div');
+      taskDiv.className = 'consolidate-task';
       
       const title = document.createElement('h5');
-      title.textContent = 'Feedback:';
-      feedbackDiv.appendChild(title);
+      title.textContent = 'Consolidation Task:';
+      taskDiv.appendChild(title);
       
-      feedback.forEach((item, index) => {
-        const feedbackEl = document.createElement('div');
-        feedbackEl.className = 'feedback-item';
-        feedbackEl.innerHTML = `<p>${this._escapeHtml(item)}</p>`;
-        feedbackDiv.appendChild(feedbackEl);
-      });
+      const taskEl = document.createElement('p');
+      taskEl.textContent = response.task;
+      taskDiv.appendChild(taskEl);
       
-      this.contentContainer.appendChild(feedbackDiv);
+      this.contentContainer.appendChild(taskDiv);
+    } else {
+      // Legacy format with accuracy score
+      const accuracy = response.accuracy || response.score || 0;
+      const feedback = response.feedback || response.comments || [];
+      
+      // Accuracy score
+      const scoreDiv = document.createElement('div');
+      scoreDiv.className = 'accuracy-score';
+      scoreDiv.innerHTML = `
+        <div class="score-circle">
+          <span class="score-number">${accuracy}%</span>
+        </div>
+        <p>Retrieval Accuracy</p>
+      `;
+      this.contentContainer.appendChild(scoreDiv);
+      
+      // Feedback
+      if (feedback.length > 0) {
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'consolidate-feedback';
+        
+        const title = document.createElement('h5');
+        title.textContent = 'Feedback:';
+        feedbackDiv.appendChild(title);
+        
+        feedback.forEach((item, index) => {
+          const feedbackEl = document.createElement('div');
+          feedbackEl.className = 'feedback-item';
+          feedbackEl.innerHTML = `<p>${this._escapeHtml(item)}</p>`;
+          feedbackDiv.appendChild(feedbackEl);
+        });
+        
+        this.contentContainer.appendChild(feedbackDiv);
+      }
     }
   }
 
@@ -588,14 +625,38 @@ class AICompanion {
   async _callAPI(mode, payload, callback) {
     this._setLoading(true);
     
+    // Map mode to endpoint
+    const endpointMap = {
+      'construct': '/construct',
+      'reflect': '/reflect',
+      'scaffold': '/scaffold',
+      'consolidate': '/consolidate',
+      'revisit': '/revisit'
+    };
+    
+    const endpoint = endpointMap[mode];
+    if (!endpoint) {
+      console.error('AI Companion: Unknown mode', mode);
+      this._setLoading(false);
+      return;
+    }
+    
     try {
-      const response = await fetch(`${this.apiBase}/companion`, {
+      const response = await fetch(`${this.apiBase}${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ mode, ...payload })
+        body: JSON.stringify(payload)
       });
       
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+      
       const data = await response.json();
+      
+      if (!data.success) {
+        throw new Error(data.message || 'API returned success=false');
+      }
       
       if (callback) {
         callback(data);
@@ -618,7 +679,7 @@ class AICompanion {
       if (this.onError) {
         this.onError(error);
       } else {
-        this._showMessage('API call failed. Please try again.', 'error');
+        this._showMessage(`API call failed: ${error.message}. Please try again.`, 'error');
       }
     } finally {
       this._setLoading(false);
@@ -640,13 +701,37 @@ class AICompanion {
    * Save to knowledge base
    */
   async _saveToKnowledgeBase() {
-    // This would integrate with the Personal Knowledge Base
-    // For now, just log
-    console.log('AI Companion: Saving to knowledge base', {
-      concept: this.currentConcept,
-      explanation: this.userExplanation,
-      mode: this.currentMode
-    });
+    if (!this.currentConcept || !this.userExplanation) {
+      console.warn('AI Companion: Cannot save - missing concept or explanation');
+      return;
+    }
+    
+    try {
+      const response = await fetch(`${this.apiBase}/construct`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          concept: this.currentConcept,
+          explanation: this.userExplanation
+        })
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        console.log('AI Companion: Entry saved successfully', data.entry_id);
+        this._showMessage('✅ Entry saved to your knowledge base', 'success');
+      } else {
+        throw new Error(data.message || 'Failed to save entry');
+      }
+    } catch (error) {
+      console.error('AI Companion: Failed to save to knowledge base', error);
+      this._showMessage(`Failed to save: ${error.message}`, 'error');
+    }
   }
 
   /**

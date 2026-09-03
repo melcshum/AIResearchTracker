@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function initPaperReaderAICompanion() {
   // Create AI Companion instance
   const aiCompanion = new AICompanion({
-    apiBase: 'http://localhost:5001/api/wiki',
     currentPage: 'paper-reader',
     onModeChange: (mode) => {
       console.log('Paper Reader: Mode changed to:', mode);

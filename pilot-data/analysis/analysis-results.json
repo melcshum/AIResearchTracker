@@ -1,0 +1,401 @@
+{
+  "timestamp": "2026-09-03T07:41:25.195492",
+  "n_participants": 7,
+  "section_statistics": {
+    "A": {
+      "name": "Usability",
+      "n": 28,
+      "mean": 4.071428571428571,
+      "median": 4.0,
+      "stdev": 0.7663560447348133,
+      "min": 3,
+      "max": 5
+    },
+    "B": {
+      "name": "Learning Experience",
+      "n": 35,
+      "mean": 4.142857142857143,
+      "median": 4,
+      "stdev": 0.6920921879624531,
+      "min": 3,
+      "max": 5
+    },
+    "C": {
+      "name": "Epistemic Agency",
+      "n": 28,
+      "mean": 4.357142857142857,
+      "median": 4.0,
+      "stdev": 0.6784669927988098,
+      "min": 2,
+      "max": 5
+    }
+  },
+  "behavioral_statistics": {
+    "n_participants": 7,
+    "time": {
+      "construct": {
+        "mean": 9,
+        "median": 8,
+        "min": 6,
+        "max": 12
+      },
+      "reflect": {
+        "mean": 6.428571428571429,
+        "median": 6,
+        "min": 4,
+        "max": 8
+      },
+      "scaffold": {
+        "mean": 5.142857142857143,
+        "median": 5,
+        "min": 4,
+        "max": 6
+      },
+      "consolidate": {
+        "mean": 12.714285714285714,
+        "median": 14,
+        "min": 8,
+        "max": 15
+      },
+      "revisit": {
+        "mean": 5,
+        "median": 5,
+        "min": 4,
+        "max": 6
+      },
+      "total": {
+        "mean": 39,
+        "median": 40,
+        "min": 28,
+        "max": 45
+      }
+    },
+    "interactions": {
+      "revisions": {
+        "mean": 2.857142857142857,
+        "total": 20
+      },
+      "feedback_requests": {
+        "mean": 3.5714285714285716,
+        "total": 25
+      },
+      "concepts_explored": {
+        "mean": 1.5714285714285714,
+        "total": 11
+      }
+    }
+  },
+  "individual_responses": [
+    {
+      "participant_id": "P006",
+      "date": "2026-08-31",
+      "concept": "regularisation",
+      "session_number": 1,
+      "sections": {
+        "A": [
+          4,
+          5,
+          4,
+          4
+        ],
+        "B": [
+          5,
+          5,
+          5,
+          4,
+          5
+        ],
+        "C": [
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "open_responses": {
+        "q14": "I liked how the system prompted me to think before giving answers.",
+        "q17": "Different from lectures - I felt more in control of my learning process."
+      },
+      "behavioral": {
+        "participant_id": "P006",
+        "time_construct": 12,
+        "time_reflect": 8,
+        "time_scaffold": 4,
+        "time_consolidate": 14,
+        "time_revisit": 6,
+        "time_total": 44,
+        "revisions": 4,
+        "feedback_requests": 3,
+        "concepts_explored": 1
+      }
+    },
+    {
+      "participant_id": "P001",
+      "date": "2026-09-10",
+      "concept": "overfitting",
+      "session_number": 1,
+      "sections": {
+        "A": [
+          4,
+          5,
+          4,
+          4
+        ],
+        "B": [
+          5,
+          4,
+          4,
+          5,
+          3
+        ],
+        "C": [
+          5,
+          4,
+          5,
+          2
+        ]
+      },
+      "open_responses": {
+        "q14": "The reflection questions made me think more deeply about what I actually understood.",
+        "q15": "The consolidation task was a bit confusing at first, but helpful once I understood it.",
+        "q17": "This was much more engaging than just reading a textbook. I actually had to think about the concepts.",
+        "q18": "Maybe add more examples in the consolidation stage?"
+      },
+      "behavioral": {
+        "participant_id": "P001",
+        "time_construct": 8,
+        "time_reflect": 6,
+        "time_scaffold": 5,
+        "time_consolidate": 12,
+        "time_revisit": 4,
+        "time_total": 40,
+        "revisions": 2,
+        "feedback_requests": 3,
+        "concepts_explored": 1
+      }
+    },
+    {
+      "participant_id": "P001",
+      "date": "2026-08-24",
+      "concept": "cross-validation",
+      "session_number": 1,
+      "sections": {
+        "A": [
+          5,
+          4,
+          4,
+          5
+        ],
+        "B": [
+          3,
+          4,
+          4,
+          3,
+          4
+        ],
+        "C": [
+          5,
+          4,
+          5,
+          4
+        ]
+      },
+      "open_responses": {
+        "q14": "The reflection questions made me think more deeply about what I actually understood.",
+        "q15": "The consolidation task was a bit confusing at first.",
+        "q17": "Better than watching videos because I had to actively construct knowledge.",
+        "q18": "More detailed feedback on what's missing would help."
+      },
+      "behavioral": {
+        "participant_id": "P001",
+        "time_construct": 11,
+        "time_reflect": 8,
+        "time_scaffold": 6,
+        "time_consolidate": 14,
+        "time_revisit": 6,
+        "time_total": 45,
+        "revisions": 4,
+        "feedback_requests": 3,
+        "concepts_explored": 2
+      }
+    },
+    {
+      "participant_id": "P002",
+      "date": "2026-08-28",
+      "concept": "overfitting",
+      "session_number": 1,
+      "sections": {
+        "A": [
+          3,
+          3,
+          4,
+          4
+        ],
+        "B": [
+          5,
+          3,
+          5,
+          4,
+          4
+        ],
+        "C": [
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      "open_responses": {
+        "q14": "The consolidation task helped me apply the concept to a real scenario.",
+        "q17": "More effective than passive note-taking because of the reflection prompts.",
+        "q18": "Could show connections to concepts I've already learned about."
+      },
+      "behavioral": {
+        "participant_id": "P002",
+        "time_construct": 11,
+        "time_reflect": 8,
+        "time_scaffold": 5,
+        "time_consolidate": 12,
+        "time_revisit": 5,
+        "time_total": 41,
+        "revisions": 1,
+        "feedback_requests": 4,
+        "concepts_explored": 1
+      }
+    },
+    {
+      "participant_id": "P003",
+      "date": "2026-09-01",
+      "concept": "overfitting",
+      "session_number": 1,
+      "sections": {
+        "A": [
+          4,
+          3,
+          5,
+          5
+        ],
+        "B": [
+          4,
+          4,
+          3,
+          4,
+          4
+        ],
+        "C": [
+          4,
+          4,
+          4,
+          5
+        ]
+      },
+      "open_responses": {
+        "q14": "Writing my own explanation first helped me identify gaps in my knowledge.",
+        "q15": "I would have liked more examples in the scaffolding stage.",
+        "q17": "Better than watching videos because I had to actively construct knowledge.",
+        "q18": "More detailed feedback on what's missing would help."
+      },
+      "behavioral": {
+        "participant_id": "P003",
+        "time_construct": 7,
+        "time_reflect": 5,
+        "time_scaffold": 4,
+        "time_consolidate": 14,
+        "time_revisit": 5,
+        "time_total": 35,
+        "revisions": 3,
+        "feedback_requests": 2,
+        "concepts_explored": 2
+      }
+    },
+    {
+      "participant_id": "P004",
+      "date": "2026-08-30",
+      "concept": "overfitting",
+      "session_number": 1,
+      "sections": {
+        "A": [
+          5,
+          3,
+          3,
+          5
+        ],
+        "B": [
+          5,
+          4,
+          4,
+          5,
+          4
+        ],
+        "C": [
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "open_responses": {
+        "q14": "The AI feedback on missing concepts was very useful for guiding my learning.",
+        "q15": "Sometimes the reflection questions felt repetitive.",
+        "q17": "More effective than passive note-taking because of the reflection prompts.",
+        "q18": "Could show connections to concepts I've already learned about."
+      },
+      "behavioral": {
+        "participant_id": "P004",
+        "time_construct": 6,
+        "time_reflect": 4,
+        "time_scaffold": 6,
+        "time_consolidate": 8,
+        "time_revisit": 4,
+        "time_total": 28,
+        "revisions": 3,
+        "feedback_requests": 5,
+        "concepts_explored": 2
+      }
+    },
+    {
+      "participant_id": "P005",
+      "date": "2026-09-02",
+      "concept": "cross-validation",
+      "session_number": 1,
+      "sections": {
+        "A": [
+          3,
+          3,
+          5,
+          4
+        ],
+        "B": [
+          4,
+          3,
+          4,
+          4,
+          5
+        ],
+        "C": [
+          5,
+          5,
+          5,
+          4
+        ]
+      },
+      "open_responses": {
+        "q14": "Writing my own explanation first helped me identify gaps in my knowledge.",
+        "q17": "More effective than passive note-taking because of the reflection prompts.",
+        "q18": "More detailed feedback on what's missing would help."
+      },
+      "behavioral": {
+        "participant_id": "P005",
+        "time_construct": 8,
+        "time_reflect": 6,
+        "time_scaffold": 6,
+        "time_consolidate": 15,
+        "time_revisit": 5,
+        "time_total": 40,
+        "revisions": 3,
+        "feedback_requests": 5,
+        "concepts_explored": 2
+      }
+    }
+  ]
+}

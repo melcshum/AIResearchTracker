@@ -1,0 +1,132 @@
+/* Public Theme - Academic Style */
+/* Deep blue + teal + amber palette */
+
+/*-- scss:defaults --*/
+
+/* Typography */
+$body-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$heading-font-family: 'Georgia', 'Times New Roman', serif;
+
+/* Colors */
+$primary: #1e3a8a;
+$secondary: #0d9488;
+$accent: #f59e0b;
+$light-bg: #f8fafc;
+
+/*-- scss:rules --*/
+
+/* Base styles */
+body {
+  font-family: $body-font-family;
+  background: $light-bg;
+  color: #1f2937;
+}
+
+/* Override Quarto's default content width - make it wider */
+main.content, #quarto-document-content, .page-columns {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 2rem !important;
+}
+
+/* Override Bootstrap container width */
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  max-width: 100% !important;
+  padding: 0 2rem !important;
+}
+
+/* Override grid column widths */
+.page-columns .page-columns-full {
+  grid-column: 1 / -1 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-family;
+  color: $primary;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(135deg, $primary 0%, $secondary 100%) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+  font-family: $heading-font-family;
+  font-weight: 700;
+}
+
+/* Sidebar */
+.sidebar {
+  background: white;
+  border-right: 1px solid #e5e7eb;
+}
+
+.sidebar-item {
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: #f0fdfa;
+    color: $secondary;
+  }
+}
+
+/* Cards */
+.card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  }
+}
+
+/* Buttons */
+.btn-primary {
+  background: $secondary;
+  border-color: $secondary;
+  
+  &:hover {
+    background: darken($secondary, 10%);
+    border-color: darken($secondary, 10%);
+  }
+}
+
+/* Links */
+a {
+  color: $secondary;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: darken($secondary, 15%);
+  }
+}
+
+/* Content */
+.content {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Paper cards */
+.paper-card {
+  border-left: 4px solid $secondary;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Topic badges */
+.badge {
+  background: lighten($secondary, 40%);
+  color: $secondary;
+  border-radius: 12px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+}

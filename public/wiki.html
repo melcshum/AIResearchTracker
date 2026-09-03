@@ -666,23 +666,6 @@ Loading history…
 <p class="companion-intro">
 Follows the 5-stage knowledge construction cycle. AI scaffolds rather than substitutes.
 </p>
-<div class="ai-companion-modes">
-<button class="ai-mode-btn active" onclick="switchAIMode('construct')" title="Write your explanation">
-✍️ Construct
-</button>
-<button class="ai-mode-btn" onclick="switchAIMode('reflect')" title="Examine your understanding">
-🤔 Reflect
-</button>
-<button class="ai-mode-btn" onclick="switchAIMode('scaffold')" title="Get targeted support">
-🏗️ Scaffold
-</button>
-<button class="ai-mode-btn" onclick="switchAIMode('consolidate')" title="Retrieve from memory">
-💡 Consolidate
-</button>
-<button class="ai-mode-btn" onclick="switchAIMode('revisit')" title="Connect to prior knowledge">
-🔗 Revisit
-</button>
-</div>
 <div id="aiConstructMode" class="ai-mode-content active">
 <div class="ai-prompt">
 <p class="ai-hint">
@@ -1389,7 +1372,6 @@ h5 {
 import('/js/ai-companion.js').then(() => {
   // Initialize page-specific AI Companion
   const aiCompanion = new AICompanion({
-    apiBase: 'http://localhost:5001/api/wiki',
     currentPage: 'wiki',
     onModeChange: (mode) => {
       console.log('Mode changed to:', mode);
@@ -2124,7 +2106,7 @@ function aiGenerateReflectionPrompts() {
   
   area.innerHTML = '<div class="ai-message"><strong>🤔 Generating reflection prompts...</strong><br><em>Calling local LLM (this may take a moment)</em></div>';
   
-  fetch('http://localhost:5001/api/wiki/companion', {
+  fetch(`${API_BASE}/api/wiki/companion`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -2213,7 +2195,7 @@ function aiDetectGaps() {
   
   area.innerHTML = '<div class="ai-message"><strong>🕳️ Identifying gaps...</strong><br><em>Calling local LLM (this may take a moment)</em></div>';
   
-  fetch('http://localhost:5001/api/wiki/companion', {
+  fetch(`${API_BASE}/api/wiki/companion`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({

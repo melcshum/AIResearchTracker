@@ -11,5 +11,97 @@
       "status": "reading",
       "updatedAt": "2026-09-01"
     }
+  },
+  "wiki": {
+    "overfitting": {
+      "explanation": "Overfitting happens when a model learns the training data too well, including noise, so it performs poorly on new data.",
+      "created": "2026-09-03",
+      "revisions": [
+        {
+          "explanation": "Overfitting happens when a model memorises the training data instead of learning general patterns.",
+          "timestamp": "2026-09-03"
+        },
+        {
+          "explanation": "Overfitting happens when a model learns the training data too well, including noise, so it performs poorly on new unseen data. It is like memorizing answers instead of understanding the subject.",
+          "timestamp": "2026-09-03"
+        }
+      ],
+      "connections": [],
+      "keywords": []
+    },
+    "regularisation": {
+      "explanation": "Regularisation adds a penalty to prevent overfitting.",
+      "created": "2026-09-03",
+      "revisions": [
+        {
+          "explanation": "Regularisation helps prevent overfitting by adding a penalty term to the loss function.",
+          "timestamp": "2026-09-03"
+        },
+        {
+          "explanation": "Regularisation adds a penalty to the loss function to discourage complex models, helping prevent overfitting.",
+          "timestamp": "2026-09-03"
+        }
+      ],
+      "connections": [],
+      "keywords": []
+    },
+    "bias-variance tradeoff": {
+      "explanation": "The tradeoff between model simplicity (high bias) and model complexity (high variance).",
+      "created": "2026-09-03",
+      "revisions": [],
+      "connections": [],
+      "keywords": []
+    },
+    "test-concept": {
+      "explanation": "Third attempt - comprehensive explanation covering all aspects.",
+      "created": "2026-09-03",
+      "revisions": [
+        {
+          "explanation": "First attempt at explaining this concept.",
+          "timestamp": "2026-09-03"
+        },
+        {
+          "explanation": "Second attempt - improved explanation with more detail.",
+          "timestamp": "2026-09-03"
+        }
+      ],
+      "connections": [],
+      "keywords": []
+    },
+    "timing-test": {
+      "explanation": "test",
+      "created": "2026-09-03",
+      "revisions": [],
+      "connections": [],
+      "keywords": []
+    },
+    "long-test": {
+      "explanation": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "created": "2026-09-03",
+      "revisions": [],
+      "connections": [],
+      "keywords": []
+    },
+    "persistence-test": {
+      "explanation": "Testing if data persists correctly",
+      "created": "2026-09-03",
+      "revisions": [],
+      "connections": [],
+      "keywords": []
+    },
+    "final-test": {
+      "explanation": "Final verification",
+      "created": "2026-09-03",
+      "revisions": [],
+      "connections": [],
+      "keywords": []
+    },
+    "gradient_descent": {
+      "explanation": "Gradient descent is an optimization algorithm that minimizes a function by iteratively moving in the direction of steepest descent.",
+      "created": "2026-09-03",
+      "revisions": [],
+      "connections": [],
+      "keywords": []
+    }
   }
 }

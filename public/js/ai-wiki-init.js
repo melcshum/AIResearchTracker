@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function initAIWikiAICompanion() {
   // Create AI Companion instance
   const aiCompanion = new AICompanion({
-    apiBase: 'http://localhost:5001/api/wiki',
     currentPage: 'ai-wiki',
     onModeChange: (mode) => {
       console.log('AI Wiki: Mode changed to:', mode);
