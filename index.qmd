@@ -1,9 +1,322 @@
 ---
-title: "AI Research Tracker"
-format: html
+title: "Admin Dashboard"
 ---
 
-<meta http-equiv="refresh" content="0; url=public/learning-journey.html">
-<script>
-  window.location.href = "public/learning-journey.html";
-</script>
+<div class="admin-container">
+
+<div class="admin-header">
+<div class="header-badge">🔧 Admin Dashboard</div>
+<h1>System Administration</h1>
+<p class="header-subtitle">Technical documentation, system monitoring, and configuration</p>
+</div>
+
+<div class="admin-grid">
+
+<div class="admin-card system-health">
+<div class="card-icon">📊</div>
+<h2>System Health</h2>
+<p class="card-desc">Monitor pipeline status, performance metrics, and system resources</p>
+<div class="card-actions">
+<a href="system-health.html" class="btn primary">View Dashboard</a>
+<a href="system-health.html#metrics" class="btn secondary">Metrics</a>
+</div>
+</div>
+
+<div class="admin-card architecture">
+<div class="card-icon">🏗️</div>
+<h2>System Architecture</h2>
+<p class="card-desc">Interactive UML diagrams and comprehensive architecture documentation</p>
+<div class="card-actions">
+<a href="system-architecture.html" class="btn primary">View Diagrams</a>
+<a href="SYSTEM_ARCHITECTURE.html" class="btn secondary">Documentation</a>
+</div>
+</div>
+
+<div class="admin-card automation">
+<div class="card-icon">⚙️</div>
+<h2>Automation</h2>
+<p class="card-desc">Configure daily paper fetching, enhancement pipelines, and scheduling</p>
+<div class="card-actions">
+<a href="AUTOMATION.html" class="btn primary">Setup Guide</a>
+<a href="COMPLETE_AUTOMATION_GUIDE.html" class="btn secondary">Full Guide</a>
+</div>
+</div>
+
+<div class="admin-card settings">
+<div class="card-icon">🔧</div>
+<h2>Configuration</h2>
+<p class="card-desc">System settings, preferences, and operational parameters</p>
+<div class="card-actions">
+<a href="settings.html" class="btn primary">View Settings</a>
+<a href="requirements.html" class="btn secondary">Requirements</a>
+</div>
+</div>
+
+<div class="admin-card documentation">
+<div class="card-icon">📋</div>
+<h2>Documentation</h2>
+<p class="card-desc">Agent guides, design systems, and technical references</p>
+<div class="card-actions">
+<a href="AGENTS.html" class="btn primary">Agent Guide</a>
+<a href="admin.html" class="btn secondary">Admin Overview</a>
+</div>
+</div>
+
+<div class="admin-card design">
+<div class="card-icon">🎨</div>
+<h2>Design System</h2>
+<p class="card-desc">UI guidelines, component library, and visual standards</p>
+<div class="card-actions">
+<a href="DESIGN_GUIDE.html" class="btn primary">Design Guide</a>
+<a href="UI_ENHANCEMENTS.html" class="btn secondary">UI Updates</a>
+</div>
+</div>
+
+<div class="admin-card obsidian">
+<div class="card-icon">🧠</div>
+<h2>Knowledge Features</h2>
+<p class="card-desc">Wiki enhancements, backlinks, and knowledge graph implementation</p>
+<div class="card-actions">
+<a href="OBSIDIAN_ENHANCEMENTS.html" class="btn primary">Features</a>
+<a href="BACKLINKS_IMPLEMENTATION.html" class="btn secondary">Backlinks</a>
+</div>
+</div>
+
+<div class="admin-card testing">
+<div class="card-icon">🧪</div>
+<h2>Testing & Tools</h2>
+<p class="card-desc">Test suites, validation tools, and development utilities</p>
+<div class="card-actions">
+<a href="test-activity-feed.html" class="btn primary">Activity Test</a>
+<a href="SESSION_SUMMARY.html" class="btn secondary">Session Log</a>
+</div>
+</div>
+
+</div>
+
+<div class="quick-stats">
+<div class="stat-card">
+<div class="stat-icon">📄</div>
+<div class="stat-content">
+<div class="stat-value">126</div>
+<div class="stat-label">Total Pages</div>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">🤖</div>
+<div class="stat-content">
+<div class="stat-value">15</div>
+<div class="stat-label">Python Scripts</div>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">⚡</div>
+<div class="stat-content">
+<div class="stat-value">58s</div>
+<div class="stat-label">Pipeline Time</div>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">🔗</div>
+<div class="stat-content">
+<div class="stat-value">100%</div>
+<div class="stat-label">Links Verified</div>
+</div>
+</div>
+</div>
+
+<div class="admin-footer">
+<a href="../index.html" class="back-link">← Back to Home</a>
+<p>AI Research Tracker • System Administration Portal</p>
+</div>
+
+</div>
+
+<style>
+.admin-container {
+max-width: 1400px;
+margin: 0 auto;
+padding: 2rem;
+background: #0f172a;
+min-height: 100vh;
+}
+
+.admin-header {
+text-align: center;
+padding: 3rem 2rem;
+background: linear-gradient(135deg, #334155 0%, #6366f1 100%);
+border-radius: 12px;
+color: white;
+margin-bottom: 2rem;
+}
+
+.header-badge {
+display: inline-block;
+padding: 0.5rem 1.5rem;
+background: rgba(255,255,255,0.15);
+border-radius: 20px;
+font-size: 0.9rem;
+font-weight: 600;
+margin-bottom: 1rem;
+}
+
+.admin-header h1 {
+font-size: 2.5rem;
+margin: 0 0 1rem 0;
+font-weight: 700;
+}
+
+.header-subtitle {
+font-size: 1.1rem;
+opacity: 0.9;
+margin: 0;
+}
+
+.admin-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+gap: 1.5rem;
+margin-bottom: 2rem;
+}
+
+.admin-card {
+background: #1e293b;
+border-radius: 8px;
+padding: 2rem;
+transition: all 0.3s ease;
+border: 1px solid #334155;
+}
+
+.admin-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+border-color: #6366f1;
+}
+
+.card-icon {
+font-size: 3rem;
+margin-bottom: 1rem;
+}
+
+.admin-card h2 {
+font-size: 1.5rem;
+margin: 0 0 0.75rem 0;
+color: #f1f5f9;
+font-weight: 600;
+}
+
+.card-desc {
+font-size: 0.95rem;
+color: #94a3b8;
+margin: 0 0 1.5rem 0;
+line-height: 1.5;
+}
+
+.card-actions {
+display: flex;
+gap: 0.75rem;
+flex-wrap: wrap;
+}
+
+.btn {
+padding: 0.75rem 1.5rem;
+border-radius: 6px;
+text-decoration: none;
+font-weight: 600;
+font-size: 0.9rem;
+transition: all 0.2s ease;
+display: inline-block;
+}
+
+.btn.primary {
+background: #6366f1;
+color: white;
+}
+
+.btn.primary:hover {
+background: #8b5cf6;
+}
+
+.btn.secondary {
+background: #334155;
+color: #e2e8f0;
+}
+
+.btn.secondary:hover {
+background: #475569;
+}
+
+.quick-stats {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 1rem;
+margin-bottom: 2rem;
+}
+
+.stat-card {
+background: #1e293b;
+border-radius: 8px;
+padding: 1.5rem;
+display: flex;
+align-items: center;
+gap: 1rem;
+border: 1px solid #334155;
+}
+
+.stat-icon {
+font-size: 2.5rem;
+}
+
+.stat-content {
+flex: 1;
+}
+
+.stat-value {
+font-size: 2rem;
+font-weight: 700;
+color: #10b981;
+line-height: 1;
+}
+
+.stat-label {
+font-size: 0.85rem;
+color: #94a3b8;
+margin-top: 0.25rem;
+}
+
+.admin-footer {
+text-align: center;
+padding: 2rem;
+color: #64748b;
+}
+
+.back-link {
+display: inline-block;
+padding: 0.75rem 1.5rem;
+background: #334155;
+border-radius: 6px;
+text-decoration: none;
+color: #e2e8f0;
+font-weight: 600;
+margin-bottom: 1rem;
+transition: all 0.2s ease;
+}
+
+.back-link:hover {
+background: #475569;
+}
+
+@media (max-width: 768px) {
+.admin-header h1 {
+  font-size: 2rem;
+}
+
+.admin-grid {
+  grid-template-columns: 1fr;
+}
+
+.quick-stats {
+  grid-template-columns: repeat(2, 1fr);
+}
+}
+</style>
